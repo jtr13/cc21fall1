@@ -12,9 +12,9 @@ If your community contribution is in a different format, then create a short `.R
 
 You should only submit **ONE** `Rmd` file. 
 
-After completing these modifications, your `.Rmd` should look like this [sample `.Rmd`.](https://github.com/jtr13/cc21fall2/blob/main/sample_project.Rmd){target="_blank"}
+After completing these modifications, your `.Rmd` should look like this [sample `.Rmd`.](https://github.com/jtr13/cc21fall1/blob/main/sample_project.Rmd){target="_blank"}
 
-1. Create a concise, descriptive name for your project. For instance, name it `base_r_ggplot_graph` or something similar if your work is about contrasting/working with base R graphics and **ggplot2** graphics. Check the `.Rmd` filenames in [this file](https://github.com/jtr13/cc21fall2/blob/main/_bookdown.yml){target="_blank"} to make sure your name isn't already taken. Your project name should be words only and joined with underscores, **no white space**. Use `.Rmd` not `.rmd`. In addition, all letters must be **lowercase**. Create a copy of your `.Rmd` file with the new name. 
+1. Create a concise, descriptive name for your project. For instance, name it `base_r_ggplot_graph` or something similar if your work is about contrasting/working with base R graphics and **ggplot2** graphics. Check the `.Rmd` filenames in [this file](https://github.com/jtr13/cc21fall1/blob/main/_bookdown.yml){target="_blank"} to make sure your name isn't already taken. Your project name should be words only and joined with underscores, **no white space**. Use `.Rmd` not `.rmd`. In addition, all letters must be **lowercase**. Create a copy of your `.Rmd` file with the new name. 
 
 2. Completely delete the YAML header (the section at the top of the `.Rmd` that includes name, title, date, output, etc.) including the `---` line.
     
@@ -64,7 +64,7 @@ Want to get fancy? See the [optional tweaks](#optional-tweaks) section below.
 
 To submit your work, we will be following "Workflow #4" -- that is submitting a pull request to someone else's repository to which you do not have write access. Instructions are available in lecture slides on this topic as well as in [this tutorial](https://edav.info/github.html#st-pr-on-another-repo-with-branching){target="_blank"}. They are repeated below in abbreviated form, with specific instructions on naming conventions, content information, and other important details.
 
-1. Fork the [cc21fall2 repo (this repo)](https://github.com/jtr13/cc21fall2){target="_blank"} to your GitHub account.
+1. Fork the [cc21fall1 repo (this repo)](https://github.com/jtr13/cc21fall1){target="_blank"} to your GitHub account.
 
 2. Clone/download the forked repo to your local computer.
 
