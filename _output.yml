@@ -1,4 +1,6 @@
 bookdown::bs4_book:
+  theme:
+    primary: "#B698F9"
   repo:
     base: https://github.com/jtr13/cc21fall1
     branch: main
