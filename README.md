@@ -1,25 +1,9 @@
-This is a template for setting up a repo for community bookdown projects.
+# cc21fall1
 
-### Edit some key files
+Community contributions for STAT GR 5702 (EDAV) Fall 2021 Mon/Wed
 
-- [ ] 1. `index.Rmd`
+The class projects will be collected as `.Rmd` files and rendered into a bookdown book: https://jtr13.github.io/cc21fall1/
 
-- [ ] 2. `_bookdown.yml`
+Contributors, see: [Submission Instructions](https://jtr13.github.io/cc21fall1/github-submission-instructions.html)
 
-- [ ] 3. `_output.yml`
-
-- [ ] 4. `assignment.Rmd`
-
-- [ ] 5. `instructions.Rmd`
-
----
-
-# [REPO NAME]
-
-Community contributions for [STAT GR 5702 (EDAV) Fall 2021 Tues/Thurs]
-
-The class projects will be collected as `.Rmd` files and rendered into a bookdown book: [ADD LINK]
-
-Contributors, see: [Submission Instructions] [ADD LINK]
-
-Collaborators, see: [Tutorial for Pull Request Mergers] [ADD LINK]
+Collaborators, see: [Tutorial for Pull Request Mergers](https://jtr13.github.io/cc21fall1/tutorial-for-pull-request-mergers.html)
