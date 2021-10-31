@@ -13,4 +13,4 @@ Let's add some content to the welcome page.
 
 Submit a pull request to do so.
 
-![Under construction](under_construction.jpg)
+<img alt="artwork by Allison Horst" src="monwed.jpeg" width="700"></img>
