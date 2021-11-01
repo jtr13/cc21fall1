@@ -115,7 +115,15 @@ For every first article of each part, add the chapter name on the top of the `.R
 
 Now comes the final step.
 
-**If you're not sure that you did things correctly, assign one of the PR merge leaders or @jtr13 to review before you merge the PR.**
+**Until you develop experience and are confident that you are doing things correctly, assign another PR merger to review your work:**
+
+@aye21874	(Ayush), @clarissarjtai (Clarissa),	@ejosied (Josie), @hwelinkim (Hyo Won), @ivanye2509	(Xin)
+@kfijan	(Katharina), @ktsht	(Alex), @mtz2110 (Maxwell), @s10singh97 (Shashwat), @ShiyuWang88 (Shiyu), @Shruti-Kaushal	(Shruti), @verlocks	(Zheyu)
+
+(Please fix your names if there are mistakes or these aren't the names you go by... you don't need to submit a pull request, just edit the file and commit to the main branch.)
+
+![image](https://user-images.githubusercontent.com/14161912/139608691-b203957f-cf39-43bf-bbf9-17ec2f333361.png)
+
 
 Go back to the conversation tab of the pull requests page, for example: 
 

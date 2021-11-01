@@ -1,7 +1,7 @@
 
 ---
 title: "EDAV Fall 2021 Mon/Wed Community Contributions"
-date: "2021-10-31"
+date: "2021-11-01"
 site: bookdown::bookdown_site
 github-repo: jtr13/cc21fall1
 description: "This book contains community contributions for Fall 2021 EDAV Mon/Wed class at Columbia University."
