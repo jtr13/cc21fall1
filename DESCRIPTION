@@ -81,6 +81,7 @@ Imports:
     tensorflow,
     tibble,
     tidyr,
+    tidyverse,
     umap,
     vcd,
     viridis,
