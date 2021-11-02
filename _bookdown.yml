@@ -16,6 +16,7 @@ rmd_files: [
   'sample_project.Rmd',
 
   # Part: Cheatsheets
+  'r_vs_python_visualization.Rmd',
  
   # Part: Tutorials
   
