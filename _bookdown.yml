@@ -23,7 +23,7 @@ rmd_files: [
   
  
   # Part: Tutorials
-  'multithreading_crawler_frame.Rmd',
+  'multithreading_crawler_frame.Rmd', #contains PART header
   
   # Part: Workshops
   
