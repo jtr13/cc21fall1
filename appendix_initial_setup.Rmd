@@ -1,6 +1,6 @@
 # (PART) Appendices {-}
 
-This chapter contains additional information regarding how to setup the GitHub repo.
+This chapter contains additional information regarding how to setup the GitHub repo initially. (Not relevant to the maintenance of the project.)
 
 # Github initial setup
 
