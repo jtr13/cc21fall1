@@ -9,8 +9,7 @@ description: "This book contains community contributions for Fall 2021 EDAV Mon/
 
 # Welcome!
 
-Let's add some content to the welcome page.
-
-Submit a pull request to do so.
-
 <img alt="artwork by Allison Horst" src="monwed.jpeg" width="700"></img>
+
+
+Have ideas on what we can add to this welcome page? Open an issue or pull request.
