@@ -20,8 +20,10 @@ rmd_files: [
   # Part: Cheatsheets
   'r_vs_python_visualization.Rmd', # contains PART header
   'waffle_cheatsheet.Rmd',
+  
  
   # Part: Tutorials
+  'multithreading_crawler_frame.Rmd',
   
   # Part: Workshops
   
