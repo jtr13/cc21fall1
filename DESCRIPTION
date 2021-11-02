@@ -71,6 +71,7 @@ Imports:
     readxl,
     reshape,
     reshape2,
+    randomForest,
     rmarkdown,
     rtweet,
     scales,
