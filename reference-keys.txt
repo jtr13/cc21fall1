@@ -19,6 +19,12 @@ sample-project
 r-vs.-python-visualization-cheatsheet
 rpackage-waffle-cheatsheet
 multithreading-crawler-frame
+regression-and-classification-in-r
+libraries-and-warnings
+reading-data
+data-preprocessing
+regression
+classification
 github-initial-setup
 create-new-repo
 pages-in-repo-settings
