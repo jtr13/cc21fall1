@@ -4,16 +4,16 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<title>Chapter 5 R vs. Python Visualization Cheatsheet | EDAV Fall 2021 Mon/Wed Community Contributions</title>
+<title>Chapter 6 Rpackage waffle cheatsheet | EDAV Fall 2021 Mon/Wed Community Contributions</title>
 <meta name="author" content="the students of the class">
-<meta name="description" content="Dawei He and Minhui Liao We found that those who primarily work with R on data visualization may not be very familiar with graphs in Python. There are a lot of differences between R and Python, we...">
+<meta name="description" content="Yibo Chen This project mainly include a pdf version of cheatsheet for R package waffle. Take a look at the cheatsheet using link below:...">
 <meta name="generator" content="bookdown 0.24 with bs4_book()">
-<meta property="og:title" content="Chapter 5 R vs. Python Visualization Cheatsheet | EDAV Fall 2021 Mon/Wed Community Contributions">
+<meta property="og:title" content="Chapter 6 Rpackage waffle cheatsheet | EDAV Fall 2021 Mon/Wed Community Contributions">
 <meta property="og:type" content="book">
-<meta property="og:description" content="Dawei He and Minhui Liao We found that those who primarily work with R on data visualization may not be very familiar with graphs in Python. There are a lot of differences between R and Python, we...">
+<meta property="og:description" content="Yibo Chen This project mainly include a pdf version of cheatsheet for R package waffle. Take a look at the cheatsheet using link below:...">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Chapter 5 R vs. Python Visualization Cheatsheet | EDAV Fall 2021 Mon/Wed Community Contributions">
-<meta name="twitter:description" content="Dawei He and Minhui Liao We found that those who primarily work with R on data visualization may not be very familiar with graphs in Python. There are a lot of differences between R and Python, we...">
+<meta name="twitter:title" content="Chapter 6 Rpackage waffle cheatsheet | EDAV Fall 2021 Mon/Wed Community Contributions">
+<meta name="twitter:description" content="Yibo Chen This project mainly include a pdf version of cheatsheet for R package waffle. Take a look at the cheatsheet using link below:...">
 <!-- JS --><script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.6/clipboard.min.js" integrity="sha256-inc5kl9MA1hkeYUt+EC3BhlIgyp/2jDIyBLS6k3UxPI=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/fuse.js/6.4.6/fuse.js" integrity="sha512-zv6Ywkjyktsohkbp9bb45V6tEMoWhzFzXis+LrMehmJZZSys19Yxf1dopHx7WzIKxr5tK2dVcYmaCk2uqdjF4A==" crossorigin="anonymous"></script><script src="https://kit.fontawesome.com/6ecbd6c532.js" crossorigin="anonymous"></script><script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <link href="libs/bootstrap-4.6.0/bootstrap.min.css" rel="stylesheet">
 <script src="libs/bootstrap-4.6.0/bootstrap.bundle.min.js"></script><script src="libs/bs3compat-0.3.1/transition.js"></script><script src="libs/bs3compat-0.3.1/tabs.js"></script><script src="libs/bs3compat-0.3.1/bs3compat.js"></script><link href="libs/bs4_book-1.0.0/bs4_book.css" rel="stylesheet">
@@ -44,8 +44,8 @@
 <li><a class="" href="github-submission-instructions.html"><span class="header-section-number">3</span> GitHub submission instructions</a></li>
 <li><a class="" href="sample-project.html"><span class="header-section-number">4</span> Sample project</a></li>
 <li class="book-part">Cheatsheets</li>
-<li><a class="active" href="r-vs.-python-visualization-cheatsheet.html"><span class="header-section-number">5</span> R vs. Python Visualization Cheatsheet</a></li>
-<li><a class="" href="rpackage-waffle-cheatsheet.html"><span class="header-section-number">6</span> Rpackage waffle cheatsheet</a></li>
+<li><a class="" href="r-vs.-python-visualization-cheatsheet.html"><span class="header-section-number">5</span> R vs. Python Visualization Cheatsheet</a></li>
+<li><a class="active" href="rpackage-waffle-cheatsheet.html"><span class="header-section-number">6</span> Rpackage waffle cheatsheet</a></li>
 <li class="book-part">Appendices</li>
 <li><a class="" href="github-initial-setup.html"><span class="header-section-number">7</span> Github initial setup</a></li>
 <li><a class="" href="tutorial-for-pull-request-mergers.html"><span class="header-section-number">8</span> Tutorial for pull request mergers</a></li>
@@ -56,34 +56,41 @@
         </div>
       </nav>
 </div>
-  </header><main class="col-sm-12 col-md-9 col-lg-7" id="content"><div id="r-vs.-python-visualization-cheatsheet" class="section level1">
+  </header><main class="col-sm-12 col-md-9 col-lg-7" id="content"><div id="rpackage-waffle-cheatsheet" class="section level1">
 <h1>
-<span class="header-section-number">5</span> R vs. Python Visualization Cheatsheet<a class="anchor" aria-label="anchor" href="#r-vs.-python-visualization-cheatsheet"><i class="fas fa-link"></i></a>
+<span class="header-section-number">6</span> Rpackage waffle cheatsheet<a class="anchor" aria-label="anchor" href="#rpackage-waffle-cheatsheet"><i class="fas fa-link"></i></a>
 </h1>
-<p>Dawei He and Minhui Liao</p>
-<p>We found that those who primarily work with R on data visualization may not be very familiar with graphs in Python. There are a lot of differences between R and Python, we usually use ggplot2 in R, and the closest comparable libraries are Matplotlib and Seaborn while working in Python. Therefore, we made this PDF version cheat sheet for people who primarily use R or Python but need to use one of another programming language to make plots, so that they could easily compare the difference between graphs.</p>
-<p>Click the following link to check out the cheat sheet:</p>
-<p><a href="https://github.com/Aaralyn-Liao/EDAV_Contribution_CC8/blob/main/r_vs_python_visualization.pdf" class="uri">https://github.com/Aaralyn-Liao/EDAV_Contribution_CC8/blob/main/r_vs_python_visualization.pdf</a></p>
+<p>Yibo Chen</p>
+<p>This project mainly include a pdf version of cheatsheet for R package waffle.</p>
+<p>Take a look at the cheatsheet using link below:
+<a href="https://github.com/ChenYb9807/cu_edav_cc/blob/main/Community%20Contribution.pdf" class="uri">https://github.com/ChenYb9807/cu_edav_cc/blob/main/Community%20Contribution.pdf</a></p>
 
 </div>
-  <div class="chapter-nav">
-<div class="prev"><a href="sample-project.html"><span class="header-section-number">4</span> Sample project</a></div>
-<div class="next"><a href="rpackage-waffle-cheatsheet.html"><span class="header-section-number">6</span> Rpackage waffle cheatsheet</a></div>
+
+
+
+<div class="chapter-nav">
+<div class="prev"><a href="r-vs.-python-visualization-cheatsheet.html"><span class="header-section-number">5</span> R vs. Python Visualization Cheatsheet</a></div>
+<div class="next"><a href="github-initial-setup.html"><span class="header-section-number">7</span> Github initial setup</a></div>
 </div></main><div class="col-md-3 col-lg-2 d-none d-md-block sidebar sidebar-chapter">
     <nav id="toc" data-toggle="toc" aria-label="On this page"><h2>On this page</h2>
-      <ul class="nav navbar-nav"><li><a class="nav-link" href="#r-vs.-python-visualization-cheatsheet"><span class="header-section-number">5</span> R vs. Python Visualization Cheatsheet</a></li></ul>
+      <ul class="nav navbar-nav"><li><a class="nav-link" href="#rpackage-waffle-cheatsheet"><span class="header-section-number">6</span> Rpackage waffle cheatsheet</a></li></ul>
 
       <div class="book-extra">
         <ul class="list-unstyled">
-<li><a id="book-source" href="https://github.com/jtr13/cc21fall1/blob/main/r_vs_python_visualization.Rmd">View source <i class="fab fa-github"></i></a></li>
-          <li><a id="book-edit" href="https://github.com/jtr13/cc21fall1/edit/main/r_vs_python_visualization.Rmd">Edit this page <i class="fab fa-github"></i></a></li>
+<li><a id="book-source" href="https://github.com/jtr13/cc21fall1/blob/main/waffle_cheatsheet.Rmd">View source <i class="fab fa-github"></i></a></li>
+          <li><a id="book-edit" href="https://github.com/jtr13/cc21fall1/edit/main/waffle_cheatsheet.Rmd">Edit this page <i class="fab fa-github"></i></a></li>
         </ul>
 </div>
     </nav>
 </div>
+</div>
+  
+
+  
 
 </div>
-</div> <!-- .container -->
+ <!-- .container -->
 
 <footer class="bg-primary text-light mt-5"><div class="container"><div class="row">
 
