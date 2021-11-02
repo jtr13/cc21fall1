@@ -122,15 +122,14 @@ Now comes the final step.
 
 (Please fix your names if there are mistakes or these aren't the names you go by... you don't need to submit a pull request, just edit the file and commit to the main branch.)
 
-![image](https://user-images.githubusercontent.com/14161912/139608691-b203957f-cf39-43bf-bbf9-17ec2f333361.png)
-
-
 Go back to the conversation tab of the pull requests page, for example: 
 
 https://github.com/jtr13/cc20/pull/23#issuecomment-728506101
 
 Leave comments for congratulations 🎉 (type `:tada:`) and then click on the green button for merge.
 <br/> 
+
+
 
 ### Check updated version
 
