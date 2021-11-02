@@ -31,7 +31,6 @@ Imports:
     ggplot2,
     ggprism,
     ggpubr,
-    ggradar,
     ggraph,
     ggridges,
     ggsci,
@@ -94,3 +93,5 @@ Suggests:
     downlit,
     withr,
     xml2
+Remotes:
+    ricardo-bion/ggradar
