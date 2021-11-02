@@ -48,7 +48,6 @@ Imports:
     Lock5withR,
     lubridate,
     mlbench,
-    MLGM,
     MLmetrics,
     neo4r,
     networkD3,
@@ -94,4 +93,6 @@ Suggests:
     withr,
     xml2
 Remotes:
+    priyakohli5/MLGM,
     ricardo-bion/ggradar
+
