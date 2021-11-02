@@ -4,4 +4,4 @@ Leo Du and Hao Li
 
 As Data Science students, we typically work with carefully prepared data and problem sets that our professors have designed with lots of effort to guide students to achieve learning objectives that can mostly be clearly measured within a reasonable timeline. However, in reality, it is almost never that seamless to achieve results. We delivered a Zoom talk on Nov. 1st to share our unique perspectives on the different stages in a typical development life cycle for Data Science powered products in large enterprises, the different teams that are involved, the technologies that are often used, and how visualization tools and techniques are leveraged in the different stages.
 
-Due to plicies, we cannot share our materials publicly. The slide deck, as well as a recording of the session are available on Courseworks submission, and for the students taking EDAV Fall 2021 upon request.
+Due to policies, we cannot share our materials publicly. The slide deck, as well as a recording of the session are available on Courseworks submission, and for the students taking EDAV Fall 2021 upon request.
