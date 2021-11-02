@@ -17,6 +17,8 @@ rmd_files: [
   'instructions.Rmd',
   'sample_project.Rmd',
 
+  #Part: Data Visualizations
+
   # Part: Cheatsheets
   'r_vs_python_visualization.Rmd', # contains PART header
   'waffle_cheatsheet.Rmd',
