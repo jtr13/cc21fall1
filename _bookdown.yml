@@ -9,28 +9,4 @@ language:
 # Note: in order for the part headers to appear in the rendered book, the part header information must be included in the first chapter of the part. The comments here are just for reference; they do not create parts.
 
 # Chapter ordering
-rmd_files: [
-  # Part: Introduction
-  'index.Rmd', # must be first chapter
-  'assignment.Rmd',
-  'instructions.Rmd',
-  'sample_project.Rmd',
-
-  #Part: Data Visualizations
-
-  # Part: Cheatsheets
-  'r_vs_python_visualization.Rmd', # contains PART header
-  'waffle_cheatsheet.Rmd',
-  
- 
-  # Part: Tutorials
-  'multithreading_crawler_frame.Rmd', #contains PART header
-  'r_regress_classify.Rmd',
-  
-  # Part: Workshops
-  
-  # Part: Appendices
-  'appendix_initial_setup.Rmd', # contains PART header
-  'appendix_pull_request_tutorial.Rmd'
-
-]
+'ds_product_cycles_in_enterprises.Rmd',
