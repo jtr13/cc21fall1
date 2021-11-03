@@ -1,8 +1,7 @@
 # 30 questions & answers for r technical interview
-Author: Anna Dai
-Community Contribution
-EDAV – STATGR5702
-30 Questions & Answers To Help You Prepare For An R Technical Interview
+Anna Dai
+
+This is 30 Questions & Answers To Help You Prepare For An R Technical Interview
 
 Motivations
 Some of the students are graduating soon and it’s the time for job hunting and interview
@@ -151,8 +150,6 @@ of a person with the flavor of the candy they prefer. If a correlation is found,
 appropriate stock of flavors by knowing the number of gender of people visiting. The basic
 syntax for creating Chi-Square is:
 chisq.test(data)
-
-
 
 Citations
 https://www.rdocumentation.org/packages/tidyverse/versions/1.3.1
