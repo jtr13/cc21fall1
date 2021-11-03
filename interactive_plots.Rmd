@@ -14,7 +14,7 @@ library(igraph)
 library(networkD3)
 ```
 
-## 1 Why use interactive plots
+## Why use interactive plots
 
 In general, we will use ggplot2 to plot a static graph. In this way, we can only know the data from a macroscopic perspective. If we want to know some subtle contents, like the exact difference of two points, we still need to write code to find the values of these two points. However, this tedious step can be avoided in an interactive graph. Interactive graphs is very important for data analysis. We can check the value of every point on the graph, and also zoom on and out the graph to check some details. 
 
@@ -22,13 +22,13 @@ In this tutorial, we will introduce some frequently used plot, and provide some 
 
 At the beginning of the tutorial, these packages are what we will use below. If you have not installed these, you can use install.packages('package_name') to install it.
 
-## 2 Interactive Scatter plot
+## Interactive Scatter plot
 
 Plotly's R graphing library makes interactive, publication-quality graphs. Examples of how to make line plots, scatter plots, area charts, bar charts, error bars, box plots, histograms, heatmaps, subplots, multiple-axes, and 3D (WebGL based) charts.
 
 We will give some examples to show how to draw Scatterplot by Plotly.
 
-### 2.1 Compare Plotly and ggplot2
+### Compare Plotly and ggplot2
 
 We will use iris dataset, which is provided natively by R. Here is a part of dataset.
 
@@ -54,11 +54,11 @@ fig
 
 We can not check the value of each data point in basic scatterplot, but we can do it in interactive scatterplot.
 
-### 2.2 Styled Scatter Plot
+### Styled Scatter Plot
 
 We can customize our Scatter Plot by using parameters of plot_ly. Plotly has three main attributions including plot_ly, add_trace and layout. Every aspect of a Plotly chart (the colors, the grid-lines, the data, and so on) has a corresponding key in these attributions.
 
-#### 2.2.1 plot_ly
+#### plot_ly
 
 plot_ly is what we used in 1.1. This function is basically draw the main content of the plot. The basic structure is below. 
 
@@ -84,7 +84,7 @@ fig <- plot_ly(data = iris, x = ~Sepal.Length, y = ~Petal.Length,
 fig
 ```
 
-#### 2.2.2 add_trace
+#### add_trace
 
 Plotly's graph is made up of two parts. One is trace, and we can regard it as the key component of a graph. For example, the trace of a scatter plot is all points of the graph, and the trace of a line plot is the line of the graph. We can regard the plot of plot_ly as a background. And sometimes we want to add multiple modes on the plot, then we will need add_trace. The basic structure is below, and it is very similar to the plot_ly.
 
@@ -109,7 +109,7 @@ fig <- fig %>% add_trace(x = ~Sepal.Length, y = ~Petal.Width, name = 'Petal.Widt
 fig
 ```
 
-#### 2.2.3 layout
+#### layout
 
 layout is used for the rest of the chart, like the title, xaxis, or annotations. The basic structure is below.
 
@@ -135,9 +135,9 @@ fig <- fig %>% layout(title = 'Styled Scatter',
 fig
 ```
 
-## 3 Interactive time series chart
+## Interactive time series chart
 
-### 3.1 ggplot2 and plotly
+### ggplot2 and plotly
 
 There are two ways to create an interactive time series chart. The first way is to creat a line plot by ggplot2, then use plotly to turn ggplot2 chart object interactive. An example is below. 
 
@@ -167,7 +167,7 @@ We can also just use plotly. To make an area plot with interior filling set fill
 plot_ly(data=data, x=~date, y=~value, type="scatter", mode="line", fill='tozeroy')
 ```
 
-### 3.2 dygraphs and xts
+### dygraphs and xts
 
 dygraphs is a very useful R package for creating interactive time series plot. The dygraphs package is an R interface to the dygraphs JavaScript charting library. It provides rich facilities for charting time-series data in R, including: rich interactive features including zoom/pan and series/point highlighting, automatically plots xts time series objects (or any object convertible to xts), highly configurable axis and series display (including optional second Y-axis) and so on. Here we only use some plot functions. 
 
@@ -184,11 +184,11 @@ p
 ```
 
 
-## 4 Interactive network diagram
+## Interactive network diagram
 
 networkD3 is very useful for creating interactive network diagrams. Its input contains each edge, which specifies two nodes. 
 
-### 4.1 Simple Network
+### Simple Network
 
 We can use simpleNetwork of networkD3.
 
@@ -204,7 +204,7 @@ networkData <- data.frame(src, target)
 simpleNetwork(networkData)
 ```
 
-### 4.2 Customized Network
+### Customized Network
 
 Many option are available to customize the interactive diagram. Some options allow to customize the node, links and label feature, like nodeColour or fontSize. For example, linkDistance	controls numeric distance between the links in pixels. charge controls numeric value indicating either the strength of the node repulsion (negative value) or attraction (positive value). fontSize and fontFamily can control the label. We can use help(simpleNetwork) to have a better understanding.
 
