@@ -17,7 +17,7 @@ library(networkD3)
 ```
 
 
-# Introduction
+## Introduction
 
 This rmd file incorporates a hand-by-hand tutorial about several useful tools to create interactive figures via multiple popular toolboxes. Though pretty attractive as well as persuasive during the data presentation, the creation of interactive diagrams is seldom mentioned during the lecture. Thus, I self-learnt a couple of useful tools and decided to make a detailed tutorial about how to create interactive diagrams.
 
@@ -25,9 +25,9 @@ Commonly, compared with the data selection, critical parameters determining the 
 
 In each of the following sections, you shall run the code chunk one-after-one. The description of the method is in front of the code chunk (please read it before running the code) and the analysis of the output would be after it. During the lecture, these contents have not been fully explained so far, and hence, I am pretty confident that, after finishing reading this tutorial, you could master a decent number of methods to create interactive graphs. 
 
-## By the way, please read the rmd file rather than the html file to check out the graphs, since the dynamic graphs would become static if so.
+By the way, please read the rmd file rather than the html file to check out the graphs, since the dynamic graphs would become static if so.
 
-# Create Interactive Graphs via `ggvis`
+## Create Interactive Graphs via `ggvis`
 
 The library `ggvis` is similar to `ggplot2` from some extents, but it’s expressed a little differently, and adds new features to make your plots interactive.
 
@@ -160,7 +160,7 @@ As you can see from the graph above, the line would turn red when your cursor la
 To conclude, the package `ggvis` could cover the major functions of `ggplot2`, as well as create interactive graphs helpful during both the experiment and presentation.
 
 
-# Create Interactive Graphs via `plotly`
+## Create Interactive Graphs via `plotly`
 
 Similar to `ggvis`, `plotly` is also a powerful tool to create interactive graphs. Compared with conventional `ggplot` and `ggvis`, it could create more complicated as well as vivid graphs based on data from various sources.
 
@@ -308,7 +308,7 @@ As you could observed in the graph above, when the data structure is suitable, i
 All in all, the previous shown content is just a tiny proportion of `plotly`, and this package still contains numerous powerful toolboxes to construct interactive graphs which you could further explore.
 
 
-# Create Interactive Graphs via `networkD3`
+## Create Interactive Graphs via `networkD3`
 
 While packages such as `ggplot2` and `ggvis` or `plotly` that mostly focus on presenting the values of the given data, the package `networkD3` specializes in demonstrating the relationship of the data by tree diagrams or network diagrams. In addition, as these kinds of diagrams are relatively structured and simple in their form, the interactive pattern in this package may let you flexibly manipulate the diaragm to highlight certain parts.
 
@@ -363,12 +363,12 @@ In addition to simple networks, there are still other functions in this package 
   3. `radialNetwork`: have a radar-like appearances, where the source node locates at the center of the graph, and spreads out numerous child nodes.
   4. `diagonalNetwork`: similar to the `dendroNetwork`, but links the nodes via smooth curves.
   
-# Conclusion
+## Conclusion
 
 To summarize, there are still a number of fantastic tools to create interactive graphs, in addition to `ggvis`, `plotly`, and `networkD3`. However, if your could master most functions mentioned in this tutorial, it would be quite convenient to produce nice graphs in your projects.
 
 
-# Reference
+## Reference
 
  Plotly R Graphing Library. (2021). R | Plotly. https://plotly.com/r/
  Gandrud, Christopher. (2017). christophergandrud. http://christophergandrud.github.io/networkD3/
