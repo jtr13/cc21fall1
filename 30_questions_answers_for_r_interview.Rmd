@@ -1,8 +1,9 @@
-# 30 questions & qnswers for r technical interview
+# 30 questions & answers for r technical interview
 Author: Anna Dai
 Community Contribution
 EDAV – STATGR5702
 30 Questions & Answers To Help You Prepare For An R Technical Interview
+
 Motivations
 Some of the students are graduating soon and it’s the time for job hunting and interview
 prepping! I am coming up with 30 relevant and technical R interview questions and answers
@@ -15,6 +16,7 @@ answers into three sections:
 1. (Data Manipulation)
 2. (Data Visualization & Plots)
 3. (Statistical Tests In R)
+
 Data Manipulations
 Q1: What is the difference between sapply and lapply? When should you use one versus the
 other?
@@ -57,6 +59,7 @@ A12: We can create a factor using the function factor(). Levels of a factor are 
 data if not provided. Similarly, levels of a factor can be checked using the levels() function.
 For example:
 x <- factor(c("single", "married", "married", "single"));
+
 Visualizations & Plots
 Q13: When should you use boxplot?
 A13: Boxplots should be used to display continuous variables. They are particularly useful for
@@ -101,6 +104,7 @@ corresponding to variables in the dataset. You can create such plots in R using 
 parcoord in package MASS.
 Q22: What are some R visualization packages?
 A22: Plotly, ggplot2, tidyquant, geofacet, googleVis, Shiny.
+
 Statistical Tests In R
 Q23: What is t-test() in R?
 A23: The t-test() function is used to determine that the mean of the two groups are equal
