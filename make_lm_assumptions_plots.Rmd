@@ -1,6 +1,8 @@
 ```{r}
 # Create regression assumption plots in Word
 
+Nikhil Gopal
+
 library(ggplot2)
 library(apaTables)
 library(officer)
