@@ -1,11 +1,5 @@
----
----
-
 ```{r}
-#Create regression assumption plots in Word
-
-#link to Github repo:
-#https://github.com/ng4567/LM2APA
+# Create regression assumption plots in Word
 
 library(ggplot2)
 library(apaTables)
@@ -106,6 +100,5 @@ make_lm_plots<-function(model, output_path, reg_table, reg_table_name){
     )
   }
 }
-
 
 ```
