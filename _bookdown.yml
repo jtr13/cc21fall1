@@ -6,7 +6,7 @@ language:
   ui:
     chapter_name: "Chapter "
 
-# Note: in order for the part headers to appear in the rendered book, the part header information must be included in the first chapter of the part. The comments here are just for reference; they do not create parts.
+# Note: in order for the part headers to appear in the rendered book, the part header information must be included in the first chapter of the part. The comments here are just for reference; they do not create parts
 
 # Chapter ordering
 rmd_files: [
@@ -28,6 +28,7 @@ rmd_files: [
   'r_regress_classify.Rmd',
   
   # Part: Workshops
+  'ds_product_cycles_in_enterprises.Rmd', 
   
   # Part: Appendices
   'appendix_initial_setup.Rmd', # contains PART header
