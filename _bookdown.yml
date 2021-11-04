@@ -21,13 +21,14 @@ rmd_files: [
   # Part: Cheatsheets
   'r_vs_python_visualization.Rmd', # contains PART header
   'waffle_cheatsheet.Rmd',
-  'ds_product_cycles_in_enterprises.Rmd',
+  
  
   # Part: Tutorials
   'multithreading_crawler_frame.Rmd', #contains PART header
   'r_regress_classify.Rmd',
   
   # Part: Workshops
+  'ds_product_cycles_in_enterprises.Rmd', 
   
   # Part: Appendices
   'appendix_initial_setup.Rmd', # contains PART header
