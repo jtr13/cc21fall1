@@ -21,7 +21,7 @@ library(personograph)
 
 In class, we've been covering a variety of graph types, fundamental plotting techniques, and the proper treatments of different data we get. Equipped with these skills, we'd be able to come up with quite neat and informative visualizations. However, simply taking care of the most basic requirements would only generate an ubiquitous standard-following graph. These graphs may be suitable for a scientific research paper or a presentation on a formal meeting, but there are cases when we need a more lighthearted graph to arouse the viewer's interest. For instance, in an internet blog or a tweet, we would like the graph to be more entertaining and eye-catching to achieve more views. And one way of doing that is to add easily understandable symbols to the graph.
 
-## 1. 'pch' in Base R
+## 'pch' in Base R
 
 For those of us who've had experience with base R for plotting before, we are probably quite familiar with the `pch` parameter. `pch` stands for 'plotting character', namely symbol to use. It is the standard argument to set the character that will be plotted in a number of R functions. 'pch' can either be a single character or an integer code for one of the set of graphic symbols. 
 
@@ -73,7 +73,7 @@ legend("topright", legend = levels(iris$Species),
 As we can see from the list, the supported symbols are quite limited in R (basically from pch = 1-25 and some ASCII symbols). As the pch numbers goes up, you might encounter the issue that your locale does not support a particular character. Besides, it's very difficult to try to memorize what each number represents in this cumbersome list, so we would have to always look it up each time we need a particular symbol and check for its availability. Therefore, we will introduce some other appealing techniques as follows.
 
 
-## 2. showtext
+## showtext
 `Showtext` is a package originally designed to deal with font issues in R. In many cases, using non-standard fonts in R graphs is not an easy task. For instance, using chinese characters in plotting would oftentimes result in unreadable results. 
 
 Here's a trick that we can apply to build icons with the help of `showtext`. There are many fonts that look in the way of symbols, the `'wmpeople1'` demonstrated below is just one of them. Some other examples of symbol fonts include `Wingdings`, `Dingbat`, `webdings` and etc. By adding these fonts, we then manage to show the symbols as text in a graph. And now the `geom_text()` is something that we are all familiar with and we can easily handle and proceed.
@@ -119,10 +119,10 @@ ggplot(gdat, aes(x = x, y = factor(educode))) +
 
 Every symbol in the above graph is actually a character of `p` or `u`. It's just they appear differently under this `'wmpeople1'` font. By applying this concept, we now have access to a great number of text symbols by simply adding font resources to our code.
 
-## 3. ggimage
+## ggimage
 `ggimage` supports image files and graphic objects to be visualized in the `ggplot2` graphic system. It includes a variety of interesting and useful functions and we will introduce some of them here.
 
-### 3.1 geom_image()
+### geom_image()
 To have access to a greater range of symbol choices, we would sometimes want to use image from external sources as an icon in plotting. The `geom_image()` layer in ggplot2 can amazingly achieve to do that. We can simply use the url or file directory to import an image into our graphs.
 
 For example, this is a plot that lines up several Rstudio icons in an "R" shape:
@@ -137,7 +137,7 @@ ggplot(d, aes(x, y)) + geom_image(image = img, size = .1) +
   ggtitle("Plot R with Rstudio Symbols")
 ```
 
-### 3.2 geom_emoji()
+### geom_emoji()
 As we discovered previously, the symbols `pch` provides are mostly simple shapes or plain texts of ASCII characters. It doesn't offer much support if we want to use colorful emojis. This special layer of `geom_emoji()` would facilitate an easy incoporation of emojis into our graphs, by simply specifying their unicode.
 
 #### Emoji Characters
@@ -168,7 +168,7 @@ p + ggimage::geom_emoji(aes(image = ifelse(abs(Petal.Length-fitted) > 0.5, '1f64
 ```
 
 
-### 3.3 geom_icon()
+### geom_icon()
 
 `geom_icon()` provides support for icons on https://ionic.io/ionicons. This is a website that provides open source icons for web use. Figures are in black and white but are very well designed. It has each icon in three formats - 'Outline', 'Filled', and 'Sharp'. We can browse using key words to search for the icons conveniently.
 
@@ -187,7 +187,7 @@ ggplot(d, aes(x,y)) + geom_icon(aes(image=icon)) +
   theme_void()
 ```
 
-### 3.4 geom_pokemon()
+### geom_pokemon()
 This is a special layer that provides support for pokemon characters. We can easily create cute graphs that target kids or anime fans. There is also a layer `geom_flags` that matches abbreviated country code to its corresponding national flags. That one can be particularly helpful in plotting worldwide data and making comparisons among different nations.
 
 #### An example of `geom_pokemon()`
@@ -203,7 +203,7 @@ ggplot(pkm, aes(Attack, Defense)) +
 ```
 
 
-## 4. Special Type: Personographs
+## Special Type: Personographs
 A personograph (Kuiper-Marshall plot) is a pictographic representation of relative harm and benefit from an intervention. Each icon on the grid is colored to indicate whether that percentage of people is harmed by the intervention, would benefit from the intervention, has good outcome regardless of intervention, or bad outcome regardless of intervention. 
 
 #### Arguments of `personograph` : 
