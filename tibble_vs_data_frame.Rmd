@@ -1,0 +1,198 @@
+# Tibble vs. DataFrame
+
+Jingfei Fang
+
+```{r, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+```{r}
+library(tidyverse)
+library(tibble)
+```
+
+### Introduction
+A tibble is often considered a neater format of a data frame, and it is often used in the tidyverse and ggplot2 packages. It contains the same information as a data frame, but the manipulation and representation of tibbles is different from data frames in some aspects.
+
+### 1. Getting started with tibbles
+
+You can do it with tidyverse:
+```{r,message=F}
+#install.packages("tidyverse")
+library(tidyverse)
+```
+
+Or you can do it by installing tibble package directly:
+```{r,message=F}
+#install.packages("tibble")
+library(tibble)
+```
+
+
+### 2. Creating a tibble
+
+You can create a tibble directly:
+```{r}
+tib <- tibble(a = c(1,2,3), b = c(4,5,6), c = c(7,8,9))
+tib
+```
+
+Or you can create a tibble from an existing data frame by using as_tibble(). We will use 'iris' dataset as an example:
+```{r}
+df <- iris
+class(df)
+tib <- as_tibble(df)
+tib
+```
+
+
+### 3. Unlike data frames, tibbles don't show the entire dataset when you print it.
+```{r}
+tib
+```
+
+### 4. Tibbles cannot access a column when you provide a partial name of the column, but data frames can.
+#### Tibble
+If you try to match the column name with only a partial name, it will not work.
+```{r}
+tib <- tibble(str = c("a","b","c","d"), int = c(1,2,3,4))
+tib$st
+```
+
+Only when you provide the entire column name, it will work.
+```{r}
+tib$str
+```
+
+#### Data Frame
+However, you can access the "str" column by only providing a partial column name "st" (as long as this partial name is unique).
+```{r}
+df <- data.frame(str = c("a","b","c","d"), int = c(1,2,3,4))
+df$st
+```
+
+
+### 5. When you access only one column of a tibble, it will keep the tibble structure. But when you access one column of a data frame, it will become a vector.
+#### Tibble
+```{r}
+tib[,"str"]
+```
+Checking if it's still a tibble:
+```{r}
+is_tibble(tib[,"str"])
+```
+We can see the tibble structure is preserved.
+
+#### Data Frame
+```{r}
+df[,"str"]
+```
+Checking if it's still a data frame:
+```{r}
+is.data.frame(df[,"str"])
+```
+It's no longer a data frame.
+
+
+#### However, other forms of subsetting, including [[ ]] and $, work the same for tibbles and data frames.
+```{r}
+tib[["str"]]
+df[["str"]]
+```
+```{r}
+tib$str
+df$str
+```
+
+We can see that subsetting with [[ ]] and $ also don't preserve the tibble structure.
+
+### 6. When assigning a new column to a tibble, the input will not be recycled, which means you have to provide an input of the same length of the other columns. But a data frame will recycle the input.
+#### Tibble
+```{r, error=T}
+tib
+tib$newcol <- c(5,6)
+```
+It gives an error because the tibble has columns of length 4, but the input (5,6) only has length 2 and is not recycled. 
+You have to provide an input of same length:
+```{r}
+tib$newcol <- rep(c(5,6),2)
+tib
+```
+
+#### Data Frame
+Data frames will recycle the input.
+```{r}
+df
+df$newcol <- c(5,6)
+df
+```
+
+
+### 7. Reading with builtin read.csv() function will output data frames, while reading with read_csv() in "readr" package inside tidyverse will output tibbles.
+#### Reading csv file with read.csv()
+```{r}
+data <- read.csv("https://people.sc.fsu.edu/~jburkardt/data/csv/addresses.csv")
+class(data)
+```
+
+#### Reading csv file with read_csv()
+```{r, message=F}
+data <- read_csv("https://people.sc.fsu.edu/~jburkardt/data/csv/addresses.csv")
+class(data)
+```
+
+
+### 8. Tibbles don't support support arithmetic operations on all columns well, the result will be converted into a data frame without any notice. 
+#### Tibble
+We can see that when we try to multiply all the elements of the tibble by 2, the result is correct but it is turned into a data frame without notifications.
+```{r}
+tib <- tibble(a = c(1,2,3), b = c(4,5,6), c = c(7,8,9))
+class(tib*2)
+```
+
+#### Data Frame
+But data frames have no issue with it, they will not be converted into any other type.
+```{r}
+df <- data.frame(a = c(1,2,3), b = c(4,5,6), c = c(7,8,9))
+class(df*2)
+```
+
+### 9. Tibbles preserve all the variable types, while data frames have the option to convert string into factor. (In older versions of R, data frames will convert string into factor by default)
+#### Tibble
+We can see that the original data types of variables are preserved in a tibble.
+```{r}
+tib <- tibble(str = c("a","b","c","d"), int = c(1,2,3,4))
+str(tib)
+```
+
+#### Data Frame
+If we use data frame, it will also preserve the original types, because "stringAsFactors = FALSE" by default in the new versions of R.
+```{r}
+df <- data.frame(str = c("a","b","c","d"), int = c(1,2,3,4))
+str(df)
+```
+However, we also have the option to convert string into factor when creating the data frame by setting "stringAsFactors = TRUE".
+```{r}
+df <- data.frame(str = c("a","b","c","d"), int = c(1,2,3,4), stringsAsFactors = TRUE)
+class(df$str)
+```
+We can see that the "str" column has been converted into factor.
+
+### 10. Tibbles work well with ggplot2, just like data frames.
+#### Tibble:
+```{r}
+ggplot(data = tib, mapping = aes(x=str, y=int)) +
+  geom_col(width = 0.3)
+```
+
+#### Data Frame:
+```{r}
+ggplot(data = df, mapping = aes(x=str, y=int)) +
+  geom_col(width = 0.3)
+```
+
+## Works Cited
+https://tibble.tidyverse.org/  
+https://cran.r-project.org/web/packages/tibble/vignettes/tibble.html  
+https://www.youtube.com/watch?v=_qHdqWx-vsQ&ab_channel=JoshuaFrench
+
