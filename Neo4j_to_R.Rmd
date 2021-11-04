@@ -1,4 +1,4 @@
-# title: "From Neo4j to RStudio"
+# From Neo4j to RStudio
 
 Chaoying Zheng
 
