@@ -6,4 +6,7 @@ language:
   ui:
     chapter_name: "Chapter "
 
+# Note: in order for the part headers to appear in the rendered book, the part header information must be included in the first chapter of the part. The comments here are just for reference; they do not create parts.
+
+# Chapter ordering
 '30_questions_answers_for_r_interview.Rmd',
