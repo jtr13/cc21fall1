@@ -1,0 +1,123 @@
+#Low-key ML packages in R
+#Author - Vedant Kumar and Siddhant Kumar
+
+#Part 1 - Nuralnet Package in R
+
+```{r}
+# install package
+install.packages("neuralnet")
+library("neuralnet")
+```
+
+```{r}
+# creating training data set
+weight=c(120,80,55,100,75,60)
+height=c(150,165,155,175,145,170)
+obese=c(1,0,0,1,1,0)
+
+df=data.frame(weight,height,obese)
+```
+
+```{r}
+# fit neural network
+nn=neuralnet(obese~weight + height,data=df, hidden=3,act.fct = "logistic",
+             linear.output = FALSE)
+
+# - obese~weight + height, Placed is label(dependent variable) and 
+#weight and height are features (independent variable).
+# - df is dataframe,
+# - hidden = 3: represents single layer with 3 neurons.
+# - act.fct = "logistic" is the activation function
+```
+
+```{r}
+# plot neural network
+plot(nn)
+```
+
+```{r}
+#prepare a test data
+weight=c(130,90)
+height=c(130,185)
+df_test=data.frame(weight,height)
+```
+
+```{r}
+## Prediction using neural network
+Predict=compute(nn,df_test)
+prob = Predict$net.result
+pred = ifelse(prob>0.5, 1, 0)
+print(pred)
+```
+
+#Part 1 - quantmod Package in R
+
+```{r}
+#install packages
+install.packages("quantmod")
+library(quantmod) 
+```
+
+```{r}
+#download the price data for Apple Inc.
+getSymbols("AAPL")
+```
+
+```{r}
+#add parameters to the getSymbols() function and view the data using the head() function.
+getSymbols("AAPL",
+           from = "2016/12/31",
+           to = "2018/12/31",
+           periodicity = "daily")
+
+head(AAPL)
+
+```
+
+```{r}
+#Using financial data from multiple organisations using lapply()
+stocks <-lapply(c("AAPL", "GOOG"), function(x) {getSymbols(x, 
+                                                             from = "2016/12/31", 
+                                                             to = "2018/12/31",
+                                                             periodicity = "daily",
+                                                             auto.assign=FALSE)} )
+```
+
+```{r}
+
+#View the data in line and candlesticks charts
+names(stocks) <- c("AAPL", "GOOG")
+
+head(stocks$AAPL)
+
+chart_Series(AAPL)
+
+chartSeries(stocks$AAPL,
+            type="line",
+            subset='2017',
+            theme=chartTheme('white'))
+
+
+```
+
+```{r}
+chartSeries(stocks$AAPL,
+            type="candlesticks",
+            subset='2017-05',
+            theme=chartTheme('white'))
+
+```
+
+```{r}
+#calculation of some common financial metrics
+seriesHi(stocks$AAPL)
+```
+
+```{r}
+seriesLo(stocks$AAPL)
+```
+
+
+
+
+
