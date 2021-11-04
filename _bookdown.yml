@@ -9,4 +9,4 @@ language:
 # Note: in order for the part headers to appear in the rendered book, the part header information must be included in the first chapter of the part. The comments here are just for reference; they do not create parts.
 
 # Chapter ordering
-'chaoyingzheng:Neo4j_to_R',
+'neo4j_to_r.Rmd',
