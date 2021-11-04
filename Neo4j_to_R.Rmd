@@ -14,7 +14,7 @@ output: html_document
   In the GOT databse, each node is a character, which all have the same label, named `charaters`, and same properties, `name` and `id`. Characters (nodes) are connected by different edges: "parents", "siblings", "killed", "allies", etc. Figure 1 shows partial graph of the GOT databse.
 
 
-![Figure 1: graph database visualize in Neo4j](introduction.png)
+![Figure 1: graph database visualize in Neo4j](resources/introduction.png)
 
 
 ### 2. Installation
@@ -36,7 +36,7 @@ install.packages("neo4r")
 ### 3. Connection
   After starting the graph database on Neo4j, open any brower and go to the default url (http://localhost:7474). Neo4j may require to enter the user and password for authentication, which is shown in Figure 2. All these information will repeat as the following code to connect RStudio with Neo4j. 
 
-![Figure 2: Neo4j local sign in page](connection.png)
+![Figure 2: Neo4j local sign in page](resources/connection.png)
 
 ```{r}
 library(neo4r)
