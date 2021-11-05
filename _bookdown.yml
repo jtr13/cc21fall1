@@ -26,6 +26,7 @@ rmd_files: [
   # Part: Tutorials
   'multithreading_crawler_frame.Rmd', #contains PART header
   'r_regress_classify.Rmd',
+  'graph_animation.Rmd',
   
   # Part: Workshops
   
