@@ -16,7 +16,7 @@ rmd_files: [
   'instructions.Rmd',
   'sample_project.Rmd',
 
-  #Part: Data Visualizations
+  # Part: Data Visualizations
 
   # Part: Cheatsheets
   'r_vs_python_visualization.Rmd', # contains PART header
@@ -24,12 +24,12 @@ rmd_files: [
   
  
   # Part: Tutorials
-  'multithreading_crawler_frame.Rmd', #contains PART header
+  'multithreading_crawler_frame.Rmd', # contains PART header
   'r_regress_classify.Rmd',
   'tibble_vs_data_frame.Rmd',
   
   # Part: Workshops
-  'ds_product_cycles_in_enterprises.Rmd', 
+  'ds_product_cycles_in_enterprises.Rmd', # contains PART header
   
   # Part: Appendices
   'appendix_initial_setup.Rmd', # contains PART header
