@@ -32,7 +32,6 @@ rmd_files: [
   'r_regress_classify.Rmd',
   'tibble_vs_data_frame.Rmd',
   'introduction_to_time_series.Rmd',
-  'deep_learning_with_r.Rmd',
   
   # Part: Workshops
   'ds_product_cycles_in_enterprises.Rmd', # contains PART header
