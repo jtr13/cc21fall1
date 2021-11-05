@@ -1,0 +1,337 @@
+---
+title: "Dashboard"
+output: 
+  flexdashboard::flex_dashboard:
+    orientation: columns
+    vertical_layout: fill
+runtime: shiny
+---
+
+```{r setup, include=FALSE}
+library(flexdashboard)
+library(shiny)
+library(rmarkdown)
+library(knitr)
+library(Hmisc)
+library(DT)
+
+library(data.table)
+library(RColorBrewer)
+assignInNamespace("cedta.override", c(data.table:::cedta.override,"rmarkdown"), "data.table")
+opts_chunk$set(echo = FALSE, comment="", warning = FALSE, message = FALSE, tidy.opts=list(width.cutoff=55), tidy = TRUE)
+```
+
+```{r source_functions}
+source("constants.R")
+```
+
+```{r}
+dat <- as.data.table(formulaic::snack.dat)
+```
+
+```{r constants}
+dat[, eval(satisfaction.name) := get(satisfaction.name) / 10]
+
+unique.age.groups <- dat[, sort(unique(get(age.group.name)))]
+unique.genders <- dat[, sort(unique(get(gender.name)))]
+unique.income.groups <- dat[, sort(unique(get(income.group.name)))]
+unique.regions <- dat[, sort(unique(get(region.name)))]
+unique.personas <- dat[, sort(unique(get(persona.name)))]
+
+unique.products <- dat[, unique(get(product.name))]
+
+#categorical respondent variables
+cat.respondent.variables <- c(age.group.name, gender.name, income.group.name, region.name, persona.name)
+#continuous respondent variables
+con.respondent.variables <- c(age.name,income.name)
+#states of engagement
+states.of.engagement <- c(awareness.name, consideration.name, consumption.name, satisfaction.name, advocacy.name)
+
+bp.traits <- names(dat)[grep(pattern = bp.pattern, x = names(dat))]
+
+dat[, "Brand Perception" := (BP_For_Me_0_10 + BP_Fits_Budget_0_10 + BP_Tastes_Great_0_10 + BP_Good_To_Share_0_10 
+                              + BP_Like_Logo_0_10 + BP_Special_Occasions_0_10 + BP_Everyday_Snack_0_10 + BP_Healthy_0_10 
+                              + BP_Delicious_0_10 + BP_Right_Amount_0_10 + BP_Relaxing_0_10)/length(bp.traits)]
+```
+
+```{r functions}
+# If x is numeric, round the values of x to the specified number of digits.
+round.numerics <- function(x, digits){
+  if(is.numeric(x)){
+    x <- round(x = x, digits = digits)
+  }
+  return(x)
+}
+```
+
+
+Introduction
+=====================================  
+Column {.sidebar}
+-------------------------------------
+### Description of Application
+
+This tool contains a wide variety of analysis regarding a mobile phone survey data. Each tab represents an insightful analysis on multiple aspects of the data. 
+
+Click on the tabs to see different reports.
+
+Column
+-------------------------------------
+### Number of Respondents in the Survey
+
+```{r}
+respondents <- nrow(dat)
+valueBox(respondents)
+```
+
+### Number of Products in the Survey
+```{r}
+products <- length(unique.products)
+valueBox(products)
+```
+
+### Number of Traits Rated in the Survey
+```{r}
+ntrait <- length(bp.traits)+length(states.of.engagement)
+valueBox(ntrait)
+```
+
+Respondent Analysis
+=====================================
+
+Column {.sidebar}
+-------------------------------------
+```{r}
+inputPanel(selectInput(inputId = "respondent_variable",
+                       label = "Select Categorical Variable:",
+                       choices = cat.respondent.variables,
+                       selected = cat.respondent.variables[1]),
+           checkboxInput(inputId = "product_info_decreasing",
+                         label = "Sorted",
+                         value=FALSE),
+           checkboxInput(inputId = "respondent_show_count",
+                         label = "Show Count",
+                         value=FALSE))
+
+inputPanel(selectInput(inputId = "respondent_con_variable",
+                       label = "Select Continuous Variable:",
+                       choices = con.respondent.variables,
+                       selected = con.respondent.variables[1]),
+           sliderInput(inputId = "age_bin_width",
+                       label = "Change Bin Width for Age",
+                       min = 0, max = 100, value = 1, step = 1),
+           sliderInput(inputId = "income_bin_width",
+                       label = "Change Bin Width for Income",
+                       min = 0, max = 7500, value = 2, step = 1)
+)
+```
+
+Column
+-------------------------------------
+### Distribution of Categorical Variable
+
+```{r}
+renderPlot({
+  
+  tab <- unique(dat[,.('id' = `User ID`, 'variable' = get(input$respondent_variable))])
+  tab <- tab[,.(count = .N), by = variable]
+  
+  p <- ggplot(tab, aes(x = variable, y = count, fill = variable)) +
+    geom_col() +
+    xlab("") +
+    ylab("Count") +
+    scale_fill_brewer(palette = "Blues")
+  
+  p2 <- ggplot(tab, aes(x = reorder(variable,(-count)), y = count, fill = variable)) +
+    geom_col() +
+    xlab("") +
+    ylab("Count") +
+    scale_fill_brewer(palette = "Blues")
+    p2+geom_text(aes(label = count),vjust=-0.5)
+  
+  if(input$product_info_decreasing == FALSE && input$respondent_show_count == FALSE){
+    p
+  }else if(input$product_info_decreasing == FALSE && input$respondent_show_count == TRUE){
+    p+ geom_text(aes(label = count),vjust=-0.5)
+  }else if(input$product_info_decreasing == TRUE && input$respondent_show_count == FALSE){
+    p2
+  }else{
+    p2+geom_text(aes(label = count),vjust=-0.5)
+  }
+})
+```
+
+
+Column
+-------------------------------------
+### Distribution of Continuous Variable
+
+```{r out.width='80%'}
+renderPlot({
+  
+  tab <- unique(dat[,.("id" = `User ID`, "variable"= get(input$respondent_con_variable))])
+  
+  if(input$respondent_con_variable == "Age"){
+    p <- ggplot(tab, aes(x = variable))+
+    geom_histogram(color = "grey", fill="lightblue", binwidth = input$age_bin_width)+
+    xlab("")+
+    ylab("Frequency")
+    p
+  }else if(input$respondent_con_variable == "Income"){
+    p <- ggplot(tab, aes(x = variable))+
+      geom_histogram(color = "grey", fill="lightblue", binwidth = input$income_bin_width)+
+      xlab("")+
+      ylab("Frequency")
+    p
+  }
+})
+```
+
+Segmented Outcomes
+=====================================
+Column {.sidebar data-width=300}
+-------------------------------------
+```{r}
+inputPanel(
+  selectInput(inputId="engagement_variable",
+              label = "State of Engagement:", 
+              choices = states.of.engagement, 
+              selected = states.of.engagement[1]),
+  selectInput(inputId="em_age_group", 
+              label = "Age", 
+              choices = unique.age.groups, 
+              selected = unique.age.groups, 
+              multiple = TRUE),
+  selectInput(inputId = "em_gender", 
+              label = "Gender", 
+              choices = unique.genders, 
+              selected = unique.genders, 
+              multiple = TRUE),
+  selectInput(inputId = "em_income_group", 
+              label = "Income", 
+              choices = unique.income.groups, 
+              selected = unique.income.groups, 
+              multiple = TRUE),
+  selectInput(inputId = "em_region", 
+              label = "Region", 
+              choices = unique.regions, 
+              selected = unique.regions, 
+              multiple = TRUE),
+  selectInput(inputId = "em_persona", 
+              label = "Persona", 
+              choices = unique.personas, 
+              selected = unique.personas, 
+              multiple = TRUE),
+  sliderInput(inputId = "how_many_products_to_display", 
+              label = "How many products to display", 
+              min = 0, max = length(unique.products), value = 5, step = 1),
+  sliderInput(inputId = "angle_of_label", 
+              label = "Rotate Label", 
+              min = 0, max = 90, value = 0, step = 5)
+)
+```
+
+Column {data-width=1000}
+-------------------------------------
+```{r}
+renderPlot({
+  
+  tab <- setorderv(x = dat[get(age.group.name) %in% input$em_age_group 
+                & get(gender.name) %in% input$em_gender 
+                & get(income.group.name) %in% input$em_income_group 
+                & get(region.name) %in% input$em_region 
+                & get(persona.name) %in% input$em_persona, 
+             .("Rate %" = round.numerics(mean(get(input$engagement_variable)*100, na.rm = TRUE),2)), 
+             by = Product],
+                    cols = c("Rate %"),
+                    order = c(-1))[1:input$how_many_products_to_display]
+
+  ggplot(tab, aes(x = reorder(get(product.name), -`Rate %`),  y = `Rate %`, fill = get(product.name))) +
+    geom_bar(stat = "identity",fill="lightblue") +
+    xlab("") +
+    ylab("Percentage") +
+    #theme(axis.text.x = element_text(angle = 15)) +
+    #scale_fill_discrete(name = "Persona") +
+    #scale_x_discrete(labels = NULL) +
+    geom_text(aes(label=as.character(paste(`Rate %`,"%"))), vjust=-0.5)+
+    theme(axis.text.x=element_text(angle=input$angle_of_label, hjust=1))
+
+})
+```
+
+
+```{r}
+renderDataTable({
+  
+  tab <- setorderv(x = dat[get(age.group.name) %in% input$em_age_group
+                           & get(gender.name) %in% input$em_gender
+                           & get(income.group.name) %in% input$em_income_group
+                           & get(region.name) %in% input$em_region
+                           & get(persona.name) %in% input$em_persona,
+                           .("Rate %" = round.numerics(mean(get(input$engagement_variable)*100, na.rm = TRUE),2)),
+                           by = Product],
+                   cols = c("Rate %"),
+                   order = c(-1))[1:input$how_many_products_to_display]  
+
+  datatable(tab)
+  
+})
+```
+
+Gaps in Outcomes
+===================================== 
+Row {data-height=300}
+-------------------------------------
+```{r}
+inputPanel(
+  selectInput(inputId="first_outcome", 
+              label = "First Outcome:", 
+              choices = states.of.engagement, 
+              selected = states.of.engagement[1]),
+  selectInput(inputId="second_outcomr", 
+              label = "Second Outcome", 
+              choices = states.of.engagement, 
+              selected = states.of.engagement[2]),
+  sliderInput(inputId = "how_many_products_to_display3", 
+              label = "How many products to display", 
+              min = 0, max = length(unique.products), value = 5, step = 1),
+  sliderInput(inputId = "display_percentages", 
+              label = "Display Percentages", 
+              min = 0, max = 10, value = 2, step = 1),
+  checkboxInput(inputId = "respondent_show_percentages2", 
+                label = "Show Percentages", 
+                value = TRUE)
+)
+```
+
+```{r}
+renderPlot({
+  
+  tab <- dat[,.(Awareness = mean(get(awareness.name),na.rm = TRUE),
+                Consideration = mean(get(consideration.name),na.rm = TRUE),
+                Consumption = mean(get(consumption.name),na.rm = TRUE),
+                Satisfaction = mean(get(satisfaction.name),na.rm = TRUE),
+                Advocacy = mean(get(advocacy.name),na.rm = TRUE)),
+             by = Product]
+
+  
+  tab <- setorderv(x = tab[,.(Product = get(product.name), difference = round.numerics((get(input$first_outcome) - get(input$second_outcomr))*100,
+                                                                         input$display_percentages))],
+                   cols = c("difference"), order = c(-1))[1:input$how_many_products_to_display3]
+  
+  tab <- tab[, eval("judge") := difference < 0]
+
+  
+  p <- ggplot(tab, aes(x = reorder(Product, -difference), y = difference, fill = judge)) +
+    geom_bar(stat = "identity") +
+    xlab("") +
+    ylab("Difference") + scale_fill_manual(values = c("#2166AC","#B2182B"), guide = FALSE)
+  
+  if(input$respondent_show_percentages2 == TRUE){
+    p + geom_text(aes(label=as.character(paste(difference,"%"))), vjust=-0.5) 
+  } else {
+    p
+  }
+
+})
+```
