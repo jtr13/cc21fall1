@@ -1,4 +1,4 @@
-# rvsPython_basic_data_wrangling
+# R vs Python Basic Data Wrangling
 
 Yihao Gao
 

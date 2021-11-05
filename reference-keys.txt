@@ -55,7 +55,7 @@ add-a-new-row-to-the-dataframe
 logsquare-root-cube-root-transformation-in-r
 changing-the-dataframe-dimensions-from-wide-to-long
 replace-na-with-a-specific-value
-rvspython_basic_data_wrangling
+r-vs-python-basic-data-wrangling
 multithreading-crawler-frame
 regression-and-classification-in-r
 libraries-and-warnings
