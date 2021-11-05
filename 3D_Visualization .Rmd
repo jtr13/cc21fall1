@@ -1,4 +1,4 @@
-3D visualization: shinyaframe introduction and tutorial
+# 3D visualization: shinyaframe introduction and tutorial
 
 Zhaoyu Wu
 
@@ -22,7 +22,7 @@ alt="IMAGE ALT TEXT HERE" width="240" height="180" border="10" /></a>
 
 In R language, we can also make 3D data visualization using shinyaframe package. Package Shinyaframe makes R data available in Web-based virtual reality experiences for immersive, cross-platform data visualizations. Includes the 'gg-aframe' JavaScript package for a Grammar of Graphics declarative HTML syntax to create 3-dimensional visualizations. (https://www.rdocumentation.org/packages/shinyaframe/versions/1.0.1/topics/shinyaframe)
 
-# The following packages are necessary for the 3D visualization in R
+The following packages are necessary for the 3D visualization in R
 
 ```{r}
 library(shiny)
