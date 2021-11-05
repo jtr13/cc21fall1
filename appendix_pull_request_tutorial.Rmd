@@ -77,19 +77,43 @@ Your job for this pull request is done for now. Once contributors fix their requ
 
 If all is good to go, it's time to merge the pull request. There are several steps. 
 
-### Add chapter filename to `_bookdown.yml` in PR's `branch`
+<!-- ### Add chapter filename to `_bookdown.yml` in PR's `branch` -->
+### Steps to Merge the PR
+<!-- - Open the `_bookdown.yml` file. -->
+- Go to the main branch of our project (jtr13/cc21fall1) and open the `_bookdown.yml` file
 
-- To access the PR branch:
+- Copy the entire rmd_files section. It would look something like this
+`rmd_files: [
+'index.Rmd', # must be first chapter
+'assignment.Rmd',
+....,
+....,
+]`
+
+<!-- - Open the branch of the submitted PR and open their _bookdown.yml file. -->
+- Open the branch of the submitted PR following these steps:
+
++ To access the PR branch:
 
 <img src="resources/tutorial_pull_request_mergers/3.png" width="700">
 
-- Make sure you are on the PR branch by checking that the PR branch name is shown (not `main`):
++ Make sure you are on the PR branch by checking that the PR branch name is shown (not `main`):
 
 <img src="resources/tutorial_pull_request_mergers/4.png" width="700">
 
-- Open the `_bookdown.yml` file.
+- Remove their rmd_files: [] section and paste the one which we copied from the main branch of our project.
 
-- **delete everything in the file beginning with `rmd_files: [` and then add the name of the new file in single quotes followed by a comma:**
+- Add the name of the new file in single quotes followed by a comma under the labelled section (eg. Cheatsheets, Tutorials etc).
+
+- Save the edited version.
+
+- Come back to the PR.
+
+- Tag the PR Assigners so that they can review and check the final version.
+
+- Once they review it, they will tag the assigned person to proceed forward with the merge process.
+
+<!-- - **delete everything in the file beginning with `rmd_files: [` and then add the name of the new file in single quotes followed by a comma:**
 
 <img src="resources/tutorial_pull_request_mergers/delete_most_of_bookdown_yml.png" width="700">
 
@@ -101,7 +125,7 @@ Why? Because it will be easier to fix the merge conflicts this way. (A better wa
 
 <img src="resources/tutorial_pull_request_mergers/resolve_conflicts.png" width="700">
 
-- Cut the new filename and paste it into the proper location. Then delete the lines with `<<<<<<< xxxx`, `=======` and `>>>>>>>> main`. In short, the file should look correct when you're done. Click the "Marked as resolved" button and then the green "Commit merge" button.
+- Cut the new filename and paste it into the proper location. Then delete the lines with `<<<<<<< xxxx`, `=======` and `>>>>>>>> main`. In short, the file should look correct when you're done. Click the "Marked as resolved" button and then the green "Commit merge" button. -->
 
 ### PR Leaders only: Add part names to `.Rmd` for every first article in part
 
