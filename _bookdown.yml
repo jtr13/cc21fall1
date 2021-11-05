@@ -30,6 +30,7 @@ rmd_files: [
   'multithreading_crawler_frame.Rmd', # contains PART header
   'r_regress_classify.Rmd',
   'tibble_vs_data_frame.Rmd',
+  'introduction_to_time_series.Rmd',
   
   # Part: Workshops
   'ds_product_cycles_in_enterprises.Rmd', # contains PART header
