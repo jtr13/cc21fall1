@@ -44,7 +44,7 @@ Follow the steps in this [link](https://tensorflow.rstudio.com/installation/){ta
 ### Step 2: Read and explore data
 
 ```{r}
-df <- read.csv("resources/deep_learning_with_r/IMDB Dataset.csv")
+df <- read.csv("resources/deep_learning_with_r/imdb_dataset_one_fifth.csv")
 str(df)
 ```
 
@@ -108,7 +108,7 @@ To check the vocabulary, uncomment the following code and run it.
 # get_vocabulary(text_vectorization)
 ```
 
-Following is the example of how the layer transforms the input
+Following is the example of how the layer transforms the input.
 
 ```{r}
 text_vectorization(matrix(df$review[1], ncol = 1))
