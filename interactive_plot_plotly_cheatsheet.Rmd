@@ -135,7 +135,7 @@ p
 
 ```
 
-Interactive network above we can rotate, zoom in, and zoom out the network and see it as a 3D layout. Compared to a static network, interactive network has a much better looking because when data gets bigger, it will avoid overlapping of links .
+Interactive network above we can rotate, zoom in, and zoom out the network and see it as a 3D layout. Compared to a static network, interactive network has a much better looking because when data gets bigger, it will avoid overlapping of links.
 
 ## Reference:
 
