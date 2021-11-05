@@ -28,6 +28,7 @@ rmd_files: [
   'waffle_cheatsheet.Rmd',
   'data_transformation_and_exploration_cheatsheet.Rmd',
   'r_vs_python_basic_data_wrangling.Rmd',
+  'cheatsheet_tidyverse.Rmd',
  
   # Part: Tutorials
   'multithreading_crawler_frame.Rmd', # contains PART header
@@ -45,5 +46,4 @@ rmd_files: [
   'appendix_pull_request_tutorial.Rmd'
 
 ]
-
 
