@@ -30,7 +30,7 @@ Chaoying Zheng
 knitr::opts_chunk$set(warning = FALSE, message = FALSE)
 ```
 
-install.packages("neo4r")
+<!-- install.packages("neo4r") -->
 
 
 ### Connection
