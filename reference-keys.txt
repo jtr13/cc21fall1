@@ -53,6 +53,12 @@ tibbles-work-well-with-ggplot2-just-like-data-frames.
 tibble-5
 data-frame-5
 works-cited
+introduction-to-time-series
+motivation
+stationary-time-series
+holtwinters-model
+exponential-smooting
+arima-model
 data-science-product-cycles-in-enterprises
 github-initial-setup
 create-new-repo
