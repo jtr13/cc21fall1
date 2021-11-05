@@ -28,6 +28,7 @@ rmd_files: [
   'waffle_cheatsheet.Rmd',
   'data_transformation_and_exploration_cheatsheet.Rmd',
   'r_vs_python_basic_data_wrangling.Rmd',
+  'tidyverse_cheatsheet.Rmd',
   'cheatsheet_tidyverse.Rmd',
  
   # Part: Tutorials
@@ -37,6 +38,7 @@ rmd_files: [
   'introduction_to_time_series.Rmd',
   'vipul_cc_edav_kickstart_r.Rmd',
   #'caret_machine_learning_tutorial.Rmd',
+
   
   # Part: Workshops
   'ds_product_cycles_in_enterprises.Rmd', # contains PART header
