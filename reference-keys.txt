@@ -72,7 +72,7 @@ check-.rmd-filename
 check-.rmd-file-contents
 request-changes
 merge-the-pull-request
-add-chapter-filename-to-_bookdown.yml-in-prs-branch
+steps-to-merge-the-pr
 pr-leaders-only-add-part-names-to-.rmd-for-every-first-article-in-part
 merge-pr-and-leave-a-comment
 check-updated-version

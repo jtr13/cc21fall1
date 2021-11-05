@@ -144,12 +144,20 @@
 <span class="header-section-number">13.7</span> Merge the pull request<a class="anchor" aria-label="anchor" href="#merge-the-pull-request"><i class="fas fa-link"></i></a>
 </h2>
 <p>If all is good to go, it’s time to merge the pull request. There are several steps.</p>
-<div id="add-chapter-filename-to-_bookdown.yml-in-prs-branch" class="section level3">
+<!-- ### Add chapter filename to `_bookdown.yml` in PR's `branch` -->
+<div id="steps-to-merge-the-pr" class="section level3">
 <h3>
-<span class="header-section-number">13.7.1</span> Add chapter filename to <code>_bookdown.yml</code> in PR’s <code>branch</code><a class="anchor" aria-label="anchor" href="#add-chapter-filename-to-_bookdown.yml-in-prs-branch"><i class="fas fa-link"></i></a>
+<span class="header-section-number">13.7.1</span> Steps to Merge the PR<a class="anchor" aria-label="anchor" href="#steps-to-merge-the-pr"><i class="fas fa-link"></i></a>
 </h3>
+<!-- - Open the `_bookdown.yml` file. -->
 <ul>
-<li>To access the PR branch:</li>
+<li><p>Go to the main branch of our project (jtr13/cc21fall1) and open the <code>_bookdown.yml</code> file</p></li>
+<li><p>Copy the entire rmd_files section. It would look something like this
+<code>rmd_files: [ 'index.Rmd', # must be first chapter 'assignment.Rmd', ...., ...., ]</code></p></li>
+</ul>
+<!-- - Open the branch of the submitted PR and open their _bookdown.yml file. --><ul>
+<li><p>Open the branch of the submitted PR following these steps:</p></li>
+<li><p>To access the PR branch:</p></li>
 </ul>
 <div class="inline-figure"><img src="resources/tutorial_pull_request_mergers/3.png" width="700"></div>
 <ul>
@@ -157,19 +165,26 @@
 </ul>
 <div class="inline-figure"><img src="resources/tutorial_pull_request_mergers/4.png" width="700"></div>
 <ul>
-<li><p>Open the <code>_bookdown.yml</code> file.</p></li>
-<li><p><strong>delete everything in the file beginning with <code>rmd_files: [</code> and then add the name of the new file in single quotes followed by a comma:</strong></p></li>
-</ul>
-<div class="inline-figure"><img src="resources/tutorial_pull_request_mergers/delete_most_of_bookdown_yml.png" width="700"></div>
-<p>Why? Because it will be easier to fix the merge conflicts this way. (A better way to do this is to merge main into the PR branch <em>before</em> adding the new file but this can’t be done on GitHub. If there’s interest I will explain how to do this locally.)</p>
-<ul>
+<li><p>Remove their rmd_files: [] section and paste the one which we copied from the main branch of our project.</p></li>
+<li><p>Add the name of the new file in single quotes followed by a comma under the labelled section (eg. Cheatsheets, Tutorials etc).</p></li>
 <li><p>Save the edited version.</p></li>
-<li><p>Click the resolve conflicts button:</p></li>
+<li><p>Come back to the PR.</p></li>
+<li><p>Tag the PR Assigners so that they can review and check the final version.</p></li>
+<li><p>Once they review it, they will tag the assigned person to proceed forward with the merge process.</p></li>
 </ul>
-<div class="inline-figure"><img src="resources/tutorial_pull_request_mergers/resolve_conflicts.png" width="700"></div>
-<ul>
-<li>Cut the new filename and paste it into the proper location. Then delete the lines with <code>&lt;&lt;&lt;&lt;&lt;&lt;&lt; xxxx</code>, <code>=======</code> and <code>&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt; main</code>. In short, the file should look correct when you’re done. Click the “Marked as resolved” button and then the green “Commit merge” button.</li>
-</ul>
+<!-- - **delete everything in the file beginning with `rmd_files: [` and then add the name of the new file in single quotes followed by a comma:**
+
+<img src="resources/tutorial_pull_request_mergers/delete_most_of_bookdown_yml.png" width="700">
+
+Why? Because it will be easier to fix the merge conflicts this way. (A better way to do this is to merge main into the PR branch *before* adding the new file but this can't be done on GitHub. If there's interest I will explain how to do this locally.)
+
+- Save the edited version.
+
+- Click the resolve conflicts button:
+
+<img src="resources/tutorial_pull_request_mergers/resolve_conflicts.png" width="700">
+
+- Cut the new filename and paste it into the proper location. Then delete the lines with `<<<<<<< xxxx`, `=======` and `>>>>>>>> main`. In short, the file should look correct when you're done. Click the "Marked as resolved" button and then the green "Commit merge" button. -->
 </div>
 <div id="pr-leaders-only-add-part-names-to-.rmd-for-every-first-article-in-part" class="section level3">
 <h3>
@@ -217,7 +232,7 @@
 <li><a class="nav-link" href="#request-changes"><span class="header-section-number">13.6</span> Request changes</a></li>
 <li>
 <a class="nav-link" href="#merge-the-pull-request"><span class="header-section-number">13.7</span> Merge the pull request</a><ul class="nav navbar-nav">
-<li><a class="nav-link" href="#add-chapter-filename-to-_bookdown.yml-in-prs-branch"><span class="header-section-number">13.7.1</span> Add chapter filename to _bookdown.yml in PR’s branch</a></li>
+<li><a class="nav-link" href="#steps-to-merge-the-pr"><span class="header-section-number">13.7.1</span> Steps to Merge the PR</a></li>
 <li><a class="nav-link" href="#pr-leaders-only-add-part-names-to-.rmd-for-every-first-article-in-part"><span class="header-section-number">13.7.2</span> PR Leaders only: Add part names to .Rmd for every first article in part</a></li>
 <li><a class="nav-link" href="#merge-pr-and-leave-a-comment"><span class="header-section-number">13.7.3</span> Merge PR and leave a comment</a></li>
 <li><a class="nav-link" href="#check-updated-version"><span class="header-section-number">13.7.4</span> Check updated version</a></li>
