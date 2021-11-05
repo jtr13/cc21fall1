@@ -4,15 +4,15 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<title>Chapter 9 Regression and Classification in R | EDAV Fall 2021 Mon/Wed Community Contributions</title>
+<title>Chapter 10 Regression and Classification in R | EDAV Fall 2021 Mon/Wed Community Contributions</title>
 <meta name="author" content="the students of the class">
 <meta name="description" content="Parv Joshi This is a video tutorial, which can be found at https://youtu.be/J2rnDy9PB3E. The code I created as part of this video is given as the contents of this file, for reference. Here are the...">
 <meta name="generator" content="bookdown 0.24 with bs4_book()">
-<meta property="og:title" content="Chapter 9 Regression and Classification in R | EDAV Fall 2021 Mon/Wed Community Contributions">
+<meta property="og:title" content="Chapter 10 Regression and Classification in R | EDAV Fall 2021 Mon/Wed Community Contributions">
 <meta property="og:type" content="book">
 <meta property="og:description" content="Parv Joshi This is a video tutorial, which can be found at https://youtu.be/J2rnDy9PB3E. The code I created as part of this video is given as the contents of this file, for reference. Here are the...">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Chapter 9 Regression and Classification in R | EDAV Fall 2021 Mon/Wed Community Contributions">
+<meta name="twitter:title" content="Chapter 10 Regression and Classification in R | EDAV Fall 2021 Mon/Wed Community Contributions">
 <meta name="twitter:description" content="Parv Joshi This is a video tutorial, which can be found at https://youtu.be/J2rnDy9PB3E. The code I created as part of this video is given as the contents of this file, for reference. Here are the...">
 <!-- JS --><script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.6/clipboard.min.js" integrity="sha256-inc5kl9MA1hkeYUt+EC3BhlIgyp/2jDIyBLS6k3UxPI=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/fuse.js/6.4.6/fuse.js" integrity="sha512-zv6Ywkjyktsohkbp9bb45V6tEMoWhzFzXis+LrMehmJZZSys19Yxf1dopHx7WzIKxr5tK2dVcYmaCk2uqdjF4A==" crossorigin="anonymous"></script><script src="https://kit.fontawesome.com/6ecbd6c532.js" crossorigin="anonymous"></script><script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <link href="libs/bootstrap-4.6.0/bootstrap.min.css" rel="stylesheet">
@@ -47,16 +47,17 @@
 <li><a class="" href="r-vs.-python-visualization-cheatsheet.html"><span class="header-section-number">5</span> R vs. Python Visualization Cheatsheet</a></li>
 <li><a class="" href="rpackage-waffle-cheatsheet.html"><span class="header-section-number">6</span> Rpackage waffle cheatsheet</a></li>
 <li><a class="" href="r-cheatsheet-on-data-transforamtion-and-exploration.html"><span class="header-section-number">7</span> R cheatsheet on data transforamtion and exploration</a></li>
+<li><a class="" href="rvspython_basic_data_wrangling.html"><span class="header-section-number">8</span> rvsPython_basic_data_wrangling</a></li>
 <li class="book-part">Tutorials</li>
-<li><a class="" href="multithreading-crawler-frame.html"><span class="header-section-number">8</span> multithreading crawler frame</a></li>
-<li><a class="active" href="regression-and-classification-in-r.html"><span class="header-section-number">9</span> Regression and Classification in R</a></li>
-<li><a class="" href="tibble-vs.-dataframe.html"><span class="header-section-number">10</span> Tibble vs. DataFrame</a></li>
-<li><a class="" href="introduction-to-time-series.html"><span class="header-section-number">11</span> Introduction to Time Series</a></li>
+<li><a class="" href="multithreading-crawler-frame.html"><span class="header-section-number">9</span> multithreading crawler frame</a></li>
+<li><a class="active" href="regression-and-classification-in-r.html"><span class="header-section-number">10</span> Regression and Classification in R</a></li>
+<li><a class="" href="tibble-vs.-dataframe.html"><span class="header-section-number">11</span> Tibble vs. DataFrame</a></li>
+<li><a class="" href="introduction-to-time-series.html"><span class="header-section-number">12</span> Introduction to Time Series</a></li>
 <li class="book-part">Workshops</li>
-<li><a class="" href="data-science-product-cycles-in-enterprises.html"><span class="header-section-number">12</span> Data Science Product Cycles in Enterprises</a></li>
+<li><a class="" href="data-science-product-cycles-in-enterprises.html"><span class="header-section-number">13</span> Data Science Product Cycles in Enterprises</a></li>
 <li class="book-part">Appendices</li>
-<li><a class="" href="github-initial-setup.html"><span class="header-section-number">13</span> Github initial setup</a></li>
-<li><a class="" href="tutorial-for-pull-request-mergers.html"><span class="header-section-number">14</span> Tutorial for pull request mergers</a></li>
+<li><a class="" href="github-initial-setup.html"><span class="header-section-number">14</span> Github initial setup</a></li>
+<li><a class="" href="tutorial-for-pull-request-mergers.html"><span class="header-section-number">15</span> Tutorial for pull request mergers</a></li>
 </ul>
 
         <div class="book-extra">
@@ -66,7 +67,7 @@
 </div>
   </header><main class="col-sm-12 col-md-9 col-lg-7" id="content"><div id="regression-and-classification-in-r" class="section level1">
 <h1>
-<span class="header-section-number">9</span> Regression and Classification in R<a class="anchor" aria-label="anchor" href="#regression-and-classification-in-r"><i class="fas fa-link"></i></a>
+<span class="header-section-number">10</span> Regression and Classification in R<a class="anchor" aria-label="anchor" href="#regression-and-classification-in-r"><i class="fas fa-link"></i></a>
 </h1>
 <p>Parv Joshi</p>
 <p>This is a video tutorial, which can be found at <a href="https://youtu.be/J2rnDy9PB3E">https://youtu.be/J2rnDy9PB3E</a>. The code I created as part of this video is given as the contents of this file, for reference. Here are the links I used in my data set:</p>
@@ -83,7 +84,7 @@
 </ol>
 <div id="libraries-and-warnings" class="section level3">
 <h3>
-<span class="header-section-number">9.0.1</span> Libraries and Warnings<a class="anchor" aria-label="anchor" href="#libraries-and-warnings"><i class="fas fa-link"></i></a>
+<span class="header-section-number">10.0.1</span> Libraries and Warnings<a class="anchor" aria-label="anchor" href="#libraries-and-warnings"><i class="fas fa-link"></i></a>
 </h3>
 <div class="sourceCode" id="cb100"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="co"># Removing messages and warnings from knited version</span>
@@ -106,7 +107,7 @@
 </div>
 <div id="reading-data" class="section level3">
 <h3>
-<span class="header-section-number">9.0.2</span> Reading Data<a class="anchor" aria-label="anchor" href="#reading-data"><i class="fas fa-link"></i></a>
+<span class="header-section-number">10.0.2</span> Reading Data<a class="anchor" aria-label="anchor" href="#reading-data"><i class="fas fa-link"></i></a>
 </h3>
 <div class="sourceCode" id="cb101"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="co"># Importing the dataset</span>
@@ -118,7 +119,7 @@
 </div>
 <div id="data-preprocessing" class="section level3">
 <h3>
-<span class="header-section-number">9.0.3</span> Data Preprocessing<a class="anchor" aria-label="anchor" href="#data-preprocessing"><i class="fas fa-link"></i></a>
+<span class="header-section-number">10.0.3</span> Data Preprocessing<a class="anchor" aria-label="anchor" href="#data-preprocessing"><i class="fas fa-link"></i></a>
 </h3>
 <div class="sourceCode" id="cb102"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="co"># Mean Imputation for Missing Data</span>
@@ -152,7 +153,7 @@
 </div>
 <div id="regression" class="section level3">
 <h3>
-<span class="header-section-number">9.0.4</span> Regression<a class="anchor" aria-label="anchor" href="#regression"><i class="fas fa-link"></i></a>
+<span class="header-section-number">10.0.4</span> Regression<a class="anchor" aria-label="anchor" href="#regression"><i class="fas fa-link"></i></a>
 </h3>
 <div class="sourceCode" id="cb103"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="co"># Data </span>
@@ -730,7 +731,7 @@
 </div>
 <div id="classification" class="section level3">
 <h3>
-<span class="header-section-number">9.0.5</span> Classification<a class="anchor" aria-label="anchor" href="#classification"><i class="fas fa-link"></i></a>
+<span class="header-section-number">10.0.5</span> Classification<a class="anchor" aria-label="anchor" href="#classification"><i class="fas fa-link"></i></a>
 </h3>
 <div class="sourceCode" id="cb153"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="co"># Data</span>
@@ -1068,17 +1069,17 @@
 </div>
 </div>
   <div class="chapter-nav">
-<div class="prev"><a href="multithreading-crawler-frame.html"><span class="header-section-number">8</span> multithreading crawler frame</a></div>
-<div class="next"><a href="tibble-vs.-dataframe.html"><span class="header-section-number">10</span> Tibble vs. DataFrame</a></div>
+<div class="prev"><a href="multithreading-crawler-frame.html"><span class="header-section-number">9</span> multithreading crawler frame</a></div>
+<div class="next"><a href="tibble-vs.-dataframe.html"><span class="header-section-number">11</span> Tibble vs. DataFrame</a></div>
 </div></main><div class="col-md-3 col-lg-2 d-none d-md-block sidebar sidebar-chapter">
     <nav id="toc" data-toggle="toc" aria-label="On this page"><h2>On this page</h2>
       <ul class="nav navbar-nav"><li>
-<a class="nav-link" href="#regression-and-classification-in-r"><span class="header-section-number">9</span> Regression and Classification in R</a><ul class="nav navbar-nav">
-<li><a class="nav-link" href="#libraries-and-warnings"><span class="header-section-number">9.0.1</span> Libraries and Warnings</a></li>
-<li><a class="nav-link" href="#reading-data"><span class="header-section-number">9.0.2</span> Reading Data</a></li>
-<li><a class="nav-link" href="#data-preprocessing"><span class="header-section-number">9.0.3</span> Data Preprocessing</a></li>
-<li><a class="nav-link" href="#regression"><span class="header-section-number">9.0.4</span> Regression</a></li>
-<li><a class="nav-link" href="#classification"><span class="header-section-number">9.0.5</span> Classification</a></li>
+<a class="nav-link" href="#regression-and-classification-in-r"><span class="header-section-number">10</span> Regression and Classification in R</a><ul class="nav navbar-nav">
+<li><a class="nav-link" href="#libraries-and-warnings"><span class="header-section-number">10.0.1</span> Libraries and Warnings</a></li>
+<li><a class="nav-link" href="#reading-data"><span class="header-section-number">10.0.2</span> Reading Data</a></li>
+<li><a class="nav-link" href="#data-preprocessing"><span class="header-section-number">10.0.3</span> Data Preprocessing</a></li>
+<li><a class="nav-link" href="#regression"><span class="header-section-number">10.0.4</span> Regression</a></li>
+<li><a class="nav-link" href="#classification"><span class="header-section-number">10.0.5</span> Classification</a></li>
 </ul>
 </li></ul>
 
