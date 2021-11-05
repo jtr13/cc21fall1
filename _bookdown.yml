@@ -21,6 +21,7 @@ rmd_files: [
   #'neo4j_to_r.Rmd',
   #'icons_and_symbols_in_r.Rmd',
   'intro_lattice_tutorial.Rmd',
+  'graph_animation.Rmd',
 
   # Part: Cheatsheets
   'r_vs_python_visualization.Rmd', # contains PART header
@@ -33,6 +34,7 @@ rmd_files: [
   'r_regress_classify.Rmd',
   'tibble_vs_data_frame.Rmd',
   'introduction_to_time_series.Rmd',
+
   
   # Part: Workshops
   'ds_product_cycles_in_enterprises.Rmd', # contains PART header
