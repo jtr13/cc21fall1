@@ -18,7 +18,7 @@ rmd_files: [
   'sample_project.Rmd',
 
   # Part: Data Visualizations
-  'neo4j_to_r.Rmd',
+  #'neo4j_to_r.Rmd',
   'icons_and_symbols_in_r.Rmd',
 
   # Part: Cheatsheets
