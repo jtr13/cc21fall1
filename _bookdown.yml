@@ -10,6 +10,7 @@ language:
 
 # Chapter ordering
 
+
 rmd_files: [
   # Part: Introduction
   'index.Rmd', # must be first chapter
@@ -24,7 +25,7 @@ rmd_files: [
   # Part: Cheatsheets
   'r_vs_python_visualization.Rmd', # contains PART header
   'waffle_cheatsheet.Rmd',
-  
+  'data_transformation_and_exploration_cheatsheet.Rmd',
  
   # Part: Tutorials
   'multithreading_crawler_frame.Rmd', # contains PART header
@@ -40,3 +41,4 @@ rmd_files: [
   'appendix_pull_request_tutorial.Rmd'
 
 ]
+
