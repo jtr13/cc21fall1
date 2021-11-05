@@ -9,6 +9,7 @@ language:
 # Note: in order for the part headers to appear in the rendered book, the part header information must be included in the first chapter of the part. The comments here are just for reference; they do not create parts
 
 # Chapter ordering
+
 rmd_files: [
   # Part: Introduction
   'index.Rmd', # must be first chapter
@@ -28,6 +29,7 @@ rmd_files: [
   'data_transformation_and_exploration_cheatsheet.Rmd',
   'r_vs_python_basic_data_wrangling.Rmd',
   'tidyverse_cheatsheet.Rmd',
+  'cheatsheet_tidyverse.Rmd',
  
   # Part: Tutorials
   'multithreading_crawler_frame.Rmd', # contains PART header
@@ -35,7 +37,7 @@ rmd_files: [
   'tibble_vs_data_frame.Rmd',
   'introduction_to_time_series.Rmd',
   'vipul_cc_edav_kickstart_r.Rmd',
-
+  #'caret_machine_learning_tutorial.Rmd',
 
   
   # Part: Workshops
@@ -46,3 +48,4 @@ rmd_files: [
   'appendix_pull_request_tutorial.Rmd'
 
 ]
+
