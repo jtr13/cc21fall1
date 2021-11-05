@@ -4,15 +4,15 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<title>Chapter 8 R cheatsheet on data transforamtion and exploration | EDAV Fall 2021 Mon/Wed Community Contributions</title>
+<title>Chapter 9 R cheatsheet on data transforamtion and exploration | EDAV Fall 2021 Mon/Wed Community Contributions</title>
 <meta name="author" content="the students of the class">
 <meta name="description" content="Sai Krupa Jangala Few Pointers: The purpose of this cheatsheet is to describe all the basic data operations that we do when we start a new project. This also includes different types of data...">
 <meta name="generator" content="bookdown 0.24 with bs4_book()">
-<meta property="og:title" content="Chapter 8 R cheatsheet on data transforamtion and exploration | EDAV Fall 2021 Mon/Wed Community Contributions">
+<meta property="og:title" content="Chapter 9 R cheatsheet on data transforamtion and exploration | EDAV Fall 2021 Mon/Wed Community Contributions">
 <meta property="og:type" content="book">
 <meta property="og:description" content="Sai Krupa Jangala Few Pointers: The purpose of this cheatsheet is to describe all the basic data operations that we do when we start a new project. This also includes different types of data...">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Chapter 8 R cheatsheet on data transforamtion and exploration | EDAV Fall 2021 Mon/Wed Community Contributions">
+<meta name="twitter:title" content="Chapter 9 R cheatsheet on data transforamtion and exploration | EDAV Fall 2021 Mon/Wed Community Contributions">
 <meta name="twitter:description" content="Sai Krupa Jangala Few Pointers: The purpose of this cheatsheet is to describe all the basic data operations that we do when we start a new project. This also includes different types of data...">
 <!-- JS --><script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.6/clipboard.min.js" integrity="sha256-inc5kl9MA1hkeYUt+EC3BhlIgyp/2jDIyBLS6k3UxPI=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/fuse.js/6.4.6/fuse.js" integrity="sha512-zv6Ywkjyktsohkbp9bb45V6tEMoWhzFzXis+LrMehmJZZSys19Yxf1dopHx7WzIKxr5tK2dVcYmaCk2uqdjF4A==" crossorigin="anonymous"></script><script src="https://kit.fontawesome.com/6ecbd6c532.js" crossorigin="anonymous"></script><script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <link href="libs/bootstrap-4.6.0/bootstrap.min.css" rel="stylesheet">
@@ -44,21 +44,22 @@
 <li><a class="" href="github-submission-instructions.html"><span class="header-section-number">3</span> GitHub submission instructions</a></li>
 <li><a class="" href="sample-project.html"><span class="header-section-number">4</span> Sample project</a></li>
 <li><a class="" href="introduction-to-the-lattice-package.html"><span class="header-section-number">5</span> Introduction to the lattice package</a></li>
+<li><a class="" href="graph-animation-with-gganimate-and-after-effects.html"><span class="header-section-number">6</span> Graph animation with gganimate and After Effects</a></li>
 <li class="book-part">Cheatsheets</li>
-<li><a class="" href="r-vs.-python-visualization-cheatsheet.html"><span class="header-section-number">6</span> R vs. Python Visualization Cheatsheet</a></li>
-<li><a class="" href="rpackage-waffle-cheatsheet.html"><span class="header-section-number">7</span> Rpackage waffle cheatsheet</a></li>
-<li><a class="active" href="r-cheatsheet-on-data-transforamtion-and-exploration.html"><span class="header-section-number">8</span> R cheatsheet on data transforamtion and exploration</a></li>
-<li><a class="" href="r-vs-python-basic-data-wrangling.html"><span class="header-section-number">9</span> R vs Python Basic Data Wrangling</a></li>
+<li><a class="" href="r-vs.-python-visualization-cheatsheet.html"><span class="header-section-number">7</span> R vs. Python Visualization Cheatsheet</a></li>
+<li><a class="" href="rpackage-waffle-cheatsheet.html"><span class="header-section-number">8</span> Rpackage waffle cheatsheet</a></li>
+<li><a class="active" href="r-cheatsheet-on-data-transforamtion-and-exploration.html"><span class="header-section-number">9</span> R cheatsheet on data transforamtion and exploration</a></li>
+<li><a class="" href="r-vs-python-basic-data-wrangling.html"><span class="header-section-number">10</span> R vs Python Basic Data Wrangling</a></li>
 <li class="book-part">Tutorials</li>
-<li><a class="" href="multithreading-crawler-frame.html"><span class="header-section-number">10</span> Multithreading Crawler Frame</a></li>
-<li><a class="" href="regression-and-classification-in-r.html"><span class="header-section-number">11</span> Regression and Classification in R</a></li>
-<li><a class="" href="tibble-vs.-dataframe.html"><span class="header-section-number">12</span> Tibble vs. DataFrame</a></li>
-<li><a class="" href="introduction-to-time-series.html"><span class="header-section-number">13</span> Introduction to Time Series</a></li>
+<li><a class="" href="multithreading-crawler-frame.html"><span class="header-section-number">11</span> Multithreading Crawler Frame</a></li>
+<li><a class="" href="regression-and-classification-in-r.html"><span class="header-section-number">12</span> Regression and Classification in R</a></li>
+<li><a class="" href="tibble-vs.-dataframe.html"><span class="header-section-number">13</span> Tibble vs. DataFrame</a></li>
+<li><a class="" href="introduction-to-time-series.html"><span class="header-section-number">14</span> Introduction to Time Series</a></li>
 <li class="book-part">Workshops</li>
-<li><a class="" href="data-science-product-cycles-in-enterprises.html"><span class="header-section-number">14</span> Data Science Product Cycles in Enterprises</a></li>
+<li><a class="" href="data-science-product-cycles-in-enterprises.html"><span class="header-section-number">15</span> Data Science Product Cycles in Enterprises</a></li>
 <li class="book-part">Appendices</li>
-<li><a class="" href="github-initial-setup.html"><span class="header-section-number">15</span> Github initial setup</a></li>
-<li><a class="" href="tutorial-for-pull-request-mergers.html"><span class="header-section-number">16</span> Tutorial for pull request mergers</a></li>
+<li><a class="" href="github-initial-setup.html"><span class="header-section-number">16</span> Github initial setup</a></li>
+<li><a class="" href="tutorial-for-pull-request-mergers.html"><span class="header-section-number">17</span> Tutorial for pull request mergers</a></li>
 </ul>
 
         <div class="book-extra">
@@ -68,7 +69,7 @@
 </div>
   </header><main class="col-sm-12 col-md-9 col-lg-7" id="content"><div id="r-cheatsheet-on-data-transforamtion-and-exploration" class="section level1">
 <h1>
-<span class="header-section-number">8</span> R cheatsheet on data transforamtion and exploration<a class="anchor" aria-label="anchor" href="#r-cheatsheet-on-data-transforamtion-and-exploration"><i class="fas fa-link"></i></a>
+<span class="header-section-number">9</span> R cheatsheet on data transforamtion and exploration<a class="anchor" aria-label="anchor" href="#r-cheatsheet-on-data-transforamtion-and-exploration"><i class="fas fa-link"></i></a>
 </h1>
 <p>Sai Krupa Jangala</p>
 <p>Few Pointers:</p>
@@ -82,7 +83,7 @@
 </ul>
 <div id="required-packages" class="section level4">
 <h4>
-<span class="header-section-number">8.0.0.1</span> Required packages<a class="anchor" aria-label="anchor" href="#required-packages"><i class="fas fa-link"></i></a>
+<span class="header-section-number">9.0.0.1</span> Required packages<a class="anchor" aria-label="anchor" href="#required-packages"><i class="fas fa-link"></i></a>
 </h4>
 <p>These packages are most commonly in R and are used in the following cheatsheet. We will be using these packages for different purposes.</p>
 <div class="sourceCode" id="cb25"><pre class="downlit sourceCode r">
@@ -95,7 +96,7 @@
 </div>
 <div id="output-the-head-tail-and-sample-of-the-dataframe." class="section level4">
 <h4>
-<span class="header-section-number">8.0.0.2</span> Output the head, tail and sample of the dataframe.<a class="anchor" aria-label="anchor" href="#output-the-head-tail-and-sample-of-the-dataframe."><i class="fas fa-link"></i></a>
+<span class="header-section-number">9.0.0.2</span> Output the head, tail and sample of the dataframe.<a class="anchor" aria-label="anchor" href="#output-the-head-tail-and-sample-of-the-dataframe."><i class="fas fa-link"></i></a>
 </h4>
 <p>Head - will get the first 5 rows of the dataframe.</p>
 <div class="sourceCode" id="cb26"><pre class="downlit sourceCode r">
@@ -119,7 +120,7 @@
 </div>
 <div id="selection-of-only-a-few-columns-from-a-dataframe." class="section level4">
 <h4>
-<span class="header-section-number">8.0.0.3</span> Selection of only a few columns from a dataframe.<a class="anchor" aria-label="anchor" href="#selection-of-only-a-few-columns-from-a-dataframe."><i class="fas fa-link"></i></a>
+<span class="header-section-number">9.0.0.3</span> Selection of only a few columns from a dataframe.<a class="anchor" aria-label="anchor" href="#selection-of-only-a-few-columns-from-a-dataframe."><i class="fas fa-link"></i></a>
 </h4>
 <p>Select only restaurant, item and calorie columns from the fastfood dataset. Two variations are shown below.</p>
 <div class="sourceCode" id="cb30"><pre class="downlit sourceCode r">
@@ -154,7 +155,7 @@
 </div>
 <div id="get-the-column-names" class="section level4">
 <h4>
-<span class="header-section-number">8.0.0.4</span> Get the column names<a class="anchor" aria-label="anchor" href="#get-the-column-names"><i class="fas fa-link"></i></a>
+<span class="header-section-number">9.0.0.4</span> Get the column names<a class="anchor" aria-label="anchor" href="#get-the-column-names"><i class="fas fa-link"></i></a>
 </h4>
 <p>Generate all the column names in the data frame</p>
 <div class="sourceCode" id="cb35"><pre class="downlit sourceCode r">
@@ -167,7 +168,7 @@
 </div>
 <div id="drop-one-or-more-columns." class="section level4">
 <h4>
-<span class="header-section-number">8.0.0.5</span> Drop one or more columns.<a class="anchor" aria-label="anchor" href="#drop-one-or-more-columns."><i class="fas fa-link"></i></a>
+<span class="header-section-number">9.0.0.5</span> Drop one or more columns.<a class="anchor" aria-label="anchor" href="#drop-one-or-more-columns."><i class="fas fa-link"></i></a>
 </h4>
 <p>Drop columns <code>restaurant</code>, <code>item</code>, <code>calories</code> from the data. As we can observe, the above column names have been dropped.</p>
 <div class="sourceCode" id="cb37"><pre class="downlit sourceCode r">
@@ -180,7 +181,7 @@
 </div>
 <div id="transformation-using-the-transform-function-in-r" class="section level4">
 <h4>
-<span class="header-section-number">8.0.0.6</span> Transformation using the transform() function in R<a class="anchor" aria-label="anchor" href="#transformation-using-the-transform-function-in-r"><i class="fas fa-link"></i></a>
+<span class="header-section-number">9.0.0.6</span> Transformation using the transform() function in R<a class="anchor" aria-label="anchor" href="#transformation-using-the-transform-function-in-r"><i class="fas fa-link"></i></a>
 </h4>
 <p>Here we are creating a new dataframe by changing the speed column. We transformed it by multiplying with 100</p>
 <div class="sourceCode" id="cb39"><pre class="downlit sourceCode r">
@@ -208,7 +209,7 @@
 </div>
 <div id="conditional-transformation-in-r" class="section level4">
 <h4>
-<span class="header-section-number">8.0.0.7</span> Conditional Transformation in R<a class="anchor" aria-label="anchor" href="#conditional-transformation-in-r"><i class="fas fa-link"></i></a>
+<span class="header-section-number">9.0.0.7</span> Conditional Transformation in R<a class="anchor" aria-label="anchor" href="#conditional-transformation-in-r"><i class="fas fa-link"></i></a>
 </h4>
 <p>Transformation based on a condition. Here we are creating a new column called Grilled, which is assigned to Grilled if the item contains Grilled in it’s name else it is classified as Not Grilled.</p>
 <div class="sourceCode" id="cb43"><pre class="downlit sourceCode r">
@@ -226,7 +227,7 @@
 </div>
 <div id="add-a-new-column-to-the-dataframe-without-transform-function." class="section level4">
 <h4>
-<span class="header-section-number">8.0.0.8</span> Add a new column to the dataframe without <code>transform()</code> function.<a class="anchor" aria-label="anchor" href="#add-a-new-column-to-the-dataframe-without-transform-function."><i class="fas fa-link"></i></a>
+<span class="header-section-number">9.0.0.8</span> Add a new column to the dataframe without <code>transform()</code> function.<a class="anchor" aria-label="anchor" href="#add-a-new-column-to-the-dataframe-without-transform-function."><i class="fas fa-link"></i></a>
 </h4>
 <p>Here we added a new column called time.</p>
 <div class="sourceCode" id="cb45"><pre class="downlit sourceCode r">
@@ -243,7 +244,7 @@
 </div>
 <div id="get-all-the-unique-values-of-a-column-in-a-dataframe." class="section level4">
 <h4>
-<span class="header-section-number">8.0.0.9</span> Get all the unique values of a column in a dataframe.<a class="anchor" aria-label="anchor" href="#get-all-the-unique-values-of-a-column-in-a-dataframe."><i class="fas fa-link"></i></a>
+<span class="header-section-number">9.0.0.9</span> Get all the unique values of a column in a dataframe.<a class="anchor" aria-label="anchor" href="#get-all-the-unique-values-of-a-column-in-a-dataframe."><i class="fas fa-link"></i></a>
 </h4>
 <div class="sourceCode" id="cb47"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="va">data</span> <span class="op">&lt;-</span> <span class="fu">openintro</span><span class="fu">::</span><span class="va"><a href="https://openintrostat.github.io/openintro/reference/fastfood.html">fastfood</a></span>
@@ -253,7 +254,7 @@
 </div>
 <div id="using-the-filter-function-in-r.-different-logical-operators-can-be-used-to-filter-the-data." class="section level4">
 <h4>
-<span class="header-section-number">8.0.0.10</span> Using the filter function in R. Different logical operators can be used to filter the data.<a class="anchor" aria-label="anchor" href="#using-the-filter-function-in-r.-different-logical-operators-can-be-used-to-filter-the-data."><i class="fas fa-link"></i></a>
+<span class="header-section-number">9.0.0.10</span> Using the filter function in R. Different logical operators can be used to filter the data.<a class="anchor" aria-label="anchor" href="#using-the-filter-function-in-r.-different-logical-operators-can-be-used-to-filter-the-data."><i class="fas fa-link"></i></a>
 </h4>
 <p>Filter all the rows where mpg column value is 21.0</p>
 <div class="sourceCode" id="cb49"><pre class="downlit sourceCode r">
@@ -279,7 +280,7 @@
 </div>
 <div id="select-only-few-rows-in-a-column-based-on-a-condition-without-using-the-filter-function." class="section level4">
 <h4>
-<span class="header-section-number">8.0.0.11</span> Select only few rows in a column based on a condition without using the <code>filter()</code> function.<a class="anchor" aria-label="anchor" href="#select-only-few-rows-in-a-column-based-on-a-condition-without-using-the-filter-function."><i class="fas fa-link"></i></a>
+<span class="header-section-number">9.0.0.11</span> Select only few rows in a column based on a condition without using the <code>filter()</code> function.<a class="anchor" aria-label="anchor" href="#select-only-few-rows-in-a-column-based-on-a-condition-without-using-the-filter-function."><i class="fas fa-link"></i></a>
 </h4>
 <p>Here we are selecting only those rows where the restuarant name is subway</p>
 <div class="sourceCode" id="cb57"><pre class="downlit sourceCode r">
@@ -291,7 +292,7 @@
 </div>
 <div id="merge-two-dataframes" class="section level4">
 <h4>
-<span class="header-section-number">8.0.0.12</span> Merge two dataframes<a class="anchor" aria-label="anchor" href="#merge-two-dataframes"><i class="fas fa-link"></i></a>
+<span class="header-section-number">9.0.0.12</span> Merge two dataframes<a class="anchor" aria-label="anchor" href="#merge-two-dataframes"><i class="fas fa-link"></i></a>
 </h4>
 <p>Merging two dataframes based on column names. Authors dataframe and books dataframe have been merged by surname and name.</p>
 <div class="sourceCode" id="cb59"><pre class="downlit sourceCode r">
@@ -320,7 +321,7 @@
 </div>
 <div id="arrange-the-data-in-ascending-order-based-on-a-column" class="section level4">
 <h4>
-<span class="header-section-number">8.0.0.13</span> Arrange the data in ascending order based on a column<a class="anchor" aria-label="anchor" href="#arrange-the-data-in-ascending-order-based-on-a-column"><i class="fas fa-link"></i></a>
+<span class="header-section-number">9.0.0.13</span> Arrange the data in ascending order based on a column<a class="anchor" aria-label="anchor" href="#arrange-the-data-in-ascending-order-based-on-a-column"><i class="fas fa-link"></i></a>
 </h4>
 <div class="sourceCode" id="cb61"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="va">data</span> <span class="op">&lt;-</span> <span class="fu">openintro</span><span class="fu">::</span><span class="va"><a href="https://openintrostat.github.io/openintro/reference/fastfood.html">fastfood</a></span>
@@ -339,7 +340,7 @@
 </div>
 <div id="arrange-the-data-in-descending-order-based-on-a-column" class="section level4">
 <h4>
-<span class="header-section-number">8.0.0.14</span> Arrange the data in descending order based on a column<a class="anchor" aria-label="anchor" href="#arrange-the-data-in-descending-order-based-on-a-column"><i class="fas fa-link"></i></a>
+<span class="header-section-number">9.0.0.14</span> Arrange the data in descending order based on a column<a class="anchor" aria-label="anchor" href="#arrange-the-data-in-descending-order-based-on-a-column"><i class="fas fa-link"></i></a>
 </h4>
 <div class="sourceCode" id="cb63"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="co"># Arranging the data in descending order</span>
@@ -357,7 +358,7 @@
 </div>
 <div id="get-the-summary-of-a-column---mean-median-var-sd-etc" class="section level4">
 <h4>
-<span class="header-section-number">8.0.0.15</span> Get the summary of a column -&gt; mean, median, var, SD etc<a class="anchor" aria-label="anchor" href="#get-the-summary-of-a-column---mean-median-var-sd-etc"><i class="fas fa-link"></i></a>
+<span class="header-section-number">9.0.0.15</span> Get the summary of a column -&gt; mean, median, var, SD etc<a class="anchor" aria-label="anchor" href="#get-the-summary-of-a-column---mean-median-var-sd-etc"><i class="fas fa-link"></i></a>
 </h4>
 <p>This function gives us the Minimum value, 1st Quartile value, Median, Mean, 3rd Quartile value, Maximum value from a column in a data frame.</p>
 <div class="sourceCode" id="cb65"><pre class="downlit sourceCode r">
@@ -367,7 +368,7 @@
 </div>
 <div id="convert-all-the-values-in-the-column-to-upper-case." class="section level4">
 <h4>
-<span class="header-section-number">8.0.0.16</span> Convert all the values in the column to upper case.<a class="anchor" aria-label="anchor" href="#convert-all-the-values-in-the-column-to-upper-case."><i class="fas fa-link"></i></a>
+<span class="header-section-number">9.0.0.16</span> Convert all the values in the column to upper case.<a class="anchor" aria-label="anchor" href="#convert-all-the-values-in-the-column-to-upper-case."><i class="fas fa-link"></i></a>
 </h4>
 <div class="sourceCode" id="cb67"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="va">data</span><span class="op">$</span><span class="va">item</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/chartr.html">tolower</a></span><span class="op">(</span><span class="va">data</span><span class="op">$</span><span class="va">item</span><span class="op">)</span>
@@ -381,7 +382,7 @@
 </div>
 <div id="convert-all-the-values-in-the-column-to-lower-case." class="section level4">
 <h4>
-<span class="header-section-number">8.0.0.17</span> Convert all the values in the column to lower case.<a class="anchor" aria-label="anchor" href="#convert-all-the-values-in-the-column-to-lower-case."><i class="fas fa-link"></i></a>
+<span class="header-section-number">9.0.0.17</span> Convert all the values in the column to lower case.<a class="anchor" aria-label="anchor" href="#convert-all-the-values-in-the-column-to-lower-case."><i class="fas fa-link"></i></a>
 </h4>
 <div class="sourceCode" id="cb69"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="va">data</span><span class="op">$</span><span class="va">item</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/chartr.html">toupper</a></span><span class="op">(</span><span class="va">data</span><span class="op">$</span><span class="va">item</span><span class="op">)</span>
@@ -395,7 +396,7 @@
 </div>
 <div id="dropping-nas" class="section level4">
 <h4>
-<span class="header-section-number">8.0.0.18</span> Dropping NAs<a class="anchor" aria-label="anchor" href="#dropping-nas"><i class="fas fa-link"></i></a>
+<span class="header-section-number">9.0.0.18</span> Dropping NAs<a class="anchor" aria-label="anchor" href="#dropping-nas"><i class="fas fa-link"></i></a>
 </h4>
 <p>Dropping out all the rows with one or more columns as NA</p>
 <div class="sourceCode" id="cb71"><pre class="downlit sourceCode r">
@@ -405,7 +406,7 @@
 </div>
 <div id="groupby-and-summarize-functions-usage" class="section level4">
 <h4>
-<span class="header-section-number">8.0.0.19</span> groupby( ) and summarize( ) functions usage<a class="anchor" aria-label="anchor" href="#groupby-and-summarize-functions-usage"><i class="fas fa-link"></i></a>
+<span class="header-section-number">9.0.0.19</span> groupby( ) and summarize( ) functions usage<a class="anchor" aria-label="anchor" href="#groupby-and-summarize-functions-usage"><i class="fas fa-link"></i></a>
 </h4>
 <p>We use ames data to demonstrate these functions. If we want to find the minimum, maximum area of all the houses in a particular neighborhood, we group by on the Neighborhood and compute the minimum and maximum area columns using the summarise function.</p>
 <div class="sourceCode" id="cb72"><pre class="downlit sourceCode r">
@@ -428,7 +429,7 @@
 </div>
 <div id="get-the-shape-of-the-dataframe-in-r." class="section level4">
 <h4>
-<span class="header-section-number">8.0.0.20</span> Get the shape of the dataframe in R.<a class="anchor" aria-label="anchor" href="#get-the-shape-of-the-dataframe-in-r."><i class="fas fa-link"></i></a>
+<span class="header-section-number">9.0.0.20</span> Get the shape of the dataframe in R.<a class="anchor" aria-label="anchor" href="#get-the-shape-of-the-dataframe-in-r."><i class="fas fa-link"></i></a>
 </h4>
 <p>To know the number of rows and columns in a dataframe.</p>
 <div class="sourceCode" id="cb74"><pre class="downlit sourceCode r">
@@ -439,7 +440,7 @@
 </div>
 <div id="select-only-top-30-rows-or-90-rows-bottom-30-rows" class="section level4">
 <h4>
-<span class="header-section-number">8.0.0.21</span> Select only top 30 rows or 90 rows, bottom 30 rows<a class="anchor" aria-label="anchor" href="#select-only-top-30-rows-or-90-rows-bottom-30-rows"><i class="fas fa-link"></i></a>
+<span class="header-section-number">9.0.0.21</span> Select only top 30 rows or 90 rows, bottom 30 rows<a class="anchor" aria-label="anchor" href="#select-only-top-30-rows-or-90-rows-bottom-30-rows"><i class="fas fa-link"></i></a>
 </h4>
 <div class="sourceCode" id="cb76"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="va">data</span> <span class="op">&lt;-</span> <span class="fu">openintro</span><span class="fu">::</span><span class="va"><a href="https://openintrostat.github.io/openintro/reference/ames.html">ames</a></span>
@@ -453,7 +454,7 @@
 </div>
 <div id="get-the-data-type-of-each-column-in-a-dataframe." class="section level4">
 <h4>
-<span class="header-section-number">8.0.0.22</span> Get the data type of each column in a dataframe.<a class="anchor" aria-label="anchor" href="#get-the-data-type-of-each-column-in-a-dataframe."><i class="fas fa-link"></i></a>
+<span class="header-section-number">9.0.0.22</span> Get the data type of each column in a dataframe.<a class="anchor" aria-label="anchor" href="#get-the-data-type-of-each-column-in-a-dataframe."><i class="fas fa-link"></i></a>
 </h4>
 <div class="sourceCode" id="cb77"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="va">data</span> <span class="op">&lt;-</span> <span class="fu">openintro</span><span class="fu">::</span><span class="va"><a href="https://openintrostat.github.io/openintro/reference/seattlepets.html">seattlepets</a></span>
@@ -481,7 +482,7 @@
 </div>
 <div id="changing-the-type-of-data---int-to-char" class="section level4">
 <h4>
-<span class="header-section-number">8.0.0.23</span> Changing the type of data -&gt; int to char<a class="anchor" aria-label="anchor" href="#changing-the-type-of-data---int-to-char"><i class="fas fa-link"></i></a>
+<span class="header-section-number">9.0.0.23</span> Changing the type of data -&gt; int to char<a class="anchor" aria-label="anchor" href="#changing-the-type-of-data---int-to-char"><i class="fas fa-link"></i></a>
 </h4>
 <p>Change the values in the column from character to integer for all valid values.</p>
 <p>Note: Few rows may be marked as NA because of coercion.</p>
@@ -496,7 +497,7 @@
 </div>
 <div id="rename-column-names-in-r" class="section level4">
 <h4>
-<span class="header-section-number">8.0.0.24</span> Rename column names in R<a class="anchor" aria-label="anchor" href="#rename-column-names-in-r"><i class="fas fa-link"></i></a>
+<span class="header-section-number">9.0.0.24</span> Rename column names in R<a class="anchor" aria-label="anchor" href="#rename-column-names-in-r"><i class="fas fa-link"></i></a>
 </h4>
 <p>Here we are renaming column name zip_code to zip_code_modified</p>
 <div class="sourceCode" id="cb83"><pre class="downlit sourceCode r">
@@ -510,7 +511,7 @@
 </div>
 <div id="find-minimum-and-maximum-values-in-a-column-in-r" class="section level4">
 <h4>
-<span class="header-section-number">8.0.0.25</span> Find minimum and maximum values in a column in R<a class="anchor" aria-label="anchor" href="#find-minimum-and-maximum-values-in-a-column-in-r"><i class="fas fa-link"></i></a>
+<span class="header-section-number">9.0.0.25</span> Find minimum and maximum values in a column in R<a class="anchor" aria-label="anchor" href="#find-minimum-and-maximum-values-in-a-column-in-r"><i class="fas fa-link"></i></a>
 </h4>
 <div class="sourceCode" id="cb86"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="va">data</span> <span class="op">&lt;-</span> <span class="fu">openintro</span><span class="fu">::</span><span class="va"><a href="https://openintrostat.github.io/openintro/reference/ames.html">ames</a></span>
@@ -527,7 +528,7 @@
 </div>
 <div id="number-of-unique-values-in-every-column-in-the-data-frame" class="section level4">
 <h4>
-<span class="header-section-number">8.0.0.26</span> Number of unique values in every column in the data frame<a class="anchor" aria-label="anchor" href="#number-of-unique-values-in-every-column-in-the-data-frame"><i class="fas fa-link"></i></a>
+<span class="header-section-number">9.0.0.26</span> Number of unique values in every column in the data frame<a class="anchor" aria-label="anchor" href="#number-of-unique-values-in-every-column-in-the-data-frame"><i class="fas fa-link"></i></a>
 </h4>
 <p>In this dataset, we have 13930 unique animal names, 4 different species etc.</p>
 <div class="sourceCode" id="cb91"><pre class="downlit sourceCode r">
@@ -541,7 +542,7 @@
 </div>
 <div id="reorder-columns-in-r-by-column-name." class="section level4">
 <h4>
-<span class="header-section-number">8.0.0.27</span> Reorder columns in R by column name.<a class="anchor" aria-label="anchor" href="#reorder-columns-in-r-by-column-name."><i class="fas fa-link"></i></a>
+<span class="header-section-number">9.0.0.27</span> Reorder columns in R by column name.<a class="anchor" aria-label="anchor" href="#reorder-columns-in-r-by-column-name."><i class="fas fa-link"></i></a>
 </h4>
 <div class="sourceCode" id="cb93"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="va">authors</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/data.frame.html">data.frame</a></span><span class="op">(</span>
@@ -568,7 +569,7 @@
 </div>
 <div id="reorder-columns-by-column-index." class="section level4">
 <h4>
-<span class="header-section-number">8.0.0.28</span> Reorder columns by column index.<a class="anchor" aria-label="anchor" href="#reorder-columns-by-column-index."><i class="fas fa-link"></i></a>
+<span class="header-section-number">9.0.0.28</span> Reorder columns by column index.<a class="anchor" aria-label="anchor" href="#reorder-columns-by-column-index."><i class="fas fa-link"></i></a>
 </h4>
 <div class="sourceCode" id="cb97"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="va">authors</span> <span class="op">&lt;-</span> <span class="va">authors</span><span class="op">[</span>, <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">1</span>,<span class="fl">3</span>,<span class="fl">2</span><span class="op">)</span><span class="op">]</span>
@@ -582,7 +583,7 @@
 </div>
 <div id="remove-duplicates-from-the-dataframe-based-on-one-column-or-multiple-columns." class="section level4">
 <h4>
-<span class="header-section-number">8.0.0.29</span> Remove Duplicates from the dataframe based on one column or multiple columns.<a class="anchor" aria-label="anchor" href="#remove-duplicates-from-the-dataframe-based-on-one-column-or-multiple-columns."><i class="fas fa-link"></i></a>
+<span class="header-section-number">9.0.0.29</span> Remove Duplicates from the dataframe based on one column or multiple columns.<a class="anchor" aria-label="anchor" href="#remove-duplicates-from-the-dataframe-based-on-one-column-or-multiple-columns."><i class="fas fa-link"></i></a>
 </h4>
 <div class="sourceCode" id="cb99"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="co"># Remove the duplicate rows based on one variable</span>
@@ -594,7 +595,7 @@
 </div>
 <div id="calculate-mean-median-of-a-column-in-the-data-frame" class="section level4">
 <h4>
-<span class="header-section-number">8.0.0.30</span> Calculate Mean, Median of a column in the Data Frame<a class="anchor" aria-label="anchor" href="#calculate-mean-median-of-a-column-in-the-data-frame"><i class="fas fa-link"></i></a>
+<span class="header-section-number">9.0.0.30</span> Calculate Mean, Median of a column in the Data Frame<a class="anchor" aria-label="anchor" href="#calculate-mean-median-of-a-column-in-the-data-frame"><i class="fas fa-link"></i></a>
 </h4>
 <div class="sourceCode" id="cb100"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="va">mean</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/mean.html">mean</a></span><span class="op">(</span><span class="va">data</span><span class="op">$</span><span class="va">carb</span><span class="op">)</span>
@@ -610,7 +611,7 @@
 </div>
 <div id="value-counts-in-r.-check-how-many-times-a-unique-variable-occurs-in-like-male---5-female--10-in-the-column-name-gender." class="section level4">
 <h4>
-<span class="header-section-number">8.0.0.31</span> Value counts in R. Check how many times a unique variable occurs in like Male - 5, Female -10 in the column name Gender.<a class="anchor" aria-label="anchor" href="#value-counts-in-r.-check-how-many-times-a-unique-variable-occurs-in-like-male---5-female--10-in-the-column-name-gender."><i class="fas fa-link"></i></a>
+<span class="header-section-number">9.0.0.31</span> Value counts in R. Check how many times a unique variable occurs in like Male - 5, Female -10 in the column name Gender.<a class="anchor" aria-label="anchor" href="#value-counts-in-r.-check-how-many-times-a-unique-variable-occurs-in-like-male---5-female--10-in-the-column-name-gender."><i class="fas fa-link"></i></a>
 </h4>
 <p>Number of rows where cyl = 4 is 11, cyl=6 is 7 etc</p>
 <div class="sourceCode" id="cb105"><pre class="downlit sourceCode r">
@@ -632,7 +633,7 @@
 </div>
 <div id="convert-the-index-column-to-a-new-column" class="section level4">
 <h4>
-<span class="header-section-number">8.0.0.32</span> Convert the index column to a new column<a class="anchor" aria-label="anchor" href="#convert-the-index-column-to-a-new-column"><i class="fas fa-link"></i></a>
+<span class="header-section-number">9.0.0.32</span> Convert the index column to a new column<a class="anchor" aria-label="anchor" href="#convert-the-index-column-to-a-new-column"><i class="fas fa-link"></i></a>
 </h4>
 <p>Here we created a new column using the index of the dataframe.</p>
 <div class="sourceCode" id="cb109"><pre class="downlit sourceCode r">
@@ -655,7 +656,7 @@
 </div>
 <div id="add-a-new-row-to-the-dataframe" class="section level4">
 <h4>
-<span class="header-section-number">8.0.0.33</span> Add a new row to the dataframe<a class="anchor" aria-label="anchor" href="#add-a-new-row-to-the-dataframe"><i class="fas fa-link"></i></a>
+<span class="header-section-number">9.0.0.33</span> Add a new row to the dataframe<a class="anchor" aria-label="anchor" href="#add-a-new-row-to-the-dataframe"><i class="fas fa-link"></i></a>
 </h4>
 <p>We can new rows to the dataframe by using <code>rbind</code></p>
 <div class="sourceCode" id="cb111"><pre class="downlit sourceCode r">
@@ -680,7 +681,7 @@
 </div>
 <div id="logsquare-root-cube-root-transformation-in-r" class="section level4">
 <h4>
-<span class="header-section-number">8.0.0.34</span> Log,Square root, Cube root transformation in R<a class="anchor" aria-label="anchor" href="#logsquare-root-cube-root-transformation-in-r"><i class="fas fa-link"></i></a>
+<span class="header-section-number">9.0.0.34</span> Log,Square root, Cube root transformation in R<a class="anchor" aria-label="anchor" href="#logsquare-root-cube-root-transformation-in-r"><i class="fas fa-link"></i></a>
 </h4>
 <div class="sourceCode" id="cb113"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="va">data</span> <span class="op">&lt;-</span> <span class="va">cars</span>
@@ -701,7 +702,7 @@
 </div>
 <div id="changing-the-dataframe-dimensions-from-wide-to-long" class="section level4">
 <h4>
-<span class="header-section-number">8.0.0.35</span> Changing the dataframe dimensions from wide to long<a class="anchor" aria-label="anchor" href="#changing-the-dataframe-dimensions-from-wide-to-long"><i class="fas fa-link"></i></a>
+<span class="header-section-number">9.0.0.35</span> Changing the dataframe dimensions from wide to long<a class="anchor" aria-label="anchor" href="#changing-the-dataframe-dimensions-from-wide-to-long"><i class="fas fa-link"></i></a>
 </h4>
 <p>Here are the following types on how we can use the <code><a href="https://rdrr.io/pkg/reshape/man/melt-24.html">melt()</a></code> function in R.</p>
 <p>Type 1:
@@ -749,7 +750,7 @@ Here if we are interested in the grade of only english and math, we can pass it 
 </div>
 <div id="replace-na-with-a-specific-value" class="section level4">
 <h4>
-<span class="header-section-number">8.0.0.36</span> Replace NA with a specific value<a class="anchor" aria-label="anchor" href="#replace-na-with-a-specific-value"><i class="fas fa-link"></i></a>
+<span class="header-section-number">9.0.0.36</span> Replace NA with a specific value<a class="anchor" aria-label="anchor" href="#replace-na-with-a-specific-value"><i class="fas fa-link"></i></a>
 </h4>
 <p>Here we are replacing NA with None.</p>
 <div class="sourceCode" id="cb119"><pre class="downlit sourceCode r">
@@ -763,11 +764,11 @@ Here if we are interested in the grade of only english and math, we can pass it 
 </div>
 </div>
   <div class="chapter-nav">
-<div class="prev"><a href="rpackage-waffle-cheatsheet.html"><span class="header-section-number">7</span> Rpackage waffle cheatsheet</a></div>
-<div class="next"><a href="r-vs-python-basic-data-wrangling.html"><span class="header-section-number">9</span> R vs Python Basic Data Wrangling</a></div>
+<div class="prev"><a href="rpackage-waffle-cheatsheet.html"><span class="header-section-number">8</span> Rpackage waffle cheatsheet</a></div>
+<div class="next"><a href="r-vs-python-basic-data-wrangling.html"><span class="header-section-number">10</span> R vs Python Basic Data Wrangling</a></div>
 </div></main><div class="col-md-3 col-lg-2 d-none d-md-block sidebar sidebar-chapter">
     <nav id="toc" data-toggle="toc" aria-label="On this page"><h2>On this page</h2>
-      <ul class="nav navbar-nav"><li><a class="nav-link" href="#r-cheatsheet-on-data-transforamtion-and-exploration"><span class="header-section-number">8</span> R cheatsheet on data transforamtion and exploration</a></li></ul>
+      <ul class="nav navbar-nav"><li><a class="nav-link" href="#r-cheatsheet-on-data-transforamtion-and-exploration"><span class="header-section-number">9</span> R cheatsheet on data transforamtion and exploration</a></li></ul>
 
       <div class="book-extra">
         <ul class="list-unstyled">

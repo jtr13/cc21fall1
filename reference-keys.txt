@@ -23,6 +23,7 @@ histograms-and-density-plots
 boxplots-violinplots-and-dotplots
 trivariate-plots
 pros-and-cons-of-lattice
+graph-animation-with-gganimate-and-after-effects
 r-vs.-python-visualization-cheatsheet
 rpackage-waffle-cheatsheet
 r-cheatsheet-on-data-transforamtion-and-exploration
