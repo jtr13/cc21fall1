@@ -2,7 +2,7 @@
 
 Ran Pan
 
-```{r setup, include=FALSE}
+```{r, include=FALSE}
 knitr::opts_chunk$set(warning = FALSE, message = FALSE)
 ```
 
