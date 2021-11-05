@@ -6,9 +6,10 @@ language:
   ui:
     chapter_name: "Chapter "
 
-# Note: in order for the part headers to appear in the rendered book, the part header information must be included in the first chapter of the part. The comments here are just for reference; they do not create parts.
+# Note: in order for the part headers to appear in the rendered book, the part header information must be included in the first chapter of the part. The comments here are just for reference; they do not create parts
 
 # Chapter ordering
+
 rmd_files: [
   # Part: Introduction
   'index.Rmd', # must be first chapter
@@ -35,6 +36,7 @@ rmd_files: [
   'introduction_to_time_series.Rmd',
   'vipul_cc_edav_kickstart_r.Rmd',
 
+
   
   # Part: Workshops
   'ds_product_cycles_in_enterprises.Rmd', # contains PART header
@@ -44,3 +46,5 @@ rmd_files: [
   'appendix_pull_request_tutorial.Rmd'
 
 ]
+
+
