@@ -35,7 +35,7 @@ rmd_files: [
   'tibble_vs_data_frame.Rmd',
   'introduction_to_time_series.Rmd',
   'vipul_cc_edav_kickstart_r.Rmd',
-  'caret_machine_learning_tutorial.Rmd',
+  #'caret_machine_learning_tutorial.Rmd',
   
   # Part: Workshops
   'ds_product_cycles_in_enterprises.Rmd', # contains PART header
