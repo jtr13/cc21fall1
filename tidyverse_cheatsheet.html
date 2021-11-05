@@ -4,16 +4,16 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<title>Chapter 6 Graph animation with gganimate and After Effects | EDAV Fall 2021 Mon/Wed Community Contributions</title>
+<title>Chapter 11 tidyverse_cheatsheet | EDAV Fall 2021 Mon/Wed Community Contributions</title>
 <meta name="author" content="the students of the class">
-<meta name="description" content="Anh-Vu Nguyen This site explains graph animation with gganimate and After effects link: https://anhvung.github.io/EDAV-CC/">
+<meta name="description" content="Ziyu Song Motivation: R is one of the most widely used programming languages in today’s society. R can not only help people build statistical models but also visualize the data analysis results....">
 <meta name="generator" content="bookdown 0.24 with bs4_book()">
-<meta property="og:title" content="Chapter 6 Graph animation with gganimate and After Effects | EDAV Fall 2021 Mon/Wed Community Contributions">
+<meta property="og:title" content="Chapter 11 tidyverse_cheatsheet | EDAV Fall 2021 Mon/Wed Community Contributions">
 <meta property="og:type" content="book">
-<meta property="og:description" content="Anh-Vu Nguyen This site explains graph animation with gganimate and After effects link: https://anhvung.github.io/EDAV-CC/">
+<meta property="og:description" content="Ziyu Song Motivation: R is one of the most widely used programming languages in today’s society. R can not only help people build statistical models but also visualize the data analysis results....">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Chapter 6 Graph animation with gganimate and After Effects | EDAV Fall 2021 Mon/Wed Community Contributions">
-<meta name="twitter:description" content="Anh-Vu Nguyen This site explains graph animation with gganimate and After effects link: https://anhvung.github.io/EDAV-CC/">
+<meta name="twitter:title" content="Chapter 11 tidyverse_cheatsheet | EDAV Fall 2021 Mon/Wed Community Contributions">
+<meta name="twitter:description" content="Ziyu Song Motivation: R is one of the most widely used programming languages in today’s society. R can not only help people build statistical models but also visualize the data analysis results....">
 <!-- JS --><script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.6/clipboard.min.js" integrity="sha256-inc5kl9MA1hkeYUt+EC3BhlIgyp/2jDIyBLS6k3UxPI=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/fuse.js/6.4.6/fuse.js" integrity="sha512-zv6Ywkjyktsohkbp9bb45V6tEMoWhzFzXis+LrMehmJZZSys19Yxf1dopHx7WzIKxr5tK2dVcYmaCk2uqdjF4A==" crossorigin="anonymous"></script><script src="https://kit.fontawesome.com/6ecbd6c532.js" crossorigin="anonymous"></script><script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <link href="libs/bootstrap-4.6.0/bootstrap.min.css" rel="stylesheet">
 <script src="libs/bootstrap-4.6.0/bootstrap.bundle.min.js"></script><script src="libs/bs3compat-0.3.1/transition.js"></script><script src="libs/bs3compat-0.3.1/tabs.js"></script><script src="libs/bs3compat-0.3.1/bs3compat.js"></script><link href="libs/bs4_book-1.0.0/bs4_book.css" rel="stylesheet">
@@ -45,13 +45,13 @@
 <li><a class="" href="sample-project.html"><span class="header-section-number">4</span> Sample project</a></li>
 <li class="book-part">Data Visualizations</li>
 <li><a class="" href="introduction-to-the-lattice-package.html"><span class="header-section-number">5</span> Introduction to the lattice package</a></li>
-<li><a class="active" href="graph-animation-with-gganimate-and-after-effects.html"><span class="header-section-number">6</span> Graph animation with gganimate and After Effects</a></li>
+<li><a class="" href="graph-animation-with-gganimate-and-after-effects.html"><span class="header-section-number">6</span> Graph animation with gganimate and After Effects</a></li>
 <li class="book-part">Cheatsheets</li>
 <li><a class="" href="r-vs.-python-visualization-cheatsheet.html"><span class="header-section-number">7</span> R vs. Python Visualization Cheatsheet</a></li>
 <li><a class="" href="rpackage-waffle-cheatsheet.html"><span class="header-section-number">8</span> Rpackage waffle cheatsheet</a></li>
 <li><a class="" href="r-cheatsheet-on-data-transforamtion-and-exploration.html"><span class="header-section-number">9</span> R cheatsheet on data transforamtion and exploration</a></li>
 <li><a class="" href="r-vs-python-basic-data-wrangling.html"><span class="header-section-number">10</span> R vs Python Basic Data Wrangling</a></li>
-<li><a class="" href="tidyverse_cheatsheet.html"><span class="header-section-number">11</span> tidyverse_cheatsheet</a></li>
+<li><a class="active" href="tidyverse_cheatsheet.html"><span class="header-section-number">11</span> tidyverse_cheatsheet</a></li>
 <li><a class="" href="cheatsheet-tidyverse.html"><span class="header-section-number">12</span> Cheatsheet Tidyverse</a></li>
 <li class="book-part">Tutorials</li>
 <li><a class="" href="multithreading-crawler-frame.html"><span class="header-section-number">13</span> Multithreading Crawler Frame</a></li>
@@ -71,30 +71,31 @@
         </div>
       </nav>
 </div>
-  </header><main class="col-sm-12 col-md-9 col-lg-7" id="content"><div id="graph-animation-with-gganimate-and-after-effects" class="section level1">
+  </header><main class="col-sm-12 col-md-9 col-lg-7" id="content"><div id="tidyverse_cheatsheet" class="section level1">
 <h1>
-<span class="header-section-number">6</span> Graph animation with gganimate and After Effects<a class="anchor" aria-label="anchor" href="#graph-animation-with-gganimate-and-after-effects"><i class="fas fa-link"></i></a>
+<span class="header-section-number">11</span> tidyverse_cheatsheet<a class="anchor" aria-label="anchor" href="#tidyverse_cheatsheet"><i class="fas fa-link"></i></a>
 </h1>
-<p>Anh-Vu Nguyen
-This site explains graph animation with gganimate and After effects
-link: <a href="https://anhvung.github.io/EDAV-CC/" class="uri">https://anhvung.github.io/EDAV-CC/</a>
-<img src="resources/graph_animation/final.gif" alt="animation photo"></p>
+<p>Ziyu Song</p>
+<p>Motivation:</p>
+<p>R is one of the most widely used programming languages in today’s society. R can not only help people build statistical models but also visualize the data analysis results. However, there are so many R packages and functions that users may feel hard to remember all the details and apply in their data analysis process. In this project, I will create a cheat sheet about Tidyverse, a powerful collection of R packages that are data tools for transforming and visualizing data, to help users quickly find the information they need when they want to do the exploratory data visualization in R.</p>
+<p>The cheat sheet includes that main knowledge points and the most popular functions of Tidyverse, including definition of Tidyverse, core Tidyverse packages, typical data analysis workflow by using Tidyverse, and key functions in the core packages. In order to make it easier for users to understand the each function provided, I incorporated the example axis and parameters.</p>
+<p>Self-Evaluation:</p>
+<p>By creating this cheat sheet and summarizing the main knowledge points about Tidyverse, I have gained a better understanding of the main packages in Tidyverse and consolidated the knowledge I had learned in the class. I found that Tidyverse provides an efficient, fast, and well-documented workflow for general data modeling and visualization tasks. On the other hand, there are many other important and useful packages in Tidyverse. Therefore, I hope to create a more complete cheat sheet about Tidyverse next time to help more people better understand and apply it in their data analysis process.</p>
+<p>Cheatsheet:
+<a href="https://github.com/zs2488/cc21fall1/blob/main/Community%20Contribution%20-%20Cheat%20Sheet.pdf" class="uri">https://github.com/zs2488/cc21fall1/blob/main/Community%20Contribution%20-%20Cheat%20Sheet.pdf</a></p>
 
 </div>
-
-
-
   <div class="chapter-nav">
-<div class="prev"><a href="introduction-to-the-lattice-package.html"><span class="header-section-number">5</span> Introduction to the lattice package</a></div>
-<div class="next"><a href="r-vs.-python-visualization-cheatsheet.html"><span class="header-section-number">7</span> R vs. Python Visualization Cheatsheet</a></div>
+<div class="prev"><a href="r-vs-python-basic-data-wrangling.html"><span class="header-section-number">10</span> R vs Python Basic Data Wrangling</a></div>
+<div class="next"><a href="cheatsheet-tidyverse.html"><span class="header-section-number">12</span> Cheatsheet Tidyverse</a></div>
 </div></main><div class="col-md-3 col-lg-2 d-none d-md-block sidebar sidebar-chapter">
     <nav id="toc" data-toggle="toc" aria-label="On this page"><h2>On this page</h2>
-      <ul class="nav navbar-nav"><li><a class="nav-link" href="#graph-animation-with-gganimate-and-after-effects"><span class="header-section-number">6</span> Graph animation with gganimate and After Effects</a></li></ul>
+      <ul class="nav navbar-nav"><li><a class="nav-link" href="#tidyverse_cheatsheet"><span class="header-section-number">11</span> tidyverse_cheatsheet</a></li></ul>
 
       <div class="book-extra">
         <ul class="list-unstyled">
-<li><a id="book-source" href="https://github.com/jtr13/cc21fall1/blob/main/graph_animation.Rmd">View source <i class="fab fa-github"></i></a></li>
-          <li><a id="book-edit" href="https://github.com/jtr13/cc21fall1/edit/main/graph_animation.Rmd">Edit this page <i class="fab fa-github"></i></a></li>
+<li><a id="book-source" href="https://github.com/jtr13/cc21fall1/blob/main/tidyverse_cheatsheet.Rmd">View source <i class="fab fa-github"></i></a></li>
+          <li><a id="book-edit" href="https://github.com/jtr13/cc21fall1/edit/main/tidyverse_cheatsheet.Rmd">Edit this page <i class="fab fa-github"></i></a></li>
         </ul>
 </div>
     </nav>

@@ -64,6 +64,7 @@ logsquare-root-cube-root-transformation-in-r
 changing-the-dataframe-dimensions-from-wide-to-long
 replace-na-with-a-specific-value
 r-vs-python-basic-data-wrangling
+tidyverse_cheatsheet
 cheatsheet-tidyverse
 section
 multithreading-crawler-frame
