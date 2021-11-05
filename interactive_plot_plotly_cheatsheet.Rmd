@@ -52,7 +52,7 @@ Area plots use different colors to give users a good sense on how quantities hav
 
 ```{r warning = F, message = F, fig.width=9}
 knitr::opts_chunk$set(warning = F, message = F)
-df <- read.csv("~/Desktop/StudentsPerformancePart.csv")
+df <- read.csv("resources/interactive_plot_plotly_cheatsheet/StudentsPerformancePart.csv")
 head(df)
 
 df %>%
