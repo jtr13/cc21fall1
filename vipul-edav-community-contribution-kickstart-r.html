@@ -4,16 +4,16 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<title>Chapter 10 R vs Python Basic Data Wrangling | EDAV Fall 2021 Mon/Wed Community Contributions</title>
+<title>Chapter 15 Vipul EDAV Community Contribution Kickstart R | EDAV Fall 2021 Mon/Wed Community Contributions</title>
 <meta name="author" content="the students of the class">
-<meta name="description" content="Yihao Gao This pdf is a syntax comparison cheat sheet for basic data wrangling in R (dplyr, tidyr) and Python (pandas) including row/column selection, missing value imputation, sorting, mapping,...">
+<meta name="description" content="Vipul H Harihar This hand written notes are specially made for understanding the basics of Exploratory Data Analysis and R. This material here is a summation of my Professor Joyce’s teachings in...">
 <meta name="generator" content="bookdown 0.24 with bs4_book()">
-<meta property="og:title" content="Chapter 10 R vs Python Basic Data Wrangling | EDAV Fall 2021 Mon/Wed Community Contributions">
+<meta property="og:title" content="Chapter 15 Vipul EDAV Community Contribution Kickstart R | EDAV Fall 2021 Mon/Wed Community Contributions">
 <meta property="og:type" content="book">
-<meta property="og:description" content="Yihao Gao This pdf is a syntax comparison cheat sheet for basic data wrangling in R (dplyr, tidyr) and Python (pandas) including row/column selection, missing value imputation, sorting, mapping,...">
+<meta property="og:description" content="Vipul H Harihar This hand written notes are specially made for understanding the basics of Exploratory Data Analysis and R. This material here is a summation of my Professor Joyce’s teachings in...">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Chapter 10 R vs Python Basic Data Wrangling | EDAV Fall 2021 Mon/Wed Community Contributions">
-<meta name="twitter:description" content="Yihao Gao This pdf is a syntax comparison cheat sheet for basic data wrangling in R (dplyr, tidyr) and Python (pandas) including row/column selection, missing value imputation, sorting, mapping,...">
+<meta name="twitter:title" content="Chapter 15 Vipul EDAV Community Contribution Kickstart R | EDAV Fall 2021 Mon/Wed Community Contributions">
+<meta name="twitter:description" content="Vipul H Harihar This hand written notes are specially made for understanding the basics of Exploratory Data Analysis and R. This material here is a summation of my Professor Joyce’s teachings in...">
 <!-- JS --><script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.6/clipboard.min.js" integrity="sha256-inc5kl9MA1hkeYUt+EC3BhlIgyp/2jDIyBLS6k3UxPI=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/fuse.js/6.4.6/fuse.js" integrity="sha512-zv6Ywkjyktsohkbp9bb45V6tEMoWhzFzXis+LrMehmJZZSys19Yxf1dopHx7WzIKxr5tK2dVcYmaCk2uqdjF4A==" crossorigin="anonymous"></script><script src="https://kit.fontawesome.com/6ecbd6c532.js" crossorigin="anonymous"></script><script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <link href="libs/bootstrap-4.6.0/bootstrap.min.css" rel="stylesheet">
 <script src="libs/bootstrap-4.6.0/bootstrap.bundle.min.js"></script><script src="libs/bs3compat-0.3.1/transition.js"></script><script src="libs/bs3compat-0.3.1/tabs.js"></script><script src="libs/bs3compat-0.3.1/bs3compat.js"></script><link href="libs/bs4_book-1.0.0/bs4_book.css" rel="stylesheet">
@@ -49,13 +49,13 @@
 <li><a class="" href="r-vs.-python-visualization-cheatsheet.html"><span class="header-section-number">7</span> R vs. Python Visualization Cheatsheet</a></li>
 <li><a class="" href="rpackage-waffle-cheatsheet.html"><span class="header-section-number">8</span> Rpackage waffle cheatsheet</a></li>
 <li><a class="" href="r-cheatsheet-on-data-transforamtion-and-exploration.html"><span class="header-section-number">9</span> R cheatsheet on data transforamtion and exploration</a></li>
-<li><a class="active" href="r-vs-python-basic-data-wrangling.html"><span class="header-section-number">10</span> R vs Python Basic Data Wrangling</a></li>
+<li><a class="" href="r-vs-python-basic-data-wrangling.html"><span class="header-section-number">10</span> R vs Python Basic Data Wrangling</a></li>
 <li class="book-part">Tutorials</li>
 <li><a class="" href="multithreading-crawler-frame.html"><span class="header-section-number">11</span> Multithreading Crawler Frame</a></li>
 <li><a class="" href="regression-and-classification-in-r.html"><span class="header-section-number">12</span> Regression and Classification in R</a></li>
 <li><a class="" href="tibble-vs.-dataframe.html"><span class="header-section-number">13</span> Tibble vs. DataFrame</a></li>
 <li><a class="" href="introduction-to-time-series.html"><span class="header-section-number">14</span> Introduction to Time Series</a></li>
-<li><a class="" href="vipul-edav-community-contribution-kickstart-r.html"><span class="header-section-number">15</span> Vipul EDAV Community Contribution Kickstart R</a></li>
+<li><a class="active" href="vipul-edav-community-contribution-kickstart-r.html"><span class="header-section-number">15</span> Vipul EDAV Community Contribution Kickstart R</a></li>
 <li class="book-part">Workshops</li>
 <li><a class="" href="data-science-product-cycles-in-enterprises.html"><span class="header-section-number">16</span> Data Science Product Cycles in Enterprises</a></li>
 <li class="book-part">Appendices</li>
@@ -68,30 +68,47 @@
         </div>
       </nav>
 </div>
-  </header><main class="col-sm-12 col-md-9 col-lg-7" id="content"><div id="r-vs-python-basic-data-wrangling" class="section level1">
+  </header><main class="col-sm-12 col-md-9 col-lg-7" id="content"><div id="vipul-edav-community-contribution-kickstart-r" class="section level1">
 <h1>
-<span class="header-section-number">10</span> R vs Python Basic Data Wrangling<a class="anchor" aria-label="anchor" href="#r-vs-python-basic-data-wrangling"><i class="fas fa-link"></i></a>
+<span class="header-section-number">15</span> Vipul EDAV Community Contribution Kickstart R<a class="anchor" aria-label="anchor" href="#vipul-edav-community-contribution-kickstart-r"><i class="fas fa-link"></i></a>
 </h1>
-<p>Yihao Gao</p>
-<p>This pdf is a syntax comparison cheat sheet for basic data wrangling in R (dplyr, tidyr) and Python (pandas) including row/column selection, missing value imputation, sorting, mapping, grouping and aggregation etc. The motivation of creating this cheat sheet is to give a quick reference for those who might sometimes mix up these syntax in Python and R and save time.</p>
-<p>Access the cheat sheet using the link below.
-<a href="https://github.com/yiiihao/yg2820_edav_CC/blob/main/cheetsheet.pdf" class="uri">https://github.com/yiiihao/yg2820_edav_CC/blob/main/cheetsheet.pdf</a></p>
+<p>Vipul H Harihar</p>
+<p>This hand written notes are specially made for understanding the basics of Exploratory Data Analysis and R. This material here is a summation of my Professor Joyce’s teachings in classroom lectures and R documentation files.
+I have tried to write neatly and clearly so that the reader might benefit from the notes easily, I hope it is easily understandable and legible.
+The topics involved in the notes are as follows:
+1) Introduction
+2) R Programming for EDAV
+3) Some Fun Facts about R
+4) Features of R that makes it perfect for “EDAV”
+5) Application of R Programming
+6) Understanding Basic Data Types in R
+7a) Some Handy Functions
+7b) Vector
+7c) List
+7d) Factors - VERY IMPORTANT
+7e) Data Frame
+7f) Missing Values
+8) Functions in R
+9) Data Science Process (Visual Description)
+10) What all visulizations we use in EDAV?</p>
+<p>Please find the link to the submitted file:
+<a href="https://github.com/virslaan/EDAV_Community_Contribution/blob/main/Community%20Contribution%202.pdf" class="uri">https://github.com/virslaan/EDAV_Community_Contribution/blob/main/Community%20Contribution%202.pdf</a></p>
 
 </div>
 
 
 
   <div class="chapter-nav">
-<div class="prev"><a href="r-cheatsheet-on-data-transforamtion-and-exploration.html"><span class="header-section-number">9</span> R cheatsheet on data transforamtion and exploration</a></div>
-<div class="next"><a href="multithreading-crawler-frame.html"><span class="header-section-number">11</span> Multithreading Crawler Frame</a></div>
+<div class="prev"><a href="introduction-to-time-series.html"><span class="header-section-number">14</span> Introduction to Time Series</a></div>
+<div class="next"><a href="data-science-product-cycles-in-enterprises.html"><span class="header-section-number">16</span> Data Science Product Cycles in Enterprises</a></div>
 </div></main><div class="col-md-3 col-lg-2 d-none d-md-block sidebar sidebar-chapter">
     <nav id="toc" data-toggle="toc" aria-label="On this page"><h2>On this page</h2>
-      <ul class="nav navbar-nav"><li><a class="nav-link" href="#r-vs-python-basic-data-wrangling"><span class="header-section-number">10</span> R vs Python Basic Data Wrangling</a></li></ul>
+      <ul class="nav navbar-nav"><li><a class="nav-link" href="#vipul-edav-community-contribution-kickstart-r"><span class="header-section-number">15</span> Vipul EDAV Community Contribution Kickstart R</a></li></ul>
 
       <div class="book-extra">
         <ul class="list-unstyled">
-<li><a id="book-source" href="https://github.com/jtr13/cc21fall1/blob/main/r_vs_python_basic_data_wrangling.Rmd">View source <i class="fab fa-github"></i></a></li>
-          <li><a id="book-edit" href="https://github.com/jtr13/cc21fall1/edit/main/r_vs_python_basic_data_wrangling.Rmd">Edit this page <i class="fab fa-github"></i></a></li>
+<li><a id="book-source" href="https://github.com/jtr13/cc21fall1/blob/main/vipul_cc_edav_kickstart_r.Rmd">View source <i class="fab fa-github"></i></a></li>
+          <li><a id="book-edit" href="https://github.com/jtr13/cc21fall1/edit/main/vipul_cc_edav_kickstart_r.Rmd">Edit this page <i class="fab fa-github"></i></a></li>
         </ul>
 </div>
     </nav>

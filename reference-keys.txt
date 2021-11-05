@@ -105,6 +105,7 @@ stationary-time-series
 holtwinters-model
 exponential-smooting
 arima-model
+vipul-edav-community-contribution-kickstart-r
 data-science-product-cycles-in-enterprises
 github-initial-setup
 create-new-repo
