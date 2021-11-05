@@ -91,15 +91,15 @@ If all is good to go, it's time to merge the pull request. There are several ste
 ]`
 
 <!-- - Open the branch of the submitted PR and open their _bookdown.yml file. -->
-- Open the branch of the submitted PR following these steps:
+- Open the branch of the submitted PR by following these steps:
 
-+ To access the PR branch:
+  + To access the PR branch:
 
-<img src="resources/tutorial_pull_request_mergers/3.png" width="700">
+  <img src="resources/tutorial_pull_request_mergers/3.png" width="700">
 
-+ Make sure you are on the PR branch by checking that the PR branch name is shown (not `main`):
+  + Make sure you are on the PR branch by checking that the PR branch name is shown (not `main`):
 
-<img src="resources/tutorial_pull_request_mergers/4.png" width="700">
+  <img src="resources/tutorial_pull_request_mergers/4.png" width="700">
 
 - Remove their rmd_files: [] section and paste the one which we copied from the main branch of our project.
 
