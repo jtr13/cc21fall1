@@ -1,0 +1,798 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<title>Chapter 7 R cheatsheet on data transforamtion and exploration | EDAV Fall 2021 Mon/Wed Community Contributions</title>
+<meta name="author" content="the students of the class">
+<meta name="description" content="Sai Krupa Jangala Few Pointers: The purpose of this cheatsheet is to describe all the basic data operations that we do when we start a new project. This also includes different types of data...">
+<meta name="generator" content="bookdown 0.24 with bs4_book()">
+<meta property="og:title" content="Chapter 7 R cheatsheet on data transforamtion and exploration | EDAV Fall 2021 Mon/Wed Community Contributions">
+<meta property="og:type" content="book">
+<meta property="og:description" content="Sai Krupa Jangala Few Pointers: The purpose of this cheatsheet is to describe all the basic data operations that we do when we start a new project. This also includes different types of data...">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Chapter 7 R cheatsheet on data transforamtion and exploration | EDAV Fall 2021 Mon/Wed Community Contributions">
+<meta name="twitter:description" content="Sai Krupa Jangala Few Pointers: The purpose of this cheatsheet is to describe all the basic data operations that we do when we start a new project. This also includes different types of data...">
+<!-- JS --><script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.6/clipboard.min.js" integrity="sha256-inc5kl9MA1hkeYUt+EC3BhlIgyp/2jDIyBLS6k3UxPI=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/fuse.js/6.4.6/fuse.js" integrity="sha512-zv6Ywkjyktsohkbp9bb45V6tEMoWhzFzXis+LrMehmJZZSys19Yxf1dopHx7WzIKxr5tK2dVcYmaCk2uqdjF4A==" crossorigin="anonymous"></script><script src="https://kit.fontawesome.com/6ecbd6c532.js" crossorigin="anonymous"></script><script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<link href="libs/bootstrap-4.6.0/bootstrap.min.css" rel="stylesheet">
+<script src="libs/bootstrap-4.6.0/bootstrap.bundle.min.js"></script><script src="libs/bs3compat-0.3.1/transition.js"></script><script src="libs/bs3compat-0.3.1/tabs.js"></script><script src="libs/bs3compat-0.3.1/bs3compat.js"></script><link href="libs/bs4_book-1.0.0/bs4_book.css" rel="stylesheet">
+<script src="libs/bs4_book-1.0.0/bs4_book.js"></script><script src="libs/accessible-code-block-0.0.1/empty-anchor.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/autocomplete.js/0.38.0/autocomplete.jquery.min.js" integrity="sha512-GU9ayf+66Xx2TmpxqJpliWbT5PiGYxpaG8rfnBEk1LL8l1KGkRShhngwdXK1UgqhAzWpZHSiYPc09/NwDQIGyg==" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/mark.min.js" integrity="sha512-5CYOlHXGh6QpOFA/TeTylKLWfB3ftPsde7AnmhuitiTX4K5SqCLBeKro6sPS8ilsz1Q4NRx3v8Ko2IBiszzdww==" crossorigin="anonymous"></script><!-- CSS -->
+</head>
+<body data-spy="scroll" data-target="#toc">
+
+<div class="container-fluid">
+<div class="row">
+  <header class="col-sm-12 col-lg-3 sidebar sidebar-book"><a class="sr-only sr-only-focusable" href="#content">Skip to main content</a>
+
+    <div class="d-flex align-items-start justify-content-between">
+      <h1>
+        <a href="index.html" title="">EDAV Fall 2021 Mon/Wed Community Contributions</a>
+      </h1>
+      <button class="btn btn-outline-primary d-lg-none ml-2 mt-1" type="button" data-toggle="collapse" data-target="#main-nav" aria-expanded="true" aria-controls="main-nav"><i class="fas fa-bars"></i><span class="sr-only">Show table of contents</span></button>
+    </div>
+
+    <div id="main-nav" class="collapse-lg">
+      <form role="search">
+        <input id="search" class="form-control" type="search" placeholder="Search" aria-label="Search">
+</form>
+
+      <nav aria-label="Table of contents"><h2>Table of contents</h2>
+        <ul class="book-toc list-unstyled">
+<li><a class="" href="index.html"><span class="header-section-number">1</span> Welcome!</a></li>
+<li><a class="" href="community-contribution.html"><span class="header-section-number">2</span> Community Contribution</a></li>
+<li><a class="" href="github-submission-instructions.html"><span class="header-section-number">3</span> GitHub submission instructions</a></li>
+<li><a class="" href="sample-project.html"><span class="header-section-number">4</span> Sample project</a></li>
+<li class="book-part">Cheatsheets</li>
+<li><a class="" href="r-vs.-python-visualization-cheatsheet.html"><span class="header-section-number">5</span> R vs. Python Visualization Cheatsheet</a></li>
+<li><a class="" href="rpackage-waffle-cheatsheet.html"><span class="header-section-number">6</span> Rpackage waffle cheatsheet</a></li>
+<li><a class="active" href="r-cheatsheet-on-data-transforamtion-and-exploration.html"><span class="header-section-number">7</span> R cheatsheet on data transforamtion and exploration</a></li>
+<li class="book-part">Tutorials</li>
+<li><a class="" href="multithreading-crawler-frame.html"><span class="header-section-number">8</span> multithreading crawler frame</a></li>
+<li><a class="" href="regression-and-classification-in-r.html"><span class="header-section-number">9</span> Regression and Classification in R</a></li>
+<li><a class="" href="tibble-vs.-dataframe.html"><span class="header-section-number">10</span> Tibble vs. DataFrame</a></li>
+<li><a class="" href="introduction-to-time-series.html"><span class="header-section-number">11</span> Introduction to Time Series</a></li>
+<li class="book-part">Workshops</li>
+<li><a class="" href="data-science-product-cycles-in-enterprises.html"><span class="header-section-number">12</span> Data Science Product Cycles in Enterprises</a></li>
+<li class="book-part">Appendices</li>
+<li><a class="" href="github-initial-setup.html"><span class="header-section-number">13</span> Github initial setup</a></li>
+<li><a class="" href="tutorial-for-pull-request-mergers.html"><span class="header-section-number">14</span> Tutorial for pull request mergers</a></li>
+</ul>
+
+        <div class="book-extra">
+          <p><a id="book-repo" href="https://github.com/jtr13/cc21fall1">View book source <i class="fab fa-github"></i></a></p>
+        </div>
+      </nav>
+</div>
+  </header><main class="col-sm-12 col-md-9 col-lg-7" id="content"><div id="r-cheatsheet-on-data-transforamtion-and-exploration" class="section level1">
+<h1>
+<span class="header-section-number">7</span> R cheatsheet on data transforamtion and exploration<a class="anchor" aria-label="anchor" href="#r-cheatsheet-on-data-transforamtion-and-exploration"><i class="fas fa-link"></i></a>
+</h1>
+<p>Sai Krupa Jangala</p>
+<p>Few Pointers:</p>
+<ul>
+<li>The purpose of this cheatsheet is to describe all the basic data operations that we do when we start a new project. This also includes different types of data transformations, explorations and management.</li>
+<li>We use only data frames throughtout the cheatsheet.</li>
+<li>We use packages that are most commonly used in R. We will be using these packages for different purposes.</li>
+<li>Different datasets are used to best illustrate the transformation, management and exploration.</li>
+<li>The data sets used are <code><a href="https://openintrostat.github.io/openintro/reference/fastfood.html">openintro::fastfood</a></code> , <code>openintro::seatlepets</code>, <code>cars</code>, <code><a href="https://openintrostat.github.io/openintro/reference/ames.html">openintro::ames</a></code> and <code>mtcars</code>.</li>
+<li>Every chunk of code loads its own data, if it’s not, it means that we have used the data from the previous chunk.</li>
+</ul>
+<div id="required-packages" class="section level4">
+<h4>
+<span class="header-section-number">7.0.0.1</span> Required packages<a class="anchor" aria-label="anchor" href="#required-packages"><i class="fas fa-link"></i></a>
+</h4>
+<p>These packages are most commonly in R and are used in the following cheatsheet. We will be using these packages for different purposes.</p>
+<div class="sourceCode" id="cb5"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="co">#install.packages("tidyverse")</span>
+<span class="co">#install.packages("dplyr")</span>
+<span class="co">#install.packages("reshape")</span>
+<span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://dplyr.tidyverse.org">dplyr</a></span><span class="op">)</span>
+<span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://tidyverse.tidyverse.org">tidyverse</a></span><span class="op">)</span>
+<span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="http://had.co.nz/reshape">reshape</a></span><span class="op">)</span></code></pre></div>
+</div>
+<div id="output-the-head-tail-and-sample-of-the-dataframe." class="section level4">
+<h4>
+<span class="header-section-number">7.0.0.2</span> Output the head, tail and sample of the dataframe.<a class="anchor" aria-label="anchor" href="#output-the-head-tail-and-sample-of-the-dataframe."><i class="fas fa-link"></i></a>
+</h4>
+<p>Head - will get the first 5 rows of the dataframe.</p>
+<div class="sourceCode" id="cb6"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="va">data</span> <span class="op">&lt;-</span> <span class="va">cars</span>
+<span class="fu"><a href="https://rdrr.io/r/utils/head.html">head</a></span><span class="op">(</span><span class="va">data</span>, n<span class="op">=</span><span class="fl">5</span><span class="op">)</span></code></pre></div>
+<pre><code>##   speed dist
+## 1     4    2
+## 2     4   10
+## 3     7    4
+## 4     7   22
+## 5     8   16</code></pre>
+<p>Tail - will get the last 5 rows of the dataframe</p>
+<div class="sourceCode" id="cb8"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="fu"><a href="https://rdrr.io/r/utils/head.html">tail</a></span><span class="op">(</span><span class="va">data</span>, n<span class="op">=</span><span class="fl">5</span><span class="op">)</span></code></pre></div>
+<pre><code>##    speed dist
+## 46    24   70
+## 47    24   92
+## 48    24   93
+## 49    24  120
+## 50    25   85</code></pre>
+</div>
+<div id="selection-of-only-a-few-columns-from-a-dataframe." class="section level4">
+<h4>
+<span class="header-section-number">7.0.0.3</span> Selection of only a few columns from a dataframe.<a class="anchor" aria-label="anchor" href="#selection-of-only-a-few-columns-from-a-dataframe."><i class="fas fa-link"></i></a>
+</h4>
+<p>Select only restaurant, item and calorie columns from the fastfood dataset. Two variations are shown below.</p>
+<div class="sourceCode" id="cb10"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="va">data</span> <span class="op">&lt;-</span> <span class="fu">openintro</span><span class="fu">::</span><span class="va"><a href="https://openintrostat.github.io/openintro/reference/fastfood.html">fastfood</a></span>
+<span class="co"># Variation 1</span>
+<span class="va">data</span> <span class="op">&lt;-</span> <span class="va">data</span><span class="op">[</span>, <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"restaurant"</span>,<span class="st">"item"</span>,<span class="st">"calories"</span><span class="op">)</span><span class="op">]</span>
+<span class="co"># Variation 2</span>
+<span class="va">data_1</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://dplyr.tidyverse.org/reference/select.html">select</a></span><span class="op">(</span><span class="va">data</span>, <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="va">restaurant</span>, <span class="va">item</span>, <span class="va">calories</span><span class="op">)</span><span class="op">)</span></code></pre></div>
+<p>As we can see below, both the transformations produce the same result.</p>
+<div class="sourceCode" id="cb11"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="fu"><a href="https://rdrr.io/r/utils/head.html">head</a></span><span class="op">(</span><span class="va">data</span><span class="op">)</span></code></pre></div>
+<pre><code>## # A tibble: 6 × 3
+##   restaurant item                                      calories
+##   &lt;chr&gt;      &lt;chr&gt;                                        &lt;dbl&gt;
+## 1 Mcdonalds  Artisan Grilled Chicken Sandwich               380
+## 2 Mcdonalds  Single Bacon Smokehouse Burger                 840
+## 3 Mcdonalds  Double Bacon Smokehouse Burger                1130
+## 4 Mcdonalds  Grilled Bacon Smokehouse Chicken Sandwich      750
+## 5 Mcdonalds  Crispy Bacon Smokehouse Chicken Sandwich       920
+## 6 Mcdonalds  Big Mac                                        540</code></pre>
+<div class="sourceCode" id="cb13"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="fu"><a href="https://rdrr.io/r/utils/head.html">head</a></span><span class="op">(</span><span class="va">data_1</span><span class="op">)</span></code></pre></div>
+<pre><code>## # A tibble: 6 × 3
+##   restaurant item                                      calories
+##   &lt;chr&gt;      &lt;chr&gt;                                        &lt;dbl&gt;
+## 1 Mcdonalds  Artisan Grilled Chicken Sandwich               380
+## 2 Mcdonalds  Single Bacon Smokehouse Burger                 840
+## 3 Mcdonalds  Double Bacon Smokehouse Burger                1130
+## 4 Mcdonalds  Grilled Bacon Smokehouse Chicken Sandwich      750
+## 5 Mcdonalds  Crispy Bacon Smokehouse Chicken Sandwich       920
+## 6 Mcdonalds  Big Mac                                        540</code></pre>
+</div>
+<div id="get-the-column-names" class="section level4">
+<h4>
+<span class="header-section-number">7.0.0.4</span> Get the column names<a class="anchor" aria-label="anchor" href="#get-the-column-names"><i class="fas fa-link"></i></a>
+</h4>
+<p>Generate all the column names in the data frame</p>
+<div class="sourceCode" id="cb15"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="va">data</span> <span class="op">&lt;-</span> <span class="fu">openintro</span><span class="fu">::</span><span class="va"><a href="https://openintrostat.github.io/openintro/reference/fastfood.html">fastfood</a></span>
+<span class="fu"><a href="https://rdrr.io/r/base/names.html">names</a></span><span class="op">(</span><span class="va">data</span><span class="op">)</span></code></pre></div>
+<pre><code>##  [1] "restaurant"  "item"        "calories"    "cal_fat"     "total_fat"  
+##  [6] "sat_fat"     "trans_fat"   "cholesterol" "sodium"      "total_carb" 
+## [11] "fiber"       "sugar"       "protein"     "vit_a"       "vit_c"      
+## [16] "calcium"     "salad"</code></pre>
+</div>
+<div id="drop-one-or-more-columns." class="section level4">
+<h4>
+<span class="header-section-number">7.0.0.5</span> Drop one or more columns.<a class="anchor" aria-label="anchor" href="#drop-one-or-more-columns."><i class="fas fa-link"></i></a>
+</h4>
+<p>Drop columns <code>restaurant</code>, <code>item</code>, <code>calories</code> from the data. As we can observe, the above column names have been dropped.</p>
+<div class="sourceCode" id="cb17"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="va">data</span> <span class="op">&lt;-</span> <span class="fu">openintro</span><span class="fu">::</span><span class="va"><a href="https://openintrostat.github.io/openintro/reference/fastfood.html">fastfood</a></span>
+<span class="va">data</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://dplyr.tidyverse.org/reference/select.html">select</a></span><span class="op">(</span><span class="va">data</span>, <span class="op">-</span><span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="va">restaurant</span>, <span class="va">item</span>, <span class="va">calories</span><span class="op">)</span><span class="op">)</span>
+<span class="fu"><a href="https://rdrr.io/r/base/names.html">names</a></span><span class="op">(</span><span class="va">data</span><span class="op">)</span></code></pre></div>
+<pre><code>##  [1] "cal_fat"     "total_fat"   "sat_fat"     "trans_fat"   "cholesterol"
+##  [6] "sodium"      "total_carb"  "fiber"       "sugar"       "protein"    
+## [11] "vit_a"       "vit_c"       "calcium"     "salad"</code></pre>
+</div>
+<div id="transformation-using-the-transform-function-in-r" class="section level4">
+<h4>
+<span class="header-section-number">7.0.0.6</span> Transformation using the transform() function in R<a class="anchor" aria-label="anchor" href="#transformation-using-the-transform-function-in-r"><i class="fas fa-link"></i></a>
+</h4>
+<p>Here we are creating a new dataframe by changing the speed column. We transformed it by multiplying with 100</p>
+<div class="sourceCode" id="cb19"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="va">data</span> <span class="op">&lt;-</span> <span class="va">cars</span>
+<span class="va">data_1</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/transform.html">transform</a></span><span class="op">(</span><span class="va">data</span>, speed<span class="op">=</span><span class="va">speed</span><span class="op">*</span><span class="fl">100</span><span class="op">)</span>
+<span class="fu"><a href="https://rdrr.io/r/utils/head.html">head</a></span><span class="op">(</span><span class="va">data_1</span><span class="op">)</span></code></pre></div>
+<pre><code>##   speed dist
+## 1   400    2
+## 2   400   10
+## 3   700    4
+## 4   700   22
+## 5   800   16
+## 6   900   10</code></pre>
+<p>Here we transformed the original dataframe by creating a new column.</p>
+<div class="sourceCode" id="cb21"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="va">data</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/transform.html">transform</a></span><span class="op">(</span><span class="va">data</span>, time<span class="op">=</span><span class="va">speed</span><span class="op">*</span><span class="va">dist</span><span class="op">)</span>
+<span class="fu"><a href="https://rdrr.io/r/utils/head.html">head</a></span><span class="op">(</span><span class="va">data</span><span class="op">)</span></code></pre></div>
+<pre><code>##   speed dist time
+## 1     4    2    8
+## 2     4   10   40
+## 3     7    4   28
+## 4     7   22  154
+## 5     8   16  128
+## 6     9   10   90</code></pre>
+</div>
+<div id="conditional-transformation-in-r" class="section level4">
+<h4>
+<span class="header-section-number">7.0.0.7</span> Conditional Transformation in R<a class="anchor" aria-label="anchor" href="#conditional-transformation-in-r"><i class="fas fa-link"></i></a>
+</h4>
+<p>Transformation based on a condition. Here we are creating a new column called Grilled, which is assigned to Grilled if the item contains Grilled in it’s name else it is classified as Not Grilled.</p>
+<div class="sourceCode" id="cb23"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="co">#Check if it contains the word grilled.</span>
+<span class="va">data</span> <span class="op">&lt;-</span> <span class="fu">openintro</span><span class="fu">::</span><span class="va"><a href="https://openintrostat.github.io/openintro/reference/fastfood.html">fastfood</a></span>
+<span class="va">data</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/transform.html">transform</a></span><span class="op">(</span><span class="va">data</span>, Grilled<span class="op">=</span><span class="fu"><a href="https://rdrr.io/r/base/ifelse.html">ifelse</a></span><span class="op">(</span><span class="fu"><a href="https://stringr.tidyverse.org/reference/str_detect.html">str_detect</a></span><span class="op">(</span><span class="va">item</span>, <span class="st">"Grilled"</span><span class="op">)</span>, <span class="st">"Grilled"</span>, <span class="st">"Not Grilled"</span><span class="op">)</span><span class="op">)</span>
+<span class="fu"><a href="https://rdrr.io/r/utils/head.html">head</a></span><span class="op">(</span><span class="va">data</span><span class="op">[</span>,<span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"item"</span>,<span class="st">"Grilled"</span><span class="op">)</span><span class="op">]</span><span class="op">)</span></code></pre></div>
+<pre><code>##                                        item     Grilled
+## 1          Artisan Grilled Chicken Sandwich     Grilled
+## 2            Single Bacon Smokehouse Burger Not Grilled
+## 3            Double Bacon Smokehouse Burger Not Grilled
+## 4 Grilled Bacon Smokehouse Chicken Sandwich     Grilled
+## 5  Crispy Bacon Smokehouse Chicken Sandwich Not Grilled
+## 6                                   Big Mac Not Grilled</code></pre>
+</div>
+<div id="add-a-new-column-to-the-dataframe-without-transform-function." class="section level4">
+<h4>
+<span class="header-section-number">7.0.0.8</span> Add a new column to the dataframe without <code>transform()</code> function.<a class="anchor" aria-label="anchor" href="#add-a-new-column-to-the-dataframe-without-transform-function."><i class="fas fa-link"></i></a>
+</h4>
+<p>Here we added a new column called time.</p>
+<div class="sourceCode" id="cb25"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="va">data</span> <span class="op">&lt;-</span> <span class="va">cars</span>
+<span class="va">data</span><span class="op">$</span><span class="va">time</span> <span class="op">&lt;-</span> <span class="va">data</span><span class="op">$</span><span class="va">speed</span> <span class="op">*</span> <span class="va">data</span><span class="op">$</span><span class="va">dist</span>
+<span class="fu"><a href="https://rdrr.io/r/utils/head.html">head</a></span><span class="op">(</span><span class="va">data</span><span class="op">)</span></code></pre></div>
+<pre><code>##   speed dist time
+## 1     4    2    8
+## 2     4   10   40
+## 3     7    4   28
+## 4     7   22  154
+## 5     8   16  128
+## 6     9   10   90</code></pre>
+</div>
+<div id="get-all-the-unique-values-of-a-column-in-a-dataframe." class="section level4">
+<h4>
+<span class="header-section-number">7.0.0.9</span> Get all the unique values of a column in a dataframe.<a class="anchor" aria-label="anchor" href="#get-all-the-unique-values-of-a-column-in-a-dataframe."><i class="fas fa-link"></i></a>
+</h4>
+<div class="sourceCode" id="cb27"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="va">data</span> <span class="op">&lt;-</span> <span class="fu">openintro</span><span class="fu">::</span><span class="va"><a href="https://openintrostat.github.io/openintro/reference/fastfood.html">fastfood</a></span>
+<span class="fu"><a href="https://rdrr.io/r/base/unique.html">unique</a></span><span class="op">(</span><span class="va">data</span><span class="op">$</span><span class="va">restaurant</span><span class="op">)</span></code></pre></div>
+<pre><code>## [1] "Mcdonalds"   "Chick Fil-A" "Sonic"       "Arbys"       "Burger King"
+## [6] "Dairy Queen" "Subway"      "Taco Bell"</code></pre>
+</div>
+<div id="using-the-filter-function-in-r.-different-logical-operators-can-be-used-to-filter-the-data." class="section level4">
+<h4>
+<span class="header-section-number">7.0.0.10</span> Using the filter function in R. Different logical operators can be used to filter the data.<a class="anchor" aria-label="anchor" href="#using-the-filter-function-in-r.-different-logical-operators-can-be-used-to-filter-the-data."><i class="fas fa-link"></i></a>
+</h4>
+<p>Filter all the rows where mpg column value is 21.0</p>
+<div class="sourceCode" id="cb29"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="va">data</span> <span class="op">&lt;-</span> <span class="va">mtcars</span>
+<span class="va">data_filtered</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://dplyr.tidyverse.org/reference/filter.html">filter</a></span><span class="op">(</span><span class="va">data</span>, <span class="va">mpg</span><span class="op">==</span><span class="fl">21.0</span><span class="op">)</span>
+<span class="fu"><a href="https://rdrr.io/r/base/unique.html">unique</a></span><span class="op">(</span><span class="va">data_filtered</span><span class="op">$</span><span class="va">mpg</span><span class="op">)</span></code></pre></div>
+<pre><code>## [1] 21</code></pre>
+<p>Filter all the rows where mpg column value is less than 21.0</p>
+<div class="sourceCode" id="cb31"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="va">data_filtered_1</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://dplyr.tidyverse.org/reference/filter.html">filter</a></span><span class="op">(</span><span class="va">data</span>, <span class="va">mpg</span><span class="op">&lt;</span><span class="fl">21.0</span><span class="op">)</span>
+<span class="fu"><a href="https://rdrr.io/r/base/unique.html">unique</a></span><span class="op">(</span><span class="va">data_filtered_1</span><span class="op">$</span><span class="va">mpg</span><span class="op">)</span></code></pre></div>
+<pre><code>##  [1] 18.7 18.1 14.3 19.2 17.8 16.4 17.3 15.2 10.4 14.7 15.5 13.3 15.8 19.7 15.0</code></pre>
+<p>Filter all the rows where mpg column value is greater than 21.0</p>
+<div class="sourceCode" id="cb33"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="va">data_filtered_2</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://dplyr.tidyverse.org/reference/filter.html">filter</a></span><span class="op">(</span><span class="va">data</span>, <span class="va">mpg</span><span class="op">&gt;</span><span class="fl">21.0</span><span class="op">)</span>
+<span class="fu"><a href="https://rdrr.io/r/base/unique.html">unique</a></span><span class="op">(</span><span class="va">data_filtered_2</span><span class="op">$</span><span class="va">mpg</span><span class="op">)</span></code></pre></div>
+<pre><code>## [1] 22.8 21.4 24.4 32.4 30.4 33.9 21.5 27.3 26.0</code></pre>
+<p>Filter all the rows where cyl column is 4 and carb column is greater than 1.</p>
+<div class="sourceCode" id="cb35"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="va">data_filtered_logical</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://dplyr.tidyverse.org/reference/filter.html">filter</a></span><span class="op">(</span><span class="va">data</span>, <span class="va">cyl</span> <span class="op">==</span> <span class="fl">4</span> <span class="op">&amp;</span> <span class="va">carb</span> <span class="op">&gt;</span> <span class="fl">1</span><span class="op">)</span>
+<span class="fu"><a href="https://rdrr.io/r/base/unique.html">unique</a></span><span class="op">(</span><span class="va">data_filtered_logical</span><span class="op">$</span><span class="va">mpg</span><span class="op">)</span></code></pre></div>
+<pre><code>## [1] 24.4 22.8 30.4 26.0 21.4</code></pre>
+</div>
+<div id="select-only-few-rows-in-a-column-based-on-a-condition-without-using-the-filter-function." class="section level4">
+<h4>
+<span class="header-section-number">7.0.0.11</span> Select only few rows in a column based on a condition without using the <code>filter()</code> function.<a class="anchor" aria-label="anchor" href="#select-only-few-rows-in-a-column-based-on-a-condition-without-using-the-filter-function."><i class="fas fa-link"></i></a>
+</h4>
+<p>Here we are selecting only those rows where the restuarant name is subway</p>
+<div class="sourceCode" id="cb37"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="va">data</span> <span class="op">&lt;-</span> <span class="fu">openintro</span><span class="fu">::</span><span class="va"><a href="https://openintrostat.github.io/openintro/reference/fastfood.html">fastfood</a></span>
+<span class="co"># Select the rows where the item contains the word "Grilled</span>
+<span class="va">data</span> <span class="op">&lt;-</span> <span class="va">data</span><span class="op">[</span><span class="va">data</span><span class="op">$</span><span class="va">restaurant</span> <span class="op">==</span> <span class="st">"Subway"</span>, <span class="op">]</span> 
+<span class="fu"><a href="https://rdrr.io/r/base/unique.html">unique</a></span><span class="op">(</span><span class="va">data</span><span class="op">$</span><span class="va">restaurant</span><span class="op">)</span></code></pre></div>
+<pre><code>## [1] "Subway"</code></pre>
+</div>
+<div id="merge-two-dataframes" class="section level4">
+<h4>
+<span class="header-section-number">7.0.0.12</span> Merge two dataframes<a class="anchor" aria-label="anchor" href="#merge-two-dataframes"><i class="fas fa-link"></i></a>
+</h4>
+<p>Merging two dataframes based on column names. Authors dataframe and books dataframe have been merged by surname and name.</p>
+<div class="sourceCode" id="cb39"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="va">authors</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/data.frame.html">data.frame</a></span><span class="op">(</span>
+    surname <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"Tukey"</span>, <span class="st">"Venables"</span>, <span class="st">"Tierney"</span>, <span class="st">"Ripley"</span>, <span class="st">"McNeil"</span><span class="op">)</span>,
+    nationality <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"US"</span>, <span class="st">"Australia"</span>, <span class="st">"US"</span>, <span class="st">"UK"</span>, <span class="st">"Australia"</span><span class="op">)</span>,
+    retired <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"yes"</span>, <span class="fu"><a href="https://rdrr.io/r/base/rep.html">rep</a></span><span class="op">(</span><span class="st">"no"</span>, <span class="fl">4</span><span class="op">)</span><span class="op">)</span><span class="op">)</span>
+<span class="va">books</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/data.frame.html">data.frame</a></span><span class="op">(</span>
+    name <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"Tukey"</span>, <span class="st">"Venables"</span>, <span class="st">"Tierney"</span>, <span class="st">"Ripley"</span>, <span class="st">"Ripley"</span>, <span class="st">"McNeil"</span><span class="op">)</span>,
+    title <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"Exploratory Data Analysis"</span>,
+              <span class="st">"Probability and Statistics"</span>,
+              <span class="st">"Finance and Structuring for Data Science"</span>,
+              <span class="st">"Algorithms for Data Science"</span>,
+               <span class="st">"Interactive Data Analysis"</span>,
+              <span class="st">"Deep Learning"</span><span class="op">)</span><span class="op">)</span>
+    <span class="co">#other.author = c(NA, "Ripley", NA, NA, NA, NA))</span>
+<span class="va">merged</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/merge.html">merge</a></span><span class="op">(</span><span class="va">authors</span>, <span class="va">books</span>, by.x<span class="op">=</span><span class="st">"surname"</span>, by.y<span class="op">=</span><span class="st">"name"</span><span class="op">)</span>
+<span class="fu"><a href="https://rdrr.io/r/utils/head.html">head</a></span><span class="op">(</span><span class="va">merged</span><span class="op">)</span></code></pre></div>
+<pre><code>##    surname nationality retired                                    title
+## 1   McNeil   Australia      no                            Deep Learning
+## 2   Ripley          UK      no              Algorithms for Data Science
+## 3   Ripley          UK      no                Interactive Data Analysis
+## 4  Tierney          US      no Finance and Structuring for Data Science
+## 5    Tukey          US     yes                Exploratory Data Analysis
+## 6 Venables   Australia      no               Probability and Statistics</code></pre>
+</div>
+<div id="arrange-the-data-in-ascending-order-based-on-a-column" class="section level4">
+<h4>
+<span class="header-section-number">7.0.0.13</span> Arrange the data in ascending order based on a column<a class="anchor" aria-label="anchor" href="#arrange-the-data-in-ascending-order-based-on-a-column"><i class="fas fa-link"></i></a>
+</h4>
+<div class="sourceCode" id="cb41"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="va">data</span> <span class="op">&lt;-</span> <span class="fu">openintro</span><span class="fu">::</span><span class="va"><a href="https://openintrostat.github.io/openintro/reference/fastfood.html">fastfood</a></span>
+<span class="co"># Arranging the data in ascending order</span>
+<span class="va">data</span> <span class="op">&lt;-</span> <span class="va">data</span><span class="op">[</span><span class="fu"><a href="https://rdrr.io/r/base/order.html">order</a></span><span class="op">(</span><span class="va">data</span><span class="op">$</span><span class="va">total_fat</span><span class="op">)</span>,<span class="op">]</span> 
+<span class="fu"><a href="https://rdrr.io/r/utils/head.html">head</a></span><span class="op">(</span><span class="va">data</span><span class="op">[</span>, <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"restaurant"</span>,<span class="st">"total_fat"</span><span class="op">)</span><span class="op">]</span><span class="op">)</span></code></pre></div>
+<pre><code>## # A tibble: 6 × 2
+##   restaurant  total_fat
+##   &lt;chr&gt;           &lt;dbl&gt;
+## 1 Dairy Queen         0
+## 2 Subway              1
+## 3 Chick Fil-A         2
+## 4 Dairy Queen         2
+## 5 Subway              2
+## 6 Subway              2</code></pre>
+</div>
+<div id="arrange-the-data-in-descending-order-based-on-a-column" class="section level4">
+<h4>
+<span class="header-section-number">7.0.0.14</span> Arrange the data in descending order based on a column<a class="anchor" aria-label="anchor" href="#arrange-the-data-in-descending-order-based-on-a-column"><i class="fas fa-link"></i></a>
+</h4>
+<div class="sourceCode" id="cb43"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="co"># Arranging the data in descending order</span>
+<span class="va">data</span> <span class="op">&lt;-</span> <span class="va">data</span><span class="op">[</span><span class="fu"><a href="https://rdrr.io/r/base/order.html">order</a></span><span class="op">(</span><span class="va">data</span><span class="op">$</span><span class="va">total_fat</span>, decreasing <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span>,<span class="op">]</span>
+<span class="fu"><a href="https://rdrr.io/r/utils/head.html">head</a></span><span class="op">(</span><span class="va">data</span><span class="op">[</span>, <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"restaurant"</span>,<span class="st">"total_fat"</span><span class="op">)</span><span class="op">]</span><span class="op">)</span></code></pre></div>
+<pre><code>## # A tibble: 6 × 2
+##   restaurant  total_fat
+##   &lt;chr&gt;           &lt;dbl&gt;
+## 1 Mcdonalds         141
+## 2 Burger King       126
+## 3 Mcdonalds         107
+## 4 Sonic             100
+## 5 Sonic              92
+## 6 Mcdonalds          88</code></pre>
+</div>
+<div id="get-the-summary-of-a-column---mean-median-var-sd-etc" class="section level4">
+<h4>
+<span class="header-section-number">7.0.0.15</span> Get the summary of a column -&gt; mean, median, var, SD etc<a class="anchor" aria-label="anchor" href="#get-the-summary-of-a-column---mean-median-var-sd-etc"><i class="fas fa-link"></i></a>
+</h4>
+<p>This function gives us the Minimum value, 1st Quartile value, Median, Mean, 3rd Quartile value, Maximum value from a column in a data frame.</p>
+<div class="sourceCode" id="cb45"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="fu"><a href="https://rdrr.io/r/base/summary.html">summary</a></span><span class="op">(</span><span class="va">data</span><span class="op">$</span><span class="va">total_fat</span><span class="op">)</span></code></pre></div>
+<pre><code>##    Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
+##    0.00   14.00   23.00   26.59   35.00  141.00</code></pre>
+</div>
+<div id="convert-all-the-values-in-the-column-to-upper-case." class="section level4">
+<h4>
+<span class="header-section-number">7.0.0.16</span> Convert all the values in the column to upper case.<a class="anchor" aria-label="anchor" href="#convert-all-the-values-in-the-column-to-upper-case."><i class="fas fa-link"></i></a>
+</h4>
+<div class="sourceCode" id="cb47"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="va">data</span><span class="op">$</span><span class="va">item</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/chartr.html">tolower</a></span><span class="op">(</span><span class="va">data</span><span class="op">$</span><span class="va">item</span><span class="op">)</span>
+<span class="fu"><a href="https://rdrr.io/r/utils/head.html">head</a></span><span class="op">(</span><span class="va">data</span><span class="op">$</span><span class="va">item</span><span class="op">)</span></code></pre></div>
+<pre><code>## [1] "20 piece buttermilk crispy chicken tenders"      
+## [2] "american brewhouse king"                         
+## [3] "40 piece chicken mcnuggets"                      
+## [4] "garlic parmesan dunked ultimate chicken sandwich"
+## [5] "super sonic bacon double cheeseburger (w/mayo)"  
+## [6] "12 piece buttermilk crispy chicken tenders"</code></pre>
+</div>
+<div id="convert-all-the-values-in-the-column-to-lower-case." class="section level4">
+<h4>
+<span class="header-section-number">7.0.0.17</span> Convert all the values in the column to lower case.<a class="anchor" aria-label="anchor" href="#convert-all-the-values-in-the-column-to-lower-case."><i class="fas fa-link"></i></a>
+</h4>
+<div class="sourceCode" id="cb49"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="va">data</span><span class="op">$</span><span class="va">item</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/chartr.html">toupper</a></span><span class="op">(</span><span class="va">data</span><span class="op">$</span><span class="va">item</span><span class="op">)</span>
+<span class="fu"><a href="https://rdrr.io/r/utils/head.html">head</a></span><span class="op">(</span><span class="va">data</span><span class="op">$</span><span class="va">item</span><span class="op">)</span></code></pre></div>
+<pre><code>## [1] "20 PIECE BUTTERMILK CRISPY CHICKEN TENDERS"      
+## [2] "AMERICAN BREWHOUSE KING"                         
+## [3] "40 PIECE CHICKEN MCNUGGETS"                      
+## [4] "GARLIC PARMESAN DUNKED ULTIMATE CHICKEN SANDWICH"
+## [5] "SUPER SONIC BACON DOUBLE CHEESEBURGER (W/MAYO)"  
+## [6] "12 PIECE BUTTERMILK CRISPY CHICKEN TENDERS"</code></pre>
+</div>
+<div id="dropping-nas" class="section level4">
+<h4>
+<span class="header-section-number">7.0.0.18</span> Dropping NAs<a class="anchor" aria-label="anchor" href="#dropping-nas"><i class="fas fa-link"></i></a>
+</h4>
+<p>Dropping out all the rows with one or more columns as NA</p>
+<div class="sourceCode" id="cb51"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="va">data</span> <span class="op">&lt;-</span> <span class="fu">openintro</span><span class="fu">::</span><span class="va"><a href="https://openintrostat.github.io/openintro/reference/seattlepets.html">seattlepets</a></span>
+<span class="va">data</span> <span class="op">&lt;-</span> <span class="va">data</span><span class="op">[</span><span class="fu"><a href="https://rdrr.io/r/stats/complete.cases.html">complete.cases</a></span><span class="op">(</span><span class="va">data</span><span class="op">)</span>, <span class="op">]</span>
+<span class="co"># Removes the rows with one or more columns having a NA</span></code></pre></div>
+</div>
+<div id="groupby-and-summarize-functions-usage" class="section level4">
+<h4>
+<span class="header-section-number">7.0.0.19</span> groupby( ) and summarize( ) functions usage<a class="anchor" aria-label="anchor" href="#groupby-and-summarize-functions-usage"><i class="fas fa-link"></i></a>
+</h4>
+<p>We use ames data to demonstrate these functions. If we want to find the minimum, maximum area of all the houses in a particular neighborhood, we group by on the Neighborhood and compute the minimum and maximum area columns using the summarise function.</p>
+<div class="sourceCode" id="cb52"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="va">data</span> <span class="op">&lt;-</span> <span class="fu">openintro</span><span class="fu">::</span><span class="va"><a href="https://openintrostat.github.io/openintro/reference/ames.html">ames</a></span>
+<span class="va">data</span> <span class="op">&lt;-</span> <span class="va">data</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> <span class="fu"><a href="https://dplyr.tidyverse.org/reference/group_by.html">group_by</a></span><span class="op">(</span><span class="va">Neighborhood</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> <span class="fu"><a href="https://dplyr.tidyverse.org/reference/summarise.html">summarise</a></span><span class="op">(</span>max_area<span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/Extremes.html">max</a></span><span class="op">(</span><span class="va">area</span><span class="op">)</span>, min_area<span class="op">=</span><span class="fu"><a href="https://rdrr.io/r/base/Extremes.html">min</a></span><span class="op">(</span><span class="va">area</span><span class="op">)</span><span class="op">)</span>
+<span class="fu"><a href="https://rdrr.io/r/utils/head.html">head</a></span><span class="op">(</span><span class="va">data</span>, n<span class="op">=</span><span class="fl">10</span><span class="op">)</span></code></pre></div>
+<pre><code>## # A tibble: 10 × 3
+##    Neighborhood max_area min_area
+##    &lt;fct&gt;           &lt;int&gt;    &lt;int&gt;
+##  1 Blmngtn          1589     1142
+##  2 Blueste          1556     1020
+##  3 BrDale           1365      948
+##  4 BrkSide          2134      334
+##  5 ClearCr          3086      988
+##  6 CollgCr          2828      768
+##  7 Crawfor          3447      694
+##  8 Edwards          5642      498
+##  9 Gilbert          2462      864
+## 10 Greens           1295      788</code></pre>
+</div>
+<div id="get-the-shape-of-the-dataframe-in-r." class="section level4">
+<h4>
+<span class="header-section-number">7.0.0.20</span> Get the shape of the dataframe in R.<a class="anchor" aria-label="anchor" href="#get-the-shape-of-the-dataframe-in-r."><i class="fas fa-link"></i></a>
+</h4>
+<p>To know the number of rows and columns in a dataframe.</p>
+<div class="sourceCode" id="cb54"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="va">data</span> <span class="op">&lt;-</span> <span class="fu">openintro</span><span class="fu">::</span><span class="va"><a href="https://openintrostat.github.io/openintro/reference/ames.html">ames</a></span>
+<span class="fu"><a href="https://rdrr.io/r/base/dim.html">dim</a></span><span class="op">(</span><span class="va">data</span><span class="op">)</span></code></pre></div>
+<pre><code>## [1] 2930   82</code></pre>
+<p>First number in the list is the number of rows and the second number in the list is the number of columns in the dataframe</p>
+</div>
+<div id="select-only-top-30-rows-or-90-rows-bottom-30-rows" class="section level4">
+<h4>
+<span class="header-section-number">7.0.0.21</span> Select only top 30 rows or 90 rows, bottom 30 rows<a class="anchor" aria-label="anchor" href="#select-only-top-30-rows-or-90-rows-bottom-30-rows"><i class="fas fa-link"></i></a>
+</h4>
+<div class="sourceCode" id="cb56"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="va">data</span> <span class="op">&lt;-</span> <span class="fu">openintro</span><span class="fu">::</span><span class="va"><a href="https://openintrostat.github.io/openintro/reference/ames.html">ames</a></span>
+<span class="co"># Selecting the top 30 rows</span>
+<span class="va">data</span> <span class="op">&lt;-</span> <span class="va">data</span><span class="op">[</span><span class="fl">1</span><span class="op">:</span><span class="fl">30</span>,<span class="op">]</span>
+<span class="co"># Selecting the top 90 rows</span>
+<span class="va">data</span> <span class="op">&lt;-</span> <span class="va">data</span><span class="op">[</span><span class="fl">1</span><span class="op">:</span><span class="fl">90</span>,<span class="op">]</span>
+<span class="va">data</span> <span class="op">&lt;-</span> <span class="fu">openintro</span><span class="fu">::</span><span class="va"><a href="https://openintrostat.github.io/openintro/reference/ames.html">ames</a></span>
+<span class="va">data</span> <span class="op">&lt;-</span> <span class="va">data</span><span class="op">[</span><span class="fl">2900</span><span class="op">:</span><span class="fl">2930</span>,<span class="op">]</span> 
+<span class="co"># Select the last 30 rows if your dataframe consists of 2930 rows</span></code></pre></div>
+</div>
+<div id="get-the-data-type-of-each-column-in-a-dataframe." class="section level4">
+<h4>
+<span class="header-section-number">7.0.0.22</span> Get the data type of each column in a dataframe.<a class="anchor" aria-label="anchor" href="#get-the-data-type-of-each-column-in-a-dataframe."><i class="fas fa-link"></i></a>
+</h4>
+<div class="sourceCode" id="cb57"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="va">data</span> <span class="op">&lt;-</span> <span class="fu">openintro</span><span class="fu">::</span><span class="va"><a href="https://openintrostat.github.io/openintro/reference/seattlepets.html">seattlepets</a></span>
+<span class="fu"><a href="https://purrr.tidyverse.org/reference/map.html">map</a></span><span class="op">(</span><span class="va">data</span>, <span class="va">class</span><span class="op">)</span></code></pre></div>
+<pre><code>## $license_issue_date
+## [1] "Date"
+## 
+## $license_number
+## [1] "character"
+## 
+## $animal_name
+## [1] "character"
+## 
+## $species
+## [1] "character"
+## 
+## $primary_breed
+## [1] "character"
+## 
+## $secondary_breed
+## [1] "character"
+## 
+## $zip_code
+## [1] "character"</code></pre>
+</div>
+<div id="changing-the-type-of-data---int-to-char" class="section level4">
+<h4>
+<span class="header-section-number">7.0.0.23</span> Changing the type of data -&gt; int to char<a class="anchor" aria-label="anchor" href="#changing-the-type-of-data---int-to-char"><i class="fas fa-link"></i></a>
+</h4>
+<p>Change the values in the column from character to integer for all valid values.</p>
+<p>Note: Few rows may be marked as NA because of coercion.</p>
+<div class="sourceCode" id="cb59"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="va">data</span> <span class="op">&lt;-</span> <span class="fu">openintro</span><span class="fu">::</span><span class="va"><a href="https://openintrostat.github.io/openintro/reference/seattlepets.html">seattlepets</a></span>
+<span class="fu"><a href="https://rdrr.io/r/utils/head.html">head</a></span><span class="op">(</span><span class="va">data</span><span class="op">$</span><span class="va">zip_code</span><span class="op">)</span></code></pre></div>
+<pre><code>## [1] "98108" "98117" "98136" "98117" "98144" "98103"</code></pre>
+<div class="sourceCode" id="cb61"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="va">data</span><span class="op">$</span><span class="va">zip_code</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/numeric.html">as.numeric</a></span><span class="op">(</span><span class="va">data</span><span class="op">$</span><span class="va">zip_code</span><span class="op">)</span>
+<span class="fu"><a href="https://rdrr.io/r/utils/head.html">head</a></span><span class="op">(</span><span class="va">data</span><span class="op">$</span><span class="va">zip_code</span><span class="op">)</span></code></pre></div>
+<pre><code>## [1] 98108 98117 98136 98117 98144 98103</code></pre>
+</div>
+<div id="rename-column-names-in-r" class="section level4">
+<h4>
+<span class="header-section-number">7.0.0.24</span> Rename column names in R<a class="anchor" aria-label="anchor" href="#rename-column-names-in-r"><i class="fas fa-link"></i></a>
+</h4>
+<p>Here we are renaming column name zip_code to zip_code_modified</p>
+<div class="sourceCode" id="cb63"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="fu"><a href="https://rdrr.io/r/base/names.html">names</a></span><span class="op">(</span><span class="va">data</span><span class="op">)</span><span class="op">[</span><span class="fu"><a href="https://rdrr.io/r/base/names.html">names</a></span><span class="op">(</span><span class="va">data</span><span class="op">)</span> <span class="op">==</span> <span class="st">'zip_code'</span><span class="op">]</span> <span class="op">&lt;-</span> <span class="st">'zip_code_modified'</span>
+<span class="fu"><a href="https://rdrr.io/r/base/names.html">names</a></span><span class="op">(</span><span class="va">data</span><span class="op">)</span></code></pre></div>
+<pre><code>## [1] "license_issue_date" "license_number"     "animal_name"       
+## [4] "species"            "primary_breed"      "secondary_breed"   
+## [7] "zip_code_modified"</code></pre>
+<div class="sourceCode" id="cb65"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="co"># Zip code has been modified to zip_code_modified</span></code></pre></div>
+</div>
+<div id="find-minimum-and-maximum-values-in-a-column-in-r" class="section level4">
+<h4>
+<span class="header-section-number">7.0.0.25</span> Find minimum and maximum values in a column in R<a class="anchor" aria-label="anchor" href="#find-minimum-and-maximum-values-in-a-column-in-r"><i class="fas fa-link"></i></a>
+</h4>
+<div class="sourceCode" id="cb66"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="va">data</span> <span class="op">&lt;-</span> <span class="fu">openintro</span><span class="fu">::</span><span class="va"><a href="https://openintrostat.github.io/openintro/reference/ames.html">ames</a></span>
+<span class="va">min</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/Extremes.html">min</a></span><span class="op">(</span><span class="va">data</span><span class="op">$</span><span class="va">area</span><span class="op">)</span>
+<span class="va">max</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/Extremes.html">max</a></span><span class="op">(</span><span class="va">data</span><span class="op">$</span><span class="va">area</span><span class="op">)</span></code></pre></div>
+<p>Minimum value of area column</p>
+<div class="sourceCode" id="cb67"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="va">min</span></code></pre></div>
+<pre><code>## [1] 334</code></pre>
+<p>Maximum value of area column</p>
+<div class="sourceCode" id="cb69"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="va">max</span></code></pre></div>
+<pre><code>## [1] 5642</code></pre>
+</div>
+<div id="number-of-unique-values-in-every-column-in-the-data-frame" class="section level4">
+<h4>
+<span class="header-section-number">7.0.0.26</span> Number of unique values in every column in the data frame<a class="anchor" aria-label="anchor" href="#number-of-unique-values-in-every-column-in-the-data-frame"><i class="fas fa-link"></i></a>
+</h4>
+<p>In this dataset, we have 13930 unique animal names, 4 different species etc.</p>
+<div class="sourceCode" id="cb71"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="va">data</span> <span class="op">&lt;-</span> <span class="fu">openintro</span><span class="fu">::</span><span class="va"><a href="https://openintrostat.github.io/openintro/reference/seattlepets.html">seattlepets</a></span>
+<span class="va">data</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> <span class="fu"><a href="https://dplyr.tidyverse.org/reference/summarise_all.html">summarize_all</a></span><span class="op">(</span><span class="va">n_distinct</span><span class="op">)</span></code></pre></div>
+<pre><code>## # A tibble: 1 × 7
+##   license_issue_date license_number animal_name species primary_breed
+##                &lt;int&gt;          &lt;int&gt;       &lt;int&gt;   &lt;int&gt;         &lt;int&gt;
+## 1               1064          52497       13930       4           336
+## # … with 2 more variables: secondary_breed &lt;int&gt;, zip_code &lt;int&gt;</code></pre>
+</div>
+<div id="reorder-columns-in-r-by-column-name." class="section level4">
+<h4>
+<span class="header-section-number">7.0.0.27</span> Reorder columns in R by column name.<a class="anchor" aria-label="anchor" href="#reorder-columns-in-r-by-column-name."><i class="fas fa-link"></i></a>
+</h4>
+<div class="sourceCode" id="cb73"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="va">authors</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/data.frame.html">data.frame</a></span><span class="op">(</span>
+    surname <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"Tukey"</span>, <span class="st">"Venables"</span>, <span class="st">"Tierney"</span>, <span class="st">"Ripley"</span>, <span class="st">"McNeil"</span><span class="op">)</span>,
+    nationality <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"US"</span>, <span class="st">"Australia"</span>, <span class="st">"US"</span>, <span class="st">"UK"</span>, <span class="st">"Australia"</span><span class="op">)</span>,
+    retired <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"yes"</span>, <span class="fu"><a href="https://rdrr.io/r/base/rep.html">rep</a></span><span class="op">(</span><span class="st">"no"</span>, <span class="fl">4</span><span class="op">)</span><span class="op">)</span><span class="op">)</span>
+<span class="va">authors</span></code></pre></div>
+<pre><code>##    surname nationality retired
+## 1    Tukey          US     yes
+## 2 Venables   Australia      no
+## 3  Tierney          US      no
+## 4   Ripley          UK      no
+## 5   McNeil   Australia      no</code></pre>
+<div class="sourceCode" id="cb75"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="co">#reorder by column name</span>
+<span class="va">authors</span> <span class="op">&lt;-</span> <span class="va">authors</span><span class="op">[</span>, <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"retired"</span>, <span class="st">"nationality"</span>, <span class="st">"surname"</span><span class="op">)</span><span class="op">]</span>
+<span class="va">authors</span></code></pre></div>
+<pre><code>##   retired nationality  surname
+## 1     yes          US    Tukey
+## 2      no   Australia Venables
+## 3      no          US  Tierney
+## 4      no          UK   Ripley
+## 5      no   Australia   McNeil</code></pre>
+</div>
+<div id="reorder-columns-by-column-index." class="section level4">
+<h4>
+<span class="header-section-number">7.0.0.28</span> Reorder columns by column index.<a class="anchor" aria-label="anchor" href="#reorder-columns-by-column-index."><i class="fas fa-link"></i></a>
+</h4>
+<div class="sourceCode" id="cb77"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="va">authors</span> <span class="op">&lt;-</span> <span class="va">authors</span><span class="op">[</span>, <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">1</span>,<span class="fl">3</span>,<span class="fl">2</span><span class="op">)</span><span class="op">]</span>
+<span class="va">authors</span></code></pre></div>
+<pre><code>##   retired  surname nationality
+## 1     yes    Tukey          US
+## 2      no Venables   Australia
+## 3      no  Tierney          US
+## 4      no   Ripley          UK
+## 5      no   McNeil   Australia</code></pre>
+</div>
+<div id="remove-duplicates-from-the-dataframe-based-on-one-column-or-multiple-columns." class="section level4">
+<h4>
+<span class="header-section-number">7.0.0.29</span> Remove Duplicates from the dataframe based on one column or multiple columns.<a class="anchor" aria-label="anchor" href="#remove-duplicates-from-the-dataframe-based-on-one-column-or-multiple-columns."><i class="fas fa-link"></i></a>
+</h4>
+<div class="sourceCode" id="cb79"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="co"># Remove the duplicate rows based on one variable</span>
+<span class="va">data</span> <span class="op">&lt;-</span> <span class="va">mtcars</span>
+<span class="co"># Have the rows with distinct carb</span>
+<span class="va">data_one_var</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://dplyr.tidyverse.org/reference/distinct.html">distinct</a></span><span class="op">(</span><span class="va">data</span>, <span class="va">carb</span>, .keep_all<span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span>
+<span class="co"># Keep the distinct data based on multiple variables</span>
+<span class="va">data_multi</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://dplyr.tidyverse.org/reference/distinct.html">distinct</a></span><span class="op">(</span><span class="va">data</span>, <span class="va">cyl</span>, <span class="va">vs</span>, .keep_all<span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span></code></pre></div>
+</div>
+<div id="calculate-mean-median-of-a-column-in-the-data-frame" class="section level4">
+<h4>
+<span class="header-section-number">7.0.0.30</span> Calculate Mean, Median of a column in the Data Frame<a class="anchor" aria-label="anchor" href="#calculate-mean-median-of-a-column-in-the-data-frame"><i class="fas fa-link"></i></a>
+</h4>
+<div class="sourceCode" id="cb80"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="va">mean</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/mean.html">mean</a></span><span class="op">(</span><span class="va">data</span><span class="op">$</span><span class="va">carb</span><span class="op">)</span>
+<span class="va">median</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/stats/median.html">median</a></span><span class="op">(</span><span class="va">data</span><span class="op">$</span><span class="va">carb</span><span class="op">)</span></code></pre></div>
+<p>Mean</p>
+<div class="sourceCode" id="cb81"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="va">mean</span></code></pre></div>
+<pre><code>## [1] 2.8125</code></pre>
+<p>Median</p>
+<div class="sourceCode" id="cb83"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="va">median</span></code></pre></div>
+<pre><code>## [1] 2</code></pre>
+</div>
+<div id="value-counts-in-r.-check-how-many-times-a-unique-variable-occurs-in-like-male---5-female--10-in-the-column-name-gender." class="section level4">
+<h4>
+<span class="header-section-number">7.0.0.31</span> Value counts in R. Check how many times a unique variable occurs in like Male - 5, Female -10 in the column name Gender.<a class="anchor" aria-label="anchor" href="#value-counts-in-r.-check-how-many-times-a-unique-variable-occurs-in-like-male---5-female--10-in-the-column-name-gender."><i class="fas fa-link"></i></a>
+</h4>
+<p>Number of rows where cyl = 4 is 11, cyl=6 is 7 etc</p>
+<div class="sourceCode" id="cb85"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="va">data</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> <span class="fu"><a href="https://dplyr.tidyverse.org/reference/count.html">count</a></span><span class="op">(</span><span class="va">cyl</span><span class="op">)</span></code></pre></div>
+<pre><code>##   cyl  n
+## 1   4 11
+## 2   6  7
+## 3   8 14</code></pre>
+<p>Number of rows where carb = 4 is 10, carb=6 is 1 etc</p>
+<div class="sourceCode" id="cb87"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="va">data</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> <span class="fu"><a href="https://dplyr.tidyverse.org/reference/count.html">count</a></span><span class="op">(</span><span class="va">carb</span><span class="op">)</span></code></pre></div>
+<pre><code>##   carb  n
+## 1    1  7
+## 2    2 10
+## 3    3  3
+## 4    4 10
+## 5    6  1
+## 6    8  1</code></pre>
+</div>
+<div id="convert-the-index-column-to-a-new-column" class="section level4">
+<h4>
+<span class="header-section-number">7.0.0.32</span> Convert the index column to a new column<a class="anchor" aria-label="anchor" href="#convert-the-index-column-to-a-new-column"><i class="fas fa-link"></i></a>
+</h4>
+<p>Here we created a new column using the index of the dataframe.</p>
+<div class="sourceCode" id="cb89"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="va">data</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/cbind.html">cbind</a></span><span class="op">(</span>car_name <span class="op">=</span> <span class="fu"><a href="https://tibble.tidyverse.org/reference/rownames.html">rownames</a></span><span class="op">(</span><span class="va">data</span><span class="op">)</span>, <span class="va">data</span><span class="op">)</span>
+<span class="fu"><a href="https://rdrr.io/r/utils/head.html">head</a></span><span class="op">(</span><span class="va">data</span><span class="op">)</span></code></pre></div>
+<pre><code>##                            car_name  mpg cyl disp  hp drat    wt  qsec vs am
+## Mazda RX4                 Mazda RX4 21.0   6  160 110 3.90 2.620 16.46  0  1
+## Mazda RX4 Wag         Mazda RX4 Wag 21.0   6  160 110 3.90 2.875 17.02  0  1
+## Datsun 710               Datsun 710 22.8   4  108  93 3.85 2.320 18.61  1  1
+## Hornet 4 Drive       Hornet 4 Drive 21.4   6  258 110 3.08 3.215 19.44  1  0
+## Hornet Sportabout Hornet Sportabout 18.7   8  360 175 3.15 3.440 17.02  0  0
+## Valiant                     Valiant 18.1   6  225 105 2.76 3.460 20.22  1  0
+##                   gear carb
+## Mazda RX4            4    4
+## Mazda RX4 Wag        4    4
+## Datsun 710           4    1
+## Hornet 4 Drive       3    1
+## Hornet Sportabout    3    2
+## Valiant              3    1</code></pre>
+</div>
+<div id="add-a-new-row-to-the-dataframe" class="section level4">
+<h4>
+<span class="header-section-number">7.0.0.33</span> Add a new row to the dataframe<a class="anchor" aria-label="anchor" href="#add-a-new-row-to-the-dataframe"><i class="fas fa-link"></i></a>
+</h4>
+<p>We can new rows to the dataframe by using <code>rbind</code></p>
+<div class="sourceCode" id="cb91"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="va">new_row_to_add</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/data.frame.html">data.frame</a></span><span class="op">(</span><span class="st">"Volvo 125"</span>,<span class="fl">22.5</span>,<span class="fl">3</span>,<span class="fl">120.2</span>,<span class="fl">108</span>,<span class="fl">2.23</span>,<span class="fl">2.89</span>,<span class="fl">19.08</span>,<span class="fl">1</span>,<span class="fl">0</span>,<span class="fl">4</span>,<span class="fl">3</span><span class="op">)</span>
+<span class="fu"><a href="https://rdrr.io/r/base/names.html">names</a></span><span class="op">(</span><span class="va">new_row_to_add</span><span class="op">)</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"car_name"</span>, <span class="st">"mpg"</span>, <span class="st">"cyl"</span>, <span class="st">"disp"</span>, <span class="st">"hp"</span>, <span class="st">"drat"</span>, <span class="st">"wt"</span>, <span class="st">"qsec"</span>, <span class="st">"vs"</span>, <span class="st">"am"</span>, <span class="st">"gear"</span>, <span class="st">"carb"</span><span class="op">)</span>
+<span class="va">data</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/cbind.html">rbind</a></span><span class="op">(</span><span class="va">data</span>,<span class="va">new_row_to_add</span><span class="op">)</span>
+<span class="fu"><a href="https://rdrr.io/r/utils/head.html">tail</a></span><span class="op">(</span><span class="va">data</span><span class="op">)</span></code></pre></div>
+<pre><code>##                      car_name  mpg cyl  disp  hp drat    wt  qsec vs am gear
+## Lotus Europa     Lotus Europa 30.4   4  95.1 113 3.77 1.513 16.90  1  1    5
+## Ford Pantera L Ford Pantera L 15.8   8 351.0 264 4.22 3.170 14.50  0  1    5
+## Ferrari Dino     Ferrari Dino 19.7   6 145.0 175 3.62 2.770 15.50  0  1    5
+## Maserati Bora   Maserati Bora 15.0   8 301.0 335 3.54 3.570 14.60  0  1    5
+## Volvo 142E         Volvo 142E 21.4   4 121.0 109 4.11 2.780 18.60  1  1    4
+## 1                   Volvo 125 22.5   3 120.2 108 2.23 2.890 19.08  1  0    4
+##                carb
+## Lotus Europa      2
+## Ford Pantera L    4
+## Ferrari Dino      6
+## Maserati Bora     8
+## Volvo 142E        2
+## 1                 3</code></pre>
+</div>
+<div id="logsquare-root-cube-root-transformation-in-r" class="section level4">
+<h4>
+<span class="header-section-number">7.0.0.34</span> Log,Square root, Cube root transformation in R<a class="anchor" aria-label="anchor" href="#logsquare-root-cube-root-transformation-in-r"><i class="fas fa-link"></i></a>
+</h4>
+<div class="sourceCode" id="cb93"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="va">data</span> <span class="op">&lt;-</span> <span class="va">cars</span>
+<span class="co"># Taking the log of the speed column</span>
+<span class="va">data</span><span class="op">$</span><span class="va">log_transformation</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/Log.html">log10</a></span><span class="op">(</span><span class="va">data</span><span class="op">$</span><span class="va">speed</span><span class="op">)</span>
+<span class="co"># Taking the square root of the speed column</span>
+<span class="va">data</span><span class="op">$</span><span class="va">sqrt_transformation</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/MathFun.html">sqrt</a></span><span class="op">(</span><span class="va">data</span><span class="op">$</span><span class="va">speed</span><span class="op">)</span>
+<span class="co"># Taking the cube root of the speed column</span>
+<span class="va">data</span><span class="op">$</span><span class="va">cube_transformation</span> <span class="op">&lt;-</span><span class="op">(</span><span class="va">data</span><span class="op">$</span><span class="va">speed</span><span class="op">)</span><span class="op">^</span><span class="fl">1</span><span class="op">/</span><span class="fl">3</span>
+<span class="fu"><a href="https://rdrr.io/r/utils/head.html">head</a></span><span class="op">(</span><span class="va">data</span><span class="op">)</span></code></pre></div>
+<pre><code>##   speed dist log_transformation sqrt_transformation cube_transformation
+## 1     4    2          0.6020600            2.000000            1.333333
+## 2     4   10          0.6020600            2.000000            1.333333
+## 3     7    4          0.8450980            2.645751            2.333333
+## 4     7   22          0.8450980            2.645751            2.333333
+## 5     8   16          0.9030900            2.828427            2.666667
+## 6     9   10          0.9542425            3.000000            3.000000</code></pre>
+</div>
+<div id="changing-the-dataframe-dimensions-from-wide-to-long" class="section level4">
+<h4>
+<span class="header-section-number">7.0.0.35</span> Changing the dataframe dimensions from wide to long<a class="anchor" aria-label="anchor" href="#changing-the-dataframe-dimensions-from-wide-to-long"><i class="fas fa-link"></i></a>
+</h4>
+<p>Here are the following types on how we can use the <code><a href="https://rdrr.io/pkg/reshape/man/melt-24.html">melt()</a></code> function in R.</p>
+<p>Type 1:
+Here we create two columns called variable - which represent the subject and value which represents the grade in that subject.</p>
+<div class="sourceCode" id="cb95"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="va">df_wide</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/data.frame.html">data.frame</a></span><span class="op">(</span>
+  student <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"Krupa"</span>, <span class="st">"Goutham"</span>, <span class="st">"Sailaja"</span>, <span class="st">"Murthy"</span><span class="op">)</span>,
+  school <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"St. Joseph's"</span>, <span class="st">"Timpany"</span>, <span class="st">"St.Joseph's"</span>, <span class="st">"Timpany"</span><span class="op">)</span>,
+  exploratory_data_analysis <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">10</span>, <span class="fl">100</span>, <span class="fl">1000</span>, <span class="fl">10000</span><span class="op">)</span>,  <span class="co"># eng grades</span>
+  probability_and_statistics <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">20</span>, <span class="fl">200</span>, <span class="fl">2000</span>, <span class="fl">20000</span><span class="op">)</span>,  <span class="co"># math grades</span>
+  algorithms_for_ds <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">30</span>, <span class="fl">300</span>, <span class="fl">3000</span>, <span class="fl">30000</span><span class="op">)</span>   <span class="co"># physics grades</span>
+<span class="op">)</span>
+<span class="va">df_long</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/pkg/reshape/man/melt-24.html">melt</a></span><span class="op">(</span>data <span class="op">=</span> <span class="va">df_wide</span>, 
+                id.vars <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"student"</span>, <span class="st">"school"</span><span class="op">)</span><span class="op">)</span>
+<span class="va">df_long</span></code></pre></div>
+<pre><code>##    student       school                   variable value
+## 1    Krupa St. Joseph's  exploratory_data_analysis    10
+## 2  Goutham      Timpany  exploratory_data_analysis   100
+## 3  Sailaja  St.Joseph's  exploratory_data_analysis  1000
+## 4   Murthy      Timpany  exploratory_data_analysis 10000
+## 5    Krupa St. Joseph's probability_and_statistics    20
+## 6  Goutham      Timpany probability_and_statistics   200
+## 7  Sailaja  St.Joseph's probability_and_statistics  2000
+## 8   Murthy      Timpany probability_and_statistics 20000
+## 9    Krupa St. Joseph's          algorithms_for_ds    30
+## 10 Goutham      Timpany          algorithms_for_ds   300
+## 11 Sailaja  St.Joseph's          algorithms_for_ds  3000
+## 12  Murthy      Timpany          algorithms_for_ds 30000</code></pre>
+<p>Type 2:
+Here if we are interested in the grade of only english and math, we can pass it in the measure.vars parameter.</p>
+<div class="sourceCode" id="cb97"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="va">df_long</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/pkg/reshape/man/melt-24.html">melt</a></span><span class="op">(</span>data <span class="op">=</span> <span class="va">df_wide</span>, 
+                id.vars <span class="op">=</span> <span class="st">"student"</span>,
+                measure.vars <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"exploratory_data_analysis"</span>, <span class="st">"algorithms_for_ds"</span><span class="op">)</span><span class="op">)</span>
+<span class="va">df_long</span></code></pre></div>
+<pre><code>##   student                  variable value
+## 1   Krupa exploratory_data_analysis    10
+## 2 Goutham exploratory_data_analysis   100
+## 3 Sailaja exploratory_data_analysis  1000
+## 4  Murthy exploratory_data_analysis 10000
+## 5   Krupa         algorithms_for_ds    30
+## 6 Goutham         algorithms_for_ds   300
+## 7 Sailaja         algorithms_for_ds  3000
+## 8  Murthy         algorithms_for_ds 30000</code></pre>
+</div>
+<div id="replace-na-with-a-specific-value" class="section level4">
+<h4>
+<span class="header-section-number">7.0.0.36</span> Replace NA with a specific value<a class="anchor" aria-label="anchor" href="#replace-na-with-a-specific-value"><i class="fas fa-link"></i></a>
+</h4>
+<p>Here we are replacing NA with None.</p>
+<div class="sourceCode" id="cb99"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="va">data</span> <span class="op">&lt;-</span> <span class="fu">openintro</span><span class="fu">::</span><span class="va"><a href="https://openintrostat.github.io/openintro/reference/seattlepets.html">seattlepets</a></span>
+<span class="va">data</span><span class="op">[</span><span class="fu"><a href="https://rdrr.io/r/base/NA.html">is.na</a></span><span class="op">(</span><span class="va">data</span><span class="op">)</span><span class="op">]</span> <span class="op">&lt;-</span> <span class="st">"None"</span></code></pre></div>
+<p>References:
+* <a href="https://towardsdatascience.com/data-cleaning-in-r-made-simple-1b77303b0b17" class="uri">https://towardsdatascience.com/data-cleaning-in-r-made-simple-1b77303b0b17</a>
+* <a href="https://towardsdatascience.com/data-transformation-in-r-288e95438ff9" class="uri">https://towardsdatascience.com/data-transformation-in-r-288e95438ff9</a>
+* <a href="https://bookdown.org/aschmi11/RESMHandbook/data-preparation-and-cleaning-in-r.html" class="uri">https://bookdown.org/aschmi11/RESMHandbook/data-preparation-and-cleaning-in-r.html</a></p>
+
+</div>
+</div>
+
+
+
+  <div class="chapter-nav">
+<div class="prev"><a href="rpackage-waffle-cheatsheet.html"><span class="header-section-number">6</span> Rpackage waffle cheatsheet</a></div>
+<div class="next"><a href="multithreading-crawler-frame.html"><span class="header-section-number">8</span> multithreading crawler frame</a></div>
+</div></main><div class="col-md-3 col-lg-2 d-none d-md-block sidebar sidebar-chapter">
+    <nav id="toc" data-toggle="toc" aria-label="On this page"><h2>On this page</h2>
+      <ul class="nav navbar-nav"><li><a class="nav-link" href="#r-cheatsheet-on-data-transforamtion-and-exploration"><span class="header-section-number">7</span> R cheatsheet on data transforamtion and exploration</a></li></ul>
+
+      <div class="book-extra">
+        <ul class="list-unstyled">
+<li><a id="book-source" href="https://github.com/jtr13/cc21fall1/blob/main/data_transformation_and_exploration_cheatsheet.Rmd">View source <i class="fab fa-github"></i></a></li>
+          <li><a id="book-edit" href="https://github.com/jtr13/cc21fall1/edit/main/data_transformation_and_exploration_cheatsheet.Rmd">Edit this page <i class="fab fa-github"></i></a></li>
+        </ul>
+</div>
+    </nav>
+</div>
+
+</div>
+</div> <!-- .container -->
+
+<footer class="bg-primary text-light mt-5"><div class="container"><div class="row">
+
+  <div class="col-12 col-md-6 mt-3">
+    <p>"<strong>EDAV Fall 2021 Mon/Wed Community Contributions</strong>" was written by the students of the class. It was last built on 2021-11-05.</p>
+  </div>
+
+  <div class="col-12 col-md-6 mt-3">
+    <p>This book was built by the <a class="text-light" href="https://bookdown.org">bookdown</a> R package.</p>
+  </div>
+
+</div></div>
+</footer>
+</body>
+</html>
