@@ -1,7 +1,8 @@
-```{r}
 # Create regression assumption plots in Word
 
 Nikhil Gopal
+
+```{r}
 
 library(ggplot2)
 library(apaTables)
@@ -102,5 +103,10 @@ make_lm_plots<-function(model, output_path, reg_table, reg_table_name){
     )
   }
 }
+
+mod <- lm(mpg ~ wt, data = mtcars) 
+make_lm_plots(mod, "test.docx", 1, "table.doc")
+
+
 
 ```
