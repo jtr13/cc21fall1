@@ -4,16 +4,16 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<title>Chapter 12 Introduction to Time Series | EDAV Fall 2021 Mon/Wed Community Contributions</title>
+<title>Chapter 13 Introduction to Time Series | EDAV Fall 2021 Mon/Wed Community Contributions</title>
 <meta name="author" content="the students of the class">
-<meta name="description" content="Parth Gupta (pg2677) I am writing a tutorial for time series forecasting and I will be covering all the classical techniques to do time series forecasting.  12.1 Motivation, Modeling temporal...">
+<meta name="description" content="Parth Gupta (pg2677) I am writing a tutorial for time series forecasting and I will be covering all the classical techniques to do time series forecasting.  13.1 Motivation, Modeling temporal...">
 <meta name="generator" content="bookdown 0.24 with bs4_book()">
-<meta property="og:title" content="Chapter 12 Introduction to Time Series | EDAV Fall 2021 Mon/Wed Community Contributions">
+<meta property="og:title" content="Chapter 13 Introduction to Time Series | EDAV Fall 2021 Mon/Wed Community Contributions">
 <meta property="og:type" content="book">
-<meta property="og:description" content="Parth Gupta (pg2677) I am writing a tutorial for time series forecasting and I will be covering all the classical techniques to do time series forecasting.  12.1 Motivation, Modeling temporal...">
+<meta property="og:description" content="Parth Gupta (pg2677) I am writing a tutorial for time series forecasting and I will be covering all the classical techniques to do time series forecasting.  13.1 Motivation, Modeling temporal...">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Chapter 12 Introduction to Time Series | EDAV Fall 2021 Mon/Wed Community Contributions">
-<meta name="twitter:description" content="Parth Gupta (pg2677) I am writing a tutorial for time series forecasting and I will be covering all the classical techniques to do time series forecasting.  12.1 Motivation, Modeling temporal...">
+<meta name="twitter:title" content="Chapter 13 Introduction to Time Series | EDAV Fall 2021 Mon/Wed Community Contributions">
+<meta name="twitter:description" content="Parth Gupta (pg2677) I am writing a tutorial for time series forecasting and I will be covering all the classical techniques to do time series forecasting.  13.1 Motivation, Modeling temporal...">
 <!-- JS --><script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.6/clipboard.min.js" integrity="sha256-inc5kl9MA1hkeYUt+EC3BhlIgyp/2jDIyBLS6k3UxPI=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/fuse.js/6.4.6/fuse.js" integrity="sha512-zv6Ywkjyktsohkbp9bb45V6tEMoWhzFzXis+LrMehmJZZSys19Yxf1dopHx7WzIKxr5tK2dVcYmaCk2uqdjF4A==" crossorigin="anonymous"></script><script src="https://kit.fontawesome.com/6ecbd6c532.js" crossorigin="anonymous"></script><script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <link href="libs/bootstrap-4.6.0/bootstrap.min.css" rel="stylesheet">
 <script src="libs/bootstrap-4.6.0/bootstrap.bundle.min.js"></script><script src="libs/bs3compat-0.3.1/transition.js"></script><script src="libs/bs3compat-0.3.1/tabs.js"></script><script src="libs/bs3compat-0.3.1/bs3compat.js"></script><link href="libs/bs4_book-1.0.0/bs4_book.css" rel="stylesheet">
@@ -43,21 +43,22 @@
 <li><a class="" href="community-contribution.html"><span class="header-section-number">2</span> Community Contribution</a></li>
 <li><a class="" href="github-submission-instructions.html"><span class="header-section-number">3</span> GitHub submission instructions</a></li>
 <li><a class="" href="sample-project.html"><span class="header-section-number">4</span> Sample project</a></li>
+<li><a class="" href="introduction-to-the-lattice-package.html"><span class="header-section-number">5</span> Introduction to the lattice package</a></li>
 <li class="book-part">Cheatsheets</li>
-<li><a class="" href="r-vs.-python-visualization-cheatsheet.html"><span class="header-section-number">5</span> R vs. Python Visualization Cheatsheet</a></li>
-<li><a class="" href="rpackage-waffle-cheatsheet.html"><span class="header-section-number">6</span> Rpackage waffle cheatsheet</a></li>
-<li><a class="" href="r-cheatsheet-on-data-transforamtion-and-exploration.html"><span class="header-section-number">7</span> R cheatsheet on data transforamtion and exploration</a></li>
-<li><a class="" href="r-vs-python-basic-data-wrangling.html"><span class="header-section-number">8</span> R vs Python Basic Data Wrangling</a></li>
+<li><a class="" href="r-vs.-python-visualization-cheatsheet.html"><span class="header-section-number">6</span> R vs. Python Visualization Cheatsheet</a></li>
+<li><a class="" href="rpackage-waffle-cheatsheet.html"><span class="header-section-number">7</span> Rpackage waffle cheatsheet</a></li>
+<li><a class="" href="r-cheatsheet-on-data-transforamtion-and-exploration.html"><span class="header-section-number">8</span> R cheatsheet on data transforamtion and exploration</a></li>
+<li><a class="" href="r-vs-python-basic-data-wrangling.html"><span class="header-section-number">9</span> R vs Python Basic Data Wrangling</a></li>
 <li class="book-part">Tutorials</li>
-<li><a class="" href="multithreading-crawler-frame.html"><span class="header-section-number">9</span> Multithreading Crawler Frame</a></li>
-<li><a class="" href="regression-and-classification-in-r.html"><span class="header-section-number">10</span> Regression and Classification in R</a></li>
-<li><a class="" href="tibble-vs.-dataframe.html"><span class="header-section-number">11</span> Tibble vs. DataFrame</a></li>
-<li><a class="active" href="introduction-to-time-series.html"><span class="header-section-number">12</span> Introduction to Time Series</a></li>
+<li><a class="" href="multithreading-crawler-frame.html"><span class="header-section-number">10</span> Multithreading Crawler Frame</a></li>
+<li><a class="" href="regression-and-classification-in-r.html"><span class="header-section-number">11</span> Regression and Classification in R</a></li>
+<li><a class="" href="tibble-vs.-dataframe.html"><span class="header-section-number">12</span> Tibble vs. DataFrame</a></li>
+<li><a class="active" href="introduction-to-time-series.html"><span class="header-section-number">13</span> Introduction to Time Series</a></li>
 <li class="book-part">Workshops</li>
-<li><a class="" href="data-science-product-cycles-in-enterprises.html"><span class="header-section-number">13</span> Data Science Product Cycles in Enterprises</a></li>
+<li><a class="" href="data-science-product-cycles-in-enterprises.html"><span class="header-section-number">14</span> Data Science Product Cycles in Enterprises</a></li>
 <li class="book-part">Appendices</li>
-<li><a class="" href="github-initial-setup.html"><span class="header-section-number">14</span> Github initial setup</a></li>
-<li><a class="" href="tutorial-for-pull-request-mergers.html"><span class="header-section-number">15</span> Tutorial for pull request mergers</a></li>
+<li><a class="" href="github-initial-setup.html"><span class="header-section-number">15</span> Github initial setup</a></li>
+<li><a class="" href="tutorial-for-pull-request-mergers.html"><span class="header-section-number">16</span> Tutorial for pull request mergers</a></li>
 </ul>
 
         <div class="book-extra">
@@ -67,13 +68,13 @@
 </div>
   </header><main class="col-sm-12 col-md-9 col-lg-7" id="content"><div id="introduction-to-time-series" class="section level1">
 <h1>
-<span class="header-section-number">12</span> Introduction to Time Series<a class="anchor" aria-label="anchor" href="#introduction-to-time-series"><i class="fas fa-link"></i></a>
+<span class="header-section-number">13</span> Introduction to Time Series<a class="anchor" aria-label="anchor" href="#introduction-to-time-series"><i class="fas fa-link"></i></a>
 </h1>
 <p>Parth Gupta (pg2677)</p>
 <p>I am writing a tutorial for time series forecasting and I will be covering all the classical techniques to do time series forecasting.</p>
 <div id="motivation" class="section level2">
 <h2>
-<span class="header-section-number">12.1</span> Motivation,<a class="anchor" aria-label="anchor" href="#motivation"><i class="fas fa-link"></i></a>
+<span class="header-section-number">13.1</span> Motivation,<a class="anchor" aria-label="anchor" href="#motivation"><i class="fas fa-link"></i></a>
 </h2>
 <p>Modeling temporal processes has always been one of the most important problems. Because it has a wide variety of applications, ranging from stock price prediction to weather forecasting to forecasting web traffic on a website.</p>
 <p>We have three types of temporal data,</p>
@@ -85,7 +86,7 @@
 <p>In time series data we have one individual which is observed at different time steps. In Panel data we have multiple individuals that are observed at different time steps. In Cross sectional data we have different individuals observed at same time step.</p>
 <p>Time series analysis comprises methods for analyzing time series data in order to extract meaningful statistics and other characteristics of the data. Time series forecasting is the use of a model to predict future values based on previously observed values. Time series forecasting is very useful because it has a lot of real life applications.</p>
 <p>Visualizing a time series data is very important because then we will be able to get a much better understanding of the underlying patterns in the data. Like the trends if there is an increase or decrease in price of an item with time, seasonal changes like people watch movies more on weekends. How far is the prediction from the actual truth.</p>
-<div class="sourceCode" id="cb239"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb259"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="va">df</span> <span class="op">&lt;-</span><span class="va">births</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/scan.html">scan</a></span><span class="op">(</span><span class="st">"http://robjhyndman.com/tsdldata/data/nybirths.dat"</span><span class="op">)</span>
 <span class="va">data</span> <span class="op">&lt;-</span> <span class="va">df</span><span class="op">[</span><span class="fl">1</span><span class="op">:</span><span class="fl">72</span><span class="op">]</span>
 <span class="va">future</span> <span class="op">&lt;-</span> <span class="va">df</span><span class="op">[</span><span class="fl">73</span><span class="op">:</span><span class="fl">84</span><span class="op">]</span>
@@ -98,7 +99,7 @@
 ## [51] 24.677 23.673 25.320 23.583 24.671 24.454 24.122 24.252 22.084 22.991
 ## [61] 23.287 23.049 25.076 24.037 24.430 24.667 26.451 25.618 25.014 25.110
 ## [71] 22.964 23.981</code></pre>
-<div class="sourceCode" id="cb241"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb261"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="va">time_series</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/stats/ts.html">ts</a></span><span class="op">(</span><span class="va">data</span>, start<span class="op">=</span><span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">1946</span>, <span class="fl">1</span><span class="op">)</span>, end<span class="op">=</span><span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">1951</span>, <span class="fl">12</span><span class="op">)</span>, frequency<span class="op">=</span><span class="fl">12</span><span class="op">)</span>
 <span class="fu"><a href="https://rdrr.io/r/graphics/plot.default.html">plot</a></span><span class="op">(</span><span class="va">time_series</span><span class="op">)</span></code></pre></div>
 <div class="inline-figure"><img src="introduction_to_time_series_files/figure-html/unnamed-chunk-2-1.png" width="672" style="display: block; margin: auto;"></div>
@@ -107,7 +108,7 @@
 <p>MAPE = _{i = 0}^{N}|( - y_i)|/ y_i\</p>
 <p>RMSE = (_{i = 0}^{N}( - y_i)^2/ N)^{1/2}</p>
 <p>$$</p>
-<div class="sourceCode" id="cb242"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb262"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="va">fit</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/stats/stl.html">stl</a></span><span class="op">(</span><span class="va">time_series</span>, s.window<span class="op">=</span><span class="st">"period"</span><span class="op">)</span>
 <span class="fu"><a href="https://rdrr.io/r/graphics/plot.default.html">plot</a></span><span class="op">(</span><span class="va">fit</span><span class="op">)</span></code></pre></div>
 <div class="inline-figure"><img src="introduction_to_time_series_files/figure-html/unnamed-chunk-3-1.png" width="672" style="display: block; margin: auto;"></div>
@@ -118,17 +119,17 @@
 <li><p>Seasonality, it refers to periodic fluctuations that are repeated throughout all the time series period.</p></li>
 <li><p>Residuals, it refers to the left part after trend and seasonality.</p></li>
 </ol>
-<div class="sourceCode" id="cb243"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb263"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="fu"><a href="https://rdrr.io/r/stats/monthplot.html">monthplot</a></span><span class="op">(</span><span class="va">time_series</span><span class="op">)</span></code></pre></div>
 <div class="inline-figure"><img src="introduction_to_time_series_files/figure-html/unnamed-chunk-4-1.png" width="672" style="display: block; margin: auto;"></div>
-<div class="sourceCode" id="cb244"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb264"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="fu">seasonplot</span><span class="op">(</span><span class="va">time_series</span><span class="op">)</span></code></pre></div>
 <div class="inline-figure"><img src="introduction_to_time_series_files/figure-html/unnamed-chunk-4-2.png" width="672" style="display: block; margin: auto;"></div>
 <p>In these plots I am trying to visualize the seasonality aspect of the time series data. I have plotted the data for each month for whole training period.</p>
 </div>
 <div id="stationary-time-series" class="section level2">
 <h2>
-<span class="header-section-number">12.2</span> Stationary Time Series<a class="anchor" aria-label="anchor" href="#stationary-time-series"><i class="fas fa-link"></i></a>
+<span class="header-section-number">13.2</span> Stationary Time Series<a class="anchor" aria-label="anchor" href="#stationary-time-series"><i class="fas fa-link"></i></a>
 </h2>
 <p>Stationarity is one of the most important concepts in time series forecasting. A stationary time series is one whose properties do not depend on the time at which the series is observed. Thus, time series with trends, or with seasonality, are not stationary — the trend and seasonality will affect the value of the time series at different times. On the other hand, a white noise series is stationary — it does not matter when you observe it, it should look much the same at any point in time.</p>
 <p>Differencing is the process of computing the differences between consecutive observations.</p>
@@ -136,7 +137,7 @@
 </div>
 <div id="holtwinters-model" class="section level2">
 <h2>
-<span class="header-section-number">12.3</span> HoltWinters model,<a class="anchor" aria-label="anchor" href="#holtwinters-model"><i class="fas fa-link"></i></a>
+<span class="header-section-number">13.3</span> HoltWinters model,<a class="anchor" aria-label="anchor" href="#holtwinters-model"><i class="fas fa-link"></i></a>
 </h2>
 <p>This model has three parameters alpha, beta and gamma.</p>
 <ol style="list-style-type: decimal">
@@ -151,7 +152,7 @@
 <p>b_t = ^* (l_t - l_{t-1}) + (1-^*)b_{t-1}\</p>
 <p>s_t = (y_t - l_{t-1} - b_{t-1}) + (1-)s_{t-m}
 $$</p>
-<div class="sourceCode" id="cb245"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb265"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="co"># simple exponential - models level</span>
 <span class="va">fit_1</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/stats/HoltWinters.html">HoltWinters</a></span><span class="op">(</span><span class="va">time_series</span>, beta<span class="op">=</span><span class="cn">FALSE</span>, gamma<span class="op">=</span><span class="cn">FALSE</span><span class="op">)</span>
 <span class="va">f1</span> <span class="op">=</span> <span class="fu">forecast</span><span class="op">(</span><span class="va">fit_1</span>, <span class="fl">12</span><span class="op">)</span>
@@ -163,14 +164,14 @@ $$</p>
 <p>_{T+i} = y_T \
 i&gt;=1
 $$</p>
-<div class="sourceCode" id="cb246"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb266"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="co"># double exponential - models level and trend</span>
 <span class="va">fit_2</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/stats/HoltWinters.html">HoltWinters</a></span><span class="op">(</span><span class="va">time_series</span>, gamma<span class="op">=</span><span class="cn">FALSE</span><span class="op">)</span>
 <span class="va">f2</span> <span class="op">=</span> <span class="fu">forecast</span><span class="op">(</span><span class="va">fit_2</span>, <span class="fl">12</span><span class="op">)</span>
 <span class="fu"><a href="https://rdrr.io/r/graphics/plot.default.html">plot</a></span><span class="op">(</span><span class="fu">forecast</span><span class="op">(</span><span class="va">fit_2</span>, <span class="fl">12</span><span class="op">)</span><span class="op">)</span></code></pre></div>
 <div class="inline-figure"><img src="introduction_to_time_series_files/figure-html/unnamed-chunk-6-1.png" width="672" style="display: block; margin: auto;"></div>
 <p>Now we can set beta to non zero value so that we can account for trends, In this model we will forecast all the future value as the last value + trend.</p>
-<div class="sourceCode" id="cb247"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb267"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="co"># triple exponential - models level, trend, and seasonal components</span>
 <span class="va">fit_3</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/stats/HoltWinters.html">HoltWinters</a></span><span class="op">(</span><span class="va">time_series</span><span class="op">)</span>
 <span class="va">f3</span> <span class="op">=</span> <span class="fu">forecast</span><span class="op">(</span><span class="va">fit_3</span>, <span class="fl">12</span><span class="op">)</span>
@@ -178,7 +179,7 @@ $$</p>
 <div class="inline-figure"><img src="introduction_to_time_series_files/figure-html/unnamed-chunk-7-1.png" width="672" style="display: block; margin: auto;"></div>
 <p>Finally, we will set all the three parameters, alpha, beta and gamma to non zero values to account for trend and seasonality both.</p>
 <p>Naturally, this model performs better than previous two models.</p>
-<div class="sourceCode" id="cb248"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb268"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="co"># Automated forecasting using an exponential model</span>
 <span class="va">fit_4</span> <span class="op">&lt;-</span> <span class="fu">ets</span><span class="op">(</span><span class="va">time_series</span><span class="op">)</span>
 <span class="va">f4</span> <span class="op">=</span> <span class="fu">forecast</span><span class="op">(</span><span class="va">fit_4</span>, <span class="fl">12</span><span class="op">)</span>
@@ -187,7 +188,7 @@ $$</p>
 </div>
 <div id="exponential-smooting" class="section level2">
 <h2>
-<span class="header-section-number">12.4</span> Exponential Smooting<a class="anchor" aria-label="anchor" href="#exponential-smooting"><i class="fas fa-link"></i></a>
+<span class="header-section-number">13.4</span> Exponential Smooting<a class="anchor" aria-label="anchor" href="#exponential-smooting"><i class="fas fa-link"></i></a>
 </h2>
 <p>In this model, we assign weights to the past observations and we decrease them exponentially as we go back in time. This model ensures to give more weights to the recent observations and less and less weights to older observations</p>
 <p>$$
@@ -197,7 +198,7 @@ $$</p>
 </div>
 <div id="arima-model" class="section level2">
 <h2>
-<span class="header-section-number">12.5</span> ARIMA model,<a class="anchor" aria-label="anchor" href="#arima-model"><i class="fas fa-link"></i></a>
+<span class="header-section-number">13.5</span> ARIMA model,<a class="anchor" aria-label="anchor" href="#arima-model"><i class="fas fa-link"></i></a>
 </h2>
 <p>ARIMA stands for Auto Regressive Integrated Moving Average. It is a generalization of the simpler AutoRegressive Moving Average and adds the notion of integration. Let’s look at each term individually.</p>
 <p>AR: Autoregression. it refers to any model that predicts the future values by using past observations.</p>
@@ -209,30 +210,30 @@ $$</p>
 d: The number of times that the raw observations are differenced, also called the degree of differencing.
 q: The size of the moving average window, also called the order of moving average.</p>
 <p>If there is a seasonal effect then, it is generally considered better to use a SARIMA (seasonal ARIMA) model than to increase the order of the AR or MA parts of the model.</p>
-<div class="sourceCode" id="cb249"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb269"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="co">#using an ARIMA model</span>
 <span class="va">fit_5</span> <span class="op">&lt;-</span> <span class="fu">Arima</span><span class="op">(</span><span class="va">time_series</span>, order <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">10</span>, <span class="fl">1</span>, <span class="fl">1</span><span class="op">)</span><span class="op">)</span>
 <span class="va">f5</span> <span class="op">=</span> <span class="fu">forecast</span><span class="op">(</span><span class="va">fit_5</span>, <span class="fl">12</span><span class="op">)</span>
 <span class="fu"><a href="https://rdrr.io/r/graphics/plot.default.html">plot</a></span><span class="op">(</span><span class="fu">forecast</span><span class="op">(</span><span class="va">fit_5</span>, <span class="fl">12</span><span class="op">)</span><span class="op">)</span></code></pre></div>
 <div class="inline-figure"><img src="introduction_to_time_series_files/figure-html/unnamed-chunk-9-1.png" width="672" style="display: block; margin: auto;"></div>
-<div class="sourceCode" id="cb250"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb270"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="co">#using an ARIMA model</span>
 <span class="fu"><a href="https://rdrr.io/r/stats/acf.html">acf</a></span><span class="op">(</span><span class="va">time_series</span><span class="op">)</span></code></pre></div>
 <div class="inline-figure"><img src="introduction_to_time_series_files/figure-html/unnamed-chunk-10-1.png" width="672" style="display: block; margin: auto;"></div>
-<div class="sourceCode" id="cb251"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb271"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="fu"><a href="https://rdrr.io/r/stats/acf.html">pacf</a></span><span class="op">(</span><span class="va">time_series</span><span class="op">)</span></code></pre></div>
 <div class="inline-figure"><img src="introduction_to_time_series_files/figure-html/unnamed-chunk-10-2.png" width="672" style="display: block; margin: auto;"></div>
 <p>Now, it is very difficult to choose values of p, q so we can use Autocorrelation function (ACF), and Partial autocorrelation function (PACF) plots of the series to determine the order of AR and/ or MA terms.</p>
 <p>The autocorrelation function (ACF) is a technique that we can use to identify how correlated the values in a time series are with each other. The ACF plots the correlation coefficient against the lag. A lag corresponds to a certain point in time after which we observe the first value in the time series.</p>
 <p>Partial autocorrelation is a statistical measure that captures the correlation between two variables after controlling for the effects of other variables.</p>
-<div class="sourceCode" id="cb252"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb272"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="co"># Forecasting using an ARIMA model</span>
 <span class="va">fit_6</span> <span class="op">&lt;-</span> <span class="fu">auto.arima</span><span class="op">(</span><span class="va">time_series</span><span class="op">)</span>
 <span class="va">f6</span> <span class="op">=</span> <span class="fu">forecast</span><span class="op">(</span><span class="va">fit_6</span>, <span class="fl">12</span><span class="op">)</span>
 <span class="fu"><a href="https://rdrr.io/r/graphics/plot.default.html">plot</a></span><span class="op">(</span><span class="fu">forecast</span><span class="op">(</span><span class="va">fit_6</span>, <span class="fl">12</span><span class="op">)</span><span class="op">)</span></code></pre></div>
 <div class="inline-figure"><img src="introduction_to_time_series_files/figure-html/unnamed-chunk-11-1.png" width="672" style="display: block; margin: auto;"></div>
 <p>Now, we can use another implementation of ARIMA in R i.e the auto.arima() function which uses a variation of the Hyndman-Khandakar algorithm (Hyndman &amp; Khandakar, 2008). It combines unit root tests, minimisation of the AICc and MLE to obtain an ARIMA model.</p>
-<div class="sourceCode" id="cb253"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb273"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="va">rmse_1</span> <span class="op">=</span> <span class="fu">accuracy</span><span class="op">(</span><span class="fu">forecast</span><span class="op">(</span><span class="va">fit_1</span><span class="op">)</span><span class="op">)</span><span class="op">[</span><span class="fl">2</span><span class="op">]</span>
 <span class="va">rmse_2</span> <span class="op">=</span> <span class="fu">accuracy</span><span class="op">(</span><span class="fu">forecast</span><span class="op">(</span><span class="va">fit_2</span><span class="op">)</span><span class="op">)</span><span class="op">[</span><span class="fl">2</span><span class="op">]</span>
 <span class="va">rmse_3</span> <span class="op">=</span> <span class="fu">accuracy</span><span class="op">(</span><span class="fu">forecast</span><span class="op">(</span><span class="va">fit_3</span><span class="op">)</span><span class="op">)</span><span class="op">[</span><span class="fl">2</span><span class="op">]</span>
@@ -243,7 +244,7 @@ q: The size of the moving average window, also called the order of moving averag
 
 <span class="fu"><a href="https://rdrr.io/r/graphics/barplot.html">barplot</a></span><span class="op">(</span><span class="va">rmse</span>, main<span class="op">=</span><span class="st">"RMSE Plot"</span>, xlab<span class="op">=</span><span class="st">"Models"</span>, names.arg <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"HW_1"</span>, <span class="st">"HW_2"</span>, <span class="st">"HW_3"</span>, <span class="st">"ETS"</span>, <span class="st">"ARIMA"</span>, <span class="st">"Auto ARIMA"</span><span class="op">)</span><span class="op">)</span></code></pre></div>
 <div class="inline-figure"><img src="introduction_to_time_series_files/figure-html/unnamed-chunk-12-1.png" width="672" style="display: block; margin: auto;"></div>
-<div class="sourceCode" id="cb254"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb274"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="va">MAPE_1</span> <span class="op">=</span> <span class="fu">accuracy</span><span class="op">(</span><span class="fu">forecast</span><span class="op">(</span><span class="va">fit_1</span><span class="op">)</span><span class="op">)</span><span class="op">[</span><span class="fl">5</span><span class="op">]</span>
 <span class="va">MAPE_2</span> <span class="op">=</span> <span class="fu">accuracy</span><span class="op">(</span><span class="fu">forecast</span><span class="op">(</span><span class="va">fit_2</span><span class="op">)</span><span class="op">)</span><span class="op">[</span><span class="fl">5</span><span class="op">]</span>
 <span class="va">MAPE_3</span> <span class="op">=</span> <span class="fu">accuracy</span><span class="op">(</span><span class="fu">forecast</span><span class="op">(</span><span class="va">fit_3</span><span class="op">)</span><span class="op">)</span><span class="op">[</span><span class="fl">5</span><span class="op">]</span>
@@ -269,17 +270,17 @@ Australia.OTexts.com/fpp2.</p></li>
 
 
   <div class="chapter-nav">
-<div class="prev"><a href="tibble-vs.-dataframe.html"><span class="header-section-number">11</span> Tibble vs. DataFrame</a></div>
-<div class="next"><a href="data-science-product-cycles-in-enterprises.html"><span class="header-section-number">13</span> Data Science Product Cycles in Enterprises</a></div>
+<div class="prev"><a href="tibble-vs.-dataframe.html"><span class="header-section-number">12</span> Tibble vs. DataFrame</a></div>
+<div class="next"><a href="data-science-product-cycles-in-enterprises.html"><span class="header-section-number">14</span> Data Science Product Cycles in Enterprises</a></div>
 </div></main><div class="col-md-3 col-lg-2 d-none d-md-block sidebar sidebar-chapter">
     <nav id="toc" data-toggle="toc" aria-label="On this page"><h2>On this page</h2>
       <ul class="nav navbar-nav">
-<li><a class="nav-link" href="#introduction-to-time-series"><span class="header-section-number">12</span> Introduction to Time Series</a></li>
-<li><a class="nav-link" href="#motivation"><span class="header-section-number">12.1</span> Motivation,</a></li>
-<li><a class="nav-link" href="#stationary-time-series"><span class="header-section-number">12.2</span> Stationary Time Series</a></li>
-<li><a class="nav-link" href="#holtwinters-model"><span class="header-section-number">12.3</span> HoltWinters model,</a></li>
-<li><a class="nav-link" href="#exponential-smooting"><span class="header-section-number">12.4</span> Exponential Smooting</a></li>
-<li><a class="nav-link" href="#arima-model"><span class="header-section-number">12.5</span> ARIMA model,</a></li>
+<li><a class="nav-link" href="#introduction-to-time-series"><span class="header-section-number">13</span> Introduction to Time Series</a></li>
+<li><a class="nav-link" href="#motivation"><span class="header-section-number">13.1</span> Motivation,</a></li>
+<li><a class="nav-link" href="#stationary-time-series"><span class="header-section-number">13.2</span> Stationary Time Series</a></li>
+<li><a class="nav-link" href="#holtwinters-model"><span class="header-section-number">13.3</span> HoltWinters model,</a></li>
+<li><a class="nav-link" href="#exponential-smooting"><span class="header-section-number">13.4</span> Exponential Smooting</a></li>
+<li><a class="nav-link" href="#arima-model"><span class="header-section-number">13.5</span> ARIMA model,</a></li>
 </ul>
 
       <div class="book-extra">

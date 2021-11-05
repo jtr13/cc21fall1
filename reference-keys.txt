@@ -16,6 +16,13 @@ what-if-i-catch-mistakes-before-my-pull-request-is-merged
 what-if-i-catch-mistakes-after-my-pull-request-is-merged
 other-questions
 sample-project
+introduction-to-the-lattice-package
+producing-a-plot-in-lattice
+plotting-by-groups
+histograms-and-density-plots
+boxplots-violinplots-and-dotplots
+trivariate-plots
+pros-and-cons-of-lattice
 r-vs.-python-visualization-cheatsheet
 rpackage-waffle-cheatsheet
 r-cheatsheet-on-data-transforamtion-and-exploration
