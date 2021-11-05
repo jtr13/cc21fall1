@@ -1,6 +1,6 @@
 # (PART) Tutorials {-}
 
-# multithreading crawler frame
+# Multithreading Crawler Frame
 
 Yi Yang
 
