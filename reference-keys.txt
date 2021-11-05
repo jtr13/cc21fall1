@@ -64,6 +64,8 @@ logsquare-root-cube-root-transformation-in-r
 changing-the-dataframe-dimensions-from-wide-to-long
 replace-na-with-a-specific-value
 r-vs-python-basic-data-wrangling
+cheatsheet-tidyverse
+section
 multithreading-crawler-frame
 regression-and-classification-in-r
 libraries-and-warnings
@@ -106,16 +108,6 @@ holtwinters-model
 exponential-smooting
 arima-model
 vipul-edav-community-contribution-kickstart-r
-caret---a-machine-learning-package-turotial
-introduction-and-description-of-dataset
-pre-processing
-model-training
-k-nearest-neighbors
-logistics-regression
-support-vector-machine
-random-forest
-model-prediction-and-evaluation
-reference
 data-science-product-cycles-in-enterprises
 github-initial-setup
 create-new-repo
