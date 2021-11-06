@@ -39,6 +39,7 @@ rmd_files: [
   'vipul_cc_edav_kickstart_r.Rmd',
   'caret_machine_learning_tutorial.Rmd',
   'streamlit_for_financial_analysis.Rmd',
+  'interactive_graphs_tutorial.Rmd',
 
   
   # Part: Workshops
