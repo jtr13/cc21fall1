@@ -41,7 +41,6 @@ rmd_files: [
   'streamlit_for_financial_analysis.Rmd',
   'interactive_graphs_tutorial.Rmd',
   'web_scraping_rcurl_xml_project.Rmd',
-
   
   # Part: Workshops
   'ds_product_cycles_in_enterprises.Rmd', # contains PART header
@@ -51,3 +50,4 @@ rmd_files: [
   'appendix_pull_request_tutorial.Rmd'
 
 ]
+
