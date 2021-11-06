@@ -38,6 +38,7 @@ rmd_files: [
   'introduction_to_time_series.Rmd',
   'vipul_cc_edav_kickstart_r.Rmd',
   'caret_machine_learning_tutorial.Rmd',
+  'streamlit_for_financial_analysis.Rmd',
 
   
   # Part: Workshops
