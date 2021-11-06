@@ -109,6 +109,16 @@ holtwinters-model
 exponential-smooting
 arima-model
 vipul-edav-community-contribution-kickstart-r
+caret---a-machine-learning-package-turotial
+introduction-and-description-of-dataset
+pre-processing
+model-training
+k-nearest-neighbors
+logistics-regression
+support-vector-machine
+random-forest
+model-prediction-and-evaluation
+reference
 data-science-product-cycles-in-enterprises
 github-initial-setup
 create-new-repo
