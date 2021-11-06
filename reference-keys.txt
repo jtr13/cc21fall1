@@ -127,6 +127,16 @@ create-interactive-graphs-via-plotly
 create-interactive-graphs-via-networkd3
 conclusion
 reference-1
+guideline-on-using-package-rcurl-and-xml-for-web-scraping
+introduction-2
+extracting-information-for-constructing-dataset-rcurl-and-xml
+step-1-web-searching
+step-2-cleanupparsing-search-results
+step-3-detect-the-pattern
+step-4-extract-information-on-each-job-post
+step-5-combine-job-posts
+conclusion-1
+work-cited
 data-science-product-cycles-in-enterprises
 github-initial-setup
 create-new-repo
