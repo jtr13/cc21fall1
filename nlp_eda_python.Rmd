@@ -1,9 +1,10 @@
-```{r, include=FALSE}
-knitr::opts_chunk$set(warning = FALSE, message = FALSE)
-```
 # Natural Langauge Processing Common EDA Practices in Python
 
 Zhucheng Zhan, Yunchen Yao
+
+```{r, include=FALSE}
+knitr::opts_chunk$set(warning = FALSE, message = FALSE)
+```
 
 In Natural Language Processing, exploratory data analysis is an important and essential part before training models. We could obtain adequate information from text data visualization, like getting the most frequently used word quickly to understand what the text is about, and many more.
 
