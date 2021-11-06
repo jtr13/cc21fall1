@@ -5,7 +5,7 @@ Jiang Zhu and Xuechun Bai
 Motivation: The motivation for this community contribution project is to introduce to classmates a package in R that can easily implement machine learning algorithms in few lines of code. As python users who commonly use the package `scikit-learn` to deploy machine laerning models, we strived to find a similar R package that has similar functions. While finding the resources online, we discovered that `caret` is a great package with neatly defined functions that create a easy-to use interface for machine learning algorithms, and at the same time, it has abundant machine learning models and preprocessing and model selection functions. However, we have not found any great tutorial or easy-to-read API's for caret. Therefore, in this markdown file, we will illustrate how to use the `caret` package in a example-based manner. We eliminate the mathematics behind each model as much as possible to focus on the implementation of the algorithm in R. We will also demonstrate the results of our experiments of `caret` model on datasets with visualization tools. 
 
 ```{r include=FALSE}
-knitr::opts_chunk$set(eval=FALSE, warning = FALSE, message = FALSE)
+knitr::opts_chunk$set(warning = FALSE, message = FALSE)
 ```
 
 ```{r warning=FALSE}
