@@ -1,0 +1,11 @@
+# (PART) Cheatsheets {-}
+
+# R vs. Python Visualization Cheatsheet
+
+Dawei He and Minhui Liao
+
+We found that those who primarily work with R on data visualization may not be very familiar with graphs in Python. There are a lot of differences between R and Python, we usually use ggplot2 in R, and the closest comparable libraries are Matplotlib and Seaborn while working in Python. Therefore, we made this PDF version cheat sheet for people who primarily use R or Python but need to use one of another programming language to make plots, so that they could easily compare the difference between graphs.
+
+Click the following link to check out the cheat sheet:
+
+https://github.com/Aaralyn-Liao/EDAV_Contribution_CC8/blob/main/r_vs_python_visualization.pdf
