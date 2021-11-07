@@ -34,6 +34,7 @@ rmd_files: [
   'cheatsheet_tidyverse.Rmd',
   'ggprism_and_ggsci_cheatsheets.Rmd',
   'interactive_plot_plotly_cheatsheet.Rmd',
+
  
   # Part: Tutorials
   'multithreading_crawler_frame.Rmd', # contains PART header
@@ -58,3 +59,4 @@ rmd_files: [
   'appendix_pull_request_tutorial.Rmd'
 
 ]
+
