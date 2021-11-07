@@ -14,6 +14,7 @@ library(tidyverse)
 library(readr)
 library(kernlab)
 library(earth)
+library(RANN)
 ```
 
 
@@ -248,7 +249,7 @@ we can compute the confution matrix for each model:
 
 Confusion matrix for the knn model:
 ```{r}
-knn_cm <- confusionMatrix(reference = test_df$Purchase, data = predict(knn_model, test_df), mode='everything', positive='MM')
+knn_cm <- confusionMatrix(reference = factor(test_df$Purchase), data = predict(knn_model, test_df), mode='everything', positive='MM')
 
 knn_cm$table
 ```
@@ -263,7 +264,7 @@ ggplot(data = data.frame(knn_cm$table), aes(x=Reference, y=Prediction))+
 
 Confusion matrix for the logistics regression model:
 ```{r}
-lr_cm <- confusionMatrix(reference = test_df$Purchase, data = predict(lr_model, test_df), mode='everything', positive='MM')
+lr_cm <- confusionMatrix(reference = factor(test_df$Purchase), data = predict(lr_model, test_df), mode='everything', positive='MM')
 
 lr_cm$table
 ```
@@ -278,7 +279,7 @@ ggplot(data = data.frame(lr_cm$table), aes(x=Reference, y=Prediction))+
 
 Confusion matrix for the svm model:
 ```{r}
-svm_cm <- confusionMatrix(reference = test_df$Purchase, data = predict(svm_model, test_df), mode='everything', positive='MM')
+svm_cm <- confusionMatrix(reference = factor(test_df$Purchase), data = predict(svm_model, test_df), mode='everything', positive='MM')
 
 svm_cm$table
 ```
@@ -293,7 +294,7 @@ ggplot(data = data.frame(svm_cm$table), aes(x=Reference, y=Prediction))+
 
 Confusion matrix for the random forest model:
 ```{r}
-rf_cm <- confusionMatrix(reference = test_df$Purchase, data = predict(svm_model, test_df), mode='everything', positive='MM')
+rf_cm <- confusionMatrix(reference = factor(test_df$Purchase), data = predict(svm_model, test_df), mode='everything', positive='MM')
 
 rf_cm$table
 ```
