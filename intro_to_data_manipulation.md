@@ -463,8 +463,8 @@ str_view(a, "ea")
 ```
 
 ```{=html}
-<div id="htmlwidget-4013ca56bf386b81a6aa" style="width:960px;height:100%;" class="str_view html-widget"></div>
-<script type="application/json" data-for="htmlwidget-4013ca56bf386b81a6aa">{"x":{"html":"<ul>\n  <li>root<\/li>\n  <li>cr<span class='match'>ea<\/span>te<\/li>\n  <li>time<\/li>\n  <li>d<span class='match'>ea<\/span>th<\/li>\n<\/ul>"},"evals":[],"jsHooks":[]}</script>
+<div id="htmlwidget-792401aa04ac08b3e18b" style="width:960px;height:100%;" class="str_view html-widget"></div>
+<script type="application/json" data-for="htmlwidget-792401aa04ac08b3e18b">{"x":{"html":"<ul>\n  <li>root<\/li>\n  <li>cr<span class='match'>ea<\/span>te<\/li>\n  <li>time<\/li>\n  <li>d<span class='match'>ea<\/span>th<\/li>\n<\/ul>"},"evals":[],"jsHooks":[]}</script>
 ```
 We can use '.' as a wildcard to match any character
 
@@ -474,8 +474,8 @@ str_view(a, "im.")
 ```
 
 ```{=html}
-<div id="htmlwidget-c5e090836480ceb433a8" style="width:960px;height:100%;" class="str_view html-widget"></div>
-<script type="application/json" data-for="htmlwidget-c5e090836480ceb433a8">{"x":{"html":"<ul>\n  <li>root<\/li>\n  <li>create<\/li>\n  <li>t<span class='match'>ime<\/span><\/li>\n  <li>death<\/li>\n<\/ul>"},"evals":[],"jsHooks":[]}</script>
+<div id="htmlwidget-07a5a2860c8a836241a6" style="width:960px;height:100%;" class="str_view html-widget"></div>
+<script type="application/json" data-for="htmlwidget-07a5a2860c8a836241a6">{"x":{"html":"<ul>\n  <li>root<\/li>\n  <li>create<\/li>\n  <li>t<span class='match'>ime<\/span><\/li>\n  <li>death<\/li>\n<\/ul>"},"evals":[],"jsHooks":[]}</script>
 ```
 We can use '^a' to match any string starting with an "a", and "a\$" to find any string that ending with "a". We can also use '^' at the beginning and "$" in the end to make sure that it's an exact match. 
 
@@ -485,8 +485,8 @@ str_view(a, "^c")
 ```
 
 ```{=html}
-<div id="htmlwidget-ab9d20f0bae654f9bf80" style="width:960px;height:100%;" class="str_view html-widget"></div>
-<script type="application/json" data-for="htmlwidget-ab9d20f0bae654f9bf80">{"x":{"html":"<ul>\n  <li>root<\/li>\n  <li><span class='match'>c<\/span>reate<\/li>\n  <li>time<\/li>\n  <li>death<\/li>\n  <li>eath<\/li>\n<\/ul>"},"evals":[],"jsHooks":[]}</script>
+<div id="htmlwidget-5652924da2a642b9e8ae" style="width:960px;height:100%;" class="str_view html-widget"></div>
+<script type="application/json" data-for="htmlwidget-5652924da2a642b9e8ae">{"x":{"html":"<ul>\n  <li>root<\/li>\n  <li><span class='match'>c<\/span>reate<\/li>\n  <li>time<\/li>\n  <li>death<\/li>\n  <li>eath<\/li>\n<\/ul>"},"evals":[],"jsHooks":[]}</script>
 ```
 
 ```r
@@ -494,8 +494,8 @@ str_view(a, "^death$")
 ```
 
 ```{=html}
-<div id="htmlwidget-cae230b2c4338d20d9c0" style="width:960px;height:100%;" class="str_view html-widget"></div>
-<script type="application/json" data-for="htmlwidget-cae230b2c4338d20d9c0">{"x":{"html":"<ul>\n  <li>root<\/li>\n  <li>create<\/li>\n  <li>time<\/li>\n  <li><span class='match'>death<\/span><\/li>\n  <li>eath<\/li>\n<\/ul>"},"evals":[],"jsHooks":[]}</script>
+<div id="htmlwidget-cb90951fdbdae8f63d06" style="width:960px;height:100%;" class="str_view html-widget"></div>
+<script type="application/json" data-for="htmlwidget-cb90951fdbdae8f63d06">{"x":{"html":"<ul>\n  <li>root<\/li>\n  <li>create<\/li>\n  <li>time<\/li>\n  <li><span class='match'>death<\/span><\/li>\n  <li>eath<\/li>\n<\/ul>"},"evals":[],"jsHooks":[]}</script>
 ```
 
 ```r
@@ -503,8 +503,8 @@ str_view(a, "e$")
 ```
 
 ```{=html}
-<div id="htmlwidget-8f0036194426fb8ed451" style="width:960px;height:100%;" class="str_view html-widget"></div>
-<script type="application/json" data-for="htmlwidget-8f0036194426fb8ed451">{"x":{"html":"<ul>\n  <li>root<\/li>\n  <li>creat<span class='match'>e<\/span><\/li>\n  <li>tim<span class='match'>e<\/span><\/li>\n  <li>death<\/li>\n  <li>eath<\/li>\n<\/ul>"},"evals":[],"jsHooks":[]}</script>
+<div id="htmlwidget-a07e906d2226a1d935b9" style="width:960px;height:100%;" class="str_view html-widget"></div>
+<script type="application/json" data-for="htmlwidget-a07e906d2226a1d935b9">{"x":{"html":"<ul>\n  <li>root<\/li>\n  <li>creat<span class='match'>e<\/span><\/li>\n  <li>tim<span class='match'>e<\/span><\/li>\n  <li>death<\/li>\n  <li>eath<\/li>\n<\/ul>"},"evals":[],"jsHooks":[]}</script>
 ```
 We can also specify how many times a character repeats itself. {n} represents we have exactly n times of repetition,{n,}: n or more, {,n}: at most n, {n,m}: between n and m
 
@@ -514,8 +514,8 @@ str_view(a, 'C{2}')
 ```
 
 ```{=html}
-<div id="htmlwidget-324683d5875334108048" style="width:960px;height:100%;" class="str_view html-widget"></div>
-<script type="application/json" data-for="htmlwidget-324683d5875334108048">{"x":{"html":"<ul>\n  <li><span class='match'>CC<\/span>ccoljenlq<\/li>\n<\/ul>"},"evals":[],"jsHooks":[]}</script>
+<div id="htmlwidget-b941c42a98cef1d0a7bd" style="width:960px;height:100%;" class="str_view html-widget"></div>
+<script type="application/json" data-for="htmlwidget-b941c42a98cef1d0a7bd">{"x":{"html":"<ul>\n  <li><span class='match'>CC<\/span>ccoljenlq<\/li>\n<\/ul>"},"evals":[],"jsHooks":[]}</script>
 ```
 
 There are also extra type of strings we can match other than characters we mentioned. '\\d' matches any digit,'\\s' matches any white space, [xyz] matches x, y or z, [^xyz] matches anything other than x, y and z. Here noticing that because we want to match a substring starting with one backlash, we have to specify two backlashes in the string matching.
@@ -526,8 +526,8 @@ str_view(a, '\\d{2}')
 ```
 
 ```{=html}
-<div id="htmlwidget-78f888d6152822564792" style="width:960px;height:100%;" class="str_view html-widget"></div>
-<script type="application/json" data-for="htmlwidget-78f888d6152822564792">{"x":{"html":"<ul>\n  <li>xeqowhe<span class='match'>22<\/span><\/li>\n<\/ul>"},"evals":[],"jsHooks":[]}</script>
+<div id="htmlwidget-0798196d581d8f8fd4cf" style="width:960px;height:100%;" class="str_view html-widget"></div>
+<script type="application/json" data-for="htmlwidget-0798196d581d8f8fd4cf">{"x":{"html":"<ul>\n  <li>xeqowhe<span class='match'>22<\/span><\/li>\n<\/ul>"},"evals":[],"jsHooks":[]}</script>
 ```
 
 ```r
@@ -535,8 +535,8 @@ str_view(a, '[xyz]')
 ```
 
 ```{=html}
-<div id="htmlwidget-3adf61c1b42f50e397e0" style="width:960px;height:100%;" class="str_view html-widget"></div>
-<script type="application/json" data-for="htmlwidget-3adf61c1b42f50e397e0">{"x":{"html":"<ul>\n  <li><span class='match'>x<\/span>eqowhe22<\/li>\n<\/ul>"},"evals":[],"jsHooks":[]}</script>
+<div id="htmlwidget-e9ed71aa8ee947c0183c" style="width:960px;height:100%;" class="str_view html-widget"></div>
+<script type="application/json" data-for="htmlwidget-e9ed71aa8ee947c0183c">{"x":{"html":"<ul>\n  <li><span class='match'>x<\/span>eqowhe22<\/li>\n<\/ul>"},"evals":[],"jsHooks":[]}</script>
 ```
 Then we will introduce a couple of methods that are useful in conjunction to use with these regular expression.\
 1.str_detect(): to see if we detect certain substring, return TRUE or FALSE\

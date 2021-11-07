@@ -83,12 +83,6 @@ tidyverse_cheatsheet
 cheatsheet-tidyverse
 section
 use-of-ggprism-and-ggsci-packages
-interactive-plot-introduction
-interactive-bubble-plot
-interactive-area-plot
-interactive-heatmap
-interactive-network
-reference-1
 multithreading-crawler-frame
 regression-and-classification-in-r
 libraries-and-warnings
@@ -140,7 +134,7 @@ logistics-regression
 support-vector-machine
 random-forest
 model-prediction-and-evaluation
-reference-2
+reference-1
 streamlit-for-financial-analysis
 interactive-graphs-tutorial
 introduction-1
@@ -148,7 +142,7 @@ create-interactive-graphs-via-ggvis
 create-interactive-graphs-via-plotly
 create-interactive-graphs-via-networkd3
 conclusion
-reference-3
+reference-2
 guideline-on-using-package-rcurl-and-xml-for-web-scraping
 introduction-2
 extracting-information-for-constructing-dataset-rcurl-and-xml
@@ -159,7 +153,6 @@ step-4-extract-information-on-each-job-post
 step-5-combine-job-posts
 conclusion-1
 work-cited
-twitter-r-package-scraping-via-api-tutorial
 introduction-to-data-manipulation
 data-wrangling-with-dplyr
 pipe
