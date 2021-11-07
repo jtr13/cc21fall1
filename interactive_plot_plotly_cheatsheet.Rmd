@@ -18,7 +18,7 @@ library(networkD3)
 Interactive plots are used widely in today's data analysis.This tutorial will introduce four commonly used interactive plots: interactive bubble plot, interactive area plot, interactive heatmap, and interactive network. Unlike static plot, interactive plot can enable users to zoom in and out and give user a better use experience and simplify analysis process. 
 
 
-## 1 Interactive Bubble Plot:
+## Interactive Bubble Plot:
 
 A bubble plot is where a third dimension is added on a scatterplot. The size of each bubble represent the additional numeric variable.
 
@@ -41,7 +41,7 @@ ggplotly(p)
 
 While the interactive bubble plot show a positive relationship between GPD and human's lifespan, it also gives an additional information on the number of people in each dot. However, the drawback of bubble plots will be it is hard to judge how the relationship between x and y variables and the their variables (polpulation size for this example).
 
-## 2 interactive Area Plot:
+## Interactive Area Plot:
 
 Area plot do not differ a lot from regular line graphs, but with two exceptions:
 1. The area between the x-axis and each individual line is filled with some color
@@ -78,7 +78,7 @@ ggplotly(p2)
 
 We can easily see how the student mean performance for each subject associated with their parents' educational background just by glancing at the area under each separate line.
 
-## 3 Interactive Heatmap:
+## Interactive Heatmap:
 
 Heatmap is a very useful visualization tool on two-dimensional data to reveal patterns and correlations between by rows and columns. To be more easy-to-use, we will introduce interactive heatmap. As we already familiar with heatmap R package to draw a heatmap, we will use an useful  R package "heatmaply" to build interactive cluster heatmap.
 
@@ -98,7 +98,7 @@ Instead of vertically naming the x-axis as heatmap does, interactive heatmap wil
 
 A more visual and user friendly tool,shinyHeatmaply, to create an interactive heatmap is invented byJonathan Sidi. To apply this tool, we can install 'shinyHeatmaply' R package, or, alternatively, run it through GitHub by entering "devtools::install_github('yonicd/shinyHeatmaply')". The output of heatmap from shinyHeatmaply will provide very detail parameter summaries.
 
-## 4 Interactive Network
+## Interactive Network
 
 Network is consist of mainly two parts: nodes and edge. This graph reflect interrelationships between each note (i.e. entity). The advantage of using network is too include  all important entities and analyze as a whole instead of see each entity separately. Two addtional packages we need to import for interactive network are igraph and networkD3. Let's first see how igraph is used to plot a static network for a square matrix we generated ramdonly. 
 
