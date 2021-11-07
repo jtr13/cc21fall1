@@ -22,6 +22,8 @@ rmd_files: [
   #'icons_and_symbols_in_r.Rmd',
   'intro_lattice_tutorial.Rmd',
   'graph_animation.Rmd',
+  'interactive_plots.Rmd',
+
 
   # Part: Cheatsheets
   'r_vs_python_visualization.Rmd', # contains PART header
