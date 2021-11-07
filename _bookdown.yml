@@ -33,7 +33,7 @@ rmd_files: [
   'tidyverse_cheatsheet.Rmd',
   'cheatsheet_tidyverse.Rmd',
   'ggprism_and_ggsci_cheatsheets.Rmd',
-  'interactive_plot_plotly_cheatsheet.Rmd',
+  #'interactive_plot_plotly_cheatsheet.Rmd',
 
  
   # Part: Tutorials
@@ -46,7 +46,7 @@ rmd_files: [
   'streamlit_for_financial_analysis.Rmd',
   'interactive_graphs_tutorial.Rmd',
   'web_scraping_rcurl_xml_project.Rmd',
-  'twitter_api_scrape_tutorial.Rmd',
+  #'twitter_api_scrape_tutorial.Rmd',
   'intro_to_data_manipulation.Rmd',
   'animating_in_r.Rmd',
 
