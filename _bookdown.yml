@@ -33,7 +33,7 @@ rmd_files: [
   'tidyverse_cheatsheet.Rmd',
   'cheatsheet_tidyverse.Rmd',
   'ggprism_and_ggsci_cheatsheets.Rmd',
-  #'interactive_plot_plotly_cheatsheet.Rmd',
+  'interactive_plot_plotly_cheatsheet.Rmd',
 
  
   # Part: Tutorials
