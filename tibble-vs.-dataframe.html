@@ -4,24 +4,26 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<title>Chapter 15 Tibble vs. DataFrame | EDAV Fall 2021 Mon/Wed Community Contributions</title>
+<title>Chapter 18 Tibble vs. DataFrame | EDAV Fall 2021 Mon/Wed Community Contributions</title>
 <meta name="author" content="the students of the class">
-<meta name="description" content="Jingfei Fang library(tidyverse) library(tibble)  15.0.1 Introduction A tibble is often considered a neater format of a data frame, and it is often used in the tidyverse and ggplot2 packages. It...">
+<meta name="description" content="Jingfei Fang library(tidyverse) library(tibble)  18.0.1 Introduction A tibble is often considered a neater format of a data frame, and it is often used in the tidyverse and ggplot2 packages. It...">
 <meta name="generator" content="bookdown 0.24 with bs4_book()">
-<meta property="og:title" content="Chapter 15 Tibble vs. DataFrame | EDAV Fall 2021 Mon/Wed Community Contributions">
+<meta property="og:title" content="Chapter 18 Tibble vs. DataFrame | EDAV Fall 2021 Mon/Wed Community Contributions">
 <meta property="og:type" content="book">
-<meta property="og:description" content="Jingfei Fang library(tidyverse) library(tibble)  15.0.1 Introduction A tibble is often considered a neater format of a data frame, and it is often used in the tidyverse and ggplot2 packages. It...">
+<meta property="og:description" content="Jingfei Fang library(tidyverse) library(tibble)  18.0.1 Introduction A tibble is often considered a neater format of a data frame, and it is often used in the tidyverse and ggplot2 packages. It...">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Chapter 15 Tibble vs. DataFrame | EDAV Fall 2021 Mon/Wed Community Contributions">
-<meta name="twitter:description" content="Jingfei Fang library(tidyverse) library(tibble)  15.0.1 Introduction A tibble is often considered a neater format of a data frame, and it is often used in the tidyverse and ggplot2 packages. It...">
+<meta name="twitter:title" content="Chapter 18 Tibble vs. DataFrame | EDAV Fall 2021 Mon/Wed Community Contributions">
+<meta name="twitter:description" content="Jingfei Fang library(tidyverse) library(tibble)  18.0.1 Introduction A tibble is often considered a neater format of a data frame, and it is often used in the tidyverse and ggplot2 packages. It...">
 <!-- JS --><script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.6/clipboard.min.js" integrity="sha256-inc5kl9MA1hkeYUt+EC3BhlIgyp/2jDIyBLS6k3UxPI=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/fuse.js/6.4.6/fuse.js" integrity="sha512-zv6Ywkjyktsohkbp9bb45V6tEMoWhzFzXis+LrMehmJZZSys19Yxf1dopHx7WzIKxr5tK2dVcYmaCk2uqdjF4A==" crossorigin="anonymous"></script><script src="https://kit.fontawesome.com/6ecbd6c532.js" crossorigin="anonymous"></script><script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <link href="libs/bootstrap-4.6.0/bootstrap.min.css" rel="stylesheet">
 <script src="libs/bootstrap-4.6.0/bootstrap.bundle.min.js"></script><script src="libs/bs3compat-0.3.1/transition.js"></script><script src="libs/bs3compat-0.3.1/tabs.js"></script><script src="libs/bs3compat-0.3.1/bs3compat.js"></script><link href="libs/bs4_book-1.0.0/bs4_book.css" rel="stylesheet">
-<script src="libs/bs4_book-1.0.0/bs4_book.js"></script><script src="libs/accessible-code-block-0.0.1/empty-anchor.js"></script><script src="libs/detect-resize-0.5.3/jquery.resize.js"></script><link href="libs/jquery-ui-1.11.4/jquery-ui.min.css" rel="stylesheet">
-<script src="libs/jquery-ui-1.11.4/jquery-ui.min.js"></script><script src="libs/d3-4.5.0/d3.min.js"></script><script src="libs/vega-1.4.3/vega.min.js"></script><script src="libs/lodash-2.2.1/lodash.min.js"></script><script>var lodash = _.noConflict();</script><link href="libs/ggvis-0.4.7/css/ggvis.css" rel="stylesheet">
-<script src="libs/ggvis-0.4.7/js/ggvis.js"></script><script src="libs/htmlwidgets-1.5.4/htmlwidgets.js"></script><script src="libs/plotly-binding-4.10.0/plotly.js"></script><script src="libs/typedarray-0.1/typedarray.min.js"></script><link href="libs/crosstalk-1.2.0/css/crosstalk.min.css" rel="stylesheet">
+<script src="libs/bs4_book-1.0.0/bs4_book.js"></script><script src="libs/accessible-code-block-0.0.1/empty-anchor.js"></script><script src="libs/htmlwidgets-1.5.4/htmlwidgets.js"></script><script src="libs/plotly-binding-4.10.0/plotly.js"></script><script src="libs/typedarray-0.1/typedarray.min.js"></script><link href="libs/crosstalk-1.2.0/css/crosstalk.min.css" rel="stylesheet">
 <script src="libs/crosstalk-1.2.0/js/crosstalk.min.js"></script><link href="libs/plotly-htmlwidgets-css-2.5.1/plotly-htmlwidgets.css" rel="stylesheet">
-<script src="libs/plotly-main-2.5.1/plotly-latest.min.js"></script><script src="libs/forceNetwork-binding-0.4/forceNetwork.js"></script><script src="libs/dendroNetwork-binding-0.4/dendroNetwork.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/autocomplete.js/0.38.0/autocomplete.jquery.min.js" integrity="sha512-GU9ayf+66Xx2TmpxqJpliWbT5PiGYxpaG8rfnBEk1LL8l1KGkRShhngwdXK1UgqhAzWpZHSiYPc09/NwDQIGyg==" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/mark.min.js" integrity="sha512-5CYOlHXGh6QpOFA/TeTylKLWfB3ftPsde7AnmhuitiTX4K5SqCLBeKro6sPS8ilsz1Q4NRx3v8Ko2IBiszzdww==" crossorigin="anonymous"></script><!-- CSS -->
+<script src="libs/plotly-main-2.5.1/plotly-latest.min.js"></script><link href="libs/dygraphs-1.1.1/dygraph.css" rel="stylesheet">
+<script src="libs/dygraphs-1.1.1/dygraph-combined.js"></script><script src="libs/dygraphs-1.1.1/shapes.js"></script><script src="libs/moment-2.8.4/moment.js"></script><script src="libs/moment-timezone-0.2.5/moment-timezone-with-data.js"></script><script src="libs/moment-fquarter-1.0.0/moment-fquarter.min.js"></script><script src="libs/dygraphs-binding-1.1.1.6/dygraphs.js"></script><script src="libs/d3-4.5.0/d3.min.js"></script><script src="libs/forceNetwork-binding-0.4/forceNetwork.js"></script><script src="libs/detect-resize-0.5.3/jquery.resize.js"></script><link href="libs/jquery-ui-1.11.4/jquery-ui.min.css" rel="stylesheet">
+<script src="libs/jquery-ui-1.11.4/jquery-ui.min.js"></script><script src="libs/vega-1.4.3/vega.min.js"></script><script src="libs/lodash-2.2.1/lodash.min.js"></script><script>var lodash = _.noConflict();</script><link href="libs/ggvis-0.4.7/css/ggvis.css" rel="stylesheet">
+<script src="libs/ggvis-0.4.7/js/ggvis.js"></script><script src="libs/dendroNetwork-binding-0.4/dendroNetwork.js"></script><link href="libs/str_view-0.1.0/str_view.css" rel="stylesheet">
+<script src="libs/str_view-binding-1.4.0/str_view.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/autocomplete.js/0.38.0/autocomplete.jquery.min.js" integrity="sha512-GU9ayf+66Xx2TmpxqJpliWbT5PiGYxpaG8rfnBEk1LL8l1KGkRShhngwdXK1UgqhAzWpZHSiYPc09/NwDQIGyg==" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/mark.min.js" integrity="sha512-5CYOlHXGh6QpOFA/TeTylKLWfB3ftPsde7AnmhuitiTX4K5SqCLBeKro6sPS8ilsz1Q4NRx3v8Ko2IBiszzdww==" crossorigin="anonymous"></script><!-- CSS -->
 </head>
 <body data-spy="scroll" data-target="#toc">
 
@@ -50,28 +52,34 @@
 <li class="book-part">Data Visualizations</li>
 <li><a class="" href="introduction-to-the-lattice-package.html"><span class="header-section-number">5</span> Introduction to the lattice package</a></li>
 <li><a class="" href="graph-animation-with-gganimate-and-after-effects.html"><span class="header-section-number">6</span> Graph animation with gganimate and After Effects</a></li>
+<li><a class="" href="interactive-plots.html"><span class="header-section-number">7</span> Interactive Plots</a></li>
 <li class="book-part">Cheatsheets</li>
-<li><a class="" href="r-vs.-python-visualization-cheatsheet.html"><span class="header-section-number">7</span> R vs. Python Visualization Cheatsheet</a></li>
-<li><a class="" href="rpackage-waffle-cheatsheet.html"><span class="header-section-number">8</span> Rpackage waffle cheatsheet</a></li>
-<li><a class="" href="r-cheatsheet-on-data-transforamtion-and-exploration.html"><span class="header-section-number">9</span> R cheatsheet on data transforamtion and exploration</a></li>
-<li><a class="" href="r-vs-python-basic-data-wrangling.html"><span class="header-section-number">10</span> R vs Python Basic Data Wrangling</a></li>
-<li><a class="" href="tidyverse_cheatsheet.html"><span class="header-section-number">11</span> tidyverse_cheatsheet</a></li>
-<li><a class="" href="cheatsheet-tidyverse.html"><span class="header-section-number">12</span> Cheatsheet Tidyverse</a></li>
+<li><a class="" href="r-vs.-python-visualization-cheatsheet.html"><span class="header-section-number">8</span> R vs. Python Visualization Cheatsheet</a></li>
+<li><a class="" href="rpackage-waffle-cheatsheet.html"><span class="header-section-number">9</span> Rpackage waffle cheatsheet</a></li>
+<li><a class="" href="r-cheatsheet-on-data-transforamtion-and-exploration.html"><span class="header-section-number">10</span> R cheatsheet on data transforamtion and exploration</a></li>
+<li><a class="" href="r-vs-python-basic-data-wrangling.html"><span class="header-section-number">11</span> R vs Python Basic Data Wrangling</a></li>
+<li><a class="" href="tidyverse_cheatsheet.html"><span class="header-section-number">12</span> tidyverse_cheatsheet</a></li>
+<li><a class="" href="cheatsheet-tidyverse.html"><span class="header-section-number">13</span> Cheatsheet Tidyverse</a></li>
+<li><a class="" href="use-of-ggprism-and-ggsci-packages.html"><span class="header-section-number">14</span> Use of ggprism and ggsci packages</a></li>
+<li><a class="" href="interactive-plot-introduction.html"><span class="header-section-number">15</span> Interactive plot introduction</a></li>
 <li class="book-part">Tutorials</li>
-<li><a class="" href="multithreading-crawler-frame.html"><span class="header-section-number">13</span> Multithreading Crawler Frame</a></li>
-<li><a class="" href="regression-and-classification-in-r.html"><span class="header-section-number">14</span> Regression and Classification in R</a></li>
-<li><a class="active" href="tibble-vs.-dataframe.html"><span class="header-section-number">15</span> Tibble vs. DataFrame</a></li>
-<li><a class="" href="introduction-to-time-series.html"><span class="header-section-number">16</span> Introduction to Time Series</a></li>
-<li><a class="" href="vipul-edav-community-contribution-kickstart-r.html"><span class="header-section-number">17</span> Vipul EDAV Community Contribution Kickstart R</a></li>
-<li><a class="" href="caret---a-machine-learning-package-turotial.html"><span class="header-section-number">18</span> caret - a machine learning package turotial</a></li>
-<li><a class="" href="streamlit-for-financial-analysis.html"><span class="header-section-number">19</span> Streamlit for Financial Analysis</a></li>
-<li><a class="" href="interactive-graphs-tutorial.html"><span class="header-section-number">20</span> Interactive graphs tutorial</a></li>
-<li><a class="" href="guideline-on-using-package-rcurl-and-xml-for-web-scraping.html"><span class="header-section-number">21</span> Guideline on Using Package Rcurl and XML for Web Scraping</a></li>
+<li><a class="" href="multithreading-crawler-frame.html"><span class="header-section-number">16</span> Multithreading Crawler Frame</a></li>
+<li><a class="" href="regression-and-classification-in-r.html"><span class="header-section-number">17</span> Regression and Classification in R</a></li>
+<li><a class="active" href="tibble-vs.-dataframe.html"><span class="header-section-number">18</span> Tibble vs. DataFrame</a></li>
+<li><a class="" href="introduction-to-time-series.html"><span class="header-section-number">19</span> Introduction to Time Series</a></li>
+<li><a class="" href="vipul-edav-community-contribution-kickstart-r.html"><span class="header-section-number">20</span> Vipul EDAV Community Contribution Kickstart R</a></li>
+<li><a class="" href="caret---a-machine-learning-package-turotial.html"><span class="header-section-number">21</span> caret - a machine learning package turotial</a></li>
+<li><a class="" href="streamlit-for-financial-analysis.html"><span class="header-section-number">22</span> Streamlit for Financial Analysis</a></li>
+<li><a class="" href="interactive-graphs-tutorial.html"><span class="header-section-number">23</span> Interactive graphs tutorial</a></li>
+<li><a class="" href="guideline-on-using-package-rcurl-and-xml-for-web-scraping.html"><span class="header-section-number">24</span> Guideline on Using Package Rcurl and XML for Web Scraping</a></li>
+<li><a class="" href="twitter-r-package-scraping-via-api-tutorial.html"><span class="header-section-number">25</span> TwitteR R Package Scraping via API Tutorial</a></li>
+<li><a class="" href="introduction-to-data-manipulation.html"><span class="header-section-number">26</span> Introduction to Data Manipulation</a></li>
+<li><a class="" href="animating-the-plots-in-r.html"><span class="header-section-number">27</span> Animating the plots in R</a></li>
 <li class="book-part">Workshops</li>
-<li><a class="" href="data-science-product-cycles-in-enterprises.html"><span class="header-section-number">22</span> Data Science Product Cycles in Enterprises</a></li>
+<li><a class="" href="data-science-product-cycles-in-enterprises.html"><span class="header-section-number">28</span> Data Science Product Cycles in Enterprises</a></li>
 <li class="book-part">Appendices</li>
-<li><a class="" href="github-initial-setup.html"><span class="header-section-number">23</span> Github initial setup</a></li>
-<li><a class="" href="tutorial-for-pull-request-mergers.html"><span class="header-section-number">24</span> Tutorial for pull request mergers</a></li>
+<li><a class="" href="github-initial-setup.html"><span class="header-section-number">29</span> Github initial setup</a></li>
+<li><a class="" href="tutorial-for-pull-request-mergers.html"><span class="header-section-number">30</span> Tutorial for pull request mergers</a></li>
 </ul>
 
         <div class="book-extra">
@@ -81,37 +89,37 @@
 </div>
   </header><main class="col-sm-12 col-md-9 col-lg-7" id="content"><div id="tibble-vs.-dataframe" class="section level1">
 <h1>
-<span class="header-section-number">15</span> Tibble vs. DataFrame<a class="anchor" aria-label="anchor" href="#tibble-vs.-dataframe"><i class="fas fa-link"></i></a>
+<span class="header-section-number">18</span> Tibble vs. DataFrame<a class="anchor" aria-label="anchor" href="#tibble-vs.-dataframe"><i class="fas fa-link"></i></a>
 </h1>
 <p>Jingfei Fang</p>
-<div class="sourceCode" id="cb200"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb233"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://tidyverse.tidyverse.org">tidyverse</a></span><span class="op">)</span>
 <span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://tibble.tidyverse.org/">tibble</a></span><span class="op">)</span></code></pre></div>
 <div id="introduction" class="section level3">
 <h3>
-<span class="header-section-number">15.0.1</span> Introduction<a class="anchor" aria-label="anchor" href="#introduction"><i class="fas fa-link"></i></a>
+<span class="header-section-number">18.0.1</span> Introduction<a class="anchor" aria-label="anchor" href="#introduction"><i class="fas fa-link"></i></a>
 </h3>
 <p>A tibble is often considered a neater format of a data frame, and it is often used in the tidyverse and ggplot2 packages. It contains the same information as a data frame, but the manipulation and representation of tibbles is different from data frames in some aspects.</p>
 </div>
 <div id="getting-started-with-tibbles" class="section level3">
 <h3>
-<span class="header-section-number">15.0.2</span> 1. Getting started with tibbles<a class="anchor" aria-label="anchor" href="#getting-started-with-tibbles"><i class="fas fa-link"></i></a>
+<span class="header-section-number">18.0.2</span> 1. Getting started with tibbles<a class="anchor" aria-label="anchor" href="#getting-started-with-tibbles"><i class="fas fa-link"></i></a>
 </h3>
 <p>You can do it with tidyverse:</p>
-<div class="sourceCode" id="cb201"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb234"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="co">#install.packages("tidyverse")</span>
 <span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://tidyverse.tidyverse.org">tidyverse</a></span><span class="op">)</span></code></pre></div>
 <p>Or you can do it by installing tibble package directly:</p>
-<div class="sourceCode" id="cb202"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb235"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="co">#install.packages("tibble")</span>
 <span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://tibble.tidyverse.org/">tibble</a></span><span class="op">)</span></code></pre></div>
 </div>
 <div id="creating-a-tibble" class="section level3">
 <h3>
-<span class="header-section-number">15.0.3</span> 2. Creating a tibble<a class="anchor" aria-label="anchor" href="#creating-a-tibble"><i class="fas fa-link"></i></a>
+<span class="header-section-number">18.0.3</span> 2. Creating a tibble<a class="anchor" aria-label="anchor" href="#creating-a-tibble"><i class="fas fa-link"></i></a>
 </h3>
 <p>You can create a tibble directly:</p>
-<div class="sourceCode" id="cb203"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb236"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="va">tib</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://tibble.tidyverse.org/reference/tibble.html">tibble</a></span><span class="op">(</span>a <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">1</span>,<span class="fl">2</span>,<span class="fl">3</span><span class="op">)</span>, b <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">4</span>,<span class="fl">5</span>,<span class="fl">6</span><span class="op">)</span>, c <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">7</span>,<span class="fl">8</span>,<span class="fl">9</span><span class="op">)</span><span class="op">)</span>
 <span class="va">tib</span></code></pre></div>
 <pre><code>## # A tibble: 3 × 3
@@ -121,11 +129,11 @@
 ## 2     2     5     8
 ## 3     3     6     9</code></pre>
 <p>Or you can create a tibble from an existing data frame by using as_tibble(). We will use ‘iris’ dataset as an example:</p>
-<div class="sourceCode" id="cb205"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb238"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="va">df</span> <span class="op">&lt;-</span> <span class="va">iris</span>
 <span class="fu"><a href="https://rdrr.io/r/base/class.html">class</a></span><span class="op">(</span><span class="va">df</span><span class="op">)</span></code></pre></div>
 <pre><code>## [1] "data.frame"</code></pre>
-<div class="sourceCode" id="cb207"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb240"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="va">tib</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://tibble.tidyverse.org/reference/as_tibble.html">as_tibble</a></span><span class="op">(</span><span class="va">df</span><span class="op">)</span>
 <span class="va">tib</span></code></pre></div>
 <pre><code>## # A tibble: 150 × 5
@@ -145,9 +153,9 @@
 </div>
 <div id="unlike-data-frames-tibbles-dont-show-the-entire-dataset-when-you-print-it." class="section level3">
 <h3>
-<span class="header-section-number">15.0.4</span> 3. Unlike data frames, tibbles don’t show the entire dataset when you print it.<a class="anchor" aria-label="anchor" href="#unlike-data-frames-tibbles-dont-show-the-entire-dataset-when-you-print-it."><i class="fas fa-link"></i></a>
+<span class="header-section-number">18.0.4</span> 3. Unlike data frames, tibbles don’t show the entire dataset when you print it.<a class="anchor" aria-label="anchor" href="#unlike-data-frames-tibbles-dont-show-the-entire-dataset-when-you-print-it."><i class="fas fa-link"></i></a>
 </h3>
-<div class="sourceCode" id="cb209"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb242"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="va">tib</span></code></pre></div>
 <pre><code>## # A tibble: 150 × 5
 ##    Sepal.Length Sepal.Width Petal.Length Petal.Width Species
@@ -166,28 +174,28 @@
 </div>
 <div id="tibbles-cannot-access-a-column-when-you-provide-a-partial-name-of-the-column-but-data-frames-can." class="section level3">
 <h3>
-<span class="header-section-number">15.0.5</span> 4. Tibbles cannot access a column when you provide a partial name of the column, but data frames can.<a class="anchor" aria-label="anchor" href="#tibbles-cannot-access-a-column-when-you-provide-a-partial-name-of-the-column-but-data-frames-can."><i class="fas fa-link"></i></a>
+<span class="header-section-number">18.0.5</span> 4. Tibbles cannot access a column when you provide a partial name of the column, but data frames can.<a class="anchor" aria-label="anchor" href="#tibbles-cannot-access-a-column-when-you-provide-a-partial-name-of-the-column-but-data-frames-can."><i class="fas fa-link"></i></a>
 </h3>
 <div id="tibble" class="section level4">
 <h4>
-<span class="header-section-number">15.0.5.1</span> Tibble<a class="anchor" aria-label="anchor" href="#tibble"><i class="fas fa-link"></i></a>
+<span class="header-section-number">18.0.5.1</span> Tibble<a class="anchor" aria-label="anchor" href="#tibble"><i class="fas fa-link"></i></a>
 </h4>
 <p>If you try to match the column name with only a partial name, it will not work.</p>
-<div class="sourceCode" id="cb211"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb244"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="va">tib</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://tibble.tidyverse.org/reference/tibble.html">tibble</a></span><span class="op">(</span>str <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"a"</span>,<span class="st">"b"</span>,<span class="st">"c"</span>,<span class="st">"d"</span><span class="op">)</span>, int <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">1</span>,<span class="fl">2</span>,<span class="fl">3</span>,<span class="fl">4</span><span class="op">)</span><span class="op">)</span>
 <span class="va">tib</span><span class="op">$</span><span class="va">st</span></code></pre></div>
 <pre><code>## NULL</code></pre>
 <p>Only when you provide the entire column name, it will work.</p>
-<div class="sourceCode" id="cb213"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb246"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="va">tib</span><span class="op">$</span><span class="va">str</span></code></pre></div>
 <pre><code>## [1] "a" "b" "c" "d"</code></pre>
 </div>
 <div id="data-frame" class="section level4">
 <h4>
-<span class="header-section-number">15.0.5.2</span> Data Frame<a class="anchor" aria-label="anchor" href="#data-frame"><i class="fas fa-link"></i></a>
+<span class="header-section-number">18.0.5.2</span> Data Frame<a class="anchor" aria-label="anchor" href="#data-frame"><i class="fas fa-link"></i></a>
 </h4>
 <p>However, you can access the “str” column by only providing a partial column name “st” (as long as this partial name is unique).</p>
-<div class="sourceCode" id="cb215"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb248"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="va">df</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/data.frame.html">data.frame</a></span><span class="op">(</span>str <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"a"</span>,<span class="st">"b"</span>,<span class="st">"c"</span>,<span class="st">"d"</span><span class="op">)</span>, int <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">1</span>,<span class="fl">2</span>,<span class="fl">3</span>,<span class="fl">4</span><span class="op">)</span><span class="op">)</span>
 <span class="va">df</span><span class="op">$</span><span class="va">st</span></code></pre></div>
 <pre><code>## [1] "a" "b" "c" "d"</code></pre>
@@ -195,13 +203,13 @@
 </div>
 <div id="when-you-access-only-one-column-of-a-tibble-it-will-keep-the-tibble-structure.-but-when-you-access-one-column-of-a-data-frame-it-will-become-a-vector." class="section level3">
 <h3>
-<span class="header-section-number">15.0.6</span> 5. When you access only one column of a tibble, it will keep the tibble structure. But when you access one column of a data frame, it will become a vector.<a class="anchor" aria-label="anchor" href="#when-you-access-only-one-column-of-a-tibble-it-will-keep-the-tibble-structure.-but-when-you-access-one-column-of-a-data-frame-it-will-become-a-vector."><i class="fas fa-link"></i></a>
+<span class="header-section-number">18.0.6</span> 5. When you access only one column of a tibble, it will keep the tibble structure. But when you access one column of a data frame, it will become a vector.<a class="anchor" aria-label="anchor" href="#when-you-access-only-one-column-of-a-tibble-it-will-keep-the-tibble-structure.-but-when-you-access-one-column-of-a-data-frame-it-will-become-a-vector."><i class="fas fa-link"></i></a>
 </h3>
 <div id="tibble-1" class="section level4">
 <h4>
-<span class="header-section-number">15.0.6.1</span> Tibble<a class="anchor" aria-label="anchor" href="#tibble-1"><i class="fas fa-link"></i></a>
+<span class="header-section-number">18.0.6.1</span> Tibble<a class="anchor" aria-label="anchor" href="#tibble-1"><i class="fas fa-link"></i></a>
 </h4>
-<div class="sourceCode" id="cb217"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb250"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="va">tib</span><span class="op">[</span>,<span class="st">"str"</span><span class="op">]</span></code></pre></div>
 <pre><code>## # A tibble: 4 × 1
 ##   str  
@@ -211,38 +219,38 @@
 ## 3 c    
 ## 4 d</code></pre>
 <p>Checking if it’s still a tibble:</p>
-<div class="sourceCode" id="cb219"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb252"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="fu"><a href="https://tibble.tidyverse.org/reference/is_tibble.html">is_tibble</a></span><span class="op">(</span><span class="va">tib</span><span class="op">[</span>,<span class="st">"str"</span><span class="op">]</span><span class="op">)</span></code></pre></div>
 <pre><code>## [1] TRUE</code></pre>
 <p>We can see the tibble structure is preserved.</p>
 </div>
 <div id="data-frame-1" class="section level4">
 <h4>
-<span class="header-section-number">15.0.6.2</span> Data Frame<a class="anchor" aria-label="anchor" href="#data-frame-1"><i class="fas fa-link"></i></a>
+<span class="header-section-number">18.0.6.2</span> Data Frame<a class="anchor" aria-label="anchor" href="#data-frame-1"><i class="fas fa-link"></i></a>
 </h4>
-<div class="sourceCode" id="cb221"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb254"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="va">df</span><span class="op">[</span>,<span class="st">"str"</span><span class="op">]</span></code></pre></div>
 <pre><code>## [1] "a" "b" "c" "d"</code></pre>
 <p>Checking if it’s still a data frame:</p>
-<div class="sourceCode" id="cb223"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb256"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="fu"><a href="https://rdrr.io/r/base/as.data.frame.html">is.data.frame</a></span><span class="op">(</span><span class="va">df</span><span class="op">[</span>,<span class="st">"str"</span><span class="op">]</span><span class="op">)</span></code></pre></div>
 <pre><code>## [1] FALSE</code></pre>
 <p>It’s no longer a data frame.</p>
 </div>
 <div id="however-other-forms-of-subsetting-including-and-work-the-same-for-tibbles-and-data-frames." class="section level4">
 <h4>
-<span class="header-section-number">15.0.6.3</span> However, other forms of subsetting, including [[ ]] and $, work the same for tibbles and data frames.<a class="anchor" aria-label="anchor" href="#however-other-forms-of-subsetting-including-and-work-the-same-for-tibbles-and-data-frames."><i class="fas fa-link"></i></a>
+<span class="header-section-number">18.0.6.3</span> However, other forms of subsetting, including [[ ]] and $, work the same for tibbles and data frames.<a class="anchor" aria-label="anchor" href="#however-other-forms-of-subsetting-including-and-work-the-same-for-tibbles-and-data-frames."><i class="fas fa-link"></i></a>
 </h4>
-<div class="sourceCode" id="cb225"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb258"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="va">tib</span><span class="op">[[</span><span class="st">"str"</span><span class="op">]</span><span class="op">]</span></code></pre></div>
 <pre><code>## [1] "a" "b" "c" "d"</code></pre>
-<div class="sourceCode" id="cb227"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb260"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="va">df</span><span class="op">[[</span><span class="st">"str"</span><span class="op">]</span><span class="op">]</span></code></pre></div>
 <pre><code>## [1] "a" "b" "c" "d"</code></pre>
-<div class="sourceCode" id="cb229"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb262"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="va">tib</span><span class="op">$</span><span class="va">str</span></code></pre></div>
 <pre><code>## [1] "a" "b" "c" "d"</code></pre>
-<div class="sourceCode" id="cb231"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb264"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="va">df</span><span class="op">$</span><span class="va">str</span></code></pre></div>
 <pre><code>## [1] "a" "b" "c" "d"</code></pre>
 <p>We can see that subsetting with [[ ]] and $ also don’t preserve the tibble structure.</p>
@@ -250,13 +258,13 @@
 </div>
 <div id="when-assigning-a-new-column-to-a-tibble-the-input-will-not-be-recycled-which-means-you-have-to-provide-an-input-of-the-same-length-of-the-other-columns.-but-a-data-frame-will-recycle-the-input." class="section level3">
 <h3>
-<span class="header-section-number">15.0.7</span> 6. When assigning a new column to a tibble, the input will not be recycled, which means you have to provide an input of the same length of the other columns. But a data frame will recycle the input.<a class="anchor" aria-label="anchor" href="#when-assigning-a-new-column-to-a-tibble-the-input-will-not-be-recycled-which-means-you-have-to-provide-an-input-of-the-same-length-of-the-other-columns.-but-a-data-frame-will-recycle-the-input."><i class="fas fa-link"></i></a>
+<span class="header-section-number">18.0.7</span> 6. When assigning a new column to a tibble, the input will not be recycled, which means you have to provide an input of the same length of the other columns. But a data frame will recycle the input.<a class="anchor" aria-label="anchor" href="#when-assigning-a-new-column-to-a-tibble-the-input-will-not-be-recycled-which-means-you-have-to-provide-an-input-of-the-same-length-of-the-other-columns.-but-a-data-frame-will-recycle-the-input."><i class="fas fa-link"></i></a>
 </h3>
 <div id="tibble-2" class="section level4">
 <h4>
-<span class="header-section-number">15.0.7.1</span> Tibble<a class="anchor" aria-label="anchor" href="#tibble-2"><i class="fas fa-link"></i></a>
+<span class="header-section-number">18.0.7.1</span> Tibble<a class="anchor" aria-label="anchor" href="#tibble-2"><i class="fas fa-link"></i></a>
 </h4>
-<div class="sourceCode" id="cb233"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb266"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="va">tib</span></code></pre></div>
 <pre><code>## # A tibble: 4 × 2
 ##   str     int
@@ -265,7 +273,7 @@
 ## 2 b         2
 ## 3 c         3
 ## 4 d         4</code></pre>
-<div class="sourceCode" id="cb235"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb268"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="va">tib</span><span class="op">$</span><span class="va">newcol</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">5</span>,<span class="fl">6</span><span class="op">)</span></code></pre></div>
 <pre><code>## Error: Assigned data `c(5, 6)` must be compatible with existing data.
 ## ✖ Existing data has 4 rows.
@@ -273,7 +281,7 @@
 ## ℹ Only vectors of size 1 are recycled.</code></pre>
 <p>It gives an error because the tibble has columns of length 4, but the input (5,6) only has length 2 and is not recycled.
 You have to provide an input of same length:</p>
-<div class="sourceCode" id="cb237"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb270"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="va">tib</span><span class="op">$</span><span class="va">newcol</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/rep.html">rep</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">5</span>,<span class="fl">6</span><span class="op">)</span>,<span class="fl">2</span><span class="op">)</span>
 <span class="va">tib</span></code></pre></div>
 <pre><code>## # A tibble: 4 × 3
@@ -286,17 +294,17 @@ You have to provide an input of same length:</p>
 </div>
 <div id="data-frame-2" class="section level4">
 <h4>
-<span class="header-section-number">15.0.7.2</span> Data Frame<a class="anchor" aria-label="anchor" href="#data-frame-2"><i class="fas fa-link"></i></a>
+<span class="header-section-number">18.0.7.2</span> Data Frame<a class="anchor" aria-label="anchor" href="#data-frame-2"><i class="fas fa-link"></i></a>
 </h4>
 <p>Data frames will recycle the input.</p>
-<div class="sourceCode" id="cb239"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb272"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="va">df</span></code></pre></div>
 <pre><code>##   str int
 ## 1   a   1
 ## 2   b   2
 ## 3   c   3
 ## 4   d   4</code></pre>
-<div class="sourceCode" id="cb241"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb274"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="va">df</span><span class="op">$</span><span class="va">newcol</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">5</span>,<span class="fl">6</span><span class="op">)</span>
 <span class="va">df</span></code></pre></div>
 <pre><code>##   str int newcol
@@ -308,22 +316,22 @@ You have to provide an input of same length:</p>
 </div>
 <div id="reading-with-builtin-read.csv-function-will-output-data-frames-while-reading-with-read_csv-in-readr-package-inside-tidyverse-will-output-tibbles." class="section level3">
 <h3>
-<span class="header-section-number">15.0.8</span> 7. Reading with builtin read.csv() function will output data frames, while reading with read_csv() in “readr” package inside tidyverse will output tibbles.<a class="anchor" aria-label="anchor" href="#reading-with-builtin-read.csv-function-will-output-data-frames-while-reading-with-read_csv-in-readr-package-inside-tidyverse-will-output-tibbles."><i class="fas fa-link"></i></a>
+<span class="header-section-number">18.0.8</span> 7. Reading with builtin read.csv() function will output data frames, while reading with read_csv() in “readr” package inside tidyverse will output tibbles.<a class="anchor" aria-label="anchor" href="#reading-with-builtin-read.csv-function-will-output-data-frames-while-reading-with-read_csv-in-readr-package-inside-tidyverse-will-output-tibbles."><i class="fas fa-link"></i></a>
 </h3>
 <div id="reading-csv-file-with-read.csv" class="section level4">
 <h4>
-<span class="header-section-number">15.0.8.1</span> Reading csv file with read.csv()<a class="anchor" aria-label="anchor" href="#reading-csv-file-with-read.csv"><i class="fas fa-link"></i></a>
+<span class="header-section-number">18.0.8.1</span> Reading csv file with read.csv()<a class="anchor" aria-label="anchor" href="#reading-csv-file-with-read.csv"><i class="fas fa-link"></i></a>
 </h4>
-<div class="sourceCode" id="cb243"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb276"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="va">data</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/utils/read.table.html">read.csv</a></span><span class="op">(</span><span class="st">"https://people.sc.fsu.edu/~jburkardt/data/csv/addresses.csv"</span><span class="op">)</span>
 <span class="fu"><a href="https://rdrr.io/r/base/class.html">class</a></span><span class="op">(</span><span class="va">data</span><span class="op">)</span></code></pre></div>
 <pre><code>## [1] "data.frame"</code></pre>
 </div>
 <div id="reading-csv-file-with-read_csv" class="section level4">
 <h4>
-<span class="header-section-number">15.0.8.2</span> Reading csv file with read_csv()<a class="anchor" aria-label="anchor" href="#reading-csv-file-with-read_csv"><i class="fas fa-link"></i></a>
+<span class="header-section-number">18.0.8.2</span> Reading csv file with read_csv()<a class="anchor" aria-label="anchor" href="#reading-csv-file-with-read_csv"><i class="fas fa-link"></i></a>
 </h4>
-<div class="sourceCode" id="cb245"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb278"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="va">data</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://readr.tidyverse.org/reference/read_delim.html">read_csv</a></span><span class="op">(</span><span class="st">"https://people.sc.fsu.edu/~jburkardt/data/csv/addresses.csv"</span><span class="op">)</span>
 <span class="fu"><a href="https://rdrr.io/r/base/class.html">class</a></span><span class="op">(</span><span class="va">data</span><span class="op">)</span></code></pre></div>
 <pre><code>## [1] "spec_tbl_df" "tbl_df"      "tbl"         "data.frame"</code></pre>
@@ -331,24 +339,24 @@ You have to provide an input of same length:</p>
 </div>
 <div id="tibbles-dont-support-support-arithmetic-operations-on-all-columns-well-the-result-will-be-converted-into-a-data-frame-without-any-notice." class="section level3">
 <h3>
-<span class="header-section-number">15.0.9</span> 8. Tibbles don’t support support arithmetic operations on all columns well, the result will be converted into a data frame without any notice.<a class="anchor" aria-label="anchor" href="#tibbles-dont-support-support-arithmetic-operations-on-all-columns-well-the-result-will-be-converted-into-a-data-frame-without-any-notice."><i class="fas fa-link"></i></a>
+<span class="header-section-number">18.0.9</span> 8. Tibbles don’t support support arithmetic operations on all columns well, the result will be converted into a data frame without any notice.<a class="anchor" aria-label="anchor" href="#tibbles-dont-support-support-arithmetic-operations-on-all-columns-well-the-result-will-be-converted-into-a-data-frame-without-any-notice."><i class="fas fa-link"></i></a>
 </h3>
 <div id="tibble-3" class="section level4">
 <h4>
-<span class="header-section-number">15.0.9.1</span> Tibble<a class="anchor" aria-label="anchor" href="#tibble-3"><i class="fas fa-link"></i></a>
+<span class="header-section-number">18.0.9.1</span> Tibble<a class="anchor" aria-label="anchor" href="#tibble-3"><i class="fas fa-link"></i></a>
 </h4>
 <p>We can see that when we try to multiply all the elements of the tibble by 2, the result is correct but it is turned into a data frame without notifications.</p>
-<div class="sourceCode" id="cb247"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb280"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="va">tib</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://tibble.tidyverse.org/reference/tibble.html">tibble</a></span><span class="op">(</span>a <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">1</span>,<span class="fl">2</span>,<span class="fl">3</span><span class="op">)</span>, b <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">4</span>,<span class="fl">5</span>,<span class="fl">6</span><span class="op">)</span>, c <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">7</span>,<span class="fl">8</span>,<span class="fl">9</span><span class="op">)</span><span class="op">)</span>
 <span class="fu"><a href="https://rdrr.io/r/base/class.html">class</a></span><span class="op">(</span><span class="va">tib</span><span class="op">*</span><span class="fl">2</span><span class="op">)</span></code></pre></div>
 <pre><code>## [1] "data.frame"</code></pre>
 </div>
 <div id="data-frame-3" class="section level4">
 <h4>
-<span class="header-section-number">15.0.9.2</span> Data Frame<a class="anchor" aria-label="anchor" href="#data-frame-3"><i class="fas fa-link"></i></a>
+<span class="header-section-number">18.0.9.2</span> Data Frame<a class="anchor" aria-label="anchor" href="#data-frame-3"><i class="fas fa-link"></i></a>
 </h4>
 <p>But data frames have no issue with it, they will not be converted into any other type.</p>
-<div class="sourceCode" id="cb249"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb282"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="va">df</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/data.frame.html">data.frame</a></span><span class="op">(</span>a <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">1</span>,<span class="fl">2</span>,<span class="fl">3</span><span class="op">)</span>, b <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">4</span>,<span class="fl">5</span>,<span class="fl">6</span><span class="op">)</span>, c <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">7</span>,<span class="fl">8</span>,<span class="fl">9</span><span class="op">)</span><span class="op">)</span>
 <span class="fu"><a href="https://rdrr.io/r/base/class.html">class</a></span><span class="op">(</span><span class="va">df</span><span class="op">*</span><span class="fl">2</span><span class="op">)</span></code></pre></div>
 <pre><code>## [1] "data.frame"</code></pre>
@@ -356,14 +364,14 @@ You have to provide an input of same length:</p>
 </div>
 <div id="tibbles-preserve-all-the-variable-types-while-data-frames-have-the-option-to-convert-string-into-factor.-in-older-versions-of-r-data-frames-will-convert-string-into-factor-by-default" class="section level3">
 <h3>
-<span class="header-section-number">15.0.10</span> 9. Tibbles preserve all the variable types, while data frames have the option to convert string into factor. (In older versions of R, data frames will convert string into factor by default)<a class="anchor" aria-label="anchor" href="#tibbles-preserve-all-the-variable-types-while-data-frames-have-the-option-to-convert-string-into-factor.-in-older-versions-of-r-data-frames-will-convert-string-into-factor-by-default"><i class="fas fa-link"></i></a>
+<span class="header-section-number">18.0.10</span> 9. Tibbles preserve all the variable types, while data frames have the option to convert string into factor. (In older versions of R, data frames will convert string into factor by default)<a class="anchor" aria-label="anchor" href="#tibbles-preserve-all-the-variable-types-while-data-frames-have-the-option-to-convert-string-into-factor.-in-older-versions-of-r-data-frames-will-convert-string-into-factor-by-default"><i class="fas fa-link"></i></a>
 </h3>
 <div id="tibble-4" class="section level4">
 <h4>
-<span class="header-section-number">15.0.10.1</span> Tibble<a class="anchor" aria-label="anchor" href="#tibble-4"><i class="fas fa-link"></i></a>
+<span class="header-section-number">18.0.10.1</span> Tibble<a class="anchor" aria-label="anchor" href="#tibble-4"><i class="fas fa-link"></i></a>
 </h4>
 <p>We can see that the original data types of variables are preserved in a tibble.</p>
-<div class="sourceCode" id="cb251"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb284"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="va">tib</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://tibble.tidyverse.org/reference/tibble.html">tibble</a></span><span class="op">(</span>str <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"a"</span>,<span class="st">"b"</span>,<span class="st">"c"</span>,<span class="st">"d"</span><span class="op">)</span>, int <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">1</span>,<span class="fl">2</span>,<span class="fl">3</span>,<span class="fl">4</span><span class="op">)</span><span class="op">)</span>
 <span class="fu"><a href="https://rdrr.io/r/utils/str.html">str</a></span><span class="op">(</span><span class="va">tib</span><span class="op">)</span></code></pre></div>
 <pre><code>## tibble [4 × 2] (S3: tbl_df/tbl/data.frame)
@@ -372,17 +380,17 @@ You have to provide an input of same length:</p>
 </div>
 <div id="data-frame-4" class="section level4">
 <h4>
-<span class="header-section-number">15.0.10.2</span> Data Frame<a class="anchor" aria-label="anchor" href="#data-frame-4"><i class="fas fa-link"></i></a>
+<span class="header-section-number">18.0.10.2</span> Data Frame<a class="anchor" aria-label="anchor" href="#data-frame-4"><i class="fas fa-link"></i></a>
 </h4>
 <p>If we use data frame, it will also preserve the original types, because “stringAsFactors = FALSE” by default in the new versions of R.</p>
-<div class="sourceCode" id="cb253"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb286"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="va">df</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/data.frame.html">data.frame</a></span><span class="op">(</span>str <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"a"</span>,<span class="st">"b"</span>,<span class="st">"c"</span>,<span class="st">"d"</span><span class="op">)</span>, int <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">1</span>,<span class="fl">2</span>,<span class="fl">3</span>,<span class="fl">4</span><span class="op">)</span><span class="op">)</span>
 <span class="fu"><a href="https://rdrr.io/r/utils/str.html">str</a></span><span class="op">(</span><span class="va">df</span><span class="op">)</span></code></pre></div>
 <pre><code>## 'data.frame':    4 obs. of  2 variables:
 ##  $ str: chr  "a" "b" "c" "d"
 ##  $ int: num  1 2 3 4</code></pre>
 <p>However, we also have the option to convert string into factor when creating the data frame by setting “stringAsFactors = TRUE”.</p>
-<div class="sourceCode" id="cb255"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb288"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="va">df</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/data.frame.html">data.frame</a></span><span class="op">(</span>str <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"a"</span>,<span class="st">"b"</span>,<span class="st">"c"</span>,<span class="st">"d"</span><span class="op">)</span>, int <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">1</span>,<span class="fl">2</span>,<span class="fl">3</span>,<span class="fl">4</span><span class="op">)</span>, stringsAsFactors <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span>
 <span class="fu"><a href="https://rdrr.io/r/base/class.html">class</a></span><span class="op">(</span><span class="va">df</span><span class="op">$</span><span class="va">str</span><span class="op">)</span></code></pre></div>
 <pre><code>## [1] "factor"</code></pre>
@@ -391,22 +399,22 @@ You have to provide an input of same length:</p>
 </div>
 <div id="tibbles-work-well-with-ggplot2-just-like-data-frames." class="section level3">
 <h3>
-<span class="header-section-number">15.0.11</span> 10. Tibbles work well with ggplot2, just like data frames.<a class="anchor" aria-label="anchor" href="#tibbles-work-well-with-ggplot2-just-like-data-frames."><i class="fas fa-link"></i></a>
+<span class="header-section-number">18.0.11</span> 10. Tibbles work well with ggplot2, just like data frames.<a class="anchor" aria-label="anchor" href="#tibbles-work-well-with-ggplot2-just-like-data-frames."><i class="fas fa-link"></i></a>
 </h3>
 <div id="tibble-5" class="section level4">
 <h4>
-<span class="header-section-number">15.0.11.1</span> Tibble:<a class="anchor" aria-label="anchor" href="#tibble-5"><i class="fas fa-link"></i></a>
+<span class="header-section-number">18.0.11.1</span> Tibble:<a class="anchor" aria-label="anchor" href="#tibble-5"><i class="fas fa-link"></i></a>
 </h4>
-<div class="sourceCode" id="cb257"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb290"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span><span class="op">(</span>data <span class="op">=</span> <span class="va">tib</span>, mapping <span class="op">=</span> <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span>x<span class="op">=</span><span class="va">str</span>, y<span class="op">=</span><span class="va">int</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span>
   <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_bar.html">geom_col</a></span><span class="op">(</span>width <span class="op">=</span> <span class="fl">0.3</span><span class="op">)</span></code></pre></div>
 <div class="inline-figure"><img src="tibble_vs_data_frame_files/figure-html/unnamed-chunk-27-1.png" width="672" style="display: block; margin: auto;"></div>
 </div>
 <div id="data-frame-5" class="section level4">
 <h4>
-<span class="header-section-number">15.0.11.2</span> Data Frame:<a class="anchor" aria-label="anchor" href="#data-frame-5"><i class="fas fa-link"></i></a>
+<span class="header-section-number">18.0.11.2</span> Data Frame:<a class="anchor" aria-label="anchor" href="#data-frame-5"><i class="fas fa-link"></i></a>
 </h4>
-<div class="sourceCode" id="cb258"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb291"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span><span class="op">(</span>data <span class="op">=</span> <span class="va">df</span>, mapping <span class="op">=</span> <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span>x<span class="op">=</span><span class="va">str</span>, y<span class="op">=</span><span class="va">int</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span>
   <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_bar.html">geom_col</a></span><span class="op">(</span>width <span class="op">=</span> <span class="fl">0.3</span><span class="op">)</span></code></pre></div>
 <div class="inline-figure"><img src="tibble_vs_data_frame_files/figure-html/unnamed-chunk-28-1.png" width="672" style="display: block; margin: auto;"></div>
@@ -414,34 +422,34 @@ You have to provide an input of same length:</p>
 </div>
 <div id="works-cited" class="section level2">
 <h2>
-<span class="header-section-number">15.1</span> Works Cited<a class="anchor" aria-label="anchor" href="#works-cited"><i class="fas fa-link"></i></a>
+<span class="header-section-number">18.1</span> Works Cited<a class="anchor" aria-label="anchor" href="#works-cited"><i class="fas fa-link"></i></a>
 </h2>
 <p><a href="https://tibble.tidyverse.org/" class="uri">https://tibble.tidyverse.org/</a><br><a href="https://cran.r-project.org/web/packages/tibble/vignettes/tibble.html" class="uri">https://cran.r-project.org/web/packages/tibble/vignettes/tibble.html</a><br><a href="https://www.youtube.com/watch?v=_qHdqWx-vsQ&amp;ab_channel=JoshuaFrench" class="uri">https://www.youtube.com/watch?v=_qHdqWx-vsQ&amp;ab_channel=JoshuaFrench</a></p>
 
 </div>
 </div>
   <div class="chapter-nav">
-<div class="prev"><a href="regression-and-classification-in-r.html"><span class="header-section-number">14</span> Regression and Classification in R</a></div>
-<div class="next"><a href="introduction-to-time-series.html"><span class="header-section-number">16</span> Introduction to Time Series</a></div>
+<div class="prev"><a href="regression-and-classification-in-r.html"><span class="header-section-number">17</span> Regression and Classification in R</a></div>
+<div class="next"><a href="introduction-to-time-series.html"><span class="header-section-number">19</span> Introduction to Time Series</a></div>
 </div></main><div class="col-md-3 col-lg-2 d-none d-md-block sidebar sidebar-chapter">
     <nav id="toc" data-toggle="toc" aria-label="On this page"><h2>On this page</h2>
       <ul class="nav navbar-nav">
 <li>
-<a class="nav-link" href="#tibble-vs.-dataframe"><span class="header-section-number">15</span> Tibble vs. DataFrame</a><ul class="nav navbar-nav">
-<li><a class="nav-link" href="#introduction"><span class="header-section-number">15.0.1</span> Introduction</a></li>
-<li><a class="nav-link" href="#getting-started-with-tibbles"><span class="header-section-number">15.0.2</span> 1. Getting started with tibbles</a></li>
-<li><a class="nav-link" href="#creating-a-tibble"><span class="header-section-number">15.0.3</span> 2. Creating a tibble</a></li>
-<li><a class="nav-link" href="#unlike-data-frames-tibbles-dont-show-the-entire-dataset-when-you-print-it."><span class="header-section-number">15.0.4</span> 3. Unlike data frames, tibbles don’t show the entire dataset when you print it.</a></li>
-<li><a class="nav-link" href="#tibbles-cannot-access-a-column-when-you-provide-a-partial-name-of-the-column-but-data-frames-can."><span class="header-section-number">15.0.5</span> 4. Tibbles cannot access a column when you provide a partial name of the column, but data frames can.</a></li>
-<li><a class="nav-link" href="#when-you-access-only-one-column-of-a-tibble-it-will-keep-the-tibble-structure.-but-when-you-access-one-column-of-a-data-frame-it-will-become-a-vector."><span class="header-section-number">15.0.6</span> 5. When you access only one column of a tibble, it will keep the tibble structure. But when you access one column of a data frame, it will become a vector.</a></li>
-<li><a class="nav-link" href="#when-assigning-a-new-column-to-a-tibble-the-input-will-not-be-recycled-which-means-you-have-to-provide-an-input-of-the-same-length-of-the-other-columns.-but-a-data-frame-will-recycle-the-input."><span class="header-section-number">15.0.7</span> 6. When assigning a new column to a tibble, the input will not be recycled, which means you have to provide an input of the same length of the other columns. But a data frame will recycle the input.</a></li>
-<li><a class="nav-link" href="#reading-with-builtin-read.csv-function-will-output-data-frames-while-reading-with-read_csv-in-readr-package-inside-tidyverse-will-output-tibbles."><span class="header-section-number">15.0.8</span> 7. Reading with builtin read.csv() function will output data frames, while reading with read_csv() in “readr” package inside tidyverse will output tibbles.</a></li>
-<li><a class="nav-link" href="#tibbles-dont-support-support-arithmetic-operations-on-all-columns-well-the-result-will-be-converted-into-a-data-frame-without-any-notice."><span class="header-section-number">15.0.9</span> 8. Tibbles don’t support support arithmetic operations on all columns well, the result will be converted into a data frame without any notice.</a></li>
-<li><a class="nav-link" href="#tibbles-preserve-all-the-variable-types-while-data-frames-have-the-option-to-convert-string-into-factor.-in-older-versions-of-r-data-frames-will-convert-string-into-factor-by-default"><span class="header-section-number">15.0.10</span> 9. Tibbles preserve all the variable types, while data frames have the option to convert string into factor. (In older versions of R, data frames will convert string into factor by default)</a></li>
-<li><a class="nav-link" href="#tibbles-work-well-with-ggplot2-just-like-data-frames."><span class="header-section-number">15.0.11</span> 10. Tibbles work well with ggplot2, just like data frames.</a></li>
+<a class="nav-link" href="#tibble-vs.-dataframe"><span class="header-section-number">18</span> Tibble vs. DataFrame</a><ul class="nav navbar-nav">
+<li><a class="nav-link" href="#introduction"><span class="header-section-number">18.0.1</span> Introduction</a></li>
+<li><a class="nav-link" href="#getting-started-with-tibbles"><span class="header-section-number">18.0.2</span> 1. Getting started with tibbles</a></li>
+<li><a class="nav-link" href="#creating-a-tibble"><span class="header-section-number">18.0.3</span> 2. Creating a tibble</a></li>
+<li><a class="nav-link" href="#unlike-data-frames-tibbles-dont-show-the-entire-dataset-when-you-print-it."><span class="header-section-number">18.0.4</span> 3. Unlike data frames, tibbles don’t show the entire dataset when you print it.</a></li>
+<li><a class="nav-link" href="#tibbles-cannot-access-a-column-when-you-provide-a-partial-name-of-the-column-but-data-frames-can."><span class="header-section-number">18.0.5</span> 4. Tibbles cannot access a column when you provide a partial name of the column, but data frames can.</a></li>
+<li><a class="nav-link" href="#when-you-access-only-one-column-of-a-tibble-it-will-keep-the-tibble-structure.-but-when-you-access-one-column-of-a-data-frame-it-will-become-a-vector."><span class="header-section-number">18.0.6</span> 5. When you access only one column of a tibble, it will keep the tibble structure. But when you access one column of a data frame, it will become a vector.</a></li>
+<li><a class="nav-link" href="#when-assigning-a-new-column-to-a-tibble-the-input-will-not-be-recycled-which-means-you-have-to-provide-an-input-of-the-same-length-of-the-other-columns.-but-a-data-frame-will-recycle-the-input."><span class="header-section-number">18.0.7</span> 6. When assigning a new column to a tibble, the input will not be recycled, which means you have to provide an input of the same length of the other columns. But a data frame will recycle the input.</a></li>
+<li><a class="nav-link" href="#reading-with-builtin-read.csv-function-will-output-data-frames-while-reading-with-read_csv-in-readr-package-inside-tidyverse-will-output-tibbles."><span class="header-section-number">18.0.8</span> 7. Reading with builtin read.csv() function will output data frames, while reading with read_csv() in “readr” package inside tidyverse will output tibbles.</a></li>
+<li><a class="nav-link" href="#tibbles-dont-support-support-arithmetic-operations-on-all-columns-well-the-result-will-be-converted-into-a-data-frame-without-any-notice."><span class="header-section-number">18.0.9</span> 8. Tibbles don’t support support arithmetic operations on all columns well, the result will be converted into a data frame without any notice.</a></li>
+<li><a class="nav-link" href="#tibbles-preserve-all-the-variable-types-while-data-frames-have-the-option-to-convert-string-into-factor.-in-older-versions-of-r-data-frames-will-convert-string-into-factor-by-default"><span class="header-section-number">18.0.10</span> 9. Tibbles preserve all the variable types, while data frames have the option to convert string into factor. (In older versions of R, data frames will convert string into factor by default)</a></li>
+<li><a class="nav-link" href="#tibbles-work-well-with-ggplot2-just-like-data-frames."><span class="header-section-number">18.0.11</span> 10. Tibbles work well with ggplot2, just like data frames.</a></li>
 </ul>
 </li>
-<li><a class="nav-link" href="#works-cited"><span class="header-section-number">15.1</span> Works Cited</a></li>
+<li><a class="nav-link" href="#works-cited"><span class="header-section-number">18.1</span> Works Cited</a></li>
 </ul>
 
       <div class="book-extra">
