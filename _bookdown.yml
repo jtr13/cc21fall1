@@ -6,9 +6,10 @@ language:
   ui:
     chapter_name: "Chapter "
 
-# Note: in order for the part headers to appear in the rendered book, the part header information must be included in the first chapter of the part. The comments here are just for reference; they do not create parts.
+# Note: in order for the part headers to appear in the rendered book, the part header information must be included in the first chapter of the part. The comments here are just for reference; they do not create parts
 
 # Chapter ordering
+
 rmd_files: [
   # Part: Introduction
   'index.Rmd', # must be first chapter
@@ -22,6 +23,7 @@ rmd_files: [
   'intro_lattice_tutorial.Rmd',
   'graph_animation.Rmd',
   'interactive_plots.Rmd',
+
 
   # Part: Cheatsheets
   'r_vs_python_visualization.Rmd', # contains PART header
@@ -51,3 +53,4 @@ rmd_files: [
   'appendix_pull_request_tutorial.Rmd'
 
 ]
+
