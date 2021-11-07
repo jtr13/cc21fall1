@@ -10,7 +10,6 @@ language:
 
 # Chapter ordering
 
-
 rmd_files: [
   # Part: Introduction
   'index.Rmd', # must be first chapter
@@ -58,7 +57,6 @@ rmd_files: [
   # Part: Demonstrations
   'linear_association.Rmd',
 
-  
   # Part: Workshops
   'ds_product_cycles_in_enterprises.Rmd', # contains PART header
   
@@ -67,3 +65,4 @@ rmd_files: [
   'appendix_pull_request_tutorial.Rmd'
 
 ]
+
