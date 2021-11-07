@@ -44,6 +44,8 @@ rmd_files: [
   'interactive_graphs_tutorial.Rmd',
   'web_scraping_rcurl_xml_project.Rmd',
   'twitter_api_scrape_tutorial.Rmd',
+  'intro_to_data_manipulation.Rmd',
+
   
   # Part: Workshops
   'ds_product_cycles_in_enterprises.Rmd', # contains PART header
