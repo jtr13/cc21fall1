@@ -1,0 +1,388 @@
+# Regression and Classification in R
+
+Parv Joshi
+
+This is a video tutorial, which can be found at [https://youtu.be/J2rnDy9PB3E](https://youtu.be/J2rnDy9PB3E). The code I created as part of this video is given as the contents of this file, for reference. Here are the links I used in my data set:
+
+
+1. [Data.csv](https://drive.google.com/file/d/1dN3Tsrzx33Q-rBf5a-t-wQWPAcr9HNnp/view?usp=sharing)
+
+2. [Titanic.csv](https://drive.google.com/file/d/1_SLRD9V7KEWd2fD3Gk3-F_E5pSyh3410/view?usp=sharing)
+
+3. [Ames_Housing_data.csv](https://drive.google.com/file/d/1amJOqQhxo8TxGT65uIIfhPhs-Z2rMEWu/view?usp=sharing)
+
+4. [Boxcox Implementation in R - 1](https://www.youtube.com/watch?v=vGOpEpjz2Ks)
+
+5. [Boxcox Implementation in R - 2](https://www.statology.org/box-cox-transformation-in-r/)
+
+6. [Peanalized Regression](https://towardsdatascience.com/what-is-regularization-and-how-do-i-use-it-f7008b5a68c6)
+
+7. [Stepwise Selection Method](https://quantifyinghealth.com/stepwise-selection/)
+
+8. [Accuracy Metrics](http://www.sthda.com/english/articles/38-regression-model-validation/158-regression-model-accuracy-metrics-r-square-aic-bic-cp-and-more/)
+
+9. [Rmd Cheatsheet](https://www.rstudio.com/wp-content/uploads/2015/02/rmarkdown-cheatsheet.pdf)
+
+
+### Libraries and Warnings
+
+```{r, warning = FALSE, message = FALSE}
+# Removing messages and warnings from knited version
+knitr::opts_chunk$set(warning = FALSE, message = FALSE)
+
+# Libraries
+# Make sure these are installed before running them. They all are a part of CRAN.
+
+library(RCurl)
+library(tidyverse)
+library(randomForest)
+library(caTools)
+library(car)
+library(MASS)
+library(leaps)
+library(caret)
+library(bestglm)
+library(rpart)
+library(rattle)
+```
+
+### Reading Data
+
+```{r}
+# Importing the dataset
+
+dataset = read.csv("https://raw.githubusercontent.com/Parv-Joshi/EDAV_CC_Datasets/main/Data.csv")
+
+# str(dataset)
+# View(dataset)
+```
+
+
+### Data Preprocessing
+
+```{r}
+# Mean Imputation for Missing Data
+dataset$Age = ifelse(is.na(dataset$Age),
+                     ave(dataset$Age, FUN = function(x) mean(x, na.rm = T)),
+                     dataset$Age)
+
+dataset$Salary = ifelse(is.na(dataset$Salary),
+                        ave(dataset$Salary, FUN = function(x) mean(x, na.rm = T)),
+                        dataset$Salary)
+
+# Encoding Categorical Variables
+dataset$Country = factor(dataset$Country, 
+                         labels = c("France", "Spain", "Germany"), 
+                         levels = c("France", "Spain", "Germany"))
+dataset$Purchased = factor(dataset$Purchased, 
+                           levels = c("Yes", "No"), 
+                           labels = c(1, 0))
+
+# Splitting Data into Training and Testing
+
+set.seed(123)
+
+split = sample.split(dataset$Purchased, SplitRatio = 0.8)
+training_set = subset(dataset, split == T)
+test_set = subset(dataset, split == F)
+
+# Feature Scaling
+training_set[, 2:3] = scale(training_set[, 2:3])
+test_set[, 2:3] = scale(test_set[, 2:3])
+```
+
+### Regression
+
+```{r}
+
+# Data 
+
+data("Salaries", package = "carData")
+# force(Salaries)
+
+attach(Salaries)
+detach(Salaries)
+
+# str(Salaries)
+# View(Salaries)
+
+# Simple Variable Regression
+
+model = lm(Salaries$salary ~ Salaries$yrs.since.phd)
+model = lm(salary ~ yrs.since.phd, data = Salaries)
+
+model
+summary(model)
+stargazer::stargazer(model, type = "text")
+
+
+# Multiple Variable Regression
+
+model1 = lm(salary ~ yrs.since.phd + yrs.service, data = Salaries)
+summary(model1)
+### Model:
+### salary = 89912.2 + 1562.9 * yrs.since.phd + (-629.1) * yrs.service
+
+
+# Categorical Variables
+
+contrasts(Salaries$sex)
+# sex = relevel(sex, ref = "Male")
+
+model2 = lm(salary ~ yrs.since.phd + yrs.service + sex, data = Salaries)
+summary(model2)
+
+car::Anova(model2)
+
+model3 = lm(salary ~ ., data = Salaries)
+car::Anova(model3)
+summary(model3)
+
+# Transformations and Interaction Terms
+
+model4 = lm(salary ~ yrs.since.phd^2 + yrs.service, data = Salaries)
+summary(model4)
+
+model4 = lm(salary ~ yrs.since.phd + I(yrs.since.phd^2) + yrs.service, data = Salaries)
+summary(model4)
+
+model4 = lm(salary ~ yrs.since.phd + I(yrs.since.phd^2) + I(yrs.since.phd^3) + yrs.service, data = Salaries)
+summary(model4)
+
+model4 = lm(I(log(salary)) ~ yrs.since.phd + I(yrs.since.phd^2) + I(yrs.since.phd^3) + yrs.service, data = Salaries)
+summary(model4)
+
+model5 = lm(salary ~ yrs.since.phd:yrs.service, data = Salaries)
+summary(model5)
+
+#### Boxcox
+
+sal = Salaries[, c(3,4,6)]
+shapiro.test(Salaries$salary)
+# Null: Data is normally distributed
+# p-value = 6.076e-09 < 0.05, reject null -> NOT Normal.
+
+model1 = lm(salary ~ yrs.since.phd + yrs.service, data = Salaries)
+summary(model1)
+
+bc = boxcox(model1)
+best.lam = bc$x[which(bc$y == max(bc$y))]
+best.lam
+
+model6 = lm(I(salary^best.lam) ~ yrs.since.phd + yrs.service, data = Salaries)
+summary(model6)
+
+### Adj. R^2 increased
+
+# Predictions using Training and Testing data
+
+set.seed(123)
+split = sample.split(Salaries$salary, SplitRatio = 0.8)
+training_set = subset(Salaries, split == T)
+test_set = subset(Salaries, split == F)
+
+model7 = lm(salary ~ ., data = training_set)
+y_pred = predict(model7, test_set)
+# y_pred
+data.frame(y_pred, test_set$salary)
+
+# Variable Selection
+
+# data
+data("swiss")
+attach(swiss)
+
+# ?swiss
+
+# Best Subsets regression
+
+models = leaps::regsubsets(Fertility ~ ., data = swiss, nvmax = 5)
+summary(models)
+
+### Therefore, 
+### Best 1-variable model: Fertility ~ Education
+### Best 2-variables model: Fertility ~ Education + Catholic
+### Best 3-variables model: Fertility ~ Education + Catholic + Infant.Mortality
+### Best 4-variables model: Fertility ~ Agriculture + Education + Catholic + Infant.Mortality
+### Best 5-variables model: Fertility ~ Agriculture + Examination + Education + Catholic + Infant.Mortality
+
+models.summary = summary(models)
+data.frame(Adj.R2 = which.max(models.summary$adjr2),
+           CP = which.min(models.summary$cp),
+           BIC = which.min(models.summary$bic))
+
+### Fertility ~ Agriculture + Education + Catholic + Infant.Mortality
+
+# Stepwise Variable Selection
+fit = lm(Fertility ~ ., data = swiss)
+step = MASS::stepAIC(fit, direction = "both", trace = F) # change both to forward and backward
+step
+
+detach(swiss)
+
+
+# Penalized Regression
+
+ames = read.csv("https://raw.githubusercontent.com/Parv-Joshi/EDAV_CC_Datasets/main/Ames_Housing_Data.csv")
+# str(ames)
+anyNA(ames)
+
+set.seed(123)
+training.samples = createDataPartition(ames$SalePrice, p = 0.75, list = FALSE)
+
+train.data = ames[training.samples,]
+test.data = ames[-training.samples,]
+
+lambda = 10^seq(-3, 3, length = 100)
+
+# Ridge Regression
+set.seed(123)
+ridge = train(SalePrice ~ ., data = train.data, method = "glmnet",
+  trControl = trainControl("cv", number = 10),
+  tuneGrid = expand.grid(alpha = 0, lambda = lambda))
+
+# LASSO
+set.seed(123)
+lasso = train(SalePrice ~ ., data = train.data, method = "glmnet",
+  trControl = trainControl("cv", number = 10),
+  tuneGrid = expand.grid(alpha = 1, lambda = lambda))
+
+# Elastic Net
+set.seed(123)
+elastic = train(SalePrice ~ ., data = train.data, method = "glmnet",
+  trControl = trainControl("cv", number = 10),
+  tuneLength = 10)
+
+# Comparison
+models = list(ridge = ridge, lasso = lasso, elastic = elastic)
+resamples(models) %>% summary(metric = "RMSE")
+# Since Elastic model has the lowest mean RMSE, we can conclude that the Elastic model is the best.
+
+```
+
+
+### Classification
+
+```{r}
+# Data
+
+data("PimaIndiansDiabetes2", package = "mlbench")
+
+# str(PimaIndiansDiabetes2)
+# View(PimaIndiansDiabetes2)
+
+PimaIndiansDiabetes2$diabetes = as.factor(PimaIndiansDiabetes2$diabetes)
+PimaIndiansDiabetes2 = na.omit(PimaIndiansDiabetes2)
+
+attach(PimaIndiansDiabetes2)
+
+# Training and Testing
+
+set.seed(123)
+
+training.samples = createDataPartition(diabetes, p = 0.8, list = FALSE)
+
+train.data = PimaIndiansDiabetes2[training.samples,]
+test.data = PimaIndiansDiabetes2[-training.samples,]
+
+# Logistic Regression
+
+model = glm(diabetes ~ ., data = train.data, family = binomial)
+summary(model)
+
+probabilities = predict(model, test.data, type = "response")
+probabilities
+
+contrasts(diabetes)
+predicted.classes = ifelse(probabilities > 0.5, "pos", "neg")
+predicted.classes
+
+caret::confusionMatrix(factor(predicted.classes),
+                factor(test.data$diabetes),
+                positive = "pos")
+
+# Stepwise regression
+
+step = MASS::stepAIC(model, direction = "both", k = log(nrow(PimaIndiansDiabetes2)), trace = FALSE)
+step$anova
+
+# Best subset regression
+
+cv_data = model.matrix( ~ ., PimaIndiansDiabetes2)[,-1]
+cv_data = data.frame(cv_data)
+best = bestglm(cv_data, IC = "BIC", family = binomial)
+best
+
+detach(PimaIndiansDiabetes2)
+
+# Decision Tree Classification
+
+data = read.csv("https://raw.githubusercontent.com/Parv-Joshi/EDAV_CC_Datasets/main/Titanic.csv")
+attach(data)
+
+# str(data)
+
+# Excluding Variables
+data = subset(data, select = -c(Name, Ticket, Cabin))
+
+# Removing Missing Data
+data = subset(data, !is.na(Age))
+
+# Testing and Training set
+
+set.seed(123)
+training.samples = data$Survived %>% 
+  createDataPartition(p = 0.8, list = FALSE)
+
+train.data = data[training.samples,]
+test.data = data[-training.samples,]
+
+# Factoring Survived
+train.data$Survived = as.factor(train.data$Survived)
+test.data$Survived = as.factor(test.data$Survived)
+
+# Decision Trees
+model = rpart::rpart(Survived ~ ., data = train.data, control = rpart.control(cp = 0))
+rattle::fancyRpartPlot(model, cex = 0.5)
+
+set.seed(123)
+train.data$Survived = as.factor(train.data$Survived)
+model2 = train(Survived ~ ., 
+               data = train.data, 
+               method = "rpart", 
+               trControl = trainControl("cv", number = 10), 
+               tuneLength = 100)
+
+fancyRpartPlot(model2$finalModel, cex = 0.6)
+
+probabilities = predict(model2, newdata = test.data)
+# we don't need to do  contrasts since Survived is already given in o and 1.
+predicted.classes = ifelse(probabilities == 1, "1", "0")
+
+caret::confusionMatrix(factor(predicted.classes),
+                factor(test.data$Survived),
+                positive = "1")
+
+# Random Forest
+
+set.seed(123)
+model3 = train(Survived ~ ., 
+              data = train.data, 
+              method = "rf",
+              trControl = trainControl("cv", number = 10),
+              importance = TRUE)
+
+probabilities = predict(model3, newdata = test.data)
+predicted.classes = ifelse(probabilities == 1, "1", "0")
+caret::confusionMatrix(factor(predicted.classes),
+                factor(test.data$Survived),
+                positive = "1")
+
+randomForest::varImpPlot(model3$finalModel, type = 1) # MeanDecreaseAccuracy
+caret::varImp(model3, type = 1)
+
+randomForest::varImpPlot(model3$finalModel, type = 2) # MeanDecreaseGini
+caret::varImp(model3, type = 2)
+
+detach(data)
+```
