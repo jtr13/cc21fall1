@@ -23,6 +23,7 @@ rmd_files: [
   'intro_lattice_tutorial.Rmd',
   'graph_animation.Rmd',
   'interactive_plots.Rmd',
+  'make_lm_assumptions_plots.Rmd',
 
 
   # Part: Cheatsheets
