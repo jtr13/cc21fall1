@@ -199,6 +199,14 @@ shadow_wake-examples
 conclusion-2
 citation
 quick-guide-to-eda
+linear-association-r-studio-plugin
+introduction-4
+installation
+usage
+note-this-addin-runs-on-library-tidyverse.-please-run-the-following-command-first-before-running-into-next-step
+example
+troubleshooting
+evaluation-and-improvement
 data-science-product-cycles-in-enterprises
 github-initial-setup
 create-new-repo
