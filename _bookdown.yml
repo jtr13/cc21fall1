@@ -24,6 +24,7 @@ rmd_files: [
   'intro_lattice_tutorial.Rmd',
   'graph_animation.Rmd',
   'interactive_plots.Rmd',
+  'make_lm_assumptions_plots.Rmd',
 
 
   # Part: Cheatsheets
@@ -50,7 +51,12 @@ rmd_files: [
   'twitter_api_scrape_tutorial.Rmd',
   'intro_to_data_manipulation.Rmd',
   'animating_in_r.Rmd',
+  'quick_guide_to_eda.Rmd',
+  'nlp_eda_python.Rmd',
   'deep_learning_with_r.Rmd',
+
+  # Part: Demonstrations
+  'linear_association.Rmd',
 
   
   # Part: Workshops
@@ -61,4 +67,3 @@ rmd_files: [
   'appendix_pull_request_tutorial.Rmd'
 
 ]
-
