@@ -39,6 +39,7 @@ interactive-network-diagram
 simple-network
 customized-network
 reference
+create-regression-assumption-plots-in-word
 r-vs.-python-visualization-cheatsheet
 rpackage-waffle-cheatsheet
 r-cheatsheet-on-data-transforamtion-and-exploration
