@@ -49,6 +49,8 @@ rmd_files: [
   'twitter_api_scrape_tutorial.Rmd',
   'intro_to_data_manipulation.Rmd',
   'animating_in_r.Rmd',
+  'quick_guide_to_eda.Rmd',
+
 
   
   # Part: Workshops
@@ -59,4 +61,3 @@ rmd_files: [
   'appendix_pull_request_tutorial.Rmd'
 
 ]
-
