@@ -32,6 +32,7 @@ rmd_files: [
   'r_vs_python_basic_data_wrangling.Rmd',
   'tidyverse_cheatsheet.Rmd',
   'cheatsheet_tidyverse.Rmd',
+  'ggprism_and_ggsci_cheatsheets.Rmd',
  
   # Part: Tutorials
   'multithreading_crawler_frame.Rmd', # contains PART header
@@ -55,4 +56,3 @@ rmd_files: [
   'appendix_pull_request_tutorial.Rmd'
 
 ]
-
