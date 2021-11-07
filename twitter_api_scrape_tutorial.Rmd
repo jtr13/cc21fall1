@@ -14,7 +14,7 @@ In order to begin using the TwitteR package, you first need to create a Twitter 
 
 Here's link to the full documentation: https://cran.r-project.org/web/packages/rtweet/rtweet.pdf
 
-```{r}
+```{r, eval = FALSE}
 library(rtweet)
 library(dplyr)
 library(tidyr)
@@ -27,7 +27,7 @@ Starting with loading authenticiation token:
 
 With the keys/tokens that you acquired in the Set Up, you can store it into a token for easy access. You are going to need to use this token often as you're utilizing the functions of rtweet.
 
-```{r, eval=F}
+```{r, eval = FALSE}
 # load rtweet
 library(rtweet)
 
@@ -61,7 +61,7 @@ There's a few functions that enable you to pull friends or followers of an accou
 
 Here's an example
 
-```{r}
+```{r, eval = FALSE}
 #Get a list of friends for the @DataSciColumbia account
 friends <- get_friends("DataSciColumbia")
 multifriends <- get_friends(c("Columbia", "DataSciColumbia")) #Note you can pass multiple handles at the same time
@@ -76,7 +76,7 @@ datatable(followers)
 ```
 With the list of User IDs, you can now use `lookup_users()' to find other relevant information for each UserID.
 
-```{r}
+```{r, eval = FALSE}
 users <- c(followers$user_id)
 lookup_users(users[0:10]) #get information on 10 users that follow @DataSciColumbia
 ```
@@ -92,7 +92,7 @@ Here are some useful functions:
 *lookup_tweets()
 *get_favorites()
 
-```{r}
+```{r, eval = FALSE}
 # search tweets for a keyword or phrase
 search_tweets(q = "Columbia Data Science")
 #You can even specify the language or whether you want to include retweets
@@ -113,7 +113,7 @@ Now that we have some of the basic building block of the functions, we can put t
 
 In the first example here, we can graph the number of tweets that @DataSciColumbia favorited!
 
-```{r}
+```{r, eval = FALSE}
 ts_plot(favorites, "weeks")
 ```
 As you can see, the account was really active in favorit-ing tweets from 2017 up until before 2019. Maybe, we should go check on the owner of the account?
@@ -124,7 +124,7 @@ Finding top hashtags
 Next, we can use the search tweets function to pull tweets that mention @DataSciColumbia account and then find the top hashtags (by frequency) used when mentioning this account.
 
 
-```{r}
+```{r, eval = FALSE}
 #Search for tweets that mention @DataSciColumbia
 tweets <- search_tweets("@DataSciColumbia",n=1000,include_rts = FALSE,retryonratelimit=F)
 
