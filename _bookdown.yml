@@ -51,6 +51,7 @@ rmd_files: [
   'animating_in_r.Rmd',
   'quick_guide_to_eda.Rmd',
 
+
   
   # Part: Workshops
   'ds_product_cycles_in_enterprises.Rmd', # contains PART header
