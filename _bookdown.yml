@@ -52,6 +52,8 @@ rmd_files: [
   'quick_guide_to_eda.Rmd',
 
 
+  # Part: Demonstrations
+
   
   # Part: Workshops
   'ds_product_cycles_in_enterprises.Rmd', # contains PART header
