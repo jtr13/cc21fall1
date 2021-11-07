@@ -3,16 +3,12 @@
 Yujie Zhou
 
 ```{r}
-#install.packages("gapminder")
 library(ggplot2)
 library(plotly)
 library(gapminder)
 library("tidyr")
-#install.packages("heatmaply")
 library("heatmaply")
-#install.packages("igraph")
 library(igraph)
-#install.packages("networkD3")
 library(networkD3)
 ```
 Interactive plots are used widely in today's data analysis.This tutorial will introduce four commonly used interactive plots: interactive bubble plot, interactive area plot, interactive heatmap, and interactive network. Unlike static plot, interactive plot can enable users to zoom in and out and give user a better use experience and simplify analysis process. 
