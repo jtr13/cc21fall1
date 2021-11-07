@@ -159,6 +159,7 @@ step-4-extract-information-on-each-job-post
 step-5-combine-job-posts
 conclusion-1
 work-cited
+twitter-r-package-scraping-via-api-tutorial
 introduction-to-data-manipulation
 data-wrangling-with-dplyr
 pipe
