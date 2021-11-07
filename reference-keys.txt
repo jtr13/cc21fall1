@@ -198,6 +198,7 @@ shadow_wake-usage
 shadow_wake-examples
 conclusion-2
 citation
+quick-guide-to-eda
 data-science-product-cycles-in-enterprises
 github-initial-setup
 create-new-repo
