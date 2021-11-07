@@ -200,6 +200,7 @@ shadow_wake-examples
 conclusion-2
 citation
 quick-guide-to-eda
+natural-langauge-processing-common-eda-practices-in-python
 linear-association-r-studio-plugin
 introduction-4
 installation
