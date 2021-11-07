@@ -46,6 +46,7 @@ rmd_files: [
   'web_scraping_rcurl_xml_project.Rmd',
   'twitter_api_scrape_tutorial.Rmd',
   'intro_to_data_manipulation.Rmd',
+  'animating_in_r.Rmd',
 
   
   # Part: Workshops
