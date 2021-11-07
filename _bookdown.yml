@@ -53,6 +53,7 @@ rmd_files: [
 
 
   # Part: Demonstrations
+  'linear_association.Rmd',
 
   
   # Part: Workshops
