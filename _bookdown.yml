@@ -59,6 +59,7 @@ rmd_files: [
   'supervised_learning_tutorial.Rmd',
   'parallel_coordinate_plots_ggplot2.Rmd',
   'using_ggplot_in_python.Rmd',
+  'icons_and_symbols_in_r.Rmd',
 
   # Part: Demonstrations
   'linear_association.Rmd', # contains PART header

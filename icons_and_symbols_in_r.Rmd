@@ -83,7 +83,7 @@ Here's a trick that we can apply to build icons with the help of `showtext`. The
 #### An example of `showtext` (Demographics Data)
 This example shows demographics by splitting the population into each subcategories of the education level. The use of symbol clearly indicates it's a demographic plot by nature and we can clearly distinguish between men and women with their corresponding token.
 ```{r}
-font_add("wmpeople1", "wmpeople1.TTF")
+font_add("wmpeople1", "resources/icons_and_symbols_in_r/wmpeople1.TTF")
 showtext_auto()
 
 dat = read.csv(textConnection('
