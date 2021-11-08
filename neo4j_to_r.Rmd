@@ -2,7 +2,7 @@
 
 Chaoying Zheng
 
-```{r, include=FALSE}
+```{r, include=FALSE, eval = FALSE}
 knitr::opts_chunk$set(eval = FALSE)
 ```
 
@@ -27,9 +27,9 @@ knitr::opts_chunk$set(eval = FALSE)
 
 #### R Package Installation
 
-```{r, include=FALSE}
+```{r, include=FALSE, eval = FALSE}
 # this prevents package loading message from appearing in the rendered version of your problem set
-knitr::opts_chunk$set(warning = FALSE, message = FALSE)
+knitr::opts_chunk$set(eval = FALSE, warning = FALSE, message = FALSE)
 ```
 
 <!-- install.packages("neo4r") -->
@@ -40,7 +40,7 @@ knitr::opts_chunk$set(warning = FALSE, message = FALSE)
 
 ![Figure 2: Neo4j local sign in page](resources/neo4j_to_r/connection.png)
 
-```{r}
+```{r, eval = FALSE}
 library(neo4r)
 con <- neo4j_api$new(
   url = "http://localhost:7474",
@@ -52,7 +52,7 @@ con <- neo4j_api$new(
 
 ### Retrieving data from Neo4j
 The basic idea is to write the cypher query language and pass to the Neo4j connection created above with function `call_neo4j()`. The parameter `type` will convert the graph database table into a graph object in R. The query below extract all the characters that have "marriedEngaged" relationship with Sansa Stark. 
-```{r}
+```{r, eval = FALSE}
 library(dplyr)
 library(purrr)
 Sansa_Marriage <- 'MATCH a = (sansa:Character {name:"Sansa Stark"})-[:killed|marriedEngaged]-(c:Character) RETURN a' %>%
@@ -60,7 +60,7 @@ Sansa_Marriage <- 'MATCH a = (sansa:Character {name:"Sansa Stark"})-[:killed|mar
 ```
 
 Next, convert all nodes and relationships into a relational table. (Reminder: the first col `id` is the unique id given by Neo4j by default, the last col `id1` is the character id for each character)
-```{r message=FALSE, warning=FALSE}
+```{r message=FALSE, warning=FALSE, eval = FALSE}
 Sansa_Marriage$nodes <- Sansa_Marriage$nodes %>%
   unnest_nodes(what = "properties") %>% 
   mutate(label = map_chr(label, 1))
@@ -74,7 +74,7 @@ Sansa_Marriage$relationships <- Sansa_Marriage$relationships %>%
 
 ### Visualize with ggraph
 Also, we can use `ggprah` to regenerate the graph from the relational table. 
-```{r fig.height=8, fig.width=15, message=FALSE, warning=FALSE}
+```{r eval = FALSE, fig.height=8, fig.width=15, message=FALSE, warning=FALSE}
 library(ggraph)
 graph_object <- igraph::graph_from_data_frame(
   d = Sansa_Marriage$relationships, 
