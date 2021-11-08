@@ -201,6 +201,7 @@ conclusion-2
 citation
 quick-guide-to-eda
 natural-langauge-processing-common-eda-practices-in-python
+supervised-learning-tutorial
 linear-association-r-studio-plugin
 introduction-4
 installation
