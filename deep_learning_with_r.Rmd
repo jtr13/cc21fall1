@@ -3,7 +3,7 @@
 Dashansh Prajapati and Vijay S Kalmath
 
 ```{r, include=FALSE}
-knitr::opts_chunk$set(echo = TRUE, eval=FALSE)
+knitr::opts_chunk$set(echo = TRUE, eval=FALSE, cache=FALSE) #temp
 ```
 
 ```{r, results=FALSE, message=FALSE}
