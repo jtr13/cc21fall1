@@ -18,7 +18,7 @@ rmd_files: [
   'sample_project.Rmd',
 
   # Part: Data Visualizations
-  'intro_lattice_tutorial.Rmd',
+  'intro_lattice_tutorial.Rmd', # contains PART header
   'graph_animation.Rmd',
   'interactive_plots.Rmd',
   'make_lm_assumptions_plots.Rmd',
