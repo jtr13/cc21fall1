@@ -1,0 +1,115 @@
+# Create regression assumption plots in Word
+
+Nikhil Gopal
+
+```{r eval=FALSE}
+
+library(ggplot2)
+library(apaTables)
+library(officer)
+
+make_lm_plots<-function(model, output_path, reg_table, reg_table_name){
+  word_doc <- read_docx()
+  p1<-ggplot(model, aes(.fitted, .resid))+geom_point()
+  p1<-p1+stat_smooth(method="loess")+geom_hline(yintercept=0, col="red", linetype="dashed")
+  p1<-p1+xlab("Fitted values")+ylab("Residuals")
+  p1<-p1+ggtitle("Residual vs Fitted Plot")+theme_bw()
+  
+  ggsave("FittedvResid.png",
+         p1,
+         width = 4,
+         height = 3,
+         units = "in")
+  word_doc <- body_add_img(word_doc,
+                           src = "FittedvResid.png",
+                           width = 4,
+                           height = 3)
+  
+  p3<-ggplot(model, aes(.fitted, sqrt(abs(.stdresid))))+geom_point(na.rm=TRUE)
+  p3<-p3+stat_smooth(method="loess", na.rm = TRUE)+xlab("Fitted Value")
+  p3<-p3+ylab(expression(sqrt("|Standardized residuals|")))
+  p3<-p3+ggtitle("Scale-Location")+theme_bw()
+  
+  ggsave("Scale-Location.png",
+         p3,
+         width = 4,
+         height = 3,
+         units = "in")
+  word_doc <- body_add_img(word_doc,
+                           src = "Scale-Location.png",
+                           width = 4,
+                           height = 3)
+  
+  p4<-ggplot(model, aes(seq_along(.cooksd), .cooksd))+geom_bar(stat="identity", position="identity")
+  p4<-p4+xlab("Obs. Number")+ylab("Cook's distance")
+  p4<-p4+ggtitle("Cook's distance")+theme_bw()
+  
+  ggsave("Cook's distance.png",
+         p4,
+         width = 4,
+         height = 3,
+         units = "in")
+  word_doc <- body_add_img(word_doc,
+                           src = "Cook's distance.png",
+                           width = 4,
+                           height = 3)
+  
+  p5<-ggplot(model, aes(.hat, .stdresid))+geom_point(aes(size=.cooksd), na.rm=TRUE)
+  p5<-p5+stat_smooth(method="loess", na.rm=TRUE)
+  p5<-p5+xlab("Leverage")+ylab("Standardized Residuals")
+  p5<-p5+ggtitle("Residual vs Leverage Plot")
+  p5<-p5+scale_size_continuous("Cook's Distance", range=c(1,5))
+  p5<-p5+theme_bw()+theme(legend.position="bottom")
+  
+  ggsave("Residual vs Leverage Plot.png",
+         p5,
+         width = 4,
+         height = 3,
+         units = "in")
+  word_doc <- body_add_img(word_doc,
+                           src = "Residual vs Leverage Plot.png",
+                           width = 4,
+                           height = 3)
+  
+  p6<-ggplot(model, aes(.hat, .cooksd))+geom_point(na.rm=TRUE)+stat_smooth(method="loess", na.rm=TRUE)
+  p6<-p6+xlab("Leverage hii")+ylab("Cook's Distance")
+  p6<-p6+ggtitle("Cook's dist vs Leverage hii/(1-hii)")
+  p6<-p6+geom_abline(slope=seq(0,3,0.5), color="gray", linetype="dashed")
+  p6<-p6+theme_bw()
+  
+  ggsave("Cook's dist vs Leverage.png",
+         p6,
+         width = 4,
+         height = 3,
+         units = "in")
+  word_doc <- body_add_img(word_doc,
+                           src = "Cook's dist vs Leverage.png",
+                           width = 4,
+                           height = 3)
+  
+  print(word_doc, target = output_path)
+  unlink("Cook's dist vs Leverage.png")
+  unlink("Cook's distance.png")
+  unlink("FittedvResid.png")
+  unlink("Scale-Location.png")
+  unlink("Residual vs Leverage Plot.png")
+  
+  if(reg_table == 1){
+    apa.reg.table(
+      mod,
+      filename = reg_table_name,
+      table.number = NA,
+      prop.var.conf.level = 0.95
+    )
+  }
+}
+
+```
+
+Explanation:
+
+The .RMD file code will not run in its current form. I have added the eval=FALSE flag in the chunk to make the code not run when executed. This is because the ggsave() function is incompatible with GitHub pages, and will cause errors, but it will work on your local machine if you copy the code.
+
+Example code of how to use this function and a more detailed explanation of the package can be found at my github repository link:
+
+https://github.com/ng4567/LM2APA
