@@ -18,12 +18,12 @@ rmd_files: [
   'sample_project.Rmd',
 
   # Part: Data Visualizations
-  #'neo4j_to_r.Rmd',
   #'icons_and_symbols_in_r.Rmd',
   'intro_lattice_tutorial.Rmd',
   'graph_animation.Rmd',
   'interactive_plots.Rmd',
   'make_lm_assumptions_plots.Rmd',
+  'neo4j_to_r.Rmd',
 
 
   # Part: Cheatsheets
