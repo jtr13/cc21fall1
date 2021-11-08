@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<title>Chapter 9 From Neo4j to RStudio | EDAV Fall 2021 Mon/Wed Community Contributions</title>
+<meta name="author" content="the students of the class">
+<meta name="description" content="Chaoying Zheng  9.0.1 Introduction of Graph Database Graph database is designed to be very visual on the relationship of the data.The Six degree of separation is a popular example of how graph...">
+<meta name="generator" content="bookdown 0.24 with bs4_book()">
+<meta property="og:title" content="Chapter 9 From Neo4j to RStudio | EDAV Fall 2021 Mon/Wed Community Contributions">
+<meta property="og:type" content="book">
+<meta property="og:description" content="Chaoying Zheng  9.0.1 Introduction of Graph Database Graph database is designed to be very visual on the relationship of the data.The Six degree of separation is a popular example of how graph...">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Chapter 9 From Neo4j to RStudio | EDAV Fall 2021 Mon/Wed Community Contributions">
+<meta name="twitter:description" content="Chaoying Zheng  9.0.1 Introduction of Graph Database Graph database is designed to be very visual on the relationship of the data.The Six degree of separation is a popular example of how graph...">
+<!-- JS --><script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.6/clipboard.min.js" integrity="sha256-inc5kl9MA1hkeYUt+EC3BhlIgyp/2jDIyBLS6k3UxPI=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/fuse.js/6.4.6/fuse.js" integrity="sha512-zv6Ywkjyktsohkbp9bb45V6tEMoWhzFzXis+LrMehmJZZSys19Yxf1dopHx7WzIKxr5tK2dVcYmaCk2uqdjF4A==" crossorigin="anonymous"></script><script src="https://kit.fontawesome.com/6ecbd6c532.js" crossorigin="anonymous"></script><script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<link href="libs/bootstrap-4.6.0/bootstrap.min.css" rel="stylesheet">
+<script src="libs/bootstrap-4.6.0/bootstrap.bundle.min.js"></script><script src="libs/bs3compat-0.3.1/transition.js"></script><script src="libs/bs3compat-0.3.1/tabs.js"></script><script src="libs/bs3compat-0.3.1/bs3compat.js"></script><link href="libs/bs4_book-1.0.0/bs4_book.css" rel="stylesheet">
+<script src="libs/bs4_book-1.0.0/bs4_book.js"></script><script src="libs/accessible-code-block-0.0.1/empty-anchor.js"></script><script src="libs/htmlwidgets-1.5.4/htmlwidgets.js"></script><script src="libs/plotly-binding-4.10.0/plotly.js"></script><script src="libs/typedarray-0.1/typedarray.min.js"></script><link href="libs/crosstalk-1.2.0/css/crosstalk.min.css" rel="stylesheet">
+<script src="libs/crosstalk-1.2.0/js/crosstalk.min.js"></script><link href="libs/plotly-htmlwidgets-css-2.5.1/plotly-htmlwidgets.css" rel="stylesheet">
+<script src="libs/plotly-main-2.5.1/plotly-latest.min.js"></script><link href="libs/dygraphs-1.1.1/dygraph.css" rel="stylesheet">
+<script src="libs/dygraphs-1.1.1/dygraph-combined.js"></script><script src="libs/dygraphs-1.1.1/shapes.js"></script><script src="libs/moment-2.8.4/moment.js"></script><script src="libs/moment-timezone-0.2.5/moment-timezone-with-data.js"></script><script src="libs/moment-fquarter-1.0.0/moment-fquarter.min.js"></script><script src="libs/dygraphs-binding-1.1.1.6/dygraphs.js"></script><script src="libs/d3-5.16.0/d3.min.js"></script><script src="libs/forceNetwork-binding-0.4/forceNetwork.js"></script><link href="libs/parallel-coordinates-2.1.8/parcoords.css" rel="stylesheet">
+<script src="libs/parcoords-binding-1.0.0/parcoords.js"></script><script src="libs/detect-resize-0.5.3/jquery.resize.js"></script><link href="libs/jquery-ui-1.11.4/jquery-ui.min.css" rel="stylesheet">
+<script src="libs/jquery-ui-1.11.4/jquery-ui.min.js"></script><script src="libs/vega-1.4.3/vega.min.js"></script><script src="libs/lodash-2.2.1/lodash.min.js"></script><script>var lodash = _.noConflict();</script><link href="libs/ggvis-0.4.7/css/ggvis.css" rel="stylesheet">
+<script src="libs/ggvis-0.4.7/js/ggvis.js"></script><script src="libs/dendroNetwork-binding-0.4/dendroNetwork.js"></script><link href="libs/str_view-0.1.0/str_view.css" rel="stylesheet">
+<script src="libs/str_view-binding-1.4.0/str_view.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/autocomplete.js/0.38.0/autocomplete.jquery.min.js" integrity="sha512-GU9ayf+66Xx2TmpxqJpliWbT5PiGYxpaG8rfnBEk1LL8l1KGkRShhngwdXK1UgqhAzWpZHSiYPc09/NwDQIGyg==" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/mark.min.js" integrity="sha512-5CYOlHXGh6QpOFA/TeTylKLWfB3ftPsde7AnmhuitiTX4K5SqCLBeKro6sPS8ilsz1Q4NRx3v8Ko2IBiszzdww==" crossorigin="anonymous"></script><!-- CSS -->
+</head>
+<body data-spy="scroll" data-target="#toc">
+
+<div class="container-fluid">
+<div class="row">
+  <header class="col-sm-12 col-lg-3 sidebar sidebar-book"><a class="sr-only sr-only-focusable" href="#content">Skip to main content</a>
+
+    <div class="d-flex align-items-start justify-content-between">
+      <h1>
+        <a href="index.html" title="">EDAV Fall 2021 Mon/Wed Community Contributions</a>
+      </h1>
+      <button class="btn btn-outline-primary d-lg-none ml-2 mt-1" type="button" data-toggle="collapse" data-target="#main-nav" aria-expanded="true" aria-controls="main-nav"><i class="fas fa-bars"></i><span class="sr-only">Show table of contents</span></button>
+    </div>
+
+    <div id="main-nav" class="collapse-lg">
+      <form role="search">
+        <input id="search" class="form-control" type="search" placeholder="Search" aria-label="Search">
+</form>
+
+      <nav aria-label="Table of contents"><h2>Table of contents</h2>
+        <ul class="book-toc list-unstyled">
+<li><a class="" href="index.html"><span class="header-section-number">1</span> Welcome!</a></li>
+<li><a class="" href="community-contribution.html"><span class="header-section-number">2</span> Community Contribution</a></li>
+<li><a class="" href="github-submission-instructions.html"><span class="header-section-number">3</span> GitHub submission instructions</a></li>
+<li><a class="" href="sample-project.html"><span class="header-section-number">4</span> Sample project</a></li>
+<li class="book-part">Data Visualizations</li>
+<li><a class="" href="introduction-to-the-lattice-package.html"><span class="header-section-number">5</span> Introduction to the lattice package</a></li>
+<li><a class="" href="graph-animation-with-gganimate-and-after-effects.html"><span class="header-section-number">6</span> Graph animation with gganimate and After Effects</a></li>
+<li><a class="" href="interactive-plots.html"><span class="header-section-number">7</span> Interactive Plots</a></li>
+<li><a class="" href="create-regression-assumption-plots-in-word.html"><span class="header-section-number">8</span> Create regression assumption plots in Word</a></li>
+<li><a class="active" href="from-neo4j-to-rstudio.html"><span class="header-section-number">9</span> From Neo4j to RStudio</a></li>
+<li class="book-part">Cheatsheets</li>
+<li><a class="" href="r-vs.-python-visualization-cheatsheet.html"><span class="header-section-number">10</span> R vs. Python Visualization Cheatsheet</a></li>
+<li><a class="" href="rpackage-waffle-cheatsheet.html"><span class="header-section-number">11</span> Rpackage waffle cheatsheet</a></li>
+<li><a class="" href="r-cheatsheet-on-data-transforamtion-and-exploration.html"><span class="header-section-number">12</span> R cheatsheet on data transforamtion and exploration</a></li>
+<li><a class="" href="r-vs-python-basic-data-wrangling.html"><span class="header-section-number">13</span> R vs Python Basic Data Wrangling</a></li>
+<li><a class="" href="tidyverse_cheatsheet.html"><span class="header-section-number">14</span> tidyverse_cheatsheet</a></li>
+<li><a class="" href="cheatsheet-tidyverse.html"><span class="header-section-number">15</span> Cheatsheet Tidyverse</a></li>
+<li><a class="" href="use-of-ggprism-and-ggsci-packages.html"><span class="header-section-number">16</span> Use of ggprism and ggsci packages</a></li>
+<li><a class="" href="interactive-plot-introduction.html"><span class="header-section-number">17</span> Interactive plot introduction</a></li>
+<li><a class="" href="common-r-markdown-syntax-cheatsheet.html"><span class="header-section-number">18</span> Common R markdown syntax cheatsheet</a></li>
+<li><a class="" href="header.html"><span class="header-section-number">19</span> Header</a></li>
+<li><a class="" href="parallel-coordinates-plot-cheatsheet.html"><span class="header-section-number">20</span> Parallel coordinates plot cheatsheet</a></li>
+<li><a class="" href="r-data-science-workflow-cheatsheet.html"><span class="header-section-number">21</span> R Data Science Workflow CheatSheet</a></li>
+<li class="book-part">Tutorials</li>
+<li><a class="" href="multithreading-crawler-frame.html"><span class="header-section-number">22</span> Multithreading Crawler Frame</a></li>
+<li><a class="" href="regression-and-classification-in-r.html"><span class="header-section-number">23</span> Regression and Classification in R</a></li>
+<li><a class="" href="tibble-vs.-dataframe.html"><span class="header-section-number">24</span> Tibble vs. DataFrame</a></li>
+<li><a class="" href="introduction-to-time-series.html"><span class="header-section-number">25</span> Introduction to Time Series</a></li>
+<li><a class="" href="vipul-edav-community-contribution-kickstart-r.html"><span class="header-section-number">26</span> Vipul EDAV Community Contribution Kickstart R</a></li>
+<li><a class="" href="caret---a-machine-learning-package-turotial.html"><span class="header-section-number">27</span> caret - a machine learning package turotial</a></li>
+<li><a class="" href="streamlit-for-financial-analysis.html"><span class="header-section-number">28</span> Streamlit for Financial Analysis</a></li>
+<li><a class="" href="interactive-graphs-tutorial.html"><span class="header-section-number">29</span> Interactive graphs tutorial</a></li>
+<li><a class="" href="guideline-on-using-package-rcurl-and-xml-for-web-scraping.html"><span class="header-section-number">30</span> Guideline on Using Package Rcurl and XML for Web Scraping</a></li>
+<li><a class="" href="twitter-r-package-scraping-via-api-tutorial.html"><span class="header-section-number">31</span> TwitteR R Package Scraping via API Tutorial</a></li>
+<li><a class="" href="introduction-to-data-manipulation.html"><span class="header-section-number">32</span> Introduction to Data Manipulation</a></li>
+<li><a class="" href="animating-the-plots-in-r.html"><span class="header-section-number">33</span> Animating the plots in R</a></li>
+<li><a class="" href="quick-guide-to-eda.html"><span class="header-section-number">34</span> Quick guide to eda</a></li>
+<li><a class="" href="natural-langauge-processing-common-eda-practices-in-python.html"><span class="header-section-number">35</span> Natural Langauge Processing Common EDA Practices in Python</a></li>
+<li><a class="" href="beginners-walk-through-of-deep-learning-in-r.html"><span class="header-section-number">36</span> Beginner’s Walk-through of Deep Learning in R</a></li>
+<li><a class="" href="supervised-learning-tutorial.html"><span class="header-section-number">37</span> Supervised Learning Tutorial</a></li>
+<li class="book-part">Demonstrations</li>
+<li><a class="" href="linear-association-r-studio-plugin.html"><span class="header-section-number">38</span> Linear Association R Studio Plugin</a></li>
+<li><a class="" href="customized-sorting-in-r.html"><span class="header-section-number">39</span> Customized Sorting in R</a></li>
+<li class="book-part">Workshops</li>
+<li><a class="" href="data-science-product-cycles-in-enterprises.html"><span class="header-section-number">40</span> Data Science Product Cycles in Enterprises</a></li>
+<li class="book-part">Appendices</li>
+<li><a class="" href="github-initial-setup.html"><span class="header-section-number">41</span> Github initial setup</a></li>
+<li><a class="" href="tutorial-for-pull-request-mergers.html"><span class="header-section-number">42</span> Tutorial for pull request mergers</a></li>
+</ul>
+
+        <div class="book-extra">
+          <p><a id="book-repo" href="https://github.com/jtr13/cc21fall1">View book source <i class="fab fa-github"></i></a></p>
+        </div>
+      </nav>
+</div>
+  </header><main class="col-sm-12 col-md-9 col-lg-7" id="content"><div id="from-neo4j-to-rstudio" class="section level1">
+<h1>
+<span class="header-section-number">9</span> From Neo4j to RStudio<a class="anchor" aria-label="anchor" href="#from-neo4j-to-rstudio"><i class="fas fa-link"></i></a>
+</h1>
+<p>Chaoying Zheng</p>
+<div id="introduction-of-graph-database" class="section level3">
+<h3>
+<span class="header-section-number">9.0.1</span> Introduction of Graph Database<a class="anchor" aria-label="anchor" href="#introduction-of-graph-database"><i class="fas fa-link"></i></a>
+</h3>
+<p>Graph database is designed to be very visual on the relationship of the data.The Six degree of separation is a popular example of how graph database helps in visualizing relationship. This theory also known as six handshake rule, which states that all people are six or fewer social connection away from each other. However, in the relational database, it is time consuming to find the relatinoship and generate the visualization. Therefore, graph database, one of the non-relational database, can help us handling with this type of data. On the other side, the table in non-relational database is not reading-friendly, converting them back to relational database can help to better understand the elements of the data.</p>
+<p>Neo4j is a software that widely used in visualizing graph database. At the same time, RStudio is a powerful tool in data visualization. So, the connection between these two tools can be very useful in analyzing data.</p>
+<p>There are two key components in grpah database:node and edge. Each node and edge has label and properties. Neo4j uses Cypher query language, which is structured visually with ASCII-art to make query-building and maintenance easy to read and adapt. In this tutorial, Game of Thrones (GOT) data are used to illustrate.</p>
+<p>In the GOT databse, each node is a character, which all have the same label, named <code>charaters</code>, and same properties, <code>name</code> and <code>id</code>. Characters (nodes) are connected by different edges: “parents”, “siblings”, “killed”, “allies”, etc. Figure 1 shows partial graph of the GOT databse.</p>
+<div class="figure">
+<img src="resources/neo4j_to_r/introduction.png" alt=""><p class="caption">Figure 1: graph database visualize in Neo4j</p>
+</div>
+</div>
+<div id="installation" class="section level3">
+<h3>
+<span class="header-section-number">9.0.2</span> Installation<a class="anchor" aria-label="anchor" href="#installation"><i class="fas fa-link"></i></a>
+</h3>
+<div id="neo4j-installation" class="section level4">
+<h4>
+<span class="header-section-number">9.0.2.1</span> Neo4j Installation<a class="anchor" aria-label="anchor" href="#neo4j-installation"><i class="fas fa-link"></i></a>
+</h4>
+<p>First, install Neo4j (<a href="https://neo4j.com/docs/operations-manual/current/installation/" class="uri">https://neo4j.com/docs/operations-manual/current/installation/</a>) and run the databsae on the local machine. If you already install Neo4j, ignore this step.</p>
+</div>
+<div id="r-package-installation" class="section level4">
+<h4>
+<span class="header-section-number">9.0.2.2</span> R Package Installation<a class="anchor" aria-label="anchor" href="#r-package-installation"><i class="fas fa-link"></i></a>
+</h4>
+<!-- install.packages("neo4r") -->
+</div>
+</div>
+<div id="connection" class="section level3">
+<h3>
+<span class="header-section-number">9.0.3</span> Connection<a class="anchor" aria-label="anchor" href="#connection"><i class="fas fa-link"></i></a>
+</h3>
+<p>After starting the graph database on Neo4j, open any brower and go to the default url (<a href="http://localhost:7474" class="uri">http://localhost:7474</a>). Neo4j may require to enter the user and password for authentication, which is shown in Figure 2. All these information will repeat as the following code to connect RStudio with Neo4j.</p>
+<div class="figure">
+<img src="resources/neo4j_to_r/connection.png" alt=""><p class="caption">Figure 2: Neo4j local sign in page</p>
+</div>
+<div class="sourceCode" id="cb48"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://github.com/neo4j-rstats/neo4r">neo4r</a></span><span class="op">)</span>
+<span class="va">con</span> <span class="op">&lt;-</span> <span class="va"><a href="https://rdrr.io/pkg/neo4r/man/neo4j_api.html">neo4j_api</a></span><span class="op">$</span><span class="fu">new</span><span class="op">(</span>
+  url <span class="op">=</span> <span class="st">"http://localhost:7474"</span>,
+  user <span class="op">=</span> <span class="st">"neo4j"</span>, 
+  password <span class="op">=</span> <span class="st">"password"</span>
+  <span class="op">)</span></code></pre></div>
+</div>
+<div id="retrieving-data-from-neo4j" class="section level3">
+<h3>
+<span class="header-section-number">9.0.4</span> Retrieving data from Neo4j<a class="anchor" aria-label="anchor" href="#retrieving-data-from-neo4j"><i class="fas fa-link"></i></a>
+</h3>
+<p>The basic idea is to write the cypher query language and pass to the Neo4j connection created above with function <code><a href="https://rdrr.io/pkg/neo4r/man/call_neo4j.html">call_neo4j()</a></code>. The parameter <code>type</code> will convert the graph database table into a graph object in R. The query below extract all the characters that have “marriedEngaged” relationship with Sansa Stark.</p>
+<div class="sourceCode" id="cb49"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://dplyr.tidyverse.org">dplyr</a></span><span class="op">)</span>
+<span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="http://purrr.tidyverse.org">purrr</a></span><span class="op">)</span>
+<span class="va">Sansa_Marriage</span> <span class="op">&lt;-</span> <span class="st">'MATCH a = (sansa:Character {name:"Sansa Stark"})-[:killed|marriedEngaged]-(c:Character) RETURN a'</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span>
+  <span class="fu"><a href="https://rdrr.io/pkg/neo4r/man/call_neo4j.html">call_neo4j</a></span><span class="op">(</span><span class="va">con</span>, type<span class="op">=</span><span class="st">"graph"</span><span class="op">)</span></code></pre></div>
+<p>Next, convert all nodes and relationships into a relational table. (Reminder: the first col <code>id</code> is the unique id given by Neo4j by default, the last col <code>id1</code> is the character id for each character)</p>
+<div class="sourceCode" id="cb50"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="va">Sansa_Marriage</span><span class="op">$</span><span class="va">nodes</span> <span class="op">&lt;-</span> <span class="va">Sansa_Marriage</span><span class="op">$</span><span class="va">nodes</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span>
+  <span class="fu"><a href="https://rdrr.io/pkg/neo4r/man/unnest_nodes.html">unnest_nodes</a></span><span class="op">(</span>what <span class="op">=</span> <span class="st">"properties"</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> 
+  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/mutate.html">mutate</a></span><span class="op">(</span>label <span class="op">=</span> <span class="fu"><a href="https://purrr.tidyverse.org/reference/map.html">map_chr</a></span><span class="op">(</span><span class="va">label</span>, <span class="fl">1</span><span class="op">)</span><span class="op">)</span>
+<span class="op">(</span><span class="va">Sansa_Marriage</span><span class="op">$</span><span class="va">nodes</span><span class="op">)</span>
+
+<span class="va">Sansa_Marriage</span><span class="op">$</span><span class="va">relationships</span> <span class="op">&lt;-</span> <span class="va">Sansa_Marriage</span><span class="op">$</span><span class="va">relationships</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span>
+  <span class="fu"><a href="https://rdrr.io/pkg/neo4r/man/unnest_relationships.html">unnest_relationships</a></span><span class="op">(</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span>
+  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/select.html">select</a></span><span class="op">(</span><span class="va">startNode</span>, <span class="va">endNode</span>, <span class="va">type</span>, <span class="fu"><a href="https://tidyselect.r-lib.org/reference/everything.html">everything</a></span><span class="op">(</span><span class="op">)</span><span class="op">)</span>
+<span class="op">(</span><span class="va">Sansa_Marriage</span><span class="op">$</span><span class="va">relationships</span><span class="op">)</span></code></pre></div>
+</div>
+<div id="visualize-with-ggraph" class="section level3">
+<h3>
+<span class="header-section-number">9.0.5</span> Visualize with ggraph<a class="anchor" aria-label="anchor" href="#visualize-with-ggraph"><i class="fas fa-link"></i></a>
+</h3>
+<p>Also, we can use <code>ggprah</code> to regenerate the graph from the relational table.</p>
+<div class="sourceCode" id="cb51"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://ggraph.data-imaginist.com">ggraph</a></span><span class="op">)</span>
+<span class="va">graph_object</span> <span class="op">&lt;-</span> <span class="fu">igraph</span><span class="fu">::</span><span class="fu"><a href="https://rdrr.io/pkg/igraph/man/graph_from_data_frame.html">graph_from_data_frame</a></span><span class="op">(</span>
+  d <span class="op">=</span> <span class="va">Sansa_Marriage</span><span class="op">$</span><span class="va">relationships</span>, 
+  directed <span class="op">=</span> <span class="cn">TRUE</span>, 
+  vertices <span class="op">=</span> <span class="va">Sansa_Marriage</span><span class="op">$</span><span class="va">nodes</span>
+<span class="op">)</span>
+
+<span class="va">graph_object</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span>
+  <span class="fu"><a href="https://ggraph.data-imaginist.com/reference/ggraph.html">ggraph</a></span><span class="op">(</span><span class="op">)</span> <span class="op">+</span> 
+<span class="fu"><a href="https://ggraph.data-imaginist.com/reference/geom_node_text.html">geom_node_label</a></span><span class="op">(</span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span>label <span class="op">=</span> <span class="va">name</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span>
+<span class="fu"><a href="https://ggraph.data-imaginist.com/reference/geom_edge_link.html">geom_edge_link</a></span><span class="op">(</span><span class="op">)</span> <span class="op">+</span> 
+<span class="fu"><a href="https://ggraph.data-imaginist.com/reference/theme_graph.html">theme_graph</a></span><span class="op">(</span><span class="op">)</span></code></pre></div>
+
+</div>
+</div>
+
+
+
+  <div class="chapter-nav">
+<div class="prev"><a href="create-regression-assumption-plots-in-word.html"><span class="header-section-number">8</span> Create regression assumption plots in Word</a></div>
+<div class="next"><a href="r-vs.-python-visualization-cheatsheet.html"><span class="header-section-number">10</span> R vs. Python Visualization Cheatsheet</a></div>
+</div></main><div class="col-md-3 col-lg-2 d-none d-md-block sidebar sidebar-chapter">
+    <nav id="toc" data-toggle="toc" aria-label="On this page"><h2>On this page</h2>
+      <ul class="nav navbar-nav"><li>
+<a class="nav-link" href="#from-neo4j-to-rstudio"><span class="header-section-number">9</span> From Neo4j to RStudio</a><ul class="nav navbar-nav">
+<li><a class="nav-link" href="#introduction-of-graph-database"><span class="header-section-number">9.0.1</span> Introduction of Graph Database</a></li>
+<li><a class="nav-link" href="#installation"><span class="header-section-number">9.0.2</span> Installation</a></li>
+<li><a class="nav-link" href="#connection"><span class="header-section-number">9.0.3</span> Connection</a></li>
+<li><a class="nav-link" href="#retrieving-data-from-neo4j"><span class="header-section-number">9.0.4</span> Retrieving data from Neo4j</a></li>
+<li><a class="nav-link" href="#visualize-with-ggraph"><span class="header-section-number">9.0.5</span> Visualize with ggraph</a></li>
+</ul>
+</li></ul>
+
+      <div class="book-extra">
+        <ul class="list-unstyled">
+<li><a id="book-source" href="https://github.com/jtr13/cc21fall1/blob/main/neo4j_to_r.Rmd">View source <i class="fab fa-github"></i></a></li>
+          <li><a id="book-edit" href="https://github.com/jtr13/cc21fall1/edit/main/neo4j_to_r.Rmd">Edit this page <i class="fab fa-github"></i></a></li>
+        </ul>
+</div>
+    </nav>
+</div>
+
+</div>
+</div> <!-- .container -->
+
+<footer class="bg-primary text-light mt-5"><div class="container"><div class="row">
+
+  <div class="col-12 col-md-6 mt-3">
+    <p>"<strong>EDAV Fall 2021 Mon/Wed Community Contributions</strong>" was written by the students of the class. It was last built on 2021-11-08.</p>
+  </div>
+
+  <div class="col-12 col-md-6 mt-3">
+    <p>This book was built by the <a class="text-light" href="https://bookdown.org">bookdown</a> R package.</p>
+  </div>
+
+</div></div>
+</footer><!-- dynamically load mathjax for compatibility with self-contained --><script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script><script type="text/x-mathjax-config">const popovers = document.querySelectorAll('a.footnote-ref[data-toggle="popover"]');
+for (let popover of popovers) {
+  const div = document.createElement('div');
+  div.setAttribute('style', 'position: absolute; top: 0, left:0; width:0, height:0, overflow: hidden; visibility: hidden;');
+  div.innerHTML = popover.getAttribute('data-content');
+
+  var has_math = div.querySelector("span.math");
+  if (has_math) {
+    document.body.appendChild(div);
+    MathJax.Hub.Queue(["Typeset", MathJax.Hub, div]);
+    MathJax.Hub.Queue(function() {
+      popover.setAttribute('data-content', div.innerHTML);
+      document.body.removeChild(div);
+    })
+  }
+}
+</script>
+</body>
+</html>

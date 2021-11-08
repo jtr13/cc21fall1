@@ -4,15 +4,15 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<title>Chapter 17 Common R markdown syntax cheatsheet | EDAV Fall 2021 Mon/Wed Community Contributions</title>
+<title>Chapter 18 Common R markdown syntax cheatsheet | EDAV Fall 2021 Mon/Wed Community Contributions</title>
 <meta name="author" content="the students of the class">
 <meta name="description" content="Yufan Cao and Yingfei Zhu R Markdown is a file format for making dynamic documents with R. It provides an authoring frame work of data science. The R Markdown has two main purpose: 1. Save and...">
 <meta name="generator" content="bookdown 0.24 with bs4_book()">
-<meta property="og:title" content="Chapter 17 Common R markdown syntax cheatsheet | EDAV Fall 2021 Mon/Wed Community Contributions">
+<meta property="og:title" content="Chapter 18 Common R markdown syntax cheatsheet | EDAV Fall 2021 Mon/Wed Community Contributions">
 <meta property="og:type" content="book">
 <meta property="og:description" content="Yufan Cao and Yingfei Zhu R Markdown is a file format for making dynamic documents with R. It provides an authoring frame work of data science. The R Markdown has two main purpose: 1. Save and...">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Chapter 17 Common R markdown syntax cheatsheet | EDAV Fall 2021 Mon/Wed Community Contributions">
+<meta name="twitter:title" content="Chapter 18 Common R markdown syntax cheatsheet | EDAV Fall 2021 Mon/Wed Community Contributions">
 <meta name="twitter:description" content="Yufan Cao and Yingfei Zhu R Markdown is a file format for making dynamic documents with R. It provides an authoring frame work of data science. The R Markdown has two main purpose: 1. Save and...">
 <!-- JS --><script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.6/clipboard.min.js" integrity="sha256-inc5kl9MA1hkeYUt+EC3BhlIgyp/2jDIyBLS6k3UxPI=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/fuse.js/6.4.6/fuse.js" integrity="sha512-zv6Ywkjyktsohkbp9bb45V6tEMoWhzFzXis+LrMehmJZZSys19Yxf1dopHx7WzIKxr5tK2dVcYmaCk2uqdjF4A==" crossorigin="anonymous"></script><script src="https://kit.fontawesome.com/6ecbd6c532.js" crossorigin="anonymous"></script><script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <link href="libs/bootstrap-4.6.0/bootstrap.min.css" rel="stylesheet">
@@ -55,44 +55,45 @@
 <li><a class="" href="graph-animation-with-gganimate-and-after-effects.html"><span class="header-section-number">6</span> Graph animation with gganimate and After Effects</a></li>
 <li><a class="" href="interactive-plots.html"><span class="header-section-number">7</span> Interactive Plots</a></li>
 <li><a class="" href="create-regression-assumption-plots-in-word.html"><span class="header-section-number">8</span> Create regression assumption plots in Word</a></li>
+<li><a class="" href="from-neo4j-to-rstudio.html"><span class="header-section-number">9</span> From Neo4j to RStudio</a></li>
 <li class="book-part">Cheatsheets</li>
-<li><a class="" href="r-vs.-python-visualization-cheatsheet.html"><span class="header-section-number">9</span> R vs. Python Visualization Cheatsheet</a></li>
-<li><a class="" href="rpackage-waffle-cheatsheet.html"><span class="header-section-number">10</span> Rpackage waffle cheatsheet</a></li>
-<li><a class="" href="r-cheatsheet-on-data-transforamtion-and-exploration.html"><span class="header-section-number">11</span> R cheatsheet on data transforamtion and exploration</a></li>
-<li><a class="" href="r-vs-python-basic-data-wrangling.html"><span class="header-section-number">12</span> R vs Python Basic Data Wrangling</a></li>
-<li><a class="" href="tidyverse_cheatsheet.html"><span class="header-section-number">13</span> tidyverse_cheatsheet</a></li>
-<li><a class="" href="cheatsheet-tidyverse.html"><span class="header-section-number">14</span> Cheatsheet Tidyverse</a></li>
-<li><a class="" href="use-of-ggprism-and-ggsci-packages.html"><span class="header-section-number">15</span> Use of ggprism and ggsci packages</a></li>
-<li><a class="" href="interactive-plot-introduction.html"><span class="header-section-number">16</span> Interactive plot introduction</a></li>
-<li><a class="active" href="common-r-markdown-syntax-cheatsheet.html"><span class="header-section-number">17</span> Common R markdown syntax cheatsheet</a></li>
-<li><a class="" href="header.html"><span class="header-section-number">18</span> Header</a></li>
-<li><a class="" href="parallel-coordinates-plot-cheatsheet.html"><span class="header-section-number">19</span> Parallel coordinates plot cheatsheet</a></li>
-<li><a class="" href="r-data-science-workflow-cheatsheet.html"><span class="header-section-number">20</span> R Data Science Workflow CheatSheet</a></li>
+<li><a class="" href="r-vs.-python-visualization-cheatsheet.html"><span class="header-section-number">10</span> R vs. Python Visualization Cheatsheet</a></li>
+<li><a class="" href="rpackage-waffle-cheatsheet.html"><span class="header-section-number">11</span> Rpackage waffle cheatsheet</a></li>
+<li><a class="" href="r-cheatsheet-on-data-transforamtion-and-exploration.html"><span class="header-section-number">12</span> R cheatsheet on data transforamtion and exploration</a></li>
+<li><a class="" href="r-vs-python-basic-data-wrangling.html"><span class="header-section-number">13</span> R vs Python Basic Data Wrangling</a></li>
+<li><a class="" href="tidyverse_cheatsheet.html"><span class="header-section-number">14</span> tidyverse_cheatsheet</a></li>
+<li><a class="" href="cheatsheet-tidyverse.html"><span class="header-section-number">15</span> Cheatsheet Tidyverse</a></li>
+<li><a class="" href="use-of-ggprism-and-ggsci-packages.html"><span class="header-section-number">16</span> Use of ggprism and ggsci packages</a></li>
+<li><a class="" href="interactive-plot-introduction.html"><span class="header-section-number">17</span> Interactive plot introduction</a></li>
+<li><a class="active" href="common-r-markdown-syntax-cheatsheet.html"><span class="header-section-number">18</span> Common R markdown syntax cheatsheet</a></li>
+<li><a class="" href="header.html"><span class="header-section-number">19</span> Header</a></li>
+<li><a class="" href="parallel-coordinates-plot-cheatsheet.html"><span class="header-section-number">20</span> Parallel coordinates plot cheatsheet</a></li>
+<li><a class="" href="r-data-science-workflow-cheatsheet.html"><span class="header-section-number">21</span> R Data Science Workflow CheatSheet</a></li>
 <li class="book-part">Tutorials</li>
-<li><a class="" href="multithreading-crawler-frame.html"><span class="header-section-number">21</span> Multithreading Crawler Frame</a></li>
-<li><a class="" href="regression-and-classification-in-r.html"><span class="header-section-number">22</span> Regression and Classification in R</a></li>
-<li><a class="" href="tibble-vs.-dataframe.html"><span class="header-section-number">23</span> Tibble vs. DataFrame</a></li>
-<li><a class="" href="introduction-to-time-series.html"><span class="header-section-number">24</span> Introduction to Time Series</a></li>
-<li><a class="" href="vipul-edav-community-contribution-kickstart-r.html"><span class="header-section-number">25</span> Vipul EDAV Community Contribution Kickstart R</a></li>
-<li><a class="" href="caret---a-machine-learning-package-turotial.html"><span class="header-section-number">26</span> caret - a machine learning package turotial</a></li>
-<li><a class="" href="streamlit-for-financial-analysis.html"><span class="header-section-number">27</span> Streamlit for Financial Analysis</a></li>
-<li><a class="" href="interactive-graphs-tutorial.html"><span class="header-section-number">28</span> Interactive graphs tutorial</a></li>
-<li><a class="" href="guideline-on-using-package-rcurl-and-xml-for-web-scraping.html"><span class="header-section-number">29</span> Guideline on Using Package Rcurl and XML for Web Scraping</a></li>
-<li><a class="" href="twitter-r-package-scraping-via-api-tutorial.html"><span class="header-section-number">30</span> TwitteR R Package Scraping via API Tutorial</a></li>
-<li><a class="" href="introduction-to-data-manipulation.html"><span class="header-section-number">31</span> Introduction to Data Manipulation</a></li>
-<li><a class="" href="animating-the-plots-in-r.html"><span class="header-section-number">32</span> Animating the plots in R</a></li>
-<li><a class="" href="quick-guide-to-eda.html"><span class="header-section-number">33</span> Quick guide to eda</a></li>
-<li><a class="" href="natural-langauge-processing-common-eda-practices-in-python.html"><span class="header-section-number">34</span> Natural Langauge Processing Common EDA Practices in Python</a></li>
-<li><a class="" href="beginners-walk-through-of-deep-learning-in-r.html"><span class="header-section-number">35</span> Beginner’s Walk-through of Deep Learning in R</a></li>
-<li><a class="" href="supervised-learning-tutorial.html"><span class="header-section-number">36</span> Supervised Learning Tutorial</a></li>
+<li><a class="" href="multithreading-crawler-frame.html"><span class="header-section-number">22</span> Multithreading Crawler Frame</a></li>
+<li><a class="" href="regression-and-classification-in-r.html"><span class="header-section-number">23</span> Regression and Classification in R</a></li>
+<li><a class="" href="tibble-vs.-dataframe.html"><span class="header-section-number">24</span> Tibble vs. DataFrame</a></li>
+<li><a class="" href="introduction-to-time-series.html"><span class="header-section-number">25</span> Introduction to Time Series</a></li>
+<li><a class="" href="vipul-edav-community-contribution-kickstart-r.html"><span class="header-section-number">26</span> Vipul EDAV Community Contribution Kickstart R</a></li>
+<li><a class="" href="caret---a-machine-learning-package-turotial.html"><span class="header-section-number">27</span> caret - a machine learning package turotial</a></li>
+<li><a class="" href="streamlit-for-financial-analysis.html"><span class="header-section-number">28</span> Streamlit for Financial Analysis</a></li>
+<li><a class="" href="interactive-graphs-tutorial.html"><span class="header-section-number">29</span> Interactive graphs tutorial</a></li>
+<li><a class="" href="guideline-on-using-package-rcurl-and-xml-for-web-scraping.html"><span class="header-section-number">30</span> Guideline on Using Package Rcurl and XML for Web Scraping</a></li>
+<li><a class="" href="twitter-r-package-scraping-via-api-tutorial.html"><span class="header-section-number">31</span> TwitteR R Package Scraping via API Tutorial</a></li>
+<li><a class="" href="introduction-to-data-manipulation.html"><span class="header-section-number">32</span> Introduction to Data Manipulation</a></li>
+<li><a class="" href="animating-the-plots-in-r.html"><span class="header-section-number">33</span> Animating the plots in R</a></li>
+<li><a class="" href="quick-guide-to-eda.html"><span class="header-section-number">34</span> Quick guide to eda</a></li>
+<li><a class="" href="natural-langauge-processing-common-eda-practices-in-python.html"><span class="header-section-number">35</span> Natural Langauge Processing Common EDA Practices in Python</a></li>
+<li><a class="" href="beginners-walk-through-of-deep-learning-in-r.html"><span class="header-section-number">36</span> Beginner’s Walk-through of Deep Learning in R</a></li>
+<li><a class="" href="supervised-learning-tutorial.html"><span class="header-section-number">37</span> Supervised Learning Tutorial</a></li>
 <li class="book-part">Demonstrations</li>
-<li><a class="" href="linear-association-r-studio-plugin.html"><span class="header-section-number">37</span> Linear Association R Studio Plugin</a></li>
-<li><a class="" href="customized-sorting-in-r.html"><span class="header-section-number">38</span> Customized Sorting in R</a></li>
+<li><a class="" href="linear-association-r-studio-plugin.html"><span class="header-section-number">38</span> Linear Association R Studio Plugin</a></li>
+<li><a class="" href="customized-sorting-in-r.html"><span class="header-section-number">39</span> Customized Sorting in R</a></li>
 <li class="book-part">Workshops</li>
-<li><a class="" href="data-science-product-cycles-in-enterprises.html"><span class="header-section-number">39</span> Data Science Product Cycles in Enterprises</a></li>
+<li><a class="" href="data-science-product-cycles-in-enterprises.html"><span class="header-section-number">40</span> Data Science Product Cycles in Enterprises</a></li>
 <li class="book-part">Appendices</li>
-<li><a class="" href="github-initial-setup.html"><span class="header-section-number">40</span> Github initial setup</a></li>
-<li><a class="" href="tutorial-for-pull-request-mergers.html"><span class="header-section-number">41</span> Tutorial for pull request mergers</a></li>
+<li><a class="" href="github-initial-setup.html"><span class="header-section-number">41</span> Github initial setup</a></li>
+<li><a class="" href="tutorial-for-pull-request-mergers.html"><span class="header-section-number">42</span> Tutorial for pull request mergers</a></li>
 </ul>
 
         <div class="book-extra">
@@ -102,7 +103,7 @@
 </div>
   </header><main class="col-sm-12 col-md-9 col-lg-7" id="content"><div id="common-r-markdown-syntax-cheatsheet" class="section level1">
 <h1>
-<span class="header-section-number">17</span> Common R markdown syntax cheatsheet<a class="anchor" aria-label="anchor" href="#common-r-markdown-syntax-cheatsheet"><i class="fas fa-link"></i></a>
+<span class="header-section-number">18</span> Common R markdown syntax cheatsheet<a class="anchor" aria-label="anchor" href="#common-r-markdown-syntax-cheatsheet"><i class="fas fa-link"></i></a>
 </h1>
 <p>Yufan Cao and Yingfei Zhu</p>
 <p>R Markdown is a file format for making dynamic documents with R. It provides an authoring frame work of data science. The R Markdown has two main purpose:
@@ -111,11 +112,11 @@
 <p>R Markdown documents can support various of dynamic and static output format, such as pdf or Html. The syntax of R Markdown is also important, students need to learn how to write Markdown syntax to produce a concise and clear reports.</p>
 <div id="markdown-syntax" class="section level2">
 <h2>
-<span class="header-section-number">17.1</span> Markdown Syntax<a class="anchor" aria-label="anchor" href="#markdown-syntax"><i class="fas fa-link"></i></a>
+<span class="header-section-number">18.1</span> Markdown Syntax<a class="anchor" aria-label="anchor" href="#markdown-syntax"><i class="fas fa-link"></i></a>
 </h2>
 <div id="workflow" class="section level3">
 <h3>
-<span class="header-section-number">17.1.1</span> Workflow<a class="anchor" aria-label="anchor" href="#workflow"><i class="fas fa-link"></i></a>
+<span class="header-section-number">18.1.1</span> Workflow<a class="anchor" aria-label="anchor" href="#workflow"><i class="fas fa-link"></i></a>
 </h3>
 <ul>
 <li><ol style="list-style-type: decimal">
@@ -140,7 +141,7 @@
 </div>
 <div id="inline-formatting" class="section level3">
 <h3>
-<span class="header-section-number">17.1.2</span> Inline Formatting<a class="anchor" aria-label="anchor" href="#inline-formatting"><i class="fas fa-link"></i></a>
+<span class="header-section-number">18.1.2</span> Inline Formatting<a class="anchor" aria-label="anchor" href="#inline-formatting"><i class="fas fa-link"></i></a>
 </h3>
 <ul>
 <li><ol style="list-style-type: decimal">
@@ -207,16 +208,16 @@ will renders</p>
 </div>
 </div>
   <div class="chapter-nav">
-<div class="prev"><a href="interactive-plot-introduction.html"><span class="header-section-number">16</span> Interactive plot introduction</a></div>
-<div class="next"><a href="header.html"><span class="header-section-number">18</span> Header</a></div>
+<div class="prev"><a href="interactive-plot-introduction.html"><span class="header-section-number">17</span> Interactive plot introduction</a></div>
+<div class="next"><a href="header.html"><span class="header-section-number">19</span> Header</a></div>
 </div></main><div class="col-md-3 col-lg-2 d-none d-md-block sidebar sidebar-chapter">
     <nav id="toc" data-toggle="toc" aria-label="On this page"><h2>On this page</h2>
       <ul class="nav navbar-nav">
-<li><a class="nav-link" href="#common-r-markdown-syntax-cheatsheet"><span class="header-section-number">17</span> Common R markdown syntax cheatsheet</a></li>
+<li><a class="nav-link" href="#common-r-markdown-syntax-cheatsheet"><span class="header-section-number">18</span> Common R markdown syntax cheatsheet</a></li>
 <li>
-<a class="nav-link" href="#markdown-syntax"><span class="header-section-number">17.1</span> Markdown Syntax</a><ul class="nav navbar-nav">
-<li><a class="nav-link" href="#workflow"><span class="header-section-number">17.1.1</span> Workflow</a></li>
-<li><a class="nav-link" href="#inline-formatting"><span class="header-section-number">17.1.2</span> Inline Formatting</a></li>
+<a class="nav-link" href="#markdown-syntax"><span class="header-section-number">18.1</span> Markdown Syntax</a><ul class="nav navbar-nav">
+<li><a class="nav-link" href="#workflow"><span class="header-section-number">18.1.1</span> Workflow</a></li>
+<li><a class="nav-link" href="#inline-formatting"><span class="header-section-number">18.1.2</span> Inline Formatting</a></li>
 </ul>
 </li>
 </ul>

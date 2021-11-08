@@ -4,16 +4,16 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<title>Chapter 35 Beginner’s Walk-through of Deep Learning in R | EDAV Fall 2021 Mon/Wed Community Contributions</title>
+<title>Chapter 36 Beginner’s Walk-through of Deep Learning in R | EDAV Fall 2021 Mon/Wed Community Contributions</title>
 <meta name="author" content="the students of the class">
-<meta name="description" content="Dashansh Prajapati and Vijay S Kalmath library(dplyr) library(ggplot2) library(keras) library(tensorflow) library(raster)  35.1 Introduction Deep Learning a term whenever heard of in a...">
+<meta name="description" content="Dashansh Prajapati and Vijay S Kalmath library(dplyr) library(ggplot2) library(keras) library(tensorflow) library(raster)  36.1 Introduction Deep Learning a term whenever heard of in a...">
 <meta name="generator" content="bookdown 0.24 with bs4_book()">
-<meta property="og:title" content="Chapter 35 Beginner’s Walk-through of Deep Learning in R | EDAV Fall 2021 Mon/Wed Community Contributions">
+<meta property="og:title" content="Chapter 36 Beginner’s Walk-through of Deep Learning in R | EDAV Fall 2021 Mon/Wed Community Contributions">
 <meta property="og:type" content="book">
-<meta property="og:description" content="Dashansh Prajapati and Vijay S Kalmath library(dplyr) library(ggplot2) library(keras) library(tensorflow) library(raster)  35.1 Introduction Deep Learning a term whenever heard of in a...">
+<meta property="og:description" content="Dashansh Prajapati and Vijay S Kalmath library(dplyr) library(ggplot2) library(keras) library(tensorflow) library(raster)  36.1 Introduction Deep Learning a term whenever heard of in a...">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Chapter 35 Beginner’s Walk-through of Deep Learning in R | EDAV Fall 2021 Mon/Wed Community Contributions">
-<meta name="twitter:description" content="Dashansh Prajapati and Vijay S Kalmath library(dplyr) library(ggplot2) library(keras) library(tensorflow) library(raster)  35.1 Introduction Deep Learning a term whenever heard of in a...">
+<meta name="twitter:title" content="Chapter 36 Beginner’s Walk-through of Deep Learning in R | EDAV Fall 2021 Mon/Wed Community Contributions">
+<meta name="twitter:description" content="Dashansh Prajapati and Vijay S Kalmath library(dplyr) library(ggplot2) library(keras) library(tensorflow) library(raster)  36.1 Introduction Deep Learning a term whenever heard of in a...">
 <!-- JS --><script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.6/clipboard.min.js" integrity="sha256-inc5kl9MA1hkeYUt+EC3BhlIgyp/2jDIyBLS6k3UxPI=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/fuse.js/6.4.6/fuse.js" integrity="sha512-zv6Ywkjyktsohkbp9bb45V6tEMoWhzFzXis+LrMehmJZZSys19Yxf1dopHx7WzIKxr5tK2dVcYmaCk2uqdjF4A==" crossorigin="anonymous"></script><script src="https://kit.fontawesome.com/6ecbd6c532.js" crossorigin="anonymous"></script><script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <link href="libs/bootstrap-4.6.0/bootstrap.min.css" rel="stylesheet">
 <script src="libs/bootstrap-4.6.0/bootstrap.bundle.min.js"></script><script src="libs/bs3compat-0.3.1/transition.js"></script><script src="libs/bs3compat-0.3.1/tabs.js"></script><script src="libs/bs3compat-0.3.1/bs3compat.js"></script><link href="libs/bs4_book-1.0.0/bs4_book.css" rel="stylesheet">
@@ -55,44 +55,45 @@
 <li><a class="" href="graph-animation-with-gganimate-and-after-effects.html"><span class="header-section-number">6</span> Graph animation with gganimate and After Effects</a></li>
 <li><a class="" href="interactive-plots.html"><span class="header-section-number">7</span> Interactive Plots</a></li>
 <li><a class="" href="create-regression-assumption-plots-in-word.html"><span class="header-section-number">8</span> Create regression assumption plots in Word</a></li>
+<li><a class="" href="from-neo4j-to-rstudio.html"><span class="header-section-number">9</span> From Neo4j to RStudio</a></li>
 <li class="book-part">Cheatsheets</li>
-<li><a class="" href="r-vs.-python-visualization-cheatsheet.html"><span class="header-section-number">9</span> R vs. Python Visualization Cheatsheet</a></li>
-<li><a class="" href="rpackage-waffle-cheatsheet.html"><span class="header-section-number">10</span> Rpackage waffle cheatsheet</a></li>
-<li><a class="" href="r-cheatsheet-on-data-transforamtion-and-exploration.html"><span class="header-section-number">11</span> R cheatsheet on data transforamtion and exploration</a></li>
-<li><a class="" href="r-vs-python-basic-data-wrangling.html"><span class="header-section-number">12</span> R vs Python Basic Data Wrangling</a></li>
-<li><a class="" href="tidyverse_cheatsheet.html"><span class="header-section-number">13</span> tidyverse_cheatsheet</a></li>
-<li><a class="" href="cheatsheet-tidyverse.html"><span class="header-section-number">14</span> Cheatsheet Tidyverse</a></li>
-<li><a class="" href="use-of-ggprism-and-ggsci-packages.html"><span class="header-section-number">15</span> Use of ggprism and ggsci packages</a></li>
-<li><a class="" href="interactive-plot-introduction.html"><span class="header-section-number">16</span> Interactive plot introduction</a></li>
-<li><a class="" href="common-r-markdown-syntax-cheatsheet.html"><span class="header-section-number">17</span> Common R markdown syntax cheatsheet</a></li>
-<li><a class="" href="header.html"><span class="header-section-number">18</span> Header</a></li>
-<li><a class="" href="parallel-coordinates-plot-cheatsheet.html"><span class="header-section-number">19</span> Parallel coordinates plot cheatsheet</a></li>
-<li><a class="" href="r-data-science-workflow-cheatsheet.html"><span class="header-section-number">20</span> R Data Science Workflow CheatSheet</a></li>
+<li><a class="" href="r-vs.-python-visualization-cheatsheet.html"><span class="header-section-number">10</span> R vs. Python Visualization Cheatsheet</a></li>
+<li><a class="" href="rpackage-waffle-cheatsheet.html"><span class="header-section-number">11</span> Rpackage waffle cheatsheet</a></li>
+<li><a class="" href="r-cheatsheet-on-data-transforamtion-and-exploration.html"><span class="header-section-number">12</span> R cheatsheet on data transforamtion and exploration</a></li>
+<li><a class="" href="r-vs-python-basic-data-wrangling.html"><span class="header-section-number">13</span> R vs Python Basic Data Wrangling</a></li>
+<li><a class="" href="tidyverse_cheatsheet.html"><span class="header-section-number">14</span> tidyverse_cheatsheet</a></li>
+<li><a class="" href="cheatsheet-tidyverse.html"><span class="header-section-number">15</span> Cheatsheet Tidyverse</a></li>
+<li><a class="" href="use-of-ggprism-and-ggsci-packages.html"><span class="header-section-number">16</span> Use of ggprism and ggsci packages</a></li>
+<li><a class="" href="interactive-plot-introduction.html"><span class="header-section-number">17</span> Interactive plot introduction</a></li>
+<li><a class="" href="common-r-markdown-syntax-cheatsheet.html"><span class="header-section-number">18</span> Common R markdown syntax cheatsheet</a></li>
+<li><a class="" href="header.html"><span class="header-section-number">19</span> Header</a></li>
+<li><a class="" href="parallel-coordinates-plot-cheatsheet.html"><span class="header-section-number">20</span> Parallel coordinates plot cheatsheet</a></li>
+<li><a class="" href="r-data-science-workflow-cheatsheet.html"><span class="header-section-number">21</span> R Data Science Workflow CheatSheet</a></li>
 <li class="book-part">Tutorials</li>
-<li><a class="" href="multithreading-crawler-frame.html"><span class="header-section-number">21</span> Multithreading Crawler Frame</a></li>
-<li><a class="" href="regression-and-classification-in-r.html"><span class="header-section-number">22</span> Regression and Classification in R</a></li>
-<li><a class="" href="tibble-vs.-dataframe.html"><span class="header-section-number">23</span> Tibble vs. DataFrame</a></li>
-<li><a class="" href="introduction-to-time-series.html"><span class="header-section-number">24</span> Introduction to Time Series</a></li>
-<li><a class="" href="vipul-edav-community-contribution-kickstart-r.html"><span class="header-section-number">25</span> Vipul EDAV Community Contribution Kickstart R</a></li>
-<li><a class="" href="caret---a-machine-learning-package-turotial.html"><span class="header-section-number">26</span> caret - a machine learning package turotial</a></li>
-<li><a class="" href="streamlit-for-financial-analysis.html"><span class="header-section-number">27</span> Streamlit for Financial Analysis</a></li>
-<li><a class="" href="interactive-graphs-tutorial.html"><span class="header-section-number">28</span> Interactive graphs tutorial</a></li>
-<li><a class="" href="guideline-on-using-package-rcurl-and-xml-for-web-scraping.html"><span class="header-section-number">29</span> Guideline on Using Package Rcurl and XML for Web Scraping</a></li>
-<li><a class="" href="twitter-r-package-scraping-via-api-tutorial.html"><span class="header-section-number">30</span> TwitteR R Package Scraping via API Tutorial</a></li>
-<li><a class="" href="introduction-to-data-manipulation.html"><span class="header-section-number">31</span> Introduction to Data Manipulation</a></li>
-<li><a class="" href="animating-the-plots-in-r.html"><span class="header-section-number">32</span> Animating the plots in R</a></li>
-<li><a class="" href="quick-guide-to-eda.html"><span class="header-section-number">33</span> Quick guide to eda</a></li>
-<li><a class="" href="natural-langauge-processing-common-eda-practices-in-python.html"><span class="header-section-number">34</span> Natural Langauge Processing Common EDA Practices in Python</a></li>
-<li><a class="active" href="beginners-walk-through-of-deep-learning-in-r.html"><span class="header-section-number">35</span> Beginner’s Walk-through of Deep Learning in R</a></li>
-<li><a class="" href="supervised-learning-tutorial.html"><span class="header-section-number">36</span> Supervised Learning Tutorial</a></li>
+<li><a class="" href="multithreading-crawler-frame.html"><span class="header-section-number">22</span> Multithreading Crawler Frame</a></li>
+<li><a class="" href="regression-and-classification-in-r.html"><span class="header-section-number">23</span> Regression and Classification in R</a></li>
+<li><a class="" href="tibble-vs.-dataframe.html"><span class="header-section-number">24</span> Tibble vs. DataFrame</a></li>
+<li><a class="" href="introduction-to-time-series.html"><span class="header-section-number">25</span> Introduction to Time Series</a></li>
+<li><a class="" href="vipul-edav-community-contribution-kickstart-r.html"><span class="header-section-number">26</span> Vipul EDAV Community Contribution Kickstart R</a></li>
+<li><a class="" href="caret---a-machine-learning-package-turotial.html"><span class="header-section-number">27</span> caret - a machine learning package turotial</a></li>
+<li><a class="" href="streamlit-for-financial-analysis.html"><span class="header-section-number">28</span> Streamlit for Financial Analysis</a></li>
+<li><a class="" href="interactive-graphs-tutorial.html"><span class="header-section-number">29</span> Interactive graphs tutorial</a></li>
+<li><a class="" href="guideline-on-using-package-rcurl-and-xml-for-web-scraping.html"><span class="header-section-number">30</span> Guideline on Using Package Rcurl and XML for Web Scraping</a></li>
+<li><a class="" href="twitter-r-package-scraping-via-api-tutorial.html"><span class="header-section-number">31</span> TwitteR R Package Scraping via API Tutorial</a></li>
+<li><a class="" href="introduction-to-data-manipulation.html"><span class="header-section-number">32</span> Introduction to Data Manipulation</a></li>
+<li><a class="" href="animating-the-plots-in-r.html"><span class="header-section-number">33</span> Animating the plots in R</a></li>
+<li><a class="" href="quick-guide-to-eda.html"><span class="header-section-number">34</span> Quick guide to eda</a></li>
+<li><a class="" href="natural-langauge-processing-common-eda-practices-in-python.html"><span class="header-section-number">35</span> Natural Langauge Processing Common EDA Practices in Python</a></li>
+<li><a class="active" href="beginners-walk-through-of-deep-learning-in-r.html"><span class="header-section-number">36</span> Beginner’s Walk-through of Deep Learning in R</a></li>
+<li><a class="" href="supervised-learning-tutorial.html"><span class="header-section-number">37</span> Supervised Learning Tutorial</a></li>
 <li class="book-part">Demonstrations</li>
-<li><a class="" href="linear-association-r-studio-plugin.html"><span class="header-section-number">37</span> Linear Association R Studio Plugin</a></li>
-<li><a class="" href="customized-sorting-in-r.html"><span class="header-section-number">38</span> Customized Sorting in R</a></li>
+<li><a class="" href="linear-association-r-studio-plugin.html"><span class="header-section-number">38</span> Linear Association R Studio Plugin</a></li>
+<li><a class="" href="customized-sorting-in-r.html"><span class="header-section-number">39</span> Customized Sorting in R</a></li>
 <li class="book-part">Workshops</li>
-<li><a class="" href="data-science-product-cycles-in-enterprises.html"><span class="header-section-number">39</span> Data Science Product Cycles in Enterprises</a></li>
+<li><a class="" href="data-science-product-cycles-in-enterprises.html"><span class="header-section-number">40</span> Data Science Product Cycles in Enterprises</a></li>
 <li class="book-part">Appendices</li>
-<li><a class="" href="github-initial-setup.html"><span class="header-section-number">40</span> Github initial setup</a></li>
-<li><a class="" href="tutorial-for-pull-request-mergers.html"><span class="header-section-number">41</span> Tutorial for pull request mergers</a></li>
+<li><a class="" href="github-initial-setup.html"><span class="header-section-number">41</span> Github initial setup</a></li>
+<li><a class="" href="tutorial-for-pull-request-mergers.html"><span class="header-section-number">42</span> Tutorial for pull request mergers</a></li>
 </ul>
 
         <div class="book-extra">
@@ -102,10 +103,10 @@
 </div>
   </header><main class="col-sm-12 col-md-9 col-lg-7" id="content"><div id="beginners-walk-through-of-deep-learning-in-r" class="section level1">
 <h1>
-<span class="header-section-number">35</span> Beginner’s Walk-through of Deep Learning in R<a class="anchor" aria-label="anchor" href="#beginners-walk-through-of-deep-learning-in-r"><i class="fas fa-link"></i></a>
+<span class="header-section-number">36</span> Beginner’s Walk-through of Deep Learning in R<a class="anchor" aria-label="anchor" href="#beginners-walk-through-of-deep-learning-in-r"><i class="fas fa-link"></i></a>
 </h1>
 <p>Dashansh Prajapati and Vijay S Kalmath</p>
-<div class="sourceCode" id="cb535"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb539"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://dplyr.tidyverse.org">dplyr</a></span><span class="op">)</span>
 <span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://ggplot2.tidyverse.org">ggplot2</a></span><span class="op">)</span>
 <span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://keras.rstudio.com">keras</a></span><span class="op">)</span>
@@ -113,7 +114,7 @@
 <span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://rspatial.org/raster">raster</a></span><span class="op">)</span></code></pre></div>
 <div id="introduction-4" class="section level2">
 <h2>
-<span class="header-section-number">35.1</span> Introduction<a class="anchor" aria-label="anchor" href="#introduction-4"><i class="fas fa-link"></i></a>
+<span class="header-section-number">36.1</span> Introduction<a class="anchor" aria-label="anchor" href="#introduction-4"><i class="fas fa-link"></i></a>
 </h2>
 <p>Deep Learning a term whenever heard of in a conversation, most of the time accompanies the word “Python”. This shows how high correlation exists between Deep Learning and Python. Indeed the libraries in Python like Keras, Tensorflow, Pytorch have made it possible for users to create robust deep learning applications. The popularity of these libraries have made Python the de facto language when it comes to Deep learning.</p>
 <p>R on the other hand, is a language preferred by statisticians, which has great capabilities when dealing with statistics or visualizations. Deep Learning with R, is something unexpected and it was in the recent years that tensorflow was introduced for R, thereby extending the capabilities of R into the Deep Learning domain.</p>
@@ -122,15 +123,15 @@
 </div>
 <div id="text-classification---sentiment-analysis-with-r" class="section level2">
 <h2>
-<span class="header-section-number">35.2</span> Text Classification - Sentiment Analysis with R<a class="anchor" aria-label="anchor" href="#text-classification---sentiment-analysis-with-r"><i class="fas fa-link"></i></a>
+<span class="header-section-number">36.2</span> Text Classification - Sentiment Analysis with R<a class="anchor" aria-label="anchor" href="#text-classification---sentiment-analysis-with-r"><i class="fas fa-link"></i></a>
 </h2>
 <p>Sentiment Analysis is the task of finding the associated sentiment of a text. In a nutshell it’s a text classification task whose output is a sentiment.</p>
 <p>Here we are using the IMDB dataset, which you can download through this <a href="https://www.kaggle.com/lakshmi25npathi/imdb-dataset-of-50k-movie-reviews" target="_blank">link</a>. It contains of 50k movie reviews, with equal number of positive and negative reviews.</p>
 <div id="step-1-load-the-required-libraries" class="section level3">
 <h3>
-<span class="header-section-number">35.2.1</span> Step 1: Load the required Libraries<a class="anchor" aria-label="anchor" href="#step-1-load-the-required-libraries"><i class="fas fa-link"></i></a>
+<span class="header-section-number">36.2.1</span> Step 1: Load the required Libraries<a class="anchor" aria-label="anchor" href="#step-1-load-the-required-libraries"><i class="fas fa-link"></i></a>
 </h3>
-<div class="sourceCode" id="cb536"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb540"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://dplyr.tidyverse.org">dplyr</a></span><span class="op">)</span>
 <span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://ggplot2.tidyverse.org">ggplot2</a></span><span class="op">)</span>
 <span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://keras.rstudio.com">keras</a></span><span class="op">)</span>
@@ -139,26 +140,26 @@
 </div>
 <div id="step-2-read-and-explore-data" class="section level3">
 <h3>
-<span class="header-section-number">35.2.2</span> Step 2: Read and explore data<a class="anchor" aria-label="anchor" href="#step-2-read-and-explore-data"><i class="fas fa-link"></i></a>
+<span class="header-section-number">36.2.2</span> Step 2: Read and explore data<a class="anchor" aria-label="anchor" href="#step-2-read-and-explore-data"><i class="fas fa-link"></i></a>
 </h3>
-<div class="sourceCode" id="cb537"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb541"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="va">df</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/utils/read.table.html">read.csv</a></span><span class="op">(</span><span class="st">"resources/deep_learning_with_r/imdb_dataset_one_fifth.csv"</span><span class="op">)</span>
 <span class="fu"><a href="https://rdrr.io/r/utils/str.html">str</a></span><span class="op">(</span><span class="va">df</span><span class="op">)</span></code></pre></div>
 <p>Check the distribution of the sentiment column</p>
-<div class="sourceCode" id="cb538"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb542"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="va">df</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> <span class="fu"><a href="https://dplyr.tidyverse.org/reference/count.html">count</a></span><span class="op">(</span><span class="va">sentiment</span><span class="op">)</span></code></pre></div>
 <p>There as many positive reviews as there are negative ones, i.e., they are equally distributed.</p>
 </div>
 <div id="step-3-split-the-data-into-training-80-and-testing-20-datasets." class="section level3">
 <h3>
-<span class="header-section-number">35.2.3</span> Step 3: Split the data into training (80%) and testing (20%) datasets.<a class="anchor" aria-label="anchor" href="#step-3-split-the-data-into-training-80-and-testing-20-datasets."><i class="fas fa-link"></i></a>
+<span class="header-section-number">36.2.3</span> Step 3: Split the data into training (80%) and testing (20%) datasets.<a class="anchor" aria-label="anchor" href="#step-3-split-the-data-into-training-80-and-testing-20-datasets."><i class="fas fa-link"></i></a>
 </h3>
-<div class="sourceCode" id="cb539"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb543"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="va">ids</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/sample.html">sample.int</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/pkg/raster/man/ncell.html">nrow</a></span><span class="op">(</span><span class="va">df</span><span class="op">)</span>, size <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/pkg/raster/man/ncell.html">nrow</a></span><span class="op">(</span><span class="va">df</span><span class="op">)</span><span class="op">*</span><span class="fl">0.8</span><span class="op">)</span>
 <span class="va">train</span> <span class="op">&lt;-</span> <span class="va">df</span><span class="op">[</span><span class="va">ids</span>,<span class="op">]</span>
 <span class="va">test</span> <span class="op">&lt;-</span> <span class="va">df</span><span class="op">[</span><span class="op">-</span><span class="va">ids</span>,<span class="op">]</span></code></pre></div>
 <p>Let’s find out how many words are there in each reviews and get summary statistics for it. This will be later useful in setting parameters for the text vectorization function</p>
-<div class="sourceCode" id="cb540"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb544"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="va">df</span><span class="op">$</span><span class="va">review</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> 
   <span class="fu"><a href="https://rdrr.io/r/base/strsplit.html">strsplit</a></span><span class="op">(</span><span class="st">" "</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> 
   <span class="fu"><a href="https://rdrr.io/r/base/lapply.html">sapply</a></span><span class="op">(</span><span class="va">length</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> 
@@ -168,12 +169,12 @@
 </div>
 <div id="step-4-data-preparation" class="section level3">
 <h3>
-<span class="header-section-number">35.2.4</span> Step 4: Data Preparation<a class="anchor" aria-label="anchor" href="#step-4-data-preparation"><i class="fas fa-link"></i></a>
+<span class="header-section-number">36.2.4</span> Step 4: Data Preparation<a class="anchor" aria-label="anchor" href="#step-4-data-preparation"><i class="fas fa-link"></i></a>
 </h3>
 <p>The model works on tensors, hence we need to encode the data into tensors first. How do we do that? By using text vectorization layer we will assign integers to 10,000 most common words. These integers are used in place of the words to represent the input sequence.</p>
 <p>Furthermore we need to encode each word separately. We will use embedding layer to do this. The embedding layer maps the integer to a fixed size array which is the encoded version of the integer.</p>
 <p>Let’s define the text vectorization layer.</p>
-<div class="sourceCode" id="cb541"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb545"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="va">num_words</span> <span class="op">&lt;-</span> <span class="fl">10000</span>
 <span class="va">max_length</span> <span class="op">&lt;-</span> <span class="fl">300</span>
 
@@ -182,22 +183,22 @@
   output_sequence_length <span class="op">=</span> <span class="va">max_length</span>, 
 <span class="op">)</span></code></pre></div>
 <p>We need to adapt the text vectorization layer to the input data, to built a fix sized vocabulary and assign integer value to the words in them.</p>
-<div class="sourceCode" id="cb542"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb546"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="va">text_vectorization</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> 
   <span class="fu"><a href="https://keras.rstudio.com/reference/adapt.html">adapt</a></span><span class="op">(</span><span class="va">df</span><span class="op">$</span><span class="va">review</span><span class="op">)</span></code></pre></div>
 <p>To check the vocabulary, uncomment the following code and run it.</p>
-<div class="sourceCode" id="cb543"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb547"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="co"># get_vocabulary(text_vectorization)</span></code></pre></div>
 <p>Following is the example of how the layer transforms the input.</p>
-<div class="sourceCode" id="cb544"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb548"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="fu">text_vectorization</span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/matrix.html">matrix</a></span><span class="op">(</span><span class="va">df</span><span class="op">$</span><span class="va">review</span><span class="op">[</span><span class="fl">1</span><span class="op">]</span>, ncol <span class="op">=</span> <span class="fl">1</span><span class="op">)</span><span class="op">)</span></code></pre></div>
 </div>
 <div id="step-5-build-train-a-model" class="section level3">
 <h3>
-<span class="header-section-number">35.2.5</span> Step 5: Build, train a model<a class="anchor" aria-label="anchor" href="#step-5-build-train-a-model"><i class="fas fa-link"></i></a>
+<span class="header-section-number">36.2.5</span> Step 5: Build, train a model<a class="anchor" aria-label="anchor" href="#step-5-build-train-a-model"><i class="fas fa-link"></i></a>
 </h3>
 <p>Using keras_model function create the following model.</p>
-<div class="sourceCode" id="cb545"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb549"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="va">input</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://keras.rstudio.com/reference/layer_input.html">layer_input</a></span><span class="op">(</span>shape <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">1</span><span class="op">)</span>, dtype <span class="op">=</span> <span class="st">"string"</span><span class="op">)</span>
 
 <span class="va">output</span> <span class="op">&lt;-</span> <span class="va">input</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> 
@@ -210,14 +211,14 @@
 
 <span class="va">model</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://keras.rstudio.com/reference/keras_model.html">keras_model</a></span><span class="op">(</span><span class="va">input</span>, <span class="va">output</span><span class="op">)</span></code></pre></div>
 <p>Define the loss functiona and optimizer, and compile the model.</p>
-<div class="sourceCode" id="cb546"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb550"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="va">model</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> <span class="fu"><a href="https://generics.r-lib.org/reference/compile.html">compile</a></span><span class="op">(</span>
   optimizer <span class="op">=</span> <span class="st">'adam'</span>,
   loss <span class="op">=</span> <span class="st">'binary_crossentropy'</span>,
   metrics <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/list.html">list</a></span><span class="op">(</span><span class="st">'accuracy'</span><span class="op">)</span>
 <span class="op">)</span></code></pre></div>
 <p>Train the model.</p>
-<div class="sourceCode" id="cb547"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb551"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="va">history</span> <span class="op">&lt;-</span> <span class="va">model</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> <span class="fu"><a href="https://generics.r-lib.org/reference/fit.html">fit</a></span><span class="op">(</span>
   <span class="va">train</span><span class="op">$</span><span class="va">review</span>,
   <span class="fu"><a href="https://rdrr.io/r/base/numeric.html">as.numeric</a></span><span class="op">(</span><span class="va">train</span><span class="op">$</span><span class="va">sentiment</span> <span class="op">==</span> <span class="st">"positive"</span><span class="op">)</span>,
@@ -229,20 +230,20 @@
 </div>
 <div id="step-6-evaluate-the-model" class="section level3">
 <h3>
-<span class="header-section-number">35.2.6</span> Step 6: Evaluate the model:<a class="anchor" aria-label="anchor" href="#step-6-evaluate-the-model"><i class="fas fa-link"></i></a>
+<span class="header-section-number">36.2.6</span> Step 6: Evaluate the model:<a class="anchor" aria-label="anchor" href="#step-6-evaluate-the-model"><i class="fas fa-link"></i></a>
 </h3>
 <p>Let’s see how the model performs on unseen data?</p>
-<div class="sourceCode" id="cb548"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb552"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="va">results</span> <span class="op">&lt;-</span> <span class="va">model</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> <span class="fu"><a href="https://rdrr.io/pkg/tensorflow/man/evaluate.html">evaluate</a></span><span class="op">(</span><span class="va">test</span><span class="op">$</span><span class="va">review</span>, <span class="fu"><a href="https://rdrr.io/r/base/numeric.html">as.numeric</a></span><span class="op">(</span><span class="va">test</span><span class="op">$</span><span class="va">sentiment</span> <span class="op">==</span> <span class="st">"pos"</span><span class="op">)</span>, verbose <span class="op">=</span> <span class="fl">0</span><span class="op">)</span>
 <span class="va">results</span></code></pre></div>
 <p>Plot the training vs validation accuracy and loss.</p>
-<div class="sourceCode" id="cb549"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb553"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="fu"><a href="https://rdrr.io/pkg/raster/man/plot.html">plot</a></span><span class="op">(</span><span class="va">history</span><span class="op">)</span></code></pre></div>
 </div>
 </div>
 <div id="image-classification-using-r-for-cifar10" class="section level2">
 <h2>
-<span class="header-section-number">35.3</span> Image Classification using R for CIFAR10<a class="anchor" aria-label="anchor" href="#image-classification-using-r-for-cifar10"><i class="fas fa-link"></i></a>
+<span class="header-section-number">36.3</span> Image Classification using R for CIFAR10<a class="anchor" aria-label="anchor" href="#image-classification-using-r-for-cifar10"><i class="fas fa-link"></i></a>
 </h2>
 <p>Contextual image classification is a pattern recognition problem used in the field of computer vision used to classify the object or context of an image using machine AI and more importantly deep learining.</p>
 <p>Deep learning is a subset of machine learning, which is essentially a neural network with three or more layers. These neural networks attempt to simulate the behavior of the human brain—albeit far from matching its ability—allowing it to “learn” from large amounts of data. - <a href="https://www.ibm.com/cloud/learn/deep-learning" target="_blank">link</a></p>
@@ -262,9 +263,9 @@
 <p>More Information about the CIFAR10 can be found at <a href="https://www.cs.toronto.edu/~kriz/cifar.html" target="_blank">link</a></p>
 <div id="step-1-load-the-required-libraries-1" class="section level3">
 <h3>
-<span class="header-section-number">35.3.1</span> Step 1: Load the required Libraries<a class="anchor" aria-label="anchor" href="#step-1-load-the-required-libraries-1"><i class="fas fa-link"></i></a>
+<span class="header-section-number">36.3.1</span> Step 1: Load the required Libraries<a class="anchor" aria-label="anchor" href="#step-1-load-the-required-libraries-1"><i class="fas fa-link"></i></a>
 </h3>
-<div class="sourceCode" id="cb550"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb554"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://dplyr.tidyverse.org">dplyr</a></span><span class="op">)</span>
 <span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://ggplot2.tidyverse.org">ggplot2</a></span><span class="op">)</span>
 <span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://keras.rstudio.com">keras</a></span><span class="op">)</span>
@@ -273,26 +274,26 @@
 </div>
 <div id="step-1a-to-make-sure-that-your-tensorflow-is-installed-correctly-run" class="section level3">
 <h3>
-<span class="header-section-number">35.3.2</span> Step 1a : To Make sure that your tensorflow is installed correctly run :<a class="anchor" aria-label="anchor" href="#step-1a-to-make-sure-that-your-tensorflow-is-installed-correctly-run"><i class="fas fa-link"></i></a>
+<span class="header-section-number">36.3.2</span> Step 1a : To Make sure that your tensorflow is installed correctly run :<a class="anchor" aria-label="anchor" href="#step-1a-to-make-sure-that-your-tensorflow-is-installed-correctly-run"><i class="fas fa-link"></i></a>
 </h3>
-<div class="sourceCode" id="cb551"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb555"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="va">tf</span><span class="op">$</span><span class="fu">constant</span><span class="op">(</span><span class="st">"We are building CNNs in R !!"</span><span class="op">)</span></code></pre></div>
 </div>
 <div id="step-2-explore-the-data" class="section level3">
 <h3>
-<span class="header-section-number">35.3.3</span> Step 2: Explore the Data<a class="anchor" aria-label="anchor" href="#step-2-explore-the-data"><i class="fas fa-link"></i></a>
+<span class="header-section-number">36.3.3</span> Step 2: Explore the Data<a class="anchor" aria-label="anchor" href="#step-2-explore-the-data"><i class="fas fa-link"></i></a>
 </h3>
 <p>The CIFAR10 data is split into 2 components, the training data and the test data. The training data has 50,000 Images and the test data has 10,000 Images.</p>
 <p>The CIFAR10 dataset is packaged with Tensorflow and Keras and can be downloaded directly using tensorflow APIs.</p>
 <p>?dataset_cifar10 has further information about the dataset.</p>
-<div class="sourceCode" id="cb552"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb556"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="va">cifar10_dataset</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://keras.rstudio.com/reference/dataset_cifar10.html">dataset_cifar10</a></span><span class="op">(</span><span class="op">)</span></code></pre></div>
 </div>
 <div id="step-3-split-the-data-into-training-80-and-testing-20-datasets.-1" class="section level3">
 <h3>
-<span class="header-section-number">35.3.4</span> Step 3: Split the data into training (80%) and testing (20%) datasets.<a class="anchor" aria-label="anchor" href="#step-3-split-the-data-into-training-80-and-testing-20-datasets.-1"><i class="fas fa-link"></i></a>
+<span class="header-section-number">36.3.4</span> Step 3: Split the data into training (80%) and testing (20%) datasets.<a class="anchor" aria-label="anchor" href="#step-3-split-the-data-into-training-80-and-testing-20-datasets.-1"><i class="fas fa-link"></i></a>
 </h3>
-<div class="sourceCode" id="cb553"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb557"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="va">train_images</span>, <span class="va">train_labels</span><span class="op">)</span> <span class="op"><a href="https://keras.rstudio.com/reference/multi-assign.html">%&lt;-%</a></span> <span class="va">cifar10_dataset</span><span class="op">$</span><span class="va">train</span>
 <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="va">test_images</span>, <span class="va">test_labels</span><span class="op">)</span> <span class="op"><a href="https://keras.rstudio.com/reference/multi-assign.html">%&lt;-%</a></span> <span class="va">cifar10_dataset</span><span class="op">$</span><span class="va">test</span>
 
@@ -304,33 +305,33 @@
 </div>
 <div id="step-3a-to-see-the-dimensions-of-the-train_images-and-the-test_images-dataset-use-the-dims-function." class="section level3">
 <h3>
-<span class="header-section-number">35.3.5</span> Step 3a : To see the dimensions of the train_images and the test_images dataset , use the dims function.<a class="anchor" aria-label="anchor" href="#step-3a-to-see-the-dimensions-of-the-train_images-and-the-test_images-dataset-use-the-dims-function."><i class="fas fa-link"></i></a>
+<span class="header-section-number">36.3.5</span> Step 3a : To see the dimensions of the train_images and the test_images dataset , use the dims function.<a class="anchor" aria-label="anchor" href="#step-3a-to-see-the-dimensions-of-the-train_images-and-the-test_images-dataset-use-the-dims-function."><i class="fas fa-link"></i></a>
 </h3>
-<div class="sourceCode" id="cb554"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb558"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="fu"><a href="https://rdrr.io/pkg/raster/man/dimensions.html">dim</a></span><span class="op">(</span><span class="va">train_images</span><span class="op">)</span>
 
 <span class="fu"><a href="https://rdrr.io/pkg/raster/man/dimensions.html">dim</a></span><span class="op">(</span><span class="va">train_labels</span><span class="op">)</span></code></pre></div>
 </div>
 <div id="step-4-as-the-dataset-labels-are-just-integers-it-is-crucial-we-define-the-label-array." class="section level3">
 <h3>
-<span class="header-section-number">35.3.6</span> Step 4 : As the dataset Labels are just integers , It is crucial we define the label array.<a class="anchor" aria-label="anchor" href="#step-4-as-the-dataset-labels-are-just-integers-it-is-crucial-we-define-the-label-array."><i class="fas fa-link"></i></a>
+<span class="header-section-number">36.3.6</span> Step 4 : As the dataset Labels are just integers , It is crucial we define the label array.<a class="anchor" aria-label="anchor" href="#step-4-as-the-dataset-labels-are-just-integers-it-is-crucial-we-define-the-label-array."><i class="fas fa-link"></i></a>
 </h3>
-<div class="sourceCode" id="cb555"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb559"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="va">class_names</span> <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">'airplane'</span>,<span class="st">'automobile'</span>,<span class="st">'bird'</span>,<span class="st">'cat'</span>,<span class="st">'deer'</span>,<span class="st">'dog'</span>,<span class="st">'frog'</span>,<span class="st">'horse'</span>,<span class="st">'ship'</span>,<span class="st">'truck'</span><span class="op">)</span>                                        </code></pre></div>
 </div>
 <div id="step-5-let-us-plot-these-tiny-images" class="section level3">
 <h3>
-<span class="header-section-number">35.3.7</span> Step 5 : Let us plot these tiny images !!<a class="anchor" aria-label="anchor" href="#step-5-let-us-plot-these-tiny-images"><i class="fas fa-link"></i></a>
+<span class="header-section-number">36.3.7</span> Step 5 : Let us plot these tiny images !!<a class="anchor" aria-label="anchor" href="#step-5-let-us-plot-these-tiny-images"><i class="fas fa-link"></i></a>
 </h3>
 <p>In order to understand how the images look like and what we are feeding into the model , let us build this function to plot the RBG image from the array of training images.</p>
-<div class="sourceCode" id="cb556"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb560"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="co"># Taking a random image from the training data , the leading comma's are important as we need to the entire 3D matrix.</span>
 
 <span class="va">random_image</span> <span class="op">=</span> <span class="va">train_images</span><span class="op">[</span><span class="fl">10</span>,,,<span class="op">]</span>
 
 <span class="fu"><a href="https://rdrr.io/pkg/raster/man/dimensions.html">dim</a></span><span class="op">(</span><span class="va">random_image</span><span class="op">)</span></code></pre></div>
 <p>We can see above that plot_image is just a 3D array of size (32X32x3)</p>
-<div class="sourceCode" id="cb557"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb561"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="co">#Defining Function PlotImage</span>
 
 <span class="va">plotImage</span> <span class="op">&lt;-</span> <span class="kw">function</span><span class="op">(</span><span class="va">image</span><span class="op">)</span><span class="op">{</span>
@@ -344,14 +345,14 @@
 </div>
 <div id="step-6-build-a-model" class="section level3">
 <h3>
-<span class="header-section-number">35.3.8</span> Step 6 : Build a model<a class="anchor" aria-label="anchor" href="#step-6-build-a-model"><i class="fas fa-link"></i></a>
+<span class="header-section-number">36.3.8</span> Step 6 : Build a model<a class="anchor" aria-label="anchor" href="#step-6-build-a-model"><i class="fas fa-link"></i></a>
 </h3>
 <p>The Keras Sequential Model Object is instantiated to hold all the layers that we add to the CNN. Convolution Layers are special layers that can directly be fed images and there is no need to image data manipulation aside from some image processing for better results.</p>
 <p>The construction of a convolutional neural network is a multi-layered feed-forward neural network, made by assembling many unseen layers on top of each other in a particular order.</p>
-<div class="sourceCode" id="cb558"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb562"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="va">model</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://keras.rstudio.com/reference/keras_model_sequential.html">keras_model_sequential</a></span><span class="op">(</span><span class="op">)</span></code></pre></div>
 <p>Let us know the build the Model with the Convolutional Layers and Other Deep Learning layers for image classification.</p>
-<div class="sourceCode" id="cb559"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb563"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="va">model</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span>
   <span class="fu"><a href="https://keras.rstudio.com/reference/layer_conv_2d.html">layer_conv_2d</a></span><span class="op">(</span>filters<span class="op">=</span><span class="fl">32</span>,kernel_size <span class="op">=</span> <span class="fl">3</span>, padding<span class="op">=</span><span class="st">"same"</span>,input_shape <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">32</span>, <span class="fl">32</span>,<span class="fl">3</span><span class="op">)</span>, activation <span class="op">=</span> <span class="st">'relu'</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> 
   <span class="fu"><a href="https://keras.rstudio.com/reference/layer_batch_normalization.html">layer_batch_normalization</a></span><span class="op">(</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> 
@@ -371,17 +372,17 @@
   <span class="fu"><a href="https://keras.rstudio.com/reference/layer_dense.html">layer_dense</a></span><span class="op">(</span>units <span class="op">=</span> <span class="fl">10</span>, activation <span class="op">=</span> <span class="st">'softmax'</span><span class="op">)</span></code></pre></div>
 <p>Information of the layers and how to add them to the model can be found here . <a href="https://tensorflow.rstudio.com/reference/keras/" target="_blank">link</a></p>
 <p>We can see the summary of the Layers that build up the model by using the command :</p>
-<div class="sourceCode" id="cb560"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb564"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="fu"><a href="https://rdrr.io/r/base/summary.html">summary</a></span><span class="op">(</span><span class="va">model</span><span class="op">)</span></code></pre></div>
 </div>
 <div id="step-7-compile-the-model" class="section level3">
 <h3>
-<span class="header-section-number">35.3.9</span> Step 7 : Compile the Model<a class="anchor" aria-label="anchor" href="#step-7-compile-the-model"><i class="fas fa-link"></i></a>
+<span class="header-section-number">36.3.9</span> Step 7 : Compile the Model<a class="anchor" aria-label="anchor" href="#step-7-compile-the-model"><i class="fas fa-link"></i></a>
 </h3>
 <p>In order to start training the model , we need to define the loss functions , the accuracy measurement techniques and the optimizers.</p>
 <p>Optimizers Information can be found here <a href="https://tensorflow.rstudio.com/reference/keras/optimizer_adam/" target="_blank">link</a></p>
 <p>Loss functions Information can be found here <a href="https://tensorflow.rstudio.com/reference/keras/loss_mean_squared_error/" target="_blank">link</a></p>
-<div class="sourceCode" id="cb561"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb565"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="va">model</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> <span class="fu"><a href="https://generics.r-lib.org/reference/compile.html">compile</a></span><span class="op">(</span>
   optimizer <span class="op">=</span> <span class="st">'adam'</span>, 
   loss <span class="op">=</span> <span class="st">'sparse_categorical_crossentropy'</span>,
@@ -390,34 +391,34 @@
 </div>
 <div id="step-8-time-to-train-the-model-." class="section level3">
 <h3>
-<span class="header-section-number">35.3.10</span> Step 8 : Time to train the model .<a class="anchor" aria-label="anchor" href="#step-8-time-to-train-the-model-."><i class="fas fa-link"></i></a>
+<span class="header-section-number">36.3.10</span> Step 8 : Time to train the model .<a class="anchor" aria-label="anchor" href="#step-8-time-to-train-the-model-."><i class="fas fa-link"></i></a>
 </h3>
 <p>The Fit function trains the model with the given training and testing images , the Number of epochs define how long the model is trained and for how many images.</p>
-<div class="sourceCode" id="cb562"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb566"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="va">model_run</span>  <span class="op">&lt;-</span> <span class="va">model</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> <span class="fu"><a href="https://generics.r-lib.org/reference/fit.html">fit</a></span><span class="op">(</span><span class="va">train_images</span>, <span class="va">train_labels</span>, epochs <span class="op">=</span> <span class="fl">10</span>, verbose <span class="op">=</span> <span class="fl">2</span><span class="op">)</span></code></pre></div>
 </div>
 <div id="step-8a-let-us-plot-the-model-loss-and-accuracy-functions." class="section level3">
 <h3>
-<span class="header-section-number">35.3.11</span> Step 8a : Let us plot the model Loss and Accuracy Functions.<a class="anchor" aria-label="anchor" href="#step-8a-let-us-plot-the-model-loss-and-accuracy-functions."><i class="fas fa-link"></i></a>
+<span class="header-section-number">36.3.11</span> Step 8a : Let us plot the model Loss and Accuracy Functions.<a class="anchor" aria-label="anchor" href="#step-8a-let-us-plot-the-model-loss-and-accuracy-functions."><i class="fas fa-link"></i></a>
 </h3>
-<div class="sourceCode" id="cb563"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb567"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="fu"><a href="https://rdrr.io/pkg/raster/man/plot.html">plot</a></span><span class="op">(</span><span class="va">model_run</span><span class="op">)</span></code></pre></div>
 </div>
 <div id="step-9-evaluate-the-model" class="section level3">
 <h3>
-<span class="header-section-number">35.3.12</span> Step 9: Evaluate the model:<a class="anchor" aria-label="anchor" href="#step-9-evaluate-the-model"><i class="fas fa-link"></i></a>
+<span class="header-section-number">36.3.12</span> Step 9: Evaluate the model:<a class="anchor" aria-label="anchor" href="#step-9-evaluate-the-model"><i class="fas fa-link"></i></a>
 </h3>
 <p>Let’s see how the model performs on unseen data?</p>
-<div class="sourceCode" id="cb564"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb568"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="va">score</span> <span class="op">&lt;-</span> <span class="va">model</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> <span class="fu"><a href="https://rdrr.io/pkg/tensorflow/man/evaluate.html">evaluate</a></span><span class="op">(</span><span class="va">test_images</span>, <span class="va">test_labels</span>, verbose <span class="op">=</span> <span class="fl">0</span><span class="op">)</span>
 
 <span class="va">score</span></code></pre></div>
 </div>
 <div id="step-10-let-us-predict-some-images" class="section level3">
 <h3>
-<span class="header-section-number">35.3.13</span> Step 10: Let us predict some images<a class="anchor" aria-label="anchor" href="#step-10-let-us-predict-some-images"><i class="fas fa-link"></i></a>
+<span class="header-section-number">36.3.13</span> Step 10: Let us predict some images<a class="anchor" aria-label="anchor" href="#step-10-let-us-predict-some-images"><i class="fas fa-link"></i></a>
 </h3>
-<div class="sourceCode" id="cb565"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb569"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="va">img</span> <span class="op">&lt;-</span> <span class="va">test_images</span><span class="op">[</span><span class="fl">3</span>, , , , drop <span class="op">=</span> <span class="cn">FALSE</span><span class="op">]</span>
 <span class="fu">plotImage</span><span class="op">(</span><span class="va">img</span><span class="op">[</span><span class="fl">1</span>,,,<span class="op">]</span><span class="op">)</span>
 <span class="va">class_pred</span> <span class="op">&lt;-</span> <span class="va">model</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> <span class="fu"><a href="https://rdrr.io/pkg/raster/man/predict.html">predict</a></span><span class="op">(</span><span class="va">img</span><span class="op">)</span>
@@ -461,18 +462,18 @@
 </div>
 <div id="step-11-these-models-can-be-stored-in-the-standard-keras-hd5-format-and-are-transferrable-to-any-other-environment-like-python-or-even-java" class="section level3">
 <h3>
-<span class="header-section-number">35.3.14</span> Step 11: These models can be stored in the standard Keras HD5 Format and are transferrable to any other environment like Python or even Java !!<a class="anchor" aria-label="anchor" href="#step-11-these-models-can-be-stored-in-the-standard-keras-hd5-format-and-are-transferrable-to-any-other-environment-like-python-or-even-java"><i class="fas fa-link"></i></a>
+<span class="header-section-number">36.3.14</span> Step 11: These models can be stored in the standard Keras HD5 Format and are transferrable to any other environment like Python or even Java !!<a class="anchor" aria-label="anchor" href="#step-11-these-models-can-be-stored-in-the-standard-keras-hd5-format-and-are-transferrable-to-any-other-environment-like-python-or-even-java"><i class="fas fa-link"></i></a>
 </h3>
-<div class="sourceCode" id="cb566"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb570"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="va">model</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> <span class="fu"><a href="https://keras.rstudio.com/reference/save_model_hdf5.html">save_model_hdf5</a></span><span class="op">(</span><span class="st">"CIFAR10-CNN-Model"</span><span class="op">)</span></code></pre></div>
 <p>Loading saved models is easy as well !!</p>
-<div class="sourceCode" id="cb567"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb571"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="va">new_model</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://keras.rstudio.com/reference/save_model_hdf5.html">load_model_hdf5</a></span><span class="op">(</span><span class="st">"CIFAR10-CNN-Model"</span><span class="op">)</span></code></pre></div>
 </div>
 </div>
 <div id="references" class="section level2">
 <h2>
-<span class="header-section-number">35.4</span> References:<a class="anchor" aria-label="anchor" href="#references"><i class="fas fa-link"></i></a>
+<span class="header-section-number">36.4</span> References:<a class="anchor" aria-label="anchor" href="#references"><i class="fas fa-link"></i></a>
 </h2>
 <ol style="list-style-type: decimal">
 <li><a href="https://tensorflow.rstudio.com/tutorials/" target="_blank">Tensorflow for R from R studio</a></li>
@@ -485,42 +486,42 @@
 </div>
 </div>
   <div class="chapter-nav">
-<div class="prev"><a href="natural-langauge-processing-common-eda-practices-in-python.html"><span class="header-section-number">34</span> Natural Langauge Processing Common EDA Practices in Python</a></div>
-<div class="next"><a href="supervised-learning-tutorial.html"><span class="header-section-number">36</span> Supervised Learning Tutorial</a></div>
+<div class="prev"><a href="natural-langauge-processing-common-eda-practices-in-python.html"><span class="header-section-number">35</span> Natural Langauge Processing Common EDA Practices in Python</a></div>
+<div class="next"><a href="supervised-learning-tutorial.html"><span class="header-section-number">37</span> Supervised Learning Tutorial</a></div>
 </div></main><div class="col-md-3 col-lg-2 d-none d-md-block sidebar sidebar-chapter">
     <nav id="toc" data-toggle="toc" aria-label="On this page"><h2>On this page</h2>
       <ul class="nav navbar-nav">
-<li><a class="nav-link" href="#beginners-walk-through-of-deep-learning-in-r"><span class="header-section-number">35</span> Beginner’s Walk-through of Deep Learning in R</a></li>
-<li><a class="nav-link" href="#introduction-4"><span class="header-section-number">35.1</span> Introduction</a></li>
+<li><a class="nav-link" href="#beginners-walk-through-of-deep-learning-in-r"><span class="header-section-number">36</span> Beginner’s Walk-through of Deep Learning in R</a></li>
+<li><a class="nav-link" href="#introduction-4"><span class="header-section-number">36.1</span> Introduction</a></li>
 <li>
-<a class="nav-link" href="#text-classification---sentiment-analysis-with-r"><span class="header-section-number">35.2</span> Text Classification - Sentiment Analysis with R</a><ul class="nav navbar-nav">
-<li><a class="nav-link" href="#step-1-load-the-required-libraries"><span class="header-section-number">35.2.1</span> Step 1: Load the required Libraries</a></li>
-<li><a class="nav-link" href="#step-2-read-and-explore-data"><span class="header-section-number">35.2.2</span> Step 2: Read and explore data</a></li>
-<li><a class="nav-link" href="#step-3-split-the-data-into-training-80-and-testing-20-datasets."><span class="header-section-number">35.2.3</span> Step 3: Split the data into training (80%) and testing (20%) datasets.</a></li>
-<li><a class="nav-link" href="#step-4-data-preparation"><span class="header-section-number">35.2.4</span> Step 4: Data Preparation</a></li>
-<li><a class="nav-link" href="#step-5-build-train-a-model"><span class="header-section-number">35.2.5</span> Step 5: Build, train a model</a></li>
-<li><a class="nav-link" href="#step-6-evaluate-the-model"><span class="header-section-number">35.2.6</span> Step 6: Evaluate the model:</a></li>
+<a class="nav-link" href="#text-classification---sentiment-analysis-with-r"><span class="header-section-number">36.2</span> Text Classification - Sentiment Analysis with R</a><ul class="nav navbar-nav">
+<li><a class="nav-link" href="#step-1-load-the-required-libraries"><span class="header-section-number">36.2.1</span> Step 1: Load the required Libraries</a></li>
+<li><a class="nav-link" href="#step-2-read-and-explore-data"><span class="header-section-number">36.2.2</span> Step 2: Read and explore data</a></li>
+<li><a class="nav-link" href="#step-3-split-the-data-into-training-80-and-testing-20-datasets."><span class="header-section-number">36.2.3</span> Step 3: Split the data into training (80%) and testing (20%) datasets.</a></li>
+<li><a class="nav-link" href="#step-4-data-preparation"><span class="header-section-number">36.2.4</span> Step 4: Data Preparation</a></li>
+<li><a class="nav-link" href="#step-5-build-train-a-model"><span class="header-section-number">36.2.5</span> Step 5: Build, train a model</a></li>
+<li><a class="nav-link" href="#step-6-evaluate-the-model"><span class="header-section-number">36.2.6</span> Step 6: Evaluate the model:</a></li>
 </ul>
 </li>
 <li>
-<a class="nav-link" href="#image-classification-using-r-for-cifar10"><span class="header-section-number">35.3</span> Image Classification using R for CIFAR10</a><ul class="nav navbar-nav">
-<li><a class="nav-link" href="#step-1-load-the-required-libraries-1"><span class="header-section-number">35.3.1</span> Step 1: Load the required Libraries</a></li>
-<li><a class="nav-link" href="#step-1a-to-make-sure-that-your-tensorflow-is-installed-correctly-run"><span class="header-section-number">35.3.2</span> Step 1a : To Make sure that your tensorflow is installed correctly run :</a></li>
-<li><a class="nav-link" href="#step-2-explore-the-data"><span class="header-section-number">35.3.3</span> Step 2: Explore the Data</a></li>
-<li><a class="nav-link" href="#step-3-split-the-data-into-training-80-and-testing-20-datasets.-1"><span class="header-section-number">35.3.4</span> Step 3: Split the data into training (80%) and testing (20%) datasets.</a></li>
-<li><a class="nav-link" href="#step-3a-to-see-the-dimensions-of-the-train_images-and-the-test_images-dataset-use-the-dims-function."><span class="header-section-number">35.3.5</span> Step 3a : To see the dimensions of the train_images and the test_images dataset , use the dims function.</a></li>
-<li><a class="nav-link" href="#step-4-as-the-dataset-labels-are-just-integers-it-is-crucial-we-define-the-label-array."><span class="header-section-number">35.3.6</span> Step 4 : As the dataset Labels are just integers , It is crucial we define the label array.</a></li>
-<li><a class="nav-link" href="#step-5-let-us-plot-these-tiny-images"><span class="header-section-number">35.3.7</span> Step 5 : Let us plot these tiny images !!</a></li>
-<li><a class="nav-link" href="#step-6-build-a-model"><span class="header-section-number">35.3.8</span> Step 6 : Build a model</a></li>
-<li><a class="nav-link" href="#step-7-compile-the-model"><span class="header-section-number">35.3.9</span> Step 7 : Compile the Model</a></li>
-<li><a class="nav-link" href="#step-8-time-to-train-the-model-."><span class="header-section-number">35.3.10</span> Step 8 : Time to train the model .</a></li>
-<li><a class="nav-link" href="#step-8a-let-us-plot-the-model-loss-and-accuracy-functions."><span class="header-section-number">35.3.11</span> Step 8a : Let us plot the model Loss and Accuracy Functions.</a></li>
-<li><a class="nav-link" href="#step-9-evaluate-the-model"><span class="header-section-number">35.3.12</span> Step 9: Evaluate the model:</a></li>
-<li><a class="nav-link" href="#step-10-let-us-predict-some-images"><span class="header-section-number">35.3.13</span> Step 10: Let us predict some images</a></li>
-<li><a class="nav-link" href="#step-11-these-models-can-be-stored-in-the-standard-keras-hd5-format-and-are-transferrable-to-any-other-environment-like-python-or-even-java"><span class="header-section-number">35.3.14</span> Step 11: These models can be stored in the standard Keras HD5 Format and are transferrable to any other environment like Python or even Java !!</a></li>
+<a class="nav-link" href="#image-classification-using-r-for-cifar10"><span class="header-section-number">36.3</span> Image Classification using R for CIFAR10</a><ul class="nav navbar-nav">
+<li><a class="nav-link" href="#step-1-load-the-required-libraries-1"><span class="header-section-number">36.3.1</span> Step 1: Load the required Libraries</a></li>
+<li><a class="nav-link" href="#step-1a-to-make-sure-that-your-tensorflow-is-installed-correctly-run"><span class="header-section-number">36.3.2</span> Step 1a : To Make sure that your tensorflow is installed correctly run :</a></li>
+<li><a class="nav-link" href="#step-2-explore-the-data"><span class="header-section-number">36.3.3</span> Step 2: Explore the Data</a></li>
+<li><a class="nav-link" href="#step-3-split-the-data-into-training-80-and-testing-20-datasets.-1"><span class="header-section-number">36.3.4</span> Step 3: Split the data into training (80%) and testing (20%) datasets.</a></li>
+<li><a class="nav-link" href="#step-3a-to-see-the-dimensions-of-the-train_images-and-the-test_images-dataset-use-the-dims-function."><span class="header-section-number">36.3.5</span> Step 3a : To see the dimensions of the train_images and the test_images dataset , use the dims function.</a></li>
+<li><a class="nav-link" href="#step-4-as-the-dataset-labels-are-just-integers-it-is-crucial-we-define-the-label-array."><span class="header-section-number">36.3.6</span> Step 4 : As the dataset Labels are just integers , It is crucial we define the label array.</a></li>
+<li><a class="nav-link" href="#step-5-let-us-plot-these-tiny-images"><span class="header-section-number">36.3.7</span> Step 5 : Let us plot these tiny images !!</a></li>
+<li><a class="nav-link" href="#step-6-build-a-model"><span class="header-section-number">36.3.8</span> Step 6 : Build a model</a></li>
+<li><a class="nav-link" href="#step-7-compile-the-model"><span class="header-section-number">36.3.9</span> Step 7 : Compile the Model</a></li>
+<li><a class="nav-link" href="#step-8-time-to-train-the-model-."><span class="header-section-number">36.3.10</span> Step 8 : Time to train the model .</a></li>
+<li><a class="nav-link" href="#step-8a-let-us-plot-the-model-loss-and-accuracy-functions."><span class="header-section-number">36.3.11</span> Step 8a : Let us plot the model Loss and Accuracy Functions.</a></li>
+<li><a class="nav-link" href="#step-9-evaluate-the-model"><span class="header-section-number">36.3.12</span> Step 9: Evaluate the model:</a></li>
+<li><a class="nav-link" href="#step-10-let-us-predict-some-images"><span class="header-section-number">36.3.13</span> Step 10: Let us predict some images</a></li>
+<li><a class="nav-link" href="#step-11-these-models-can-be-stored-in-the-standard-keras-hd5-format-and-are-transferrable-to-any-other-environment-like-python-or-even-java"><span class="header-section-number">36.3.14</span> Step 11: These models can be stored in the standard Keras HD5 Format and are transferrable to any other environment like Python or even Java !!</a></li>
 </ul>
 </li>
-<li><a class="nav-link" href="#references"><span class="header-section-number">35.4</span> References:</a></li>
+<li><a class="nav-link" href="#references"><span class="header-section-number">36.4</span> References:</a></li>
 </ul>
 
       <div class="book-extra">

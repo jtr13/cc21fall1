@@ -4,15 +4,15 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<title>Chapter 22 Regression and Classification in R | EDAV Fall 2021 Mon/Wed Community Contributions</title>
+<title>Chapter 23 Regression and Classification in R | EDAV Fall 2021 Mon/Wed Community Contributions</title>
 <meta name="author" content="the students of the class">
 <meta name="description" content="Parv Joshi This is a video tutorial, which can be found at https://youtu.be/J2rnDy9PB3E. The code I created as part of this video is given as the contents of this file, for reference. Here are the...">
 <meta name="generator" content="bookdown 0.24 with bs4_book()">
-<meta property="og:title" content="Chapter 22 Regression and Classification in R | EDAV Fall 2021 Mon/Wed Community Contributions">
+<meta property="og:title" content="Chapter 23 Regression and Classification in R | EDAV Fall 2021 Mon/Wed Community Contributions">
 <meta property="og:type" content="book">
 <meta property="og:description" content="Parv Joshi This is a video tutorial, which can be found at https://youtu.be/J2rnDy9PB3E. The code I created as part of this video is given as the contents of this file, for reference. Here are the...">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Chapter 22 Regression and Classification in R | EDAV Fall 2021 Mon/Wed Community Contributions">
+<meta name="twitter:title" content="Chapter 23 Regression and Classification in R | EDAV Fall 2021 Mon/Wed Community Contributions">
 <meta name="twitter:description" content="Parv Joshi This is a video tutorial, which can be found at https://youtu.be/J2rnDy9PB3E. The code I created as part of this video is given as the contents of this file, for reference. Here are the...">
 <!-- JS --><script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.6/clipboard.min.js" integrity="sha256-inc5kl9MA1hkeYUt+EC3BhlIgyp/2jDIyBLS6k3UxPI=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/fuse.js/6.4.6/fuse.js" integrity="sha512-zv6Ywkjyktsohkbp9bb45V6tEMoWhzFzXis+LrMehmJZZSys19Yxf1dopHx7WzIKxr5tK2dVcYmaCk2uqdjF4A==" crossorigin="anonymous"></script><script src="https://kit.fontawesome.com/6ecbd6c532.js" crossorigin="anonymous"></script><script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <link href="libs/bootstrap-4.6.0/bootstrap.min.css" rel="stylesheet">
@@ -55,44 +55,45 @@
 <li><a class="" href="graph-animation-with-gganimate-and-after-effects.html"><span class="header-section-number">6</span> Graph animation with gganimate and After Effects</a></li>
 <li><a class="" href="interactive-plots.html"><span class="header-section-number">7</span> Interactive Plots</a></li>
 <li><a class="" href="create-regression-assumption-plots-in-word.html"><span class="header-section-number">8</span> Create regression assumption plots in Word</a></li>
+<li><a class="" href="from-neo4j-to-rstudio.html"><span class="header-section-number">9</span> From Neo4j to RStudio</a></li>
 <li class="book-part">Cheatsheets</li>
-<li><a class="" href="r-vs.-python-visualization-cheatsheet.html"><span class="header-section-number">9</span> R vs. Python Visualization Cheatsheet</a></li>
-<li><a class="" href="rpackage-waffle-cheatsheet.html"><span class="header-section-number">10</span> Rpackage waffle cheatsheet</a></li>
-<li><a class="" href="r-cheatsheet-on-data-transforamtion-and-exploration.html"><span class="header-section-number">11</span> R cheatsheet on data transforamtion and exploration</a></li>
-<li><a class="" href="r-vs-python-basic-data-wrangling.html"><span class="header-section-number">12</span> R vs Python Basic Data Wrangling</a></li>
-<li><a class="" href="tidyverse_cheatsheet.html"><span class="header-section-number">13</span> tidyverse_cheatsheet</a></li>
-<li><a class="" href="cheatsheet-tidyverse.html"><span class="header-section-number">14</span> Cheatsheet Tidyverse</a></li>
-<li><a class="" href="use-of-ggprism-and-ggsci-packages.html"><span class="header-section-number">15</span> Use of ggprism and ggsci packages</a></li>
-<li><a class="" href="interactive-plot-introduction.html"><span class="header-section-number">16</span> Interactive plot introduction</a></li>
-<li><a class="" href="common-r-markdown-syntax-cheatsheet.html"><span class="header-section-number">17</span> Common R markdown syntax cheatsheet</a></li>
-<li><a class="" href="header.html"><span class="header-section-number">18</span> Header</a></li>
-<li><a class="" href="parallel-coordinates-plot-cheatsheet.html"><span class="header-section-number">19</span> Parallel coordinates plot cheatsheet</a></li>
-<li><a class="" href="r-data-science-workflow-cheatsheet.html"><span class="header-section-number">20</span> R Data Science Workflow CheatSheet</a></li>
+<li><a class="" href="r-vs.-python-visualization-cheatsheet.html"><span class="header-section-number">10</span> R vs. Python Visualization Cheatsheet</a></li>
+<li><a class="" href="rpackage-waffle-cheatsheet.html"><span class="header-section-number">11</span> Rpackage waffle cheatsheet</a></li>
+<li><a class="" href="r-cheatsheet-on-data-transforamtion-and-exploration.html"><span class="header-section-number">12</span> R cheatsheet on data transforamtion and exploration</a></li>
+<li><a class="" href="r-vs-python-basic-data-wrangling.html"><span class="header-section-number">13</span> R vs Python Basic Data Wrangling</a></li>
+<li><a class="" href="tidyverse_cheatsheet.html"><span class="header-section-number">14</span> tidyverse_cheatsheet</a></li>
+<li><a class="" href="cheatsheet-tidyverse.html"><span class="header-section-number">15</span> Cheatsheet Tidyverse</a></li>
+<li><a class="" href="use-of-ggprism-and-ggsci-packages.html"><span class="header-section-number">16</span> Use of ggprism and ggsci packages</a></li>
+<li><a class="" href="interactive-plot-introduction.html"><span class="header-section-number">17</span> Interactive plot introduction</a></li>
+<li><a class="" href="common-r-markdown-syntax-cheatsheet.html"><span class="header-section-number">18</span> Common R markdown syntax cheatsheet</a></li>
+<li><a class="" href="header.html"><span class="header-section-number">19</span> Header</a></li>
+<li><a class="" href="parallel-coordinates-plot-cheatsheet.html"><span class="header-section-number">20</span> Parallel coordinates plot cheatsheet</a></li>
+<li><a class="" href="r-data-science-workflow-cheatsheet.html"><span class="header-section-number">21</span> R Data Science Workflow CheatSheet</a></li>
 <li class="book-part">Tutorials</li>
-<li><a class="" href="multithreading-crawler-frame.html"><span class="header-section-number">21</span> Multithreading Crawler Frame</a></li>
-<li><a class="active" href="regression-and-classification-in-r.html"><span class="header-section-number">22</span> Regression and Classification in R</a></li>
-<li><a class="" href="tibble-vs.-dataframe.html"><span class="header-section-number">23</span> Tibble vs. DataFrame</a></li>
-<li><a class="" href="introduction-to-time-series.html"><span class="header-section-number">24</span> Introduction to Time Series</a></li>
-<li><a class="" href="vipul-edav-community-contribution-kickstart-r.html"><span class="header-section-number">25</span> Vipul EDAV Community Contribution Kickstart R</a></li>
-<li><a class="" href="caret---a-machine-learning-package-turotial.html"><span class="header-section-number">26</span> caret - a machine learning package turotial</a></li>
-<li><a class="" href="streamlit-for-financial-analysis.html"><span class="header-section-number">27</span> Streamlit for Financial Analysis</a></li>
-<li><a class="" href="interactive-graphs-tutorial.html"><span class="header-section-number">28</span> Interactive graphs tutorial</a></li>
-<li><a class="" href="guideline-on-using-package-rcurl-and-xml-for-web-scraping.html"><span class="header-section-number">29</span> Guideline on Using Package Rcurl and XML for Web Scraping</a></li>
-<li><a class="" href="twitter-r-package-scraping-via-api-tutorial.html"><span class="header-section-number">30</span> TwitteR R Package Scraping via API Tutorial</a></li>
-<li><a class="" href="introduction-to-data-manipulation.html"><span class="header-section-number">31</span> Introduction to Data Manipulation</a></li>
-<li><a class="" href="animating-the-plots-in-r.html"><span class="header-section-number">32</span> Animating the plots in R</a></li>
-<li><a class="" href="quick-guide-to-eda.html"><span class="header-section-number">33</span> Quick guide to eda</a></li>
-<li><a class="" href="natural-langauge-processing-common-eda-practices-in-python.html"><span class="header-section-number">34</span> Natural Langauge Processing Common EDA Practices in Python</a></li>
-<li><a class="" href="beginners-walk-through-of-deep-learning-in-r.html"><span class="header-section-number">35</span> Beginner’s Walk-through of Deep Learning in R</a></li>
-<li><a class="" href="supervised-learning-tutorial.html"><span class="header-section-number">36</span> Supervised Learning Tutorial</a></li>
+<li><a class="" href="multithreading-crawler-frame.html"><span class="header-section-number">22</span> Multithreading Crawler Frame</a></li>
+<li><a class="active" href="regression-and-classification-in-r.html"><span class="header-section-number">23</span> Regression and Classification in R</a></li>
+<li><a class="" href="tibble-vs.-dataframe.html"><span class="header-section-number">24</span> Tibble vs. DataFrame</a></li>
+<li><a class="" href="introduction-to-time-series.html"><span class="header-section-number">25</span> Introduction to Time Series</a></li>
+<li><a class="" href="vipul-edav-community-contribution-kickstart-r.html"><span class="header-section-number">26</span> Vipul EDAV Community Contribution Kickstart R</a></li>
+<li><a class="" href="caret---a-machine-learning-package-turotial.html"><span class="header-section-number">27</span> caret - a machine learning package turotial</a></li>
+<li><a class="" href="streamlit-for-financial-analysis.html"><span class="header-section-number">28</span> Streamlit for Financial Analysis</a></li>
+<li><a class="" href="interactive-graphs-tutorial.html"><span class="header-section-number">29</span> Interactive graphs tutorial</a></li>
+<li><a class="" href="guideline-on-using-package-rcurl-and-xml-for-web-scraping.html"><span class="header-section-number">30</span> Guideline on Using Package Rcurl and XML for Web Scraping</a></li>
+<li><a class="" href="twitter-r-package-scraping-via-api-tutorial.html"><span class="header-section-number">31</span> TwitteR R Package Scraping via API Tutorial</a></li>
+<li><a class="" href="introduction-to-data-manipulation.html"><span class="header-section-number">32</span> Introduction to Data Manipulation</a></li>
+<li><a class="" href="animating-the-plots-in-r.html"><span class="header-section-number">33</span> Animating the plots in R</a></li>
+<li><a class="" href="quick-guide-to-eda.html"><span class="header-section-number">34</span> Quick guide to eda</a></li>
+<li><a class="" href="natural-langauge-processing-common-eda-practices-in-python.html"><span class="header-section-number">35</span> Natural Langauge Processing Common EDA Practices in Python</a></li>
+<li><a class="" href="beginners-walk-through-of-deep-learning-in-r.html"><span class="header-section-number">36</span> Beginner’s Walk-through of Deep Learning in R</a></li>
+<li><a class="" href="supervised-learning-tutorial.html"><span class="header-section-number">37</span> Supervised Learning Tutorial</a></li>
 <li class="book-part">Demonstrations</li>
-<li><a class="" href="linear-association-r-studio-plugin.html"><span class="header-section-number">37</span> Linear Association R Studio Plugin</a></li>
-<li><a class="" href="customized-sorting-in-r.html"><span class="header-section-number">38</span> Customized Sorting in R</a></li>
+<li><a class="" href="linear-association-r-studio-plugin.html"><span class="header-section-number">38</span> Linear Association R Studio Plugin</a></li>
+<li><a class="" href="customized-sorting-in-r.html"><span class="header-section-number">39</span> Customized Sorting in R</a></li>
 <li class="book-part">Workshops</li>
-<li><a class="" href="data-science-product-cycles-in-enterprises.html"><span class="header-section-number">39</span> Data Science Product Cycles in Enterprises</a></li>
+<li><a class="" href="data-science-product-cycles-in-enterprises.html"><span class="header-section-number">40</span> Data Science Product Cycles in Enterprises</a></li>
 <li class="book-part">Appendices</li>
-<li><a class="" href="github-initial-setup.html"><span class="header-section-number">40</span> Github initial setup</a></li>
-<li><a class="" href="tutorial-for-pull-request-mergers.html"><span class="header-section-number">41</span> Tutorial for pull request mergers</a></li>
+<li><a class="" href="github-initial-setup.html"><span class="header-section-number">41</span> Github initial setup</a></li>
+<li><a class="" href="tutorial-for-pull-request-mergers.html"><span class="header-section-number">42</span> Tutorial for pull request mergers</a></li>
 </ul>
 
         <div class="book-extra">
@@ -102,7 +103,7 @@
 </div>
   </header><main class="col-sm-12 col-md-9 col-lg-7" id="content"><div id="regression-and-classification-in-r" class="section level1">
 <h1>
-<span class="header-section-number">22</span> Regression and Classification in R<a class="anchor" aria-label="anchor" href="#regression-and-classification-in-r"><i class="fas fa-link"></i></a>
+<span class="header-section-number">23</span> Regression and Classification in R<a class="anchor" aria-label="anchor" href="#regression-and-classification-in-r"><i class="fas fa-link"></i></a>
 </h1>
 <p>Parv Joshi</p>
 <p>This is a video tutorial, which can be found at <a href="https://youtu.be/J2rnDy9PB3E">https://youtu.be/J2rnDy9PB3E</a>. The code I created as part of this video is given as the contents of this file, for reference. Here are the links I used in my data set:</p>
@@ -119,9 +120,9 @@
 </ol>
 <div id="libraries-and-warnings" class="section level3">
 <h3>
-<span class="header-section-number">22.0.1</span> Libraries and Warnings<a class="anchor" aria-label="anchor" href="#libraries-and-warnings"><i class="fas fa-link"></i></a>
+<span class="header-section-number">23.0.1</span> Libraries and Warnings<a class="anchor" aria-label="anchor" href="#libraries-and-warnings"><i class="fas fa-link"></i></a>
 </h3>
-<div class="sourceCode" id="cb188"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb192"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="co"># Removing messages and warnings from knited version</span>
 <span class="fu">knitr</span><span class="fu">::</span><span class="va"><a href="https://rdrr.io/pkg/knitr/man/opts_chunk.html">opts_chunk</a></span><span class="op">$</span><span class="fu">set</span><span class="op">(</span>warning <span class="op">=</span> <span class="cn">FALSE</span>, message <span class="op">=</span> <span class="cn">FALSE</span><span class="op">)</span>
 
@@ -142,9 +143,9 @@
 </div>
 <div id="reading-data" class="section level3">
 <h3>
-<span class="header-section-number">22.0.2</span> Reading Data<a class="anchor" aria-label="anchor" href="#reading-data"><i class="fas fa-link"></i></a>
+<span class="header-section-number">23.0.2</span> Reading Data<a class="anchor" aria-label="anchor" href="#reading-data"><i class="fas fa-link"></i></a>
 </h3>
-<div class="sourceCode" id="cb189"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb193"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="co"># Importing the dataset</span>
 
 <span class="va">dataset</span> <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/utils/read.table.html">read.csv</a></span><span class="op">(</span><span class="st">"https://raw.githubusercontent.com/Parv-Joshi/EDAV_CC_Datasets/main/Data.csv"</span><span class="op">)</span>
@@ -154,9 +155,9 @@
 </div>
 <div id="data-preprocessing" class="section level3">
 <h3>
-<span class="header-section-number">22.0.3</span> Data Preprocessing<a class="anchor" aria-label="anchor" href="#data-preprocessing"><i class="fas fa-link"></i></a>
+<span class="header-section-number">23.0.3</span> Data Preprocessing<a class="anchor" aria-label="anchor" href="#data-preprocessing"><i class="fas fa-link"></i></a>
 </h3>
-<div class="sourceCode" id="cb190"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb194"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="co"># Mean Imputation for Missing Data</span>
 <span class="va">dataset</span><span class="op">$</span><span class="va">Age</span> <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/ifelse.html">ifelse</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/NA.html">is.na</a></span><span class="op">(</span><span class="va">dataset</span><span class="op">$</span><span class="va">Age</span><span class="op">)</span>,
                      <span class="fu"><a href="https://rdrr.io/r/stats/ave.html">ave</a></span><span class="op">(</span><span class="va">dataset</span><span class="op">$</span><span class="va">Age</span>, FUN <span class="op">=</span> <span class="kw">function</span><span class="op">(</span><span class="va">x</span><span class="op">)</span> <span class="fu"><a href="https://rdrr.io/r/base/mean.html">mean</a></span><span class="op">(</span><span class="va">x</span>, na.rm <span class="op">=</span> <span class="cn">T</span><span class="op">)</span><span class="op">)</span>,
@@ -188,9 +189,9 @@
 </div>
 <div id="regression" class="section level3">
 <h3>
-<span class="header-section-number">22.0.4</span> Regression<a class="anchor" aria-label="anchor" href="#regression"><i class="fas fa-link"></i></a>
+<span class="header-section-number">23.0.4</span> Regression<a class="anchor" aria-label="anchor" href="#regression"><i class="fas fa-link"></i></a>
 </h3>
-<div class="sourceCode" id="cb191"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb195"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="co"># Data </span>
 
 <span class="fu"><a href="https://rdrr.io/r/utils/data.html">data</a></span><span class="op">(</span><span class="st">"Salaries"</span>, package <span class="op">=</span> <span class="st">"carData"</span><span class="op">)</span>
@@ -215,7 +216,7 @@
 ## Coefficients:
 ##   (Intercept)  yrs.since.phd  
 ##       91718.7          985.3</code></pre>
-<div class="sourceCode" id="cb193"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb197"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="fu"><a href="https://rdrr.io/r/base/summary.html">summary</a></span><span class="op">(</span><span class="va">model</span><span class="op">)</span></code></pre></div>
 <pre><code>## 
 ## Call:
@@ -235,7 +236,7 @@
 ## Residual standard error: 27530 on 395 degrees of freedom
 ## Multiple R-squared:  0.1758, Adjusted R-squared:  0.1737 
 ## F-statistic: 84.23 on 1 and 395 DF,  p-value: &lt; 2.2e-16</code></pre>
-<div class="sourceCode" id="cb195"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb199"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="fu">stargazer</span><span class="fu">::</span><span class="fu"><a href="https://rdrr.io/pkg/stargazer/man/stargazer.html">stargazer</a></span><span class="op">(</span><span class="va">model</span>, type <span class="op">=</span> <span class="st">"text"</span><span class="op">)</span></code></pre></div>
 <pre><code>## 
 ## ===============================================
@@ -257,7 +258,7 @@
 ## F Statistic           84.226*** (df = 1; 395)  
 ## ===============================================
 ## Note:               *p&lt;0.1; **p&lt;0.05; ***p&lt;0.01</code></pre>
-<div class="sourceCode" id="cb197"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb201"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="co"># Multiple Variable Regression</span>
 
 <span class="va">model1</span> <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/stats/lm.html">lm</a></span><span class="op">(</span><span class="va">salary</span> <span class="op">~</span> <span class="va">yrs.since.phd</span> <span class="op">+</span> <span class="va">yrs.service</span>, data <span class="op">=</span> <span class="va">Salaries</span><span class="op">)</span>
@@ -281,7 +282,7 @@
 ## Residual standard error: 27360 on 394 degrees of freedom
 ## Multiple R-squared:  0.1883, Adjusted R-squared:  0.1842 
 ## F-statistic: 45.71 on 2 and 394 DF,  p-value: &lt; 2.2e-16</code></pre>
-<div class="sourceCode" id="cb199"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb203"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="co">### Model:</span>
 <span class="co">### salary = 89912.2 + 1562.9 * yrs.since.phd + (-629.1) * yrs.service</span>
 
@@ -292,7 +293,7 @@
 <pre><code>##        Male
 ## Female    0
 ## Male      1</code></pre>
-<div class="sourceCode" id="cb201"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb205"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="co"># sex = relevel(sex, ref = "Male")</span>
 
 <span class="va">model2</span> <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/stats/lm.html">lm</a></span><span class="op">(</span><span class="va">salary</span> <span class="op">~</span> <span class="va">yrs.since.phd</span> <span class="op">+</span> <span class="va">yrs.service</span> <span class="op">+</span> <span class="va">sex</span>, data <span class="op">=</span> <span class="va">Salaries</span><span class="op">)</span>
@@ -317,7 +318,7 @@
 ## Residual standard error: 27280 on 393 degrees of freedom
 ## Multiple R-squared:  0.1951, Adjusted R-squared:  0.189 
 ## F-statistic: 31.75 on 3 and 393 DF,  p-value: &lt; 2.2e-16</code></pre>
-<div class="sourceCode" id="cb203"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb207"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="fu">car</span><span class="fu">::</span><span class="fu"><a href="https://rdrr.io/pkg/car/man/Anova.html">Anova</a></span><span class="op">(</span><span class="va">model2</span><span class="op">)</span></code></pre></div>
 <pre><code>## Anova Table (Type II tests)
 ## 
@@ -329,7 +330,7 @@
 ## Residuals     2.9242e+11 393                     
 ## ---
 ## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1</code></pre>
-<div class="sourceCode" id="cb205"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb209"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="va">model3</span> <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/stats/lm.html">lm</a></span><span class="op">(</span><span class="va">salary</span> <span class="op">~</span> <span class="va">.</span>, data <span class="op">=</span> <span class="va">Salaries</span><span class="op">)</span>
 <span class="fu">car</span><span class="fu">::</span><span class="fu"><a href="https://rdrr.io/pkg/car/man/Anova.html">Anova</a></span><span class="op">(</span><span class="va">model3</span><span class="op">)</span></code></pre></div>
 <pre><code>## Anova Table (Type II tests)
@@ -344,7 +345,7 @@
 ## Residuals     1.9812e+11 390                      
 ## ---
 ## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1</code></pre>
-<div class="sourceCode" id="cb207"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb211"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="fu"><a href="https://rdrr.io/r/base/summary.html">summary</a></span><span class="op">(</span><span class="va">model3</span><span class="op">)</span></code></pre></div>
 <pre><code>## 
 ## Call:
@@ -369,7 +370,7 @@
 ## Residual standard error: 22540 on 390 degrees of freedom
 ## Multiple R-squared:  0.4547, Adjusted R-squared:  0.4463 
 ## F-statistic:  54.2 on 6 and 390 DF,  p-value: &lt; 2.2e-16</code></pre>
-<div class="sourceCode" id="cb209"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb213"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="co"># Transformations and Interaction Terms</span>
 
 <span class="va">model4</span> <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/stats/lm.html">lm</a></span><span class="op">(</span><span class="va">salary</span> <span class="op">~</span> <span class="va">yrs.since.phd</span><span class="op">^</span><span class="fl">2</span> <span class="op">+</span> <span class="va">yrs.service</span>, data <span class="op">=</span> <span class="va">Salaries</span><span class="op">)</span>
@@ -393,7 +394,7 @@
 ## Residual standard error: 27360 on 394 degrees of freedom
 ## Multiple R-squared:  0.1883, Adjusted R-squared:  0.1842 
 ## F-statistic: 45.71 on 2 and 394 DF,  p-value: &lt; 2.2e-16</code></pre>
-<div class="sourceCode" id="cb211"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb215"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="va">model4</span> <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/stats/lm.html">lm</a></span><span class="op">(</span><span class="va">salary</span> <span class="op">~</span> <span class="va">yrs.since.phd</span> <span class="op">+</span> <span class="fu"><a href="https://rdrr.io/r/base/AsIs.html">I</a></span><span class="op">(</span><span class="va">yrs.since.phd</span><span class="op">^</span><span class="fl">2</span><span class="op">)</span> <span class="op">+</span> <span class="va">yrs.service</span>, data <span class="op">=</span> <span class="va">Salaries</span><span class="op">)</span>
 <span class="fu"><a href="https://rdrr.io/r/base/summary.html">summary</a></span><span class="op">(</span><span class="va">model4</span><span class="op">)</span></code></pre></div>
 <pre><code>## 
@@ -417,7 +418,7 @@
 ## Residual standard error: 25210 on 393 degrees of freedom
 ## Multiple R-squared:  0.3127, Adjusted R-squared:  0.3075 
 ## F-statistic: 59.61 on 3 and 393 DF,  p-value: &lt; 2.2e-16</code></pre>
-<div class="sourceCode" id="cb213"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb217"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="va">model4</span> <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/stats/lm.html">lm</a></span><span class="op">(</span><span class="va">salary</span> <span class="op">~</span> <span class="va">yrs.since.phd</span> <span class="op">+</span> <span class="fu"><a href="https://rdrr.io/r/base/AsIs.html">I</a></span><span class="op">(</span><span class="va">yrs.since.phd</span><span class="op">^</span><span class="fl">2</span><span class="op">)</span> <span class="op">+</span> <span class="fu"><a href="https://rdrr.io/r/base/AsIs.html">I</a></span><span class="op">(</span><span class="va">yrs.since.phd</span><span class="op">^</span><span class="fl">3</span><span class="op">)</span> <span class="op">+</span> <span class="va">yrs.service</span>, data <span class="op">=</span> <span class="va">Salaries</span><span class="op">)</span>
 <span class="fu"><a href="https://rdrr.io/r/base/summary.html">summary</a></span><span class="op">(</span><span class="va">model4</span><span class="op">)</span></code></pre></div>
 <pre><code>## 
@@ -442,7 +443,7 @@
 ## Residual standard error: 25240 on 392 degrees of freedom
 ## Multiple R-squared:  0.3127, Adjusted R-squared:  0.3057 
 ## F-statistic:  44.6 on 4 and 392 DF,  p-value: &lt; 2.2e-16</code></pre>
-<div class="sourceCode" id="cb215"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb219"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="va">model4</span> <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/stats/lm.html">lm</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/AsIs.html">I</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/Log.html">log</a></span><span class="op">(</span><span class="va">salary</span><span class="op">)</span><span class="op">)</span> <span class="op">~</span> <span class="va">yrs.since.phd</span> <span class="op">+</span> <span class="fu"><a href="https://rdrr.io/r/base/AsIs.html">I</a></span><span class="op">(</span><span class="va">yrs.since.phd</span><span class="op">^</span><span class="fl">2</span><span class="op">)</span> <span class="op">+</span> <span class="fu"><a href="https://rdrr.io/r/base/AsIs.html">I</a></span><span class="op">(</span><span class="va">yrs.since.phd</span><span class="op">^</span><span class="fl">3</span><span class="op">)</span> <span class="op">+</span> <span class="va">yrs.service</span>, data <span class="op">=</span> <span class="va">Salaries</span><span class="op">)</span>
 <span class="fu"><a href="https://rdrr.io/r/base/summary.html">summary</a></span><span class="op">(</span><span class="va">model4</span><span class="op">)</span></code></pre></div>
 <pre><code>## 
@@ -467,7 +468,7 @@
 ## Residual standard error: 0.2096 on 392 degrees of freedom
 ## Multiple R-squared:  0.3575, Adjusted R-squared:  0.3509 
 ## F-statistic: 54.52 on 4 and 392 DF,  p-value: &lt; 2.2e-16</code></pre>
-<div class="sourceCode" id="cb217"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb221"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="va">model5</span> <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/stats/lm.html">lm</a></span><span class="op">(</span><span class="va">salary</span> <span class="op">~</span> <span class="va">yrs.since.phd</span><span class="op">:</span><span class="va">yrs.service</span>, data <span class="op">=</span> <span class="va">Salaries</span><span class="op">)</span>
 <span class="fu"><a href="https://rdrr.io/r/base/summary.html">summary</a></span><span class="op">(</span><span class="va">model5</span><span class="op">)</span></code></pre></div>
 <pre><code>## 
@@ -488,7 +489,7 @@
 ## Residual standard error: 29410 on 395 degrees of freedom
 ## Multiple R-squared:  0.05973,    Adjusted R-squared:  0.05735 
 ## F-statistic: 25.09 on 1 and 395 DF,  p-value: 8.263e-07</code></pre>
-<div class="sourceCode" id="cb219"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb223"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="co">#### Boxcox</span>
 
 <span class="va">sal</span> <span class="op">=</span> <span class="va">Salaries</span><span class="op">[</span>, <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">3</span>,<span class="fl">4</span>,<span class="fl">6</span><span class="op">)</span><span class="op">]</span>
@@ -498,7 +499,7 @@
 ## 
 ## data:  Salaries$salary
 ## W = 0.95988, p-value = 6.076e-09</code></pre>
-<div class="sourceCode" id="cb221"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb225"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="co"># Null: Data is normally distributed</span>
 <span class="co"># p-value = 6.076e-09 &lt; 0.05, reject null -&gt; NOT Normal.</span>
 
@@ -523,14 +524,14 @@
 ## Residual standard error: 27360 on 394 degrees of freedom
 ## Multiple R-squared:  0.1883, Adjusted R-squared:  0.1842 
 ## F-statistic: 45.71 on 2 and 394 DF,  p-value: &lt; 2.2e-16</code></pre>
-<div class="sourceCode" id="cb223"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb227"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="va">bc</span> <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/pkg/MASS/man/boxcox.html">boxcox</a></span><span class="op">(</span><span class="va">model1</span><span class="op">)</span></code></pre></div>
 <div class="inline-figure"><img src="r_regress_classify_files/figure-html/unnamed-chunk-4-1.png" width="672" style="display: block; margin: auto;"></div>
-<div class="sourceCode" id="cb224"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb228"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="va">best.lam</span> <span class="op">=</span> <span class="va">bc</span><span class="op">$</span><span class="va">x</span><span class="op">[</span><span class="fu"><a href="https://rdrr.io/r/base/which.html">which</a></span><span class="op">(</span><span class="va">bc</span><span class="op">$</span><span class="va">y</span> <span class="op">==</span> <span class="fu"><a href="https://rdrr.io/r/base/Extremes.html">max</a></span><span class="op">(</span><span class="va">bc</span><span class="op">$</span><span class="va">y</span><span class="op">)</span><span class="op">)</span><span class="op">]</span>
 <span class="va">best.lam</span></code></pre></div>
 <pre><code>## [1] -0.2222222</code></pre>
-<div class="sourceCode" id="cb226"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb230"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="va">model6</span> <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/stats/lm.html">lm</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/AsIs.html">I</a></span><span class="op">(</span><span class="va">salary</span><span class="op">^</span><span class="va">best.lam</span><span class="op">)</span> <span class="op">~</span> <span class="va">yrs.since.phd</span> <span class="op">+</span> <span class="va">yrs.service</span>, data <span class="op">=</span> <span class="va">Salaries</span><span class="op">)</span>
 <span class="fu"><a href="https://rdrr.io/r/base/summary.html">summary</a></span><span class="op">(</span><span class="va">model6</span><span class="op">)</span></code></pre></div>
 <pre><code>## 
@@ -553,7 +554,7 @@
 ## Residual standard error: 0.00394 on 394 degrees of freedom
 ## Multiple R-squared:  0.1929, Adjusted R-squared:  0.1888 
 ## F-statistic: 47.09 on 2 and 394 DF,  p-value: &lt; 2.2e-16</code></pre>
-<div class="sourceCode" id="cb228"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb232"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="co">### Adj. R^2 increased</span>
 
 <span class="co"># Predictions using Training and Testing data</span>
@@ -648,7 +649,7 @@
 ## 380  84699.94          104121
 ## 386 119093.10          114330
 ## 391 130451.66          166605</code></pre>
-<div class="sourceCode" id="cb230"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb234"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="co"># Variable Selection</span>
 
 <span class="co"># data</span>
@@ -678,7 +679,7 @@
 ## 3  ( 1 ) " "         " "         "*"       "*"      "*"             
 ## 4  ( 1 ) "*"         " "         "*"       "*"      "*"             
 ## 5  ( 1 ) "*"         "*"         "*"       "*"      "*"</code></pre>
-<div class="sourceCode" id="cb232"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb236"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="co">### Therefore, </span>
 <span class="co">### Best 1-variable model: Fertility ~ Education</span>
 <span class="co">### Best 2-variables model: Fertility ~ Education + Catholic</span>
@@ -692,7 +693,7 @@
            BIC <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/which.min.html">which.min</a></span><span class="op">(</span><span class="va">models.summary</span><span class="op">$</span><span class="va">bic</span><span class="op">)</span><span class="op">)</span></code></pre></div>
 <pre><code>##   Adj.R2 CP BIC
 ## 1      5  4   4</code></pre>
-<div class="sourceCode" id="cb234"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb238"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="co">### Fertility ~ Agriculture + Education + Catholic + Infant.Mortality</span>
 
 <span class="co"># Stepwise Variable Selection</span>
@@ -709,7 +710,7 @@
 ##          62.1013           -0.1546           -0.9803            0.1247  
 ## Infant.Mortality  
 ##           1.0784</code></pre>
-<div class="sourceCode" id="cb236"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb240"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="kw"><a href="https://rdrr.io/r/base/detach.html">detach</a></span><span class="op">(</span><span class="va">swiss</span><span class="op">)</span>
 
 
@@ -719,7 +720,7 @@
 <span class="co"># str(ames)</span>
 <span class="fu"><a href="https://rdrr.io/r/base/NA.html">anyNA</a></span><span class="op">(</span><span class="va">ames</span><span class="op">)</span></code></pre></div>
 <pre><code>## [1] FALSE</code></pre>
-<div class="sourceCode" id="cb238"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb242"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="fu"><a href="https://rdrr.io/r/base/Random.html">set.seed</a></span><span class="op">(</span><span class="fl">123</span><span class="op">)</span>
 <span class="va">training.samples</span> <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/pkg/caret/man/createDataPartition.html">createDataPartition</a></span><span class="op">(</span><span class="va">ames</span><span class="op">$</span><span class="va">SalePrice</span>, p <span class="op">=</span> <span class="fl">0.75</span>, list <span class="op">=</span> <span class="cn">FALSE</span><span class="op">)</span>
 
@@ -761,14 +762,14 @@
 ## ridge   24044.91 29603.57 30799.80 32919.29 37210.80 45150.33    0
 ## lasso   23614.27 29604.97 31077.67 32800.93 37787.06 44271.58    0
 ## elastic 23725.92 29688.82 31124.32 32770.19 37752.31 44115.51    0</code></pre>
-<div class="sourceCode" id="cb240"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb244"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="co"># Since Elastic model has the lowest mean RMSE, we can conclude that the Elastic model is the best.</span></code></pre></div>
 </div>
 <div id="classification" class="section level3">
 <h3>
-<span class="header-section-number">22.0.5</span> Classification<a class="anchor" aria-label="anchor" href="#classification"><i class="fas fa-link"></i></a>
+<span class="header-section-number">23.0.5</span> Classification<a class="anchor" aria-label="anchor" href="#classification"><i class="fas fa-link"></i></a>
 </h3>
-<div class="sourceCode" id="cb241"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb245"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="co"># Data</span>
 
 <span class="fu"><a href="https://rdrr.io/r/utils/data.html">data</a></span><span class="op">(</span><span class="st">"PimaIndiansDiabetes2"</span>, package <span class="op">=</span> <span class="st">"mlbench"</span><span class="op">)</span>
@@ -823,7 +824,7 @@
 ## AIC: 285.18
 ## 
 ## Number of Fisher Scoring iterations: 5</code></pre>
-<div class="sourceCode" id="cb243"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb247"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="va">probabilities</span> <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/stats/predict.html">predict</a></span><span class="op">(</span><span class="va">model</span>, <span class="va">test.data</span>, type <span class="op">=</span> <span class="st">"response"</span><span class="op">)</span>
 <span class="va">probabilities</span></code></pre></div>
 <pre><code>##          19          21          32          55          64          71 
@@ -852,12 +853,12 @@
 ## 0.485455842 0.290737653 0.141965217 0.925604098 0.839268863 0.161190610 
 ##         722         731         733         734         746         766 
 ## 0.168129887 0.191170873 0.852375783 0.078840151 0.305248512 0.125461309</code></pre>
-<div class="sourceCode" id="cb245"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb249"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="fu"><a href="https://rdrr.io/r/stats/contrasts.html">contrasts</a></span><span class="op">(</span><span class="va">diabetes</span><span class="op">)</span></code></pre></div>
 <pre><code>##     pos
 ## neg   0
 ## pos   1</code></pre>
-<div class="sourceCode" id="cb247"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb251"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="va">predicted.classes</span> <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/ifelse.html">ifelse</a></span><span class="op">(</span><span class="va">probabilities</span> <span class="op">&gt;</span> <span class="fl">0.5</span>, <span class="st">"pos"</span>, <span class="st">"neg"</span><span class="op">)</span>
 <span class="va">predicted.classes</span></code></pre></div>
 <pre><code>##    19    21    32    55    64    71    72    74    98    99   108   111   115 
@@ -872,7 +873,7 @@
 ## "pos" "neg" "neg" "neg" "pos" "neg" "neg" "neg" "neg" "neg" "pos" "neg" "neg" 
 ##   694   697   699   710   716   717   719   722   731   733   734   746   766 
 ## "pos" "neg" "neg" "neg" "pos" "pos" "neg" "neg" "neg" "pos" "neg" "neg" "neg"</code></pre>
-<div class="sourceCode" id="cb249"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb253"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="fu">caret</span><span class="fu">::</span><span class="fu"><a href="https://rdrr.io/pkg/caret/man/confusionMatrix.html">confusionMatrix</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/factor.html">factor</a></span><span class="op">(</span><span class="va">predicted.classes</span><span class="op">)</span>,
                 <span class="fu"><a href="https://rdrr.io/r/base/factor.html">factor</a></span><span class="op">(</span><span class="va">test.data</span><span class="op">$</span><span class="va">diabetes</span><span class="op">)</span>,
                 positive <span class="op">=</span> <span class="st">"pos"</span><span class="op">)</span></code></pre></div>
@@ -903,7 +904,7 @@
 ##                                          
 ##        'Positive' Class : pos            
 ## </code></pre>
-<div class="sourceCode" id="cb251"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb255"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="co"># Stepwise regression</span>
 
 <span class="va">step</span> <span class="op">=</span> <span class="fu">MASS</span><span class="fu">::</span><span class="fu"><a href="https://rdrr.io/pkg/MASS/man/stepAIC.html">stepAIC</a></span><span class="op">(</span><span class="va">model</span>, direction <span class="op">=</span> <span class="st">"both"</span>, k <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/Log.html">log</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/nrow.html">nrow</a></span><span class="op">(</span><span class="va">PimaIndiansDiabetes2</span><span class="op">)</span><span class="op">)</span>, trace <span class="op">=</span> <span class="cn">FALSE</span><span class="op">)</span>
@@ -925,7 +926,7 @@
 ## 3  - insulin  1 0.1591672501       307   267.3425 309.1413
 ## 4  - triceps  1 0.4434205054       308   267.7859 303.6135
 ## 5      - age  1 2.4276790188       309   270.2136 300.0699</code></pre>
-<div class="sourceCode" id="cb253"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb257"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="co"># Best subset regression</span>
 
 <span class="va">cv_data</span> <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/stats/model.matrix.html">model.matrix</a></span><span class="op">(</span> <span class="op">~</span> <span class="va">.</span>, <span class="va">PimaIndiansDiabetes2</span><span class="op">)</span><span class="op">[</span>,<span class="op">-</span><span class="fl">1</span><span class="op">]</span>
@@ -941,7 +942,7 @@
 ## mass          0.07444854 0.020266697  3.673442 2.393046e-04
 ## pedigree      1.08712862 0.419408437  2.592052 9.540525e-03
 ## age           0.05301206 0.013439480  3.944502 7.996582e-05</code></pre>
-<div class="sourceCode" id="cb255"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb259"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="kw"><a href="https://rdrr.io/r/base/detach.html">detach</a></span><span class="op">(</span><span class="va">PimaIndiansDiabetes2</span><span class="op">)</span>
 
 <span class="co"># Decision Tree Classification</span>
@@ -974,7 +975,7 @@
 <span class="va">model</span> <span class="op">=</span> <span class="fu">rpart</span><span class="fu">::</span><span class="fu"><a href="https://rdrr.io/pkg/rpart/man/rpart.html">rpart</a></span><span class="op">(</span><span class="va">Survived</span> <span class="op">~</span> <span class="va">.</span>, data <span class="op">=</span> <span class="va">train.data</span>, control <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/pkg/rpart/man/rpart.control.html">rpart.control</a></span><span class="op">(</span>cp <span class="op">=</span> <span class="fl">0</span><span class="op">)</span><span class="op">)</span>
 <span class="fu">rattle</span><span class="fu">::</span><span class="fu"><a href="https://rdrr.io/pkg/rattle/man/fancyRpartPlot.html">fancyRpartPlot</a></span><span class="op">(</span><span class="va">model</span>, cex <span class="op">=</span> <span class="fl">0.5</span><span class="op">)</span></code></pre></div>
 <div class="inline-figure"><img src="r_regress_classify_files/figure-html/unnamed-chunk-5-1.png" width="672" style="display: block; margin: auto;"></div>
-<div class="sourceCode" id="cb256"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb260"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="fu"><a href="https://rdrr.io/r/base/Random.html">set.seed</a></span><span class="op">(</span><span class="fl">123</span><span class="op">)</span>
 <span class="va">train.data</span><span class="op">$</span><span class="va">Survived</span> <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/factor.html">as.factor</a></span><span class="op">(</span><span class="va">train.data</span><span class="op">$</span><span class="va">Survived</span><span class="op">)</span>
 <span class="va">model2</span> <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/pkg/caret/man/train.html">train</a></span><span class="op">(</span><span class="va">Survived</span> <span class="op">~</span> <span class="va">.</span>, 
@@ -985,7 +986,7 @@
 
 <span class="fu"><a href="https://rdrr.io/pkg/rattle/man/fancyRpartPlot.html">fancyRpartPlot</a></span><span class="op">(</span><span class="va">model2</span><span class="op">$</span><span class="va">finalModel</span>, cex <span class="op">=</span> <span class="fl">0.6</span><span class="op">)</span></code></pre></div>
 <div class="inline-figure"><img src="r_regress_classify_files/figure-html/unnamed-chunk-5-2.png" width="672" style="display: block; margin: auto;"></div>
-<div class="sourceCode" id="cb257"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb261"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="va">probabilities</span> <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/stats/predict.html">predict</a></span><span class="op">(</span><span class="va">model2</span>, newdata <span class="op">=</span> <span class="va">test.data</span><span class="op">)</span>
 <span class="co"># we don't need to do  contrasts since Survived is already given in o and 1.</span>
 <span class="va">predicted.classes</span> <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/ifelse.html">ifelse</a></span><span class="op">(</span><span class="va">probabilities</span> <span class="op">==</span> <span class="fl">1</span>, <span class="st">"1"</span>, <span class="st">"0"</span><span class="op">)</span>
@@ -1020,7 +1021,7 @@
 ##                                          
 ##        'Positive' Class : 1              
 ## </code></pre>
-<div class="sourceCode" id="cb259"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb263"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="co"># Random Forest</span>
 
 <span class="fu"><a href="https://rdrr.io/r/base/Random.html">set.seed</a></span><span class="op">(</span><span class="fl">123</span><span class="op">)</span>
@@ -1062,10 +1063,10 @@
 ##                                          
 ##        'Positive' Class : 1              
 ## </code></pre>
-<div class="sourceCode" id="cb261"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb265"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="fu">randomForest</span><span class="fu">::</span><span class="fu"><a href="https://rdrr.io/pkg/randomForest/man/varImpPlot.html">varImpPlot</a></span><span class="op">(</span><span class="va">model3</span><span class="op">$</span><span class="va">finalModel</span>, type <span class="op">=</span> <span class="fl">1</span><span class="op">)</span> <span class="co"># MeanDecreaseAccuracy</span></code></pre></div>
 <div class="inline-figure"><img src="r_regress_classify_files/figure-html/unnamed-chunk-5-3.png" width="672" style="display: block; margin: auto;"></div>
-<div class="sourceCode" id="cb262"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb266"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="fu">caret</span><span class="fu">::</span><span class="fu"><a href="https://rdrr.io/pkg/caret/man/varImp.html">varImp</a></span><span class="op">(</span><span class="va">model3</span>, type <span class="op">=</span> <span class="fl">1</span><span class="op">)</span></code></pre></div>
 <pre><code>## rf variable importance
 ## 
@@ -1080,10 +1081,10 @@
 ## EmbarkedS     3.630
 ## EmbarkedC     3.560
 ## PassengerId   0.000</code></pre>
-<div class="sourceCode" id="cb264"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb268"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="fu">randomForest</span><span class="fu">::</span><span class="fu"><a href="https://rdrr.io/pkg/randomForest/man/varImpPlot.html">varImpPlot</a></span><span class="op">(</span><span class="va">model3</span><span class="op">$</span><span class="va">finalModel</span>, type <span class="op">=</span> <span class="fl">2</span><span class="op">)</span> <span class="co"># MeanDecreaseGini</span></code></pre></div>
 <div class="inline-figure"><img src="r_regress_classify_files/figure-html/unnamed-chunk-5-4.png" width="672" style="display: block; margin: auto;"></div>
-<div class="sourceCode" id="cb265"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb269"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="fu">caret</span><span class="fu">::</span><span class="fu"><a href="https://rdrr.io/pkg/caret/man/varImp.html">varImp</a></span><span class="op">(</span><span class="va">model3</span>, type <span class="op">=</span> <span class="fl">2</span><span class="op">)</span></code></pre></div>
 <pre><code>## rf variable importance
 ## 
@@ -1098,23 +1099,23 @@
 ## EmbarkedS     3.623
 ## EmbarkedC     3.606
 ## EmbarkedQ     0.000</code></pre>
-<div class="sourceCode" id="cb267"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb271"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="kw"><a href="https://rdrr.io/r/base/detach.html">detach</a></span><span class="op">(</span><span class="va">data</span><span class="op">)</span></code></pre></div>
 
 </div>
 </div>
   <div class="chapter-nav">
-<div class="prev"><a href="multithreading-crawler-frame.html"><span class="header-section-number">21</span> Multithreading Crawler Frame</a></div>
-<div class="next"><a href="tibble-vs.-dataframe.html"><span class="header-section-number">23</span> Tibble vs. DataFrame</a></div>
+<div class="prev"><a href="multithreading-crawler-frame.html"><span class="header-section-number">22</span> Multithreading Crawler Frame</a></div>
+<div class="next"><a href="tibble-vs.-dataframe.html"><span class="header-section-number">24</span> Tibble vs. DataFrame</a></div>
 </div></main><div class="col-md-3 col-lg-2 d-none d-md-block sidebar sidebar-chapter">
     <nav id="toc" data-toggle="toc" aria-label="On this page"><h2>On this page</h2>
       <ul class="nav navbar-nav"><li>
-<a class="nav-link" href="#regression-and-classification-in-r"><span class="header-section-number">22</span> Regression and Classification in R</a><ul class="nav navbar-nav">
-<li><a class="nav-link" href="#libraries-and-warnings"><span class="header-section-number">22.0.1</span> Libraries and Warnings</a></li>
-<li><a class="nav-link" href="#reading-data"><span class="header-section-number">22.0.2</span> Reading Data</a></li>
-<li><a class="nav-link" href="#data-preprocessing"><span class="header-section-number">22.0.3</span> Data Preprocessing</a></li>
-<li><a class="nav-link" href="#regression"><span class="header-section-number">22.0.4</span> Regression</a></li>
-<li><a class="nav-link" href="#classification"><span class="header-section-number">22.0.5</span> Classification</a></li>
+<a class="nav-link" href="#regression-and-classification-in-r"><span class="header-section-number">23</span> Regression and Classification in R</a><ul class="nav navbar-nav">
+<li><a class="nav-link" href="#libraries-and-warnings"><span class="header-section-number">23.0.1</span> Libraries and Warnings</a></li>
+<li><a class="nav-link" href="#reading-data"><span class="header-section-number">23.0.2</span> Reading Data</a></li>
+<li><a class="nav-link" href="#data-preprocessing"><span class="header-section-number">23.0.3</span> Data Preprocessing</a></li>
+<li><a class="nav-link" href="#regression"><span class="header-section-number">23.0.4</span> Regression</a></li>
+<li><a class="nav-link" href="#classification"><span class="header-section-number">23.0.5</span> Classification</a></li>
 </ul>
 </li></ul>
 

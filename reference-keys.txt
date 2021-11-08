@@ -40,6 +40,14 @@ simple-network
 customized-network
 reference
 create-regression-assumption-plots-in-word
+from-neo4j-to-rstudio
+introduction-of-graph-database
+installation
+neo4j-installation
+r-package-installation
+connection
+retrieving-data-from-neo4j
+visualize-with-ggraph
 r-vs.-python-visualization-cheatsheet
 rpackage-waffle-cheatsheet
 r-cheatsheet-on-data-transforamtion-and-exploration
@@ -265,7 +273,7 @@ references
 supervised-learning-tutorial
 linear-association-r-studio-plugin
 introduction-5
-installation
+installation-1
 usage
 note-this-addin-runs-on-library-tidyverse.-please-run-the-following-command-first-before-running-into-next-step
 example
