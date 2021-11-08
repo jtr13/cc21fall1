@@ -69,6 +69,7 @@ Imports:
     pROC,
     PRROC,
     purrr,
+    RANN,
     raster,
     rattle,
     RColorBrewer,

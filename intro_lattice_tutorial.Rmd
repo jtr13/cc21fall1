@@ -1,3 +1,5 @@
+# (PART) Data Visualizations {-}
+
 # Introduction to the lattice package
 
 Eubin Park
