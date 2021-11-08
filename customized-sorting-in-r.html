@@ -4,15 +4,15 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<title>Chapter 42 Customized Sorting in R | EDAV Fall 2021 Mon/Wed Community Contributions</title>
+<title>Chapter 43 Customized Sorting in R | EDAV Fall 2021 Mon/Wed Community Contributions</title>
 <meta name="author" content="the students of the class">
 <meta name="description" content="Xuchen Wang The idea of this package comes from the lack of sorting function in R, which uses the order function to sort and really caused some confusion for me. In addition, user defined...">
 <meta name="generator" content="bookdown 0.24 with bs4_book()">
-<meta property="og:title" content="Chapter 42 Customized Sorting in R | EDAV Fall 2021 Mon/Wed Community Contributions">
+<meta property="og:title" content="Chapter 43 Customized Sorting in R | EDAV Fall 2021 Mon/Wed Community Contributions">
 <meta property="og:type" content="book">
 <meta property="og:description" content="Xuchen Wang The idea of this package comes from the lack of sorting function in R, which uses the order function to sort and really caused some confusion for me. In addition, user defined...">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Chapter 42 Customized Sorting in R | EDAV Fall 2021 Mon/Wed Community Contributions">
+<meta name="twitter:title" content="Chapter 43 Customized Sorting in R | EDAV Fall 2021 Mon/Wed Community Contributions">
 <meta name="twitter:description" content="Xuchen Wang The idea of this package comes from the lack of sorting function in R, which uses the order function to sort and really caused some confusion for me. In addition, user defined...">
 <!-- JS --><script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.6/clipboard.min.js" integrity="sha256-inc5kl9MA1hkeYUt+EC3BhlIgyp/2jDIyBLS6k3UxPI=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/fuse.js/6.4.6/fuse.js" integrity="sha512-zv6Ywkjyktsohkbp9bb45V6tEMoWhzFzXis+LrMehmJZZSys19Yxf1dopHx7WzIKxr5tK2dVcYmaCk2uqdjF4A==" crossorigin="anonymous"></script><script src="https://kit.fontawesome.com/6ecbd6c532.js" crossorigin="anonymous"></script><script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <link href="libs/bootstrap-4.6.0/bootstrap.min.css" rel="stylesheet">
@@ -89,14 +89,16 @@
 <li><a class="" href="supervised-learning-tutorial.html"><span class="header-section-number">38</span> Supervised Learning Tutorial</a></li>
 <li><a class="" href="parallel-coordinate-plots-in-ggplot2.html"><span class="header-section-number">39</span> Parallel Coordinate Plots in ggplot2</a></li>
 <li><a class="" href="using-ggplot-in-python.html"><span class="header-section-number">40</span> Using ggplot in python</a></li>
+<li class="book-part">Data Visualizations</li>
+<li><a class="" href="icons-and-symbols-in-r.html"><span class="header-section-number">41</span> Icons and symbols in R</a></li>
 <li class="book-part">Demonstrations</li>
-<li><a class="" href="linear-association-r-studio-plugin.html"><span class="header-section-number">41</span> Linear Association R Studio Plugin</a></li>
-<li><a class="active" href="customized-sorting-in-r.html"><span class="header-section-number">42</span> Customized Sorting in R</a></li>
+<li><a class="" href="linear-association-r-studio-plugin.html"><span class="header-section-number">42</span> Linear Association R Studio Plugin</a></li>
+<li><a class="active" href="customized-sorting-in-r.html"><span class="header-section-number">43</span> Customized Sorting in R</a></li>
 <li class="book-part">Workshops</li>
-<li><a class="" href="data-science-product-cycles-in-enterprises.html"><span class="header-section-number">43</span> Data Science Product Cycles in Enterprises</a></li>
+<li><a class="" href="data-science-product-cycles-in-enterprises.html"><span class="header-section-number">44</span> Data Science Product Cycles in Enterprises</a></li>
 <li class="book-part">Appendices</li>
-<li><a class="" href="github-initial-setup.html"><span class="header-section-number">44</span> Github initial setup</a></li>
-<li><a class="" href="tutorial-for-pull-request-mergers.html"><span class="header-section-number">45</span> Tutorial for pull request mergers</a></li>
+<li><a class="" href="github-initial-setup.html"><span class="header-section-number">45</span> Github initial setup</a></li>
+<li><a class="" href="tutorial-for-pull-request-mergers.html"><span class="header-section-number">46</span> Tutorial for pull request mergers</a></li>
 </ul>
 
         <div class="book-extra">
@@ -106,7 +108,7 @@
 </div>
   </header><main class="col-sm-12 col-md-9 col-lg-7" id="content"><div id="customized-sorting-in-r" class="section level1">
 <h1>
-<span class="header-section-number">42</span> Customized Sorting in R<a class="anchor" aria-label="anchor" href="#customized-sorting-in-r"><i class="fas fa-link"></i></a>
+<span class="header-section-number">43</span> Customized Sorting in R<a class="anchor" aria-label="anchor" href="#customized-sorting-in-r"><i class="fas fa-link"></i></a>
 </h1>
 <p>Xuchen Wang</p>
 <p>The idea of this package comes from the lack of sorting function in R, which uses the order function to sort and really caused some confusion for me. In addition, user defined functions are not applicable, so I would like to implement the sort function by myself.</p>
@@ -122,7 +124,7 @@ x[[2]]&lt;y[[2]]
 }</p>
 <p>lst&lt;-sort(lst,compare)</p>
 <p>lst would be [[2,2,8],[9,5,2],[3,6,7]] now</p>
-<div class="sourceCode" id="cb600"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb614"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="va">lstmerge</span><span class="op">&lt;-</span><span class="kw">function</span><span class="op">(</span><span class="va">l1</span>,<span class="va">l2</span>,<span class="va">comp</span><span class="op">)</span> <span class="op">{</span>
   <span class="va">m</span><span class="op">&lt;-</span><span class="fu"><a href="https://rdrr.io/r/base/length.html">length</a></span><span class="op">(</span><span class="va">l1</span><span class="op">)</span>
   <span class="va">n</span><span class="op">&lt;-</span><span class="fu"><a href="https://rdrr.io/r/base/length.html">length</a></span><span class="op">(</span><span class="va">l2</span><span class="op">)</span>
@@ -161,7 +163,7 @@ x[[2]]&lt;y[[2]]
   
 <span class="op">}</span></code></pre></div>
 <p>example:</p>
-<div class="sourceCode" id="cb601"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb615"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="va">lst</span><span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/lapply.html">lapply</a></span><span class="op">(</span><span class="fl">1</span><span class="op">:</span><span class="fl">100</span>, <span class="kw">function</span><span class="op">(</span><span class="va">x</span><span class="op">)</span> <span class="fu"><a href="https://rdrr.io/r/base/list.html">as.list</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/sample.html">sample</a></span><span class="op">(</span><span class="fl">1</span><span class="op">:</span><span class="fl">100</span>,size<span class="op">=</span><span class="fl">2</span><span class="op">)</span><span class="op">)</span><span class="op">)</span>
 <span class="fu"><a href="https://rdrr.io/r/base/lapply.html">sapply</a></span><span class="op">(</span><span class="va">lst</span>,<span class="kw">function</span><span class="op">(</span><span class="va">x</span><span class="op">)</span> <span class="va">x</span><span class="op">[[</span><span class="fl">2</span><span class="op">]</span><span class="op">]</span><span class="op">)</span></code></pre></div>
 <pre><code>##   [1]  62  78  55   5  87  84  54  81  70  69  25  60 100  50  61   1  23  29
@@ -170,7 +172,7 @@ x[[2]]&lt;y[[2]]
 ##  [55]  91  88  98  22  98  34  45  33  98  85   9  73   7  44  58  41  85  30
 ##  [73]  19  24  19  90  74  35  50  45 100  94  36  21  35  34  14  15  40  19
 ##  [91]   4  84   8  26  34   9  37  36  26  34</code></pre>
-<div class="sourceCode" id="cb603"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb617"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="va">compare</span><span class="op">&lt;-</span><span class="kw">function</span><span class="op">(</span><span class="va">x</span>,<span class="va">y</span><span class="op">)</span> <span class="op">{</span>
   <span class="va">x</span><span class="op">[[</span><span class="fl">2</span><span class="op">]</span><span class="op">]</span><span class="op">&lt;</span><span class="va">y</span><span class="op">[[</span><span class="fl">2</span><span class="op">]</span><span class="op">]</span>
 <span class="op">}</span>
@@ -184,7 +186,7 @@ x[[2]]&lt;y[[2]]
 ##  [73]  78  78  78  78  78  79  81  84  84  84  85  85  87  87  88  90  90  91
 ##  [91]  92  94  94  95  98  98  98 100 100 100</code></pre>
 <p>to sort a list of vector just change the compare function:</p>
-<div class="sourceCode" id="cb605"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb619"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="va">lst</span><span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/lapply.html">lapply</a></span><span class="op">(</span><span class="fl">1</span><span class="op">:</span><span class="fl">100</span>, <span class="kw">function</span><span class="op">(</span><span class="va">x</span><span class="op">)</span> <span class="fu"><a href="https://rdrr.io/r/base/sample.html">sample</a></span><span class="op">(</span><span class="fl">1</span><span class="op">:</span><span class="fl">100</span>,size<span class="op">=</span><span class="fl">2</span><span class="op">)</span><span class="op">)</span>
 <span class="fu"><a href="https://rdrr.io/r/base/lapply.html">sapply</a></span><span class="op">(</span><span class="va">lst</span>,<span class="kw">function</span><span class="op">(</span><span class="va">x</span><span class="op">)</span> <span class="va">x</span><span class="op">[</span><span class="fl">2</span><span class="op">]</span><span class="op">)</span></code></pre></div>
 <pre><code>##   [1]  43  38  49  99   7  47  45  75  49  73   9   9  13  45  15  93   9  78
@@ -193,7 +195,7 @@ x[[2]]&lt;y[[2]]
 ##  [55]  36  76  23  54  22  23  74  71  21  21  64  46  93  27  87  45 100  23
 ##  [73]  80  55  72   2  33  79  88  33  30  61  59  35  91  56  76  23  45  44
 ##  [91]  98   7  15  53  31   6  96  89  56  11</code></pre>
-<div class="sourceCode" id="cb607"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb621"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="va">compare2</span><span class="op">&lt;-</span><span class="kw">function</span><span class="op">(</span><span class="va">x</span>,<span class="va">y</span><span class="op">)</span> <span class="op">{</span>
   <span class="va">x</span><span class="op">[</span><span class="fl">2</span><span class="op">]</span><span class="op">&lt;</span><span class="va">y</span><span class="op">[</span><span class="fl">2</span><span class="op">]</span>
 <span class="op">}</span>
@@ -209,7 +211,7 @@ x[[2]]&lt;y[[2]]
 <li>sort a dataframe with user-defined function</li>
 </ol>
 <p>The logic is the same as above, the only thing to notice is that the comparison function takes two rows and compare them</p>
-<div class="sourceCode" id="cb609"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb623"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="va">dfmerge</span><span class="op">&lt;-</span><span class="kw">function</span><span class="op">(</span><span class="va">d1</span>,<span class="va">d2</span>,<span class="va">comp</span><span class="op">)</span> <span class="op">{</span>
   <span class="va">m</span><span class="op">&lt;-</span><span class="fu"><a href="https://rdrr.io/pkg/raster/man/ncell.html">nrow</a></span><span class="op">(</span><span class="va">d1</span><span class="op">)</span>
   <span class="va">n</span><span class="op">&lt;-</span><span class="fu"><a href="https://rdrr.io/pkg/raster/man/ncell.html">nrow</a></span><span class="op">(</span><span class="va">d2</span><span class="op">)</span>
@@ -249,7 +251,7 @@ x[[2]]&lt;y[[2]]
   <span class="kw"><a href="https://rdrr.io/r/base/function.html">return</a></span><span class="op">(</span><span class="fu">dfmerge</span><span class="op">(</span><span class="va">lft</span>,<span class="va">rt</span>,<span class="va">comp</span><span class="op">)</span><span class="op">)</span>
   
 <span class="op">}</span></code></pre></div>
-<div class="sourceCode" id="cb610"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb624"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="va">M</span><span class="op">&lt;-</span><span class="fu"><a href="https://rdrr.io/r/base/matrix.html">matrix</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/sample.html">sample</a></span><span class="op">(</span><span class="fl">1</span><span class="op">:</span><span class="fl">100</span>,<span class="fl">300</span>,replace<span class="op">=</span><span class="cn">TRUE</span><span class="op">)</span>,ncol<span class="op">=</span><span class="fl">3</span><span class="op">)</span>
 <span class="va">df</span><span class="op">&lt;-</span><span class="fu"><a href="https://rdrr.io/r/base/data.frame.html">data.frame</a></span><span class="op">(</span><span class="va">M</span><span class="op">)</span>
 <span class="fu"><a href="https://rdrr.io/r/base/colnames.html">colnames</a></span><span class="op">(</span><span class="va">df</span><span class="op">)</span><span class="op">&lt;-</span><span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"a"</span>,<span class="st">"b"</span>,<span class="st">"c"</span><span class="op">)</span>
@@ -355,7 +357,7 @@ x[[2]]&lt;y[[2]]
 ## 98  26 62  72
 ## 99  56 24  82
 ## 100 96 26  31</code></pre>
-<div class="sourceCode" id="cb612"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb626"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="va">dfcomp</span><span class="op">&lt;-</span><span class="kw">function</span><span class="op">(</span><span class="va">r1</span>,<span class="va">r2</span><span class="op">)</span> <span class="op">{</span>
   <span class="va">r1</span><span class="op">[</span><span class="st">"b"</span><span class="op">]</span><span class="op">[</span><span class="fl">1</span><span class="op">]</span><span class="op">&lt;</span><span class="va">r2</span><span class="op">[</span><span class="st">"b"</span><span class="op">]</span><span class="op">[</span><span class="fl">1</span><span class="op">]</span>
 <span class="op">}</span>
@@ -470,11 +472,11 @@ x[[2]]&lt;y[[2]]
 
 
   <div class="chapter-nav">
-<div class="prev"><a href="linear-association-r-studio-plugin.html"><span class="header-section-number">41</span> Linear Association R Studio Plugin</a></div>
-<div class="next"><a href="data-science-product-cycles-in-enterprises.html"><span class="header-section-number">43</span> Data Science Product Cycles in Enterprises</a></div>
+<div class="prev"><a href="linear-association-r-studio-plugin.html"><span class="header-section-number">42</span> Linear Association R Studio Plugin</a></div>
+<div class="next"><a href="data-science-product-cycles-in-enterprises.html"><span class="header-section-number">44</span> Data Science Product Cycles in Enterprises</a></div>
 </div></main><div class="col-md-3 col-lg-2 d-none d-md-block sidebar sidebar-chapter">
     <nav id="toc" data-toggle="toc" aria-label="On this page"><h2>On this page</h2>
-      <ul class="nav navbar-nav"><li><a class="nav-link" href="#customized-sorting-in-r"><span class="header-section-number">42</span> Customized Sorting in R</a></li></ul>
+      <ul class="nav navbar-nav"><li><a class="nav-link" href="#customized-sorting-in-r"><span class="header-section-number">43</span> Customized Sorting in R</a></li></ul>
 
       <div class="book-extra">
         <ul class="list-unstyled">

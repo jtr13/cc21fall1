@@ -1,0 +1,489 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<title>Chapter 41 Icons and symbols in R | EDAV Fall 2021 Mon/Wed Community Contributions</title>
+<meta name="author" content="the students of the class">
+<meta name="description" content="Chen Jin library(readr) library(ggpubr) library(showtext) library(plyr) library(ggplot2) library(ggimage) library(emojifont) library(personograph)  41.1 Why use Symbols? In class, we’ve been...">
+<meta name="generator" content="bookdown 0.24 with bs4_book()">
+<meta property="og:title" content="Chapter 41 Icons and symbols in R | EDAV Fall 2021 Mon/Wed Community Contributions">
+<meta property="og:type" content="book">
+<meta property="og:description" content="Chen Jin library(readr) library(ggpubr) library(showtext) library(plyr) library(ggplot2) library(ggimage) library(emojifont) library(personograph)  41.1 Why use Symbols? In class, we’ve been...">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Chapter 41 Icons and symbols in R | EDAV Fall 2021 Mon/Wed Community Contributions">
+<meta name="twitter:description" content="Chen Jin library(readr) library(ggpubr) library(showtext) library(plyr) library(ggplot2) library(ggimage) library(emojifont) library(personograph)  41.1 Why use Symbols? In class, we’ve been...">
+<!-- JS --><script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.6/clipboard.min.js" integrity="sha256-inc5kl9MA1hkeYUt+EC3BhlIgyp/2jDIyBLS6k3UxPI=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/fuse.js/6.4.6/fuse.js" integrity="sha512-zv6Ywkjyktsohkbp9bb45V6tEMoWhzFzXis+LrMehmJZZSys19Yxf1dopHx7WzIKxr5tK2dVcYmaCk2uqdjF4A==" crossorigin="anonymous"></script><script src="https://kit.fontawesome.com/6ecbd6c532.js" crossorigin="anonymous"></script><script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<link href="libs/bootstrap-4.6.0/bootstrap.min.css" rel="stylesheet">
+<script src="libs/bootstrap-4.6.0/bootstrap.bundle.min.js"></script><script src="libs/bs3compat-0.3.1/transition.js"></script><script src="libs/bs3compat-0.3.1/tabs.js"></script><script src="libs/bs3compat-0.3.1/bs3compat.js"></script><link href="libs/bs4_book-1.0.0/bs4_book.css" rel="stylesheet">
+<script src="libs/bs4_book-1.0.0/bs4_book.js"></script><script src="libs/accessible-code-block-0.0.1/empty-anchor.js"></script><script src="libs/htmlwidgets-1.5.4/htmlwidgets.js"></script><script src="libs/plotly-binding-4.10.0/plotly.js"></script><script src="libs/typedarray-0.1/typedarray.min.js"></script><link href="libs/crosstalk-1.2.0/css/crosstalk.min.css" rel="stylesheet">
+<script src="libs/crosstalk-1.2.0/js/crosstalk.min.js"></script><link href="libs/plotly-htmlwidgets-css-2.5.1/plotly-htmlwidgets.css" rel="stylesheet">
+<script src="libs/plotly-main-2.5.1/plotly-latest.min.js"></script><link href="libs/dygraphs-1.1.1/dygraph.css" rel="stylesheet">
+<script src="libs/dygraphs-1.1.1/dygraph-combined.js"></script><script src="libs/dygraphs-1.1.1/shapes.js"></script><script src="libs/moment-2.8.4/moment.js"></script><script src="libs/moment-timezone-0.2.5/moment-timezone-with-data.js"></script><script src="libs/moment-fquarter-1.0.0/moment-fquarter.min.js"></script><script src="libs/dygraphs-binding-1.1.1.6/dygraphs.js"></script><script src="libs/d3-5.16.0/d3.min.js"></script><script src="libs/forceNetwork-binding-0.4/forceNetwork.js"></script><link href="libs/parallel-coordinates-2.1.8/parcoords.css" rel="stylesheet">
+<script src="libs/parcoords-binding-1.0.0/parcoords.js"></script><script src="libs/detect-resize-0.5.3/jquery.resize.js"></script><link href="libs/jquery-ui-1.11.4/jquery-ui.min.css" rel="stylesheet">
+<script src="libs/jquery-ui-1.11.4/jquery-ui.min.js"></script><script src="libs/vega-1.4.3/vega.min.js"></script><script src="libs/lodash-2.2.1/lodash.min.js"></script><script>var lodash = _.noConflict();</script><link href="libs/ggvis-0.4.7/css/ggvis.css" rel="stylesheet">
+<script src="libs/ggvis-0.4.7/js/ggvis.js"></script><script src="libs/dendroNetwork-binding-0.4/dendroNetwork.js"></script><link href="libs/str_view-0.1.0/str_view.css" rel="stylesheet">
+<script src="libs/str_view-binding-1.4.0/str_view.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/autocomplete.js/0.38.0/autocomplete.jquery.min.js" integrity="sha512-GU9ayf+66Xx2TmpxqJpliWbT5PiGYxpaG8rfnBEk1LL8l1KGkRShhngwdXK1UgqhAzWpZHSiYPc09/NwDQIGyg==" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/mark.min.js" integrity="sha512-5CYOlHXGh6QpOFA/TeTylKLWfB3ftPsde7AnmhuitiTX4K5SqCLBeKro6sPS8ilsz1Q4NRx3v8Ko2IBiszzdww==" crossorigin="anonymous"></script><!-- CSS -->
+</head>
+<body data-spy="scroll" data-target="#toc">
+
+<div class="container-fluid">
+<div class="row">
+  <header class="col-sm-12 col-lg-3 sidebar sidebar-book"><a class="sr-only sr-only-focusable" href="#content">Skip to main content</a>
+
+    <div class="d-flex align-items-start justify-content-between">
+      <h1>
+        <a href="index.html" title="">EDAV Fall 2021 Mon/Wed Community Contributions</a>
+      </h1>
+      <button class="btn btn-outline-primary d-lg-none ml-2 mt-1" type="button" data-toggle="collapse" data-target="#main-nav" aria-expanded="true" aria-controls="main-nav"><i class="fas fa-bars"></i><span class="sr-only">Show table of contents</span></button>
+    </div>
+
+    <div id="main-nav" class="collapse-lg">
+      <form role="search">
+        <input id="search" class="form-control" type="search" placeholder="Search" aria-label="Search">
+</form>
+
+      <nav aria-label="Table of contents"><h2>Table of contents</h2>
+        <ul class="book-toc list-unstyled">
+<li><a class="" href="index.html"><span class="header-section-number">1</span> Welcome!</a></li>
+<li><a class="" href="community-contribution.html"><span class="header-section-number">2</span> Community Contribution</a></li>
+<li><a class="" href="github-submission-instructions.html"><span class="header-section-number">3</span> GitHub submission instructions</a></li>
+<li><a class="" href="sample-project.html"><span class="header-section-number">4</span> Sample project</a></li>
+<li class="book-part">Data Visualizations</li>
+<li><a class="" href="introduction-to-the-lattice-package.html"><span class="header-section-number">5</span> Introduction to the lattice package</a></li>
+<li><a class="" href="graph-animation-with-gganimate-and-after-effects.html"><span class="header-section-number">6</span> Graph animation with gganimate and After Effects</a></li>
+<li><a class="" href="interactive-plots.html"><span class="header-section-number">7</span> Interactive Plots</a></li>
+<li><a class="" href="create-regression-assumption-plots-in-word.html"><span class="header-section-number">8</span> Create regression assumption plots in Word</a></li>
+<li><a class="" href="from-neo4j-to-rstudio.html"><span class="header-section-number">9</span> From Neo4j to RStudio</a></li>
+<li class="book-part">Cheatsheets</li>
+<li><a class="" href="r-vs.-python-visualization-cheatsheet.html"><span class="header-section-number">10</span> R vs. Python Visualization Cheatsheet</a></li>
+<li><a class="" href="rpackage-waffle-cheatsheet.html"><span class="header-section-number">11</span> Rpackage waffle cheatsheet</a></li>
+<li><a class="" href="r-cheatsheet-on-data-transforamtion-and-exploration.html"><span class="header-section-number">12</span> R cheatsheet on data transforamtion and exploration</a></li>
+<li><a class="" href="r-vs-python-basic-data-wrangling.html"><span class="header-section-number">13</span> R vs Python Basic Data Wrangling</a></li>
+<li><a class="" href="tidyverse_cheatsheet.html"><span class="header-section-number">14</span> tidyverse_cheatsheet</a></li>
+<li><a class="" href="cheatsheet-tidyverse.html"><span class="header-section-number">15</span> Cheatsheet Tidyverse</a></li>
+<li><a class="" href="use-of-ggprism-and-ggsci-packages.html"><span class="header-section-number">16</span> Use of ggprism and ggsci packages</a></li>
+<li><a class="" href="interactive-plot-introduction.html"><span class="header-section-number">17</span> Interactive plot introduction</a></li>
+<li><a class="" href="common-r-markdown-syntax-cheatsheet.html"><span class="header-section-number">18</span> Common R markdown syntax cheatsheet</a></li>
+<li><a class="" href="header.html"><span class="header-section-number">19</span> Header</a></li>
+<li><a class="" href="parallel-coordinates-plot-cheatsheet.html"><span class="header-section-number">20</span> Parallel coordinates plot cheatsheet</a></li>
+<li><a class="" href="r-data-science-workflow-cheatsheet.html"><span class="header-section-number">21</span> R Data Science Workflow CheatSheet</a></li>
+<li><a class="" href="a-linear-regression-bestiary.html"><span class="header-section-number">22</span> A linear regression Bestiary</a></li>
+<li class="book-part">Tutorials</li>
+<li><a class="" href="multithreading-crawler-frame.html"><span class="header-section-number">23</span> Multithreading Crawler Frame</a></li>
+<li><a class="" href="regression-and-classification-in-r.html"><span class="header-section-number">24</span> Regression and Classification in R</a></li>
+<li><a class="" href="tibble-vs.-dataframe.html"><span class="header-section-number">25</span> Tibble vs. DataFrame</a></li>
+<li><a class="" href="introduction-to-time-series.html"><span class="header-section-number">26</span> Introduction to Time Series</a></li>
+<li><a class="" href="vipul-edav-community-contribution-kickstart-r.html"><span class="header-section-number">27</span> Vipul EDAV Community Contribution Kickstart R</a></li>
+<li><a class="" href="caret---a-machine-learning-package-turotial.html"><span class="header-section-number">28</span> caret - a machine learning package turotial</a></li>
+<li><a class="" href="streamlit-for-financial-analysis.html"><span class="header-section-number">29</span> Streamlit for Financial Analysis</a></li>
+<li><a class="" href="interactive-graphs-tutorial.html"><span class="header-section-number">30</span> Interactive graphs tutorial</a></li>
+<li><a class="" href="guideline-on-using-package-rcurl-and-xml-for-web-scraping.html"><span class="header-section-number">31</span> Guideline on Using Package Rcurl and XML for Web Scraping</a></li>
+<li><a class="" href="twitter-r-package-scraping-via-api-tutorial.html"><span class="header-section-number">32</span> TwitteR R Package Scraping via API Tutorial</a></li>
+<li><a class="" href="introduction-to-data-manipulation.html"><span class="header-section-number">33</span> Introduction to Data Manipulation</a></li>
+<li><a class="" href="animating-the-plots-in-r.html"><span class="header-section-number">34</span> Animating the plots in R</a></li>
+<li><a class="" href="quick-guide-to-eda.html"><span class="header-section-number">35</span> Quick guide to eda</a></li>
+<li><a class="" href="natural-langauge-processing-common-eda-practices-in-python.html"><span class="header-section-number">36</span> Natural Langauge Processing Common EDA Practices in Python</a></li>
+<li><a class="" href="beginners-walk-through-of-deep-learning-in-r.html"><span class="header-section-number">37</span> Beginner’s Walk-through of Deep Learning in R</a></li>
+<li><a class="" href="supervised-learning-tutorial.html"><span class="header-section-number">38</span> Supervised Learning Tutorial</a></li>
+<li><a class="" href="parallel-coordinate-plots-in-ggplot2.html"><span class="header-section-number">39</span> Parallel Coordinate Plots in ggplot2</a></li>
+<li><a class="" href="using-ggplot-in-python.html"><span class="header-section-number">40</span> Using ggplot in python</a></li>
+<li class="book-part">Data Visualizations</li>
+<li><a class="active" href="icons-and-symbols-in-r.html"><span class="header-section-number">41</span> Icons and symbols in R</a></li>
+<li class="book-part">Demonstrations</li>
+<li><a class="" href="linear-association-r-studio-plugin.html"><span class="header-section-number">42</span> Linear Association R Studio Plugin</a></li>
+<li><a class="" href="customized-sorting-in-r.html"><span class="header-section-number">43</span> Customized Sorting in R</a></li>
+<li class="book-part">Workshops</li>
+<li><a class="" href="data-science-product-cycles-in-enterprises.html"><span class="header-section-number">44</span> Data Science Product Cycles in Enterprises</a></li>
+<li class="book-part">Appendices</li>
+<li><a class="" href="github-initial-setup.html"><span class="header-section-number">45</span> Github initial setup</a></li>
+<li><a class="" href="tutorial-for-pull-request-mergers.html"><span class="header-section-number">46</span> Tutorial for pull request mergers</a></li>
+</ul>
+
+        <div class="book-extra">
+          <p><a id="book-repo" href="https://github.com/jtr13/cc21fall1">View book source <i class="fab fa-github"></i></a></p>
+        </div>
+      </nav>
+</div>
+  </header><main class="col-sm-12 col-md-9 col-lg-7" id="content"><div id="icons-and-symbols-in-r" class="section level1">
+<h1>
+<span class="header-section-number">41</span> Icons and symbols in R<a class="anchor" aria-label="anchor" href="#icons-and-symbols-in-r"><i class="fas fa-link"></i></a>
+</h1>
+<p>Chen Jin</p>
+<div class="sourceCode" id="cb600"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://readr.tidyverse.org">readr</a></span><span class="op">)</span>
+<span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://rpkgs.datanovia.com/ggpubr/">ggpubr</a></span><span class="op">)</span>
+<span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://github.com/yixuan/showtext">showtext</a></span><span class="op">)</span>
+<span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="http://had.co.nz/plyr">plyr</a></span><span class="op">)</span>
+<span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://ggplot2.tidyverse.org">ggplot2</a></span><span class="op">)</span>
+<span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://github.com/GuangchuangYu/ggimage">ggimage</a></span><span class="op">)</span>
+<span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://github.com/GuangchuangYu/emojifont">emojifont</a></span><span class="op">)</span>
+<span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://github.com/joelkuiper/personograph">personograph</a></span><span class="op">)</span></code></pre></div>
+<div id="why-use-symbols" class="section level2">
+<h2>
+<span class="header-section-number">41.1</span> Why use Symbols?<a class="anchor" aria-label="anchor" href="#why-use-symbols"><i class="fas fa-link"></i></a>
+</h2>
+<p>In class, we’ve been covering a variety of graph types, fundamental plotting techniques, and the proper treatments of different data we get. Equipped with these skills, we’d be able to come up with quite neat and informative visualizations. However, simply taking care of the most basic requirements would only generate an ubiquitous standard-following graph. These graphs may be suitable for a scientific research paper or a presentation on a formal meeting, but there are cases when we need a more lighthearted graph to arouse the viewer’s interest. For instance, in an internet blog or a tweet, we would like the graph to be more entertaining and eye-catching to achieve more views. And one way of doing that is to add easily understandable symbols to the graph.</p>
+</div>
+<div id="pch-in-base-r" class="section level2">
+<h2>
+<span class="header-section-number">41.2</span> ‘pch’ in Base R<a class="anchor" aria-label="anchor" href="#pch-in-base-r"><i class="fas fa-link"></i></a>
+</h2>
+<p>For those of us who’ve had experience with base R for plotting before, we are probably quite familiar with the <code>pch</code> parameter. <code>pch</code> stands for ‘plotting character’, namely symbol to use. It is the standard argument to set the character that will be plotted in a number of R functions. ‘pch’ can either be a single character or an integer code for one of the set of graphic symbols.</p>
+<p>By using the library <a href="https://rpkgs.datanovia.com/ggpubr/">ggpubr</a>, we can see the corresponding <code>pch</code> characters from 1 to 25 as below:</p>
+<div class="sourceCode" id="cb601"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="co"># x &lt;- c(sapply(seq(5, 25, 5), function(i) rep(i, 5)))</span>
+<span class="co"># y &lt;- rep(seq(25, 5, -5), 5)</span>
+<span class="co"># </span>
+<span class="co"># plot(x, y, pch = 1, cex = 3, yaxt = "n", xaxt = "n",</span>
+<span class="co">#      ann = FALSE, xlim = c(1, 29), ylim = c(0, 30), lwd = 1)</span>
+<span class="co"># text(x - 1.5, y, 1:25)</span>
+
+<span class="fu">ggpubr</span><span class="fu">::</span><span class="fu"><a href="https://rpkgs.datanovia.com/ggpubr/reference/show_point_shapes.html">show_point_shapes</a></span><span class="op">(</span><span class="op">)</span></code></pre></div>
+<div class="inline-figure"><img src="icons_and_symbols_in_r_files/figure-html/unnamed-chunk-3-1.png" width="672" style="display: block; margin: auto;"></div>
+<div id="pch-values" class="section level4">
+<h4>
+<span class="header-section-number">41.2.0.1</span> <code>pch</code> values<a class="anchor" aria-label="anchor" href="#pch-values"><i class="fas fa-link"></i></a>
+</h4>
+<p>Values of <code>pch</code> are stored internally as integers. The interpretation is</p>
+<ul>
+<li>
+<strong>NA_integer_ </strong>: no symbol.</li>
+<li>
+<strong>0 : 18</strong>: S-compatible vector symbols.</li>
+<li>
+<strong>19 : 25</strong>: further R vector symbols.</li>
+<li>
+<strong>26 : 31</strong>: unused (and ignored).</li>
+<li>
+<strong>32 : 127</strong>: ASCII characters.</li>
+<li>
+<strong>128 : 255</strong>: native characters only in a single-byte locale and for the symbol font. (128:159 are only used on Windows.)</li>
+<li>
+<strong>-32 … </strong>: Unicode code point (where supported).</li>
+</ul>
+</div>
+<div id="an-example-of-using-pch-iris-data" class="section level4">
+<h4>
+<span class="header-section-number">41.2.0.2</span> An example of using <code>pch</code> (Iris Data)<a class="anchor" aria-label="anchor" href="#an-example-of-using-pch-iris-data"><i class="fas fa-link"></i></a>
+</h4>
+<p>By using different symbols for different species, we can clearly see the variations among the three types.</p>
+<div class="sourceCode" id="cb602"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="co"># Define color for each of the 3 iris species</span>
+<span class="va">colors</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"#00AFBB"</span>, <span class="st">"#E7B800"</span>, <span class="st">"#FC4E07"</span><span class="op">)</span>
+<span class="va">colors</span> <span class="op">&lt;-</span> <span class="va">colors</span><span class="op">[</span><span class="fu"><a href="https://rdrr.io/r/base/numeric.html">as.numeric</a></span><span class="op">(</span><span class="va">iris</span><span class="op">$</span><span class="va">Species</span><span class="op">)</span><span class="op">]</span>
+
+<span class="co"># Define shapes</span>
+<span class="va">shapes</span> <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">16</span>, <span class="fl">17</span>, <span class="fl">18</span><span class="op">)</span> 
+<span class="va">shapes</span> <span class="op">&lt;-</span> <span class="va">shapes</span><span class="op">[</span><span class="fu"><a href="https://rdrr.io/r/base/numeric.html">as.numeric</a></span><span class="op">(</span><span class="va">iris</span><span class="op">$</span><span class="va">Species</span><span class="op">)</span><span class="op">]</span>
+
+<span class="co"># Plot</span>
+<span class="fu"><a href="https://rdrr.io/pkg/raster/man/plot.html">plot</a></span><span class="op">(</span>x <span class="op">=</span> <span class="va">iris</span><span class="op">$</span><span class="va">Sepal.Length</span>, y <span class="op">=</span> <span class="va">iris</span><span class="op">$</span><span class="va">Sepal.Width</span>,
+     xlab <span class="op">=</span> <span class="st">"Sepal Length"</span>, ylab <span class="op">=</span> <span class="st">"Sepal Width"</span>, main <span class="op">=</span> <span class="st">"Sepal Width vs. Length for 3 Species of Iris"</span>,
+     col <span class="op">=</span> <span class="va">colors</span>, pch <span class="op">=</span> <span class="va">shapes</span><span class="op">)</span>
+<span class="fu"><a href="https://rdrr.io/r/graphics/legend.html">legend</a></span><span class="op">(</span><span class="st">"topright"</span>, legend <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/pkg/raster/man/factor.html">levels</a></span><span class="op">(</span><span class="va">iris</span><span class="op">$</span><span class="va">Species</span><span class="op">)</span>,
+      col <span class="op">=</span>  <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"#00AFBB"</span>, <span class="st">"#E7B800"</span>, <span class="st">"#FC4E07"</span><span class="op">)</span>,
+      pch <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">16</span>, <span class="fl">17</span>, <span class="fl">18</span><span class="op">)</span> <span class="op">)</span></code></pre></div>
+<div class="inline-figure"><img src="icons_and_symbols_in_r_files/figure-html/unnamed-chunk-4-1.png" width="672" style="display: block; margin: auto;"></div>
+</div>
+<div id="limitations-of-pch" class="section level4">
+<h4>
+<span class="header-section-number">41.2.0.3</span> Limitations of <code>pch</code>:<a class="anchor" aria-label="anchor" href="#limitations-of-pch"><i class="fas fa-link"></i></a>
+</h4>
+<p>As we can see from the list, the supported symbols are quite limited in R (basically from pch = 1-25 and some ASCII symbols). As the pch numbers goes up, you might encounter the issue that your locale does not support a particular character. Besides, it’s very difficult to try to memorize what each number represents in this cumbersome list, so we would have to always look it up each time we need a particular symbol and check for its availability. Therefore, we will introduce some other appealing techniques as follows.</p>
+</div>
+</div>
+<div id="showtext" class="section level2">
+<h2>
+<span class="header-section-number">41.3</span> showtext<a class="anchor" aria-label="anchor" href="#showtext"><i class="fas fa-link"></i></a>
+</h2>
+<p><code>Showtext</code> is a package originally designed to deal with font issues in R. In many cases, using non-standard fonts in R graphs is not an easy task. For instance, using chinese characters in plotting would oftentimes result in unreadable results.</p>
+<p>Here’s a trick that we can apply to build icons with the help of <code>showtext</code>. There are many fonts that look in the way of symbols, the <code>'wmpeople1'</code> demonstrated below is just one of them. Some other examples of symbol fonts include <code>Wingdings</code>, <code>Dingbat</code>, <code>webdings</code> and etc. By adding these fonts, we then manage to show the symbols as text in a graph. And now the <code><a href="https://ggplot2.tidyverse.org/reference/geom_text.html">geom_text()</a></code> is something that we are all familiar with and we can easily handle and proceed.</p>
+<div id="an-example-of-showtext-demographics-data" class="section level4">
+<h4>
+<span class="header-section-number">41.3.0.1</span> An example of <code>showtext</code> (Demographics Data)<a class="anchor" aria-label="anchor" href="#an-example-of-showtext-demographics-data"><i class="fas fa-link"></i></a>
+</h4>
+<p>This example shows demographics by splitting the population into each subcategories of the education level. The use of symbol clearly indicates it’s a demographic plot by nature and we can clearly distinguish between men and women with their corresponding token.</p>
+<div class="sourceCode" id="cb603"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="fu"><a href="https://rdrr.io/pkg/sysfonts/man/font_add.html">font_add</a></span><span class="op">(</span><span class="st">"wmpeople1"</span>, <span class="st">"resources/icons_and_symbols_in_r/wmpeople1.TTF"</span><span class="op">)</span>
+<span class="fu"><a href="https://rdrr.io/pkg/showtext/man/showtext_auto.html">showtext_auto</a></span><span class="op">(</span><span class="op">)</span>
+
+<span class="va">dat</span> <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/utils/read.table.html">read.csv</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/textconnections.html">textConnection</a></span><span class="op">(</span><span class="st">'
+      edu,educode,gender,population
+      No School,1,m,17464
+      No School,1,f,41268
+      Primary School,2,m,139378
+      Primary School,2,f,154854
+      Middle School,3,m,236369
+      Middle School,3,f,205537
+      High School,4,m,94528
+      High School,4,f,70521
+      Bacherlor or above,5,m,57013
+      Bacherlor or above,5,f,50334
+'</span><span class="op">)</span><span class="op">)</span>
+
+<span class="va">dat</span><span class="op">$</span><span class="va">int</span> <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/Round.html">round</a></span><span class="op">(</span><span class="va">dat</span><span class="op">$</span><span class="va">population</span> <span class="op">/</span> <span class="fl">10000</span><span class="op">)</span>
+<span class="va">gdat</span> <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/pkg/plyr/man/ddply.html">ddply</a></span><span class="op">(</span><span class="va">dat</span>, <span class="st">"educode"</span>, <span class="kw">function</span><span class="op">(</span><span class="va">d</span><span class="op">)</span> <span class="op">{</span>
+    <span class="va">male</span> <span class="op">=</span> <span class="va">d</span><span class="op">$</span><span class="va">int</span><span class="op">[</span><span class="va">d</span><span class="op">$</span><span class="va">gender</span> <span class="op">==</span> <span class="st">"m"</span><span class="op">]</span>
+    <span class="va">female</span> <span class="op">=</span> <span class="va">d</span><span class="op">$</span><span class="va">int</span><span class="op">[</span><span class="va">d</span><span class="op">$</span><span class="va">gender</span> <span class="op">==</span> <span class="st">"f"</span><span class="op">]</span>
+    <span class="fu"><a href="https://rdrr.io/r/base/data.frame.html">data.frame</a></span><span class="op">(</span>gender <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/rep.html">rep</a></span><span class="op">(</span><span class="st">"m"</span>, <span class="va">male</span><span class="op">)</span>, <span class="fu"><a href="https://rdrr.io/r/base/rep.html">rep</a></span><span class="op">(</span><span class="st">"f"</span>, <span class="va">female</span><span class="op">)</span><span class="op">)</span>,
+               x <span class="op">=</span> <span class="fl">1</span><span class="op">:</span><span class="op">(</span><span class="va">male</span> <span class="op">+</span> <span class="va">female</span><span class="op">)</span><span class="op">)</span>
+<span class="op">}</span><span class="op">)</span>
+
+<span class="va">gdat</span><span class="op">$</span><span class="va">char</span> <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/ifelse.html">ifelse</a></span><span class="op">(</span><span class="va">gdat</span><span class="op">$</span><span class="va">gender</span> <span class="op">==</span> <span class="st">"m"</span>, <span class="st">"p"</span>, <span class="st">"u"</span><span class="op">)</span>
+<span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span><span class="op">(</span><span class="va">gdat</span>, <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span>x <span class="op">=</span> <span class="va">x</span>, y <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/factor.html">factor</a></span><span class="op">(</span><span class="va">educode</span><span class="op">)</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span>
+    <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_text.html">geom_text</a></span><span class="op">(</span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span>label <span class="op">=</span> <span class="va">char</span>, colour <span class="op">=</span> <span class="va">gender</span><span class="op">)</span>,
+              family <span class="op">=</span> <span class="st">"wmpeople1"</span>, size <span class="op">=</span> <span class="fl">8</span><span class="op">)</span> <span class="op">+</span>
+    <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/scale_continuous.html">scale_x_continuous</a></span><span class="op">(</span><span class="st">"Population（10 million）"</span><span class="op">)</span> <span class="op">+</span>
+    <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/scale_discrete.html">scale_y_discrete</a></span><span class="op">(</span><span class="st">"Education Level"</span>,
+        labels <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/pkg/raster/man/unique.html">unique</a></span><span class="op">(</span><span class="va">dat</span><span class="op">$</span><span class="va">edu</span><span class="op">[</span><span class="fu"><a href="https://rdrr.io/r/base/order.html">order</a></span><span class="op">(</span><span class="va">dat</span><span class="op">$</span><span class="va">educode</span><span class="op">)</span><span class="op">]</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span>
+    <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/scale_hue.html">scale_colour_hue</a></span><span class="op">(</span>guide <span class="op">=</span> <span class="cn">FALSE</span><span class="op">)</span> <span class="op">+</span>
+    <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/labs.html">ggtitle</a></span><span class="op">(</span><span class="st">"2012 Demographics Data"</span><span class="op">)</span></code></pre></div>
+<div class="inline-figure"><img src="icons_and_symbols_in_r_files/figure-html/unnamed-chunk-5-1.png" width="672" style="display: block; margin: auto;"></div>
+<p>Every symbol in the above graph is actually a character of <code>p</code> or <code>u</code>. It’s just they appear differently under this <code>'wmpeople1'</code> font. By applying this concept, we now have access to a great number of text symbols by simply adding font resources to our code.</p>
+</div>
+</div>
+<div id="ggimage" class="section level2">
+<h2>
+<span class="header-section-number">41.4</span> ggimage<a class="anchor" aria-label="anchor" href="#ggimage"><i class="fas fa-link"></i></a>
+</h2>
+<p><code>ggimage</code> supports image files and graphic objects to be visualized in the <code>ggplot2</code> graphic system. It includes a variety of interesting and useful functions and we will introduce some of them here.</p>
+<div id="geom_image" class="section level3">
+<h3>
+<span class="header-section-number">41.4.1</span> geom_image()<a class="anchor" aria-label="anchor" href="#geom_image"><i class="fas fa-link"></i></a>
+</h3>
+<p>To have access to a greater range of symbol choices, we would sometimes want to use image from external sources as an icon in plotting. The <code><a href="https://rdrr.io/pkg/ggimage/man/geom_image.html">geom_image()</a></code> layer in ggplot2 can amazingly achieve to do that. We can simply use the url or file directory to import an image into our graphs.</p>
+<p>For example, this is a plot that lines up several Rstudio icons in an “R” shape:</p>
+<div class="sourceCode" id="cb604"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="va">x</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">2</span>, <span class="fl">2</span>, <span class="fl">2</span>, <span class="fl">2</span>, <span class="fl">2</span>, <span class="fl">3</span>, <span class="fl">3</span>, <span class="fl">3.5</span>, <span class="fl">3.5</span>, <span class="fl">4</span><span class="op">)</span>
+<span class="va">y</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">2</span>, <span class="fl">3</span>, <span class="fl">4</span>, <span class="fl">5</span>, <span class="fl">6</span>, <span class="fl">4</span>, <span class="fl">6</span>, <span class="fl">3</span>, <span class="fl">5</span>, <span class="fl">2</span><span class="op">)</span>
+<span class="va">d</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/data.frame.html">data.frame</a></span><span class="op">(</span>x <span class="op">=</span> <span class="va">x</span>, y <span class="op">=</span> <span class="va">y</span><span class="op">)</span>
+
+<span class="va">img</span> <span class="op">&lt;-</span> <span class="op">(</span><span class="st">"https://www.r-project.org/logo/Rlogo.png"</span><span class="op">)</span>
+<span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span><span class="op">(</span><span class="va">d</span>, <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span><span class="va">x</span>, <span class="va">y</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span> <span class="fu"><a href="https://rdrr.io/pkg/ggimage/man/geom_image.html">geom_image</a></span><span class="op">(</span>image <span class="op">=</span> <span class="va">img</span>, size <span class="op">=</span> <span class="fl">.1</span><span class="op">)</span> <span class="op">+</span>
+  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/lims.html">xlim</a></span><span class="op">(</span><span class="fl">0</span>, <span class="fl">6</span><span class="op">)</span> <span class="op">+</span> <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/lims.html">ylim</a></span><span class="op">(</span><span class="fl">0</span>, <span class="fl">7</span><span class="op">)</span> <span class="op">+</span>
+  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/labs.html">ggtitle</a></span><span class="op">(</span><span class="st">"Plot R with Rstudio Symbols"</span><span class="op">)</span></code></pre></div>
+<div class="inline-figure"><img src="icons_and_symbols_in_r_files/figure-html/unnamed-chunk-6-1.png" width="672" style="display: block; margin: auto;"></div>
+</div>
+<div id="geom_emoji" class="section level3">
+<h3>
+<span class="header-section-number">41.4.2</span> geom_emoji()<a class="anchor" aria-label="anchor" href="#geom_emoji"><i class="fas fa-link"></i></a>
+</h3>
+<p>As we discovered previously, the symbols <code>pch</code> provides are mostly simple shapes or plain texts of ASCII characters. It doesn’t offer much support if we want to use colorful emojis. This special layer of <code><a href="https://rdrr.io/pkg/ggimage/man/geom_emoji.html">geom_emoji()</a></code> would facilitate an easy incoporation of emojis into our graphs, by simply specifying their unicode.</p>
+<div id="emoji-characters" class="section level4">
+<h4>
+<span class="header-section-number">41.4.2.1</span> Emoji Characters<a class="anchor" aria-label="anchor" href="#emoji-characters"><i class="fas fa-link"></i></a>
+</h4>
+<p>Each emoji has a corresponding unicode. We can take a look at some examples of the Emoji unicode here <a href="https://apps.timwhitlock.info/emoji/tables/unicode" class="uri">https://apps.timwhitlock.info/emoji/tables/unicode</a>.</p>
+<p>The <code><a href="https://rdrr.io/pkg/emojifont/man/search_emoji.html">search_emoji()</a></code> function can also help us to find the related emojis that we are looking for. It will return emoji aliases which can be converted to unicode by emoji function.</p>
+<div class="sourceCode" id="cb605"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="fu"><a href="https://rdrr.io/pkg/emojifont/man/search_emoji.html">search_emoji</a></span><span class="op">(</span><span class="st">'smile'</span><span class="op">)</span></code></pre></div>
+<pre><code>## [1] "smiley"      "smile"       "sweat_smile" "smiley_cat"  "smile_cat"</code></pre>
+<div class="sourceCode" id="cb607"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="fu"><a href="https://rdrr.io/pkg/emojifont/man/emoji.html">emoji</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/pkg/emojifont/man/search_emoji.html">search_emoji</a></span><span class="op">(</span><span class="st">'smile'</span><span class="op">)</span><span class="op">)</span></code></pre></div>
+<pre><code>## [1] "😃" "😄" "😅" "😺" "😸"</code></pre>
+</div>
+<div id="an-example-of-geom_emoji-iris-data" class="section level4">
+<h4>
+<span class="header-section-number">41.4.2.2</span> An example of <code>geom_emoji()</code> (Iris Data)<a class="anchor" aria-label="anchor" href="#an-example-of-geom_emoji-iris-data"><i class="fas fa-link"></i></a>
+</h4>
+<p>We can visualize and distinguish the points that are fitted well by linear regression and those that are fitted relatively poorly with the help of intuitive emojis.</p>
+<div class="sourceCode" id="cb609"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="fu"><a href="https://rdrr.io/r/base/Random.html">set.seed</a></span><span class="op">(</span><span class="fl">0</span><span class="op">)</span>
+<span class="va">iris2</span> <span class="op">&lt;-</span> <span class="va">iris</span><span class="op">[</span><span class="fu"><a href="https://rdrr.io/r/base/sample.html">sample</a></span><span class="op">(</span><span class="fl">1</span><span class="op">:</span><span class="fu"><a href="https://rdrr.io/pkg/raster/man/ncell.html">nrow</a></span><span class="op">(</span><span class="va">iris</span><span class="op">)</span>, <span class="fl">30</span><span class="op">)</span>, <span class="op">]</span>
+<span class="va">model</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/stats/lm.html">lm</a></span><span class="op">(</span><span class="va">Petal.Length</span> <span class="op">~</span> <span class="va">Sepal.Length</span>, data <span class="op">=</span> <span class="va">iris2</span><span class="op">)</span>
+<span class="va">iris2</span><span class="op">$</span><span class="va">fitted</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/pkg/raster/man/predict.html">predict</a></span><span class="op">(</span><span class="va">model</span><span class="op">)</span>
+
+<span class="va">p</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span><span class="op">(</span><span class="va">iris2</span>, <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span>x <span class="op">=</span> <span class="va">Sepal.Length</span>, y <span class="op">=</span> <span class="va">Petal.Length</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span>
+  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_linerange.html">geom_linerange</a></span><span class="op">(</span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span>ymin <span class="op">=</span> <span class="va">fitted</span>, ymax <span class="op">=</span> <span class="va">Petal.Length</span><span class="op">)</span>,
+                 colour <span class="op">=</span> <span class="st">"red"</span><span class="op">)</span> <span class="op">+</span>
+  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_abline.html">geom_abline</a></span><span class="op">(</span>intercept <span class="op">=</span> <span class="va">model</span><span class="op">$</span><span class="va">coefficients</span><span class="op">[</span><span class="fl">1</span><span class="op">]</span>,
+              slope <span class="op">=</span> <span class="va">model</span><span class="op">$</span><span class="va">coefficients</span><span class="op">[</span><span class="fl">2</span><span class="op">]</span><span class="op">)</span> <span class="op">+</span>
+  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/labs.html">ggtitle</a></span><span class="op">(</span><span class="st">"Regression on Petal Length and Sepal Length"</span><span class="op">)</span>
+
+<span class="va">p</span> <span class="op">+</span> <span class="fu">ggimage</span><span class="fu">::</span><span class="fu"><a href="https://rdrr.io/pkg/ggimage/man/geom_emoji.html">geom_emoji</a></span><span class="op">(</span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span>image <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/ifelse.html">ifelse</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/MathFun.html">abs</a></span><span class="op">(</span><span class="va">Petal.Length</span><span class="op">-</span><span class="va">fitted</span><span class="op">)</span> <span class="op">&gt;</span> <span class="fl">0.5</span>, <span class="st">'1f645'</span>, <span class="st">'1f600'</span><span class="op">)</span><span class="op">)</span>, cex<span class="op">=</span><span class="fl">0.04</span><span class="op">)</span></code></pre></div>
+<div class="inline-figure"><img src="icons_and_symbols_in_r_files/figure-html/unnamed-chunk-8-1.png" width="672" style="display: block; margin: auto;"></div>
+</div>
+</div>
+<div id="geom_icon" class="section level3">
+<h3>
+<span class="header-section-number">41.4.3</span> geom_icon()<a class="anchor" aria-label="anchor" href="#geom_icon"><i class="fas fa-link"></i></a>
+</h3>
+<p><code><a href="https://rdrr.io/pkg/ggimage/man/geom_icon.html">geom_icon()</a></code> provides support for icons on <a href="https://ionic.io/ionicons" class="uri">https://ionic.io/ionicons</a>. This is a website that provides open source icons for web use. Figures are in black and white but are very well designed. It has each icon in three formats - ‘Outline’, ‘Filled’, and ‘Sharp’. We can browse using key words to search for the icons conveniently.</p>
+<div id="an-example-of-geom_icon" class="section level4">
+<h4>
+<span class="header-section-number">41.4.3.1</span> An example of <code>geom_icon()</code><a class="anchor" aria-label="anchor" href="#an-example-of-geom_icon"><i class="fas fa-link"></i></a>
+</h4>
+<p>Here’s an example that I can list my daily routines using the wide variety of symbols from the ionic website.</p>
+<div class="sourceCode" id="cb610"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="va">img</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/list.files.html">list.files</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/system.file.html">system.file</a></span><span class="op">(</span><span class="st">"extdata"</span>, package<span class="op">=</span><span class="st">"ggimage"</span><span class="op">)</span>,
+                  pattern<span class="op">=</span><span class="st">"png"</span>, full.names<span class="op">=</span><span class="cn">TRUE</span><span class="op">)</span>
+<span class="va">d</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/data.frame.html">data.frame</a></span><span class="op">(</span>x <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/rep.html">rep</a></span><span class="op">(</span><span class="fl">1</span><span class="op">:</span><span class="fl">5</span>, <span class="fl">3</span><span class="op">)</span>,
+                y <span class="op">=</span> <span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/rep.html">rep</a></span><span class="op">(</span><span class="fl">3</span><span class="op">:</span><span class="fl">1</span>, each <span class="op">=</span> <span class="fl">5</span><span class="op">)</span><span class="op">)</span><span class="op">)</span>
+<span class="va">d</span><span class="op">$</span><span class="va">icon</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">'bed'</span>, <span class="st">'fast-food'</span>, <span class="st">'bus'</span>, <span class="st">'business'</span>, <span class="st">'book'</span>, <span class="st">'call'</span>, <span class="st">'ice-cream'</span>, <span class="st">'mail-unread'</span>, <span class="st">'musical-notes'</span>, <span class="st">'flask'</span>, <span class="st">'language'</span>, <span class="st">'pizza'</span>, <span class="st">'beer'</span>, <span class="st">'walk'</span> ,<span class="st">'bed'</span><span class="op">)</span>
+<span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span><span class="op">(</span><span class="va">d</span>, <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span><span class="va">x</span>,<span class="va">y</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span> <span class="fu"><a href="https://rdrr.io/pkg/ggimage/man/geom_icon.html">geom_icon</a></span><span class="op">(</span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span>image<span class="op">=</span><span class="va">icon</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span> 
+  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/lims.html">xlim</a></span><span class="op">(</span><span class="fl">0</span>, <span class="fl">10</span><span class="op">)</span> <span class="op">+</span> <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/lims.html">ylim</a></span><span class="op">(</span><span class="fl">0</span>, <span class="fl">4</span><span class="op">)</span> <span class="op">+</span> 
+  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_text.html">geom_text</a></span><span class="op">(</span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span>label <span class="op">=</span> <span class="va">icon</span><span class="op">)</span>, size<span class="op">=</span><span class="fl">2</span>, vjust <span class="op">=</span> <span class="op">-</span><span class="fl">4</span><span class="op">)</span> <span class="op">+</span> 
+  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/labs.html">ggtitle</a></span><span class="op">(</span><span class="st">"Daily Tasks in Icons"</span><span class="op">)</span> <span class="op">+</span>
+  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggtheme.html">theme_void</a></span><span class="op">(</span><span class="op">)</span></code></pre></div>
+<div class="inline-figure"><img src="icons_and_symbols_in_r_files/figure-html/unnamed-chunk-9-1.png" width="672" style="display: block; margin: auto;"></div>
+</div>
+</div>
+<div id="geom_pokemon" class="section level3">
+<h3>
+<span class="header-section-number">41.4.4</span> geom_pokemon()<a class="anchor" aria-label="anchor" href="#geom_pokemon"><i class="fas fa-link"></i></a>
+</h3>
+<p>This is a special layer that provides support for pokemon characters. We can easily create cute graphs that target kids or anime fans. There is also a layer <code>geom_flags</code> that matches abbreviated country code to its corresponding national flags. That one can be particularly helpful in plotting worldwide data and making comparisons among different nations.</p>
+<div id="an-example-of-geom_pokemon" class="section level4">
+<h4>
+<span class="header-section-number">41.4.4.1</span> An example of <code>geom_pokemon()</code><a class="anchor" aria-label="anchor" href="#an-example-of-geom_pokemon"><i class="fas fa-link"></i></a>
+</h4>
+<p>Let’s find out where is pikachu located in this graph. How’s its Attack and Defense ability compare to other pokemons shown in this selected group?</p>
+<div class="sourceCode" id="cb611"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="va">pokemon</span> <span class="op">&lt;-</span> <span class="fu">readr</span><span class="fu">::</span><span class="fu"><a href="https://readr.tidyverse.org/reference/read_delim.html">read_csv</a></span><span class="op">(</span><span class="st">"https://gist.githubusercontent.com/armgilles/194bcff35001e7eb53a2a8b441e8b2c6/raw/92200bc0a673d5ce2110aaad4544ed6c4010f687/pokemon.csv"</span><span class="op">)</span>
+<span class="va">pkm</span> <span class="op">&lt;-</span> <span class="va">pokemon</span><span class="op">[</span><span class="fl">21</span><span class="op">:</span><span class="fl">51</span>, <span class="op">]</span>
+<span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span><span class="op">(</span><span class="va">pkm</span>, <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span><span class="va">Attack</span>, <span class="va">Defense</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span> 
+  <span class="fu"><a href="https://rdrr.io/pkg/ggimage/man/geom_pokemon.html">geom_pokemon</a></span><span class="op">(</span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span>image<span class="op">=</span><span class="fu"><a href="https://rdrr.io/r/base/chartr.html">tolower</a></span><span class="op">(</span><span class="va">Name</span><span class="op">)</span><span class="op">)</span>, size<span class="op">=</span><span class="fl">.05</span><span class="op">)</span> <span class="op">+</span> 
+  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_text.html">geom_text</a></span><span class="op">(</span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span>label <span class="op">=</span> <span class="va">Name</span><span class="op">)</span>, size<span class="op">=</span><span class="fl">1.2</span>, vjust <span class="op">=</span> <span class="op">-</span><span class="fl">3</span><span class="op">)</span> <span class="op">+</span> 
+  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/labs.html">ggtitle</a></span><span class="op">(</span><span class="st">"Defense vs. Attack for Selected Pokemon"</span><span class="op">)</span></code></pre></div>
+<div class="inline-figure"><img src="icons_and_symbols_in_r_files/figure-html/unnamed-chunk-10-1.png" width="672" style="display: block; margin: auto;"></div>
+</div>
+</div>
+</div>
+<div id="special-type-personographs" class="section level2">
+<h2>
+<span class="header-section-number">41.5</span> Special Type: Personographs<a class="anchor" aria-label="anchor" href="#special-type-personographs"><i class="fas fa-link"></i></a>
+</h2>
+<p>A personograph (Kuiper-Marshall plot) is a pictographic representation of relative harm and benefit from an intervention. Each icon on the grid is colored to indicate whether that percentage of people is harmed by the intervention, would benefit from the intervention, has good outcome regardless of intervention, or bad outcome regardless of intervention.</p>
+<div id="arguments-of-personograph" class="section level4">
+<h4>
+<span class="header-section-number">41.5.0.1</span> Arguments of <code>personograph</code> :<a class="anchor" aria-label="anchor" href="#arguments-of-personograph"><i class="fas fa-link"></i></a>
+</h4>
+<ul>
+<li><p><strong>data</strong>: A list of names to percentages (from 0 to 1)</p></li>
+<li><p><strong>fig.title</strong>: Figure title</p></li>
+<li><p><strong>draw.legend</strong>: Logical if TRUE (default) will draw the legend</p></li>
+<li><p><strong>icon</strong>: A grImport Picture for the icon, overwrites icon.style</p></li>
+<li><p><strong>icon.dim</strong>: The dimensions of icon as a vector c(width, height) as numerical. Calculated from the dimensions if not supplied</p></li>
+<li><p><strong>icon.style</strong>: A numeric from 1-11 indicating which of the included icons to use, they are mostly variations on the theme</p></li>
+</ul>
+</div>
+<div id="adjust-grid-size-and-color-each-portions" class="section level4">
+<h4>
+<span class="header-section-number">41.5.0.2</span> Adjust grid size and Color each portions<a class="anchor" aria-label="anchor" href="#adjust-grid-size-and-color-each-portions"><i class="fas fa-link"></i></a>
+</h4>
+<p>We can specify the number of icons and the dimensions for the personograph. The default would be a 10 by 10 grid.</p>
+<div class="sourceCode" id="cb612"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="va">data</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/list.html">list</a></span><span class="op">(</span>first<span class="op">=</span><span class="fl">0.89</span>, second<span class="op">=</span><span class="fl">0.06</span>, third<span class="op">=</span><span class="fl">0.05</span><span class="op">)</span>
+<span class="co"># With colors</span>
+<span class="fu"><a href="https://rdrr.io/pkg/personograph/man/personograph.html">personograph</a></span><span class="op">(</span><span class="va">data</span>, n.icons<span class="op">=</span><span class="fl">64</span>, dimensions<span class="op">=</span><span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">8</span>, <span class="fl">8</span><span class="op">)</span>, colors<span class="op">=</span><span class="fu"><a href="https://rdrr.io/r/base/list.html">list</a></span><span class="op">(</span>first<span class="op">=</span><span class="st">"grey"</span>, second<span class="op">=</span><span class="st">"blue"</span>, third<span class="op">=</span><span class="st">"red"</span><span class="op">)</span><span class="op">)</span></code></pre></div>
+<div class="inline-figure"><img src="icons_and_symbols_in_r_files/figure-html/unnamed-chunk-11-1.png" width="672" style="display: block; margin: auto;"></div>
+</div>
+<div id="different-icon-style" class="section level4">
+<h4>
+<span class="header-section-number">41.5.0.3</span> Different icon style<a class="anchor" aria-label="anchor" href="#different-icon-style"><i class="fas fa-link"></i></a>
+</h4>
+<p>We can change the icons by choosing from the preset icon styles or use grImport picture to overwrite it ourselves.</p>
+<div class="sourceCode" id="cb613"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="co"># With different icon.style</span>
+<span class="va">data</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/list.html">list</a></span><span class="op">(</span>first<span class="op">=</span><span class="fl">0.2</span>, second<span class="op">=</span><span class="fl">0.7</span>, third<span class="op">=</span><span class="fl">0.1</span><span class="op">)</span>
+<span class="fu"><a href="https://rdrr.io/pkg/personograph/man/personograph.html">personograph</a></span><span class="op">(</span><span class="va">data</span>, n.icons<span class="op">=</span><span class="fl">9</span>, icon.style<span class="op">=</span><span class="fl">6</span><span class="op">)</span> <span class="co"># numeric from 1-11</span></code></pre></div>
+<div class="inline-figure"><img src="icons_and_symbols_in_r_files/figure-html/unnamed-chunk-12-1.png" width="672" style="display: block; margin: auto;"></div>
+<p>This type of graph is particularly relevant and useful if we want to showcase the impact of some pandemic data. It can vividly depicts the transmission pattern and how the virus is influential to groups of people. The <code><a href="https://rdrr.io/pkg/personograph/man/personograph.html">personograph()</a></code> function is implemented in such a way that it’s easy to just pass a named list of percentages, colors, and an icon. Since we can also overwrite the symbol, we can easily adapt the personograph to be suitable for other sanarios as well.</p>
+</div>
+</div>
+<div id="references-1" class="section level2">
+<h2>
+<span class="header-section-number">41.6</span> References:<a class="anchor" aria-label="anchor" href="#references-1"><i class="fas fa-link"></i></a>
+</h2>
+<ul>
+<li><p>R Documentation</p></li>
+<li><p><a href="https://cran.r-project.org/web/packages/showtext/index.html" class="uri">https://cran.r-project.org/web/packages/showtext/index.html</a></p></li>
+<li><p><a href="https://github.com/GuangchuangYu/ggimage" class="uri">https://github.com/GuangchuangYu/ggimage</a></p></li>
+<li><p><a href="https://ionic.io/ionicons" class="uri">https://ionic.io/ionicons</a></p></li>
+<li><p><a href="https://apps.timwhitlock.info/emoji/tables/unicode" class="uri">https://apps.timwhitlock.info/emoji/tables/unicode</a></p></li>
+<li><p><a href="https://warwick.ac.uk/fac/sci/wdsi/events/wrug/resources/emoji_plots.pdf" class="uri">https://warwick.ac.uk/fac/sci/wdsi/events/wrug/resources/emoji_plots.pdf</a></p></li>
+<li><p><a href="https://cran.r-project.org/web/packages/personograph/README.html" class="uri">https://cran.r-project.org/web/packages/personograph/README.html</a></p></li>
+</ul>
+</div>
+</div>
+
+
+
+  <div class="chapter-nav">
+<div class="prev"><a href="using-ggplot-in-python.html"><span class="header-section-number">40</span> Using ggplot in python</a></div>
+<div class="next"><a href="linear-association-r-studio-plugin.html"><span class="header-section-number">42</span> Linear Association R Studio Plugin</a></div>
+</div></main><div class="col-md-3 col-lg-2 d-none d-md-block sidebar sidebar-chapter">
+    <nav id="toc" data-toggle="toc" aria-label="On this page"><h2>On this page</h2>
+      <ul class="nav navbar-nav">
+<li><a class="nav-link" href="#icons-and-symbols-in-r"><span class="header-section-number">41</span> Icons and symbols in R</a></li>
+<li><a class="nav-link" href="#why-use-symbols"><span class="header-section-number">41.1</span> Why use Symbols?</a></li>
+<li><a class="nav-link" href="#pch-in-base-r"><span class="header-section-number">41.2</span> ‘pch’ in Base R</a></li>
+<li><a class="nav-link" href="#showtext"><span class="header-section-number">41.3</span> showtext</a></li>
+<li>
+<a class="nav-link" href="#ggimage"><span class="header-section-number">41.4</span> ggimage</a><ul class="nav navbar-nav">
+<li><a class="nav-link" href="#geom_image"><span class="header-section-number">41.4.1</span> geom_image()</a></li>
+<li><a class="nav-link" href="#geom_emoji"><span class="header-section-number">41.4.2</span> geom_emoji()</a></li>
+<li><a class="nav-link" href="#geom_icon"><span class="header-section-number">41.4.3</span> geom_icon()</a></li>
+<li><a class="nav-link" href="#geom_pokemon"><span class="header-section-number">41.4.4</span> geom_pokemon()</a></li>
+</ul>
+</li>
+<li><a class="nav-link" href="#special-type-personographs"><span class="header-section-number">41.5</span> Special Type: Personographs</a></li>
+<li><a class="nav-link" href="#references-1"><span class="header-section-number">41.6</span> References:</a></li>
+</ul>
+
+      <div class="book-extra">
+        <ul class="list-unstyled">
+<li><a id="book-source" href="https://github.com/jtr13/cc21fall1/blob/main/icons_and_symbols_in_r.Rmd">View source <i class="fab fa-github"></i></a></li>
+          <li><a id="book-edit" href="https://github.com/jtr13/cc21fall1/edit/main/icons_and_symbols_in_r.Rmd">Edit this page <i class="fab fa-github"></i></a></li>
+        </ul>
+</div>
+    </nav>
+</div>
+
+</div>
+</div> <!-- .container -->
+
+<footer class="bg-primary text-light mt-5"><div class="container"><div class="row">
+
+  <div class="col-12 col-md-6 mt-3">
+    <p>"<strong>EDAV Fall 2021 Mon/Wed Community Contributions</strong>" was written by the students of the class. It was last built on 2021-11-08.</p>
+  </div>
+
+  <div class="col-12 col-md-6 mt-3">
+    <p>This book was built by the <a class="text-light" href="https://bookdown.org">bookdown</a> R package.</p>
+  </div>
+
+</div></div>
+</footer><!-- dynamically load mathjax for compatibility with self-contained --><script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script><script type="text/x-mathjax-config">const popovers = document.querySelectorAll('a.footnote-ref[data-toggle="popover"]');
+for (let popover of popovers) {
+  const div = document.createElement('div');
+  div.setAttribute('style', 'position: absolute; top: 0, left:0; width:0, height:0, overflow: hidden; visibility: hidden;');
+  div.innerHTML = popover.getAttribute('data-content');
+
+  var has_math = div.querySelector("span.math");
+  if (has_math) {
+    document.body.appendChild(div);
+    MathJax.Hub.Queue(["Typeset", MathJax.Hub, div]);
+    MathJax.Hub.Queue(function() {
+      popover.setAttribute('data-content', div.innerHTML);
+      document.body.removeChild(div);
+    })
+  }
+}
+</script>
+</body>
+</html>
