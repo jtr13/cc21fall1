@@ -125,6 +125,7 @@ ending-notes-and-analysis
 ggparcoord-ggally
 ggparallel
 parcoords
+r-data-science-workflow-cheatsheet
 multithreading-crawler-frame
 regression-and-classification-in-r
 libraries-and-warnings
