@@ -1,0 +1,952 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<title>Chapter 18 Header | EDAV Fall 2021 Mon/Wed Community Contributions</title>
+<meta name="author" content="the students of the class">
+<meta name="description" content="(e.g., #### Header renders  18.0.0.1 Header Syntax for images: add an exclamation mark, (e.g., ![alt text or image title](path/to/image)) Footnotes: put inside the square brackets after a caret ^,...">
+<meta name="generator" content="bookdown 0.24 with bs4_book()">
+<meta property="og:title" content="Chapter 18 Header | EDAV Fall 2021 Mon/Wed Community Contributions">
+<meta property="og:type" content="book">
+<meta property="og:description" content="(e.g., #### Header renders  18.0.0.1 Header Syntax for images: add an exclamation mark, (e.g., ![alt text or image title](path/to/image)) Footnotes: put inside the square brackets after a caret ^,...">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Chapter 18 Header | EDAV Fall 2021 Mon/Wed Community Contributions">
+<meta name="twitter:description" content="(e.g., #### Header renders  18.0.0.1 Header Syntax for images: add an exclamation mark, (e.g., ![alt text or image title](path/to/image)) Footnotes: put inside the square brackets after a caret ^,...">
+<!-- JS --><script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.6/clipboard.min.js" integrity="sha256-inc5kl9MA1hkeYUt+EC3BhlIgyp/2jDIyBLS6k3UxPI=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/fuse.js/6.4.6/fuse.js" integrity="sha512-zv6Ywkjyktsohkbp9bb45V6tEMoWhzFzXis+LrMehmJZZSys19Yxf1dopHx7WzIKxr5tK2dVcYmaCk2uqdjF4A==" crossorigin="anonymous"></script><script src="https://kit.fontawesome.com/6ecbd6c532.js" crossorigin="anonymous"></script><script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<link href="libs/bootstrap-4.6.0/bootstrap.min.css" rel="stylesheet">
+<script src="libs/bootstrap-4.6.0/bootstrap.bundle.min.js"></script><script src="libs/bs3compat-0.3.1/transition.js"></script><script src="libs/bs3compat-0.3.1/tabs.js"></script><script src="libs/bs3compat-0.3.1/bs3compat.js"></script><link href="libs/bs4_book-1.0.0/bs4_book.css" rel="stylesheet">
+<script src="libs/bs4_book-1.0.0/bs4_book.js"></script><script src="libs/accessible-code-block-0.0.1/empty-anchor.js"></script><script src="libs/htmlwidgets-1.5.4/htmlwidgets.js"></script><script src="libs/plotly-binding-4.10.0/plotly.js"></script><script src="libs/typedarray-0.1/typedarray.min.js"></script><link href="libs/crosstalk-1.2.0/css/crosstalk.min.css" rel="stylesheet">
+<script src="libs/crosstalk-1.2.0/js/crosstalk.min.js"></script><link href="libs/plotly-htmlwidgets-css-2.5.1/plotly-htmlwidgets.css" rel="stylesheet">
+<script src="libs/plotly-main-2.5.1/plotly-latest.min.js"></script><link href="libs/dygraphs-1.1.1/dygraph.css" rel="stylesheet">
+<script src="libs/dygraphs-1.1.1/dygraph-combined.js"></script><script src="libs/dygraphs-1.1.1/shapes.js"></script><script src="libs/moment-2.8.4/moment.js"></script><script src="libs/moment-timezone-0.2.5/moment-timezone-with-data.js"></script><script src="libs/moment-fquarter-1.0.0/moment-fquarter.min.js"></script><script src="libs/dygraphs-binding-1.1.1.6/dygraphs.js"></script><script src="libs/d3-4.5.0/d3.min.js"></script><script src="libs/forceNetwork-binding-0.4/forceNetwork.js"></script><script src="libs/detect-resize-0.5.3/jquery.resize.js"></script><link href="libs/jquery-ui-1.11.4/jquery-ui.min.css" rel="stylesheet">
+<script src="libs/jquery-ui-1.11.4/jquery-ui.min.js"></script><script src="libs/vega-1.4.3/vega.min.js"></script><script src="libs/lodash-2.2.1/lodash.min.js"></script><script>var lodash = _.noConflict();</script><link href="libs/ggvis-0.4.7/css/ggvis.css" rel="stylesheet">
+<script src="libs/ggvis-0.4.7/js/ggvis.js"></script><script src="libs/dendroNetwork-binding-0.4/dendroNetwork.js"></script><link href="libs/str_view-0.1.0/str_view.css" rel="stylesheet">
+<script src="libs/str_view-binding-1.4.0/str_view.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/autocomplete.js/0.38.0/autocomplete.jquery.min.js" integrity="sha512-GU9ayf+66Xx2TmpxqJpliWbT5PiGYxpaG8rfnBEk1LL8l1KGkRShhngwdXK1UgqhAzWpZHSiYPc09/NwDQIGyg==" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/mark.min.js" integrity="sha512-5CYOlHXGh6QpOFA/TeTylKLWfB3ftPsde7AnmhuitiTX4K5SqCLBeKro6sPS8ilsz1Q4NRx3v8Ko2IBiszzdww==" crossorigin="anonymous"></script><!-- CSS -->
+</head>
+<body data-spy="scroll" data-target="#toc">
+
+<div class="container-fluid">
+<div class="row">
+  <header class="col-sm-12 col-lg-3 sidebar sidebar-book"><a class="sr-only sr-only-focusable" href="#content">Skip to main content</a>
+
+    <div class="d-flex align-items-start justify-content-between">
+      <h1>
+        <a href="index.html" title="">EDAV Fall 2021 Mon/Wed Community Contributions</a>
+      </h1>
+      <button class="btn btn-outline-primary d-lg-none ml-2 mt-1" type="button" data-toggle="collapse" data-target="#main-nav" aria-expanded="true" aria-controls="main-nav"><i class="fas fa-bars"></i><span class="sr-only">Show table of contents</span></button>
+    </div>
+
+    <div id="main-nav" class="collapse-lg">
+      <form role="search">
+        <input id="search" class="form-control" type="search" placeholder="Search" aria-label="Search">
+</form>
+
+      <nav aria-label="Table of contents"><h2>Table of contents</h2>
+        <ul class="book-toc list-unstyled">
+<li><a class="" href="index.html"><span class="header-section-number">1</span> Welcome!</a></li>
+<li><a class="" href="community-contribution.html"><span class="header-section-number">2</span> Community Contribution</a></li>
+<li><a class="" href="github-submission-instructions.html"><span class="header-section-number">3</span> GitHub submission instructions</a></li>
+<li><a class="" href="sample-project.html"><span class="header-section-number">4</span> Sample project</a></li>
+<li class="book-part">Data Visualizations</li>
+<li><a class="" href="introduction-to-the-lattice-package.html"><span class="header-section-number">5</span> Introduction to the lattice package</a></li>
+<li><a class="" href="graph-animation-with-gganimate-and-after-effects.html"><span class="header-section-number">6</span> Graph animation with gganimate and After Effects</a></li>
+<li><a class="" href="interactive-plots.html"><span class="header-section-number">7</span> Interactive Plots</a></li>
+<li><a class="" href="create-regression-assumption-plots-in-word.html"><span class="header-section-number">8</span> Create regression assumption plots in Word</a></li>
+<li class="book-part">Cheatsheets</li>
+<li><a class="" href="r-vs.-python-visualization-cheatsheet.html"><span class="header-section-number">9</span> R vs. Python Visualization Cheatsheet</a></li>
+<li><a class="" href="rpackage-waffle-cheatsheet.html"><span class="header-section-number">10</span> Rpackage waffle cheatsheet</a></li>
+<li><a class="" href="r-cheatsheet-on-data-transforamtion-and-exploration.html"><span class="header-section-number">11</span> R cheatsheet on data transforamtion and exploration</a></li>
+<li><a class="" href="r-vs-python-basic-data-wrangling.html"><span class="header-section-number">12</span> R vs Python Basic Data Wrangling</a></li>
+<li><a class="" href="tidyverse_cheatsheet.html"><span class="header-section-number">13</span> tidyverse_cheatsheet</a></li>
+<li><a class="" href="cheatsheet-tidyverse.html"><span class="header-section-number">14</span> Cheatsheet Tidyverse</a></li>
+<li><a class="" href="use-of-ggprism-and-ggsci-packages.html"><span class="header-section-number">15</span> Use of ggprism and ggsci packages</a></li>
+<li><a class="" href="interactive-plot-introduction.html"><span class="header-section-number">16</span> Interactive plot introduction</a></li>
+<li><a class="" href="common-r-markdown-syntax-cheatsheet.html"><span class="header-section-number">17</span> Common R markdown syntax cheatsheet</a></li>
+<li><a class="active" href="header.html"><span class="header-section-number">18</span> Header</a></li>
+<li class="book-part">Tutorials</li>
+<li><a class="" href="multithreading-crawler-frame.html"><span class="header-section-number">19</span> Multithreading Crawler Frame</a></li>
+<li><a class="" href="regression-and-classification-in-r.html"><span class="header-section-number">20</span> Regression and Classification in R</a></li>
+<li><a class="" href="tibble-vs.-dataframe.html"><span class="header-section-number">21</span> Tibble vs. DataFrame</a></li>
+<li><a class="" href="introduction-to-time-series.html"><span class="header-section-number">22</span> Introduction to Time Series</a></li>
+<li><a class="" href="vipul-edav-community-contribution-kickstart-r.html"><span class="header-section-number">23</span> Vipul EDAV Community Contribution Kickstart R</a></li>
+<li><a class="" href="caret---a-machine-learning-package-turotial.html"><span class="header-section-number">24</span> caret - a machine learning package turotial</a></li>
+<li><a class="" href="streamlit-for-financial-analysis.html"><span class="header-section-number">25</span> Streamlit for Financial Analysis</a></li>
+<li><a class="" href="interactive-graphs-tutorial.html"><span class="header-section-number">26</span> Interactive graphs tutorial</a></li>
+<li><a class="" href="guideline-on-using-package-rcurl-and-xml-for-web-scraping.html"><span class="header-section-number">27</span> Guideline on Using Package Rcurl and XML for Web Scraping</a></li>
+<li><a class="" href="twitter-r-package-scraping-via-api-tutorial.html"><span class="header-section-number">28</span> TwitteR R Package Scraping via API Tutorial</a></li>
+<li><a class="" href="introduction-to-data-manipulation.html"><span class="header-section-number">29</span> Introduction to Data Manipulation</a></li>
+<li><a class="" href="animating-the-plots-in-r.html"><span class="header-section-number">30</span> Animating the plots in R</a></li>
+<li><a class="" href="quick-guide-to-eda.html"><span class="header-section-number">31</span> Quick guide to eda</a></li>
+<li><a class="" href="natural-langauge-processing-common-eda-practices-in-python.html"><span class="header-section-number">32</span> Natural Langauge Processing Common EDA Practices in Python</a></li>
+<li><a class="" href="supervised-learning-tutorial.html"><span class="header-section-number">33</span> Supervised Learning Tutorial</a></li>
+<li class="book-part">Demonstrations</li>
+<li><a class="" href="linear-association-r-studio-plugin.html"><span class="header-section-number">34</span> Linear Association R Studio Plugin</a></li>
+<li class="book-part">Workshops</li>
+<li><a class="" href="data-science-product-cycles-in-enterprises.html"><span class="header-section-number">35</span> Data Science Product Cycles in Enterprises</a></li>
+<li class="book-part">Appendices</li>
+<li><a class="" href="github-initial-setup.html"><span class="header-section-number">36</span> Github initial setup</a></li>
+<li><a class="" href="tutorial-for-pull-request-mergers.html"><span class="header-section-number">37</span> Tutorial for pull request mergers</a></li>
+</ul>
+
+        <div class="book-extra">
+          <p><a id="book-repo" href="https://github.com/jtr13/cc21fall1">View book source <i class="fab fa-github"></i></a></p>
+        </div>
+      </nav>
+</div>
+  </header><main class="col-sm-12 col-md-9 col-lg-7" id="content"><div id="header" class="section level1">
+<h1>
+<span class="header-section-number">18</span> Header<a class="anchor" aria-label="anchor" href="#header"><i class="fas fa-link"></i></a>
+</h1>
+<p>(e.g., <code>#### Header</code> renders</p>
+<div id="header-1" class="section level4">
+<h4>
+<span class="header-section-number">18.0.0.1</span> Header<a class="anchor" aria-label="anchor" href="#header-1"><i class="fas fa-link"></i></a>
+</h4>
+<ul>
+<li><ol start="14" style="list-style-type: decimal">
+<li>Syntax for images: add an exclamation mark, (e.g., <code>![alt text or image title](path/to/image)</code>)</li>
+</ol></li>
+<li><ol start="15" style="list-style-type: decimal">
+<li>Footnotes: put inside the square brackets after a caret <code>^</code>, (e.g., <code>^[This is a footnote].</code>)</li>
+</ol></li>
+<li><ol start="16" style="list-style-type: decimal">
+<li>Insert citation: typing <span class="citation">[@cite]</span> or <span class="citation">@cite</span>
+</li>
+</ol></li>
+<li><ol start="17" style="list-style-type: decimal">
+<li>Plain text: just type text in the chunk.</li>
+</ol></li>
+<li><ol start="18" style="list-style-type: decimal">
+<li>Start a new paragraph: End a line with two spaces to start a new paragraph</li>
+</ol></li>
+<li><ol start="19" style="list-style-type: decimal">
+<li>make a new line: End with a backslash to make a new line</li>
+</ol></li>
+<li><ol start="20" style="list-style-type: decimal">
+<li>special symbol, (e.g., escaped: <code>\*\_ \\</code> renders escaped: *_ \)</li>
+</ol></li>
+<li><ol start="21" style="list-style-type: decimal">
+<li>endash: (e.g., <code>endash:--,</code> renders endash:–; <code>endash:---,</code> renders endash:—,)</li>
+</ol></li>
+<li><ol start="22" style="list-style-type: decimal">
+<li>List: `- unordered list’ renders</li>
+</ol></li>
+<li><p>unordered list</p></li>
+<li><ol start="23" style="list-style-type: decimal">
+<li>Ordered List:</li>
+</ol></li>
+</ul>
+<div class="line-block">- Item 1<br>
+   - Item 1a<br>
+   - Item 2b<br>
+               renders</div>
+<ul>
+<li>Item 1
+<ul>
+<li>Item 1a</li>
+<li>Item 2b</li>
+</ul>
+</li>
+<li><ol start="24" style="list-style-type: decimal">
+<li>Indent text: use line blocks by starting the line with a vertical bar (|). The line breaks and any leading spaces will be preserved in the output. e.g.,</li>
+</ol></li>
+</ul>
+<pre class="\"><code>| R is free software and comes with ABSOLUTELY NO WARRANTY.
+|     R is a collaborative project with many contributors.
+| You are welcome to redistribute it under certain conditions.
+|      Platform: x86_64-apple-darwin17.0 (64-bit)</code></pre>
+<p>The out put is</p>
+<blockquote>
+<div class="line-block">R is free software and comes with ABSOLUTELY NO WARRANTY.<br>
+    R is a collaborative project with many contributors.<br>
+You are welcome to redistribute it under certain conditions.<br>
+     Platform: x86_64-apple-darwin17.0 (64-bit)</div>
+</blockquote>
+<ul>
+<li><ol start="25" style="list-style-type: decimal">
+<li>Generate a grey text block: start with <code>```\</code> and end with <code>```</code>, write text with in the block, e.g.,</li>
+</ol></li>
+</ul>
+<p><code>```\</code></p>
+<p>R is a useful software.</p>
+<p><code>```</code></p>
+<p>The output is</p>
+<pre class="\"><code>R is a useful software.</code></pre>
+</div>
+<div id="out-put-format" class="section level3">
+<h3>
+<span class="header-section-number">18.0.1</span> Out put format<a class="anchor" aria-label="anchor" href="#out-put-format"><i class="fas fa-link"></i></a>
+</h3>
+<ul>
+<li><ol style="list-style-type: decimal">
+<li>html_document creates .html</li>
+</ol></li>
+<li><ol start="2" style="list-style-type: decimal">
+<li>pdf_document* creates .pdf</li>
+</ol></li>
+<li><ol start="3" style="list-style-type: decimal">
+<li>word_document creates .docx(Microsoft Word)</li>
+</ol></li>
+<li><ol start="4" style="list-style-type: decimal">
+<li>powerpoint_presentation creates .pptx(Microsoft Powerpoint)</li>
+</ol></li>
+<li><ol start="5" style="list-style-type: decimal">
+<li>odt_document creates OpenDocument Text</li>
+</ol></li>
+<li><ol start="6" style="list-style-type: decimal">
+<li>md_document creates Markdown</li>
+</ol></li>
+<li><ol start="7" style="list-style-type: decimal">
+<li>github_document creates Markdown for Github</li>
+</ol></li>
+<li><ol start="8" style="list-style-type: decimal">
+<li>ioslides_presentation creates ioslides HTML slides</li>
+</ol></li>
+<li><ol start="9" style="list-style-type: decimal">
+<li>slidy_presentation creates Slidy HTML slides</li>
+</ol></li>
+<li><ol start="10" style="list-style-type: decimal">
+<li>rtf_document creates Rich Text Format</li>
+</ol></li>
+<li><ol start="11" style="list-style-type: decimal">
+<li>beamer_presentation creates Beamer Slides</li>
+</ol></li>
+<li><ol start="12" style="list-style-type: decimal">
+<li>Requires LateX, bookdown or other format, use tinytex::install_tinytex()</li>
+</ol></li>
+</ul>
+<p>For the output format names in the YAML metadata of an Rmd file, you need to include the package name if a format is from an extension package, e.g.,</p>
+<pre class="\"><code>output:tufte::tufte_html</code></pre>
+<p>If the format is from the Rmarkdown package, you do not need the rmarkdown:: prefix</p>
+</div>
+<div id="embed-code-with-knitr" class="section level3">
+<h3>
+<span class="header-section-number">18.0.2</span> Embed Code with knitr<a class="anchor" aria-label="anchor" href="#embed-code-with-knitr"><i class="fas fa-link"></i></a>
+</h3>
+<ul>
+<li>4.1 CODE CHUNKS</li>
+</ul>
+<p>Surround code chunks with <code>```{r}```</code> or use the insert Code Chunk button. Add a chunk label and/or chunk options inside the curly braces after r.</p>
+<pre class="\"><code>`  ```{r chunk-label, include = False}
+summary(mtcars)``` ` </code></pre>
+<ul>
+<li>4.2 SET GLOBAL OPTIONS</li>
+</ul>
+<p>Set options for the entire document in the first chunk.</p>
+<pre class="\"><code>`  ```{r include = FALSE}
+knitr::opts_chunk$set(message = FALSE)``` ` 
+</code></pre>
+<ul>
+<li>4.3 INLINE CODE</li>
+</ul>
+<p>Set <code>r&lt;code&gt;</code> into text sections. Code is evaluated at render and results appear as text.</p>
+</div>
+<div id="render" class="section level3">
+<h3>
+<span class="header-section-number">18.0.3</span> Render<a class="anchor" aria-label="anchor" href="#render"><i class="fas fa-link"></i></a>
+</h3>
+<p>Use rmarkdown::render() to render/knit at cmd line.
+Important args:</p>
+<ul>
+<li><p>5.1 input- file to render</p></li>
+<li><p>5.2 output_options - list of render options(as in YAML)</p></li>
+<li><p>5.3 output_file/output_dir</p></li>
+<li><p>5.4 params - list of parameters to use</p></li>
+<li><p>5.5 envir - environment to evaluate code chunks in</p></li>
+<li><p>5.6 encoding - of input file</p></li>
+</ul>
+</div>
+<div id="chunk-options" class="section level3">
+<h3>
+<span class="header-section-number">18.0.4</span> CHUNK OPTIONS<a class="anchor" aria-label="anchor" href="#chunk-options"><i class="fas fa-link"></i></a>
+</h3>
+<ul>
+<li><p>cache - cache results for future knits(default = FALSE)</p></li>
+<li><p>dependson - chunk dependencies for caching(default = NULL)</p></li>
+<li><p>echo - Display code in output document(default = TRUE)</p></li>
+<li><p>engine - code language used in chunk(default = ‘R’)</p></li>
+<li><p>error - Display error messages in doc(TRUE) or stop render when errors occur(FALSE) (default = FALSE)</p></li>
+<li><p>eval - Run code in chunk(default = TRUE)</p></li>
+<li><p>cache.path - directory to save cached results in (default = ‘cache/’)</p></li>
+<li><p>child - file(s) to knit and then include (default = NULL)</p></li>
+<li><p>collapse - collapse all output into single block (default = FALSE)</p></li>
+<li><p>comment - prefix for each line of results (default = ‘##’)</p></li>
+<li><p>fig.align -‘left’,‘right’, or ‘center’ (default = ‘default’)</p></li>
+<li><p>fig.cap - figure caption as character string (default = NULL)</p></li>
+<li><p>fig.height, fig.width - Dimensions of plots in inches</p></li>
+<li><p>highlight - highlight source code (default = TRUE)</p></li>
+<li><p>include - include chunk in doc after running (default = TRUE)</p></li>
+<li><p>message - display code messages in document (default = TRUE)</p></li>
+<li><p>results (default = ‘markup’)
+‘asis’ - passthrough results
+‘hide’ - do not display results
+‘hold’ - put all results below all code</p></li>
+<li><p>tidy - tidy code for display (default = FALSE)</p></li>
+<li><p>warning - display code warnings in document (default = TRUE)</p></li>
+</ul>
+</div>
+<div id="mathematical-expression" class="section level2">
+<h2>
+<span class="header-section-number">18.1</span> Mathematical Expression<a class="anchor" aria-label="anchor" href="#mathematical-expression"><i class="fas fa-link"></i></a>
+</h2>
+<div id="mathematical-notation" class="section level3">
+<h3>
+<span class="header-section-number">18.1.1</span> Mathematical notation<a class="anchor" aria-label="anchor" href="#mathematical-notation"><i class="fas fa-link"></i></a>
+</h3>
+<p>In side a text chunk of rmd file, you can use mathematical notation with dollar sign in two different styles.</p>
+<p>Inline LaTeX equations can be written if you surround it by a pair of dollar signs using the LaTeX syntax. Example: <code>$f(k) = {n \choose k} p^{k} (1-p)^{n-k}$</code> will produce <span class="math inline">\(f(k) = {n \choose k} p^{k} (1-p)^{n-k}\)</span></p>
+<p>Display style math expressions can be written in a pair of double dollar signs. Example <code>$$f(k) = {n \choose k} p^{k} (1-p)^{n-k}$$</code> will produce <span class="math display">\[f(k) = {n \choose k} p^{k} (1-p)^{n-k}\]</span></p>
+<p>Notice: there is no space between the $ and your mathematical notation.
+You can also use math environments inside <code>$ $</code> or <code>$$ $$</code></p>
+</div>
+<div id="common-mathematical-symbol" class="section level3">
+<h3>
+<span class="header-section-number">18.1.2</span> Common Mathematical Symbol<a class="anchor" aria-label="anchor" href="#common-mathematical-symbol"><i class="fas fa-link"></i></a>
+</h3>
+<p><strong>Math Mode Accents</strong></p>
+<div class="inline-table"><table class="table table-sm">
+<thead><tr class="header">
+<th>Output</th>
+<th>Syntax</th>
+</tr></thead>
+<tbody>
+<tr class="odd">
+<td><span class="math inline">\(x^{n}\)</span></td>
+<td><code>$x^{n}$</code></td>
+</tr>
+<tr class="even">
+<td><span class="math inline">\(x_{n}\)</span></td>
+<td><code>$x_{n}$</code></td>
+</tr>
+<tr class="odd">
+<td><span class="math inline">\(\overline{x}\)</span></td>
+<td><code>$\overline{x}$</code></td>
+</tr>
+<tr class="even">
+<td><span class="math inline">\(\hat{x}\)</span></td>
+<td><code>$\hat{x}$</code></td>
+</tr>
+<tr class="odd">
+<td><span class="math inline">\(\tilde{x}\)</span></td>
+<td><code>$\tilde{x}$</code></td>
+</tr>
+<tr class="even">
+<td><span class="math inline">\(\acute{x}\)</span></td>
+<td><code>$\acute{x}$</code></td>
+</tr>
+<tr class="odd">
+<td><span class="math inline">\(\tilde{x}\)</span></td>
+<td><code>$\vec{x}$</code></td>
+</tr>
+<tr class="even">
+<td><span class="math inline">\(\dot{x}\)</span></td>
+<td><code>$\dot{x}$</code></td>
+</tr>
+</tbody>
+</table></div>
+<p><strong>Binary Relation</strong></p>
+<div class="inline-table"><table class="table table-sm">
+<thead><tr class="header">
+<th>Output</th>
+<th>Syntax</th>
+</tr></thead>
+<tbody>
+<tr class="odd">
+<td><span class="math inline">\(x = y\)</span></td>
+<td><code>$x = y$</code></td>
+</tr>
+<tr class="even">
+<td><span class="math inline">\(x &lt; y\)</span></td>
+<td><code>$x &lt; y$</code></td>
+</tr>
+<tr class="odd">
+<td><span class="math inline">\(x &gt; y\)</span></td>
+<td><code>$x &gt; y$</code></td>
+</tr>
+<tr class="even">
+<td><span class="math inline">\(x \approx y\)</span></td>
+<td><code>$x \approx y$</code></td>
+</tr>
+<tr class="odd">
+<td><span class="math inline">\(x \ne y\)</span></td>
+<td>
+<code>$x \ne y$</code>or<code>$x \neq y$</code>
+</td>
+</tr>
+<tr class="even">
+<td><span class="math inline">\(x \le y\)</span></td>
+<td><code>$x \le y$</code></td>
+</tr>
+<tr class="odd">
+<td><span class="math inline">\(x \ge y\)</span></td>
+<td><code>$x \ge y$</code></td>
+</tr>
+<tr class="even">
+<td><span class="math inline">\(x \equiv y\)</span></td>
+<td><code>$x \equiv y$</code></td>
+</tr>
+<tr class="odd">
+<td><span class="math inline">\(x \ll y\)</span></td>
+<td><code>$x \ll y$</code></td>
+</tr>
+<tr class="even">
+<td><span class="math inline">\(x \gg y\)</span></td>
+<td><code>$x \gg y$</code></td>
+</tr>
+<tr class="odd">
+<td><span class="math inline">\(x \doteq y\)</span></td>
+<td><code>$x \doteq y$</code></td>
+</tr>
+<tr class="even">
+<td><span class="math inline">\(x \prec y\)</span></td>
+<td><code>$x \prec y$</code></td>
+</tr>
+<tr class="odd">
+<td><span class="math inline">\(x \succ y\)</span></td>
+<td><code>$x \succ y$</code></td>
+</tr>
+<tr class="even">
+<td><span class="math inline">\(x \sim y\)</span></td>
+<td><code>$x \sim y$</code></td>
+</tr>
+<tr class="odd">
+<td><span class="math inline">\(x \preceq y\)</span></td>
+<td><code>$x \preceq y$</code></td>
+</tr>
+<tr class="even">
+<td><span class="math inline">\(x \succeq y\)</span></td>
+<td><code>$x \succeq y$</code></td>
+</tr>
+<tr class="odd">
+<td><span class="math inline">\(x \simeq y\)</span></td>
+<td><code>$x \simeq y$</code></td>
+</tr>
+<tr class="even">
+<td><span class="math inline">\(x \subset y\)</span></td>
+<td><code>$x \subset y$</code></td>
+</tr>
+<tr class="odd">
+<td><span class="math inline">\(x \in A\)</span></td>
+<td><code>$x \in A$</code></td>
+</tr>
+<tr class="even">
+<td><span class="math inline">\(x \notin A\)</span></td>
+<td><code>$x \notin A$</code></td>
+</tr>
+<tr class="odd">
+<td><span class="math inline">\(A \ni x\)</span></td>
+<td>
+<code>$x \ni A$</code>or<code>$A \owns x$</code>
+</td>
+</tr>
+<tr class="even">
+<td><span class="math inline">\(x \subset B\)</span></td>
+<td><code>$x \subset B$</code></td>
+</tr>
+<tr class="odd">
+<td><span class="math inline">\(x \subseteq B\)</span></td>
+<td><code>$x \subseteq B$</code></td>
+</tr>
+<tr class="even">
+<td><span class="math inline">\(A \cup B\)</span></td>
+<td><code>$A \cup B$</code></td>
+</tr>
+<tr class="odd">
+<td><span class="math inline">\(A \cap B\)</span></td>
+<td><code>$A \cap B$</code></td>
+</tr>
+<tr class="even">
+<td><span class="math inline">\(A \perp B\)</span></td>
+<td><code>$A \perp B$</code></td>
+</tr>
+<tr class="odd">
+<td><span class="math inline">\(A \bowtie B\)</span></td>
+<td><code>$A \bowtie B$</code></td>
+</tr>
+<tr class="even">
+<td><span class="math inline">\(A \propto B\)</span></td>
+<td><code>$A \propto B$</code></td>
+</tr>
+<tr class="odd">
+<td><span class="math inline">\(A \mid B\)</span></td>
+<td><code>$A \mid B$</code></td>
+</tr>
+<tr class="even">
+<td><span class="math inline">\(A \parallel B\)</span></td>
+<td><code>$A \parallel B$</code></td>
+</tr>
+</tbody>
+</table></div>
+<p><strong>Operators / Statistical Expression</strong></p>
+<div class="inline-table"><table class="table table-sm">
+<colgroup>
+<col width="50%">
+<col width="50%">
+</colgroup>
+<thead><tr class="header">
+<th>Output</th>
+<th>Syntax</th>
+</tr></thead>
+<tbody>
+<tr class="odd">
+<td><span class="math inline">\(\frac{a}{b}\)</span></td>
+<td><code>$\frac{a}{b}$</code></td>
+</tr>
+<tr class="even">
+<td><span class="math inline">\(\frac{\partial f}{\partial x}\)</span></td>
+<td><code>$\frac{\partial f}{\partial x}$</code></td>
+</tr>
+<tr class="odd">
+<td><span class="math inline">\(\binom{n}{k}\)</span></td>
+<td><code>$\binom{n}{k}$</code></td>
+</tr>
+<tr class="even">
+<td><span class="math inline">\(x_{1} + x_{2} + \cdots + x_{n}\)</span></td>
+<td><code>$x_{1} + x_{2} + \cdots + x_{n}$</code></td>
+</tr>
+<tr class="odd">
+<td><span class="math inline">\(x_{1}, x_{2}, \dots, x_{n}\)</span></td>
+<td><code>$x_{1}, x_{2}, \dots, x_{n}$</code></td>
+</tr>
+<tr class="even">
+<td><span class="math inline">\(\mathbf{x} = \langle x_{1}, x_{2}, \dots, x_{n}\rangle\)</span></td>
+<td><code>$\mathbf{x} = \langle x_{1}, x_{2}, \dots, x_{n}\rangle$</code></td>
+</tr>
+<tr class="odd">
+<td><span class="math inline">\(|A|\)</span></td>
+<td><code>$|A|$</code></td>
+</tr>
+<tr class="even">
+<td><span class="math inline">\(X \sim {\sf Binom}(n, \pi)\)</span></td>
+<td>
+<code>$X \sim {\sf Binom}(n, \pi)$</code> (<code>sf</code> for “slide font”)</td>
+</tr>
+<tr class="odd">
+<td><span class="math inline">\(\mathrm{P}(X \le x) = {\tt pbinom}(x, n, \pi)\)</span></td>
+<td>
+<code>$\mathrm{P}(X \le x) = {\tt pbinom}(x, n, \pi)$</code> (<code>tt</code> for “typewriter type”)</td>
+</tr>
+<tr class="even">
+<td><span class="math inline">\(P(A \mid B)\)</span></td>
+<td><code>$P(A \mid B)$</code></td>
+</tr>
+<tr class="odd">
+<td><span class="math inline">\(\mathrm{P}(A \mid B)\)</span></td>
+<td>
+<code>$\mathrm{P}(A \mid B)$</code> (<code>mathrm</code> for “math roman font”</td>
+</tr>
+<tr class="even">
+<td><span class="math inline">\(\{1, 2, 3\}\)</span></td>
+<td><code>$\{1, 2, 3\}$</code></td>
+</tr>
+<tr class="odd">
+<td><span class="math inline">\(\sin(x)\)</span></td>
+<td><code>$\sin(x)$</code></td>
+</tr>
+<tr class="even">
+<td><span class="math inline">\(\log(x)\)</span></td>
+<td><code>$\log(x)$</code></td>
+</tr>
+<tr class="odd">
+<td><span class="math inline">\(\int_{a}^{b}\)</span></td>
+<td><code>$\int_{a}^{b}$</code></td>
+</tr>
+<tr class="even">
+<td><span class="math inline">\(\left(\int_{a}^{b} f(x) \; dx\right)\)</span></td>
+<td><code>$\left(\int_{a}^{b} f(x) \; dx\right)$</code></td>
+</tr>
+<tr class="odd">
+<td><span class="math inline">\(\left[\int_{-\infty}^{\infty} f(x) \; dx\right]\)</span></td>
+<td><code>$\left[\int_{-\infty}^{\infty} f(x) \; dx\right]$</code></td>
+</tr>
+<tr class="even">
+<td><span class="math inline">\(\left. F(x) \right|_{a}^{b}\)</span></td>
+<td><code>$\left. F(x) \right|_{a}^{b}$</code></td>
+</tr>
+<tr class="odd">
+<td><span class="math inline">\(\sum_{x = a}^{b} f(x)\)</span></td>
+<td><code>$\sum_{x = a}^{b} f(x)$</code></td>
+</tr>
+<tr class="even">
+<td><span class="math inline">\(\prod_{x = a}^{b} f(x)\)</span></td>
+<td><code>$\prod_{x = a}^{b} f(x)$</code></td>
+</tr>
+<tr class="odd">
+<td><span class="math inline">\(\lim_{x \to \infty} f(x)\)</span></td>
+<td><code>$\lim_{x \to \infty} f(x)$</code></td>
+</tr>
+<tr class="even">
+<td><span class="math inline">\(\displaystyle \lim_{x \to \infty} f(x)\)</span></td>
+<td><code>$\displaystyle \lim_{x \to \infty} f(x)$</code></td>
+</tr>
+</tbody>
+</table></div>
+<p><strong>Other symbols</strong></p>
+<div class="inline-table"><table class="table table-sm">
+<thead><tr class="header">
+<th>Output</th>
+<th>Syntax</th>
+</tr></thead>
+<tbody>
+<tr class="odd">
+<td><span class="math inline">\(\because\)</span></td>
+<td><code>$\because$</code></td>
+</tr>
+<tr class="even">
+<td><span class="math inline">\(\therefore\)</span></td>
+<td><code>$\therefore$</code></td>
+</tr>
+<tr class="odd">
+<td><span class="math inline">\(\forall\)</span></td>
+<td><code>$\forall$</code></td>
+</tr>
+<tr class="even">
+<td><span class="math inline">\(\exists\)</span></td>
+<td><code>$\exists$</code></td>
+</tr>
+<tr class="odd">
+<td><span class="math inline">\(\partial\)</span></td>
+<td><code>$\partial$</code></td>
+</tr>
+<tr class="even">
+<td><span class="math inline">\(\emptyset\)</span></td>
+<td><code>$\emptyset$</code></td>
+</tr>
+<tr class="odd">
+<td><span class="math inline">\(\nabla\)</span></td>
+<td><code>$\nabla$</code></td>
+</tr>
+<tr class="even">
+<td><span class="math inline">\(\triangle\)</span></td>
+<td><code>$\triangle$</code></td>
+</tr>
+<tr class="odd">
+<td><span class="math inline">\(\angle\)</span></td>
+<td><code>$\angle$</code></td>
+</tr>
+<tr class="even">
+<td><span class="math inline">\(\surd\)</span></td>
+<td><code>$\surd$</code></td>
+</tr>
+<tr class="odd">
+<td><span class="math inline">\(\S\)</span></td>
+<td><code>$\S$</code></td>
+</tr>
+<tr class="even">
+<td><span class="math inline">\(\varpropto\)</span></td>
+<td><code>$\varpropto$</code></td>
+</tr>
+<tr class="odd">
+<td><span class="math inline">\(\diamondsuit\)</span></td>
+<td><code>$\diamondsuit$</code></td>
+</tr>
+<tr class="even">
+<td><span class="math inline">\(\heartsuit\)</span></td>
+<td><code>$\heartsuit$</code></td>
+</tr>
+<tr class="odd">
+<td><span class="math inline">\(\clubsuit\)</span></td>
+<td><code>$\clubsuit$</code></td>
+</tr>
+<tr class="even">
+<td><span class="math inline">\(\spadesuit\)</span></td>
+<td><code>$\spadesuit$</code></td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div id="matrix" class="section level3">
+<h3>
+<span class="header-section-number">18.1.3</span> Matrix<a class="anchor" aria-label="anchor" href="#matrix"><i class="fas fa-link"></i></a>
+</h3>
+<ul>
+<li><strong>Matrix with no bracket</strong></li>
+</ul>
+<pre class="\"><code>$$X = \begin{array}{ccc}
+x_{11} &amp; x_{12} &amp; x_{13}\\
+x_{21} &amp; x_{22} &amp; x_{23}
+\end{array}$$  </code></pre>
+<p><span class="math display">\[X = \begin{array}{ccc}
+x_{11} &amp; x_{12} &amp; x_{13}\\
+x_{21} &amp; x_{22} &amp; x_{23}
+\end{array}\]</span></p>
+<ul>
+<li><strong>With square bracket</strong></li>
+</ul>
+<pre class="\"><code>$$X = \begin{bmatrix}
+x_{11} &amp; x_{12} &amp; x_{13}\\
+x_{21} &amp; x_{22} &amp; x_{23}
+\end{bmatrix}$$</code></pre>
+<p><span class="math display">\[X = \begin{bmatrix}
+x_{11} &amp; x_{12} &amp; x_{13}\\
+x_{21} &amp; x_{22} &amp; x_{23}
+\end{bmatrix}\]</span></p>
+<ul>
+<li><strong>With parentheses</strong></li>
+</ul>
+<pre class="\"><code>$$X = \begin{pmatrix}
+x_{11} &amp; x_{12} &amp; x_{13}\\
+x_{21} &amp; x_{22} &amp; x_{23}
+\end{pmatrix}$$</code></pre>
+<p><span class="math display">\[X = \begin{pmatrix}
+x_{11} &amp; x_{12} &amp; x_{13}\\
+x_{21} &amp; x_{22} &amp; x_{23}
+\end{pmatrix}\]</span></p>
+<ul>
+<li><strong>With determinant / vertical bar bracket</strong></li>
+</ul>
+<pre class="\"><code>$$\begin{vmatrix} 
+   a_{11} &amp; a_{12} &amp; a_{13}  \\
+   a_{21} &amp; a_{22} &amp; a_{23}  \\
+   \end{vmatrix} $$</code></pre>
+<p><span class="math display">\[\begin{vmatrix} 
+   a_{11} &amp; a_{12} &amp; a_{13}  \\
+   a_{21} &amp; a_{22} &amp; a_{23}  \\
+   \end{vmatrix}\]</span></p>
+<ul>
+<li><strong>With curly brackets</strong></li>
+</ul>
+<pre class="\"><code>$$\begin{Bmatrix} 
+   a_{11} &amp; a_{12} &amp; a_{13}  \\
+   a_{21} &amp; a_{22} &amp; a_{23}  \\
+   \end{Bmatrix} $$</code></pre>
+<p><span class="math display">\[\begin{Bmatrix} 
+   a_{11} &amp; a_{12} &amp; a_{13}  \\
+   a_{21} &amp; a_{22} &amp; a_{23}  \\
+   \end{Bmatrix} \]</span></p>
+<ul>
+<li><strong>With double vertical bar brackets</strong></li>
+</ul>
+<pre class="\"><code>$$\begin{Vmatrix} 
+   a_{11} &amp; a_{12} &amp; a_{13}  \\
+   a_{21} &amp; a_{22} &amp; a_{23}  \\
+   \end{Vmatrix} $$</code></pre>
+<p><span class="math display">\[\begin{Vmatrix} 
+   a_{11} &amp; a_{12} &amp; a_{13}  \\
+   a_{21} &amp; a_{22} &amp; a_{23}  \\
+   \end{Vmatrix} \]</span></p>
+<ul>
+<li><strong>Small inline matrix</strong></li>
+</ul>
+<p>Small inline matrix<code>$\big(\begin{smallmatrix} a &amp; b\\ c &amp; d \end{smallmatrix}\big)$</code> will produce<br>
+Small inline matrix<span class="math inline">\(\big(\begin{smallmatrix} a &amp; b\\ c &amp; d \end{smallmatrix}\big)\)</span></p>
+</div>
+<div id="greek-letters" class="section level3">
+<h3>
+<span class="header-section-number">18.1.4</span> Greek letters<a class="anchor" aria-label="anchor" href="#greek-letters"><i class="fas fa-link"></i></a>
+</h3>
+<div class="inline-table"><table class="table table-sm">
+<thead><tr class="header">
+<th>Output</th>
+<th>Syntax</th>
+</tr></thead>
+<tbody>
+<tr class="odd">
+<td><span class="math inline">\(\alpha A\)</span></td>
+<td><code>$\alpha A$</code></td>
+</tr>
+<tr class="even">
+<td><span class="math inline">\(\beta B\)</span></td>
+<td><code>$\beta B$</code></td>
+</tr>
+<tr class="odd">
+<td><span class="math inline">\(\gamma \Gamma\)</span></td>
+<td><code>$\gamma \Gamma$</code></td>
+</tr>
+<tr class="even">
+<td><span class="math inline">\(\delta \Delta\)</span></td>
+<td><code>$\delta \Delta$</code></td>
+</tr>
+<tr class="odd">
+<td><span class="math inline">\(\epsilon \varepsilon E\)</span></td>
+<td><code>$\epsilon \varepsilon E$</code></td>
+</tr>
+<tr class="even">
+<td><span class="math inline">\(\zeta Z \sigma \,\!\)</span></td>
+<td><code>$\zeta Z \sigma \,\!$</code></td>
+</tr>
+<tr class="odd">
+<td><span class="math inline">\(\eta H\)</span></td>
+<td><code>$\eta H$</code></td>
+</tr>
+<tr class="even">
+<td><span class="math inline">\(\theta \vartheta \Theta\)</span></td>
+<td><code>$\theta \vartheta \Theta$</code></td>
+</tr>
+<tr class="odd">
+<td><span class="math inline">\(\iota I\)</span></td>
+<td><code>$\iota I$</code></td>
+</tr>
+<tr class="even">
+<td><span class="math inline">\(\kappa K\)</span></td>
+<td><code>$\kappa K$</code></td>
+</tr>
+<tr class="odd">
+<td><span class="math inline">\(\lambda \Lambda\)</span></td>
+<td><code>$\lambda \Lambda$</code></td>
+</tr>
+<tr class="even">
+<td><span class="math inline">\(\mu M\)</span></td>
+<td><code>$\mu M$</code></td>
+</tr>
+<tr class="odd">
+<td><span class="math inline">\(\nu N\)</span></td>
+<td><code>$\nu N$</code></td>
+</tr>
+<tr class="even">
+<td><span class="math inline">\(\xi\Xi\)</span></td>
+<td><code>$\xi\Xi$</code></td>
+</tr>
+<tr class="odd">
+<td><span class="math inline">\(o O\)</span></td>
+<td><code>$o O$</code></td>
+</tr>
+<tr class="even">
+<td><span class="math inline">\(\pi \Pi\)</span></td>
+<td><code>$\pi \Pi$</code></td>
+</tr>
+<tr class="odd">
+<td><span class="math inline">\(\rho\varrho P\)</span></td>
+<td><code>$\rho\varrho P$</code></td>
+</tr>
+<tr class="even">
+<td><span class="math inline">\(\sigma \Sigma\)</span></td>
+<td><code>$\sigma \Sigma$</code></td>
+</tr>
+<tr class="odd">
+<td><span class="math inline">\(\tau T\)</span></td>
+<td><code>$\tau T$</code></td>
+</tr>
+<tr class="even">
+<td><span class="math inline">\(\upsilon \Upsilon\)</span></td>
+<td><code>$\upsilon \Upsilon$</code></td>
+</tr>
+<tr class="odd">
+<td><span class="math inline">\(\phi \varphi \Phi\)</span></td>
+<td><code>$\phi \varphi \Phi$</code></td>
+</tr>
+<tr class="even">
+<td><span class="math inline">\(\chi X\)</span></td>
+<td><code>$\chi X$</code></td>
+</tr>
+<tr class="odd">
+<td><span class="math inline">\(\psi \Psi\)</span></td>
+<td><code>$\psi \Psi$</code></td>
+</tr>
+<tr class="even">
+<td><span class="math inline">\(\omega \Omega\)</span></td>
+<td><code>$\omega \Omega$</code></td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div id="aligning-equations" class="section level3">
+<h3>
+<span class="header-section-number">18.1.5</span> Aligning Equations<a class="anchor" aria-label="anchor" href="#aligning-equations"><i class="fas fa-link"></i></a>
+</h3>
+<p>If you want a sequence of aligned equations (often very useful for demonstrating algebraic manipulation or for plugging values into equations), use <code>\begin{align*} ... \end{align*}</code>. Separate lines with <code>\\</code> and use <code>&amp;</code> to mark where things should line up. Note: No dollar signs are needed for mathematical expression in this method.</p>
+<p>Example:</p>
+<pre class="\"><code>$\begin{aligned}
+AR(p): Y_i &amp;= c + \epsilon_i + \phi_i Y_{i-1} \dots \\
+Y_{i} &amp;= c + \phi_i Y_{i-1} \dots
+\end{aligned}$</code></pre>
+<p><span class="math inline">\(\begin{aligned} AR(p): Y_i &amp;= c + \epsilon_i + \phi_i Y_{i-1} \dots \\ Y_{i} &amp;= c + \phi_i Y_{i-1} \dots \end{aligned}\)</span></p>
+</div>
+</div>
+<div id="reference-2" class="section level2">
+<h2>
+<span class="header-section-number">18.2</span> Reference<a class="anchor" aria-label="anchor" href="#reference-2"><i class="fas fa-link"></i></a>
+</h2>
+<p>Latex math symbols. Kapeli. (n.d.). Retrieved October 28, 2021, from<br><a href="https://kapeli.com/cheat_sheets/LaTeX_Math_Symbols.docset/Contents/Resources/Documents/index" class="uri">https://kapeli.com/cheat_sheets/LaTeX_Math_Symbols.docset/Contents/Resources/Documents/index</a>.</p>
+<p>Pruim, R. (2016, October 19). Mathematics in R markdown. Retrieved October 28, 2021, from<br><a href="https://rpruim.github.io/s341/S19/from-class/MathinRmd.html" class="uri">https://rpruim.github.io/s341/S19/from-class/MathinRmd.html</a>.</p>
+<p>R markdown : : Cheat sheet - ETH Z. (n.d.). Retrieved October 28, 2021, from<br><a href="https://ethz.ch/content/dam/ethz/special-interest/math/statistics/sfs/Education/Advanced%20Studies%20in%20Applied%20Statistics/course-material-1719/Datenanalyse/rmarkdown-2.pdf" class="uri">https://ethz.ch/content/dam/ethz/special-interest/math/statistics/sfs/Education/Advanced%20Studies%20in%20Applied%20Statistics/course-material-1719/Datenanalyse/rmarkdown-2.pdf</a>.</p>
+<p>Yihui Xie, C. D. (2021, October 7). R markdown cookbook. 5.2 Indent text. Retrieved October 28, 2021, from <a href="https://bookdown.org/yihui/rmarkdown-cookbook/indent-text.html" class="uri">https://bookdown.org/yihui/rmarkdown-cookbook/indent-text.html</a>.</p>
+<p>Yihui Xie, J. J. A. (2021, April 9). R markdown: The definitive guide. Home. Retrieved October 28, 2021, from<br><a href="https://bookdown.org/yihui/rmarkdown/" class="uri">https://bookdown.org/yihui/rmarkdown/</a>.</p>
+
+</div>
+</div>
+
+
+
+  <div class="chapter-nav">
+<div class="prev"><a href="common-r-markdown-syntax-cheatsheet.html"><span class="header-section-number">17</span> Common R markdown syntax cheatsheet</a></div>
+<div class="next"><a href="multithreading-crawler-frame.html"><span class="header-section-number">19</span> Multithreading Crawler Frame</a></div>
+</div></main><div class="col-md-3 col-lg-2 d-none d-md-block sidebar sidebar-chapter">
+    <nav id="toc" data-toggle="toc" aria-label="On this page"><h2>On this page</h2>
+      <ul class="nav navbar-nav">
+<li>
+<a class="nav-link" href="#header"><span class="header-section-number">18</span> Header</a><ul class="nav navbar-nav">
+<li><a class="nav-link" href="#out-put-format"><span class="header-section-number">18.0.1</span> Out put format</a></li>
+<li><a class="nav-link" href="#embed-code-with-knitr"><span class="header-section-number">18.0.2</span> Embed Code with knitr</a></li>
+<li><a class="nav-link" href="#render"><span class="header-section-number">18.0.3</span> Render</a></li>
+<li><a class="nav-link" href="#chunk-options"><span class="header-section-number">18.0.4</span> CHUNK OPTIONS</a></li>
+</ul>
+</li>
+<li>
+<a class="nav-link" href="#mathematical-expression"><span class="header-section-number">18.1</span> Mathematical Expression</a><ul class="nav navbar-nav">
+<li><a class="nav-link" href="#mathematical-notation"><span class="header-section-number">18.1.1</span> Mathematical notation</a></li>
+<li><a class="nav-link" href="#common-mathematical-symbol"><span class="header-section-number">18.1.2</span> Common Mathematical Symbol</a></li>
+<li><a class="nav-link" href="#matrix"><span class="header-section-number">18.1.3</span> Matrix</a></li>
+<li><a class="nav-link" href="#greek-letters"><span class="header-section-number">18.1.4</span> Greek letters</a></li>
+<li><a class="nav-link" href="#aligning-equations"><span class="header-section-number">18.1.5</span> Aligning Equations</a></li>
+</ul>
+</li>
+<li><a class="nav-link" href="#reference-2"><span class="header-section-number">18.2</span> Reference</a></li>
+</ul>
+
+      <div class="book-extra">
+        <ul class="list-unstyled">
+<li><a id="book-source" href="https://github.com/jtr13/cc21fall1/blob/main/rmd_syntax_cheatsheet.Rmd">View source <i class="fab fa-github"></i></a></li>
+          <li><a id="book-edit" href="https://github.com/jtr13/cc21fall1/edit/main/rmd_syntax_cheatsheet.Rmd">Edit this page <i class="fab fa-github"></i></a></li>
+        </ul>
+</div>
+    </nav>
+</div>
+
+</div>
+</div> <!-- .container -->
+
+<footer class="bg-primary text-light mt-5"><div class="container"><div class="row">
+
+  <div class="col-12 col-md-6 mt-3">
+    <p>"<strong>EDAV Fall 2021 Mon/Wed Community Contributions</strong>" was written by the students of the class. It was last built on 2021-11-08.</p>
+  </div>
+
+  <div class="col-12 col-md-6 mt-3">
+    <p>This book was built by the <a class="text-light" href="https://bookdown.org">bookdown</a> R package.</p>
+  </div>
+
+</div></div>
+</footer><!-- dynamically load mathjax for compatibility with self-contained --><script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script><script type="text/x-mathjax-config">const popovers = document.querySelectorAll('a.footnote-ref[data-toggle="popover"]');
+for (let popover of popovers) {
+  const div = document.createElement('div');
+  div.setAttribute('style', 'position: absolute; top: 0, left:0; width:0, height:0, overflow: hidden; visibility: hidden;');
+  div.innerHTML = popover.getAttribute('data-content');
+
+  var has_math = div.querySelector("span.math");
+  if (has_math) {
+    document.body.appendChild(div);
+    MathJax.Hub.Queue(["Typeset", MathJax.Hub, div]);
+    MathJax.Hub.Queue(function() {
+      popover.setAttribute('data-content', div.innerHTML);
+      document.body.removeChild(div);
+    })
+  }
+}
+</script>
+</body>
+</html>

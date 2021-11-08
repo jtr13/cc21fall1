@@ -4,16 +4,16 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<title>Chapter 27 Introduction to Data Manipulation | EDAV Fall 2021 Mon/Wed Community Contributions</title>
+<title>Chapter 29 Introduction to Data Manipulation | EDAV Fall 2021 Mon/Wed Community Contributions</title>
 <meta name="author" content="the students of the class">
-<meta name="description" content="Yuhe Wang library(tidyverse) library(fueleconomy) library(tidyverse) library(lubridate)  27.1 Data Wrangling with dplyr  27.1.1 Pipe: Here we use %&gt;% as pipeline. a %&gt;% operation(…) ==...">
+<meta name="description" content="Yuhe Wang library(tidyverse) library(fueleconomy) library(tidyverse) library(lubridate)  29.1 Data Wrangling with dplyr  29.1.1 Pipe: Here we use %&gt;% as pipeline. a %&gt;% operation(…) ==...">
 <meta name="generator" content="bookdown 0.24 with bs4_book()">
-<meta property="og:title" content="Chapter 27 Introduction to Data Manipulation | EDAV Fall 2021 Mon/Wed Community Contributions">
+<meta property="og:title" content="Chapter 29 Introduction to Data Manipulation | EDAV Fall 2021 Mon/Wed Community Contributions">
 <meta property="og:type" content="book">
-<meta property="og:description" content="Yuhe Wang library(tidyverse) library(fueleconomy) library(tidyverse) library(lubridate)  27.1 Data Wrangling with dplyr  27.1.1 Pipe: Here we use %&gt;% as pipeline. a %&gt;% operation(…) ==...">
+<meta property="og:description" content="Yuhe Wang library(tidyverse) library(fueleconomy) library(tidyverse) library(lubridate)  29.1 Data Wrangling with dplyr  29.1.1 Pipe: Here we use %&gt;% as pipeline. a %&gt;% operation(…) ==...">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Chapter 27 Introduction to Data Manipulation | EDAV Fall 2021 Mon/Wed Community Contributions">
-<meta name="twitter:description" content="Yuhe Wang library(tidyverse) library(fueleconomy) library(tidyverse) library(lubridate)  27.1 Data Wrangling with dplyr  27.1.1 Pipe: Here we use %&gt;% as pipeline. a %&gt;% operation(…) ==...">
+<meta name="twitter:title" content="Chapter 29 Introduction to Data Manipulation | EDAV Fall 2021 Mon/Wed Community Contributions">
+<meta name="twitter:description" content="Yuhe Wang library(tidyverse) library(fueleconomy) library(tidyverse) library(lubridate)  29.1 Data Wrangling with dplyr  29.1.1 Pipe: Here we use %&gt;% as pipeline. a %&gt;% operation(…) ==...">
 <!-- JS --><script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.6/clipboard.min.js" integrity="sha256-inc5kl9MA1hkeYUt+EC3BhlIgyp/2jDIyBLS6k3UxPI=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/fuse.js/6.4.6/fuse.js" integrity="sha512-zv6Ywkjyktsohkbp9bb45V6tEMoWhzFzXis+LrMehmJZZSys19Yxf1dopHx7WzIKxr5tK2dVcYmaCk2uqdjF4A==" crossorigin="anonymous"></script><script src="https://kit.fontawesome.com/6ecbd6c532.js" crossorigin="anonymous"></script><script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <link href="libs/bootstrap-4.6.0/bootstrap.min.css" rel="stylesheet">
 <script src="libs/bootstrap-4.6.0/bootstrap.bundle.min.js"></script><script src="libs/bs3compat-0.3.1/transition.js"></script><script src="libs/bs3compat-0.3.1/tabs.js"></script><script src="libs/bs3compat-0.3.1/bs3compat.js"></script><link href="libs/bs4_book-1.0.0/bs4_book.css" rel="stylesheet">
@@ -63,29 +63,31 @@
 <li><a class="" href="cheatsheet-tidyverse.html"><span class="header-section-number">14</span> Cheatsheet Tidyverse</a></li>
 <li><a class="" href="use-of-ggprism-and-ggsci-packages.html"><span class="header-section-number">15</span> Use of ggprism and ggsci packages</a></li>
 <li><a class="" href="interactive-plot-introduction.html"><span class="header-section-number">16</span> Interactive plot introduction</a></li>
+<li><a class="" href="common-r-markdown-syntax-cheatsheet.html"><span class="header-section-number">17</span> Common R markdown syntax cheatsheet</a></li>
+<li><a class="" href="header.html"><span class="header-section-number">18</span> Header</a></li>
 <li class="book-part">Tutorials</li>
-<li><a class="" href="multithreading-crawler-frame.html"><span class="header-section-number">17</span> Multithreading Crawler Frame</a></li>
-<li><a class="" href="regression-and-classification-in-r.html"><span class="header-section-number">18</span> Regression and Classification in R</a></li>
-<li><a class="" href="tibble-vs.-dataframe.html"><span class="header-section-number">19</span> Tibble vs. DataFrame</a></li>
-<li><a class="" href="introduction-to-time-series.html"><span class="header-section-number">20</span> Introduction to Time Series</a></li>
-<li><a class="" href="vipul-edav-community-contribution-kickstart-r.html"><span class="header-section-number">21</span> Vipul EDAV Community Contribution Kickstart R</a></li>
-<li><a class="" href="caret---a-machine-learning-package-turotial.html"><span class="header-section-number">22</span> caret - a machine learning package turotial</a></li>
-<li><a class="" href="streamlit-for-financial-analysis.html"><span class="header-section-number">23</span> Streamlit for Financial Analysis</a></li>
-<li><a class="" href="interactive-graphs-tutorial.html"><span class="header-section-number">24</span> Interactive graphs tutorial</a></li>
-<li><a class="" href="guideline-on-using-package-rcurl-and-xml-for-web-scraping.html"><span class="header-section-number">25</span> Guideline on Using Package Rcurl and XML for Web Scraping</a></li>
-<li><a class="" href="twitter-r-package-scraping-via-api-tutorial.html"><span class="header-section-number">26</span> TwitteR R Package Scraping via API Tutorial</a></li>
-<li><a class="active" href="introduction-to-data-manipulation.html"><span class="header-section-number">27</span> Introduction to Data Manipulation</a></li>
-<li><a class="" href="animating-the-plots-in-r.html"><span class="header-section-number">28</span> Animating the plots in R</a></li>
-<li><a class="" href="quick-guide-to-eda.html"><span class="header-section-number">29</span> Quick guide to eda</a></li>
-<li><a class="" href="natural-langauge-processing-common-eda-practices-in-python.html"><span class="header-section-number">30</span> Natural Langauge Processing Common EDA Practices in Python</a></li>
-<li><a class="" href="supervised-learning-tutorial.html"><span class="header-section-number">31</span> Supervised Learning Tutorial</a></li>
+<li><a class="" href="multithreading-crawler-frame.html"><span class="header-section-number">19</span> Multithreading Crawler Frame</a></li>
+<li><a class="" href="regression-and-classification-in-r.html"><span class="header-section-number">20</span> Regression and Classification in R</a></li>
+<li><a class="" href="tibble-vs.-dataframe.html"><span class="header-section-number">21</span> Tibble vs. DataFrame</a></li>
+<li><a class="" href="introduction-to-time-series.html"><span class="header-section-number">22</span> Introduction to Time Series</a></li>
+<li><a class="" href="vipul-edav-community-contribution-kickstart-r.html"><span class="header-section-number">23</span> Vipul EDAV Community Contribution Kickstart R</a></li>
+<li><a class="" href="caret---a-machine-learning-package-turotial.html"><span class="header-section-number">24</span> caret - a machine learning package turotial</a></li>
+<li><a class="" href="streamlit-for-financial-analysis.html"><span class="header-section-number">25</span> Streamlit for Financial Analysis</a></li>
+<li><a class="" href="interactive-graphs-tutorial.html"><span class="header-section-number">26</span> Interactive graphs tutorial</a></li>
+<li><a class="" href="guideline-on-using-package-rcurl-and-xml-for-web-scraping.html"><span class="header-section-number">27</span> Guideline on Using Package Rcurl and XML for Web Scraping</a></li>
+<li><a class="" href="twitter-r-package-scraping-via-api-tutorial.html"><span class="header-section-number">28</span> TwitteR R Package Scraping via API Tutorial</a></li>
+<li><a class="active" href="introduction-to-data-manipulation.html"><span class="header-section-number">29</span> Introduction to Data Manipulation</a></li>
+<li><a class="" href="animating-the-plots-in-r.html"><span class="header-section-number">30</span> Animating the plots in R</a></li>
+<li><a class="" href="quick-guide-to-eda.html"><span class="header-section-number">31</span> Quick guide to eda</a></li>
+<li><a class="" href="natural-langauge-processing-common-eda-practices-in-python.html"><span class="header-section-number">32</span> Natural Langauge Processing Common EDA Practices in Python</a></li>
+<li><a class="" href="supervised-learning-tutorial.html"><span class="header-section-number">33</span> Supervised Learning Tutorial</a></li>
 <li class="book-part">Demonstrations</li>
-<li><a class="" href="linear-association-r-studio-plugin.html"><span class="header-section-number">32</span> Linear Association R Studio Plugin</a></li>
+<li><a class="" href="linear-association-r-studio-plugin.html"><span class="header-section-number">34</span> Linear Association R Studio Plugin</a></li>
 <li class="book-part">Workshops</li>
-<li><a class="" href="data-science-product-cycles-in-enterprises.html"><span class="header-section-number">33</span> Data Science Product Cycles in Enterprises</a></li>
+<li><a class="" href="data-science-product-cycles-in-enterprises.html"><span class="header-section-number">35</span> Data Science Product Cycles in Enterprises</a></li>
 <li class="book-part">Appendices</li>
-<li><a class="" href="github-initial-setup.html"><span class="header-section-number">34</span> Github initial setup</a></li>
-<li><a class="" href="tutorial-for-pull-request-mergers.html"><span class="header-section-number">35</span> Tutorial for pull request mergers</a></li>
+<li><a class="" href="github-initial-setup.html"><span class="header-section-number">36</span> Github initial setup</a></li>
+<li><a class="" href="tutorial-for-pull-request-mergers.html"><span class="header-section-number">37</span> Tutorial for pull request mergers</a></li>
 </ul>
 
         <div class="book-extra">
@@ -95,30 +97,30 @@
 </div>
   </header><main class="col-sm-12 col-md-9 col-lg-7" id="content"><div id="introduction-to-data-manipulation" class="section level1">
 <h1>
-<span class="header-section-number">27</span> Introduction to Data Manipulation<a class="anchor" aria-label="anchor" href="#introduction-to-data-manipulation"><i class="fas fa-link"></i></a>
+<span class="header-section-number">29</span> Introduction to Data Manipulation<a class="anchor" aria-label="anchor" href="#introduction-to-data-manipulation"><i class="fas fa-link"></i></a>
 </h1>
 <p>Yuhe Wang</p>
-<div class="sourceCode" id="cb398"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb411"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://tidyverse.tidyverse.org">tidyverse</a></span><span class="op">)</span>
 <span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://github.com/hadley/fueleconomy">fueleconomy</a></span><span class="op">)</span>
 <span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://tidyverse.tidyverse.org">tidyverse</a></span><span class="op">)</span>
 <span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://lubridate.tidyverse.org">lubridate</a></span><span class="op">)</span></code></pre></div>
 <div id="data-wrangling-with-dplyr" class="section level2">
 <h2>
-<span class="header-section-number">27.1</span> Data Wrangling with dplyr<a class="anchor" aria-label="anchor" href="#data-wrangling-with-dplyr"><i class="fas fa-link"></i></a>
+<span class="header-section-number">29.1</span> Data Wrangling with dplyr<a class="anchor" aria-label="anchor" href="#data-wrangling-with-dplyr"><i class="fas fa-link"></i></a>
 </h2>
 <div id="pipe" class="section level3">
 <h3>
-<span class="header-section-number">27.1.1</span> Pipe:<a class="anchor" aria-label="anchor" href="#pipe"><i class="fas fa-link"></i></a>
+<span class="header-section-number">29.1.1</span> Pipe:<a class="anchor" aria-label="anchor" href="#pipe"><i class="fas fa-link"></i></a>
 </h3>
 <p>Here we use %&gt;% as pipeline. a %&gt;% operation(…) == operation(a, ….)</p>
 </div>
 <div id="tibble-6" class="section level3">
 <h3>
-<span class="header-section-number">27.1.2</span> Tibble<a class="anchor" aria-label="anchor" href="#tibble-6"><i class="fas fa-link"></i></a>
+<span class="header-section-number">29.1.2</span> Tibble<a class="anchor" aria-label="anchor" href="#tibble-6"><i class="fas fa-link"></i></a>
 </h3>
 <p>Tibble is a type of data structure that is similar to data frame in base R.Compared to normal dataframee, tibble never changes the type of the input, or the names of the variables, or the row names.</p>
-<div class="sourceCode" id="cb399"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb412"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="fu"><a href="https://tibble.tidyverse.org/reference/tibble.html">tibble</a></span><span class="op">(</span>x<span class="op">=</span><span class="fl">1</span><span class="op">:</span><span class="fl">5</span>, y<span class="op">=</span><span class="fl">1</span>,z<span class="op">=</span><span class="va">x</span><span class="op">^</span><span class="fl">2</span><span class="op">+</span><span class="va">y</span><span class="op">)</span></code></pre></div>
 <pre><code>## # A tibble: 5 × 3
 ##       x     y     z
@@ -131,10 +133,10 @@
 </div>
 <div id="pick-observations-with-filter" class="section level3">
 <h3>
-<span class="header-section-number">27.1.3</span> Pick observations with filter()<a class="anchor" aria-label="anchor" href="#pick-observations-with-filter"><i class="fas fa-link"></i></a>
+<span class="header-section-number">29.1.3</span> Pick observations with filter()<a class="anchor" aria-label="anchor" href="#pick-observations-with-filter"><i class="fas fa-link"></i></a>
 </h3>
 <p>R provides standard suites: &lt;, &gt;=, &lt;=, !=, ==, %in% for you to apply conditions on rows</p>
-<div class="sourceCode" id="cb401"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb414"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="va">vehicles</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> <span class="fu"><a href="https://dplyr.tidyverse.org/reference/filter.html">filter</a></span><span class="op">(</span><span class="va">year</span><span class="op">&gt;</span><span class="fl">1999</span><span class="op">)</span></code></pre></div>
 <pre><code>## # A tibble: 16,649 × 12
 ##       id make  model  year class   trans   drive     cyl displ fuel    hwy   cty
@@ -153,9 +155,9 @@
 </div>
 <div id="reorder-rows-with-arrange" class="section level3">
 <h3>
-<span class="header-section-number">27.1.4</span> Reorder rows with arrange()<a class="anchor" aria-label="anchor" href="#reorder-rows-with-arrange"><i class="fas fa-link"></i></a>
+<span class="header-section-number">29.1.4</span> Reorder rows with arrange()<a class="anchor" aria-label="anchor" href="#reorder-rows-with-arrange"><i class="fas fa-link"></i></a>
 </h3>
-<div class="sourceCode" id="cb403"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb416"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="va">vehicles</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> <span class="fu"><a href="https://dplyr.tidyverse.org/reference/arrange.html">arrange</a></span><span class="op">(</span><span class="va">year</span>,<span class="va">class</span>,<span class="va">trans</span><span class="op">)</span></code></pre></div>
 <pre><code>## # A tibble: 33,442 × 12
 ##       id make      model   year class  trans drive   cyl displ fuel    hwy   cty
@@ -174,9 +176,9 @@
 </div>
 <div id="create-new-variables-using-mutate" class="section level3">
 <h3>
-<span class="header-section-number">27.1.5</span> Create new variables using mutate()<a class="anchor" aria-label="anchor" href="#create-new-variables-using-mutate"><i class="fas fa-link"></i></a>
+<span class="header-section-number">29.1.5</span> Create new variables using mutate()<a class="anchor" aria-label="anchor" href="#create-new-variables-using-mutate"><i class="fas fa-link"></i></a>
 </h3>
-<div class="sourceCode" id="cb405"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb418"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="va">vehicles</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> <span class="fu"><a href="https://dplyr.tidyverse.org/reference/mutate.html">mutate</a></span><span class="op">(</span>cyl_2 <span class="op">=</span> <span class="va">cyl</span><span class="op">*</span><span class="fl">2</span><span class="op">)</span></code></pre></div>
 <pre><code>## # A tibble: 33,442 × 13
 ##       id make  model  year class trans drive   cyl displ fuel    hwy   cty cyl_2
@@ -195,7 +197,7 @@
 </div>
 <div id="create-new-calculations-by-catgories-using-summarize" class="section level3">
 <h3>
-<span class="header-section-number">27.1.6</span> Create new calculations by catgories using summarize()<a class="anchor" aria-label="anchor" href="#create-new-calculations-by-catgories-using-summarize"><i class="fas fa-link"></i></a>
+<span class="header-section-number">29.1.6</span> Create new calculations by catgories using summarize()<a class="anchor" aria-label="anchor" href="#create-new-calculations-by-catgories-using-summarize"><i class="fas fa-link"></i></a>
 </h3>
 <p>We can use summarize to get some statistics for different groups. In the following example, we are getting average of difference between air time and scheduled air time, grouped by different carriers. Note that we have to add “na.rm” inside a functio to remove NA, else we will see a lot of NAs.<br>
 Common operation functions:<br>
@@ -212,7 +214,7 @@ last(): the last row<br>
 n(): count<br>
 n_distinct(x): count distinct<br>
 sum(): sum<br></p>
-<div class="sourceCode" id="cb407"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb420"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="va">vehicles</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> <span class="fu"><a href="https://dplyr.tidyverse.org/reference/group_by.html">group_by</a></span><span class="op">(</span><span class="va">class</span>, <span class="va">fuel</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> <span class="fu"><a href="https://dplyr.tidyverse.org/reference/summarise.html">summarize</a></span><span class="op">(</span>mean_cty <span class="op">=</span><span class="fu"><a href="https://rdrr.io/r/base/mean.html">mean</a></span><span class="op">(</span><span class="va">cty</span>, na.rm <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span><span class="op">)</span></code></pre></div>
 <pre><code>## # A tibble: 151 × 3
 ## # Groups:   class [34]
@@ -233,14 +235,14 @@ sum(): sum<br></p>
 </div>
 <div id="tidy-data-with-dplyr" class="section level2">
 <h2>
-<span class="header-section-number">27.2</span> Tidy Data with dplyr<a class="anchor" aria-label="anchor" href="#tidy-data-with-dplyr"><i class="fas fa-link"></i></a>
+<span class="header-section-number">29.2</span> Tidy Data with dplyr<a class="anchor" aria-label="anchor" href="#tidy-data-with-dplyr"><i class="fas fa-link"></i></a>
 </h2>
 <div id="gatherspread" class="section level3">
 <h3>
-<span class="header-section-number">27.2.1</span> Gather/Spread<a class="anchor" aria-label="anchor" href="#gatherspread"><i class="fas fa-link"></i></a>
+<span class="header-section-number">29.2.1</span> Gather/Spread<a class="anchor" aria-label="anchor" href="#gatherspread"><i class="fas fa-link"></i></a>
 </h3>
 <p>We can reshape table from wide format into long format using Gather. We can reshape table from wide format into long format using Sprea vice versa. (The following example is untrue data)</p>
-<div class="sourceCode" id="cb409"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb422"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="va">t1</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://tibble.tidyverse.org/reference/tibble.html">tibble</a></span><span class="op">(</span>country<span class="op">=</span><span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">'China'</span>, <span class="st">'US'</span>, <span class="st">'Korea'</span><span class="op">)</span>, `1999` <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">123</span>,<span class="fl">323</span>,<span class="fl">4245</span><span class="op">)</span>,`2000` <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">12</span>,<span class="fl">32</span>,<span class="fl">424</span><span class="op">)</span><span class="op">)</span>
 <span class="va">t1</span></code></pre></div>
 <pre><code>## # A tibble: 3 × 3
@@ -249,7 +251,7 @@ sum(): sum<br></p>
 ## 1 China      123     12
 ## 2 US         323     32
 ## 3 Korea     4245    424</code></pre>
-<div class="sourceCode" id="cb411"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb424"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="va">t1</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> <span class="fu"><a href="https://tidyr.tidyverse.org/reference/gather.html">gather</a></span><span class="op">(</span><span class="va">`1999`</span>, <span class="va">`2000`</span>,key<span class="op">=</span><span class="st">'year'</span>,value <span class="op">=</span> <span class="st">'GDP'</span><span class="op">)</span></code></pre></div>
 <pre><code>## # A tibble: 6 × 3
 ##   country year    GDP
@@ -263,10 +265,10 @@ sum(): sum<br></p>
 </div>
 <div id="seperateunite" class="section level3">
 <h3>
-<span class="header-section-number">27.2.2</span> Seperate/Unite<a class="anchor" aria-label="anchor" href="#seperateunite"><i class="fas fa-link"></i></a>
+<span class="header-section-number">29.2.2</span> Seperate/Unite<a class="anchor" aria-label="anchor" href="#seperateunite"><i class="fas fa-link"></i></a>
 </h3>
 <p>We can combine/separate values in one column into two, or two into one(using some special characters). We can add a parameter of “convert=TRUE” to convert chars to integer directly.</p>
-<div class="sourceCode" id="cb413"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb426"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="va">t2</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://tibble.tidyverse.org/reference/tibble.html">tibble</a></span><span class="op">(</span>country<span class="op">=</span><span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">'China'</span>, <span class="st">'US'</span>, <span class="st">'Korea'</span><span class="op">)</span>, rate<span class="op">=</span><span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">'12/232'</span>,<span class="st">'123/20384'</span>,<span class="st">'2328/2301823'</span><span class="op">)</span><span class="op">)</span>
 <span class="va">t2</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> <span class="fu"><a href="https://tidyr.tidyverse.org/reference/separate.html">separate</a></span><span class="op">(</span><span class="va">rate</span>,into<span class="op">=</span><span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"numerator"</span>, <span class="st">"denominator"</span><span class="op">)</span>,convert<span class="op">=</span><span class="cn">TRUE</span><span class="op">)</span></code></pre></div>
 <pre><code>## # A tibble: 3 × 3
@@ -279,17 +281,17 @@ sum(): sum<br></p>
 </div>
 <div id="relational-data-with-dplyr" class="section level2">
 <h2>
-<span class="header-section-number">27.3</span> Relational Data with dplyr<a class="anchor" aria-label="anchor" href="#relational-data-with-dplyr"><i class="fas fa-link"></i></a>
+<span class="header-section-number">29.3</span> Relational Data with dplyr<a class="anchor" aria-label="anchor" href="#relational-data-with-dplyr"><i class="fas fa-link"></i></a>
 </h2>
 <div id="prerequisites" class="section level3">
 <h3>
-<span class="header-section-number">27.3.1</span> prerequisites<a class="anchor" aria-label="anchor" href="#prerequisites"><i class="fas fa-link"></i></a>
+<span class="header-section-number">29.3.1</span> prerequisites<a class="anchor" aria-label="anchor" href="#prerequisites"><i class="fas fa-link"></i></a>
 </h3>
 <p>KEYS in DBMS is an attribute or set of attributes which helps you to identify a row or a relation. A primary key uniquely identifies an observation. A foreign key uniquely identify an observation in another table. Join between two table usually takes place between two keys within different tables to ensure single join.</p>
 </div>
 <div id="understanding-different-types-of-joins" class="section level3">
 <h3>
-<span class="header-section-number">27.3.2</span> Understanding different types of joins<a class="anchor" aria-label="anchor" href="#understanding-different-types-of-joins"><i class="fas fa-link"></i></a>
+<span class="header-section-number">29.3.2</span> Understanding different types of joins<a class="anchor" aria-label="anchor" href="#understanding-different-types-of-joins"><i class="fas fa-link"></i></a>
 </h3>
 <p>x () y
 inner join: only return the matching pairs existing in both tables
@@ -297,11 +299,11 @@ left join: only keep all observations in x
 right join: only keep all observations in y
 full join:keep all observations in x and y
 Note that only one of the tables can have duplicate keys. If both of the tables have duplicate keys, this will cause error. Usually, having duplicate key in one table can produce unexpected result. So, the best practice is to investigate both tables firstly before joining.</p>
-<div class="sourceCode" id="cb415"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb428"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="co"># These data are frictional </span>
 <span class="va">x</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://tibble.tidyverse.org/reference/tibble.html">tibble</a></span><span class="op">(</span>Country <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">'China'</span>,<span class="st">'US'</span>,<span class="st">'Japan'</span>,<span class="st">'Canada'</span><span class="op">)</span>, population<span class="op">=</span><span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">100</span>,<span class="fl">200</span>,<span class="fl">300</span>,<span class="fl">400</span><span class="op">)</span><span class="op">)</span>
 <span class="va">y</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://tibble.tidyverse.org/reference/tibble.html">tibble</a></span><span class="op">(</span>Country <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">'China'</span>,<span class="st">'US'</span>,<span class="st">'Japan'</span>,<span class="st">'Mexico'</span><span class="op">)</span>, GDP<span class="op">=</span><span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">100</span>,<span class="fl">23</span>,<span class="fl">2142</span>,<span class="fl">234</span><span class="op">)</span><span class="op">)</span></code></pre></div>
-<div class="sourceCode" id="cb416"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb429"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="fu"><a href="https://dplyr.tidyverse.org/reference/mutate-joins.html">left_join</a></span><span class="op">(</span><span class="va">x</span>, <span class="va">y</span>, by<span class="op">=</span><span class="st">'Country'</span><span class="op">)</span></code></pre></div>
 <pre><code>## # A tibble: 4 × 3
 ##   Country population   GDP
@@ -310,7 +312,7 @@ Note that only one of the tables can have duplicate keys. If both of the tables 
 ## 2 US             200    23
 ## 3 Japan          300  2142
 ## 4 Canada         400    NA</code></pre>
-<div class="sourceCode" id="cb418"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb431"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="fu"><a href="https://dplyr.tidyverse.org/reference/mutate-joins.html">right_join</a></span><span class="op">(</span><span class="va">x</span>, <span class="va">y</span>, by<span class="op">=</span><span class="st">'Country'</span><span class="op">)</span></code></pre></div>
 <pre><code>## # A tibble: 4 × 3
 ##   Country population   GDP
@@ -319,7 +321,7 @@ Note that only one of the tables can have duplicate keys. If both of the tables 
 ## 2 US             200    23
 ## 3 Japan          300  2142
 ## 4 Mexico          NA   234</code></pre>
-<div class="sourceCode" id="cb420"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb433"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="fu"><a href="https://dplyr.tidyverse.org/reference/mutate-joins.html">inner_join</a></span><span class="op">(</span><span class="va">x</span>, <span class="va">y</span>, by<span class="op">=</span><span class="st">'Country'</span><span class="op">)</span></code></pre></div>
 <pre><code>## # A tibble: 3 × 3
 ##   Country population   GDP
@@ -327,7 +329,7 @@ Note that only one of the tables can have duplicate keys. If both of the tables 
 ## 1 China          100   100
 ## 2 US             200    23
 ## 3 Japan          300  2142</code></pre>
-<div class="sourceCode" id="cb422"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb435"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="fu"><a href="https://dplyr.tidyverse.org/reference/mutate-joins.html">full_join</a></span><span class="op">(</span><span class="va">x</span>, <span class="va">y</span>, by<span class="op">=</span><span class="st">'Country'</span><span class="op">)</span></code></pre></div>
 <pre><code>## # A tibble: 5 × 3
 ##   Country population   GDP
@@ -342,133 +344,133 @@ Note that only one of the tables can have duplicate keys. If both of the tables 
 </div>
 <div id="datetime-with-lubridate" class="section level2">
 <h2>
-<span class="header-section-number">27.4</span> Datetime with Lubridate<a class="anchor" aria-label="anchor" href="#datetime-with-lubridate"><i class="fas fa-link"></i></a>
+<span class="header-section-number">29.4</span> Datetime with Lubridate<a class="anchor" aria-label="anchor" href="#datetime-with-lubridate"><i class="fas fa-link"></i></a>
 </h2>
-<div class="sourceCode" id="cb424"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb437"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://tidyverse.tidyverse.org">tidyverse</a></span><span class="op">)</span>
 <span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://lubridate.tidyverse.org">lubridate</a></span><span class="op">)</span></code></pre></div>
 <div id="datetime-from-strings" class="section level3">
 <h3>
-<span class="header-section-number">27.4.1</span> Datetime from strings<a class="anchor" aria-label="anchor" href="#datetime-from-strings"><i class="fas fa-link"></i></a>
+<span class="header-section-number">29.4.1</span> Datetime from strings<a class="anchor" aria-label="anchor" href="#datetime-from-strings"><i class="fas fa-link"></i></a>
 </h3>
 <p>Lubridate is able to parse different format of datetime strings</p>
-<div class="sourceCode" id="cb425"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb438"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="fu"><a href="https://lubridate.tidyverse.org/reference/ymd.html">ymd</a></span><span class="op">(</span><span class="st">'2020-01-01'</span><span class="op">)</span></code></pre></div>
 <pre><code>## [1] "2020-01-01"</code></pre>
-<div class="sourceCode" id="cb427"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb440"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="fu"><a href="https://lubridate.tidyverse.org/reference/ymd.html">mdy</a></span><span class="op">(</span><span class="st">'March 1 2021'</span><span class="op">)</span></code></pre></div>
 <pre><code>## [1] "2021-03-01"</code></pre>
-<div class="sourceCode" id="cb429"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb442"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="fu"><a href="https://lubridate.tidyverse.org/reference/ymd.html">dmy</a></span><span class="op">(</span><span class="st">'02/01/2020'</span><span class="op">)</span></code></pre></div>
 <pre><code>## [1] "2020-01-02"</code></pre>
 <p>Getting components from datetime</p>
-<div class="sourceCode" id="cb431"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb444"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="va">t</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://lubridate.tidyverse.org/reference/ymd_hms.html">ymd_hms</a></span><span class="op">(</span><span class="st">'2020-01-01 12:00:00'</span><span class="op">)</span>
 <span class="fu"><a href="https://lubridate.tidyverse.org/reference/year.html">year</a></span><span class="op">(</span><span class="va">t</span><span class="op">)</span></code></pre></div>
 <pre><code>## [1] 2020</code></pre>
-<div class="sourceCode" id="cb433"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb446"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="fu"><a href="https://lubridate.tidyverse.org/reference/month.html">month</a></span><span class="op">(</span><span class="va">t</span><span class="op">)</span></code></pre></div>
 <pre><code>## [1] 1</code></pre>
-<div class="sourceCode" id="cb435"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb448"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="co"># day of the month</span>
 <span class="fu"><a href="https://lubridate.tidyverse.org/reference/day.html">mday</a></span><span class="op">(</span><span class="va">t</span><span class="op">)</span></code></pre></div>
 <pre><code>## [1] 1</code></pre>
-<div class="sourceCode" id="cb437"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb450"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="co"># day of the year</span>
 <span class="fu"><a href="https://lubridate.tidyverse.org/reference/day.html">yday</a></span><span class="op">(</span><span class="va">t</span><span class="op">)</span></code></pre></div>
 <pre><code>## [1] 1</code></pre>
-<div class="sourceCode" id="cb439"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb452"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="co"># day of the week</span>
 <span class="fu"><a href="https://lubridate.tidyverse.org/reference/day.html">wday</a></span><span class="op">(</span><span class="va">t</span><span class="op">)</span></code></pre></div>
 <pre><code>## [1] 4</code></pre>
-<div class="sourceCode" id="cb441"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb454"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="fu"><a href="https://lubridate.tidyverse.org/reference/hour.html">hour</a></span><span class="op">(</span><span class="va">t</span><span class="op">)</span></code></pre></div>
 <pre><code>## [1] 12</code></pre>
-<div class="sourceCode" id="cb443"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb456"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="fu"><a href="https://lubridate.tidyverse.org/reference/minute.html">minute</a></span><span class="op">(</span><span class="va">t</span><span class="op">)</span></code></pre></div>
 <pre><code>## [1] 0</code></pre>
-<div class="sourceCode" id="cb445"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb458"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="fu"><a href="https://lubridate.tidyverse.org/reference/second.html">second</a></span><span class="op">(</span><span class="va">t</span><span class="op">)</span></code></pre></div>
 <pre><code>## [1] 0</code></pre>
 </div>
 <div id="timespan" class="section level3">
 <h3>
-<span class="header-section-number">27.4.2</span> Timespan<a class="anchor" aria-label="anchor" href="#timespan"><i class="fas fa-link"></i></a>
+<span class="header-section-number">29.4.2</span> Timespan<a class="anchor" aria-label="anchor" href="#timespan"><i class="fas fa-link"></i></a>
 </h3>
 <p>Duration: exact number of seconds<br>
 Periods: human units (week and months)<br>
 Intervals: starting and ending point<br></p>
 <p>Duration</p>
-<div class="sourceCode" id="cb447"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb460"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="fu"><a href="https://lubridate.tidyverse.org/reference/duration.html">dminutes</a></span><span class="op">(</span><span class="fl">10</span><span class="op">)</span></code></pre></div>
 <pre><code>## [1] "600s (~10 minutes)"</code></pre>
-<div class="sourceCode" id="cb449"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb462"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="fu"><a href="https://lubridate.tidyverse.org/reference/duration.html">dweeks</a></span><span class="op">(</span><span class="fl">3</span><span class="op">)</span></code></pre></div>
 <pre><code>## [1] "1814400s (~3 weeks)"</code></pre>
-<div class="sourceCode" id="cb451"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb464"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="fu"><a href="https://lubridate.tidyverse.org/reference/duration.html">dyears</a></span><span class="op">(</span><span class="fl">1</span><span class="op">)</span></code></pre></div>
 <pre><code>## [1] "31557600s (~1 years)"</code></pre>
 <p>Periods</p>
-<div class="sourceCode" id="cb453"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb466"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="fu"><a href="https://lubridate.tidyverse.org/reference/period.html">seconds</a></span><span class="op">(</span><span class="fl">15</span><span class="op">)</span></code></pre></div>
 <pre><code>## [1] "15S"</code></pre>
-<div class="sourceCode" id="cb455"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb468"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="fu"><a href="https://lubridate.tidyverse.org/reference/period.html">days</a></span><span class="op">(</span><span class="fl">7</span><span class="op">)</span></code></pre></div>
 <pre><code>## [1] "7d 0H 0M 0S"</code></pre>
-<div class="sourceCode" id="cb457"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb470"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="fu"><a href="https://rdrr.io/r/base/weekday.POSIXt.html">months</a></span><span class="op">(</span><span class="fl">1</span><span class="op">:</span><span class="fl">6</span><span class="op">)</span></code></pre></div>
 <pre><code>## [1] "1m 0d 0H 0M 0S" "2m 0d 0H 0M 0S" "3m 0d 0H 0M 0S" "4m 0d 0H 0M 0S"
 ## [5] "5m 0d 0H 0M 0S" "6m 0d 0H 0M 0S"</code></pre>
-<div class="sourceCode" id="cb459"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb472"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="fu"><a href="https://lubridate.tidyverse.org/reference/period.html">years</a></span><span class="op">(</span><span class="fl">1</span><span class="op">)</span><span class="op">/</span><span class="fu"><a href="https://lubridate.tidyverse.org/reference/period.html">days</a></span><span class="op">(</span><span class="fl">1</span><span class="op">)</span></code></pre></div>
 <pre><code>## [1] 365.25</code></pre>
-<div class="sourceCode" id="cb461"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb474"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="fu"><a href="https://lubridate.tidyverse.org/reference/now.html">today</a></span><span class="op">(</span><span class="op">)</span> <span class="op">+</span> <span class="fu"><a href="https://lubridate.tidyverse.org/reference/period.html">years</a></span><span class="op">(</span><span class="fl">1</span><span class="op">)</span></code></pre></div>
 <pre><code>## [1] "2022-11-07"</code></pre>
 </div>
 </div>
 <div id="string-manipulations-with-stringr" class="section level2">
 <h2>
-<span class="header-section-number">27.5</span> String manipulations with stringr<a class="anchor" aria-label="anchor" href="#string-manipulations-with-stringr"><i class="fas fa-link"></i></a>
+<span class="header-section-number">29.5</span> String manipulations with stringr<a class="anchor" aria-label="anchor" href="#string-manipulations-with-stringr"><i class="fas fa-link"></i></a>
 </h2>
 <div id="matching-patterns" class="section level3">
 <h3>
-<span class="header-section-number">27.5.1</span> Matching Patterns<a class="anchor" aria-label="anchor" href="#matching-patterns"><i class="fas fa-link"></i></a>
+<span class="header-section-number">29.5.1</span> Matching Patterns<a class="anchor" aria-label="anchor" href="#matching-patterns"><i class="fas fa-link"></i></a>
 </h3>
 <p>We can do regular expression matching in R easily too.
 string_view() is a very useful function that showcase string patterns. The first input will be input variable, the second input will be the string that we are trying to match. The following regular expression matches will be introduced using this method.<br></p>
 <p>We can match a substring directly easily.</p>
-<div class="sourceCode" id="cb463"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb476"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="va">a</span> <span class="op">&lt;-</span><span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">'root'</span>, <span class="st">'create'</span>,<span class="st">'time'</span>,<span class="st">'death'</span><span class="op">)</span>
 <span class="fu"><a href="https://stringr.tidyverse.org/reference/str_view.html">str_view</a></span><span class="op">(</span><span class="va">a</span>, <span class="st">"ea"</span><span class="op">)</span></code></pre></div>
 <div id="htmlwidget-4013ca56bf386b81a6aa" style="width:960px;height:100%;" class="str_view html-widget"></div>
 <script type="application/json" data-for="htmlwidget-4013ca56bf386b81a6aa">{"x":{"html":"<ul>\n  <li>root<\/li>\n  <li>cr<span class='match'>ea<\/span>te<\/li>\n  <li>time<\/li>\n  <li>d<span class='match'>ea<\/span>th<\/li>\n<\/ul>"},"evals":[],"jsHooks":[]}</script><p>We can use ‘.’ as a wildcard to match any character</p>
-<div class="sourceCode" id="cb464"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb477"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="va">a</span> <span class="op">&lt;-</span><span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">'root'</span>, <span class="st">'create'</span>,<span class="st">'time'</span>,<span class="st">'death'</span><span class="op">)</span>
 <span class="fu"><a href="https://stringr.tidyverse.org/reference/str_view.html">str_view</a></span><span class="op">(</span><span class="va">a</span>, <span class="st">"im."</span><span class="op">)</span></code></pre></div>
 <div id="htmlwidget-c5e090836480ceb433a8" style="width:960px;height:100%;" class="str_view html-widget"></div>
 <script type="application/json" data-for="htmlwidget-c5e090836480ceb433a8">{"x":{"html":"<ul>\n  <li>root<\/li>\n  <li>create<\/li>\n  <li>t<span class='match'>ime<\/span><\/li>\n  <li>death<\/li>\n<\/ul>"},"evals":[],"jsHooks":[]}</script><p>We can use ‘^a’ to match any string starting with an “a”, and “a$” to find any string that ending with “a”. We can also use ‘^’ at the beginning and “$” in the end to make sure that it’s an exact match.</p>
-<div class="sourceCode" id="cb465"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb478"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="va">a</span> <span class="op">&lt;-</span><span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">'root'</span>, <span class="st">'create'</span>,<span class="st">'time'</span>,<span class="st">'death'</span>,<span class="st">'eath'</span><span class="op">)</span>
 <span class="fu"><a href="https://stringr.tidyverse.org/reference/str_view.html">str_view</a></span><span class="op">(</span><span class="va">a</span>, <span class="st">"^c"</span><span class="op">)</span></code></pre></div>
 <div id="htmlwidget-ab9d20f0bae654f9bf80" style="width:960px;height:100%;" class="str_view html-widget"></div>
-<script type="application/json" data-for="htmlwidget-ab9d20f0bae654f9bf80">{"x":{"html":"<ul>\n  <li>root<\/li>\n  <li><span class='match'>c<\/span>reate<\/li>\n  <li>time<\/li>\n  <li>death<\/li>\n  <li>eath<\/li>\n<\/ul>"},"evals":[],"jsHooks":[]}</script><div class="sourceCode" id="cb466"><pre class="downlit sourceCode r">
+<script type="application/json" data-for="htmlwidget-ab9d20f0bae654f9bf80">{"x":{"html":"<ul>\n  <li>root<\/li>\n  <li><span class='match'>c<\/span>reate<\/li>\n  <li>time<\/li>\n  <li>death<\/li>\n  <li>eath<\/li>\n<\/ul>"},"evals":[],"jsHooks":[]}</script><div class="sourceCode" id="cb479"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="fu"><a href="https://stringr.tidyverse.org/reference/str_view.html">str_view</a></span><span class="op">(</span><span class="va">a</span>, <span class="st">"^death$"</span><span class="op">)</span></code></pre></div>
 <div id="htmlwidget-cae230b2c4338d20d9c0" style="width:960px;height:100%;" class="str_view html-widget"></div>
-<script type="application/json" data-for="htmlwidget-cae230b2c4338d20d9c0">{"x":{"html":"<ul>\n  <li>root<\/li>\n  <li>create<\/li>\n  <li>time<\/li>\n  <li><span class='match'>death<\/span><\/li>\n  <li>eath<\/li>\n<\/ul>"},"evals":[],"jsHooks":[]}</script><div class="sourceCode" id="cb467"><pre class="downlit sourceCode r">
+<script type="application/json" data-for="htmlwidget-cae230b2c4338d20d9c0">{"x":{"html":"<ul>\n  <li>root<\/li>\n  <li>create<\/li>\n  <li>time<\/li>\n  <li><span class='match'>death<\/span><\/li>\n  <li>eath<\/li>\n<\/ul>"},"evals":[],"jsHooks":[]}</script><div class="sourceCode" id="cb480"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="fu"><a href="https://stringr.tidyverse.org/reference/str_view.html">str_view</a></span><span class="op">(</span><span class="va">a</span>, <span class="st">"e$"</span><span class="op">)</span></code></pre></div>
 <div id="htmlwidget-8f0036194426fb8ed451" style="width:960px;height:100%;" class="str_view html-widget"></div>
 <script type="application/json" data-for="htmlwidget-8f0036194426fb8ed451">{"x":{"html":"<ul>\n  <li>root<\/li>\n  <li>creat<span class='match'>e<\/span><\/li>\n  <li>tim<span class='match'>e<\/span><\/li>\n  <li>death<\/li>\n  <li>eath<\/li>\n<\/ul>"},"evals":[],"jsHooks":[]}</script><p>We can also specify how many times a character repeats itself. {n} represents we have exactly n times of repetition,{n,}: n or more, {,n}: at most n, {n,m}: between n and m</p>
-<div class="sourceCode" id="cb468"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb481"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="va">a</span> <span class="op">&lt;-</span><span class="st">'CCccoljenlq'</span>
 <span class="fu"><a href="https://stringr.tidyverse.org/reference/str_view.html">str_view</a></span><span class="op">(</span><span class="va">a</span>, <span class="st">'C{2}'</span><span class="op">)</span></code></pre></div>
 <div id="htmlwidget-324683d5875334108048" style="width:960px;height:100%;" class="str_view html-widget"></div>
 <script type="application/json" data-for="htmlwidget-324683d5875334108048">{"x":{"html":"<ul>\n  <li><span class='match'>CC<\/span>ccoljenlq<\/li>\n<\/ul>"},"evals":[],"jsHooks":[]}</script><p>There are also extra type of strings we can match other than characters we mentioned. ‘\d’ matches any digit,‘\s’ matches any white space, [xyz] matches x, y or z, [^xyz] matches anything other than x, y and z. Here noticing that because we want to match a substring starting with one backlash, we have to specify two backlashes in the string matching.</p>
-<div class="sourceCode" id="cb469"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb482"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="va">a</span> <span class="op">&lt;-</span> <span class="st">'xeqowhe22'</span>
 <span class="fu"><a href="https://stringr.tidyverse.org/reference/str_view.html">str_view</a></span><span class="op">(</span><span class="va">a</span>, <span class="st">'\\d{2}'</span><span class="op">)</span></code></pre></div>
 <div id="htmlwidget-78f888d6152822564792" style="width:960px;height:100%;" class="str_view html-widget"></div>
-<script type="application/json" data-for="htmlwidget-78f888d6152822564792">{"x":{"html":"<ul>\n  <li>xeqowhe<span class='match'>22<\/span><\/li>\n<\/ul>"},"evals":[],"jsHooks":[]}</script><div class="sourceCode" id="cb470"><pre class="downlit sourceCode r">
+<script type="application/json" data-for="htmlwidget-78f888d6152822564792">{"x":{"html":"<ul>\n  <li>xeqowhe<span class='match'>22<\/span><\/li>\n<\/ul>"},"evals":[],"jsHooks":[]}</script><div class="sourceCode" id="cb483"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="fu"><a href="https://stringr.tidyverse.org/reference/str_view.html">str_view</a></span><span class="op">(</span><span class="va">a</span>, <span class="st">'[xyz]'</span><span class="op">)</span></code></pre></div>
 <div id="htmlwidget-3adf61c1b42f50e397e0" style="width:960px;height:100%;" class="str_view html-widget"></div>
 <script type="application/json" data-for="htmlwidget-3adf61c1b42f50e397e0">{"x":{"html":"<ul>\n  <li><span class='match'>x<\/span>eqowhe22<\/li>\n<\/ul>"},"evals":[],"jsHooks":[]}</script><p>Then we will introduce a couple of methods that are useful in conjunction to use with these regular expression.<br>
@@ -478,10 +480,10 @@ string_view() is a very useful function that showcase string patterns. The first
 4.str_count(): count the number of substring appearances in a string<br>
 5.str_replace(): replace substrings with certain patterns<br>
 6.str_split(): split string according to patterns<br></p>
-<div class="sourceCode" id="cb471"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb484"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="fu"><a href="https://stringr.tidyverse.org/reference/str_detect.html">str_detect</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">'case'</span>,<span class="st">'happy'</span>,<span class="st">'sad'</span><span class="op">)</span>, <span class="st">'[ey]$'</span><span class="op">)</span></code></pre></div>
 <pre><code>## [1]  TRUE  TRUE FALSE</code></pre>
-<div class="sourceCode" id="cb473"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb486"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="fu"><a href="https://stringr.tidyverse.org/reference/str_extract.html">str_extract_all</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">'case'</span>,<span class="st">'happy'</span>,<span class="st">'sad'</span><span class="op">)</span>, <span class="st">'[ey]$'</span><span class="op">)</span></code></pre></div>
 <pre><code>## [[1]]
 ## [1] "e"
@@ -491,18 +493,18 @@ string_view() is a very useful function that showcase string patterns. The first
 ## 
 ## [[3]]
 ## character(0)</code></pre>
-<div class="sourceCode" id="cb475"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb488"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="fu"><a href="https://stringr.tidyverse.org/reference/str_subset.html">str_subset</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">'case'</span>,<span class="st">'happy'</span>,<span class="st">'sad'</span><span class="op">)</span>, <span class="st">'[ey]$'</span><span class="op">)</span></code></pre></div>
 <pre><code>## [1] "case"  "happy"</code></pre>
-<div class="sourceCode" id="cb477"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb490"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="va">a</span> <span class="op">&lt;-</span> <span class="st">'laaalk3kr23'</span>
 <span class="fu"><a href="https://stringr.tidyverse.org/reference/str_count.html">str_count</a></span><span class="op">(</span><span class="va">a</span>,<span class="st">'[al]{3}'</span><span class="op">)</span></code></pre></div>
 <pre><code>## [1] 1</code></pre>
-<div class="sourceCode" id="cb479"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb492"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="va">a</span> <span class="op">&lt;-</span> <span class="st">'laaalk3kr23'</span>
 <span class="fu"><a href="https://stringr.tidyverse.org/reference/str_replace.html">str_replace</a></span><span class="op">(</span><span class="va">a</span>,<span class="st">'[al]{3}'</span>,<span class="st">'happy'</span><span class="op">)</span></code></pre></div>
 <pre><code>## [1] "happyalk3kr23"</code></pre>
-<div class="sourceCode" id="cb481"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb494"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="fu"><a href="https://stringr.tidyverse.org/reference/str_split.html">str_split</a></span><span class="op">(</span><span class="st">'abc def'</span>,<span class="st">' '</span><span class="op">)</span></code></pre></div>
 <pre><code>## [[1]]
 ## [1] "abc" "def"</code></pre>
@@ -512,42 +514,42 @@ string_view() is a very useful function that showcase string patterns. The first
 </div>
 </div>
   <div class="chapter-nav">
-<div class="prev"><a href="twitter-r-package-scraping-via-api-tutorial.html"><span class="header-section-number">26</span> TwitteR R Package Scraping via API Tutorial</a></div>
-<div class="next"><a href="animating-the-plots-in-r.html"><span class="header-section-number">28</span> Animating the plots in R</a></div>
+<div class="prev"><a href="twitter-r-package-scraping-via-api-tutorial.html"><span class="header-section-number">28</span> TwitteR R Package Scraping via API Tutorial</a></div>
+<div class="next"><a href="animating-the-plots-in-r.html"><span class="header-section-number">30</span> Animating the plots in R</a></div>
 </div></main><div class="col-md-3 col-lg-2 d-none d-md-block sidebar sidebar-chapter">
     <nav id="toc" data-toggle="toc" aria-label="On this page"><h2>On this page</h2>
       <ul class="nav navbar-nav">
-<li><a class="nav-link" href="#introduction-to-data-manipulation"><span class="header-section-number">27</span> Introduction to Data Manipulation</a></li>
+<li><a class="nav-link" href="#introduction-to-data-manipulation"><span class="header-section-number">29</span> Introduction to Data Manipulation</a></li>
 <li>
-<a class="nav-link" href="#data-wrangling-with-dplyr"><span class="header-section-number">27.1</span> Data Wrangling with dplyr</a><ul class="nav navbar-nav">
-<li><a class="nav-link" href="#pipe"><span class="header-section-number">27.1.1</span> Pipe:</a></li>
-<li><a class="nav-link" href="#tibble-6"><span class="header-section-number">27.1.2</span> Tibble</a></li>
-<li><a class="nav-link" href="#pick-observations-with-filter"><span class="header-section-number">27.1.3</span> Pick observations with filter()</a></li>
-<li><a class="nav-link" href="#reorder-rows-with-arrange"><span class="header-section-number">27.1.4</span> Reorder rows with arrange()</a></li>
-<li><a class="nav-link" href="#create-new-variables-using-mutate"><span class="header-section-number">27.1.5</span> Create new variables using mutate()</a></li>
-<li><a class="nav-link" href="#create-new-calculations-by-catgories-using-summarize"><span class="header-section-number">27.1.6</span> Create new calculations by catgories using summarize()</a></li>
+<a class="nav-link" href="#data-wrangling-with-dplyr"><span class="header-section-number">29.1</span> Data Wrangling with dplyr</a><ul class="nav navbar-nav">
+<li><a class="nav-link" href="#pipe"><span class="header-section-number">29.1.1</span> Pipe:</a></li>
+<li><a class="nav-link" href="#tibble-6"><span class="header-section-number">29.1.2</span> Tibble</a></li>
+<li><a class="nav-link" href="#pick-observations-with-filter"><span class="header-section-number">29.1.3</span> Pick observations with filter()</a></li>
+<li><a class="nav-link" href="#reorder-rows-with-arrange"><span class="header-section-number">29.1.4</span> Reorder rows with arrange()</a></li>
+<li><a class="nav-link" href="#create-new-variables-using-mutate"><span class="header-section-number">29.1.5</span> Create new variables using mutate()</a></li>
+<li><a class="nav-link" href="#create-new-calculations-by-catgories-using-summarize"><span class="header-section-number">29.1.6</span> Create new calculations by catgories using summarize()</a></li>
 </ul>
 </li>
 <li>
-<a class="nav-link" href="#tidy-data-with-dplyr"><span class="header-section-number">27.2</span> Tidy Data with dplyr</a><ul class="nav navbar-nav">
-<li><a class="nav-link" href="#gatherspread"><span class="header-section-number">27.2.1</span> Gather/Spread</a></li>
-<li><a class="nav-link" href="#seperateunite"><span class="header-section-number">27.2.2</span> Seperate/Unite</a></li>
+<a class="nav-link" href="#tidy-data-with-dplyr"><span class="header-section-number">29.2</span> Tidy Data with dplyr</a><ul class="nav navbar-nav">
+<li><a class="nav-link" href="#gatherspread"><span class="header-section-number">29.2.1</span> Gather/Spread</a></li>
+<li><a class="nav-link" href="#seperateunite"><span class="header-section-number">29.2.2</span> Seperate/Unite</a></li>
 </ul>
 </li>
 <li>
-<a class="nav-link" href="#relational-data-with-dplyr"><span class="header-section-number">27.3</span> Relational Data with dplyr</a><ul class="nav navbar-nav">
-<li><a class="nav-link" href="#prerequisites"><span class="header-section-number">27.3.1</span> prerequisites</a></li>
-<li><a class="nav-link" href="#understanding-different-types-of-joins"><span class="header-section-number">27.3.2</span> Understanding different types of joins</a></li>
+<a class="nav-link" href="#relational-data-with-dplyr"><span class="header-section-number">29.3</span> Relational Data with dplyr</a><ul class="nav navbar-nav">
+<li><a class="nav-link" href="#prerequisites"><span class="header-section-number">29.3.1</span> prerequisites</a></li>
+<li><a class="nav-link" href="#understanding-different-types-of-joins"><span class="header-section-number">29.3.2</span> Understanding different types of joins</a></li>
 </ul>
 </li>
 <li>
-<a class="nav-link" href="#datetime-with-lubridate"><span class="header-section-number">27.4</span> Datetime with Lubridate</a><ul class="nav navbar-nav">
-<li><a class="nav-link" href="#datetime-from-strings"><span class="header-section-number">27.4.1</span> Datetime from strings</a></li>
-<li><a class="nav-link" href="#timespan"><span class="header-section-number">27.4.2</span> Timespan</a></li>
+<a class="nav-link" href="#datetime-with-lubridate"><span class="header-section-number">29.4</span> Datetime with Lubridate</a><ul class="nav navbar-nav">
+<li><a class="nav-link" href="#datetime-from-strings"><span class="header-section-number">29.4.1</span> Datetime from strings</a></li>
+<li><a class="nav-link" href="#timespan"><span class="header-section-number">29.4.2</span> Timespan</a></li>
 </ul>
 </li>
 <li>
-<a class="nav-link" href="#string-manipulations-with-stringr"><span class="header-section-number">27.5</span> String manipulations with stringr</a><ul class="nav navbar-nav"><li><a class="nav-link" href="#matching-patterns"><span class="header-section-number">27.5.1</span> Matching Patterns</a></li></ul>
+<a class="nav-link" href="#string-manipulations-with-stringr"><span class="header-section-number">29.5</span> String manipulations with stringr</a><ul class="nav navbar-nav"><li><a class="nav-link" href="#matching-patterns"><span class="header-section-number">29.5.1</span> Matching Patterns</a></li></ul>
 </li>
 </ul>
 

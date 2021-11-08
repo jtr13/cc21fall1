@@ -4,15 +4,15 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<title>Chapter 22 caret - a machine learning package turotial | EDAV Fall 2021 Mon/Wed Community Contributions</title>
+<title>Chapter 24 caret - a machine learning package turotial | EDAV Fall 2021 Mon/Wed Community Contributions</title>
 <meta name="author" content="the students of the class">
 <meta name="description" content="Jiang Zhu and Xuechun Bai Motivation: The motivation for this community contribution project is to introduce to classmates a package in R that can easily implement machine learning algorithms in...">
 <meta name="generator" content="bookdown 0.24 with bs4_book()">
-<meta property="og:title" content="Chapter 22 caret - a machine learning package turotial | EDAV Fall 2021 Mon/Wed Community Contributions">
+<meta property="og:title" content="Chapter 24 caret - a machine learning package turotial | EDAV Fall 2021 Mon/Wed Community Contributions">
 <meta property="og:type" content="book">
 <meta property="og:description" content="Jiang Zhu and Xuechun Bai Motivation: The motivation for this community contribution project is to introduce to classmates a package in R that can easily implement machine learning algorithms in...">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Chapter 22 caret - a machine learning package turotial | EDAV Fall 2021 Mon/Wed Community Contributions">
+<meta name="twitter:title" content="Chapter 24 caret - a machine learning package turotial | EDAV Fall 2021 Mon/Wed Community Contributions">
 <meta name="twitter:description" content="Jiang Zhu and Xuechun Bai Motivation: The motivation for this community contribution project is to introduce to classmates a package in R that can easily implement machine learning algorithms in...">
 <!-- JS --><script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.6/clipboard.min.js" integrity="sha256-inc5kl9MA1hkeYUt+EC3BhlIgyp/2jDIyBLS6k3UxPI=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/fuse.js/6.4.6/fuse.js" integrity="sha512-zv6Ywkjyktsohkbp9bb45V6tEMoWhzFzXis+LrMehmJZZSys19Yxf1dopHx7WzIKxr5tK2dVcYmaCk2uqdjF4A==" crossorigin="anonymous"></script><script src="https://kit.fontawesome.com/6ecbd6c532.js" crossorigin="anonymous"></script><script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <link href="libs/bootstrap-4.6.0/bootstrap.min.css" rel="stylesheet">
@@ -63,29 +63,31 @@
 <li><a class="" href="cheatsheet-tidyverse.html"><span class="header-section-number">14</span> Cheatsheet Tidyverse</a></li>
 <li><a class="" href="use-of-ggprism-and-ggsci-packages.html"><span class="header-section-number">15</span> Use of ggprism and ggsci packages</a></li>
 <li><a class="" href="interactive-plot-introduction.html"><span class="header-section-number">16</span> Interactive plot introduction</a></li>
+<li><a class="" href="common-r-markdown-syntax-cheatsheet.html"><span class="header-section-number">17</span> Common R markdown syntax cheatsheet</a></li>
+<li><a class="" href="header.html"><span class="header-section-number">18</span> Header</a></li>
 <li class="book-part">Tutorials</li>
-<li><a class="" href="multithreading-crawler-frame.html"><span class="header-section-number">17</span> Multithreading Crawler Frame</a></li>
-<li><a class="" href="regression-and-classification-in-r.html"><span class="header-section-number">18</span> Regression and Classification in R</a></li>
-<li><a class="" href="tibble-vs.-dataframe.html"><span class="header-section-number">19</span> Tibble vs. DataFrame</a></li>
-<li><a class="" href="introduction-to-time-series.html"><span class="header-section-number">20</span> Introduction to Time Series</a></li>
-<li><a class="" href="vipul-edav-community-contribution-kickstart-r.html"><span class="header-section-number">21</span> Vipul EDAV Community Contribution Kickstart R</a></li>
-<li><a class="active" href="caret---a-machine-learning-package-turotial.html"><span class="header-section-number">22</span> caret - a machine learning package turotial</a></li>
-<li><a class="" href="streamlit-for-financial-analysis.html"><span class="header-section-number">23</span> Streamlit for Financial Analysis</a></li>
-<li><a class="" href="interactive-graphs-tutorial.html"><span class="header-section-number">24</span> Interactive graphs tutorial</a></li>
-<li><a class="" href="guideline-on-using-package-rcurl-and-xml-for-web-scraping.html"><span class="header-section-number">25</span> Guideline on Using Package Rcurl and XML for Web Scraping</a></li>
-<li><a class="" href="twitter-r-package-scraping-via-api-tutorial.html"><span class="header-section-number">26</span> TwitteR R Package Scraping via API Tutorial</a></li>
-<li><a class="" href="introduction-to-data-manipulation.html"><span class="header-section-number">27</span> Introduction to Data Manipulation</a></li>
-<li><a class="" href="animating-the-plots-in-r.html"><span class="header-section-number">28</span> Animating the plots in R</a></li>
-<li><a class="" href="quick-guide-to-eda.html"><span class="header-section-number">29</span> Quick guide to eda</a></li>
-<li><a class="" href="natural-langauge-processing-common-eda-practices-in-python.html"><span class="header-section-number">30</span> Natural Langauge Processing Common EDA Practices in Python</a></li>
-<li><a class="" href="supervised-learning-tutorial.html"><span class="header-section-number">31</span> Supervised Learning Tutorial</a></li>
+<li><a class="" href="multithreading-crawler-frame.html"><span class="header-section-number">19</span> Multithreading Crawler Frame</a></li>
+<li><a class="" href="regression-and-classification-in-r.html"><span class="header-section-number">20</span> Regression and Classification in R</a></li>
+<li><a class="" href="tibble-vs.-dataframe.html"><span class="header-section-number">21</span> Tibble vs. DataFrame</a></li>
+<li><a class="" href="introduction-to-time-series.html"><span class="header-section-number">22</span> Introduction to Time Series</a></li>
+<li><a class="" href="vipul-edav-community-contribution-kickstart-r.html"><span class="header-section-number">23</span> Vipul EDAV Community Contribution Kickstart R</a></li>
+<li><a class="active" href="caret---a-machine-learning-package-turotial.html"><span class="header-section-number">24</span> caret - a machine learning package turotial</a></li>
+<li><a class="" href="streamlit-for-financial-analysis.html"><span class="header-section-number">25</span> Streamlit for Financial Analysis</a></li>
+<li><a class="" href="interactive-graphs-tutorial.html"><span class="header-section-number">26</span> Interactive graphs tutorial</a></li>
+<li><a class="" href="guideline-on-using-package-rcurl-and-xml-for-web-scraping.html"><span class="header-section-number">27</span> Guideline on Using Package Rcurl and XML for Web Scraping</a></li>
+<li><a class="" href="twitter-r-package-scraping-via-api-tutorial.html"><span class="header-section-number">28</span> TwitteR R Package Scraping via API Tutorial</a></li>
+<li><a class="" href="introduction-to-data-manipulation.html"><span class="header-section-number">29</span> Introduction to Data Manipulation</a></li>
+<li><a class="" href="animating-the-plots-in-r.html"><span class="header-section-number">30</span> Animating the plots in R</a></li>
+<li><a class="" href="quick-guide-to-eda.html"><span class="header-section-number">31</span> Quick guide to eda</a></li>
+<li><a class="" href="natural-langauge-processing-common-eda-practices-in-python.html"><span class="header-section-number">32</span> Natural Langauge Processing Common EDA Practices in Python</a></li>
+<li><a class="" href="supervised-learning-tutorial.html"><span class="header-section-number">33</span> Supervised Learning Tutorial</a></li>
 <li class="book-part">Demonstrations</li>
-<li><a class="" href="linear-association-r-studio-plugin.html"><span class="header-section-number">32</span> Linear Association R Studio Plugin</a></li>
+<li><a class="" href="linear-association-r-studio-plugin.html"><span class="header-section-number">34</span> Linear Association R Studio Plugin</a></li>
 <li class="book-part">Workshops</li>
-<li><a class="" href="data-science-product-cycles-in-enterprises.html"><span class="header-section-number">33</span> Data Science Product Cycles in Enterprises</a></li>
+<li><a class="" href="data-science-product-cycles-in-enterprises.html"><span class="header-section-number">35</span> Data Science Product Cycles in Enterprises</a></li>
 <li class="book-part">Appendices</li>
-<li><a class="" href="github-initial-setup.html"><span class="header-section-number">34</span> Github initial setup</a></li>
-<li><a class="" href="tutorial-for-pull-request-mergers.html"><span class="header-section-number">35</span> Tutorial for pull request mergers</a></li>
+<li><a class="" href="github-initial-setup.html"><span class="header-section-number">36</span> Github initial setup</a></li>
+<li><a class="" href="tutorial-for-pull-request-mergers.html"><span class="header-section-number">37</span> Tutorial for pull request mergers</a></li>
 </ul>
 
         <div class="book-extra">
@@ -95,11 +97,11 @@
 </div>
   </header><main class="col-sm-12 col-md-9 col-lg-7" id="content"><div id="caret---a-machine-learning-package-turotial" class="section level1">
 <h1>
-<span class="header-section-number">22</span> caret - a machine learning package turotial<a class="anchor" aria-label="anchor" href="#caret---a-machine-learning-package-turotial"><i class="fas fa-link"></i></a>
+<span class="header-section-number">24</span> caret - a machine learning package turotial<a class="anchor" aria-label="anchor" href="#caret---a-machine-learning-package-turotial"><i class="fas fa-link"></i></a>
 </h1>
 <p>Jiang Zhu and Xuechun Bai</p>
 <p>Motivation: The motivation for this community contribution project is to introduce to classmates a package in R that can easily implement machine learning algorithms in few lines of code. As python users who commonly use the package <code>scikit-learn</code> to deploy machine laerning models, we strived to find a similar R package that has similar functions. While finding the resources online, we discovered that <code>caret</code> is a great package with neatly defined functions that create a easy-to use interface for machine learning algorithms, and at the same time, it has abundant machine learning models and preprocessing and model selection functions. However, we have not found any great tutorial or easy-to-read API’s for caret. Therefore, in this markdown file, we will illustrate how to use the <code>caret</code> package in a example-based manner. We eliminate the mathematics behind each model as much as possible to focus on the implementation of the algorithm in R. We will also demonstrate the results of our experiments of <code>caret</code> model on datasets with visualization tools.</p>
-<div class="sourceCode" id="cb309"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb322"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://github.com/topepo/caret/">caret</a></span><span class="op">)</span>
 <span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://tidyverse.tidyverse.org">tidyverse</a></span><span class="op">)</span>
 <span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://readr.tidyverse.org">readr</a></span><span class="op">)</span>
@@ -108,12 +110,12 @@
 <span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://github.com/jefferis/RANN">RANN</a></span><span class="op">)</span></code></pre></div>
 <div id="introduction-and-description-of-dataset" class="section level2">
 <h2>
-<span class="header-section-number">22.1</span> Introduction and description of dataset<a class="anchor" aria-label="anchor" href="#introduction-and-description-of-dataset"><i class="fas fa-link"></i></a>
+<span class="header-section-number">24.1</span> Introduction and description of dataset<a class="anchor" aria-label="anchor" href="#introduction-and-description-of-dataset"><i class="fas fa-link"></i></a>
 </h2>
 <p>For the tutorial, we will use a data frame about Orange Juice which includes two orange juice brands, Citrus Hill (CH) and Minute Maid (MM) and selling information according to each brand. The URL of the dataset is : <a href="https://raw.githubusercontent.com/selva86/datasets/master/orange_juice_withmissing.csv" class="uri">https://raw.githubusercontent.com/selva86/datasets/master/orange_juice_withmissing.csv</a>, which contains 18 cloumns and 1070 rows.</p>
 <p>The first column “Purchase” introduces brand of orange juice. the data contains weekly amount of purchase of the two brands (WeekofPurchase) with the store id (StoreID) where the orange juice was sold, and the price of the orange juice according to brand CH (PriceCH) and MM (PriceMM). The data also includes the discount (“DiscCH” and “DiscMM”), sale price(“SalePriceCH” and “SalePriceMM”) and other useful information about those two orange juice brands. The goal of our tutorial is to predict the customers’ preference between two brands when choosing to buy a orange juice, so we will only focusing on the “Purchase” for now.</p>
 <p>Now let us firstly import the data, and state a briefly summary about this data:</p>
-<div class="sourceCode" id="cb310"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb323"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="co"># Import dataset</span>
 <span class="va">df</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/utils/read.table.html">read.csv</a></span><span class="op">(</span><span class="st">'https://raw.githubusercontent.com/selva86/datasets/master/orange_juice_withmissing.csv'</span><span class="op">)</span>
 
@@ -143,10 +145,10 @@
 </div>
 <div id="pre-processing" class="section level2">
 <h2>
-<span class="header-section-number">22.2</span> Pre-processing<a class="anchor" aria-label="anchor" href="#pre-processing"><i class="fas fa-link"></i></a>
+<span class="header-section-number">24.2</span> Pre-processing<a class="anchor" aria-label="anchor" href="#pre-processing"><i class="fas fa-link"></i></a>
 </h2>
 <p>After importing the dataset, we need to separate data into training and testing sets. The training set is used as examples for machine learning models to learn generalize, and the test set is used to evaluate the preformance of our models. We can achieve this by using <code><a href="https://rdrr.io/pkg/caret/man/createDataPartition.html">createDataPartition()</a></code> in caret package.</p>
-<div class="sourceCode" id="cb312"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb325"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="fu"><a href="https://rdrr.io/pkg/caret/man/createDataPartition.html">createDataPartition</a></span><span class="op">(</span>
   <span class="va">y</span>,
   <span class="va">times</span>,
@@ -160,7 +162,7 @@
 <li><p><code>list</code> is a boolean indicating whether we return a list</p></li>
 </ol>
 <p>Here we set 70% of training set and 30% of testing set.</p>
-<div class="sourceCode" id="cb313"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb326"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="co">#set random seed to produce the same result</span>
 <span class="fu"><a href="https://rdrr.io/r/base/Random.html">set.seed</a></span><span class="op">(</span><span class="fl">1</span><span class="op">)</span>
 
@@ -171,7 +173,7 @@
 <span class="va">train_df</span> <span class="op">&lt;-</span> <span class="va">df</span><span class="op">[</span><span class="va">rowOfTrain</span>,<span class="op">]</span>
 <span class="va">test_df</span> <span class="op">&lt;-</span> <span class="va">df</span><span class="op">[</span><span class="op">-</span><span class="va">rowOfTrain</span>,<span class="op">]</span></code></pre></div>
 <p>The next step is to clear or refill the missing values or NAs in the dataset. There are several ways of trasnformation such as fill the missing value into mean, mode or simply delete the row of missing values. Using caret package, we can apply the NAs to more practical values, which is to predict the missing values by other values that are listed in the dataset. The way <code>caret</code> package can do is to use <code><a href="https://rdrr.io/pkg/caret/man/preProcess.html">preProcess()</a></code> function to make k-Nearest Neighbors and use it with training set.</p>
-<div class="sourceCode" id="cb314"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb327"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="fu"><a href="https://rdrr.io/pkg/caret/man/preProcess.html">preProcess</a></span><span class="op">(</span>
   <span class="va">data</span>,
   <span class="va">method</span>
@@ -181,7 +183,7 @@
 <li><p><code>method</code> is a string that specifies the method for preprocessing</p></li>
 </ol>
 <p>Then we will get a Nearest model for perdicting the missing values. After that, we will use <code><a href="https://rdrr.io/r/stats/predict.html">predict()</a></code> to fill the missing values with our prediction.</p>
-<div class="sourceCode" id="cb315"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb328"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="co"># Create k-Nearest with training data using method = 'knnImpute'</span>
 <span class="va">knn_inputer</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/pkg/caret/man/preProcess.html">preProcess</a></span><span class="op">(</span><span class="va">train_df</span>, method<span class="op">=</span><span class="st">'knnImpute'</span><span class="op">)</span>
 <span class="va">knn_inputer</span></code></pre></div>
@@ -192,7 +194,7 @@
 ##   - ignored (2)
 ##   - 5 nearest neighbor imputation (16)
 ##   - scaled (16)</code></pre>
-<div class="sourceCode" id="cb317"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb330"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="co"># Import the prediction into missing values using function predict()</span>
 <span class="va">train_df</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/stats/predict.html">predict</a></span><span class="op">(</span><span class="va">knn_inputer</span>, newdata <span class="op">=</span> <span class="va">train_df</span><span class="op">)</span>
 
@@ -202,7 +204,7 @@
 <p>From the result, we can see the prediction model has centered with 16 variables, ignored with 2 and was created from 825 samples and 18 variables. Then after importing the NAs by “predict” function, we then check if there are any missing values remaining in the dataset using angNA() function. The result of “FALSE” shows that the missing values are all replaced.</p>
 <p>Another work the caret package can do is to transform the categorical variables into one-hot vectors to have a numerical representation of categorical variables. An one-hot vector is constructed as follows: suppose there are <span class="math inline">\(n\)</span> classes of categorical variables. Then we represent each class <span class="math inline">\(i\)</span> by a <span class="math inline">\(n\)</span>-dimensional vector <span class="math inline">\(o_i\)</span> such that <span class="math inline">\(o_i[i]=1\)</span> and <span class="math inline">\(o_i[j]=0\)</span> for all <span class="math inline">\(j\neq i\)</span></p>
 <p>We can acheive the one-hot transformation using the <code><a href="https://rdrr.io/pkg/caret/man/dummyVars.html">dummyVars()</a></code></p>
-<div class="sourceCode" id="cb319"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb332"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="fu"><a href="https://rdrr.io/pkg/caret/man/dummyVars.html">dummyVars</a></span><span class="op">(</span>
   <span class="va">formula</span>,
   <span class="va">data</span>
@@ -211,7 +213,7 @@
 <li><p><code>formula</code> repersents a way to inpute the data</p></li>
 <li><p><code>data</code> represents the dataframe</p></li>
 </ol>
-<div class="sourceCode" id="cb320"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb333"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="co"># define the one-hot encoding object</span>
 <span class="va">one_hot_encoder</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/pkg/caret/man/dummyVars.html">dummyVars</a></span><span class="op">(</span><span class="va">Purchase</span><span class="op">~</span><span class="va">.</span>, <span class="va">train_df</span><span class="op">)</span>
 
@@ -242,10 +244,10 @@
 </div>
 <div id="model-training" class="section level2">
 <h2>
-<span class="header-section-number">22.3</span> Model training<a class="anchor" aria-label="anchor" href="#model-training"><i class="fas fa-link"></i></a>
+<span class="header-section-number">24.3</span> Model training<a class="anchor" aria-label="anchor" href="#model-training"><i class="fas fa-link"></i></a>
 </h2>
 <p>The machine learning models are defined and trained in <code>caret</code> by the <code><a href="https://rdrr.io/pkg/caret/man/train.html">train()</a></code> function. It is the core function that masks all the tedious detail of the machine learning algorithms and provide a convenient and concise interface. The <code><a href="https://rdrr.io/pkg/caret/man/train.html">train()</a></code> function has versions with different parameters:</p>
-<div class="sourceCode" id="cb322"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb335"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="co"># first version of train</span>
 <span class="va">model</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/pkg/caret/man/train.html">train</a></span><span class="op">(</span>
   <span class="va">formula</span>,
@@ -269,13 +271,13 @@
 <p>One amazing feature of <code>caret</code> is that for almost all methods, it will automatically finds the best hyperparameters for the user.</p>
 <div id="k-nearest-neighbors" class="section level3">
 <h3>
-<span class="header-section-number">22.3.1</span> K-nearest neighbors<a class="anchor" aria-label="anchor" href="#k-nearest-neighbors"><i class="fas fa-link"></i></a>
+<span class="header-section-number">24.3.1</span> K-nearest neighbors<a class="anchor" aria-label="anchor" href="#k-nearest-neighbors"><i class="fas fa-link"></i></a>
 </h3>
 <p>k-nearest neighbor is the most intuitive classification algorithm. Given some positive <span class="math inline">\(k\)</span> and some data <span class="math inline">\(x\)</span>, k-neigherest neighbor finds the k nearest neighbors in the training set based on the euclidian distance
 <span class="math display">\[dist(x,x')=\sqrt{(x_1-x'_1)^2+(x_2-x'_2)^2+\cdots + (x_n-x'_n)^2}\]</span>
 and classifies <span class="math inline">\(x\)</span> as the class that contains the most nearst neighbors.</p>
 <p>To implement such algorithm, we will specify the parameter <code>method=knn</code></p>
-<div class="sourceCode" id="cb323"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb336"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="co"># training the knn model</span>
 <span class="va">knn_model</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/pkg/caret/man/train.html">train</a></span><span class="op">(</span>
   <span class="va">Purchase</span> <span class="op">~</span><span class="va">.</span>,
@@ -305,7 +307,7 @@ and classifies <span class="math inline">\(x\)</span> as the class that contains
 </div>
 <div id="logistics-regression" class="section level3">
 <h3>
-<span class="header-section-number">22.3.2</span> Logistics Regression<a class="anchor" aria-label="anchor" href="#logistics-regression"><i class="fas fa-link"></i></a>
+<span class="header-section-number">24.3.2</span> Logistics Regression<a class="anchor" aria-label="anchor" href="#logistics-regression"><i class="fas fa-link"></i></a>
 </h3>
 <p>logistics regression is linear model for binary classification, in another word, given features <span class="math inline">\(x_1,x_2,\cdots,x_n\)</span>, we want to predict <span class="math inline">\(y=\{0,1\}\)</span>. The model can be described by equation
 <span class="math display">\[\hat{y}=\sigma(w_1\cdot x_1+w_2\cdot x_2+\cdots+w_n\cdot x_n)\]</span>
@@ -313,7 +315,7 @@ where the <span class="math inline">\(\sigma\)</span> function is defined by
 <span class="math display">\[\sigma(x)=\frac{1}{1+e^{-x}}\]</span></p>
 <p>we hope that the logistics regression algorithm can find the optimal <span class="math inline">\(w_1,\cdots,w_n\)</span> such that <span class="math inline">\(\hat{y}\)</span> is as closed to the true label <span class="math inline">\(y\)</span> as possible.</p>
 <p>To implement such algorithm, we will specify the parameter <code>method="glm"</code>:</p>
-<div class="sourceCode" id="cb325"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb338"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="co"># training the logistics regression model</span>
 <span class="va">lr_model</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/pkg/caret/man/train.html">train</a></span><span class="op">(</span>
   <span class="va">Purchase</span> <span class="op">~</span><span class="va">.</span>,
@@ -338,12 +340,12 @@ where the <span class="math inline">\(\sigma\)</span> function is defined by
 </div>
 <div id="support-vector-machine" class="section level3">
 <h3>
-<span class="header-section-number">22.3.3</span> Support vector machine<a class="anchor" aria-label="anchor" href="#support-vector-machine"><i class="fas fa-link"></i></a>
+<span class="header-section-number">24.3.3</span> Support vector machine<a class="anchor" aria-label="anchor" href="#support-vector-machine"><i class="fas fa-link"></i></a>
 </h3>
 <p>support vector machine is a hyperplane that separates the input space into two subspaces. In the case when only we have <span class="math inline">\(x_1\)</span> and <span class="math inline">\(x_2\)</span>, we want to draw a line that saparates the cartesian plane. The criteria for choosing such plane is the one that maximizes the distance to the closest data points from both classes. This gives rise to the optimization objective
 <span class="math display">\[\max_{w,b}\frac{1}{\vert\vert w\vert\vert_2}\min_{x_i\in D}\vert w^Tx_i+b\vert,\quad \text{ s.t. }\forall i,\quad y_i(w^Tx_i+b)\ge 0 \]</span>
 To implement such algorithm, we will specify the parameter <code>method="svmRadial"</code></p>
-<div class="sourceCode" id="cb327"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb340"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="co"># training the support vector machine model, the library kernlab is needed to perform kernal transformation</span>
 <span class="va">svm_model</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/pkg/caret/man/train.html">train</a></span><span class="op">(</span>
   <span class="va">Purchase</span> <span class="op">~</span><span class="va">.</span>,
@@ -374,11 +376,11 @@ To implement such algorithm, we will specify the parameter <code>method="svmRadi
 </div>
 <div id="random-forest" class="section level3">
 <h3>
-<span class="header-section-number">22.3.4</span> Random Forest<a class="anchor" aria-label="anchor" href="#random-forest"><i class="fas fa-link"></i></a>
+<span class="header-section-number">24.3.4</span> Random Forest<a class="anchor" aria-label="anchor" href="#random-forest"><i class="fas fa-link"></i></a>
 </h3>
 <p>The decision tree algorithm learns to predict the value of a target variable by learning simple decision rules inferred from the data features. The process for constructing the tree is to first select a root node <span class="math inline">\(x_i\)</span> and a decision boundry <span class="math inline">\(b_i\)</span>. Then we recirsively select its children nodes and a corresponding decision threshold <span class="math inline">\(b\)</span> such that it maximizes the information gain. Since different initialization produces different results, random forest aims to create multiple trees with different initialization and collectively ageraging the result that is produced by each individual decision trees</p>
 <p>To implement such algorithm, we will specify the parameter <code>method="earch"</code></p>
-<div class="sourceCode" id="cb329"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb342"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="co"># training the random forest model, the library earth is needed</span>
 <span class="va">rf_model</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/pkg/caret/man/train.html">train</a></span><span class="op">(</span>
   <span class="va">Purchase</span> <span class="op">~</span><span class="va">.</span>,
@@ -410,21 +412,21 @@ To implement such algorithm, we will specify the parameter <code>method="svmRadi
 </div>
 <div id="model-prediction-and-evaluation" class="section level2">
 <h2>
-<span class="header-section-number">22.4</span> Model prediction and evaluation<a class="anchor" aria-label="anchor" href="#model-prediction-and-evaluation"><i class="fas fa-link"></i></a>
+<span class="header-section-number">24.4</span> Model prediction and evaluation<a class="anchor" aria-label="anchor" href="#model-prediction-and-evaluation"><i class="fas fa-link"></i></a>
 </h2>
 <p>After we successfully train the models, it is time to evaluate them on the test set to validate if it is a good model. The key function to achieve this is the <code><a href="https://rdrr.io/r/stats/predict.html">predict()</a></code> function:</p>
-<div class="sourceCode" id="cb331"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb344"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="fu"><a href="https://rdrr.io/r/stats/predict.html">predict</a></span><span class="op">(</span>
   <span class="va">object</span>,
   <span class="va">newdata</span>
 <span class="op">)</span></code></pre></div>
 <p>To evaluate the models we have trained above, we can call the <code><a href="https://rdrr.io/r/stats/predict.html">predict()</a></code> function on each models:</p>
-<div class="sourceCode" id="cb332"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb345"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="co"># inpute the test data first</span>
 <span class="va">test_df</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/stats/predict.html">predict</a></span><span class="op">(</span><span class="va">knn_inputer</span>, <span class="va">test_df</span><span class="op">)</span></code></pre></div>
 <p>we can compute the confution matrix for each model:</p>
 <p>Confusion matrix for the knn model:</p>
-<div class="sourceCode" id="cb333"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb346"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="va">knn_cm</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/pkg/caret/man/confusionMatrix.html">confusionMatrix</a></span><span class="op">(</span>reference <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/factor.html">factor</a></span><span class="op">(</span><span class="va">test_df</span><span class="op">$</span><span class="va">Purchase</span><span class="op">)</span>, data <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/stats/predict.html">predict</a></span><span class="op">(</span><span class="va">knn_model</span>, <span class="va">test_df</span><span class="op">)</span>, mode<span class="op">=</span><span class="st">'everything'</span>, positive<span class="op">=</span><span class="st">'MM'</span><span class="op">)</span>
 
 <span class="va">knn_cm</span><span class="op">$</span><span class="va">table</span></code></pre></div>
@@ -432,7 +434,7 @@ To implement such algorithm, we will specify the parameter <code>method="svmRadi
 ## Prediction  CH  MM
 ##         CH 169  30
 ##         MM  26  95</code></pre>
-<div class="sourceCode" id="cb335"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb348"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span><span class="op">(</span>data <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/data.frame.html">data.frame</a></span><span class="op">(</span><span class="va">knn_cm</span><span class="op">$</span><span class="va">table</span><span class="op">)</span>, <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span>x<span class="op">=</span><span class="va">Reference</span>, y<span class="op">=</span><span class="va">Prediction</span><span class="op">)</span><span class="op">)</span><span class="op">+</span>
   <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_tile.html">geom_tile</a></span><span class="op">(</span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span>fill<span class="op">=</span><span class="va">Freq</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span>
   <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/scale_gradient.html">scale_fill_gradient2</a></span><span class="op">(</span>low<span class="op">=</span><span class="st">"light blue"</span>, high<span class="op">=</span><span class="st">"blue"</span><span class="op">)</span> <span class="op">+</span>
@@ -440,7 +442,7 @@ To implement such algorithm, we will specify the parameter <code>method="svmRadi
   <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/labs.html">ggtitle</a></span><span class="op">(</span><span class="st">"Confution matrix for KNN model"</span><span class="op">)</span></code></pre></div>
 <div class="inline-figure"><img src="caret_machine_learning_tutorial_files/figure-html/unnamed-chunk-18-1.png" width="672" style="display: block; margin: auto;"></div>
 <p>Confusion matrix for the logistics regression model:</p>
-<div class="sourceCode" id="cb336"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb349"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="va">lr_cm</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/pkg/caret/man/confusionMatrix.html">confusionMatrix</a></span><span class="op">(</span>reference <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/factor.html">factor</a></span><span class="op">(</span><span class="va">test_df</span><span class="op">$</span><span class="va">Purchase</span><span class="op">)</span>, data <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/stats/predict.html">predict</a></span><span class="op">(</span><span class="va">lr_model</span>, <span class="va">test_df</span><span class="op">)</span>, mode<span class="op">=</span><span class="st">'everything'</span>, positive<span class="op">=</span><span class="st">'MM'</span><span class="op">)</span>
 
 <span class="va">lr_cm</span><span class="op">$</span><span class="va">table</span></code></pre></div>
@@ -448,7 +450,7 @@ To implement such algorithm, we will specify the parameter <code>method="svmRadi
 ## Prediction  CH  MM
 ##         CH 164  20
 ##         MM  31 105</code></pre>
-<div class="sourceCode" id="cb338"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb351"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span><span class="op">(</span>data <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/data.frame.html">data.frame</a></span><span class="op">(</span><span class="va">lr_cm</span><span class="op">$</span><span class="va">table</span><span class="op">)</span>, <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span>x<span class="op">=</span><span class="va">Reference</span>, y<span class="op">=</span><span class="va">Prediction</span><span class="op">)</span><span class="op">)</span><span class="op">+</span>
   <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_tile.html">geom_tile</a></span><span class="op">(</span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span>fill<span class="op">=</span><span class="va">Freq</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span>
   <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/scale_gradient.html">scale_fill_gradient2</a></span><span class="op">(</span>low<span class="op">=</span><span class="st">"light blue"</span>, high<span class="op">=</span><span class="st">"blue"</span><span class="op">)</span> <span class="op">+</span>
@@ -456,7 +458,7 @@ To implement such algorithm, we will specify the parameter <code>method="svmRadi
   <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/labs.html">ggtitle</a></span><span class="op">(</span><span class="st">"Confution matrix for Logistics Regression model"</span><span class="op">)</span></code></pre></div>
 <div class="inline-figure"><img src="caret_machine_learning_tutorial_files/figure-html/unnamed-chunk-20-1.png" width="672" style="display: block; margin: auto;"></div>
 <p>Confusion matrix for the svm model:</p>
-<div class="sourceCode" id="cb339"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb352"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="va">svm_cm</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/pkg/caret/man/confusionMatrix.html">confusionMatrix</a></span><span class="op">(</span>reference <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/factor.html">factor</a></span><span class="op">(</span><span class="va">test_df</span><span class="op">$</span><span class="va">Purchase</span><span class="op">)</span>, data <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/stats/predict.html">predict</a></span><span class="op">(</span><span class="va">svm_model</span>, <span class="va">test_df</span><span class="op">)</span>, mode<span class="op">=</span><span class="st">'everything'</span>, positive<span class="op">=</span><span class="st">'MM'</span><span class="op">)</span>
 
 <span class="va">svm_cm</span><span class="op">$</span><span class="va">table</span></code></pre></div>
@@ -464,7 +466,7 @@ To implement such algorithm, we will specify the parameter <code>method="svmRadi
 ## Prediction  CH  MM
 ##         CH 170  27
 ##         MM  25  98</code></pre>
-<div class="sourceCode" id="cb341"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb354"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span><span class="op">(</span>data <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/data.frame.html">data.frame</a></span><span class="op">(</span><span class="va">svm_cm</span><span class="op">$</span><span class="va">table</span><span class="op">)</span>, <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span>x<span class="op">=</span><span class="va">Reference</span>, y<span class="op">=</span><span class="va">Prediction</span><span class="op">)</span><span class="op">)</span><span class="op">+</span>
   <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_tile.html">geom_tile</a></span><span class="op">(</span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span>fill<span class="op">=</span><span class="va">Freq</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span>
   <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/scale_gradient.html">scale_fill_gradient2</a></span><span class="op">(</span>low<span class="op">=</span><span class="st">"light blue"</span>, high<span class="op">=</span><span class="st">"blue"</span><span class="op">)</span> <span class="op">+</span>
@@ -472,7 +474,7 @@ To implement such algorithm, we will specify the parameter <code>method="svmRadi
   <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/labs.html">ggtitle</a></span><span class="op">(</span><span class="st">"Confution matrix for SVM model"</span><span class="op">)</span></code></pre></div>
 <div class="inline-figure"><img src="caret_machine_learning_tutorial_files/figure-html/unnamed-chunk-22-1.png" width="672" style="display: block; margin: auto;"></div>
 <p>Confusion matrix for the random forest model:</p>
-<div class="sourceCode" id="cb342"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb355"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="va">rf_cm</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/pkg/caret/man/confusionMatrix.html">confusionMatrix</a></span><span class="op">(</span>reference <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/factor.html">factor</a></span><span class="op">(</span><span class="va">test_df</span><span class="op">$</span><span class="va">Purchase</span><span class="op">)</span>, data <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/stats/predict.html">predict</a></span><span class="op">(</span><span class="va">svm_model</span>, <span class="va">test_df</span><span class="op">)</span>, mode<span class="op">=</span><span class="st">'everything'</span>, positive<span class="op">=</span><span class="st">'MM'</span><span class="op">)</span>
 
 <span class="va">rf_cm</span><span class="op">$</span><span class="va">table</span></code></pre></div>
@@ -480,7 +482,7 @@ To implement such algorithm, we will specify the parameter <code>method="svmRadi
 ## Prediction  CH  MM
 ##         CH 170  27
 ##         MM  25  98</code></pre>
-<div class="sourceCode" id="cb344"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb357"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span><span class="op">(</span>data <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/data.frame.html">data.frame</a></span><span class="op">(</span><span class="va">rf_cm</span><span class="op">$</span><span class="va">table</span><span class="op">)</span>, <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span>x<span class="op">=</span><span class="va">Reference</span>, y<span class="op">=</span><span class="va">Prediction</span><span class="op">)</span><span class="op">)</span><span class="op">+</span>
   <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_tile.html">geom_tile</a></span><span class="op">(</span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span>fill<span class="op">=</span><span class="va">Freq</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span>
   <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/scale_gradient.html">scale_fill_gradient2</a></span><span class="op">(</span>low<span class="op">=</span><span class="st">"light blue"</span>, high<span class="op">=</span><span class="st">"blue"</span><span class="op">)</span> <span class="op">+</span>
@@ -488,7 +490,7 @@ To implement such algorithm, we will specify the parameter <code>method="svmRadi
   <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/labs.html">ggtitle</a></span><span class="op">(</span><span class="st">"Confution matrix for random forest model"</span><span class="op">)</span></code></pre></div>
 <div class="inline-figure"><img src="caret_machine_learning_tutorial_files/figure-html/unnamed-chunk-24-1.png" width="672" style="display: block; margin: auto;"></div>
 <p>The <code>caret</code> package also provides a convenient function <code><a href="https://rdrr.io/pkg/caret/man/resamples.html">resamples()</a></code> to compare the metric between models.</p>
-<div class="sourceCode" id="cb345"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb358"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="va">model_list</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/list.html">list</a></span><span class="op">(</span>KNN <span class="op">=</span> <span class="va">knn_model</span>, LR <span class="op">=</span> <span class="va">lr_model</span>, SVM <span class="op">=</span> <span class="va">svm_model</span>, RF <span class="op">=</span> <span class="va">rf_model</span><span class="op">)</span>
 
 <span class="va">models_compare</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/pkg/caret/man/resamples.html">resamples</a></span><span class="op">(</span><span class="va">model_list</span><span class="op">)</span>
@@ -516,9 +518,9 @@ To implement such algorithm, we will specify the parameter <code>method="svmRadi
 ## RF  0.5198789 0.5579644 0.5906583 0.5959591 0.6214686 0.7077705    0</code></pre>
 <p>As we can see that the random forest has the best performance on the dataset.</p>
 </div>
-<div id="reference-2" class="section level2">
+<div id="reference-3" class="section level2">
 <h2>
-<span class="header-section-number">22.5</span> Reference<a class="anchor" aria-label="anchor" href="#reference-2"><i class="fas fa-link"></i></a>
+<span class="header-section-number">24.5</span> Reference<a class="anchor" aria-label="anchor" href="#reference-3"><i class="fas fa-link"></i></a>
 </h2>
 <p>Caret Package – A Practical Guide to Machine Learning in R - Selva Prabhakaran:
 <a href="https://www.machinelearningplus.com/machine-learning/caret-package/#61howtotrainthemodelandinterprettheresults" class="uri">https://www.machinelearningplus.com/machine-learning/caret-package/#61howtotrainthemodelandinterprettheresults</a>?</p>
@@ -530,24 +532,24 @@ To implement such algorithm, we will specify the parameter <code>method="svmRadi
 </div>
 </div>
   <div class="chapter-nav">
-<div class="prev"><a href="vipul-edav-community-contribution-kickstart-r.html"><span class="header-section-number">21</span> Vipul EDAV Community Contribution Kickstart R</a></div>
-<div class="next"><a href="streamlit-for-financial-analysis.html"><span class="header-section-number">23</span> Streamlit for Financial Analysis</a></div>
+<div class="prev"><a href="vipul-edav-community-contribution-kickstart-r.html"><span class="header-section-number">23</span> Vipul EDAV Community Contribution Kickstart R</a></div>
+<div class="next"><a href="streamlit-for-financial-analysis.html"><span class="header-section-number">25</span> Streamlit for Financial Analysis</a></div>
 </div></main><div class="col-md-3 col-lg-2 d-none d-md-block sidebar sidebar-chapter">
     <nav id="toc" data-toggle="toc" aria-label="On this page"><h2>On this page</h2>
       <ul class="nav navbar-nav">
-<li><a class="nav-link" href="#caret---a-machine-learning-package-turotial"><span class="header-section-number">22</span> caret - a machine learning package turotial</a></li>
-<li><a class="nav-link" href="#introduction-and-description-of-dataset"><span class="header-section-number">22.1</span> Introduction and description of dataset</a></li>
-<li><a class="nav-link" href="#pre-processing"><span class="header-section-number">22.2</span> Pre-processing</a></li>
+<li><a class="nav-link" href="#caret---a-machine-learning-package-turotial"><span class="header-section-number">24</span> caret - a machine learning package turotial</a></li>
+<li><a class="nav-link" href="#introduction-and-description-of-dataset"><span class="header-section-number">24.1</span> Introduction and description of dataset</a></li>
+<li><a class="nav-link" href="#pre-processing"><span class="header-section-number">24.2</span> Pre-processing</a></li>
 <li>
-<a class="nav-link" href="#model-training"><span class="header-section-number">22.3</span> Model training</a><ul class="nav navbar-nav">
-<li><a class="nav-link" href="#k-nearest-neighbors"><span class="header-section-number">22.3.1</span> K-nearest neighbors</a></li>
-<li><a class="nav-link" href="#logistics-regression"><span class="header-section-number">22.3.2</span> Logistics Regression</a></li>
-<li><a class="nav-link" href="#support-vector-machine"><span class="header-section-number">22.3.3</span> Support vector machine</a></li>
-<li><a class="nav-link" href="#random-forest"><span class="header-section-number">22.3.4</span> Random Forest</a></li>
+<a class="nav-link" href="#model-training"><span class="header-section-number">24.3</span> Model training</a><ul class="nav navbar-nav">
+<li><a class="nav-link" href="#k-nearest-neighbors"><span class="header-section-number">24.3.1</span> K-nearest neighbors</a></li>
+<li><a class="nav-link" href="#logistics-regression"><span class="header-section-number">24.3.2</span> Logistics Regression</a></li>
+<li><a class="nav-link" href="#support-vector-machine"><span class="header-section-number">24.3.3</span> Support vector machine</a></li>
+<li><a class="nav-link" href="#random-forest"><span class="header-section-number">24.3.4</span> Random Forest</a></li>
 </ul>
 </li>
-<li><a class="nav-link" href="#model-prediction-and-evaluation"><span class="header-section-number">22.4</span> Model prediction and evaluation</a></li>
-<li><a class="nav-link" href="#reference-2"><span class="header-section-number">22.5</span> Reference</a></li>
+<li><a class="nav-link" href="#model-prediction-and-evaluation"><span class="header-section-number">24.4</span> Model prediction and evaluation</a></li>
+<li><a class="nav-link" href="#reference-3"><span class="header-section-number">24.5</span> Reference</a></li>
 </ul>
 
       <div class="book-extra">

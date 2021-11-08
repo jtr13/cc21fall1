@@ -4,16 +4,16 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<title>Page not found | EDAV Fall 2021 Mon/Wed Community Contributions</title>
+<title>Chapter 17 Common R markdown syntax cheatsheet | EDAV Fall 2021 Mon/Wed Community Contributions</title>
 <meta name="author" content="the students of the class">
-<meta name="description" content="The page you requested cannot be found (perhaps it was moved or renamed). You may want to try searching to find the page's new location, or use the table of contents to find the page you are...">
+<meta name="description" content="Yufan Cao and Yingfei Zhu R Markdown is a file format for making dynamic documents with R. It provides an authoring frame work of data science. The R Markdown has two main purpose: 1. Save and...">
 <meta name="generator" content="bookdown 0.24 with bs4_book()">
-<meta property="og:title" content="Page not found | EDAV Fall 2021 Mon/Wed Community Contributions">
+<meta property="og:title" content="Chapter 17 Common R markdown syntax cheatsheet | EDAV Fall 2021 Mon/Wed Community Contributions">
 <meta property="og:type" content="book">
-<meta property="og:description" content="The page you requested cannot be found (perhaps it was moved or renamed). You may want to try searching to find the page's new location, or use the table of contents to find the page you are...">
+<meta property="og:description" content="Yufan Cao and Yingfei Zhu R Markdown is a file format for making dynamic documents with R. It provides an authoring frame work of data science. The R Markdown has two main purpose: 1. Save and...">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Page not found | EDAV Fall 2021 Mon/Wed Community Contributions">
-<meta name="twitter:description" content="The page you requested cannot be found (perhaps it was moved or renamed). You may want to try searching to find the page's new location, or use the table of contents to find the page you are...">
+<meta name="twitter:title" content="Chapter 17 Common R markdown syntax cheatsheet | EDAV Fall 2021 Mon/Wed Community Contributions">
+<meta name="twitter:description" content="Yufan Cao and Yingfei Zhu R Markdown is a file format for making dynamic documents with R. It provides an authoring frame work of data science. The R Markdown has two main purpose: 1. Save and...">
 <!-- JS --><script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.6/clipboard.min.js" integrity="sha256-inc5kl9MA1hkeYUt+EC3BhlIgyp/2jDIyBLS6k3UxPI=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/fuse.js/6.4.6/fuse.js" integrity="sha512-zv6Ywkjyktsohkbp9bb45V6tEMoWhzFzXis+LrMehmJZZSys19Yxf1dopHx7WzIKxr5tK2dVcYmaCk2uqdjF4A==" crossorigin="anonymous"></script><script src="https://kit.fontawesome.com/6ecbd6c532.js" crossorigin="anonymous"></script><script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <link href="libs/bootstrap-4.6.0/bootstrap.min.css" rel="stylesheet">
 <script src="libs/bootstrap-4.6.0/bootstrap.bundle.min.js"></script><script src="libs/bs3compat-0.3.1/transition.js"></script><script src="libs/bs3compat-0.3.1/tabs.js"></script><script src="libs/bs3compat-0.3.1/bs3compat.js"></script><link href="libs/bs4_book-1.0.0/bs4_book.css" rel="stylesheet">
@@ -63,7 +63,7 @@
 <li><a class="" href="cheatsheet-tidyverse.html"><span class="header-section-number">14</span> Cheatsheet Tidyverse</a></li>
 <li><a class="" href="use-of-ggprism-and-ggsci-packages.html"><span class="header-section-number">15</span> Use of ggprism and ggsci packages</a></li>
 <li><a class="" href="interactive-plot-introduction.html"><span class="header-section-number">16</span> Interactive plot introduction</a></li>
-<li><a class="" href="common-r-markdown-syntax-cheatsheet.html"><span class="header-section-number">17</span> Common R markdown syntax cheatsheet</a></li>
+<li><a class="active" href="common-r-markdown-syntax-cheatsheet.html"><span class="header-section-number">17</span> Common R markdown syntax cheatsheet</a></li>
 <li><a class="" href="header.html"><span class="header-section-number">18</span> Header</a></li>
 <li class="book-part">Tutorials</li>
 <li><a class="" href="multithreading-crawler-frame.html"><span class="header-section-number">19</span> Multithreading Crawler Frame</a></li>
@@ -95,18 +95,135 @@
         </div>
       </nav>
 </div>
-  </header><main class="col-sm-12 col-md-9 col-lg-7" id="content"><div id="page-not-found" class="section level1">
-<h1>Page not found<a class="anchor" aria-label="anchor" href="#page-not-found"><i class="fas fa-link"></i></a>
+  </header><main class="col-sm-12 col-md-9 col-lg-7" id="content"><div id="common-r-markdown-syntax-cheatsheet" class="section level1">
+<h1>
+<span class="header-section-number">17</span> Common R markdown syntax cheatsheet<a class="anchor" aria-label="anchor" href="#common-r-markdown-syntax-cheatsheet"><i class="fas fa-link"></i></a>
 </h1>
-<p>The page you requested cannot be found (perhaps it was moved or renamed).</p>
-<p>You may want to try searching to find the page's new location, or use
-the table of contents to find the page you are looking for.</p>
+<p>Yufan Cao and Yingfei Zhu</p>
+<p>R Markdown is a file format for making dynamic documents with R. It provides an authoring frame work of data science. The R Markdown has two main purpose:
+1. Save and execute code
+2. Generate high quality reports that can be shared with audience</p>
+<p>R Markdown documents can support various of dynamic and static output format, such as pdf or Html. The syntax of R Markdown is also important, students need to learn how to write Markdown syntax to produce a concise and clear reports.</p>
+<div id="markdown-syntax" class="section level2">
+<h2>
+<span class="header-section-number">17.1</span> Markdown Syntax<a class="anchor" aria-label="anchor" href="#markdown-syntax"><i class="fas fa-link"></i></a>
+</h2>
+<div id="workflow" class="section level3">
+<h3>
+<span class="header-section-number">17.1.1</span> Workflow<a class="anchor" aria-label="anchor" href="#workflow"><i class="fas fa-link"></i></a>
+</h3>
+<ul>
+<li><ol style="list-style-type: decimal">
+<li>Open a new.Rmd file in the RStudio IED by goting to File &gt; New File &gt; R Markdown</li>
+</ol></li>
+<li><ol start="2" style="list-style-type: decimal">
+<li>Embed code in chunks, run code by line, by chunk, or all at once.</li>
+</ol></li>
+<li><ol start="3" style="list-style-type: decimal">
+<li>Write text and add tables, images, figures, and citations. Format with Markdown syntax of the RStudio Visual Markdown Editor.</li>
+</ol></li>
+<li><ol start="4" style="list-style-type: decimal">
+<li>Set Output format(s) and options in the YAML header. Customize themes or add parameters to execute or add interactivity with Shiny.</li>
+</ol></li>
+<li><ol start="5" style="list-style-type: decimal">
+<li>Save and render the whole document. Knit periodically to preview your work as you write.</li>
+</ol></li>
+<li><ol start="6" style="list-style-type: decimal">
+<li>Present or share your work.</li>
+</ol></li>
+</ul>
+</div>
+<div id="inline-formatting" class="section level3">
+<h3>
+<span class="header-section-number">17.1.2</span> Inline Formatting<a class="anchor" aria-label="anchor" href="#inline-formatting"><i class="fas fa-link"></i></a>
+</h3>
+<ul>
+<li><ol style="list-style-type: decimal">
+<li>
+<em>Italic</em> inline text: surrounded by underscores or asterisks (e.g., <code>_text_</code> or <code>*text*</code>)</li>
+</ol></li>
+<li><ol start="2" style="list-style-type: decimal">
+<li>
+<strong>Bold</strong> text: produced using a pair of double asterisks or surrounded by two underscores (e.g., <code>**text**</code> or `__text_``).</li>
+</ol></li>
+<li><ol start="3" style="list-style-type: decimal">
+<li>Turn text to a subscript: using a pair of tildes (<code>~</code>) (e.g., <code>H~3~PO~4~</code> renders H<sub>3</sub>PO<sub>4</sub>)</li>
+</ol></li>
+<li><ol start="4" style="list-style-type: decimal">
+<li>Turn text to a superscript: using a pair of carets(<code>^</code>) (e.g., <code>Cu^2+^</code> renders Cu<sup>2</sup>+)</li>
+</ol></li>
+<li><ol start="5" style="list-style-type: decimal">
+<li>add line in the text: using two pair of tildes(<code>~~</code>), (e.g., <code>~~text~~</code> renders <del>text</del>)</li>
+</ol></li>
+<li><ol start="6" style="list-style-type: decimal">
+<li>hyperlink: use the syntax <code>[text](link), (e.g.,</code><a href="www.rstudio.com">link</a>` renders <a href="www.rstudio.com">link</a>)</li>
+</ol></li>
+<li><ol start="7" style="list-style-type: decimal">
+<li>Mark text as <code>inline code</code>: use a pair of backticks, (e.g., <code>`code`</code>), to include n literal backticks, use at least n+1 backticks outside, (e.g., you can use three backticks to preserve two backtick inside: <code>``` ``code`` ```</code>, which is rendered as <code>``code``</code> )</li>
+</ol></li>
+<li><ol start="8" style="list-style-type: decimal">
+<li>
+</ol></li>
+</ul>
+<p><code>```</code></p>
+<p><code>text</code></p>
+<p><code>```</code>
+will renders</p>
+<pre><code>text </code></pre>
+<ul>
+<li><ol start="9" style="list-style-type: decimal">
+<li>
+<code>&gt;block quotes</code> will render as</li>
+</ol></li>
+</ul>
+<blockquote>
+<p>block quotes</p>
+</blockquote>
+<ul>
+<li><ol start="10" style="list-style-type: decimal">
+<li>Equation: <code>$e^{i \pi} +1 = 0$</code> renders <span class="math inline">\(e^{i \pi} +1 = 0\)</span>
+</li>
+</ol></li>
+<li><ol start="11" style="list-style-type: decimal">
+<li>Equation blocks: <code>$$E = mc^{2}$$</code> renders
+<span class="math display">\[E = mc^{2}\]</span>
+</li>
+</ol></li>
+<li><ol start="12" style="list-style-type: decimal">
+<li>‘- ordered list’ renders</li>
+</ol></li>
+<li><p>ordered list</p></li>
+<li><ol start="13" style="list-style-type: decimal">
+<li>text size: use number sign <code>#</code> to adjust the text size for header, as the <code>#</code> increase, the size of header decrease.</li>
+</ol></li>
+</ul>
+<p>(e.g., <code># Header</code> renders</p>
+</div>
+</div>
 </div>
   <div class="chapter-nav">
-<div class="empty"></div>
-<div class="empty"></div>
+<div class="prev"><a href="interactive-plot-introduction.html"><span class="header-section-number">16</span> Interactive plot introduction</a></div>
+<div class="next"><a href="header.html"><span class="header-section-number">18</span> Header</a></div>
 </div></main><div class="col-md-3 col-lg-2 d-none d-md-block sidebar sidebar-chapter">
-    </div>
+    <nav id="toc" data-toggle="toc" aria-label="On this page"><h2>On this page</h2>
+      <ul class="nav navbar-nav">
+<li><a class="nav-link" href="#common-r-markdown-syntax-cheatsheet"><span class="header-section-number">17</span> Common R markdown syntax cheatsheet</a></li>
+<li>
+<a class="nav-link" href="#markdown-syntax"><span class="header-section-number">17.1</span> Markdown Syntax</a><ul class="nav navbar-nav">
+<li><a class="nav-link" href="#workflow"><span class="header-section-number">17.1.1</span> Workflow</a></li>
+<li><a class="nav-link" href="#inline-formatting"><span class="header-section-number">17.1.2</span> Inline Formatting</a></li>
+</ul>
+</li>
+</ul>
+
+      <div class="book-extra">
+        <ul class="list-unstyled">
+<li><a id="book-source" href="https://github.com/jtr13/cc21fall1/blob/main/rmd_syntax_cheatsheet.Rmd">View source <i class="fab fa-github"></i></a></li>
+          <li><a id="book-edit" href="https://github.com/jtr13/cc21fall1/edit/main/rmd_syntax_cheatsheet.Rmd">Edit this page <i class="fab fa-github"></i></a></li>
+        </ul>
+</div>
+    </nav>
+</div>
 
 </div>
 </div> <!-- .container -->
