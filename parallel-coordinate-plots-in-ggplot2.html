@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<title>Chapter 39 Parallel Coordinate Plots in ggplot2 | EDAV Fall 2021 Mon/Wed Community Contributions</title>
+<meta name="author" content="the students of the class">
+<meta name="description" content="Amrutha Varshini Sundar  39.1 Introduction A parallel coordinate plot is used for visualizing multivariate numerical data. The plots facilitate for comparing multiple numeric variables that have...">
+<meta name="generator" content="bookdown 0.24 with bs4_book()">
+<meta property="og:title" content="Chapter 39 Parallel Coordinate Plots in ggplot2 | EDAV Fall 2021 Mon/Wed Community Contributions">
+<meta property="og:type" content="book">
+<meta property="og:description" content="Amrutha Varshini Sundar  39.1 Introduction A parallel coordinate plot is used for visualizing multivariate numerical data. The plots facilitate for comparing multiple numeric variables that have...">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Chapter 39 Parallel Coordinate Plots in ggplot2 | EDAV Fall 2021 Mon/Wed Community Contributions">
+<meta name="twitter:description" content="Amrutha Varshini Sundar  39.1 Introduction A parallel coordinate plot is used for visualizing multivariate numerical data. The plots facilitate for comparing multiple numeric variables that have...">
+<!-- JS --><script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.6/clipboard.min.js" integrity="sha256-inc5kl9MA1hkeYUt+EC3BhlIgyp/2jDIyBLS6k3UxPI=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/fuse.js/6.4.6/fuse.js" integrity="sha512-zv6Ywkjyktsohkbp9bb45V6tEMoWhzFzXis+LrMehmJZZSys19Yxf1dopHx7WzIKxr5tK2dVcYmaCk2uqdjF4A==" crossorigin="anonymous"></script><script src="https://kit.fontawesome.com/6ecbd6c532.js" crossorigin="anonymous"></script><script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<link href="libs/bootstrap-4.6.0/bootstrap.min.css" rel="stylesheet">
+<script src="libs/bootstrap-4.6.0/bootstrap.bundle.min.js"></script><script src="libs/bs3compat-0.3.1/transition.js"></script><script src="libs/bs3compat-0.3.1/tabs.js"></script><script src="libs/bs3compat-0.3.1/bs3compat.js"></script><link href="libs/bs4_book-1.0.0/bs4_book.css" rel="stylesheet">
+<script src="libs/bs4_book-1.0.0/bs4_book.js"></script><script src="libs/accessible-code-block-0.0.1/empty-anchor.js"></script><script src="libs/htmlwidgets-1.5.4/htmlwidgets.js"></script><script src="libs/plotly-binding-4.10.0/plotly.js"></script><script src="libs/typedarray-0.1/typedarray.min.js"></script><link href="libs/crosstalk-1.2.0/css/crosstalk.min.css" rel="stylesheet">
+<script src="libs/crosstalk-1.2.0/js/crosstalk.min.js"></script><link href="libs/plotly-htmlwidgets-css-2.5.1/plotly-htmlwidgets.css" rel="stylesheet">
+<script src="libs/plotly-main-2.5.1/plotly-latest.min.js"></script><link href="libs/dygraphs-1.1.1/dygraph.css" rel="stylesheet">
+<script src="libs/dygraphs-1.1.1/dygraph-combined.js"></script><script src="libs/dygraphs-1.1.1/shapes.js"></script><script src="libs/moment-2.8.4/moment.js"></script><script src="libs/moment-timezone-0.2.5/moment-timezone-with-data.js"></script><script src="libs/moment-fquarter-1.0.0/moment-fquarter.min.js"></script><script src="libs/dygraphs-binding-1.1.1.6/dygraphs.js"></script><script src="libs/d3-5.16.0/d3.min.js"></script><script src="libs/forceNetwork-binding-0.4/forceNetwork.js"></script><link href="libs/parallel-coordinates-2.1.8/parcoords.css" rel="stylesheet">
+<script src="libs/parcoords-binding-1.0.0/parcoords.js"></script><script src="libs/detect-resize-0.5.3/jquery.resize.js"></script><link href="libs/jquery-ui-1.11.4/jquery-ui.min.css" rel="stylesheet">
+<script src="libs/jquery-ui-1.11.4/jquery-ui.min.js"></script><script src="libs/vega-1.4.3/vega.min.js"></script><script src="libs/lodash-2.2.1/lodash.min.js"></script><script>var lodash = _.noConflict();</script><link href="libs/ggvis-0.4.7/css/ggvis.css" rel="stylesheet">
+<script src="libs/ggvis-0.4.7/js/ggvis.js"></script><script src="libs/dendroNetwork-binding-0.4/dendroNetwork.js"></script><link href="libs/str_view-0.1.0/str_view.css" rel="stylesheet">
+<script src="libs/str_view-binding-1.4.0/str_view.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/autocomplete.js/0.38.0/autocomplete.jquery.min.js" integrity="sha512-GU9ayf+66Xx2TmpxqJpliWbT5PiGYxpaG8rfnBEk1LL8l1KGkRShhngwdXK1UgqhAzWpZHSiYPc09/NwDQIGyg==" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/mark.min.js" integrity="sha512-5CYOlHXGh6QpOFA/TeTylKLWfB3ftPsde7AnmhuitiTX4K5SqCLBeKro6sPS8ilsz1Q4NRx3v8Ko2IBiszzdww==" crossorigin="anonymous"></script><!-- CSS -->
+</head>
+<body data-spy="scroll" data-target="#toc">
+
+<div class="container-fluid">
+<div class="row">
+  <header class="col-sm-12 col-lg-3 sidebar sidebar-book"><a class="sr-only sr-only-focusable" href="#content">Skip to main content</a>
+
+    <div class="d-flex align-items-start justify-content-between">
+      <h1>
+        <a href="index.html" title="">EDAV Fall 2021 Mon/Wed Community Contributions</a>
+      </h1>
+      <button class="btn btn-outline-primary d-lg-none ml-2 mt-1" type="button" data-toggle="collapse" data-target="#main-nav" aria-expanded="true" aria-controls="main-nav"><i class="fas fa-bars"></i><span class="sr-only">Show table of contents</span></button>
+    </div>
+
+    <div id="main-nav" class="collapse-lg">
+      <form role="search">
+        <input id="search" class="form-control" type="search" placeholder="Search" aria-label="Search">
+</form>
+
+      <nav aria-label="Table of contents"><h2>Table of contents</h2>
+        <ul class="book-toc list-unstyled">
+<li><a class="" href="index.html"><span class="header-section-number">1</span> Welcome!</a></li>
+<li><a class="" href="community-contribution.html"><span class="header-section-number">2</span> Community Contribution</a></li>
+<li><a class="" href="github-submission-instructions.html"><span class="header-section-number">3</span> GitHub submission instructions</a></li>
+<li><a class="" href="sample-project.html"><span class="header-section-number">4</span> Sample project</a></li>
+<li class="book-part">Data Visualizations</li>
+<li><a class="" href="introduction-to-the-lattice-package.html"><span class="header-section-number">5</span> Introduction to the lattice package</a></li>
+<li><a class="" href="graph-animation-with-gganimate-and-after-effects.html"><span class="header-section-number">6</span> Graph animation with gganimate and After Effects</a></li>
+<li><a class="" href="interactive-plots.html"><span class="header-section-number">7</span> Interactive Plots</a></li>
+<li><a class="" href="create-regression-assumption-plots-in-word.html"><span class="header-section-number">8</span> Create regression assumption plots in Word</a></li>
+<li><a class="" href="from-neo4j-to-rstudio.html"><span class="header-section-number">9</span> From Neo4j to RStudio</a></li>
+<li class="book-part">Cheatsheets</li>
+<li><a class="" href="r-vs.-python-visualization-cheatsheet.html"><span class="header-section-number">10</span> R vs. Python Visualization Cheatsheet</a></li>
+<li><a class="" href="rpackage-waffle-cheatsheet.html"><span class="header-section-number">11</span> Rpackage waffle cheatsheet</a></li>
+<li><a class="" href="r-cheatsheet-on-data-transforamtion-and-exploration.html"><span class="header-section-number">12</span> R cheatsheet on data transforamtion and exploration</a></li>
+<li><a class="" href="r-vs-python-basic-data-wrangling.html"><span class="header-section-number">13</span> R vs Python Basic Data Wrangling</a></li>
+<li><a class="" href="tidyverse_cheatsheet.html"><span class="header-section-number">14</span> tidyverse_cheatsheet</a></li>
+<li><a class="" href="cheatsheet-tidyverse.html"><span class="header-section-number">15</span> Cheatsheet Tidyverse</a></li>
+<li><a class="" href="use-of-ggprism-and-ggsci-packages.html"><span class="header-section-number">16</span> Use of ggprism and ggsci packages</a></li>
+<li><a class="" href="interactive-plot-introduction.html"><span class="header-section-number">17</span> Interactive plot introduction</a></li>
+<li><a class="" href="common-r-markdown-syntax-cheatsheet.html"><span class="header-section-number">18</span> Common R markdown syntax cheatsheet</a></li>
+<li><a class="" href="header.html"><span class="header-section-number">19</span> Header</a></li>
+<li><a class="" href="parallel-coordinates-plot-cheatsheet.html"><span class="header-section-number">20</span> Parallel coordinates plot cheatsheet</a></li>
+<li><a class="" href="r-data-science-workflow-cheatsheet.html"><span class="header-section-number">21</span> R Data Science Workflow CheatSheet</a></li>
+<li><a class="" href="a-linear-regression-bestiary.html"><span class="header-section-number">22</span> A linear regression Bestiary</a></li>
+<li class="book-part">Tutorials</li>
+<li><a class="" href="multithreading-crawler-frame.html"><span class="header-section-number">23</span> Multithreading Crawler Frame</a></li>
+<li><a class="" href="regression-and-classification-in-r.html"><span class="header-section-number">24</span> Regression and Classification in R</a></li>
+<li><a class="" href="tibble-vs.-dataframe.html"><span class="header-section-number">25</span> Tibble vs. DataFrame</a></li>
+<li><a class="" href="introduction-to-time-series.html"><span class="header-section-number">26</span> Introduction to Time Series</a></li>
+<li><a class="" href="vipul-edav-community-contribution-kickstart-r.html"><span class="header-section-number">27</span> Vipul EDAV Community Contribution Kickstart R</a></li>
+<li><a class="" href="caret---a-machine-learning-package-turotial.html"><span class="header-section-number">28</span> caret - a machine learning package turotial</a></li>
+<li><a class="" href="streamlit-for-financial-analysis.html"><span class="header-section-number">29</span> Streamlit for Financial Analysis</a></li>
+<li><a class="" href="interactive-graphs-tutorial.html"><span class="header-section-number">30</span> Interactive graphs tutorial</a></li>
+<li><a class="" href="guideline-on-using-package-rcurl-and-xml-for-web-scraping.html"><span class="header-section-number">31</span> Guideline on Using Package Rcurl and XML for Web Scraping</a></li>
+<li><a class="" href="twitter-r-package-scraping-via-api-tutorial.html"><span class="header-section-number">32</span> TwitteR R Package Scraping via API Tutorial</a></li>
+<li><a class="" href="introduction-to-data-manipulation.html"><span class="header-section-number">33</span> Introduction to Data Manipulation</a></li>
+<li><a class="" href="animating-the-plots-in-r.html"><span class="header-section-number">34</span> Animating the plots in R</a></li>
+<li><a class="" href="quick-guide-to-eda.html"><span class="header-section-number">35</span> Quick guide to eda</a></li>
+<li><a class="" href="natural-langauge-processing-common-eda-practices-in-python.html"><span class="header-section-number">36</span> Natural Langauge Processing Common EDA Practices in Python</a></li>
+<li><a class="" href="beginners-walk-through-of-deep-learning-in-r.html"><span class="header-section-number">37</span> Beginner’s Walk-through of Deep Learning in R</a></li>
+<li><a class="" href="supervised-learning-tutorial.html"><span class="header-section-number">38</span> Supervised Learning Tutorial</a></li>
+<li><a class="active" href="parallel-coordinate-plots-in-ggplot2.html"><span class="header-section-number">39</span> Parallel Coordinate Plots in ggplot2</a></li>
+<li><a class="" href="using-ggplot-in-python.html"><span class="header-section-number">40</span> Using ggplot in python</a></li>
+<li class="book-part">Demonstrations</li>
+<li><a class="" href="linear-association-r-studio-plugin.html"><span class="header-section-number">41</span> Linear Association R Studio Plugin</a></li>
+<li><a class="" href="customized-sorting-in-r.html"><span class="header-section-number">42</span> Customized Sorting in R</a></li>
+<li class="book-part">Workshops</li>
+<li><a class="" href="data-science-product-cycles-in-enterprises.html"><span class="header-section-number">43</span> Data Science Product Cycles in Enterprises</a></li>
+<li class="book-part">Appendices</li>
+<li><a class="" href="github-initial-setup.html"><span class="header-section-number">44</span> Github initial setup</a></li>
+<li><a class="" href="tutorial-for-pull-request-mergers.html"><span class="header-section-number">45</span> Tutorial for pull request mergers</a></li>
+</ul>
+
+        <div class="book-extra">
+          <p><a id="book-repo" href="https://github.com/jtr13/cc21fall1">View book source <i class="fab fa-github"></i></a></p>
+        </div>
+      </nav>
+</div>
+  </header><main class="col-sm-12 col-md-9 col-lg-7" id="content"><div id="parallel-coordinate-plots-in-ggplot2" class="section level1">
+<h1>
+<span class="header-section-number">39</span> Parallel Coordinate Plots in ggplot2<a class="anchor" aria-label="anchor" href="#parallel-coordinate-plots-in-ggplot2"><i class="fas fa-link"></i></a>
+</h1>
+<p>Amrutha Varshini Sundar</p>
+<div id="introduction-5" class="section level2">
+<h2>
+<span class="header-section-number">39.1</span> Introduction<a class="anchor" aria-label="anchor" href="#introduction-5"><i class="fas fa-link"></i></a>
+</h2>
+<p>A parallel coordinate plot is used for visualizing multivariate numerical data. The plots facilitate for comparing multiple numeric variables that have different scales and different units of measurement. It abets in finding out patterns and correlations in datasets which are high dimensional.</p>
+<p>The plot itself consists of X-axis which represents the different variable and the corresponding point along the Y-axis represents the magnitude of the value for that variable. Each datapoint is connected as a series of line segments across all the variables.</p>
+<p>The ubiquitous implementation of parallel coordinate plots is provided by the ggparcoord function within the GGally package. The document below gives a walkthrough for plotting the parallel coordinate plots and some functionalities associated with it by using the ggplot2 package.</p>
+<div id="importing-necessary-packages" class="section level3">
+<h3>
+<span class="header-section-number">39.1.1</span> Importing necessary packages<a class="anchor" aria-label="anchor" href="#importing-necessary-packages"><i class="fas fa-link"></i></a>
+</h3>
+<div class="sourceCode" id="cb592"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="co"># packages we need to implement parallel coordinate plots</span>
+<span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://ggplot2.tidyverse.org">ggplot2</a></span><span class="op">)</span>
+<span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://dplyr.tidyverse.org">dplyr</a></span><span class="op">)</span>
+<span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://tibble.tidyverse.org/">tibble</a></span><span class="op">)</span>
+<span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://tidyr.tidyverse.org">tidyr</a></span><span class="op">)</span>
+
+<span class="co"># Used only for demonstration and comparison purposes</span>
+<span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://ggobi.github.io/ggally/">GGally</a></span><span class="op">)</span>
+<span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://rpkgs.datanovia.com/ggpubr/">ggpubr</a></span><span class="op">)</span></code></pre></div>
+</div>
+</div>
+<div id="plotting-a-sample-parallel-coordinate-plot-using-ggparcoord" class="section level2">
+<h2>
+<span class="header-section-number">39.2</span> Plotting a sample parallel coordinate plot using ggparcoord<a class="anchor" aria-label="anchor" href="#plotting-a-sample-parallel-coordinate-plot-using-ggparcoord"><i class="fas fa-link"></i></a>
+</h2>
+<p>The dataset we use for plotting parallel coordinate plots is the Wine Quality Data Set from the UCI ML Repository. We are specifically extracting 12 different attributes of white wine across 100 different wine samples and presenting the parallel coordinate plot for the same.</p>
+<div class="sourceCode" id="cb593"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="co"># read the dataset</span>
+<span class="va">winequality</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/utils/read.table.html">read.csv</a></span><span class="op">(</span><span class="st">"http://archive.ics.uci.edu/ml/machine-learning-databases/wine-quality/winequality-white.csv"</span>, sep <span class="op">=</span> <span class="st">";"</span><span class="op">)</span><span class="op">[</span><span class="fl">0</span><span class="op">:</span><span class="fl">100</span>, <span class="op">]</span>
+
+<span class="fu"><a href="https://rdrr.io/r/base/print.html">print</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/pkg/raster/man/headtail.html">head</a></span><span class="op">(</span><span class="va">winequality</span><span class="op">)</span><span class="op">)</span></code></pre></div>
+<pre><code>##   fixed.acidity volatile.acidity citric.acid residual.sugar chlorides
+## 1           7.0             0.27        0.36           20.7     0.045
+## 2           6.3             0.30        0.34            1.6     0.049
+## 3           8.1             0.28        0.40            6.9     0.050
+## 4           7.2             0.23        0.32            8.5     0.058
+## 5           7.2             0.23        0.32            8.5     0.058
+## 6           8.1             0.28        0.40            6.9     0.050
+##   free.sulfur.dioxide total.sulfur.dioxide density   pH sulphates alcohol
+## 1                  45                  170  1.0010 3.00      0.45     8.8
+## 2                  14                  132  0.9940 3.30      0.49     9.5
+## 3                  30                   97  0.9951 3.26      0.44    10.1
+## 4                  47                  186  0.9956 3.19      0.40     9.9
+## 5                  47                  186  0.9956 3.19      0.40     9.9
+## 6                  30                   97  0.9951 3.26      0.44    10.1
+##   quality
+## 1       6
+## 2       6
+## 3       6
+## 4       6
+## 5       6
+## 6       6</code></pre>
+<div class="sourceCode" id="cb595"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="co"># creating a dummy wine type category as the first column </span>
+<span class="va">winequality</span> <span class="op">=</span> <span class="va">winequality</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> <span class="fu"><a href="https://tibble.tidyverse.org/reference/add_column.html">add_column</a></span><span class="op">(</span>WineType <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/grep.html">sub</a></span><span class="op">(</span><span class="st">"^"</span>,<span class="st">"Class "</span>, <span class="fl">1</span><span class="op">:</span><span class="fl">100</span><span class="op">)</span><span class="op">)</span>, .before<span class="op">=</span><span class="st">"fixed.acidity"</span><span class="op">)</span>
+
+<span class="co"># plotting with basic ggparcoord from GGally</span>
+<span class="va">ggally_par_coord</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://ggobi.github.io/ggally/reference/ggparcoord.html">ggparcoord</a></span><span class="op">(</span><span class="va">winequality</span>, columns <span class="op">=</span> <span class="fl">2</span><span class="op">:</span><span class="fl">13</span>, scale <span class="op">=</span> <span class="st">'globalminmax'</span><span class="op">)</span> <span class="op">+</span>
+                      <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/labs.html">xlab</a></span><span class="op">(</span><span class="st">"Wine Attributes"</span><span class="op">)</span> <span class="op">+</span>
+                      <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/labs.html">ylab</a></span><span class="op">(</span><span class="st">"Value"</span><span class="op">)</span> 
+
+<span class="va">ggally_par_coord</span> <span class="op">+</span>
+  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/labs.html">ggtitle</a></span><span class="op">(</span><span class="st">"Parallel coordinates plot showing the wine attributes for different wines"</span><span class="op">)</span> <span class="op">+</span>
+    <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/theme.html">theme</a></span><span class="op">(</span>plot.title <span class="op">=</span> <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/element.html">element_text</a></span><span class="op">(</span>size <span class="op">=</span> <span class="fl">15</span>, face <span class="op">=</span> <span class="st">"bold"</span><span class="op">)</span><span class="op">)</span></code></pre></div>
+<div class="inline-figure"><img src="parallel_coordinate_plots_ggplot2_files/figure-html/unnamed-chunk-3-1.png" width="1248" style="display: block; margin: auto;"></div>
+</div>
+<div id="custom-function-to-implement-a-similar-functionality-for-presenting-parallel-coordinate-plots-using-ggplot2" class="section level2">
+<h2>
+<span class="header-section-number">39.3</span> Custom function to implement a similar functionality for presenting parallel coordinate plots using ggplot2<a class="anchor" aria-label="anchor" href="#custom-function-to-implement-a-similar-functionality-for-presenting-parallel-coordinate-plots-using-ggplot2"><i class="fas fa-link"></i></a>
+</h2>
+<p>The function geom_parcoord is an implementation to present parallel coordinate plots using ggplot2. The function accepts the following parameters,</p>
+<ol style="list-style-type: decimal">
+<li><p>df_wide - An unpivoted dataframe with the multidimensional variables present as separate columns of the dataframe</p></li>
+<li>
+<p>columns - Indicates the columns that are the variables in the dataframe.</p>
+<p>Default behavior - NULL. Assumes that the first column is the group by column which represents the series of line segment for a single entity.</p>
+</li>
+<li>
+<p>spline_factor - Controls the level of smoothness to the sequential line segments.</p>
+<p>Default behavior - 1. This indicates no smoothing. Higher the value, higher is the smoothing.</p>
+</li>
+<li>
+<p>standardize - Boolean to indicate whether the variables have to be scaled before plotting them. This is recommended as it helps in better analysis of the patterns when they are all plotted on comparable scales. This uses the scale function provided in base R.</p>
+<p>Default behavior - T</p>
+</li>
+</ol>
+<div class="sourceCode" id="cb596"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="va">smooth_df_group</span> <span class="op">&lt;-</span> <span class="kw">function</span><span class="op">(</span><span class="va">dt</span>, <span class="va">spline_factor</span>, <span class="va">groupvars</span><span class="op">)</span><span class="op">{</span>
+  <span class="fu"><a href="https://rdrr.io/r/base/data.frame.html">data.frame</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/stats/splinefun.html">spline</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/pkg/raster/man/factor.html">as.factor</a></span><span class="op">(</span><span class="va">dt</span><span class="op">$</span><span class="va">category</span><span class="op">)</span>, <span class="va">dt</span><span class="op">$</span><span class="va">values</span>, n<span class="op">=</span><span class="fl">12</span><span class="op">*</span><span class="va">groupvars</span><span class="op">)</span><span class="op">)</span>
+<span class="op">}</span>
+
+<span class="co"># Custom function to plot </span>
+<span class="va">geom_parcoord</span> <span class="op">&lt;-</span> <span class="kw">function</span><span class="op">(</span><span class="va">df_wide</span>, <span class="va">columns</span><span class="op">=</span><span class="cn">NULL</span>, <span class="va">spline_factor</span> <span class="op">=</span> <span class="fl">1</span>, <span class="va">standardize</span> <span class="op">=</span> <span class="cn">T</span><span class="op">)</span> <span class="op">{</span>
+  
+  <span class="co"># Assuming the first column is going to be the column to be grouped</span>
+  <span class="va">group_by_col</span> <span class="op">=</span> <span class="fl">1</span>
+  <span class="va">columns</span> <span class="op">=</span> <span class="cn">NULL</span>
+  
+  <span class="co"># normalize data</span>
+  <span class="kw">if</span><span class="op">(</span><span class="va">standardize</span><span class="op">)</span> <span class="op">{</span>
+    <span class="va">df</span> <span class="op">=</span> <span class="va">df_wide</span><span class="op">[</span><span class="op">(</span><span class="va">group_by_col</span><span class="op">+</span><span class="fl">1</span><span class="op">)</span><span class="op">:</span><span class="fu"><a href="https://rdrr.io/r/base/length.html">length</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/colnames.html">colnames</a></span><span class="op">(</span><span class="va">df_wide</span><span class="op">)</span><span class="op">)</span><span class="op">]</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> <span class="fu"><a href="https://dplyr.tidyverse.org/reference/mutate_all.html">mutate_all</a></span><span class="op">(</span><span class="va">scale</span><span class="op">)</span>
+    <span class="va">df</span> <span class="op">=</span> <span class="va">df</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> <span class="fu"><a href="https://tibble.tidyverse.org/reference/add_column.html">add_column</a></span><span class="op">(</span>WineType <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/grep.html">sub</a></span><span class="op">(</span><span class="st">"^"</span>,<span class="st">"Class "</span>, <span class="fl">1</span><span class="op">:</span><span class="fl">100</span><span class="op">)</span><span class="op">)</span>, .before<span class="op">=</span><span class="st">"fixed.acidity"</span><span class="op">)</span>
+    <span class="va">df_wide</span> <span class="op">=</span> <span class="va">df</span>
+  <span class="op">}</span>
+  
+  <span class="co"># If columns are not provided, then set defaults</span>
+  <span class="kw">if</span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/NULL.html">is.null</a></span><span class="op">(</span><span class="va">columns</span><span class="op">)</span><span class="op">)</span> <span class="op">{</span>
+    <span class="va">columns</span> <span class="op">=</span> <span class="op">(</span><span class="va">group_by_col</span><span class="op">+</span><span class="fl">1</span><span class="op">)</span><span class="op">:</span><span class="fu"><a href="https://rdrr.io/r/base/length.html">length</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/colnames.html">colnames</a></span><span class="op">(</span><span class="va">df_wide</span><span class="op">)</span><span class="op">)</span>
+  <span class="op">}</span>
+  
+  <span class="co"># pivot the dataframe to convert to the long format</span>
+  <span class="va">df_long</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://tidyr.tidyverse.org/reference/pivot_longer.html">pivot_longer</a></span><span class="op">(</span><span class="va">df_wide</span>, cols <span class="op">=</span> <span class="va">columns</span>, names_to <span class="op">=</span> <span class="st">"category"</span>, values_to <span class="op">=</span> <span class="st">"values"</span><span class="op">)</span>
+  
+  <span class="co"># group by using the group_by column and apply appropriate level of smoothing</span>
+  <span class="va">final_df</span> <span class="op">&lt;-</span> <span class="va">df_long</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span>
+   <span class="fu"><a href="https://dplyr.tidyverse.org/reference/group_by_all.html">group_by_at</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/colnames.html">colnames</a></span><span class="op">(</span><span class="va">df_wide</span><span class="op">)</span><span class="op">[</span><span class="va">group_by_col</span><span class="op">]</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span>
+   <span class="fu"><a href="https://dplyr.tidyverse.org/reference/group_map.html">group_modify</a></span><span class="op">(</span><span class="va">smooth_df_group</span>, <span class="va">spline_factor</span><span class="op">)</span>
+  
+  <span class="co"># Plot using geom_line</span>
+  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span><span class="op">(</span><span class="fu"><a href="https://dplyr.tidyverse.org/reference/filter.html">filter</a></span><span class="op">(</span><span class="va">final_df</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span> 
+    <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_path.html">geom_line</a></span><span class="op">(</span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes_.html">aes_string</a></span><span class="op">(</span>x <span class="op">=</span> <span class="st">"x"</span>, y <span class="op">=</span> <span class="st">"y"</span>, group<span class="op">=</span><span class="fu"><a href="https://rdrr.io/r/base/colnames.html">colnames</a></span><span class="op">(</span><span class="va">df_wide</span><span class="op">)</span><span class="op">[</span><span class="va">group_by_col</span><span class="op">]</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span>
+    <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/labs.html">ylab</a></span><span class="op">(</span><span class="st">'Values'</span><span class="op">)</span> <span class="op">+</span>
+    <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/scale_continuous.html">scale_x_continuous</a></span><span class="op">(</span>name<span class="op">=</span><span class="st">"Category"</span>, limits<span class="op">=</span><span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">1</span>, <span class="fu"><a href="https://rdrr.io/r/base/length.html">length</a></span><span class="op">(</span><span class="va">columns</span><span class="op">)</span><span class="op">)</span>, labels<span class="op">=</span><span class="fu"><a href="https://rdrr.io/r/base/sort.html">sort</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/colnames.html">colnames</a></span><span class="op">(</span><span class="va">df_wide</span><span class="op">)</span><span class="op">[</span><span class="va">columns</span><span class="op">]</span><span class="op">)</span>, breaks<span class="op">=</span><span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">1</span><span class="op">:</span><span class="fu"><a href="https://rdrr.io/r/base/length.html">length</a></span><span class="op">(</span><span class="va">columns</span><span class="op">)</span><span class="op">)</span><span class="op">)</span> 
+<span class="op">}</span></code></pre></div>
+</div>
+<div id="plotting-parallel-coordinate-plots-using-custom-function---geom_parcoord" class="section level2">
+<h2>
+<span class="header-section-number">39.4</span> Plotting parallel coordinate plots using custom function - geom_parcoord<a class="anchor" aria-label="anchor" href="#plotting-parallel-coordinate-plots-using-custom-function---geom_parcoord"><i class="fas fa-link"></i></a>
+</h2>
+<p>Below is a plot for a simple parcoord plot using the default behavior of geom_parcoord. There is no level of smoothing and the values are not scaled.</p>
+<div class="sourceCode" id="cb597"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="va">custom_parcoord</span> <span class="op">=</span> <span class="fu">geom_parcoord</span><span class="op">(</span><span class="va">winequality</span>, standardize <span class="op">=</span> <span class="cn">F</span><span class="op">)</span>
+<span class="va">custom_parcoord</span> <span class="op">+</span>
+  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/labs.html">ggtitle</a></span><span class="op">(</span><span class="st">"Parallel coordinate plot of White Wine Quality Attributes using geom_parcoord"</span><span class="op">)</span> <span class="op">+</span> 
+    <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/theme.html">theme</a></span><span class="op">(</span>plot.title <span class="op">=</span> <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/element.html">element_text</a></span><span class="op">(</span>size <span class="op">=</span> <span class="fl">15</span>, face <span class="op">=</span> <span class="st">"bold"</span><span class="op">)</span><span class="op">)</span></code></pre></div>
+<div class="inline-figure"><img src="parallel_coordinate_plots_ggplot2_files/figure-html/unnamed-chunk-5-1.png" width="1248" style="display: block; margin: auto;"></div>
+<div id="playing-around-with-some-parameters-of-geom_parcoord" class="section level3">
+<h3>
+<span class="header-section-number">39.4.1</span> Playing around with some parameters of geom_parcoord<a class="anchor" aria-label="anchor" href="#playing-around-with-some-parameters-of-geom_parcoord"><i class="fas fa-link"></i></a>
+</h3>
+<p>Tweaking some parameters such as smoothing factor and scaling the plot appropriately</p>
+<div class="sourceCode" id="cb598"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="fu">geom_parcoord</span><span class="op">(</span><span class="va">winequality</span>, spline_factor <span class="op">=</span> <span class="fl">20</span>, standardize <span class="op">=</span> <span class="cn">T</span><span class="op">)</span> <span class="op">+</span> 
+  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/labs.html">ggtitle</a></span><span class="op">(</span><span class="st">"Parallel coordinate plot of White Wine Quality Attributes using geom_parcoord(spline_factor=20, standardize=T)"</span><span class="op">)</span> <span class="op">+</span> 
+    <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/theme.html">theme</a></span><span class="op">(</span>plot.title <span class="op">=</span> <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/element.html">element_text</a></span><span class="op">(</span>size <span class="op">=</span> <span class="fl">15</span>, face <span class="op">=</span> <span class="st">"bold"</span><span class="op">)</span><span class="op">)</span></code></pre></div>
+<div class="inline-figure"><img src="parallel_coordinate_plots_ggplot2_files/figure-html/unnamed-chunk-6-1.png" width="1248" style="display: block; margin: auto;"></div>
+</div>
+</div>
+<div id="summary-and-comparisons" class="section level2">
+<h2>
+<span class="header-section-number">39.5</span> Summary and Comparisons<a class="anchor" aria-label="anchor" href="#summary-and-comparisons"><i class="fas fa-link"></i></a>
+</h2>
+<p>Below shows a side by side comparison of the plots obtained by the ggparcoord and the custom geom_parcoord functions.</p>
+<div class="sourceCode" id="cb599"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="fu"><a href="https://rpkgs.datanovia.com/ggpubr/reference/ggarrange.html">ggarrange</a></span><span class="op">(</span><span class="va">ggally_par_coord</span>, <span class="va">custom_parcoord</span>, nrow<span class="op">=</span><span class="fl">2</span>, labels <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"ggparcoord"</span>, <span class="st">"geom_parcoord"</span><span class="op">)</span><span class="op">)</span> </code></pre></div>
+<div class="inline-figure"><img src="parallel_coordinate_plots_ggplot2_files/figure-html/unnamed-chunk-7-1.png" width="1248" style="display: block; margin: auto;"></div>
+<div id="observations" class="section level3">
+<h3>
+<span class="header-section-number">39.5.1</span> Observations<a class="anchor" aria-label="anchor" href="#observations"><i class="fas fa-link"></i></a>
+</h3>
+<p>While on the outset the plots may look similar, these are some of the differences with respect to the visuals and implementation,</p>
+<ol style="list-style-type: decimal">
+<li><p>One main observation is the ordering of the dimensions along the X-axis. We can see that the ggparcoord retains the order of the variables as they were in the dataset, while the custom geom_parcoord has the variables plotted in alphabetical order.</p></li>
+<li><p>ggparcoord has several functionalities such as different methods of scaling like ‘uniminmax’, ‘globalminmax’ and such while the custom function has implementations that are to the extent of the base R scale function implementation.</p></li>
+<li><p>The spline functionality might differ in the two depending on which method has been used for splining in ggparcoord.</p></li>
+</ol>
+</div>
+</div>
+<div id="improvements-and-future-work" class="section level2">
+<h2>
+<span class="header-section-number">39.6</span> Improvements and future work<a class="anchor" aria-label="anchor" href="#improvements-and-future-work"><i class="fas fa-link"></i></a>
+</h2>
+<ol style="list-style-type: decimal">
+<li><p>Adding a variation to the different methods of scaling to support much more than the normal base R scaling.</p></li>
+<li><p>Giving an option to retain the order of the variables as given in the dataframe instead of ordering them alphabetically.</p></li>
+<li><p>Adding to ggplot2 as a geom for parallel coordinate plots - geom_parcoord. This will avoid installing another package just for plotting parallel coordinate plots. This is the main motivation of the idea behind this project.</p></li>
+</ol>
+<div id="sources" class="section level3">
+<h3>
+<span class="header-section-number">39.6.1</span> Sources<a class="anchor" aria-label="anchor" href="#sources"><i class="fas fa-link"></i></a>
+</h3>
+<ul>
+<li>Dataset - <a href="https://archive.ics.uci.edu/ml/datasets/Wine+Quality" class="uri">https://archive.ics.uci.edu/ml/datasets/Wine+Quality</a>
+</li>
+<li>Learning more about parallel coordinate plots - <a href="https://towardsdatascience.com/parallel-coordinates-plots-6fcfa066dcb3" class="uri">https://towardsdatascience.com/parallel-coordinates-plots-6fcfa066dcb3</a>
+</li>
+<li>Learning more about ggparcoord - <a href="https://www.r-graph-gallery.com/parallel-plot-ggally.html" class="uri">https://www.r-graph-gallery.com/parallel-plot-ggally.html</a>
+</li>
+</ul>
+</div>
+</div>
+</div>
+  <div class="chapter-nav">
+<div class="prev"><a href="supervised-learning-tutorial.html"><span class="header-section-number">38</span> Supervised Learning Tutorial</a></div>
+<div class="next"><a href="using-ggplot-in-python.html"><span class="header-section-number">40</span> Using ggplot in python</a></div>
+</div></main><div class="col-md-3 col-lg-2 d-none d-md-block sidebar sidebar-chapter">
+    <nav id="toc" data-toggle="toc" aria-label="On this page"><h2>On this page</h2>
+      <ul class="nav navbar-nav">
+<li><a class="nav-link" href="#parallel-coordinate-plots-in-ggplot2"><span class="header-section-number">39</span> Parallel Coordinate Plots in ggplot2</a></li>
+<li>
+<a class="nav-link" href="#introduction-5"><span class="header-section-number">39.1</span> Introduction</a><ul class="nav navbar-nav"><li><a class="nav-link" href="#importing-necessary-packages"><span class="header-section-number">39.1.1</span> Importing necessary packages</a></li></ul>
+</li>
+<li><a class="nav-link" href="#plotting-a-sample-parallel-coordinate-plot-using-ggparcoord"><span class="header-section-number">39.2</span> Plotting a sample parallel coordinate plot using ggparcoord</a></li>
+<li><a class="nav-link" href="#custom-function-to-implement-a-similar-functionality-for-presenting-parallel-coordinate-plots-using-ggplot2"><span class="header-section-number">39.3</span> Custom function to implement a similar functionality for presenting parallel coordinate plots using ggplot2</a></li>
+<li>
+<a class="nav-link" href="#plotting-parallel-coordinate-plots-using-custom-function---geom_parcoord"><span class="header-section-number">39.4</span> Plotting parallel coordinate plots using custom function - geom_parcoord</a><ul class="nav navbar-nav"><li><a class="nav-link" href="#playing-around-with-some-parameters-of-geom_parcoord"><span class="header-section-number">39.4.1</span> Playing around with some parameters of geom_parcoord</a></li></ul>
+</li>
+<li>
+<a class="nav-link" href="#summary-and-comparisons"><span class="header-section-number">39.5</span> Summary and Comparisons</a><ul class="nav navbar-nav"><li><a class="nav-link" href="#observations"><span class="header-section-number">39.5.1</span> Observations</a></li></ul>
+</li>
+<li>
+<a class="nav-link" href="#improvements-and-future-work"><span class="header-section-number">39.6</span> Improvements and future work</a><ul class="nav navbar-nav"><li><a class="nav-link" href="#sources"><span class="header-section-number">39.6.1</span> Sources</a></li></ul>
+</li>
+</ul>
+
+      <div class="book-extra">
+        <ul class="list-unstyled">
+<li><a id="book-source" href="https://github.com/jtr13/cc21fall1/blob/main/parallel_coordinate_plots_ggplot2.Rmd">View source <i class="fab fa-github"></i></a></li>
+          <li><a id="book-edit" href="https://github.com/jtr13/cc21fall1/edit/main/parallel_coordinate_plots_ggplot2.Rmd">Edit this page <i class="fab fa-github"></i></a></li>
+        </ul>
+</div>
+    </nav>
+</div>
+
+</div>
+</div> <!-- .container -->
+
+<footer class="bg-primary text-light mt-5"><div class="container"><div class="row">
+
+  <div class="col-12 col-md-6 mt-3">
+    <p>"<strong>EDAV Fall 2021 Mon/Wed Community Contributions</strong>" was written by the students of the class. It was last built on 2021-11-08.</p>
+  </div>
+
+  <div class="col-12 col-md-6 mt-3">
+    <p>This book was built by the <a class="text-light" href="https://bookdown.org">bookdown</a> R package.</p>
+  </div>
+
+</div></div>
+</footer><!-- dynamically load mathjax for compatibility with self-contained --><script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script><script type="text/x-mathjax-config">const popovers = document.querySelectorAll('a.footnote-ref[data-toggle="popover"]');
+for (let popover of popovers) {
+  const div = document.createElement('div');
+  div.setAttribute('style', 'position: absolute; top: 0, left:0; width:0, height:0, overflow: hidden; visibility: hidden;');
+  div.innerHTML = popover.getAttribute('data-content');
+
+  var has_math = div.querySelector("span.math");
+  if (has_math) {
+    document.body.appendChild(div);
+    MathJax.Hub.Queue(["Typeset", MathJax.Hub, div]);
+    MathJax.Hub.Queue(function() {
+      popover.setAttribute('data-content', div.innerHTML);
+      document.body.removeChild(div);
+    })
+  }
+}
+</script>
+</body>
+</html>

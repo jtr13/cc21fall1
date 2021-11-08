@@ -4,16 +4,16 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<title>Chapter 15 Cheatsheet Tidyverse | EDAV Fall 2021 Mon/Wed Community Contributions</title>
+<title>Chapter 40 Using ggplot in python | EDAV Fall 2021 Mon/Wed Community Contributions</title>
 <meta name="author" content="the students of the class">
-<meta name="description" content="Jiazhen Li  15.1  This is cheatsheet for helping students who start to learn analysis of graph with R. In the class, we learn the tidyverse, a powerful collection of R packages. In this...">
+<meta name="description" content="Junyi Yao I am new to R, but I like the high quality plots made by ggplot2. I used to use python packages(numpy, pandas) to process data and use seaborn to make plots. In my personal opinion,...">
 <meta name="generator" content="bookdown 0.24 with bs4_book()">
-<meta property="og:title" content="Chapter 15 Cheatsheet Tidyverse | EDAV Fall 2021 Mon/Wed Community Contributions">
+<meta property="og:title" content="Chapter 40 Using ggplot in python | EDAV Fall 2021 Mon/Wed Community Contributions">
 <meta property="og:type" content="book">
-<meta property="og:description" content="Jiazhen Li  15.1  This is cheatsheet for helping students who start to learn analysis of graph with R. In the class, we learn the tidyverse, a powerful collection of R packages. In this...">
+<meta property="og:description" content="Junyi Yao I am new to R, but I like the high quality plots made by ggplot2. I used to use python packages(numpy, pandas) to process data and use seaborn to make plots. In my personal opinion,...">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Chapter 15 Cheatsheet Tidyverse | EDAV Fall 2021 Mon/Wed Community Contributions">
-<meta name="twitter:description" content="Jiazhen Li  15.1  This is cheatsheet for helping students who start to learn analysis of graph with R. In the class, we learn the tidyverse, a powerful collection of R packages. In this...">
+<meta name="twitter:title" content="Chapter 40 Using ggplot in python | EDAV Fall 2021 Mon/Wed Community Contributions">
+<meta name="twitter:description" content="Junyi Yao I am new to R, but I like the high quality plots made by ggplot2. I used to use python packages(numpy, pandas) to process data and use seaborn to make plots. In my personal opinion,...">
 <!-- JS --><script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.6/clipboard.min.js" integrity="sha256-inc5kl9MA1hkeYUt+EC3BhlIgyp/2jDIyBLS6k3UxPI=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/fuse.js/6.4.6/fuse.js" integrity="sha512-zv6Ywkjyktsohkbp9bb45V6tEMoWhzFzXis+LrMehmJZZSys19Yxf1dopHx7WzIKxr5tK2dVcYmaCk2uqdjF4A==" crossorigin="anonymous"></script><script src="https://kit.fontawesome.com/6ecbd6c532.js" crossorigin="anonymous"></script><script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <link href="libs/bootstrap-4.6.0/bootstrap.min.css" rel="stylesheet">
 <script src="libs/bootstrap-4.6.0/bootstrap.bundle.min.js"></script><script src="libs/bs3compat-0.3.1/transition.js"></script><script src="libs/bs3compat-0.3.1/tabs.js"></script><script src="libs/bs3compat-0.3.1/bs3compat.js"></script><link href="libs/bs4_book-1.0.0/bs4_book.css" rel="stylesheet">
@@ -62,7 +62,7 @@
 <li><a class="" href="r-cheatsheet-on-data-transforamtion-and-exploration.html"><span class="header-section-number">12</span> R cheatsheet on data transforamtion and exploration</a></li>
 <li><a class="" href="r-vs-python-basic-data-wrangling.html"><span class="header-section-number">13</span> R vs Python Basic Data Wrangling</a></li>
 <li><a class="" href="tidyverse_cheatsheet.html"><span class="header-section-number">14</span> tidyverse_cheatsheet</a></li>
-<li><a class="active" href="cheatsheet-tidyverse.html"><span class="header-section-number">15</span> Cheatsheet Tidyverse</a></li>
+<li><a class="" href="cheatsheet-tidyverse.html"><span class="header-section-number">15</span> Cheatsheet Tidyverse</a></li>
 <li><a class="" href="use-of-ggprism-and-ggsci-packages.html"><span class="header-section-number">16</span> Use of ggprism and ggsci packages</a></li>
 <li><a class="" href="interactive-plot-introduction.html"><span class="header-section-number">17</span> Interactive plot introduction</a></li>
 <li><a class="" href="common-r-markdown-syntax-cheatsheet.html"><span class="header-section-number">18</span> Common R markdown syntax cheatsheet</a></li>
@@ -88,7 +88,7 @@
 <li><a class="" href="beginners-walk-through-of-deep-learning-in-r.html"><span class="header-section-number">37</span> Beginner’s Walk-through of Deep Learning in R</a></li>
 <li><a class="" href="supervised-learning-tutorial.html"><span class="header-section-number">38</span> Supervised Learning Tutorial</a></li>
 <li><a class="" href="parallel-coordinate-plots-in-ggplot2.html"><span class="header-section-number">39</span> Parallel Coordinate Plots in ggplot2</a></li>
-<li><a class="" href="using-ggplot-in-python.html"><span class="header-section-number">40</span> Using ggplot in python</a></li>
+<li><a class="active" href="using-ggplot-in-python.html"><span class="header-section-number">40</span> Using ggplot in python</a></li>
 <li class="book-part">Demonstrations</li>
 <li><a class="" href="linear-association-r-studio-plugin.html"><span class="header-section-number">41</span> Linear Association R Studio Plugin</a></li>
 <li><a class="" href="customized-sorting-in-r.html"><span class="header-section-number">42</span> Customized Sorting in R</a></li>
@@ -104,34 +104,31 @@
         </div>
       </nav>
 </div>
-  </header><main class="col-sm-12 col-md-9 col-lg-7" id="content"><div id="cheatsheet-tidyverse" class="section level1">
+  </header><main class="col-sm-12 col-md-9 col-lg-7" id="content"><div id="using-ggplot-in-python" class="section level1">
 <h1>
-<span class="header-section-number">15</span> Cheatsheet Tidyverse<a class="anchor" aria-label="anchor" href="#cheatsheet-tidyverse"><i class="fas fa-link"></i></a>
+<span class="header-section-number">40</span> Using ggplot in python<a class="anchor" aria-label="anchor" href="#using-ggplot-in-python"><i class="fas fa-link"></i></a>
 </h1>
-<p>Jiazhen Li</p>
-<div id="section" class="section level2">
-<h2>
-<span class="header-section-number">15.1</span> <a class="anchor" aria-label="anchor" href="#section"><i class="fas fa-link"></i></a>
-</h2>
-<p>This is cheatsheet for helping students who start to learn analysis of graph with R. In the class, we learn the tidyverse, a powerful collection of R packages. In this cheatsheet, I pay more attention on two packages: ggplot2 and dplyr. I specifically list functions of dylyr we frequently use and the grammer of graphics in ggplot2 packages. This will be useful for new student to learn.</p>
-<p>Cheatsheet Tidyverse: <a href="https://github.com/Jiazhen980326/contribution-/blob/master/cheatsheet-Jiazhen%20Li%20.pdf" class="uri">https://github.com/Jiazhen980326/contribution-/blob/master/cheatsheet-Jiazhen%20Li%20.pdf</a></p>
+<p>Junyi Yao</p>
+<p>I am new to R, but I like the high quality plots made by ggplot2. I used to use python packages(numpy, pandas) to process data and use seaborn to make plots. In my personal opinion, numpy and pandas are easier to use than tidyverse. However, ggplot2 makes better plots.</p>
+<p>So I think if I could use numpy and pandas to process the data and use ggplot to make the plots, that would be very convinient. So I tried to find ways to use ggplot in python.
+The package I found is “plotnine”, which is essentially the python version of ggplot. So I want to make a tutorial on how to use numpy and pandas to process data and use ggplot2 to make plots as we did in Rstudio.</p>
+<p>Here if the link to my tutorial: <a href="https://github.com/junyi-yao/STAT5702/blob/main/Using%20ggplot%20in%20python.pdf">Using ggplot in python</a></p>
 
 </div>
-</div>
+
+
+
   <div class="chapter-nav">
-<div class="prev"><a href="tidyverse_cheatsheet.html"><span class="header-section-number">14</span> tidyverse_cheatsheet</a></div>
-<div class="next"><a href="use-of-ggprism-and-ggsci-packages.html"><span class="header-section-number">16</span> Use of ggprism and ggsci packages</a></div>
+<div class="prev"><a href="parallel-coordinate-plots-in-ggplot2.html"><span class="header-section-number">39</span> Parallel Coordinate Plots in ggplot2</a></div>
+<div class="next"><a href="linear-association-r-studio-plugin.html"><span class="header-section-number">41</span> Linear Association R Studio Plugin</a></div>
 </div></main><div class="col-md-3 col-lg-2 d-none d-md-block sidebar sidebar-chapter">
     <nav id="toc" data-toggle="toc" aria-label="On this page"><h2>On this page</h2>
-      <ul class="nav navbar-nav">
-<li><a class="nav-link" href="#cheatsheet-tidyverse"><span class="header-section-number">15</span> Cheatsheet Tidyverse</a></li>
-<li><a class="nav-link" href="#section"><span class="header-section-number">15.1</span></a></li>
-</ul>
+      <ul class="nav navbar-nav"><li><a class="nav-link" href="#using-ggplot-in-python"><span class="header-section-number">40</span> Using ggplot in python</a></li></ul>
 
       <div class="book-extra">
         <ul class="list-unstyled">
-<li><a id="book-source" href="https://github.com/jtr13/cc21fall1/blob/main/cheatsheet_tidyverse.Rmd">View source <i class="fab fa-github"></i></a></li>
-          <li><a id="book-edit" href="https://github.com/jtr13/cc21fall1/edit/main/cheatsheet_tidyverse.Rmd">Edit this page <i class="fab fa-github"></i></a></li>
+<li><a id="book-source" href="https://github.com/jtr13/cc21fall1/blob/main/using_ggplot_in_python.Rmd">View source <i class="fab fa-github"></i></a></li>
+          <li><a id="book-edit" href="https://github.com/jtr13/cc21fall1/edit/main/using_ggplot_in_python.Rmd">Edit this page <i class="fab fa-github"></i></a></li>
         </ul>
 </div>
     </nav>

@@ -4,16 +4,16 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<title>Chapter 33 Animating the plots in R | EDAV Fall 2021 Mon/Wed Community Contributions</title>
+<title>Chapter 34 Animating the plots in R | EDAV Fall 2021 Mon/Wed Community Contributions</title>
 <meta name="author" content="the students of the class">
-<meta name="description" content="SeokHyun Kim  33.1 Introduction gganimate is an interesting extension of the ggplot2 package to create plots with vivid animation in R. In my community contribution project below, I’ll show you...">
+<meta name="description" content="SeokHyun Kim  34.1 Introduction gganimate is an interesting extension of the ggplot2 package to create plots with vivid animation in R. In my community contribution project below, I’ll show you...">
 <meta name="generator" content="bookdown 0.24 with bs4_book()">
-<meta property="og:title" content="Chapter 33 Animating the plots in R | EDAV Fall 2021 Mon/Wed Community Contributions">
+<meta property="og:title" content="Chapter 34 Animating the plots in R | EDAV Fall 2021 Mon/Wed Community Contributions">
 <meta property="og:type" content="book">
-<meta property="og:description" content="SeokHyun Kim  33.1 Introduction gganimate is an interesting extension of the ggplot2 package to create plots with vivid animation in R. In my community contribution project below, I’ll show you...">
+<meta property="og:description" content="SeokHyun Kim  34.1 Introduction gganimate is an interesting extension of the ggplot2 package to create plots with vivid animation in R. In my community contribution project below, I’ll show you...">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Chapter 33 Animating the plots in R | EDAV Fall 2021 Mon/Wed Community Contributions">
-<meta name="twitter:description" content="SeokHyun Kim  33.1 Introduction gganimate is an interesting extension of the ggplot2 package to create plots with vivid animation in R. In my community contribution project below, I’ll show you...">
+<meta name="twitter:title" content="Chapter 34 Animating the plots in R | EDAV Fall 2021 Mon/Wed Community Contributions">
+<meta name="twitter:description" content="SeokHyun Kim  34.1 Introduction gganimate is an interesting extension of the ggplot2 package to create plots with vivid animation in R. In my community contribution project below, I’ll show you...">
 <!-- JS --><script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.6/clipboard.min.js" integrity="sha256-inc5kl9MA1hkeYUt+EC3BhlIgyp/2jDIyBLS6k3UxPI=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/fuse.js/6.4.6/fuse.js" integrity="sha512-zv6Ywkjyktsohkbp9bb45V6tEMoWhzFzXis+LrMehmJZZSys19Yxf1dopHx7WzIKxr5tK2dVcYmaCk2uqdjF4A==" crossorigin="anonymous"></script><script src="https://kit.fontawesome.com/6ecbd6c532.js" crossorigin="anonymous"></script><script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <link href="libs/bootstrap-4.6.0/bootstrap.min.css" rel="stylesheet">
 <script src="libs/bootstrap-4.6.0/bootstrap.bundle.min.js"></script><script src="libs/bs3compat-0.3.1/transition.js"></script><script src="libs/bs3compat-0.3.1/tabs.js"></script><script src="libs/bs3compat-0.3.1/bs3compat.js"></script><link href="libs/bs4_book-1.0.0/bs4_book.css" rel="stylesheet">
@@ -69,31 +69,34 @@
 <li><a class="" href="header.html"><span class="header-section-number">19</span> Header</a></li>
 <li><a class="" href="parallel-coordinates-plot-cheatsheet.html"><span class="header-section-number">20</span> Parallel coordinates plot cheatsheet</a></li>
 <li><a class="" href="r-data-science-workflow-cheatsheet.html"><span class="header-section-number">21</span> R Data Science Workflow CheatSheet</a></li>
+<li><a class="" href="a-linear-regression-bestiary.html"><span class="header-section-number">22</span> A linear regression Bestiary</a></li>
 <li class="book-part">Tutorials</li>
-<li><a class="" href="multithreading-crawler-frame.html"><span class="header-section-number">22</span> Multithreading Crawler Frame</a></li>
-<li><a class="" href="regression-and-classification-in-r.html"><span class="header-section-number">23</span> Regression and Classification in R</a></li>
-<li><a class="" href="tibble-vs.-dataframe.html"><span class="header-section-number">24</span> Tibble vs. DataFrame</a></li>
-<li><a class="" href="introduction-to-time-series.html"><span class="header-section-number">25</span> Introduction to Time Series</a></li>
-<li><a class="" href="vipul-edav-community-contribution-kickstart-r.html"><span class="header-section-number">26</span> Vipul EDAV Community Contribution Kickstart R</a></li>
-<li><a class="" href="caret---a-machine-learning-package-turotial.html"><span class="header-section-number">27</span> caret - a machine learning package turotial</a></li>
-<li><a class="" href="streamlit-for-financial-analysis.html"><span class="header-section-number">28</span> Streamlit for Financial Analysis</a></li>
-<li><a class="" href="interactive-graphs-tutorial.html"><span class="header-section-number">29</span> Interactive graphs tutorial</a></li>
-<li><a class="" href="guideline-on-using-package-rcurl-and-xml-for-web-scraping.html"><span class="header-section-number">30</span> Guideline on Using Package Rcurl and XML for Web Scraping</a></li>
-<li><a class="" href="twitter-r-package-scraping-via-api-tutorial.html"><span class="header-section-number">31</span> TwitteR R Package Scraping via API Tutorial</a></li>
-<li><a class="" href="introduction-to-data-manipulation.html"><span class="header-section-number">32</span> Introduction to Data Manipulation</a></li>
-<li><a class="active" href="animating-the-plots-in-r.html"><span class="header-section-number">33</span> Animating the plots in R</a></li>
-<li><a class="" href="quick-guide-to-eda.html"><span class="header-section-number">34</span> Quick guide to eda</a></li>
-<li><a class="" href="natural-langauge-processing-common-eda-practices-in-python.html"><span class="header-section-number">35</span> Natural Langauge Processing Common EDA Practices in Python</a></li>
-<li><a class="" href="beginners-walk-through-of-deep-learning-in-r.html"><span class="header-section-number">36</span> Beginner’s Walk-through of Deep Learning in R</a></li>
-<li><a class="" href="supervised-learning-tutorial.html"><span class="header-section-number">37</span> Supervised Learning Tutorial</a></li>
+<li><a class="" href="multithreading-crawler-frame.html"><span class="header-section-number">23</span> Multithreading Crawler Frame</a></li>
+<li><a class="" href="regression-and-classification-in-r.html"><span class="header-section-number">24</span> Regression and Classification in R</a></li>
+<li><a class="" href="tibble-vs.-dataframe.html"><span class="header-section-number">25</span> Tibble vs. DataFrame</a></li>
+<li><a class="" href="introduction-to-time-series.html"><span class="header-section-number">26</span> Introduction to Time Series</a></li>
+<li><a class="" href="vipul-edav-community-contribution-kickstart-r.html"><span class="header-section-number">27</span> Vipul EDAV Community Contribution Kickstart R</a></li>
+<li><a class="" href="caret---a-machine-learning-package-turotial.html"><span class="header-section-number">28</span> caret - a machine learning package turotial</a></li>
+<li><a class="" href="streamlit-for-financial-analysis.html"><span class="header-section-number">29</span> Streamlit for Financial Analysis</a></li>
+<li><a class="" href="interactive-graphs-tutorial.html"><span class="header-section-number">30</span> Interactive graphs tutorial</a></li>
+<li><a class="" href="guideline-on-using-package-rcurl-and-xml-for-web-scraping.html"><span class="header-section-number">31</span> Guideline on Using Package Rcurl and XML for Web Scraping</a></li>
+<li><a class="" href="twitter-r-package-scraping-via-api-tutorial.html"><span class="header-section-number">32</span> TwitteR R Package Scraping via API Tutorial</a></li>
+<li><a class="" href="introduction-to-data-manipulation.html"><span class="header-section-number">33</span> Introduction to Data Manipulation</a></li>
+<li><a class="active" href="animating-the-plots-in-r.html"><span class="header-section-number">34</span> Animating the plots in R</a></li>
+<li><a class="" href="quick-guide-to-eda.html"><span class="header-section-number">35</span> Quick guide to eda</a></li>
+<li><a class="" href="natural-langauge-processing-common-eda-practices-in-python.html"><span class="header-section-number">36</span> Natural Langauge Processing Common EDA Practices in Python</a></li>
+<li><a class="" href="beginners-walk-through-of-deep-learning-in-r.html"><span class="header-section-number">37</span> Beginner’s Walk-through of Deep Learning in R</a></li>
+<li><a class="" href="supervised-learning-tutorial.html"><span class="header-section-number">38</span> Supervised Learning Tutorial</a></li>
+<li><a class="" href="parallel-coordinate-plots-in-ggplot2.html"><span class="header-section-number">39</span> Parallel Coordinate Plots in ggplot2</a></li>
+<li><a class="" href="using-ggplot-in-python.html"><span class="header-section-number">40</span> Using ggplot in python</a></li>
 <li class="book-part">Demonstrations</li>
-<li><a class="" href="linear-association-r-studio-plugin.html"><span class="header-section-number">38</span> Linear Association R Studio Plugin</a></li>
-<li><a class="" href="customized-sorting-in-r.html"><span class="header-section-number">39</span> Customized Sorting in R</a></li>
+<li><a class="" href="linear-association-r-studio-plugin.html"><span class="header-section-number">41</span> Linear Association R Studio Plugin</a></li>
+<li><a class="" href="customized-sorting-in-r.html"><span class="header-section-number">42</span> Customized Sorting in R</a></li>
 <li class="book-part">Workshops</li>
-<li><a class="" href="data-science-product-cycles-in-enterprises.html"><span class="header-section-number">40</span> Data Science Product Cycles in Enterprises</a></li>
+<li><a class="" href="data-science-product-cycles-in-enterprises.html"><span class="header-section-number">43</span> Data Science Product Cycles in Enterprises</a></li>
 <li class="book-part">Appendices</li>
-<li><a class="" href="github-initial-setup.html"><span class="header-section-number">41</span> Github initial setup</a></li>
-<li><a class="" href="tutorial-for-pull-request-mergers.html"><span class="header-section-number">42</span> Tutorial for pull request mergers</a></li>
+<li><a class="" href="github-initial-setup.html"><span class="header-section-number">44</span> Github initial setup</a></li>
+<li><a class="" href="tutorial-for-pull-request-mergers.html"><span class="header-section-number">45</span> Tutorial for pull request mergers</a></li>
 </ul>
 
         <div class="book-extra">
@@ -103,18 +106,18 @@
 </div>
   </header><main class="col-sm-12 col-md-9 col-lg-7" id="content"><div id="animating-the-plots-in-r" class="section level1">
 <h1>
-<span class="header-section-number">33</span> Animating the plots in R<a class="anchor" aria-label="anchor" href="#animating-the-plots-in-r"><i class="fas fa-link"></i></a>
+<span class="header-section-number">34</span> Animating the plots in R<a class="anchor" aria-label="anchor" href="#animating-the-plots-in-r"><i class="fas fa-link"></i></a>
 </h1>
 <p>SeokHyun Kim</p>
 <div id="introduction-3" class="section level2">
 <h2>
-<span class="header-section-number">33.1</span> Introduction<a class="anchor" aria-label="anchor" href="#introduction-3"><i class="fas fa-link"></i></a>
+<span class="header-section-number">34.1</span> Introduction<a class="anchor" aria-label="anchor" href="#introduction-3"><i class="fas fa-link"></i></a>
 </h2>
 <p>gganimate is an interesting extension of the ggplot2 package to create plots with vivid animation in R. In my community contribution project below, I’ll show you how to animate each plots in ggplot2 using strong features in gganimate. You can also customize your graph how it should change with time using this extension.</p>
 </div>
 <div id="motivation-1" class="section level2">
 <h2>
-<span class="header-section-number">33.2</span> Motivation<a class="anchor" aria-label="anchor" href="#motivation-1"><i class="fas fa-link"></i></a>
+<span class="header-section-number">34.2</span> Motivation<a class="anchor" aria-label="anchor" href="#motivation-1"><i class="fas fa-link"></i></a>
 </h2>
 <p>You should check out the url below. There are amazing plots using gganimate!</p>
 <p><a href="https://www.data-imaginist.com/2019/gganimate-has-transitioned-to-a-state-of-release/" target="_blank">Links to fancy fireworks</a></p>
@@ -123,7 +126,7 @@
 </div>
 <div id="load-required-packages" class="section level2">
 <h2>
-<span class="header-section-number">33.3</span> Load required packages<a class="anchor" aria-label="anchor" href="#load-required-packages"><i class="fas fa-link"></i></a>
+<span class="header-section-number">34.3</span> Load required packages<a class="anchor" aria-label="anchor" href="#load-required-packages"><i class="fas fa-link"></i></a>
 </h2>
 <div class="sourceCode" id="cb521"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://tidyverse.tidyverse.org">tidyverse</a></span><span class="op">)</span>
@@ -135,7 +138,7 @@
 </div>
 <div id="dataset" class="section level2">
 <h2>
-<span class="header-section-number">33.4</span> Dataset<a class="anchor" aria-label="anchor" href="#dataset"><i class="fas fa-link"></i></a>
+<span class="header-section-number">34.4</span> Dataset<a class="anchor" aria-label="anchor" href="#dataset"><i class="fas fa-link"></i></a>
 </h2>
 <div class="sourceCode" id="cb522"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="co"># I've created dataframe named df which contains speed, strength, win information of each person through year</span>
@@ -160,12 +163,12 @@
 </div>
 <div id="understanding-transition_states-in-gganimate" class="section level2">
 <h2>
-<span class="header-section-number">33.5</span> Understanding transition_states() in gganimate<a class="anchor" aria-label="anchor" href="#understanding-transition_states-in-gganimate"><i class="fas fa-link"></i></a>
+<span class="header-section-number">34.5</span> Understanding transition_states() in gganimate<a class="anchor" aria-label="anchor" href="#understanding-transition_states-in-gganimate"><i class="fas fa-link"></i></a>
 </h2>
 <p>transition_states() function of gganimate package animates the plot based on a specific variable. (Transition between several distinct states of the data). By specifying variable, which will be the basis, you can obtain GIF image or video representing transition over time or by states.</p>
 <div id="transition_states-usage" class="section level3">
 <h3>
-<span class="header-section-number">33.5.1</span> transition_states() Usage<a class="anchor" aria-label="anchor" href="#transition_states-usage"><i class="fas fa-link"></i></a>
+<span class="header-section-number">34.5.1</span> transition_states() Usage<a class="anchor" aria-label="anchor" href="#transition_states-usage"><i class="fas fa-link"></i></a>
 </h3>
 <div class="sourceCode" id="cb525"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span><span class="op">(</span><span class="va">dataframe</span>, <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span>x<span class="op">=</span><span class="va">variable1</span>, y<span class="op">=</span><span class="va">variable2</span>, <span class="va">...</span><span class="op">)</span><span class="op">)</span><span class="op">+</span>
@@ -180,7 +183,7 @@
 </div>
 <div id="transition_states-examples" class="section level3">
 <h3>
-<span class="header-section-number">33.5.2</span> transition_states() Examples<a class="anchor" aria-label="anchor" href="#transition_states-examples"><i class="fas fa-link"></i></a>
+<span class="header-section-number">34.5.2</span> transition_states() Examples<a class="anchor" aria-label="anchor" href="#transition_states-examples"><i class="fas fa-link"></i></a>
 </h3>
 <div class="sourceCode" id="cb526"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="co"># Example 1 - barplot</span>
@@ -227,12 +230,12 @@
 </div>
 <div id="understanding-transition_reveal-in-gganimate" class="section level2">
 <h2>
-<span class="header-section-number">33.6</span> Understanding transition_reveal() in gganimate<a class="anchor" aria-label="anchor" href="#understanding-transition_reveal-in-gganimate"><i class="fas fa-link"></i></a>
+<span class="header-section-number">34.6</span> Understanding transition_reveal() in gganimate<a class="anchor" aria-label="anchor" href="#understanding-transition_reveal-in-gganimate"><i class="fas fa-link"></i></a>
 </h2>
 <p>transition_reveal() function of gganimate package can create animation so that data is continuously displayed over time when visualizing a given Time Series data into a plot.</p>
 <div id="transition_reveal-usage" class="section level3">
 <h3>
-<span class="header-section-number">33.6.1</span> transition_reveal() Usage<a class="anchor" aria-label="anchor" href="#transition_reveal-usage"><i class="fas fa-link"></i></a>
+<span class="header-section-number">34.6.1</span> transition_reveal() Usage<a class="anchor" aria-label="anchor" href="#transition_reveal-usage"><i class="fas fa-link"></i></a>
 </h3>
 <div class="sourceCode" id="cb530"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span><span class="op">(</span><span class="va">dataframe</span>, <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span>x<span class="op">=</span><span class="va">variable1</span>, y<span class="op">=</span><span class="va">variable2</span>, group<span class="op">=</span><span class="va">variable3</span>, <span class="va">...</span><span class="op">)</span><span class="op">)</span><span class="op">+</span>
@@ -243,7 +246,7 @@
 </div>
 <div id="transition_reveal-examples" class="section level3">
 <h3>
-<span class="header-section-number">33.6.2</span> transition_reveal() Examples<a class="anchor" aria-label="anchor" href="#transition_reveal-examples"><i class="fas fa-link"></i></a>
+<span class="header-section-number">34.6.2</span> transition_reveal() Examples<a class="anchor" aria-label="anchor" href="#transition_reveal-examples"><i class="fas fa-link"></i></a>
 </h3>
 <div class="sourceCode" id="cb531"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="co"># Before adding transition_reveal()</span>
@@ -268,12 +271,12 @@
 </div>
 <div id="understanding-transition_time-in-gganimate" class="section level2">
 <h2>
-<span class="header-section-number">33.7</span> Understanding transition_time() in gganimate<a class="anchor" aria-label="anchor" href="#understanding-transition_time-in-gganimate"><i class="fas fa-link"></i></a>
+<span class="header-section-number">34.7</span> Understanding transition_time() in gganimate<a class="anchor" aria-label="anchor" href="#understanding-transition_time-in-gganimate"><i class="fas fa-link"></i></a>
 </h2>
 <p>transition_time() function of gganimate package a variant of transition_states(), a tool for visualizing a dataframe indicating the state at a specific point as an animation plot.</p>
 <div id="transition_time-usage" class="section level3">
 <h3>
-<span class="header-section-number">33.7.1</span> transition_time() Usage<a class="anchor" aria-label="anchor" href="#transition_time-usage"><i class="fas fa-link"></i></a>
+<span class="header-section-number">34.7.1</span> transition_time() Usage<a class="anchor" aria-label="anchor" href="#transition_time-usage"><i class="fas fa-link"></i></a>
 </h3>
 <div class="sourceCode" id="cb533"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span><span class="op">(</span><span class="va">dataframe</span>, <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span><span class="va">variable1</span>, <span class="va">variable2</span>, <span class="va">...</span><span class="op">)</span>, <span class="va">...</span><span class="op">)</span><span class="op">+</span>
@@ -283,7 +286,7 @@
 </div>
 <div id="transition_time-examples" class="section level3">
 <h3>
-<span class="header-section-number">33.7.2</span> transition_time() Examples<a class="anchor" aria-label="anchor" href="#transition_time-examples"><i class="fas fa-link"></i></a>
+<span class="header-section-number">34.7.2</span> transition_time() Examples<a class="anchor" aria-label="anchor" href="#transition_time-examples"><i class="fas fa-link"></i></a>
 </h3>
 <div class="sourceCode" id="cb534"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="co"># Before adding transition_time()</span>
@@ -311,12 +314,12 @@
 </div>
 <div id="understanding-shadow_wake-in-gganimate" class="section level2">
 <h2>
-<span class="header-section-number">33.8</span> Understanding shadow_wake() in gganimate<a class="anchor" aria-label="anchor" href="#understanding-shadow_wake-in-gganimate"><i class="fas fa-link"></i></a>
+<span class="header-section-number">34.8</span> Understanding shadow_wake() in gganimate<a class="anchor" aria-label="anchor" href="#understanding-shadow_wake-in-gganimate"><i class="fas fa-link"></i></a>
 </h2>
 <p>shadow_wake() is a function used with transition_time() or transition_reveal() to shadow the place where changing data has passed. It can be set to gradually reduce the size, color, and transparency of the shadow.</p>
 <div id="shadow_wake-usage" class="section level3">
 <h3>
-<span class="header-section-number">33.8.1</span> shadow_wake() Usage<a class="anchor" aria-label="anchor" href="#shadow_wake-usage"><i class="fas fa-link"></i></a>
+<span class="header-section-number">34.8.1</span> shadow_wake() Usage<a class="anchor" aria-label="anchor" href="#shadow_wake-usage"><i class="fas fa-link"></i></a>
 </h3>
 <div class="sourceCode" id="cb536"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span><span class="op">(</span><span class="va">dataframe</span>, <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span>x<span class="op">=</span><span class="va">variable1</span>, y<span class="op">=</span><span class="va">variable2</span>, <span class="va">...</span><span class="op">)</span><span class="op">)</span><span class="op">+</span>
@@ -328,7 +331,7 @@
 </div>
 <div id="shadow_wake-examples" class="section level3">
 <h3>
-<span class="header-section-number">33.8.2</span> shadow_wake() Examples<a class="anchor" aria-label="anchor" href="#shadow_wake-examples"><i class="fas fa-link"></i></a>
+<span class="header-section-number">34.8.2</span> shadow_wake() Examples<a class="anchor" aria-label="anchor" href="#shadow_wake-examples"><i class="fas fa-link"></i></a>
 </h3>
 <div class="sourceCode" id="cb537"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="co"># Before adding shadow_wake()</span>
@@ -358,13 +361,13 @@
 </div>
 <div id="conclusion-2" class="section level2">
 <h2>
-<span class="header-section-number">33.9</span> Conclusion<a class="anchor" aria-label="anchor" href="#conclusion-2"><i class="fas fa-link"></i></a>
+<span class="header-section-number">34.9</span> Conclusion<a class="anchor" aria-label="anchor" href="#conclusion-2"><i class="fas fa-link"></i></a>
 </h2>
 <p>I covered making animated barplot, scatterplot, timeseries and also shadow using gganimate, but this is just the tip of the iceberg of what this awesome package can do. What I realized during the project is flexibility of the gganimate. Even with the same data, you can generate a lot of different types of plots and also get image or video file through gganimate. For the next time, if I have a chance to work on a project regarding gganimate again, instead of using standardized numeric data, I’ll challenge a completely new way of visualization, as in the example above with fireworks. I encourage you to dive deep into gganimate more!</p>
 </div>
 <div id="citation" class="section level2">
 <h2>
-<span class="header-section-number">33.10</span> Citation<a class="anchor" aria-label="anchor" href="#citation"><i class="fas fa-link"></i></a>
+<span class="header-section-number">34.10</span> Citation<a class="anchor" aria-label="anchor" href="#citation"><i class="fas fa-link"></i></a>
 </h2>
 <ul>
 <li><p><a href="https://www.data-imaginist.com/2019/gganimate-has-transitioned-to-a-state-of-release/" class="uri">https://www.data-imaginist.com/2019/gganimate-has-transitioned-to-a-state-of-release/</a></p></li>
@@ -373,42 +376,42 @@
 </div>
 </div>
   <div class="chapter-nav">
-<div class="prev"><a href="introduction-to-data-manipulation.html"><span class="header-section-number">32</span> Introduction to Data Manipulation</a></div>
-<div class="next"><a href="quick-guide-to-eda.html"><span class="header-section-number">34</span> Quick guide to eda</a></div>
+<div class="prev"><a href="introduction-to-data-manipulation.html"><span class="header-section-number">33</span> Introduction to Data Manipulation</a></div>
+<div class="next"><a href="quick-guide-to-eda.html"><span class="header-section-number">35</span> Quick guide to eda</a></div>
 </div></main><div class="col-md-3 col-lg-2 d-none d-md-block sidebar sidebar-chapter">
     <nav id="toc" data-toggle="toc" aria-label="On this page"><h2>On this page</h2>
       <ul class="nav navbar-nav">
-<li><a class="nav-link" href="#animating-the-plots-in-r"><span class="header-section-number">33</span> Animating the plots in R</a></li>
-<li><a class="nav-link" href="#introduction-3"><span class="header-section-number">33.1</span> Introduction</a></li>
-<li><a class="nav-link" href="#motivation-1"><span class="header-section-number">33.2</span> Motivation</a></li>
-<li><a class="nav-link" href="#load-required-packages"><span class="header-section-number">33.3</span> Load required packages</a></li>
-<li><a class="nav-link" href="#dataset"><span class="header-section-number">33.4</span> Dataset</a></li>
+<li><a class="nav-link" href="#animating-the-plots-in-r"><span class="header-section-number">34</span> Animating the plots in R</a></li>
+<li><a class="nav-link" href="#introduction-3"><span class="header-section-number">34.1</span> Introduction</a></li>
+<li><a class="nav-link" href="#motivation-1"><span class="header-section-number">34.2</span> Motivation</a></li>
+<li><a class="nav-link" href="#load-required-packages"><span class="header-section-number">34.3</span> Load required packages</a></li>
+<li><a class="nav-link" href="#dataset"><span class="header-section-number">34.4</span> Dataset</a></li>
 <li>
-<a class="nav-link" href="#understanding-transition_states-in-gganimate"><span class="header-section-number">33.5</span> Understanding transition_states() in gganimate</a><ul class="nav navbar-nav">
-<li><a class="nav-link" href="#transition_states-usage"><span class="header-section-number">33.5.1</span> transition_states() Usage</a></li>
-<li><a class="nav-link" href="#transition_states-examples"><span class="header-section-number">33.5.2</span> transition_states() Examples</a></li>
+<a class="nav-link" href="#understanding-transition_states-in-gganimate"><span class="header-section-number">34.5</span> Understanding transition_states() in gganimate</a><ul class="nav navbar-nav">
+<li><a class="nav-link" href="#transition_states-usage"><span class="header-section-number">34.5.1</span> transition_states() Usage</a></li>
+<li><a class="nav-link" href="#transition_states-examples"><span class="header-section-number">34.5.2</span> transition_states() Examples</a></li>
 </ul>
 </li>
 <li>
-<a class="nav-link" href="#understanding-transition_reveal-in-gganimate"><span class="header-section-number">33.6</span> Understanding transition_reveal() in gganimate</a><ul class="nav navbar-nav">
-<li><a class="nav-link" href="#transition_reveal-usage"><span class="header-section-number">33.6.1</span> transition_reveal() Usage</a></li>
-<li><a class="nav-link" href="#transition_reveal-examples"><span class="header-section-number">33.6.2</span> transition_reveal() Examples</a></li>
+<a class="nav-link" href="#understanding-transition_reveal-in-gganimate"><span class="header-section-number">34.6</span> Understanding transition_reveal() in gganimate</a><ul class="nav navbar-nav">
+<li><a class="nav-link" href="#transition_reveal-usage"><span class="header-section-number">34.6.1</span> transition_reveal() Usage</a></li>
+<li><a class="nav-link" href="#transition_reveal-examples"><span class="header-section-number">34.6.2</span> transition_reveal() Examples</a></li>
 </ul>
 </li>
 <li>
-<a class="nav-link" href="#understanding-transition_time-in-gganimate"><span class="header-section-number">33.7</span> Understanding transition_time() in gganimate</a><ul class="nav navbar-nav">
-<li><a class="nav-link" href="#transition_time-usage"><span class="header-section-number">33.7.1</span> transition_time() Usage</a></li>
-<li><a class="nav-link" href="#transition_time-examples"><span class="header-section-number">33.7.2</span> transition_time() Examples</a></li>
+<a class="nav-link" href="#understanding-transition_time-in-gganimate"><span class="header-section-number">34.7</span> Understanding transition_time() in gganimate</a><ul class="nav navbar-nav">
+<li><a class="nav-link" href="#transition_time-usage"><span class="header-section-number">34.7.1</span> transition_time() Usage</a></li>
+<li><a class="nav-link" href="#transition_time-examples"><span class="header-section-number">34.7.2</span> transition_time() Examples</a></li>
 </ul>
 </li>
 <li>
-<a class="nav-link" href="#understanding-shadow_wake-in-gganimate"><span class="header-section-number">33.8</span> Understanding shadow_wake() in gganimate</a><ul class="nav navbar-nav">
-<li><a class="nav-link" href="#shadow_wake-usage"><span class="header-section-number">33.8.1</span> shadow_wake() Usage</a></li>
-<li><a class="nav-link" href="#shadow_wake-examples"><span class="header-section-number">33.8.2</span> shadow_wake() Examples</a></li>
+<a class="nav-link" href="#understanding-shadow_wake-in-gganimate"><span class="header-section-number">34.8</span> Understanding shadow_wake() in gganimate</a><ul class="nav navbar-nav">
+<li><a class="nav-link" href="#shadow_wake-usage"><span class="header-section-number">34.8.1</span> shadow_wake() Usage</a></li>
+<li><a class="nav-link" href="#shadow_wake-examples"><span class="header-section-number">34.8.2</span> shadow_wake() Examples</a></li>
 </ul>
 </li>
-<li><a class="nav-link" href="#conclusion-2"><span class="header-section-number">33.9</span> Conclusion</a></li>
-<li><a class="nav-link" href="#citation"><span class="header-section-number">33.10</span> Citation</a></li>
+<li><a class="nav-link" href="#conclusion-2"><span class="header-section-number">34.9</span> Conclusion</a></li>
+<li><a class="nav-link" href="#citation"><span class="header-section-number">34.10</span> Citation</a></li>
 </ul>
 
       <div class="book-extra">
