@@ -56,7 +56,7 @@ rmd_files: [
   'supervised_learning_tutorial.Rmd',
 
   # Part: Demonstrations
-  'linear_association.Rmd',
+  'linear_association.Rmd', # contains PART header
 
   
   # Part: Workshops
