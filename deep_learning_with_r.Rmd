@@ -3,7 +3,7 @@
 Dashansh Prajapati and Vijay S Kalmath
 
 ```{r, include=FALSE}
-knitr::opts_chunk$set(echo = TRUE)
+knitr::opts_chunk$set(echo = TRUE, eval=FALSE)
 ```
 
 ```{r, results=FALSE, message=FALSE}
@@ -326,7 +326,7 @@ Information of the layers and how to add them to the model can be found here .  
 
 We can see the summary of the Layers that build up the model by using the command : 
 
-```{R}
+```{r}
 summary(model)
 ```
 
