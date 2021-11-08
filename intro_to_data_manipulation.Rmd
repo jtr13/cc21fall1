@@ -1,0 +1,228 @@
+# Introduction to Data Manipulation
+
+Yuhe Wang
+
+
+```{r}
+library(tidyverse)
+library(fueleconomy)
+library(tidyverse)
+library(lubridate)
+```
+
+## Data Wrangling with dplyr
+
+### Pipe:
+Here we use %>% as pipeline. a %>% operation(...) == operation(a, ....)
+
+### Tibble
+Tibble is a type of data structure that is similar to data frame in base R.Compared to normal dataframee, tibble never changes the type of the input, or the names of the variables, or the row names.
+```{r}
+tibble(x=1:5, y=1,z=x^2+y)
+```
+
+### Pick observations with filter()
+R provides standard suites: <, >=, <=, !=, ==, %in% for you to apply conditions on rows
+```{r}
+vehicles %>% filter(year>1999)
+```
+### Reorder rows with arrange()
+```{r}
+vehicles %>% arrange(year,class,trans)
+```
+### Create new variables using mutate()
+```{r}
+vehicles %>% mutate(cyl_2 = cyl*2)
+```
+
+### Create new calculations by catgories using summarize()
+We can use summarize to get some statistics for different groups. In the following example, we are getting average of difference between air time and scheduled air time, grouped by different carriers. Note that we have to add "na.rm" inside a functio to remove NA, else we will see a lot of NAs. \
+Common operation functions:\
+sd(x): standard deviation \
+mean(x): mean \
+IQR(x): interquartile range \
+mad(x): median absolute deviation\
+min(x): min\
+quantile(x, 0.5): ith quartile\
+max(x): max\
+first(x): the first row \
+nth(x,1): the nth row\
+last(): the last row\
+n(): count \
+n_distinct(x): count distinct \
+sum(): sum\
+```{r}
+vehicles %>% group_by(class, fuel) %>% summarize(mean_cty =mean(cty, na.rm = TRUE))
+```
+## Tidy Data with dplyr
+
+### Gather/Spread
+We can reshape table from wide format into long format using Gather. We can reshape table from wide format into long format using Sprea vice versa. (The following example is untrue data)
+```{r}
+t1 <- tibble(country=c('China', 'US', 'Korea'), `1999` = c(123,323,4245),`2000` = c(12,32,424))
+t1
+t1 %>% gather(`1999`, `2000`,key='year',value = 'GDP')
+```
+
+### Seperate/Unite 
+We can combine/separate values in one column into two, or two into one(using some special characters). We can add a parameter of "convert=TRUE" to convert chars to integer directly.
+```{r}
+t2 <- tibble(country=c('China', 'US', 'Korea'), rate=c('12/232','123/20384','2328/2301823'))
+t2 %>% separate(rate,into=c("numerator", "denominator"),convert=TRUE)
+             
+```
+## Relational Data with dplyr
+
+### prerequisites
+KEYS in DBMS is an attribute or set of attributes which helps you to identify a row or a relation. A primary key uniquely identifies an observation. A foreign key uniquely identify an observation in another table. Join between two table usually takes place between two keys within different tables to ensure single join. 
+
+### Understanding different types of joins
+x () y
+inner join: only return the matching pairs existing in both tables
+left join: only keep all observations in x
+right join: only keep all observations in y 
+full join:keep all observations in x and y
+Note that only one of the tables can have duplicate keys. If both of the tables have duplicate keys, this will cause error. Usually, having duplicate key in one table can produce unexpected result. So, the best practice is to investigate both tables firstly before joining.
+```{r}
+# These data are frictional 
+x <- tibble(Country = c('China','US','Japan','Canada'), population=c(100,200,300,400))
+y <- tibble(Country = c('China','US','Japan','Mexico'), GDP=c(100,23,2142,234))
+```
+
+```{r}
+left_join(x, y, by='Country')
+```
+
+```{r}
+right_join(x, y, by='Country')
+```
+
+```{r}
+inner_join(x, y, by='Country')
+```
+
+```{r}
+full_join(x, y, by='Country')
+```
+In the case that two tables have different names of their keys, we can use by=c("a"="b")
+
+## Datetime with Lubridate
+```{r}
+library(tidyverse)
+library(lubridate)
+```
+### Datetime from strings
+Lubridate is able to parse different format of datetime strings
+```{r}
+ymd('2020-01-01')
+mdy('March 1 2021')
+dmy('02/01/2020')
+```
+
+Getting components from datetime
+```{r}
+t <- ymd_hms('2020-01-01 12:00:00')
+year(t)
+month(t)
+# day of the month
+mday(t)
+# day of the year
+yday(t)
+# day of the week
+wday(t)
+hour(t)
+minute(t)
+second(t)
+```
+
+### Timespan
+Duration: exact number of seconds\
+Periods: human units (week and months)\
+Intervals: starting and ending point\
+
+Duration
+```{r}
+dminutes(10)
+dweeks(3)
+dyears(1)
+```
+
+Periods
+```{r}
+seconds(15)
+days(7)
+months(1:6)
+```
+
+```{r}
+years(1)/days(1)
+today() + years(1)
+```
+
+## String manipulations with stringr
+
+### Matching Patterns 
+We can do regular expression matching in R easily too.
+string_view() is a very useful function that showcase string patterns. The first input will be input variable, the second input will be the string that we are trying to match. The following regular expression matches will be introduced using this method. \
+
+We can match a substring directly easily. 
+```{r}
+a <-c('root', 'create','time','death')
+str_view(a, "ea")
+```
+We can use '.' as a wildcard to match any character
+```{r}
+a <-c('root', 'create','time','death')
+str_view(a, "im.")
+```
+We can use '^a' to match any string starting with an "a", and "a\$" to find any string that ending with "a". We can also use '^' at the beginning and "$" in the end to make sure that it's an exact match. 
+```{r}
+a <-c('root', 'create','time','death','eath')
+str_view(a, "^c")
+str_view(a, "^death$")
+str_view(a, "e$")
+```
+We can also specify how many times a character repeats itself. {n} represents we have exactly n times of repetition,{n,}: n or more, {,n}: at most n, {n,m}: between n and m
+```{r}
+a <-'CCccoljenlq'
+str_view(a, 'C{2}')
+```
+
+There are also extra type of strings we can match other than characters we mentioned. '\\d' matches any digit,'\\s' matches any white space, [xyz] matches x, y or z, [^xyz] matches anything other than x, y and z. Here noticing that because we want to match a substring starting with one backlash, we have to specify two backlashes in the string matching.
+```{r}
+a <- 'xeqowhe22'
+str_view(a, '\\d{2}')
+str_view(a, '[xyz]')
+```
+Then we will introduce a couple of methods that are useful in conjunction to use with these regular expression.\
+1.str_detect(): to see if we detect certain substring, return TRUE or FALSE\
+2.str_extract(): to extract the actual substring from the string\
+3.str_subset(): return a group of strings that matches certain pattern\
+4.str_count(): count the number of substring appearances in a string\
+5.str_replace(): replace substrings with certain patterns\
+6.str_split(): split string according to patterns\
+```{r}
+str_detect(c('case','happy','sad'), '[ey]$')
+```
+
+```{r}
+str_extract_all(c('case','happy','sad'), '[ey]$')
+```
+
+```{r}
+str_subset(c('case','happy','sad'), '[ey]$')
+```
+```{r}
+a <- 'laaalk3kr23'
+str_count(a,'[al]{3}')
+```
+```{r}
+a <- 'laaalk3kr23'
+str_replace(a,'[al]{3}','happy')
+```
+```{r}
+str_split('abc def',' ')
+```
+
+
+Source: R for Data Science

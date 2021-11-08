@@ -9,6 +9,7 @@ language:
 # Note: in order for the part headers to appear in the rendered book, the part header information must be included in the first chapter of the part. The comments here are just for reference; they do not create parts
 
 # Chapter ordering
+
 rmd_files: [
   # Part: Introduction
   'index.Rmd', # must be first chapter
@@ -57,7 +58,6 @@ rmd_files: [
   # Part: Demonstrations
   'linear_association.Rmd', # contains PART header
   'r_customized_sort.Rmd',
-
   
   # Part: Workshops
   'ds_product_cycles_in_enterprises.Rmd', # contains PART header

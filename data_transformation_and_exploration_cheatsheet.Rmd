@@ -1,0 +1,416 @@
+# R cheatsheet on data transforamtion and exploration
+
+Sai Krupa Jangala
+
+```{r include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+Few Pointers:
+
+* The purpose of this cheatsheet is to describe all the basic data operations that we do when we start a new project. This also includes different types of data transformations, explorations and management.
+* We use only data frames throughtout the cheatsheet.
+* We use packages that are most commonly used in R. We will be using these packages for different purposes. 
+* Different datasets are used to best illustrate the transformation, management and exploration.
+* The data sets used are ```openintro::fastfood``` , ```openintro::seatlepets```, ```cars```, ```openintro::ames``` and ```mtcars```.
+* Every chunk of code loads its own data, if it's not, it means that we have used the data from the previous chunk.
+
+#### Required packages
+These packages are most commonly in R and are used in the following cheatsheet. We will be using these packages for different purposes. 
+```{r, message=FALSE}
+#install.packages("tidyverse")
+#install.packages("dplyr")
+#install.packages("reshape")
+library(dplyr)
+library(tidyverse)
+library(reshape)
+```
+
+#### Output the head, tail and sample of the dataframe.
+Head - will get the first 5 rows of the dataframe.
+```{r}
+data <- cars
+head(data, n=5)
+```
+Tail - will get the last 5 rows of the dataframe
+```{r}
+tail(data, n=5)
+```
+
+#### Selection of only a few columns from a dataframe.
+Select only restaurant, item and calorie columns from the fastfood dataset. Two variations are shown below.
+```{r}
+data <- openintro::fastfood
+# Variation 1
+data <- data[, c("restaurant","item","calories")]
+# Variation 2
+data_1 <- select(data, c(restaurant, item, calories))
+```
+
+As we can see below, both the transformations produce the same result.
+```{r}
+head(data)
+```
+```{r}
+head(data_1)
+```
+#### Get the column names
+Generate all the column names in the data frame
+```{r}
+data <- openintro::fastfood
+names(data)
+```
+
+#### Drop one or more columns.
+Drop columns ```restaurant```, ```item```, ```calories``` from the data. As we can observe, the above column names have been dropped.
+```{r}
+data <- openintro::fastfood
+data <- select(data, -c(restaurant, item, calories))
+names(data)
+```
+
+#### Transformation using the transform() function in R
+
+Here we are creating a new dataframe by changing the speed column. We transformed it by multiplying with 100
+```{r}
+data <- cars
+data_1 <- transform(data, speed=speed*100)
+head(data_1)
+```
+Here we transformed the original dataframe by creating a new column.
+```{r}
+data <- transform(data, time=speed*dist)
+head(data)
+```
+#### Conditional Transformation in R
+
+Transformation based on a condition.  Here we are creating a new column called Grilled, which is assigned to Grilled if the item contains Grilled in it's name else it is classified as Not Grilled.
+```{r}
+#Check if it contains the word grilled.
+data <- openintro::fastfood
+data <- transform(data, Grilled=ifelse(str_detect(item, "Grilled"), "Grilled", "Not Grilled"))
+head(data[,c("item","Grilled")])
+```
+#### Add a new column to the dataframe without ```transform()``` function.
+
+Here we added a new column called time.
+```{r}
+data <- cars
+data$time <- data$speed * data$dist
+head(data)
+```
+
+#### Get all the unique values of a column in a dataframe.
+```{r}
+data <- openintro::fastfood
+unique(data$restaurant)
+```
+
+#### Using the filter function in R. Different logical operators can be used to filter the data.
+
+Filter all the rows where mpg column value is 21.0
+```{r}
+data <- mtcars
+data_filtered <- filter(data, mpg==21.0)
+unique(data_filtered$mpg)
+```
+
+Filter all the rows where mpg column value is less than 21.0
+```{r}
+data_filtered_1 <- filter(data, mpg<21.0)
+unique(data_filtered_1$mpg)
+```
+Filter all the rows where mpg column value is greater than 21.0
+```{r}
+data_filtered_2 <- filter(data, mpg>21.0)
+unique(data_filtered_2$mpg)
+```
+Filter all the rows where cyl column is 4 and carb column is greater than 1.
+```{r}
+data_filtered_logical <- filter(data, cyl == 4 & carb > 1)
+unique(data_filtered_logical$mpg)
+```
+
+#### Select only few rows in a column based on a condition without using the ```filter()``` function.
+
+Here we are selecting only those rows where the restuarant name is subway
+```{r}
+data <- openintro::fastfood
+# Select the rows where the item contains the word "Grilled
+data <- data[data$restaurant == "Subway", ] 
+unique(data$restaurant)
+```
+
+#### Merge two dataframes
+
+Merging two dataframes based on column names. Authors dataframe and books dataframe have been merged by surname and name.
+
+```{r}
+authors <- data.frame(
+    surname = c("Tukey", "Venables", "Tierney", "Ripley", "McNeil"),
+    nationality = c("US", "Australia", "US", "UK", "Australia"),
+    retired = c("yes", rep("no", 4)))
+books <- data.frame(
+    name = c("Tukey", "Venables", "Tierney", "Ripley", "Ripley", "McNeil"),
+    title = c("Exploratory Data Analysis",
+              "Probability and Statistics",
+              "Finance and Structuring for Data Science",
+              "Algorithms for Data Science",
+               "Interactive Data Analysis",
+              "Deep Learning"))
+    #other.author = c(NA, "Ripley", NA, NA, NA, NA))
+merged <- merge(authors, books, by.x="surname", by.y="name")
+head(merged)
+```
+
+
+#### Arrange the data in ascending order based on a column
+```{r}
+data <- openintro::fastfood
+# Arranging the data in ascending order
+data <- data[order(data$total_fat),] 
+head(data[, c("restaurant","total_fat")])
+```
+
+#### Arrange the data in descending order based on a column
+```{r}
+# Arranging the data in descending order
+data <- data[order(data$total_fat, decreasing = TRUE),]
+head(data[, c("restaurant","total_fat")])
+```
+
+#### Get the summary of a column -> mean, median, var, SD etc
+
+This function gives us the Minimum value, 1st Quartile value, Median, Mean, 3rd Quartile value, Maximum value from a column in a data frame. 
+```{r}
+summary(data$total_fat)
+```
+
+#### Convert all the values in the column to upper case.
+
+```{r}
+data$item <- tolower(data$item)
+head(data$item)
+```
+
+#### Convert all the values in the column to lower case.
+```{r}
+data$item <- toupper(data$item)
+head(data$item)
+```
+
+#### Dropping NAs
+
+Dropping out all the rows with one or more columns as NA
+```{r}
+data <- openintro::seattlepets
+data <- data[complete.cases(data), ]
+# Removes the rows with one or more columns having a NA
+```
+
+
+#### groupby( ) and summarize( ) functions usage 
+We use ames data to demonstrate these functions. If we want to find the minimum, maximum area of all the houses in a particular neighborhood, we group by on the Neighborhood and compute the minimum and maximum area columns using the summarise function.
+```{r}
+data <- openintro::ames
+data <- data %>% group_by(Neighborhood) %>% summarise(max_area= max(area), min_area=min(area))
+head(data, n=10)
+```
+
+#### Get the shape of the dataframe in R.
+
+To know the number of rows and columns in a dataframe.
+```{r}
+data <- openintro::ames
+dim(data)
+```
+First number in the list is the number of rows and the second number in the list is the number of columns in the dataframe
+
+
+#### Select only top 30 rows or 90 rows, bottom 30 rows
+```{r}
+data <- openintro::ames
+# Selecting the top 30 rows
+data <- data[1:30,]
+# Selecting the top 90 rows
+data <- data[1:90,]
+data <- openintro::ames
+data <- data[2900:2930,] 
+# Select the last 30 rows if your dataframe consists of 2930 rows
+```
+
+#### Get the data type of each column in a dataframe.
+```{r}
+data <- openintro::seattlepets
+map(data, class)
+```
+
+#### Changing the type of data -> int to char
+
+Change the values in the column from character to integer for all valid values.
+
+Note: Few rows may be marked as NA because of coercion.
+```{r warning=FALSE}
+data <- openintro::seattlepets
+head(data$zip_code)
+data$zip_code <- as.numeric(data$zip_code)
+head(data$zip_code)
+```
+
+#### Rename column names in R
+
+Here we are renaming column name zip_code to zip_code_modified
+```{r}
+names(data)[names(data) == 'zip_code'] <- 'zip_code_modified'
+names(data)
+# Zip code has been modified to zip_code_modified
+```
+
+#### Find minimum and maximum values in a column in R
+```{r}
+data <- openintro::ames
+min <- min(data$area)
+max <- max(data$area)
+```
+Minimum value of area column
+```{r}
+min
+```
+Maximum value of area column
+```{r}
+max
+```
+
+#### Number of unique values in every column in the data frame
+In this dataset, we have 13930 unique animal names, 4 different species etc.
+```{r}
+data <- openintro::seattlepets
+data %>% summarize_all(n_distinct)
+```
+
+#### Reorder columns in R by column name.
+```{r}
+authors <- data.frame(
+    surname = c("Tukey", "Venables", "Tierney", "Ripley", "McNeil"),
+    nationality = c("US", "Australia", "US", "UK", "Australia"),
+    retired = c("yes", rep("no", 4)))
+authors
+#reorder by column name
+authors <- authors[, c("retired", "nationality", "surname")]
+authors
+```
+
+#### Reorder columns by column index.
+```{r}
+authors <- authors[, c(1,3,2)]
+authors
+```
+
+#### Remove Duplicates from the dataframe based on one column or multiple columns.
+
+```{r}
+# Remove the duplicate rows based on one variable
+data <- mtcars
+# Have the rows with distinct carb
+data_one_var <- distinct(data, carb, .keep_all= TRUE)
+# Keep the distinct data based on multiple variables
+data_multi <- distinct(data, cyl, vs, .keep_all= TRUE)
+
+```
+
+#### Calculate Mean, Median of a column in the Data Frame
+```{r}
+mean <- mean(data$carb)
+median <- median(data$carb)
+```
+Mean
+```{r}
+mean
+```
+Median
+```{r}
+median
+```
+
+
+#### Value counts in R. Check how many times a unique variable occurs in like Male - 5, Female -10 in the column name Gender.
+
+Number of rows where cyl = 4 is 11, cyl=6 is 7 etc
+```{r}
+data %>% count(cyl)
+```
+
+Number of rows where carb = 4 is 10, carb=6 is 1 etc
+```{r}
+data %>% count(carb)
+```
+
+#### Convert the index column to a new column
+
+Here we created a new column using the index of the dataframe.
+```{r}
+data <- cbind(car_name = rownames(data), data)
+head(data)
+```
+
+#### Add a new row to the dataframe
+We can new rows to the dataframe by using ```rbind```
+```{r}
+new_row_to_add <- data.frame("Volvo 125",22.5,3,120.2,108,2.23,2.89,19.08,1,0,4,3)
+names(new_row_to_add) <- c("car_name", "mpg", "cyl", "disp", "hp", "drat", "wt", "qsec", "vs", "am", "gear", "carb")
+data <- rbind(data,new_row_to_add)
+tail(data)
+```
+
+#### Log,Square root, Cube root transformation in R
+```{r}
+data <- cars
+# Taking the log of the speed column
+data$log_transformation <- log10(data$speed)
+# Taking the square root of the speed column
+data$sqrt_transformation <- sqrt(data$speed)
+# Taking the cube root of the speed column
+data$cube_transformation <-(data$speed)^1/3
+head(data)
+```
+
+#### Changing the dataframe dimensions from wide to long
+Here are the following types on how we can use the ```melt()``` function in R.
+
+Type 1:
+Here we create two columns called variable - which represent the subject and value which represents the grade in that subject.
+```{r}
+df_wide <- data.frame(
+  student = c("Krupa", "Goutham", "Sailaja", "Murthy"),
+  school = c("St. Joseph's", "Timpany", "St.Joseph's", "Timpany"),
+  exploratory_data_analysis = c(10, 100, 1000, 10000),  # eng grades
+  probability_and_statistics = c(20, 200, 2000, 20000),  # math grades
+  algorithms_for_ds = c(30, 300, 3000, 30000)   # physics grades
+)
+df_long <- melt(data = df_wide, 
+                id.vars = c("student", "school"))
+df_long
+```
+Type 2:
+Here if we are interested in the grade of only english and math, we can pass it in the measure.vars parameter.
+```{r}
+df_long <- melt(data = df_wide, 
+                id.vars = "student",
+                measure.vars = c("exploratory_data_analysis", "algorithms_for_ds"))
+df_long
+```
+
+
+#### Replace NA with a specific value
+Here we are replacing NA with None.
+```{r}
+data <- openintro::seattlepets
+data[is.na(data)] <- "None"
+```
+
+
+References:
+* https://towardsdatascience.com/data-cleaning-in-r-made-simple-1b77303b0b17
+* https://towardsdatascience.com/data-transformation-in-r-288e95438ff9
+* https://bookdown.org/aschmi11/RESMHandbook/data-preparation-and-cleaning-in-r.html
+
