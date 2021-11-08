@@ -4,19 +4,19 @@ Angad Nandwani  AN3077
 
 
 **Below are the links for the PDF, HTML and Recording**
-#1) PDF - https://drive.google.com/file/d/16LqxKUW644I6Ytierjqf8OCjaKOIlRyG/view?usp=sharing
-#2) HTML - https://drive.google.com/file/d/1afYnS-kMJJY029m90zaNzqaNtiCsQaC0/view?usp=sharing
-#3) Recording - https://drive.google.com/file/d/1H5rBiMX_CTGcJbPGWRTXGkHX92VGAwWM/view?usp=sharing
+## PDF - https://drive.google.com/file/d/16LqxKUW644I6Ytierjqf8OCjaKOIlRyG/view?usp=sharing
+## HTML - https://drive.google.com/file/d/1afYnS-kMJJY029m90zaNzqaNtiCsQaC0/view?usp=sharing
+## Recording - https://drive.google.com/file/d/1H5rBiMX_CTGcJbPGWRTXGkHX92VGAwWM/view?usp=sharing
 
 
-# install.packages("future")
-# install.packages("parallel")
-# install.packages("tidyverse")
-# install.packages("vcd")
-# install.packages("GGally")
-# install.packages("ggplot2")
-# install.packages("googledrive")
-# install.packages("httpuv")
+## install.packages("future")
+## install.packages("parallel")
+## install.packages("tidyverse")
+## install.packages("vcd")
+## install.packages("GGally")
+## install.packages("ggplot2")
+## install.packages("googledrive")
+## install.packages("httpuv")
 
 
 ```{r include=FALSE, warning=FALSE}
