@@ -6,6 +6,7 @@ language:
   ui:
     chapter_name: "Chapter "
 
+
 # Note: in order for the part headers to appear in the rendered book, the part header information must be included in the first chapter of the part. The comments here are just for reference; they do not create parts
 
 # Chapter ordering
@@ -52,7 +53,7 @@ rmd_files: [
   'animating_in_r.Rmd',
   'quick_guide_to_eda.Rmd',
   'nlp_eda_python.Rmd',
-
+  'supervised_learning_tutorial.Rmd',
 
   # Part: Demonstrations
   'linear_association.Rmd',
@@ -66,3 +67,4 @@ rmd_files: [
   'appendix_pull_request_tutorial.Rmd'
 
 ]
+
