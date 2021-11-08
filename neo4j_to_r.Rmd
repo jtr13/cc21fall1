@@ -1,8 +1,10 @@
-# (PART) Data Visualizations {-}
-
 # From Neo4j to RStudio
 
 Chaoying Zheng
+
+```{r, include=FALSE}
+knitr::opts_chunk$set(eval = FALSE)
+```
 
 
 ### Introduction of Graph Database
