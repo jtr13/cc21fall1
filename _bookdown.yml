@@ -38,6 +38,7 @@ rmd_files: [
   'rmd_syntax_cheatsheet.Rmd',
   'parallel_coordinate_plots_cheatsheet.Rmd',
   'r_datasci_workflow_cheatsheet.Rmd',
+  'linear_regression_bestiary.Rmd',
   
   # Part: Tutorials
   'multithreading_crawler_frame.Rmd', # contains PART header
