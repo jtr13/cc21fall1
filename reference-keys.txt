@@ -245,6 +245,7 @@ note-this-addin-runs-on-library-tidyverse.-please-run-the-following-command-firs
 example
 troubleshooting
 evaluation-and-improvement
+customized-sorting-in-r
 data-science-product-cycles-in-enterprises
 github-initial-setup
 create-new-repo
