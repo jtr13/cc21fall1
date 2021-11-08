@@ -2,11 +2,11 @@
 
 Dashansh Prajapati and Vijay S Kalmath
 
-```{r, include=FALSE}
+```{r, eval=FALSE, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE, eval=FALSE, cache=FALSE) #temp
 ```
 
-```{r, results=FALSE, message=FALSE}
+```{r, results=FALSE, message=FALSE, eval=FALSE}
 library(dplyr)
 library(ggplot2)
 library(keras)
@@ -32,7 +32,7 @@ Here we are using the IMDB dataset, which you can download through this [link](h
 
 ### Step 1: Load the required Libraries
 
-```{r, results=FALSE, message=FALSE}
+```{r, results=FALSE, message=FALSE, eval=FALSE}
 library(dplyr)
 library(ggplot2)
 library(keras)
@@ -43,14 +43,14 @@ Follow the steps in this [link](https://tensorflow.rstudio.com/installation/){ta
 
 ### Step 2: Read and explore data
 
-```{r}
+```{r, eval=FALSE}
 df <- read.csv("resources/deep_learning_with_r/imdb_dataset_one_fifth.csv")
 str(df)
 ```
 
 Check the distribution of the sentiment column
 
-```{r}
+```{r, eval=FALSE}
 df %>% count(sentiment)
 ```
 
@@ -58,7 +58,7 @@ There as many positive reviews as there are negative ones, i.e., they are equall
 
 ### Step 3: Split the data into training (80%) and testing (20%) datasets.
 
-```{r}
+```{r, eval=FALSE}
 ids <- sample.int(nrow(df), size = nrow(df)*0.8)
 train <- df[ids,]
 test <- df[-ids,]
@@ -66,7 +66,7 @@ test <- df[-ids,]
 
 Let's find out how many words are there in each reviews and get summary statistics for it. This will be later useful in setting parameters for the text vectorization function
 
-```{r}
+```{r, eval=FALSE}
 df$review %>% 
   strsplit(" ") %>% 
   sapply(length) %>% 
@@ -85,7 +85,7 @@ Furthermore we need to encode each word separately. We will use embedding layer 
 
 Let's define the text vectorization layer.
 
-```{r}
+```{r, eval=FALSE}
 num_words <- 10000
 max_length <- 300
 
@@ -97,20 +97,20 @@ text_vectorization <- layer_text_vectorization(
  
 We need to adapt the text vectorization layer to the input data, to built a fix sized vocabulary and assign integer value to the words in them.
 
-```{r}
+```{r, eval=FALSE}
 text_vectorization %>% 
   adapt(df$review)
 ```
 
 To check the vocabulary, uncomment the following code and run it.
 
-```{r}
+```{r, eval=FALSE}
 # get_vocabulary(text_vectorization)
 ```
 
 Following is the example of how the layer transforms the input.
 
-```{r}
+```{r, eval=FALSE}
 text_vectorization(matrix(df$review[1], ncol = 1))
 ```
 
@@ -118,7 +118,7 @@ text_vectorization(matrix(df$review[1], ncol = 1))
 
 Using keras_model function create the following model.
 
-```{r}
+```{r, eval=FALSE}
 input <- layer_input(shape = c(1), dtype = "string")
 
 output <- input %>% 
@@ -134,7 +134,7 @@ model <- keras_model(input, output)
 
 Define the loss functiona and optimizer, and compile the model.
 
-```{r}
+```{r, eval=FALSE}
 model %>% compile(
   optimizer = 'adam',
   loss = 'binary_crossentropy',
@@ -144,7 +144,7 @@ model %>% compile(
 
 Train the model.
 
-```{r}
+```{r, eval=FALSE}
 history <- model %>% fit(
   train$review,
   as.numeric(train$sentiment == "positive"),
@@ -159,14 +159,14 @@ history <- model %>% fit(
 
 Let's see how the model performs on unseen data?
 
-```{r}
+```{r, eval=FALSE}
 results <- model %>% evaluate(test$review, as.numeric(test$sentiment == "pos"), verbose = 0)
 results
 ```
 
 Plot the training vs validation accuracy and loss.
 
-```{r}
+```{r, eval=FALSE}
 plot(history)
 ```
 
@@ -197,7 +197,7 @@ More Information about the CIFAR10 can be found at [link](https://www.cs.toronto
 
 ### Step 1: Load the required Libraries
 
-```{r, results=FALSE, message=FALSE}
+```{r, results=FALSE, message=FALSE, eval=FALSE}
 library(dplyr)
 library(ggplot2)
 library(keras)
@@ -208,7 +208,7 @@ library(raster)
 ### Step 1a : To Make sure that your tensorflow is installed correctly run : 
 
 
-```{r}
+```{r, eval=FALSE}
 tf$constant("We are building CNNs in R !!")
 ```
 
@@ -220,14 +220,14 @@ The CIFAR10 dataset is packaged with Tensorflow and Keras and can be downloaded 
 
 ?dataset_cifar10 has further information about the dataset.
 
-```{r}
+```{r, eval=FALSE}
 cifar10_dataset <- dataset_cifar10()
 ```
 
 
 ### Step 3: Split the data into training (80%) and testing (20%) datasets.
 
-```{r}
+```{r, eval=FALSE}
 c(train_images, train_labels) %<-% cifar10_dataset$train
 c(test_images, test_labels) %<-% cifar10_dataset$test
 
@@ -243,14 +243,14 @@ In standard Deep Learning , there are two main aspects of the model creation , o
 
 ### Step 3a : To see the dimensions of the train_images and the test_images dataset , use the dims function.
 
-```{r}
+```{r, eval=FALSE}
 dim(train_images)
 
 dim(train_labels)
 ```
 
 ### Step 4 : As the dataset Labels are just integers , It is crucial we define the label array.
-```{r}
+```{r, eval=FALSE}
 class_names = c('airplane','automobile','bird','cat','deer','dog','frog','horse','ship','truck')										
 ```
 
@@ -259,7 +259,7 @@ class_names = c('airplane','automobile','bird','cat','deer','dog','frog','horse'
 
 In order to understand how the images look like and what we are feeding into the model , let us build this function to plot the RBG image from the array of training images. 
 
-```{r}
+```{r, eval=FALSE}
 
 # Taking a random image from the training data , the leading comma's are important as we need to the entire 3D matrix.
 
@@ -270,7 +270,7 @@ dim(random_image)
 
 We can see above that plot_image is just a 3D array of size (32X32x3)
 
-```{R}
+```{R, eval=FALSE}
 
 #Defining Function PlotImage
 
@@ -292,13 +292,13 @@ The Keras Sequential Model Object is instantiated to hold all the layers that we
 
 The construction of a convolutional neural network is a multi-layered feed-forward neural network, made by assembling many unseen layers on top of each other in a particular order.
 
-```{R}
+```{R, eval=FALSE}
 model <- keras_model_sequential()
 ```
 
 Let us know the build the Model with the Convolutional Layers and Other Deep Learning layers for image classification.
 
-```{R}
+```{R, eval=FALSE}
 
 model %>%
   layer_conv_2d(filters=32,kernel_size = 3, padding="same",input_shape = c(32, 32,3), activation = 'relu') %>% 
@@ -326,7 +326,7 @@ Information of the layers and how to add them to the model can be found here .  
 
 We can see the summary of the Layers that build up the model by using the command : 
 
-```{r}
+```{r, eval=FALSE}
 summary(model)
 ```
 
@@ -338,7 +338,7 @@ Optimizers Information can be found here [link](https://tensorflow.rstudio.com/r
 
 Loss functions Information can be found here [link](https://tensorflow.rstudio.com/reference/keras/loss_mean_squared_error/){target="_blank"}
 
-```{R}
+```{R, eval=FALSE}
 
 
 model %>% compile(
@@ -354,14 +354,14 @@ model %>% compile(
 
 The Fit function trains the model with the given training and testing images , the Number of epochs define how long the model is trained and for how many images.
 
-```{R}
+```{R, eval=FALSE}
 model_run  <- model %>% fit(train_images, train_labels, epochs = 10, verbose = 2)
 ```
 
 
 ### Step 8a : Let us plot the model Loss and Accuracy Functions. 
 
-```{r}
+```{r, eval=FALSE}
 plot(model_run)
 
 ```
@@ -371,7 +371,7 @@ plot(model_run)
 
 Let's see how the model performs on unseen data?
 
-```{r}
+```{r, eval=FALSE}
 
 score <- model %>% evaluate(test_images, test_labels, verbose = 0)
 
@@ -380,7 +380,7 @@ score
 
 ### Step 10:  Let us predict some images 
 
-```{r}
+```{r, eval=FALSE}
 
 img <- test_images[3, , , , drop = FALSE]
 plotImage(img[1,,,])
@@ -431,13 +431,13 @@ class_names[class_id]
 ```
 
 ### Step 11: These models can be stored in the standard Keras HD5 Format and are transferrable to any other environment like Python or even Java !! 
-```{r}
+```{r, eval=FALSE}
 
 model %>% save_model_hdf5("CIFAR10-CNN-Model")
 ```
 
 Loading saved models is easy as well !! 
-```{r}
+```{r, eval=FALSE}
 
 new_model <- load_model_hdf5("CIFAR10-CNN-Model")
 ```
