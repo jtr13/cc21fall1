@@ -57,7 +57,7 @@ rmd_files: [
 
   # Part: Demonstrations
   'linear_association.Rmd', # contains PART header
-
+  'r_customized_sort.Rmd',
   
   # Part: Workshops
   'ds_product_cycles_in_enterprises.Rmd', # contains PART header
