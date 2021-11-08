@@ -2,7 +2,7 @@
 
 Amrutha Varshini Sundar
 
-#### Introduction
+## Introduction
 
 A parallel coordinate plot is used for visualizing multivariate numerical data. The plots facilitate for comparing multiple numeric variables that have different scales and different units of measurement. It abets in finding out patterns and correlations in datasets which are high dimensional.
 
@@ -16,7 +16,7 @@ The ubiquitous implementation of parallel coordinate plots is provided by the gg
 knitr::opts_chunk$set(warning = FALSE, message = FALSE)
 ```
 
-##### Importing necessary packages
+### Importing necessary packages
 
 ```{r}
 # packages we need to implement parallel coordinate plots
@@ -31,7 +31,7 @@ library(ggpubr)
 
 ```
 
-#### Plotting a sample parallel coordinate plot using ggparcoord 
+## Plotting a sample parallel coordinate plot using ggparcoord 
 
 
 The dataset we use for plotting parallel coordinate plots is the Wine Quality Data Set from the UCI ML Repository. We are specifically extracting 12 different attributes of white wine across 100 different wine samples and presenting the parallel coordinate plot for the same.
@@ -58,7 +58,7 @@ ggally_par_coord +
 ```
 
 
-#### Custom function to implement a similar functionality for presenting parallel coordinate plots using ggplot2
+## Custom function to implement a similar functionality for presenting parallel coordinate plots using ggplot2
 
 The function geom_parcoord is an implementation to present parallel coordinate plots using ggplot2. The function accepts the following parameters,
 
@@ -118,7 +118,7 @@ geom_parcoord <- function(df_wide, columns=NULL, spline_factor = 1, standardize 
 ```
 
 
-#### Plotting parallel coordinate plots using custom function - geom_parcoord
+## Plotting parallel coordinate plots using custom function - geom_parcoord
 
 Below is a plot for a simple parcoord plot using the default behavior of geom_parcoord. There is no level of smoothing and the values are not scaled.
 
@@ -131,7 +131,7 @@ custom_parcoord +
 
 ```
 
-##### Playing around with some parameters of geom_parcoord
+### Playing around with some parameters of geom_parcoord
 
 Tweaking some parameters such as smoothing factor and scaling the plot appropriately
 
@@ -144,7 +144,7 @@ geom_parcoord(winequality, spline_factor = 20, standardize = T) +
 ```
 
 
-#### Summary and Comparisons
+## Summary and Comparisons
 
 Below shows a side by side comparison of the plots obtained by the ggparcoord and the custom geom_parcoord functions.
 
@@ -155,7 +155,7 @@ ggarrange(ggally_par_coord, custom_parcoord, nrow=2, labels = c("ggparcoord", "g
 ```
 
 
-##### Observations
+### Observations
 
 While on the outset the plots may look similar, these are some of the differences with respect to the visuals and implementation,
 
@@ -166,7 +166,7 @@ While on the outset the plots may look similar, these are some of the difference
 3) The spline functionality might differ in the two depending on which method has been used for splining in ggparcoord. 
 
 
-#### Improvements and future work
+## Improvements and future work
 
 1) Adding a variation to the different methods of scaling to support much more than the normal base R scaling.
 
@@ -175,7 +175,7 @@ While on the outset the plots may look similar, these are some of the difference
 3) Adding to ggplot2 as a geom for parallel coordinate plots - geom_parcoord. This will avoid installing another package just for plotting parallel coordinate plots. This is the main motivation of the idea behind this project.
 
 
-##### Sources
+### Sources
 
 * Dataset - https://archive.ics.uci.edu/ml/datasets/Wine+Quality
 * Learning more about parallel coordinate plots - https://towardsdatascience.com/parallel-coordinates-plots-6fcfa066dcb3
