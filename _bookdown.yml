@@ -18,7 +18,6 @@ rmd_files: [
   'sample_project.Rmd',
 
   # Part: Data Visualizations
-  #'icons_and_symbols_in_r.Rmd',
   'intro_lattice_tutorial.Rmd',
   'graph_animation.Rmd',
   'interactive_plots.Rmd',
