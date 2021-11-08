@@ -1,5 +1,3 @@
-# (PART) Data Visualizations {-}
-
 # Icons and symbols in R
 
 Chen Jin
