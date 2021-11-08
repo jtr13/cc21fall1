@@ -6,7 +6,6 @@ language:
   ui:
     chapter_name: "Chapter "
 
-
 # Note: in order for the part headers to appear in the rendered book, the part header information must be included in the first chapter of the part. The comments here are just for reference; they do not create parts
 
 # Chapter ordering
@@ -36,7 +35,7 @@ rmd_files: [
   'cheatsheet_tidyverse.Rmd',
   'ggprism_and_ggsci_cheatsheets.Rmd',
   'interactive_plot_plotly_cheatsheet.Rmd',
-
+  'rmd_syntax_cheatsheet.Rmd',
  
   # Part: Tutorials
   'multithreading_crawler_frame.Rmd', # contains PART header
@@ -67,4 +66,3 @@ rmd_files: [
   'appendix_pull_request_tutorial.Rmd'
 
 ]
-
