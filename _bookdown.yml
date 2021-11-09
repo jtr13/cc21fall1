@@ -22,6 +22,7 @@ rmd_files: [
   'interactive_plots.Rmd',
   'make_lm_assumptions_plots.Rmd',
   'neo4j_to_r.Rmd',
+  'stacked_bar_plot_for_relative_proportions_in_python.Rmd',
 
 
   # Part: Cheatsheets
