@@ -138,6 +138,7 @@ a-linear-regression-bestiary
 graphql-cheat-sheet
 introduction
 github-link
+questions-answers-for-r-technical-interview
 multithreading-crawler-frame
 regression-and-classification-in-r
 libraries-and-warnings

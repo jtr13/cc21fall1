@@ -4,15 +4,15 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<title>Chapter 31 Interactive graphs tutorial | EDAV Fall 2021 Mon/Wed Community Contributions</title>
+<title>Chapter 32 Interactive graphs tutorial | EDAV Fall 2021 Mon/Wed Community Contributions</title>
 <meta name="author" content="the students of the class">
 <meta name="description" content="Chuyang Xiao The following content is a brief and introductory tutorial about how to create interactive graphs with common packages of R. library(ggvis) library(dplyr) library(plotly)...">
 <meta name="generator" content="bookdown 0.24 with bs4_book()">
-<meta property="og:title" content="Chapter 31 Interactive graphs tutorial | EDAV Fall 2021 Mon/Wed Community Contributions">
+<meta property="og:title" content="Chapter 32 Interactive graphs tutorial | EDAV Fall 2021 Mon/Wed Community Contributions">
 <meta property="og:type" content="book">
 <meta property="og:description" content="Chuyang Xiao The following content is a brief and introductory tutorial about how to create interactive graphs with common packages of R. library(ggvis) library(dplyr) library(plotly)...">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Chapter 31 Interactive graphs tutorial | EDAV Fall 2021 Mon/Wed Community Contributions">
+<meta name="twitter:title" content="Chapter 32 Interactive graphs tutorial | EDAV Fall 2021 Mon/Wed Community Contributions">
 <meta name="twitter:description" content="Chuyang Xiao The following content is a brief and introductory tutorial about how to create interactive graphs with common packages of R. library(ggvis) library(dplyr) library(plotly)...">
 <!-- JS --><script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.6/clipboard.min.js" integrity="sha256-inc5kl9MA1hkeYUt+EC3BhlIgyp/2jDIyBLS6k3UxPI=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/fuse.js/6.4.6/fuse.js" integrity="sha512-zv6Ywkjyktsohkbp9bb45V6tEMoWhzFzXis+LrMehmJZZSys19Yxf1dopHx7WzIKxr5tK2dVcYmaCk2uqdjF4A==" crossorigin="anonymous"></script><script src="https://kit.fontawesome.com/6ecbd6c532.js" crossorigin="anonymous"></script><script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <link href="libs/bootstrap-4.6.0/bootstrap.min.css" rel="stylesheet">
@@ -71,35 +71,36 @@
 <li><a class="" href="r-data-science-workflow-cheatsheet.html"><span class="header-section-number">21</span> R Data Science Workflow CheatSheet</a></li>
 <li><a class="" href="a-linear-regression-bestiary.html"><span class="header-section-number">22</span> A linear regression Bestiary</a></li>
 <li><a class="" href="graphql-cheat-sheet.html"><span class="header-section-number">23</span> GraphQL Cheat Sheet</a></li>
+<li><a class="" href="questions-answers-for-r-technical-interview.html"><span class="header-section-number">24</span> 30 questions &amp; answers for r technical interview</a></li>
 <li class="book-part">Tutorials</li>
-<li><a class="" href="multithreading-crawler-frame.html"><span class="header-section-number">24</span> Multithreading Crawler Frame</a></li>
-<li><a class="" href="regression-and-classification-in-r.html"><span class="header-section-number">25</span> Regression and Classification in R</a></li>
-<li><a class="" href="tibble-vs.-dataframe.html"><span class="header-section-number">26</span> Tibble vs. DataFrame</a></li>
-<li><a class="" href="introduction-to-time-series.html"><span class="header-section-number">27</span> Introduction to Time Series</a></li>
-<li><a class="" href="vipul-edav-community-contribution-kickstart-r.html"><span class="header-section-number">28</span> Vipul EDAV Community Contribution Kickstart R</a></li>
-<li><a class="" href="caret---a-machine-learning-package-turotial.html"><span class="header-section-number">29</span> caret - a machine learning package turotial</a></li>
-<li><a class="" href="streamlit-for-financial-analysis.html"><span class="header-section-number">30</span> Streamlit for Financial Analysis</a></li>
-<li><a class="active" href="interactive-graphs-tutorial.html"><span class="header-section-number">31</span> Interactive graphs tutorial</a></li>
-<li><a class="" href="guideline-on-using-package-rcurl-and-xml-for-web-scraping.html"><span class="header-section-number">32</span> Guideline on Using Package Rcurl and XML for Web Scraping</a></li>
-<li><a class="" href="twitter-r-package-scraping-via-api-tutorial.html"><span class="header-section-number">33</span> TwitteR R Package Scraping via API Tutorial</a></li>
-<li><a class="" href="introduction-to-data-manipulation.html"><span class="header-section-number">34</span> Introduction to Data Manipulation</a></li>
-<li><a class="" href="animating-the-plots-in-r.html"><span class="header-section-number">35</span> Animating the plots in R</a></li>
-<li><a class="" href="quick-guide-to-eda.html"><span class="header-section-number">36</span> Quick guide to eda</a></li>
-<li><a class="" href="natural-langauge-processing-common-eda-practices-in-python.html"><span class="header-section-number">37</span> Natural Langauge Processing Common EDA Practices in Python</a></li>
-<li><a class="" href="beginners-walk-through-of-deep-learning-in-r.html"><span class="header-section-number">38</span> Beginner’s Walk-through of Deep Learning in R</a></li>
-<li><a class="" href="supervised-learning-tutorial.html"><span class="header-section-number">39</span> Supervised Learning Tutorial</a></li>
-<li><a class="" href="parallel-coordinate-plots-in-ggplot2.html"><span class="header-section-number">40</span> Parallel Coordinate Plots in ggplot2</a></li>
-<li><a class="" href="using-ggplot-in-python.html"><span class="header-section-number">41</span> Using ggplot in python</a></li>
-<li><a class="" href="icons-and-symbols-in-r.html"><span class="header-section-number">42</span> Icons and symbols in R</a></li>
-<li><a class="" href="exploratory-data-analysis-and-preprocessing-with-r-for-data-challenges.html"><span class="header-section-number">43</span> Exploratory data analysis and preprocessing with R for data challenges</a></li>
+<li><a class="" href="multithreading-crawler-frame.html"><span class="header-section-number">25</span> Multithreading Crawler Frame</a></li>
+<li><a class="" href="regression-and-classification-in-r.html"><span class="header-section-number">26</span> Regression and Classification in R</a></li>
+<li><a class="" href="tibble-vs.-dataframe.html"><span class="header-section-number">27</span> Tibble vs. DataFrame</a></li>
+<li><a class="" href="introduction-to-time-series.html"><span class="header-section-number">28</span> Introduction to Time Series</a></li>
+<li><a class="" href="vipul-edav-community-contribution-kickstart-r.html"><span class="header-section-number">29</span> Vipul EDAV Community Contribution Kickstart R</a></li>
+<li><a class="" href="caret---a-machine-learning-package-turotial.html"><span class="header-section-number">30</span> caret - a machine learning package turotial</a></li>
+<li><a class="" href="streamlit-for-financial-analysis.html"><span class="header-section-number">31</span> Streamlit for Financial Analysis</a></li>
+<li><a class="active" href="interactive-graphs-tutorial.html"><span class="header-section-number">32</span> Interactive graphs tutorial</a></li>
+<li><a class="" href="guideline-on-using-package-rcurl-and-xml-for-web-scraping.html"><span class="header-section-number">33</span> Guideline on Using Package Rcurl and XML for Web Scraping</a></li>
+<li><a class="" href="twitter-r-package-scraping-via-api-tutorial.html"><span class="header-section-number">34</span> TwitteR R Package Scraping via API Tutorial</a></li>
+<li><a class="" href="introduction-to-data-manipulation.html"><span class="header-section-number">35</span> Introduction to Data Manipulation</a></li>
+<li><a class="" href="animating-the-plots-in-r.html"><span class="header-section-number">36</span> Animating the plots in R</a></li>
+<li><a class="" href="quick-guide-to-eda.html"><span class="header-section-number">37</span> Quick guide to eda</a></li>
+<li><a class="" href="natural-langauge-processing-common-eda-practices-in-python.html"><span class="header-section-number">38</span> Natural Langauge Processing Common EDA Practices in Python</a></li>
+<li><a class="" href="beginners-walk-through-of-deep-learning-in-r.html"><span class="header-section-number">39</span> Beginner’s Walk-through of Deep Learning in R</a></li>
+<li><a class="" href="supervised-learning-tutorial.html"><span class="header-section-number">40</span> Supervised Learning Tutorial</a></li>
+<li><a class="" href="parallel-coordinate-plots-in-ggplot2.html"><span class="header-section-number">41</span> Parallel Coordinate Plots in ggplot2</a></li>
+<li><a class="" href="using-ggplot-in-python.html"><span class="header-section-number">42</span> Using ggplot in python</a></li>
+<li><a class="" href="icons-and-symbols-in-r.html"><span class="header-section-number">43</span> Icons and symbols in R</a></li>
+<li><a class="" href="exploratory-data-analysis-and-preprocessing-with-r-for-data-challenges.html"><span class="header-section-number">44</span> Exploratory data analysis and preprocessing with R for data challenges</a></li>
 <li class="book-part">Demonstrations</li>
-<li><a class="" href="linear-association-r-studio-plugin.html"><span class="header-section-number">44</span> Linear Association R Studio Plugin</a></li>
-<li><a class="" href="customized-sorting-in-r.html"><span class="header-section-number">45</span> Customized Sorting in R</a></li>
+<li><a class="" href="linear-association-r-studio-plugin.html"><span class="header-section-number">45</span> Linear Association R Studio Plugin</a></li>
+<li><a class="" href="customized-sorting-in-r.html"><span class="header-section-number">46</span> Customized Sorting in R</a></li>
 <li class="book-part">Workshops</li>
-<li><a class="" href="data-science-product-cycles-in-enterprises.html"><span class="header-section-number">46</span> Data Science Product Cycles in Enterprises</a></li>
+<li><a class="" href="data-science-product-cycles-in-enterprises.html"><span class="header-section-number">47</span> Data Science Product Cycles in Enterprises</a></li>
 <li class="book-part">Appendices</li>
-<li><a class="" href="github-initial-setup.html"><span class="header-section-number">47</span> Github initial setup</a></li>
-<li><a class="" href="tutorial-for-pull-request-mergers.html"><span class="header-section-number">48</span> Tutorial for pull request mergers</a></li>
+<li><a class="" href="github-initial-setup.html"><span class="header-section-number">48</span> Github initial setup</a></li>
+<li><a class="" href="tutorial-for-pull-request-mergers.html"><span class="header-section-number">49</span> Tutorial for pull request mergers</a></li>
 </ul>
 
         <div class="book-extra">
@@ -109,7 +110,7 @@
 </div>
   </header><main class="col-sm-12 col-md-9 col-lg-7" id="content"><div id="interactive-graphs-tutorial" class="section level1">
 <h1>
-<span class="header-section-number">31</span> Interactive graphs tutorial<a class="anchor" aria-label="anchor" href="#interactive-graphs-tutorial"><i class="fas fa-link"></i></a>
+<span class="header-section-number">32</span> Interactive graphs tutorial<a class="anchor" aria-label="anchor" href="#interactive-graphs-tutorial"><i class="fas fa-link"></i></a>
 </h1>
 <p>Chuyang Xiao</p>
 <p>The following content is a brief and introductory tutorial about how to create interactive graphs with common packages of R.</p>
@@ -123,7 +124,7 @@
 <span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://CRAN.R-project.org/package=networkD3">networkD3</a></span><span class="op">)</span></code></pre></div>
 <div id="introduction-2" class="section level2">
 <h2>
-<span class="header-section-number">31.1</span> Introduction<a class="anchor" aria-label="anchor" href="#introduction-2"><i class="fas fa-link"></i></a>
+<span class="header-section-number">32.1</span> Introduction<a class="anchor" aria-label="anchor" href="#introduction-2"><i class="fas fa-link"></i></a>
 </h2>
 <p>This rmd file incorporates a hand-by-hand tutorial about several useful tools to create interactive figures via multiple popular toolboxes. Though pretty attractive as well as persuasive during the data presentation, the creation of interactive diagrams is seldom mentioned during the lecture. Thus, I self-learnt a couple of useful tools and decided to make a detailed tutorial about how to create interactive diagrams.</p>
 <p>Commonly, compared with the data selection, critical parameters determining the appearances and styles of the diagrams, such as the spline of the line or size of dots, are even more difficult to decide. Sometimes, it may be too laborious to alter the function parameters one-by-one and check the output. Hence, an interactive graph may be pretty helpful in this condition, which enables you to flexibly modify the appearances of the graphs. Moreover, during the data presentation, an interactive graph could also facilitate to emphasize specific characteristics as well as overall patterns of the graph.</p>
@@ -132,7 +133,7 @@
 </div>
 <div id="create-interactive-graphs-via-ggvis" class="section level2">
 <h2>
-<span class="header-section-number">31.2</span> Create Interactive Graphs via <code>ggvis</code><a class="anchor" aria-label="anchor" href="#create-interactive-graphs-via-ggvis"><i class="fas fa-link"></i></a>
+<span class="header-section-number">32.2</span> Create Interactive Graphs via <code>ggvis</code><a class="anchor" aria-label="anchor" href="#create-interactive-graphs-via-ggvis"><i class="fas fa-link"></i></a>
 </h2>
 <p>The library <code>ggvis</code> is similar to <code>ggplot2</code> from some extents, but it’s expressed a little differently, and adds new features to make your plots interactive.</p>
 <p>The graphics produced by <code>ggvis</code> are mostly web graphics and work very differently from traditional R graphics. The presentation of graphs becomes various and fabulous, yet more computationally costly. For example, every interactive <code>ggvis</code> plot must be connected to a running R session (static plots do not need a running R session to be viewed). This is great for exploration, because you can do anything in your interactive plot you can do in R, but it’s not so great for publication. We will overcome these issues in time, but for now be aware that we have many existing tools to reimplement before you can do everything with <code>ggvis</code> that you can do with base graphics.</p>
@@ -1281,7 +1282,7 @@ ggvis.getPlot("plot_id457435926").parseSpec(plot_id457435926_spec);
 </div>
 <div id="create-interactive-graphs-via-plotly" class="section level2">
 <h2>
-<span class="header-section-number">31.3</span> Create Interactive Graphs via <code>plotly</code><a class="anchor" aria-label="anchor" href="#create-interactive-graphs-via-plotly"><i class="fas fa-link"></i></a>
+<span class="header-section-number">32.3</span> Create Interactive Graphs via <code>plotly</code><a class="anchor" aria-label="anchor" href="#create-interactive-graphs-via-plotly"><i class="fas fa-link"></i></a>
 </h2>
 <p>Similar to <code>ggvis</code>, <code>plotly</code> is also a powerful tool to create interactive graphs. Compared with conventional <code>ggplot</code> and <code>ggvis</code>, it could create more complicated as well as vivid graphs based on data from various sources.</p>
 <p>At first, please run the code below to install the package. (Since the installation of all packages are installed at the top of this file, if you do not mind, please uncomment the following contents to install them)</p>
@@ -1406,7 +1407,7 @@ ggvis.getPlot("plot_id457435926").parseSpec(plot_id457435926_spec);
 </div>
 <div id="create-interactive-graphs-via-networkd3" class="section level2">
 <h2>
-<span class="header-section-number">31.4</span> Create Interactive Graphs via <code>networkD3</code><a class="anchor" aria-label="anchor" href="#create-interactive-graphs-via-networkd3"><i class="fas fa-link"></i></a>
+<span class="header-section-number">32.4</span> Create Interactive Graphs via <code>networkD3</code><a class="anchor" aria-label="anchor" href="#create-interactive-graphs-via-networkd3"><i class="fas fa-link"></i></a>
 </h2>
 <p>While packages such as <code>ggplot2</code> and <code>ggvis</code> or <code>plotly</code> that mostly focus on presenting the values of the given data, the package <code>networkD3</code> specializes in demonstrating the relationship of the data by tree diagrams or network diagrams. In addition, as these kinds of diagrams are relatively structured and simple in their form, the interactive pattern in this package may let you flexibly manipulate the diaragm to highlight certain parts.</p>
 <p>At first, please run the code chunk below to install packages and import the libraries. (Since the installation of all packages are installed at the top of this file, if you do not mind, please uncomment the following contents to install them)</p>
@@ -1446,13 +1447,13 @@ ggvis.getPlot("plot_id457435926").parseSpec(plot_id457435926_spec);
 </div>
 <div id="conclusion" class="section level2">
 <h2>
-<span class="header-section-number">31.5</span> Conclusion<a class="anchor" aria-label="anchor" href="#conclusion"><i class="fas fa-link"></i></a>
+<span class="header-section-number">32.5</span> Conclusion<a class="anchor" aria-label="anchor" href="#conclusion"><i class="fas fa-link"></i></a>
 </h2>
 <p>To summarize, there are still a number of fantastic tools to create interactive graphs, in addition to <code>ggvis</code>, <code>plotly</code>, and <code>networkD3</code>. However, if your could master most functions mentioned in this tutorial, it would be quite convenient to produce nice graphs in your projects.</p>
 </div>
 <div id="reference-4" class="section level2">
 <h2>
-<span class="header-section-number">31.6</span> Reference<a class="anchor" aria-label="anchor" href="#reference-4"><i class="fas fa-link"></i></a>
+<span class="header-section-number">32.6</span> Reference<a class="anchor" aria-label="anchor" href="#reference-4"><i class="fas fa-link"></i></a>
 </h2>
 <p>Plotly R Graphing Library. (2021). R | Plotly. <a href="https://plotly.com/r/" class="uri">https://plotly.com/r/</a>
 Gandrud, Christopher. (2017). christophergandrud. <a href="http://christophergandrud.github.io/networkD3/" class="uri">http://christophergandrud.github.io/networkD3/</a></p>
@@ -1460,18 +1461,18 @@ Gandrud, Christopher. (2017). christophergandrud. <a href="http://christophergan
 </div>
 </div>
   <div class="chapter-nav">
-<div class="prev"><a href="streamlit-for-financial-analysis.html"><span class="header-section-number">30</span> Streamlit for Financial Analysis</a></div>
-<div class="next"><a href="guideline-on-using-package-rcurl-and-xml-for-web-scraping.html"><span class="header-section-number">32</span> Guideline on Using Package Rcurl and XML for Web Scraping</a></div>
+<div class="prev"><a href="streamlit-for-financial-analysis.html"><span class="header-section-number">31</span> Streamlit for Financial Analysis</a></div>
+<div class="next"><a href="guideline-on-using-package-rcurl-and-xml-for-web-scraping.html"><span class="header-section-number">33</span> Guideline on Using Package Rcurl and XML for Web Scraping</a></div>
 </div></main><div class="col-md-3 col-lg-2 d-none d-md-block sidebar sidebar-chapter">
     <nav id="toc" data-toggle="toc" aria-label="On this page"><h2>On this page</h2>
       <ul class="nav navbar-nav">
-<li><a class="nav-link" href="#interactive-graphs-tutorial"><span class="header-section-number">31</span> Interactive graphs tutorial</a></li>
-<li><a class="nav-link" href="#introduction-2"><span class="header-section-number">31.1</span> Introduction</a></li>
-<li><a class="nav-link" href="#create-interactive-graphs-via-ggvis"><span class="header-section-number">31.2</span> Create Interactive Graphs via ggvis</a></li>
-<li><a class="nav-link" href="#create-interactive-graphs-via-plotly"><span class="header-section-number">31.3</span> Create Interactive Graphs via plotly</a></li>
-<li><a class="nav-link" href="#create-interactive-graphs-via-networkd3"><span class="header-section-number">31.4</span> Create Interactive Graphs via networkD3</a></li>
-<li><a class="nav-link" href="#conclusion"><span class="header-section-number">31.5</span> Conclusion</a></li>
-<li><a class="nav-link" href="#reference-4"><span class="header-section-number">31.6</span> Reference</a></li>
+<li><a class="nav-link" href="#interactive-graphs-tutorial"><span class="header-section-number">32</span> Interactive graphs tutorial</a></li>
+<li><a class="nav-link" href="#introduction-2"><span class="header-section-number">32.1</span> Introduction</a></li>
+<li><a class="nav-link" href="#create-interactive-graphs-via-ggvis"><span class="header-section-number">32.2</span> Create Interactive Graphs via ggvis</a></li>
+<li><a class="nav-link" href="#create-interactive-graphs-via-plotly"><span class="header-section-number">32.3</span> Create Interactive Graphs via plotly</a></li>
+<li><a class="nav-link" href="#create-interactive-graphs-via-networkd3"><span class="header-section-number">32.4</span> Create Interactive Graphs via networkD3</a></li>
+<li><a class="nav-link" href="#conclusion"><span class="header-section-number">32.5</span> Conclusion</a></li>
+<li><a class="nav-link" href="#reference-4"><span class="header-section-number">32.6</span> Reference</a></li>
 </ul>
 
       <div class="book-extra">
