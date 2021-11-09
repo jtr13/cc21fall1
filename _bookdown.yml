@@ -60,6 +60,7 @@ rmd_files: [
   'parallel_coordinate_plots_ggplot2.Rmd',
   'using_ggplot_in_python.Rmd',
   'icons_and_symbols_in_r.Rmd',
+  'r_for_data_challenges.Rmd',
 
   # Part: Demonstrations
   'linear_association.Rmd', # contains PART header
@@ -73,4 +74,3 @@ rmd_files: [
   'appendix_pull_request_tutorial.Rmd'
 
 ]
-
