@@ -82,6 +82,7 @@ Imports:
     RCurl,
     rmarkdown,
     rpart,
+    rsvg,
     rtweet,
     scales,
     shiny,

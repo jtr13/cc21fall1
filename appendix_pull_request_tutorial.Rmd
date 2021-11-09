@@ -109,9 +109,11 @@ If all is good to go, it's time to merge the pull request. There are several ste
 
 - Come back to the PR.
 
-- Tag the PR Assigners so that they can review and check the final version.
+- Merge the PR.
 
-- Once they review it, they will tag the assigned person to proceed forward with the merge process.
+- Click on the Actions tabs and check whether the build has been successful (A successful build will have a green dot in front of the actions). PLEASE NOTE that the actions take a while to complete (approximately 5-6 mins depending on the number of files to be rendered), so you might need to wait for some time to finally check whether the build was successful or not.
+
+- In case the build fail and you are not able to understand or rectify it please tag one of the PR Assigners so that they can review it. PLEASE DO NOT `revert merge` as it would create new branches in the workflow.
 
 <!-- - **delete everything in the file beginning with `rmd_files: [` and then add the name of the new file in single quotes followed by a comma:**
 
