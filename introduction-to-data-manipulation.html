@@ -4,16 +4,16 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<title>Chapter 33 Introduction to Data Manipulation | EDAV Fall 2021 Mon/Wed Community Contributions</title>
+<title>Chapter 34 Introduction to Data Manipulation | EDAV Fall 2021 Mon/Wed Community Contributions</title>
 <meta name="author" content="the students of the class">
-<meta name="description" content="Yuhe Wang library(tidyverse) library(fueleconomy) library(tidyverse) library(lubridate)  33.1 Data Wrangling with dplyr  33.1.1 Pipe: Here we use %&gt;% as pipeline. a %&gt;% operation(…) ==...">
+<meta name="description" content="Yuhe Wang library(tidyverse) library(fueleconomy) library(tidyverse) library(lubridate)  34.1 Data Wrangling with dplyr  34.1.1 Pipe: Here we use %&gt;% as pipeline. a %&gt;% operation(…) ==...">
 <meta name="generator" content="bookdown 0.24 with bs4_book()">
-<meta property="og:title" content="Chapter 33 Introduction to Data Manipulation | EDAV Fall 2021 Mon/Wed Community Contributions">
+<meta property="og:title" content="Chapter 34 Introduction to Data Manipulation | EDAV Fall 2021 Mon/Wed Community Contributions">
 <meta property="og:type" content="book">
-<meta property="og:description" content="Yuhe Wang library(tidyverse) library(fueleconomy) library(tidyverse) library(lubridate)  33.1 Data Wrangling with dplyr  33.1.1 Pipe: Here we use %&gt;% as pipeline. a %&gt;% operation(…) ==...">
+<meta property="og:description" content="Yuhe Wang library(tidyverse) library(fueleconomy) library(tidyverse) library(lubridate)  34.1 Data Wrangling with dplyr  34.1.1 Pipe: Here we use %&gt;% as pipeline. a %&gt;% operation(…) ==...">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Chapter 33 Introduction to Data Manipulation | EDAV Fall 2021 Mon/Wed Community Contributions">
-<meta name="twitter:description" content="Yuhe Wang library(tidyverse) library(fueleconomy) library(tidyverse) library(lubridate)  33.1 Data Wrangling with dplyr  33.1.1 Pipe: Here we use %&gt;% as pipeline. a %&gt;% operation(…) ==...">
+<meta name="twitter:title" content="Chapter 34 Introduction to Data Manipulation | EDAV Fall 2021 Mon/Wed Community Contributions">
+<meta name="twitter:description" content="Yuhe Wang library(tidyverse) library(fueleconomy) library(tidyverse) library(lubridate)  34.1 Data Wrangling with dplyr  34.1.1 Pipe: Here we use %&gt;% as pipeline. a %&gt;% operation(…) ==...">
 <!-- JS --><script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.6/clipboard.min.js" integrity="sha256-inc5kl9MA1hkeYUt+EC3BhlIgyp/2jDIyBLS6k3UxPI=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/fuse.js/6.4.6/fuse.js" integrity="sha512-zv6Ywkjyktsohkbp9bb45V6tEMoWhzFzXis+LrMehmJZZSys19Yxf1dopHx7WzIKxr5tK2dVcYmaCk2uqdjF4A==" crossorigin="anonymous"></script><script src="https://kit.fontawesome.com/6ecbd6c532.js" crossorigin="anonymous"></script><script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <link href="libs/bootstrap-4.6.0/bootstrap.min.css" rel="stylesheet">
 <script src="libs/bootstrap-4.6.0/bootstrap.bundle.min.js"></script><script src="libs/bs3compat-0.3.1/transition.js"></script><script src="libs/bs3compat-0.3.1/tabs.js"></script><script src="libs/bs3compat-0.3.1/bs3compat.js"></script><link href="libs/bs4_book-1.0.0/bs4_book.css" rel="stylesheet">
@@ -70,34 +70,35 @@
 <li><a class="" href="parallel-coordinates-plot-cheatsheet.html"><span class="header-section-number">20</span> Parallel coordinates plot cheatsheet</a></li>
 <li><a class="" href="r-data-science-workflow-cheatsheet.html"><span class="header-section-number">21</span> R Data Science Workflow CheatSheet</a></li>
 <li><a class="" href="a-linear-regression-bestiary.html"><span class="header-section-number">22</span> A linear regression Bestiary</a></li>
+<li><a class="" href="graphql-cheat-sheet.html"><span class="header-section-number">23</span> GraphQL Cheat Sheet</a></li>
 <li class="book-part">Tutorials</li>
-<li><a class="" href="multithreading-crawler-frame.html"><span class="header-section-number">23</span> Multithreading Crawler Frame</a></li>
-<li><a class="" href="regression-and-classification-in-r.html"><span class="header-section-number">24</span> Regression and Classification in R</a></li>
-<li><a class="" href="tibble-vs.-dataframe.html"><span class="header-section-number">25</span> Tibble vs. DataFrame</a></li>
-<li><a class="" href="introduction-to-time-series.html"><span class="header-section-number">26</span> Introduction to Time Series</a></li>
-<li><a class="" href="vipul-edav-community-contribution-kickstart-r.html"><span class="header-section-number">27</span> Vipul EDAV Community Contribution Kickstart R</a></li>
-<li><a class="" href="caret---a-machine-learning-package-turotial.html"><span class="header-section-number">28</span> caret - a machine learning package turotial</a></li>
-<li><a class="" href="streamlit-for-financial-analysis.html"><span class="header-section-number">29</span> Streamlit for Financial Analysis</a></li>
-<li><a class="" href="interactive-graphs-tutorial.html"><span class="header-section-number">30</span> Interactive graphs tutorial</a></li>
-<li><a class="" href="guideline-on-using-package-rcurl-and-xml-for-web-scraping.html"><span class="header-section-number">31</span> Guideline on Using Package Rcurl and XML for Web Scraping</a></li>
-<li><a class="" href="twitter-r-package-scraping-via-api-tutorial.html"><span class="header-section-number">32</span> TwitteR R Package Scraping via API Tutorial</a></li>
-<li><a class="active" href="introduction-to-data-manipulation.html"><span class="header-section-number">33</span> Introduction to Data Manipulation</a></li>
-<li><a class="" href="animating-the-plots-in-r.html"><span class="header-section-number">34</span> Animating the plots in R</a></li>
-<li><a class="" href="quick-guide-to-eda.html"><span class="header-section-number">35</span> Quick guide to eda</a></li>
-<li><a class="" href="natural-langauge-processing-common-eda-practices-in-python.html"><span class="header-section-number">36</span> Natural Langauge Processing Common EDA Practices in Python</a></li>
-<li><a class="" href="beginners-walk-through-of-deep-learning-in-r.html"><span class="header-section-number">37</span> Beginner’s Walk-through of Deep Learning in R</a></li>
-<li><a class="" href="supervised-learning-tutorial.html"><span class="header-section-number">38</span> Supervised Learning Tutorial</a></li>
-<li><a class="" href="parallel-coordinate-plots-in-ggplot2.html"><span class="header-section-number">39</span> Parallel Coordinate Plots in ggplot2</a></li>
-<li><a class="" href="using-ggplot-in-python.html"><span class="header-section-number">40</span> Using ggplot in python</a></li>
-<li><a class="" href="icons-and-symbols-in-r.html"><span class="header-section-number">41</span> Icons and symbols in R</a></li>
+<li><a class="" href="multithreading-crawler-frame.html"><span class="header-section-number">24</span> Multithreading Crawler Frame</a></li>
+<li><a class="" href="regression-and-classification-in-r.html"><span class="header-section-number">25</span> Regression and Classification in R</a></li>
+<li><a class="" href="tibble-vs.-dataframe.html"><span class="header-section-number">26</span> Tibble vs. DataFrame</a></li>
+<li><a class="" href="introduction-to-time-series.html"><span class="header-section-number">27</span> Introduction to Time Series</a></li>
+<li><a class="" href="vipul-edav-community-contribution-kickstart-r.html"><span class="header-section-number">28</span> Vipul EDAV Community Contribution Kickstart R</a></li>
+<li><a class="" href="caret---a-machine-learning-package-turotial.html"><span class="header-section-number">29</span> caret - a machine learning package turotial</a></li>
+<li><a class="" href="streamlit-for-financial-analysis.html"><span class="header-section-number">30</span> Streamlit for Financial Analysis</a></li>
+<li><a class="" href="interactive-graphs-tutorial.html"><span class="header-section-number">31</span> Interactive graphs tutorial</a></li>
+<li><a class="" href="guideline-on-using-package-rcurl-and-xml-for-web-scraping.html"><span class="header-section-number">32</span> Guideline on Using Package Rcurl and XML for Web Scraping</a></li>
+<li><a class="" href="twitter-r-package-scraping-via-api-tutorial.html"><span class="header-section-number">33</span> TwitteR R Package Scraping via API Tutorial</a></li>
+<li><a class="active" href="introduction-to-data-manipulation.html"><span class="header-section-number">34</span> Introduction to Data Manipulation</a></li>
+<li><a class="" href="animating-the-plots-in-r.html"><span class="header-section-number">35</span> Animating the plots in R</a></li>
+<li><a class="" href="quick-guide-to-eda.html"><span class="header-section-number">36</span> Quick guide to eda</a></li>
+<li><a class="" href="natural-langauge-processing-common-eda-practices-in-python.html"><span class="header-section-number">37</span> Natural Langauge Processing Common EDA Practices in Python</a></li>
+<li><a class="" href="beginners-walk-through-of-deep-learning-in-r.html"><span class="header-section-number">38</span> Beginner’s Walk-through of Deep Learning in R</a></li>
+<li><a class="" href="supervised-learning-tutorial.html"><span class="header-section-number">39</span> Supervised Learning Tutorial</a></li>
+<li><a class="" href="parallel-coordinate-plots-in-ggplot2.html"><span class="header-section-number">40</span> Parallel Coordinate Plots in ggplot2</a></li>
+<li><a class="" href="using-ggplot-in-python.html"><span class="header-section-number">41</span> Using ggplot in python</a></li>
+<li><a class="" href="icons-and-symbols-in-r.html"><span class="header-section-number">42</span> Icons and symbols in R</a></li>
 <li class="book-part">Demonstrations</li>
-<li><a class="" href="linear-association-r-studio-plugin.html"><span class="header-section-number">42</span> Linear Association R Studio Plugin</a></li>
-<li><a class="" href="customized-sorting-in-r.html"><span class="header-section-number">43</span> Customized Sorting in R</a></li>
+<li><a class="" href="linear-association-r-studio-plugin.html"><span class="header-section-number">43</span> Linear Association R Studio Plugin</a></li>
+<li><a class="" href="customized-sorting-in-r.html"><span class="header-section-number">44</span> Customized Sorting in R</a></li>
 <li class="book-part">Workshops</li>
-<li><a class="" href="data-science-product-cycles-in-enterprises.html"><span class="header-section-number">44</span> Data Science Product Cycles in Enterprises</a></li>
+<li><a class="" href="data-science-product-cycles-in-enterprises.html"><span class="header-section-number">45</span> Data Science Product Cycles in Enterprises</a></li>
 <li class="book-part">Appendices</li>
-<li><a class="" href="github-initial-setup.html"><span class="header-section-number">45</span> Github initial setup</a></li>
-<li><a class="" href="tutorial-for-pull-request-mergers.html"><span class="header-section-number">46</span> Tutorial for pull request mergers</a></li>
+<li><a class="" href="github-initial-setup.html"><span class="header-section-number">46</span> Github initial setup</a></li>
+<li><a class="" href="tutorial-for-pull-request-mergers.html"><span class="header-section-number">47</span> Tutorial for pull request mergers</a></li>
 </ul>
 
         <div class="book-extra">
@@ -107,7 +108,7 @@
 </div>
   </header><main class="col-sm-12 col-md-9 col-lg-7" id="content"><div id="introduction-to-data-manipulation" class="section level1">
 <h1>
-<span class="header-section-number">33</span> Introduction to Data Manipulation<a class="anchor" aria-label="anchor" href="#introduction-to-data-manipulation"><i class="fas fa-link"></i></a>
+<span class="header-section-number">34</span> Introduction to Data Manipulation<a class="anchor" aria-label="anchor" href="#introduction-to-data-manipulation"><i class="fas fa-link"></i></a>
 </h1>
 <p>Yuhe Wang</p>
 <div class="sourceCode" id="cb436"><pre class="downlit sourceCode r">
@@ -117,17 +118,17 @@
 <span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://lubridate.tidyverse.org">lubridate</a></span><span class="op">)</span></code></pre></div>
 <div id="data-wrangling-with-dplyr" class="section level2">
 <h2>
-<span class="header-section-number">33.1</span> Data Wrangling with dplyr<a class="anchor" aria-label="anchor" href="#data-wrangling-with-dplyr"><i class="fas fa-link"></i></a>
+<span class="header-section-number">34.1</span> Data Wrangling with dplyr<a class="anchor" aria-label="anchor" href="#data-wrangling-with-dplyr"><i class="fas fa-link"></i></a>
 </h2>
 <div id="pipe" class="section level3">
 <h3>
-<span class="header-section-number">33.1.1</span> Pipe:<a class="anchor" aria-label="anchor" href="#pipe"><i class="fas fa-link"></i></a>
+<span class="header-section-number">34.1.1</span> Pipe:<a class="anchor" aria-label="anchor" href="#pipe"><i class="fas fa-link"></i></a>
 </h3>
 <p>Here we use %&gt;% as pipeline. a %&gt;% operation(…) == operation(a, ….)</p>
 </div>
 <div id="tibble-6" class="section level3">
 <h3>
-<span class="header-section-number">33.1.2</span> Tibble<a class="anchor" aria-label="anchor" href="#tibble-6"><i class="fas fa-link"></i></a>
+<span class="header-section-number">34.1.2</span> Tibble<a class="anchor" aria-label="anchor" href="#tibble-6"><i class="fas fa-link"></i></a>
 </h3>
 <p>Tibble is a type of data structure that is similar to data frame in base R.Compared to normal dataframee, tibble never changes the type of the input, or the names of the variables, or the row names.</p>
 <div class="sourceCode" id="cb437"><pre class="downlit sourceCode r">
@@ -143,7 +144,7 @@
 </div>
 <div id="pick-observations-with-filter" class="section level3">
 <h3>
-<span class="header-section-number">33.1.3</span> Pick observations with filter()<a class="anchor" aria-label="anchor" href="#pick-observations-with-filter"><i class="fas fa-link"></i></a>
+<span class="header-section-number">34.1.3</span> Pick observations with filter()<a class="anchor" aria-label="anchor" href="#pick-observations-with-filter"><i class="fas fa-link"></i></a>
 </h3>
 <p>R provides standard suites: &lt;, &gt;=, &lt;=, !=, ==, %in% for you to apply conditions on rows</p>
 <div class="sourceCode" id="cb439"><pre class="downlit sourceCode r">
@@ -165,7 +166,7 @@
 </div>
 <div id="reorder-rows-with-arrange" class="section level3">
 <h3>
-<span class="header-section-number">33.1.4</span> Reorder rows with arrange()<a class="anchor" aria-label="anchor" href="#reorder-rows-with-arrange"><i class="fas fa-link"></i></a>
+<span class="header-section-number">34.1.4</span> Reorder rows with arrange()<a class="anchor" aria-label="anchor" href="#reorder-rows-with-arrange"><i class="fas fa-link"></i></a>
 </h3>
 <div class="sourceCode" id="cb441"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="va">vehicles</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> <span class="fu"><a href="https://dplyr.tidyverse.org/reference/arrange.html">arrange</a></span><span class="op">(</span><span class="va">year</span>,<span class="va">class</span>,<span class="va">trans</span><span class="op">)</span></code></pre></div>
@@ -186,7 +187,7 @@
 </div>
 <div id="create-new-variables-using-mutate" class="section level3">
 <h3>
-<span class="header-section-number">33.1.5</span> Create new variables using mutate()<a class="anchor" aria-label="anchor" href="#create-new-variables-using-mutate"><i class="fas fa-link"></i></a>
+<span class="header-section-number">34.1.5</span> Create new variables using mutate()<a class="anchor" aria-label="anchor" href="#create-new-variables-using-mutate"><i class="fas fa-link"></i></a>
 </h3>
 <div class="sourceCode" id="cb443"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="va">vehicles</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> <span class="fu"><a href="https://dplyr.tidyverse.org/reference/mutate.html">mutate</a></span><span class="op">(</span>cyl_2 <span class="op">=</span> <span class="va">cyl</span><span class="op">*</span><span class="fl">2</span><span class="op">)</span></code></pre></div>
@@ -207,7 +208,7 @@
 </div>
 <div id="create-new-calculations-by-catgories-using-summarize" class="section level3">
 <h3>
-<span class="header-section-number">33.1.6</span> Create new calculations by catgories using summarize()<a class="anchor" aria-label="anchor" href="#create-new-calculations-by-catgories-using-summarize"><i class="fas fa-link"></i></a>
+<span class="header-section-number">34.1.6</span> Create new calculations by catgories using summarize()<a class="anchor" aria-label="anchor" href="#create-new-calculations-by-catgories-using-summarize"><i class="fas fa-link"></i></a>
 </h3>
 <p>We can use summarize to get some statistics for different groups. In the following example, we are getting average of difference between air time and scheduled air time, grouped by different carriers. Note that we have to add “na.rm” inside a functio to remove NA, else we will see a lot of NAs.<br>
 Common operation functions:<br>
@@ -245,11 +246,11 @@ sum(): sum<br></p>
 </div>
 <div id="tidy-data-with-dplyr" class="section level2">
 <h2>
-<span class="header-section-number">33.2</span> Tidy Data with dplyr<a class="anchor" aria-label="anchor" href="#tidy-data-with-dplyr"><i class="fas fa-link"></i></a>
+<span class="header-section-number">34.2</span> Tidy Data with dplyr<a class="anchor" aria-label="anchor" href="#tidy-data-with-dplyr"><i class="fas fa-link"></i></a>
 </h2>
 <div id="gatherspread" class="section level3">
 <h3>
-<span class="header-section-number">33.2.1</span> Gather/Spread<a class="anchor" aria-label="anchor" href="#gatherspread"><i class="fas fa-link"></i></a>
+<span class="header-section-number">34.2.1</span> Gather/Spread<a class="anchor" aria-label="anchor" href="#gatherspread"><i class="fas fa-link"></i></a>
 </h3>
 <p>We can reshape table from wide format into long format using Gather. We can reshape table from wide format into long format using Sprea vice versa. (The following example is untrue data)</p>
 <div class="sourceCode" id="cb447"><pre class="downlit sourceCode r">
@@ -275,7 +276,7 @@ sum(): sum<br></p>
 </div>
 <div id="seperateunite" class="section level3">
 <h3>
-<span class="header-section-number">33.2.2</span> Seperate/Unite<a class="anchor" aria-label="anchor" href="#seperateunite"><i class="fas fa-link"></i></a>
+<span class="header-section-number">34.2.2</span> Seperate/Unite<a class="anchor" aria-label="anchor" href="#seperateunite"><i class="fas fa-link"></i></a>
 </h3>
 <p>We can combine/separate values in one column into two, or two into one(using some special characters). We can add a parameter of “convert=TRUE” to convert chars to integer directly.</p>
 <div class="sourceCode" id="cb451"><pre class="downlit sourceCode r">
@@ -291,17 +292,17 @@ sum(): sum<br></p>
 </div>
 <div id="relational-data-with-dplyr" class="section level2">
 <h2>
-<span class="header-section-number">33.3</span> Relational Data with dplyr<a class="anchor" aria-label="anchor" href="#relational-data-with-dplyr"><i class="fas fa-link"></i></a>
+<span class="header-section-number">34.3</span> Relational Data with dplyr<a class="anchor" aria-label="anchor" href="#relational-data-with-dplyr"><i class="fas fa-link"></i></a>
 </h2>
 <div id="prerequisites" class="section level3">
 <h3>
-<span class="header-section-number">33.3.1</span> prerequisites<a class="anchor" aria-label="anchor" href="#prerequisites"><i class="fas fa-link"></i></a>
+<span class="header-section-number">34.3.1</span> prerequisites<a class="anchor" aria-label="anchor" href="#prerequisites"><i class="fas fa-link"></i></a>
 </h3>
 <p>KEYS in DBMS is an attribute or set of attributes which helps you to identify a row or a relation. A primary key uniquely identifies an observation. A foreign key uniquely identify an observation in another table. Join between two table usually takes place between two keys within different tables to ensure single join.</p>
 </div>
 <div id="understanding-different-types-of-joins" class="section level3">
 <h3>
-<span class="header-section-number">33.3.2</span> Understanding different types of joins<a class="anchor" aria-label="anchor" href="#understanding-different-types-of-joins"><i class="fas fa-link"></i></a>
+<span class="header-section-number">34.3.2</span> Understanding different types of joins<a class="anchor" aria-label="anchor" href="#understanding-different-types-of-joins"><i class="fas fa-link"></i></a>
 </h3>
 <p>x () y
 inner join: only return the matching pairs existing in both tables
@@ -354,14 +355,14 @@ Note that only one of the tables can have duplicate keys. If both of the tables 
 </div>
 <div id="datetime-with-lubridate" class="section level2">
 <h2>
-<span class="header-section-number">33.4</span> Datetime with Lubridate<a class="anchor" aria-label="anchor" href="#datetime-with-lubridate"><i class="fas fa-link"></i></a>
+<span class="header-section-number">34.4</span> Datetime with Lubridate<a class="anchor" aria-label="anchor" href="#datetime-with-lubridate"><i class="fas fa-link"></i></a>
 </h2>
 <div class="sourceCode" id="cb462"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://tidyverse.tidyverse.org">tidyverse</a></span><span class="op">)</span>
 <span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://lubridate.tidyverse.org">lubridate</a></span><span class="op">)</span></code></pre></div>
 <div id="datetime-from-strings" class="section level3">
 <h3>
-<span class="header-section-number">33.4.1</span> Datetime from strings<a class="anchor" aria-label="anchor" href="#datetime-from-strings"><i class="fas fa-link"></i></a>
+<span class="header-section-number">34.4.1</span> Datetime from strings<a class="anchor" aria-label="anchor" href="#datetime-from-strings"><i class="fas fa-link"></i></a>
 </h3>
 <p>Lubridate is able to parse different format of datetime strings</p>
 <div class="sourceCode" id="cb463"><pre class="downlit sourceCode r">
@@ -405,7 +406,7 @@ Note that only one of the tables can have duplicate keys. If both of the tables 
 </div>
 <div id="timespan" class="section level3">
 <h3>
-<span class="header-section-number">33.4.2</span> Timespan<a class="anchor" aria-label="anchor" href="#timespan"><i class="fas fa-link"></i></a>
+<span class="header-section-number">34.4.2</span> Timespan<a class="anchor" aria-label="anchor" href="#timespan"><i class="fas fa-link"></i></a>
 </h3>
 <p>Duration: exact number of seconds<br>
 Periods: human units (week and months)<br>
@@ -441,11 +442,11 @@ Intervals: starting and ending point<br></p>
 </div>
 <div id="string-manipulations-with-stringr" class="section level2">
 <h2>
-<span class="header-section-number">33.5</span> String manipulations with stringr<a class="anchor" aria-label="anchor" href="#string-manipulations-with-stringr"><i class="fas fa-link"></i></a>
+<span class="header-section-number">34.5</span> String manipulations with stringr<a class="anchor" aria-label="anchor" href="#string-manipulations-with-stringr"><i class="fas fa-link"></i></a>
 </h2>
 <div id="matching-patterns" class="section level3">
 <h3>
-<span class="header-section-number">33.5.1</span> Matching Patterns<a class="anchor" aria-label="anchor" href="#matching-patterns"><i class="fas fa-link"></i></a>
+<span class="header-section-number">34.5.1</span> Matching Patterns<a class="anchor" aria-label="anchor" href="#matching-patterns"><i class="fas fa-link"></i></a>
 </h3>
 <p>We can do regular expression matching in R easily too.
 string_view() is a very useful function that showcase string patterns. The first input will be input variable, the second input will be the string that we are trying to match. The following regular expression matches will be introduced using this method.<br></p>
@@ -524,42 +525,42 @@ string_view() is a very useful function that showcase string patterns. The first
 </div>
 </div>
   <div class="chapter-nav">
-<div class="prev"><a href="twitter-r-package-scraping-via-api-tutorial.html"><span class="header-section-number">32</span> TwitteR R Package Scraping via API Tutorial</a></div>
-<div class="next"><a href="animating-the-plots-in-r.html"><span class="header-section-number">34</span> Animating the plots in R</a></div>
+<div class="prev"><a href="twitter-r-package-scraping-via-api-tutorial.html"><span class="header-section-number">33</span> TwitteR R Package Scraping via API Tutorial</a></div>
+<div class="next"><a href="animating-the-plots-in-r.html"><span class="header-section-number">35</span> Animating the plots in R</a></div>
 </div></main><div class="col-md-3 col-lg-2 d-none d-md-block sidebar sidebar-chapter">
     <nav id="toc" data-toggle="toc" aria-label="On this page"><h2>On this page</h2>
       <ul class="nav navbar-nav">
-<li><a class="nav-link" href="#introduction-to-data-manipulation"><span class="header-section-number">33</span> Introduction to Data Manipulation</a></li>
+<li><a class="nav-link" href="#introduction-to-data-manipulation"><span class="header-section-number">34</span> Introduction to Data Manipulation</a></li>
 <li>
-<a class="nav-link" href="#data-wrangling-with-dplyr"><span class="header-section-number">33.1</span> Data Wrangling with dplyr</a><ul class="nav navbar-nav">
-<li><a class="nav-link" href="#pipe"><span class="header-section-number">33.1.1</span> Pipe:</a></li>
-<li><a class="nav-link" href="#tibble-6"><span class="header-section-number">33.1.2</span> Tibble</a></li>
-<li><a class="nav-link" href="#pick-observations-with-filter"><span class="header-section-number">33.1.3</span> Pick observations with filter()</a></li>
-<li><a class="nav-link" href="#reorder-rows-with-arrange"><span class="header-section-number">33.1.4</span> Reorder rows with arrange()</a></li>
-<li><a class="nav-link" href="#create-new-variables-using-mutate"><span class="header-section-number">33.1.5</span> Create new variables using mutate()</a></li>
-<li><a class="nav-link" href="#create-new-calculations-by-catgories-using-summarize"><span class="header-section-number">33.1.6</span> Create new calculations by catgories using summarize()</a></li>
+<a class="nav-link" href="#data-wrangling-with-dplyr"><span class="header-section-number">34.1</span> Data Wrangling with dplyr</a><ul class="nav navbar-nav">
+<li><a class="nav-link" href="#pipe"><span class="header-section-number">34.1.1</span> Pipe:</a></li>
+<li><a class="nav-link" href="#tibble-6"><span class="header-section-number">34.1.2</span> Tibble</a></li>
+<li><a class="nav-link" href="#pick-observations-with-filter"><span class="header-section-number">34.1.3</span> Pick observations with filter()</a></li>
+<li><a class="nav-link" href="#reorder-rows-with-arrange"><span class="header-section-number">34.1.4</span> Reorder rows with arrange()</a></li>
+<li><a class="nav-link" href="#create-new-variables-using-mutate"><span class="header-section-number">34.1.5</span> Create new variables using mutate()</a></li>
+<li><a class="nav-link" href="#create-new-calculations-by-catgories-using-summarize"><span class="header-section-number">34.1.6</span> Create new calculations by catgories using summarize()</a></li>
 </ul>
 </li>
 <li>
-<a class="nav-link" href="#tidy-data-with-dplyr"><span class="header-section-number">33.2</span> Tidy Data with dplyr</a><ul class="nav navbar-nav">
-<li><a class="nav-link" href="#gatherspread"><span class="header-section-number">33.2.1</span> Gather/Spread</a></li>
-<li><a class="nav-link" href="#seperateunite"><span class="header-section-number">33.2.2</span> Seperate/Unite</a></li>
+<a class="nav-link" href="#tidy-data-with-dplyr"><span class="header-section-number">34.2</span> Tidy Data with dplyr</a><ul class="nav navbar-nav">
+<li><a class="nav-link" href="#gatherspread"><span class="header-section-number">34.2.1</span> Gather/Spread</a></li>
+<li><a class="nav-link" href="#seperateunite"><span class="header-section-number">34.2.2</span> Seperate/Unite</a></li>
 </ul>
 </li>
 <li>
-<a class="nav-link" href="#relational-data-with-dplyr"><span class="header-section-number">33.3</span> Relational Data with dplyr</a><ul class="nav navbar-nav">
-<li><a class="nav-link" href="#prerequisites"><span class="header-section-number">33.3.1</span> prerequisites</a></li>
-<li><a class="nav-link" href="#understanding-different-types-of-joins"><span class="header-section-number">33.3.2</span> Understanding different types of joins</a></li>
+<a class="nav-link" href="#relational-data-with-dplyr"><span class="header-section-number">34.3</span> Relational Data with dplyr</a><ul class="nav navbar-nav">
+<li><a class="nav-link" href="#prerequisites"><span class="header-section-number">34.3.1</span> prerequisites</a></li>
+<li><a class="nav-link" href="#understanding-different-types-of-joins"><span class="header-section-number">34.3.2</span> Understanding different types of joins</a></li>
 </ul>
 </li>
 <li>
-<a class="nav-link" href="#datetime-with-lubridate"><span class="header-section-number">33.4</span> Datetime with Lubridate</a><ul class="nav navbar-nav">
-<li><a class="nav-link" href="#datetime-from-strings"><span class="header-section-number">33.4.1</span> Datetime from strings</a></li>
-<li><a class="nav-link" href="#timespan"><span class="header-section-number">33.4.2</span> Timespan</a></li>
+<a class="nav-link" href="#datetime-with-lubridate"><span class="header-section-number">34.4</span> Datetime with Lubridate</a><ul class="nav navbar-nav">
+<li><a class="nav-link" href="#datetime-from-strings"><span class="header-section-number">34.4.1</span> Datetime from strings</a></li>
+<li><a class="nav-link" href="#timespan"><span class="header-section-number">34.4.2</span> Timespan</a></li>
 </ul>
 </li>
 <li>
-<a class="nav-link" href="#string-manipulations-with-stringr"><span class="header-section-number">33.5</span> String manipulations with stringr</a><ul class="nav navbar-nav"><li><a class="nav-link" href="#matching-patterns"><span class="header-section-number">33.5.1</span> Matching Patterns</a></li></ul>
+<a class="nav-link" href="#string-manipulations-with-stringr"><span class="header-section-number">34.5</span> String manipulations with stringr</a><ul class="nav navbar-nav"><li><a class="nav-link" href="#matching-patterns"><span class="header-section-number">34.5.1</span> Matching Patterns</a></li></ul>
 </li>
 </ul>
 
@@ -578,7 +579,7 @@ string_view() is a very useful function that showcase string patterns. The first
 <footer class="bg-primary text-light mt-5"><div class="container"><div class="row">
 
   <div class="col-12 col-md-6 mt-3">
-    <p>"<strong>EDAV Fall 2021 Mon/Wed Community Contributions</strong>" was written by the students of the class. It was last built on 2021-11-08.</p>
+    <p>"<strong>EDAV Fall 2021 Mon/Wed Community Contributions</strong>" was written by the students of the class. It was last built on 2021-11-09.</p>
   </div>
 
   <div class="col-12 col-md-6 mt-3">

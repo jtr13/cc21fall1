@@ -135,6 +135,9 @@ ggparallel
 parcoords
 r-data-science-workflow-cheatsheet
 a-linear-regression-bestiary
+graphql-cheat-sheet
+introduction
+github-link
 multithreading-crawler-frame
 regression-and-classification-in-r
 libraries-and-warnings
@@ -143,7 +146,7 @@ data-preprocessing
 regression
 classification
 tibble-vs.-dataframe
-introduction
+introduction-1
 getting-started-with-tibbles
 creating-a-tibble
 unlike-data-frames-tibbles-dont-show-the-entire-dataset-when-you-print-it.
@@ -189,14 +192,14 @@ model-prediction-and-evaluation
 reference-3
 streamlit-for-financial-analysis
 interactive-graphs-tutorial
-introduction-1
+introduction-2
 create-interactive-graphs-via-ggvis
 create-interactive-graphs-via-plotly
 create-interactive-graphs-via-networkd3
 conclusion
 reference-4
 guideline-on-using-package-rcurl-and-xml-for-web-scraping
-introduction-2
+introduction-3
 extracting-information-for-constructing-dataset-rcurl-and-xml
 step-1-web-searching
 step-2-cleanupparsing-search-results
@@ -226,7 +229,7 @@ timespan
 string-manipulations-with-stringr
 matching-patterns
 animating-the-plots-in-r
-introduction-3
+introduction-4
 motivation-1
 load-required-packages
 dataset
@@ -247,7 +250,7 @@ citation
 quick-guide-to-eda
 natural-langauge-processing-common-eda-practices-in-python
 beginners-walk-through-of-deep-learning-in-r
-introduction-4
+introduction-5
 text-classification---sentiment-analysis-with-r
 step-1-load-the-required-libraries
 step-2-read-and-explore-data
@@ -273,7 +276,7 @@ step-11-these-models-can-be-stored-in-the-standard-keras-hd5-format-and-are-tran
 references
 supervised-learning-tutorial
 parallel-coordinate-plots-in-ggplot2
-introduction-5
+introduction-6
 importing-necessary-packages
 plotting-a-sample-parallel-coordinate-plot-using-ggparcoord
 custom-function-to-implement-a-similar-functionality-for-presenting-parallel-coordinate-plots-using-ggplot2
@@ -307,7 +310,7 @@ adjust-grid-size-and-color-each-portions
 different-icon-style
 references-1
 linear-association-r-studio-plugin
-introduction-6
+introduction-7
 installation-1
 usage
 note-this-addin-runs-on-library-tidyverse.-please-run-the-following-command-first-before-running-into-next-step
