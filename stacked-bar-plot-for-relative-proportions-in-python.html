@@ -4,16 +4,16 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<title>Chapter 9 From Neo4j to RStudio | EDAV Fall 2021 Mon/Wed Community Contributions</title>
+<title>Chapter 10 Stacked Bar Plot For Relative Proportions In Python | EDAV Fall 2021 Mon/Wed Community Contributions</title>
 <meta name="author" content="the students of the class">
-<meta name="description" content="Chaoying Zheng  9.0.1 Introduction of Graph Database Graph database is designed to be very visual on the relationship of the data.The Six degree of separation is a popular example of how graph...">
+<meta name="description" content="Vishweshwar Tyagi (vt2353) https://nbviewer.org/github/vishweshwartyagi/EDAV-CC-stacked-bar-plot-for-relative-proportions-in-python/blob/main/stacked%20bar%20plot.ipynb">
 <meta name="generator" content="bookdown 0.24 with bs4_book()">
-<meta property="og:title" content="Chapter 9 From Neo4j to RStudio | EDAV Fall 2021 Mon/Wed Community Contributions">
+<meta property="og:title" content="Chapter 10 Stacked Bar Plot For Relative Proportions In Python | EDAV Fall 2021 Mon/Wed Community Contributions">
 <meta property="og:type" content="book">
-<meta property="og:description" content="Chaoying Zheng  9.0.1 Introduction of Graph Database Graph database is designed to be very visual on the relationship of the data.The Six degree of separation is a popular example of how graph...">
+<meta property="og:description" content="Vishweshwar Tyagi (vt2353) https://nbviewer.org/github/vishweshwartyagi/EDAV-CC-stacked-bar-plot-for-relative-proportions-in-python/blob/main/stacked%20bar%20plot.ipynb">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Chapter 9 From Neo4j to RStudio | EDAV Fall 2021 Mon/Wed Community Contributions">
-<meta name="twitter:description" content="Chaoying Zheng  9.0.1 Introduction of Graph Database Graph database is designed to be very visual on the relationship of the data.The Six degree of separation is a popular example of how graph...">
+<meta name="twitter:title" content="Chapter 10 Stacked Bar Plot For Relative Proportions In Python | EDAV Fall 2021 Mon/Wed Community Contributions">
+<meta name="twitter:description" content="Vishweshwar Tyagi (vt2353) https://nbviewer.org/github/vishweshwartyagi/EDAV-CC-stacked-bar-plot-for-relative-proportions-in-python/blob/main/stacked%20bar%20plot.ipynb">
 <!-- JS --><script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.6/clipboard.min.js" integrity="sha256-inc5kl9MA1hkeYUt+EC3BhlIgyp/2jDIyBLS6k3UxPI=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/fuse.js/6.4.6/fuse.js" integrity="sha512-zv6Ywkjyktsohkbp9bb45V6tEMoWhzFzXis+LrMehmJZZSys19Yxf1dopHx7WzIKxr5tK2dVcYmaCk2uqdjF4A==" crossorigin="anonymous"></script><script src="https://kit.fontawesome.com/6ecbd6c532.js" crossorigin="anonymous"></script><script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <link href="libs/bootstrap-4.6.0/bootstrap.min.css" rel="stylesheet">
 <script src="libs/bootstrap-4.6.0/bootstrap.bundle.min.js"></script><script src="libs/bs3compat-0.3.1/transition.js"></script><script src="libs/bs3compat-0.3.1/tabs.js"></script><script src="libs/bs3compat-0.3.1/bs3compat.js"></script><link href="libs/bs4_book-1.0.0/bs4_book.css" rel="stylesheet">
@@ -55,8 +55,8 @@
 <li><a class="" href="graph-animation-with-gganimate-and-after-effects.html"><span class="header-section-number">6</span> Graph animation with gganimate and After Effects</a></li>
 <li><a class="" href="interactive-plots.html"><span class="header-section-number">7</span> Interactive Plots</a></li>
 <li><a class="" href="create-regression-assumption-plots-in-word.html"><span class="header-section-number">8</span> Create regression assumption plots in Word</a></li>
-<li><a class="active" href="from-neo4j-to-rstudio.html"><span class="header-section-number">9</span> From Neo4j to RStudio</a></li>
-<li><a class="" href="stacked-bar-plot-for-relative-proportions-in-python.html"><span class="header-section-number">10</span> Stacked Bar Plot For Relative Proportions In Python</a></li>
+<li><a class="" href="from-neo4j-to-rstudio.html"><span class="header-section-number">9</span> From Neo4j to RStudio</a></li>
+<li><a class="active" href="stacked-bar-plot-for-relative-proportions-in-python.html"><span class="header-section-number">10</span> Stacked Bar Plot For Relative Proportions In Python</a></li>
 <li class="book-part">Cheatsheets</li>
 <li><a class="" href="r-vs.-python-visualization-cheatsheet.html"><span class="header-section-number">11</span> R vs. Python Visualization Cheatsheet</a></li>
 <li><a class="" href="rpackage-waffle-cheatsheet.html"><span class="header-section-number">12</span> Rpackage waffle cheatsheet</a></li>
@@ -110,118 +110,28 @@
         </div>
       </nav>
 </div>
-  </header><main class="col-sm-12 col-md-9 col-lg-7" id="content"><div id="from-neo4j-to-rstudio" class="section level1">
+  </header><main class="col-sm-12 col-md-9 col-lg-7" id="content"><div id="stacked-bar-plot-for-relative-proportions-in-python" class="section level1">
 <h1>
-<span class="header-section-number">9</span> From Neo4j to RStudio<a class="anchor" aria-label="anchor" href="#from-neo4j-to-rstudio"><i class="fas fa-link"></i></a>
+<span class="header-section-number">10</span> Stacked Bar Plot For Relative Proportions In Python<a class="anchor" aria-label="anchor" href="#stacked-bar-plot-for-relative-proportions-in-python"><i class="fas fa-link"></i></a>
 </h1>
-<p>Chaoying Zheng</p>
-<div id="introduction-of-graph-database" class="section level3">
-<h3>
-<span class="header-section-number">9.0.1</span> Introduction of Graph Database<a class="anchor" aria-label="anchor" href="#introduction-of-graph-database"><i class="fas fa-link"></i></a>
-</h3>
-<p>Graph database is designed to be very visual on the relationship of the data.The Six degree of separation is a popular example of how graph database helps in visualizing relationship. This theory also known as six handshake rule, which states that all people are six or fewer social connection away from each other. However, in the relational database, it is time consuming to find the relatinoship and generate the visualization. Therefore, graph database, one of the non-relational database, can help us handling with this type of data. On the other side, the table in non-relational database is not reading-friendly, converting them back to relational database can help to better understand the elements of the data.</p>
-<p>Neo4j is a software that widely used in visualizing graph database. At the same time, RStudio is a powerful tool in data visualization. So, the connection between these two tools can be very useful in analyzing data.</p>
-<p>There are two key components in grpah database:node and edge. Each node and edge has label and properties. Neo4j uses Cypher query language, which is structured visually with ASCII-art to make query-building and maintenance easy to read and adapt. In this tutorial, Game of Thrones (GOT) data are used to illustrate.</p>
-<p>In the GOT databse, each node is a character, which all have the same label, named <code>charaters</code>, and same properties, <code>name</code> and <code>id</code>. Characters (nodes) are connected by different edges: “parents”, “siblings”, “killed”, “allies”, etc. Figure 1 shows partial graph of the GOT databse.</p>
-<div class="figure">
-<img src="resources/neo4j_to_r/introduction.png" alt=""><p class="caption">Figure 1: graph database visualize in Neo4j</p>
-</div>
-</div>
-<div id="installation" class="section level3">
-<h3>
-<span class="header-section-number">9.0.2</span> Installation<a class="anchor" aria-label="anchor" href="#installation"><i class="fas fa-link"></i></a>
-</h3>
-<div id="neo4j-installation" class="section level4">
-<h4>
-<span class="header-section-number">9.0.2.1</span> Neo4j Installation<a class="anchor" aria-label="anchor" href="#neo4j-installation"><i class="fas fa-link"></i></a>
-</h4>
-<p>First, install Neo4j (<a href="https://neo4j.com/docs/operations-manual/current/installation/" class="uri">https://neo4j.com/docs/operations-manual/current/installation/</a>) and run the databsae on the local machine. If you already install Neo4j, ignore this step.</p>
-</div>
-<div id="r-package-installation" class="section level4">
-<h4>
-<span class="header-section-number">9.0.2.2</span> R Package Installation<a class="anchor" aria-label="anchor" href="#r-package-installation"><i class="fas fa-link"></i></a>
-</h4>
-<!-- install.packages("neo4r") -->
-</div>
-</div>
-<div id="connection" class="section level3">
-<h3>
-<span class="header-section-number">9.0.3</span> Connection<a class="anchor" aria-label="anchor" href="#connection"><i class="fas fa-link"></i></a>
-</h3>
-<p>After starting the graph database on Neo4j, open any brower and go to the default url (<a href="http://localhost:7474" class="uri">http://localhost:7474</a>). Neo4j may require to enter the user and password for authentication, which is shown in Figure 2. All these information will repeat as the following code to connect RStudio with Neo4j.</p>
-<div class="figure">
-<img src="resources/neo4j_to_r/connection.png" alt=""><p class="caption">Figure 2: Neo4j local sign in page</p>
-</div>
-<div class="sourceCode" id="cb48"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://github.com/neo4j-rstats/neo4r">neo4r</a></span><span class="op">)</span>
-<span class="va">con</span> <span class="op">&lt;-</span> <span class="va"><a href="https://rdrr.io/pkg/neo4r/man/neo4j_api.html">neo4j_api</a></span><span class="op">$</span><span class="fu">new</span><span class="op">(</span>
-  url <span class="op">=</span> <span class="st">"http://localhost:7474"</span>,
-  user <span class="op">=</span> <span class="st">"neo4j"</span>, 
-  password <span class="op">=</span> <span class="st">"password"</span>
-  <span class="op">)</span></code></pre></div>
-</div>
-<div id="retrieving-data-from-neo4j" class="section level3">
-<h3>
-<span class="header-section-number">9.0.4</span> Retrieving data from Neo4j<a class="anchor" aria-label="anchor" href="#retrieving-data-from-neo4j"><i class="fas fa-link"></i></a>
-</h3>
-<p>The basic idea is to write the cypher query language and pass to the Neo4j connection created above with function <code><a href="https://rdrr.io/pkg/neo4r/man/call_neo4j.html">call_neo4j()</a></code>. The parameter <code>type</code> will convert the graph database table into a graph object in R. The query below extract all the characters that have “marriedEngaged” relationship with Sansa Stark.</p>
-<div class="sourceCode" id="cb49"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://dplyr.tidyverse.org">dplyr</a></span><span class="op">)</span>
-<span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="http://purrr.tidyverse.org">purrr</a></span><span class="op">)</span>
-<span class="va">Sansa_Marriage</span> <span class="op">&lt;-</span> <span class="st">'MATCH a = (sansa:Character {name:"Sansa Stark"})-[:killed|marriedEngaged]-(c:Character) RETURN a'</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span>
-  <span class="fu"><a href="https://rdrr.io/pkg/neo4r/man/call_neo4j.html">call_neo4j</a></span><span class="op">(</span><span class="va">con</span>, type<span class="op">=</span><span class="st">"graph"</span><span class="op">)</span></code></pre></div>
-<p>Next, convert all nodes and relationships into a relational table. (Reminder: the first col <code>id</code> is the unique id given by Neo4j by default, the last col <code>id1</code> is the character id for each character)</p>
-<div class="sourceCode" id="cb50"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="va">Sansa_Marriage</span><span class="op">$</span><span class="va">nodes</span> <span class="op">&lt;-</span> <span class="va">Sansa_Marriage</span><span class="op">$</span><span class="va">nodes</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span>
-  <span class="fu"><a href="https://rdrr.io/pkg/neo4r/man/unnest_nodes.html">unnest_nodes</a></span><span class="op">(</span>what <span class="op">=</span> <span class="st">"properties"</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> 
-  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/mutate.html">mutate</a></span><span class="op">(</span>label <span class="op">=</span> <span class="fu"><a href="https://purrr.tidyverse.org/reference/map.html">map_chr</a></span><span class="op">(</span><span class="va">label</span>, <span class="fl">1</span><span class="op">)</span><span class="op">)</span>
-<span class="op">(</span><span class="va">Sansa_Marriage</span><span class="op">$</span><span class="va">nodes</span><span class="op">)</span>
-
-<span class="va">Sansa_Marriage</span><span class="op">$</span><span class="va">relationships</span> <span class="op">&lt;-</span> <span class="va">Sansa_Marriage</span><span class="op">$</span><span class="va">relationships</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span>
-  <span class="fu"><a href="https://rdrr.io/pkg/neo4r/man/unnest_relationships.html">unnest_relationships</a></span><span class="op">(</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span>
-  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/select.html">select</a></span><span class="op">(</span><span class="va">startNode</span>, <span class="va">endNode</span>, <span class="va">type</span>, <span class="fu"><a href="https://tidyselect.r-lib.org/reference/everything.html">everything</a></span><span class="op">(</span><span class="op">)</span><span class="op">)</span>
-<span class="op">(</span><span class="va">Sansa_Marriage</span><span class="op">$</span><span class="va">relationships</span><span class="op">)</span></code></pre></div>
-</div>
-<div id="visualize-with-ggraph" class="section level3">
-<h3>
-<span class="header-section-number">9.0.5</span> Visualize with ggraph<a class="anchor" aria-label="anchor" href="#visualize-with-ggraph"><i class="fas fa-link"></i></a>
-</h3>
-<p>Also, we can use <code>ggprah</code> to regenerate the graph from the relational table.</p>
-<div class="sourceCode" id="cb51"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://ggraph.data-imaginist.com">ggraph</a></span><span class="op">)</span>
-<span class="va">graph_object</span> <span class="op">&lt;-</span> <span class="fu">igraph</span><span class="fu">::</span><span class="fu"><a href="https://rdrr.io/pkg/igraph/man/graph_from_data_frame.html">graph_from_data_frame</a></span><span class="op">(</span>
-  d <span class="op">=</span> <span class="va">Sansa_Marriage</span><span class="op">$</span><span class="va">relationships</span>, 
-  directed <span class="op">=</span> <span class="cn">TRUE</span>, 
-  vertices <span class="op">=</span> <span class="va">Sansa_Marriage</span><span class="op">$</span><span class="va">nodes</span>
-<span class="op">)</span>
-
-<span class="va">graph_object</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span>
-  <span class="fu"><a href="https://ggraph.data-imaginist.com/reference/ggraph.html">ggraph</a></span><span class="op">(</span><span class="op">)</span> <span class="op">+</span> 
-<span class="fu"><a href="https://ggraph.data-imaginist.com/reference/geom_node_text.html">geom_node_label</a></span><span class="op">(</span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span>label <span class="op">=</span> <span class="va">name</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span>
-<span class="fu"><a href="https://ggraph.data-imaginist.com/reference/geom_edge_link.html">geom_edge_link</a></span><span class="op">(</span><span class="op">)</span> <span class="op">+</span> 
-<span class="fu"><a href="https://ggraph.data-imaginist.com/reference/theme_graph.html">theme_graph</a></span><span class="op">(</span><span class="op">)</span></code></pre></div>
+<p>Vishweshwar Tyagi (vt2353)</p>
+<p><a href="https://nbviewer.org/github/vishweshwartyagi/EDAV-CC-stacked-bar-plot-for-relative-proportions-in-python/blob/main/stacked%20bar%20plot.ipynb" class="uri">https://nbviewer.org/github/vishweshwartyagi/EDAV-CC-stacked-bar-plot-for-relative-proportions-in-python/blob/main/stacked%20bar%20plot.ipynb</a></p>
 
 </div>
-</div>
+
+
+
   <div class="chapter-nav">
-<div class="prev"><a href="create-regression-assumption-plots-in-word.html"><span class="header-section-number">8</span> Create regression assumption plots in Word</a></div>
-<div class="next"><a href="stacked-bar-plot-for-relative-proportions-in-python.html"><span class="header-section-number">10</span> Stacked Bar Plot For Relative Proportions In Python</a></div>
+<div class="prev"><a href="from-neo4j-to-rstudio.html"><span class="header-section-number">9</span> From Neo4j to RStudio</a></div>
+<div class="next"><a href="r-vs.-python-visualization-cheatsheet.html"><span class="header-section-number">11</span> R vs. Python Visualization Cheatsheet</a></div>
 </div></main><div class="col-md-3 col-lg-2 d-none d-md-block sidebar sidebar-chapter">
     <nav id="toc" data-toggle="toc" aria-label="On this page"><h2>On this page</h2>
-      <ul class="nav navbar-nav"><li>
-<a class="nav-link" href="#from-neo4j-to-rstudio"><span class="header-section-number">9</span> From Neo4j to RStudio</a><ul class="nav navbar-nav">
-<li><a class="nav-link" href="#introduction-of-graph-database"><span class="header-section-number">9.0.1</span> Introduction of Graph Database</a></li>
-<li><a class="nav-link" href="#installation"><span class="header-section-number">9.0.2</span> Installation</a></li>
-<li><a class="nav-link" href="#connection"><span class="header-section-number">9.0.3</span> Connection</a></li>
-<li><a class="nav-link" href="#retrieving-data-from-neo4j"><span class="header-section-number">9.0.4</span> Retrieving data from Neo4j</a></li>
-<li><a class="nav-link" href="#visualize-with-ggraph"><span class="header-section-number">9.0.5</span> Visualize with ggraph</a></li>
-</ul>
-</li></ul>
+      <ul class="nav navbar-nav"><li><a class="nav-link" href="#stacked-bar-plot-for-relative-proportions-in-python"><span class="header-section-number">10</span> Stacked Bar Plot For Relative Proportions In Python</a></li></ul>
 
       <div class="book-extra">
         <ul class="list-unstyled">
-<li><a id="book-source" href="https://github.com/jtr13/cc21fall1/blob/main/neo4j_to_r.Rmd">View source <i class="fab fa-github"></i></a></li>
-          <li><a id="book-edit" href="https://github.com/jtr13/cc21fall1/edit/main/neo4j_to_r.Rmd">Edit this page <i class="fab fa-github"></i></a></li>
+<li><a id="book-source" href="https://github.com/jtr13/cc21fall1/blob/main/stacked_bar_plot_for_relative_proportions_in_python.Rmd">View source <i class="fab fa-github"></i></a></li>
+          <li><a id="book-edit" href="https://github.com/jtr13/cc21fall1/edit/main/stacked_bar_plot_for_relative_proportions_in_python.Rmd">Edit this page <i class="fab fa-github"></i></a></li>
         </ul>
 </div>
     </nav>

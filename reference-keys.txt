@@ -48,6 +48,7 @@ r-package-installation
 connection
 retrieving-data-from-neo4j
 visualize-with-ggraph
+stacked-bar-plot-for-relative-proportions-in-python
 r-vs.-python-visualization-cheatsheet
 rpackage-waffle-cheatsheet
 r-cheatsheet-on-data-transforamtion-and-exploration
