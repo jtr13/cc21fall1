@@ -26,7 +26,7 @@ How many features do we have? How many of them are numeric? How many of them are
 
 ```{r data load}
 # read in data and have a brief look
-df <- read_csv("train.csv", show_col_types = FALSE)
+df <- read_csv("resources/r_for_data_challenges/train.csv", show_col_types = FALSE)
 num_fea <- df %>% select_if(names(df) != 'SalePrice') %>% 
   select_if(is.numeric) %>%
   names()
@@ -39,7 +39,7 @@ str(df[,num_fea])
 str(df[,cat_fea])
 ``` 
 
-### 1. Explore & Handle Numeric Features
+### Explore & Handle Numeric Features
 Drop useless features like "Id" because they are known to have no influence on our target label. If we don't drop these columns, they might add noise and lead to overfitting. For example, if IDs were assigned after house prices were sorted, there would be a "strong correlation" between "ID" and "House Price". As a result, the model would give "ID" a very large weight in predicting house prices, which is not desired at all. 
 ```{r drop features}
 # drop useless features to avoid overfitting & noise
@@ -95,7 +95,7 @@ grid.arrange(grobs = p, ncol = 3)
 ```
 
 
-### 2. Explore & Handle Categorical Columns
+### Explore & Handle Categorical Columns
 Compute and show the proportions of missing values for each feature. 
 ```{r show missing categorical data}
 # show proportions of missing values
