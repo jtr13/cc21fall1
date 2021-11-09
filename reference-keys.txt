@@ -315,6 +315,7 @@ introduction-7
 exploratory-data-analysis-preprocessing
 explore-handle-numeric-features
 explore-handle-categorical-columns
+introduction-to-git-bash
 linear-association-r-studio-plugin
 introduction-8
 installation-1
