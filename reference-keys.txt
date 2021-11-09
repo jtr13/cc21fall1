@@ -309,8 +309,13 @@ arguments-of-personograph
 adjust-grid-size-and-color-each-portions
 different-icon-style
 references-1
-linear-association-r-studio-plugin
+exploratory-data-analysis-and-preprocessing-with-r-for-data-challenges
 introduction-7
+exploratory-data-analysis-preprocessing
+explore-handle-numeric-features
+explore-handle-categorical-columns
+linear-association-r-studio-plugin
+introduction-8
 installation-1
 usage
 note-this-addin-runs-on-library-tidyverse.-please-run-the-following-command-first-before-running-into-next-step

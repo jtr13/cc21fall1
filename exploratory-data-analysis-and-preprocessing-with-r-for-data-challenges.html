@@ -1,0 +1,548 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<title>Chapter 43 Exploratory data analysis and preprocessing with R for data challenges | EDAV Fall 2021 Mon/Wed Community Contributions</title>
+<meta name="author" content="the students of the class">
+<meta name="description" content="Tianhao Wu # loading libraries used in solving the problems library(tidyverse) library(gridExtra)  43.1 Introduction Doing a data challenge is usually the first step to get you to a data science...">
+<meta name="generator" content="bookdown 0.24 with bs4_book()">
+<meta property="og:title" content="Chapter 43 Exploratory data analysis and preprocessing with R for data challenges | EDAV Fall 2021 Mon/Wed Community Contributions">
+<meta property="og:type" content="book">
+<meta property="og:description" content="Tianhao Wu # loading libraries used in solving the problems library(tidyverse) library(gridExtra)  43.1 Introduction Doing a data challenge is usually the first step to get you to a data science...">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Chapter 43 Exploratory data analysis and preprocessing with R for data challenges | EDAV Fall 2021 Mon/Wed Community Contributions">
+<meta name="twitter:description" content="Tianhao Wu # loading libraries used in solving the problems library(tidyverse) library(gridExtra)  43.1 Introduction Doing a data challenge is usually the first step to get you to a data science...">
+<!-- JS --><script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.6/clipboard.min.js" integrity="sha256-inc5kl9MA1hkeYUt+EC3BhlIgyp/2jDIyBLS6k3UxPI=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/fuse.js/6.4.6/fuse.js" integrity="sha512-zv6Ywkjyktsohkbp9bb45V6tEMoWhzFzXis+LrMehmJZZSys19Yxf1dopHx7WzIKxr5tK2dVcYmaCk2uqdjF4A==" crossorigin="anonymous"></script><script src="https://kit.fontawesome.com/6ecbd6c532.js" crossorigin="anonymous"></script><script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<link href="libs/bootstrap-4.6.0/bootstrap.min.css" rel="stylesheet">
+<script src="libs/bootstrap-4.6.0/bootstrap.bundle.min.js"></script><script src="libs/bs3compat-0.3.1/transition.js"></script><script src="libs/bs3compat-0.3.1/tabs.js"></script><script src="libs/bs3compat-0.3.1/bs3compat.js"></script><link href="libs/bs4_book-1.0.0/bs4_book.css" rel="stylesheet">
+<script src="libs/bs4_book-1.0.0/bs4_book.js"></script><script src="libs/accessible-code-block-0.0.1/empty-anchor.js"></script><script src="libs/htmlwidgets-1.5.4/htmlwidgets.js"></script><script src="libs/plotly-binding-4.10.0/plotly.js"></script><script src="libs/typedarray-0.1/typedarray.min.js"></script><link href="libs/crosstalk-1.2.0/css/crosstalk.min.css" rel="stylesheet">
+<script src="libs/crosstalk-1.2.0/js/crosstalk.min.js"></script><link href="libs/plotly-htmlwidgets-css-2.5.1/plotly-htmlwidgets.css" rel="stylesheet">
+<script src="libs/plotly-main-2.5.1/plotly-latest.min.js"></script><link href="libs/dygraphs-1.1.1/dygraph.css" rel="stylesheet">
+<script src="libs/dygraphs-1.1.1/dygraph-combined.js"></script><script src="libs/dygraphs-1.1.1/shapes.js"></script><script src="libs/moment-2.8.4/moment.js"></script><script src="libs/moment-timezone-0.2.5/moment-timezone-with-data.js"></script><script src="libs/moment-fquarter-1.0.0/moment-fquarter.min.js"></script><script src="libs/dygraphs-binding-1.1.1.6/dygraphs.js"></script><script src="libs/d3-5.16.0/d3.min.js"></script><script src="libs/forceNetwork-binding-0.4/forceNetwork.js"></script><link href="libs/parallel-coordinates-2.1.8/parcoords.css" rel="stylesheet">
+<script src="libs/parcoords-binding-1.0.0/parcoords.js"></script><script src="libs/detect-resize-0.5.3/jquery.resize.js"></script><link href="libs/jquery-ui-1.11.4/jquery-ui.min.css" rel="stylesheet">
+<script src="libs/jquery-ui-1.11.4/jquery-ui.min.js"></script><script src="libs/vega-1.4.3/vega.min.js"></script><script src="libs/lodash-2.2.1/lodash.min.js"></script><script>var lodash = _.noConflict();</script><link href="libs/ggvis-0.4.7/css/ggvis.css" rel="stylesheet">
+<script src="libs/ggvis-0.4.7/js/ggvis.js"></script><script src="libs/dendroNetwork-binding-0.4/dendroNetwork.js"></script><link href="libs/str_view-0.1.0/str_view.css" rel="stylesheet">
+<script src="libs/str_view-binding-1.4.0/str_view.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/autocomplete.js/0.38.0/autocomplete.jquery.min.js" integrity="sha512-GU9ayf+66Xx2TmpxqJpliWbT5PiGYxpaG8rfnBEk1LL8l1KGkRShhngwdXK1UgqhAzWpZHSiYPc09/NwDQIGyg==" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/mark.min.js" integrity="sha512-5CYOlHXGh6QpOFA/TeTylKLWfB3ftPsde7AnmhuitiTX4K5SqCLBeKro6sPS8ilsz1Q4NRx3v8Ko2IBiszzdww==" crossorigin="anonymous"></script><!-- CSS -->
+</head>
+<body data-spy="scroll" data-target="#toc">
+
+<div class="container-fluid">
+<div class="row">
+  <header class="col-sm-12 col-lg-3 sidebar sidebar-book"><a class="sr-only sr-only-focusable" href="#content">Skip to main content</a>
+
+    <div class="d-flex align-items-start justify-content-between">
+      <h1>
+        <a href="index.html" title="">EDAV Fall 2021 Mon/Wed Community Contributions</a>
+      </h1>
+      <button class="btn btn-outline-primary d-lg-none ml-2 mt-1" type="button" data-toggle="collapse" data-target="#main-nav" aria-expanded="true" aria-controls="main-nav"><i class="fas fa-bars"></i><span class="sr-only">Show table of contents</span></button>
+    </div>
+
+    <div id="main-nav" class="collapse-lg">
+      <form role="search">
+        <input id="search" class="form-control" type="search" placeholder="Search" aria-label="Search">
+</form>
+
+      <nav aria-label="Table of contents"><h2>Table of contents</h2>
+        <ul class="book-toc list-unstyled">
+<li><a class="" href="index.html"><span class="header-section-number">1</span> Welcome!</a></li>
+<li><a class="" href="community-contribution.html"><span class="header-section-number">2</span> Community Contribution</a></li>
+<li><a class="" href="github-submission-instructions.html"><span class="header-section-number">3</span> GitHub submission instructions</a></li>
+<li><a class="" href="sample-project.html"><span class="header-section-number">4</span> Sample project</a></li>
+<li class="book-part">Data Visualizations</li>
+<li><a class="" href="introduction-to-the-lattice-package.html"><span class="header-section-number">5</span> Introduction to the lattice package</a></li>
+<li><a class="" href="graph-animation-with-gganimate-and-after-effects.html"><span class="header-section-number">6</span> Graph animation with gganimate and After Effects</a></li>
+<li><a class="" href="interactive-plots.html"><span class="header-section-number">7</span> Interactive Plots</a></li>
+<li><a class="" href="create-regression-assumption-plots-in-word.html"><span class="header-section-number">8</span> Create regression assumption plots in Word</a></li>
+<li><a class="" href="from-neo4j-to-rstudio.html"><span class="header-section-number">9</span> From Neo4j to RStudio</a></li>
+<li class="book-part">Cheatsheets</li>
+<li><a class="" href="r-vs.-python-visualization-cheatsheet.html"><span class="header-section-number">10</span> R vs. Python Visualization Cheatsheet</a></li>
+<li><a class="" href="rpackage-waffle-cheatsheet.html"><span class="header-section-number">11</span> Rpackage waffle cheatsheet</a></li>
+<li><a class="" href="r-cheatsheet-on-data-transforamtion-and-exploration.html"><span class="header-section-number">12</span> R cheatsheet on data transforamtion and exploration</a></li>
+<li><a class="" href="r-vs-python-basic-data-wrangling.html"><span class="header-section-number">13</span> R vs Python Basic Data Wrangling</a></li>
+<li><a class="" href="tidyverse_cheatsheet.html"><span class="header-section-number">14</span> tidyverse_cheatsheet</a></li>
+<li><a class="" href="cheatsheet-tidyverse.html"><span class="header-section-number">15</span> Cheatsheet Tidyverse</a></li>
+<li><a class="" href="use-of-ggprism-and-ggsci-packages.html"><span class="header-section-number">16</span> Use of ggprism and ggsci packages</a></li>
+<li><a class="" href="interactive-plot-introduction.html"><span class="header-section-number">17</span> Interactive plot introduction</a></li>
+<li><a class="" href="common-r-markdown-syntax-cheatsheet.html"><span class="header-section-number">18</span> Common R markdown syntax cheatsheet</a></li>
+<li><a class="" href="header.html"><span class="header-section-number">19</span> Header</a></li>
+<li><a class="" href="parallel-coordinates-plot-cheatsheet.html"><span class="header-section-number">20</span> Parallel coordinates plot cheatsheet</a></li>
+<li><a class="" href="r-data-science-workflow-cheatsheet.html"><span class="header-section-number">21</span> R Data Science Workflow CheatSheet</a></li>
+<li><a class="" href="a-linear-regression-bestiary.html"><span class="header-section-number">22</span> A linear regression Bestiary</a></li>
+<li><a class="" href="graphql-cheat-sheet.html"><span class="header-section-number">23</span> GraphQL Cheat Sheet</a></li>
+<li class="book-part">Tutorials</li>
+<li><a class="" href="multithreading-crawler-frame.html"><span class="header-section-number">24</span> Multithreading Crawler Frame</a></li>
+<li><a class="" href="regression-and-classification-in-r.html"><span class="header-section-number">25</span> Regression and Classification in R</a></li>
+<li><a class="" href="tibble-vs.-dataframe.html"><span class="header-section-number">26</span> Tibble vs. DataFrame</a></li>
+<li><a class="" href="introduction-to-time-series.html"><span class="header-section-number">27</span> Introduction to Time Series</a></li>
+<li><a class="" href="vipul-edav-community-contribution-kickstart-r.html"><span class="header-section-number">28</span> Vipul EDAV Community Contribution Kickstart R</a></li>
+<li><a class="" href="caret---a-machine-learning-package-turotial.html"><span class="header-section-number">29</span> caret - a machine learning package turotial</a></li>
+<li><a class="" href="streamlit-for-financial-analysis.html"><span class="header-section-number">30</span> Streamlit for Financial Analysis</a></li>
+<li><a class="" href="interactive-graphs-tutorial.html"><span class="header-section-number">31</span> Interactive graphs tutorial</a></li>
+<li><a class="" href="guideline-on-using-package-rcurl-and-xml-for-web-scraping.html"><span class="header-section-number">32</span> Guideline on Using Package Rcurl and XML for Web Scraping</a></li>
+<li><a class="" href="twitter-r-package-scraping-via-api-tutorial.html"><span class="header-section-number">33</span> TwitteR R Package Scraping via API Tutorial</a></li>
+<li><a class="" href="introduction-to-data-manipulation.html"><span class="header-section-number">34</span> Introduction to Data Manipulation</a></li>
+<li><a class="" href="animating-the-plots-in-r.html"><span class="header-section-number">35</span> Animating the plots in R</a></li>
+<li><a class="" href="quick-guide-to-eda.html"><span class="header-section-number">36</span> Quick guide to eda</a></li>
+<li><a class="" href="natural-langauge-processing-common-eda-practices-in-python.html"><span class="header-section-number">37</span> Natural Langauge Processing Common EDA Practices in Python</a></li>
+<li><a class="" href="beginners-walk-through-of-deep-learning-in-r.html"><span class="header-section-number">38</span> Beginner’s Walk-through of Deep Learning in R</a></li>
+<li><a class="" href="supervised-learning-tutorial.html"><span class="header-section-number">39</span> Supervised Learning Tutorial</a></li>
+<li><a class="" href="parallel-coordinate-plots-in-ggplot2.html"><span class="header-section-number">40</span> Parallel Coordinate Plots in ggplot2</a></li>
+<li><a class="" href="using-ggplot-in-python.html"><span class="header-section-number">41</span> Using ggplot in python</a></li>
+<li><a class="" href="icons-and-symbols-in-r.html"><span class="header-section-number">42</span> Icons and symbols in R</a></li>
+<li><a class="active" href="exploratory-data-analysis-and-preprocessing-with-r-for-data-challenges.html"><span class="header-section-number">43</span> Exploratory data analysis and preprocessing with R for data challenges</a></li>
+<li class="book-part">Demonstrations</li>
+<li><a class="" href="linear-association-r-studio-plugin.html"><span class="header-section-number">44</span> Linear Association R Studio Plugin</a></li>
+<li><a class="" href="customized-sorting-in-r.html"><span class="header-section-number">45</span> Customized Sorting in R</a></li>
+<li class="book-part">Workshops</li>
+<li><a class="" href="data-science-product-cycles-in-enterprises.html"><span class="header-section-number">46</span> Data Science Product Cycles in Enterprises</a></li>
+<li class="book-part">Appendices</li>
+<li><a class="" href="github-initial-setup.html"><span class="header-section-number">47</span> Github initial setup</a></li>
+<li><a class="" href="tutorial-for-pull-request-mergers.html"><span class="header-section-number">48</span> Tutorial for pull request mergers</a></li>
+</ul>
+
+        <div class="book-extra">
+          <p><a id="book-repo" href="https://github.com/jtr13/cc21fall1">View book source <i class="fab fa-github"></i></a></p>
+        </div>
+      </nav>
+</div>
+  </header><main class="col-sm-12 col-md-9 col-lg-7" id="content"><div id="exploratory-data-analysis-and-preprocessing-with-r-for-data-challenges" class="section level1">
+<h1>
+<span class="header-section-number">43</span> Exploratory data analysis and preprocessing with R for data challenges<a class="anchor" aria-label="anchor" href="#exploratory-data-analysis-and-preprocessing-with-r-for-data-challenges"><i class="fas fa-link"></i></a>
+</h1>
+<p>Tianhao Wu</p>
+<div class="sourceCode" id="cb614"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="co"># loading libraries used in solving the problems</span>
+<span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://tidyverse.tidyverse.org">tidyverse</a></span><span class="op">)</span>
+<span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va">gridExtra</span><span class="op">)</span></code></pre></div>
+<div id="introduction-7" class="section level2">
+<h2>
+<span class="header-section-number">43.1</span> Introduction<a class="anchor" aria-label="anchor" href="#introduction-7"><i class="fas fa-link"></i></a>
+</h2>
+<p>Doing a data challenge is usually the first step to get you to a data science job or internship, among which EDA &amp; Data Preprocessing is the most important part because they determine the potential of your model performance and usually give meaningful insights. Most companies have no requirement of building fancy models, instead, they would like to see how you explore and analyze your data, and how you preprocess your data well enough for modeling. In most cases, a good EDA &amp; Preprocessing together with some easy models will get you through the test.</p>
+<p>There has been many people sharing solutions for different projects on the internet. However, most of the projects were done in Python, and there is usually a lack of instructions on how to handle a data challenge in general. In this html file, I will share how to perform EDA &amp; Data preprocessing for a typical data challenge with R, using the data of “Iowa House Price Prediction Competition” <a href="https://www.kaggle.com/c/iowa-house-price-prediction" class="uri">https://www.kaggle.com/c/iowa-house-price-prediction</a></p>
+</div>
+<div id="exploratory-data-analysis-preprocessing" class="section level2">
+<h2>
+<span class="header-section-number">43.2</span> Exploratory Data Analysis &amp; Preprocessing<a class="anchor" aria-label="anchor" href="#exploratory-data-analysis-preprocessing"><i class="fas fa-link"></i></a>
+</h2>
+<p>The first thing is always to have a brief overview of the data with a few questions in mind:
+How many features do we have? How many of them are numeric? How many of them are categorical? How many categorical features are nominal? These information will affect our strategies in choosing models. For example, if we have a lot of categorical features, then linear models might not work well because they cannot handle categorical features by nature, and encoded categorical features are unlikely to follow a linear relationship.</p>
+<div class="sourceCode" id="cb615"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="co"># read in data and have a brief look</span>
+<span class="va">df</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://readr.tidyverse.org/reference/read_delim.html">read_csv</a></span><span class="op">(</span><span class="st">"resources/r_for_data_challenges/train.csv"</span>, show_col_types <span class="op">=</span> <span class="cn">FALSE</span><span class="op">)</span>
+<span class="va">num_fea</span> <span class="op">&lt;-</span> <span class="va">df</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> <span class="fu"><a href="https://dplyr.tidyverse.org/reference/select_all.html">select_if</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/pkg/raster/man/names.html">names</a></span><span class="op">(</span><span class="va">df</span><span class="op">)</span> <span class="op">!=</span> <span class="st">'SalePrice'</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> 
+  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/select_all.html">select_if</a></span><span class="op">(</span><span class="va">is.numeric</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span>
+  <span class="fu"><a href="https://rdrr.io/pkg/raster/man/names.html">names</a></span><span class="op">(</span><span class="op">)</span>
+<span class="va">cat_fea</span> <span class="op">&lt;-</span> <span class="va">df</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> <span class="fu"><a href="https://dplyr.tidyverse.org/reference/select_all.html">select_if</a></span><span class="op">(</span><span class="va">is.character</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span>
+  <span class="fu"><a href="https://rdrr.io/pkg/raster/man/names.html">names</a></span><span class="op">(</span><span class="op">)</span>
+<span class="va">label</span> <span class="op">&lt;-</span> <span class="st">'SalePrice'</span>
+<span class="co"># explore numeric columns</span>
+<span class="fu"><a href="https://rdrr.io/r/utils/str.html">str</a></span><span class="op">(</span><span class="va">df</span><span class="op">[</span>,<span class="va">num_fea</span><span class="op">]</span><span class="op">)</span></code></pre></div>
+<pre><code>## tibble [1,460 × 37] (S3: tbl_df/tbl/data.frame)
+##  $ Id           : num [1:1460] 1 2 3 4 5 6 7 8 9 10 ...
+##  $ MSSubClass   : num [1:1460] 60 20 60 70 60 50 20 60 50 190 ...
+##  $ LotFrontage  : num [1:1460] 65 80 68 60 84 85 75 NA 51 50 ...
+##  $ LotArea      : num [1:1460] 8450 9600 11250 9550 14260 ...
+##  $ OverallQual  : num [1:1460] 7 6 7 7 8 5 8 7 7 5 ...
+##  $ OverallCond  : num [1:1460] 5 8 5 5 5 5 5 6 5 6 ...
+##  $ YearBuilt    : num [1:1460] 2003 1976 2001 1915 2000 ...
+##  $ YearRemodAdd : num [1:1460] 2003 1976 2002 1970 2000 ...
+##  $ MasVnrArea   : num [1:1460] 196 0 162 0 350 0 186 240 0 0 ...
+##  $ BsmtFinSF1   : num [1:1460] 706 978 486 216 655 ...
+##  $ BsmtFinSF2   : num [1:1460] 0 0 0 0 0 0 0 32 0 0 ...
+##  $ BsmtUnfSF    : num [1:1460] 150 284 434 540 490 64 317 216 952 140 ...
+##  $ TotalBsmtSF  : num [1:1460] 856 1262 920 756 1145 ...
+##  $ 1stFlrSF     : num [1:1460] 856 1262 920 961 1145 ...
+##  $ 2ndFlrSF     : num [1:1460] 854 0 866 756 1053 ...
+##  $ LowQualFinSF : num [1:1460] 0 0 0 0 0 0 0 0 0 0 ...
+##  $ GrLivArea    : num [1:1460] 1710 1262 1786 1717 2198 ...
+##  $ BsmtFullBath : num [1:1460] 1 0 1 1 1 1 1 1 0 1 ...
+##  $ BsmtHalfBath : num [1:1460] 0 1 0 0 0 0 0 0 0 0 ...
+##  $ FullBath     : num [1:1460] 2 2 2 1 2 1 2 2 2 1 ...
+##  $ HalfBath     : num [1:1460] 1 0 1 0 1 1 0 1 0 0 ...
+##  $ BedroomAbvGr : num [1:1460] 3 3 3 3 4 1 3 3 2 2 ...
+##  $ KitchenAbvGr : num [1:1460] 1 1 1 1 1 1 1 1 2 2 ...
+##  $ TotRmsAbvGrd : num [1:1460] 8 6 6 7 9 5 7 7 8 5 ...
+##  $ Fireplaces   : num [1:1460] 0 1 1 1 1 0 1 2 2 2 ...
+##  $ GarageYrBlt  : num [1:1460] 2003 1976 2001 1998 2000 ...
+##  $ GarageCars   : num [1:1460] 2 2 2 3 3 2 2 2 2 1 ...
+##  $ GarageArea   : num [1:1460] 548 460 608 642 836 480 636 484 468 205 ...
+##  $ WoodDeckSF   : num [1:1460] 0 298 0 0 192 40 255 235 90 0 ...
+##  $ OpenPorchSF  : num [1:1460] 61 0 42 35 84 30 57 204 0 4 ...
+##  $ EnclosedPorch: num [1:1460] 0 0 0 272 0 0 0 228 205 0 ...
+##  $ 3SsnPorch    : num [1:1460] 0 0 0 0 0 320 0 0 0 0 ...
+##  $ ScreenPorch  : num [1:1460] 0 0 0 0 0 0 0 0 0 0 ...
+##  $ PoolArea     : num [1:1460] 0 0 0 0 0 0 0 0 0 0 ...
+##  $ MiscVal      : num [1:1460] 0 0 0 0 0 700 0 350 0 0 ...
+##  $ MoSold       : num [1:1460] 2 5 9 2 12 10 8 11 4 1 ...
+##  $ YrSold       : num [1:1460] 2008 2007 2008 2006 2008 ...</code></pre>
+<div class="sourceCode" id="cb617"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="co"># explore categorical columns</span>
+<span class="fu"><a href="https://rdrr.io/r/utils/str.html">str</a></span><span class="op">(</span><span class="va">df</span><span class="op">[</span>,<span class="va">cat_fea</span><span class="op">]</span><span class="op">)</span></code></pre></div>
+<pre><code>## tibble [1,460 × 43] (S3: tbl_df/tbl/data.frame)
+##  $ MSZoning     : chr [1:1460] "RL" "RL" "RL" "RL" ...
+##  $ Street       : chr [1:1460] "Pave" "Pave" "Pave" "Pave" ...
+##  $ Alley        : chr [1:1460] NA NA NA NA ...
+##  $ LotShape     : chr [1:1460] "Reg" "Reg" "IR1" "IR1" ...
+##  $ LandContour  : chr [1:1460] "Lvl" "Lvl" "Lvl" "Lvl" ...
+##  $ Utilities    : chr [1:1460] "AllPub" "AllPub" "AllPub" "AllPub" ...
+##  $ LotConfig    : chr [1:1460] "Inside" "FR2" "Inside" "Corner" ...
+##  $ LandSlope    : chr [1:1460] "Gtl" "Gtl" "Gtl" "Gtl" ...
+##  $ Neighborhood : chr [1:1460] "CollgCr" "Veenker" "CollgCr" "Crawfor" ...
+##  $ Condition1   : chr [1:1460] "Norm" "Feedr" "Norm" "Norm" ...
+##  $ Condition2   : chr [1:1460] "Norm" "Norm" "Norm" "Norm" ...
+##  $ BldgType     : chr [1:1460] "1Fam" "1Fam" "1Fam" "1Fam" ...
+##  $ HouseStyle   : chr [1:1460] "2Story" "1Story" "2Story" "2Story" ...
+##  $ RoofStyle    : chr [1:1460] "Gable" "Gable" "Gable" "Gable" ...
+##  $ RoofMatl     : chr [1:1460] "CompShg" "CompShg" "CompShg" "CompShg" ...
+##  $ Exterior1st  : chr [1:1460] "VinylSd" "MetalSd" "VinylSd" "Wd Sdng" ...
+##  $ Exterior2nd  : chr [1:1460] "VinylSd" "MetalSd" "VinylSd" "Wd Shng" ...
+##  $ MasVnrType   : chr [1:1460] "BrkFace" "None" "BrkFace" "None" ...
+##  $ ExterQual    : chr [1:1460] "Gd" "TA" "Gd" "TA" ...
+##  $ ExterCond    : chr [1:1460] "TA" "TA" "TA" "TA" ...
+##  $ Foundation   : chr [1:1460] "PConc" "CBlock" "PConc" "BrkTil" ...
+##  $ BsmtQual     : chr [1:1460] "Gd" "Gd" "Gd" "TA" ...
+##  $ BsmtCond     : chr [1:1460] "TA" "TA" "TA" "Gd" ...
+##  $ BsmtExposure : chr [1:1460] "No" "Gd" "Mn" "No" ...
+##  $ BsmtFinType1 : chr [1:1460] "GLQ" "ALQ" "GLQ" "ALQ" ...
+##  $ BsmtFinType2 : chr [1:1460] "Unf" "Unf" "Unf" "Unf" ...
+##  $ Heating      : chr [1:1460] "GasA" "GasA" "GasA" "GasA" ...
+##  $ HeatingQC    : chr [1:1460] "Ex" "Ex" "Ex" "Gd" ...
+##  $ CentralAir   : chr [1:1460] "Y" "Y" "Y" "Y" ...
+##  $ Electrical   : chr [1:1460] "SBrkr" "SBrkr" "SBrkr" "SBrkr" ...
+##  $ KitchenQual  : chr [1:1460] "Gd" "TA" "Gd" "Gd" ...
+##  $ Functional   : chr [1:1460] "Typ" "Typ" "Typ" "Typ" ...
+##  $ FireplaceQu  : chr [1:1460] NA "TA" "TA" "Gd" ...
+##  $ GarageType   : chr [1:1460] "Attchd" "Attchd" "Attchd" "Detchd" ...
+##  $ GarageFinish : chr [1:1460] "RFn" "RFn" "RFn" "Unf" ...
+##  $ GarageQual   : chr [1:1460] "TA" "TA" "TA" "TA" ...
+##  $ GarageCond   : chr [1:1460] "TA" "TA" "TA" "TA" ...
+##  $ PavedDrive   : chr [1:1460] "Y" "Y" "Y" "Y" ...
+##  $ PoolQC       : chr [1:1460] NA NA NA NA ...
+##  $ Fence        : chr [1:1460] NA NA NA NA ...
+##  $ MiscFeature  : chr [1:1460] NA NA NA NA ...
+##  $ SaleType     : chr [1:1460] "WD" "WD" "WD" "WD" ...
+##  $ SaleCondition: chr [1:1460] "Normal" "Normal" "Normal" "Abnorml" ...</code></pre>
+<div id="explore-handle-numeric-features" class="section level3">
+<h3>
+<span class="header-section-number">43.2.1</span> Explore &amp; Handle Numeric Features<a class="anchor" aria-label="anchor" href="#explore-handle-numeric-features"><i class="fas fa-link"></i></a>
+</h3>
+<p>Drop useless features like “Id” because they are known to have no influence on our target label. If we don’t drop these columns, they might add noise and lead to overfitting. For example, if IDs were assigned after house prices were sorted, there would be a “strong correlation” between “ID” and “House Price”. As a result, the model would give “ID” a very large weight in predicting house prices, which is not desired at all.</p>
+<div class="sourceCode" id="cb619"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="co"># drop useless features to avoid overfitting &amp; noise</span>
+<span class="va">num_fea</span> <span class="op">=</span> <span class="va">num_fea</span><span class="op">[</span><span class="va">num_fea</span> <span class="op">!=</span> <span class="st">'Id'</span><span class="op">]</span>
+<span class="va">df</span> <span class="op">&lt;-</span> <span class="va">df</span><span class="op">[</span>,<span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="va">num_fea</span>, <span class="va">cat_fea</span>, <span class="va">label</span><span class="op">)</span><span class="op">]</span></code></pre></div>
+<p>Then compute and show the proportions of missing values for each feature.</p>
+<div class="sourceCode" id="cb620"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="co"># show proportions of missing values</span>
+<span class="va">missing_col</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/pkg/raster/man/rowSums.html">colSums</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/NA.html">is.na</a></span><span class="op">(</span><span class="va">df</span><span class="op">[</span>,<span class="va">num_fea</span><span class="op">]</span><span class="op">)</span><span class="op">)</span><span class="op">/</span><span class="fu"><a href="https://rdrr.io/pkg/raster/man/dimensions.html">dim</a></span><span class="op">(</span><span class="va">df</span><span class="op">)</span><span class="op">[</span><span class="fl">1</span><span class="op">]</span> 
+<span class="va">missing_col</span><span class="op">[</span><span class="va">missing_col</span> <span class="op">&gt;</span> <span class="fl">0</span><span class="op">]</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> <span class="fu"><a href="https://rdrr.io/r/base/sort.html">sort</a></span><span class="op">(</span>decreasing <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span></code></pre></div>
+<pre><code>## LotFrontage GarageYrBlt  MasVnrArea 
+## 0.177397260 0.055479452 0.005479452</code></pre>
+<ol style="list-style-type: decimal">
+<li>Drop “LotFrontage” because it has too many missing values (proportion &gt; 15%)</li>
+<li>Fill NAs with medians for the rest of numeric features (median is more robust to outliers than mean)</li>
+<li>Always check whether all NAs have been filled</li>
+</ol>
+<p>(When using for loop, it is important to use “local({})” to give each iteration a separate local space so that previous results are not overwritten by the most recent one!!)</p>
+<div class="sourceCode" id="cb622"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="va">num_fea</span> <span class="op">&lt;-</span> <span class="va">num_fea</span><span class="op">[</span><span class="va">num_fea</span> <span class="op">!=</span> <span class="st">'LotFrontage'</span><span class="op">]</span>
+<span class="va">df</span> <span class="op">&lt;-</span> <span class="va">df</span><span class="op">[</span>,<span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="va">num_fea</span>, <span class="va">cat_fea</span>, <span class="va">label</span><span class="op">)</span><span class="op">]</span>
+<span class="kw">for</span> <span class="op">(</span><span class="va">i</span> <span class="kw">in</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">'GarageYrBlt'</span>,<span class="st">'MasVnrArea'</span><span class="op">)</span><span class="op">)</span> <span class="op">{</span>
+  <span class="va">df</span><span class="op">[</span><span class="fu"><a href="https://rdrr.io/r/base/NA.html">is.na</a></span><span class="op">(</span><span class="va">df</span><span class="op">[</span><span class="va">i</span><span class="op">]</span><span class="op">)</span>, <span class="va">i</span><span class="op">]</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/eval.html">local</a></span><span class="op">(</span><span class="op">{</span>
+    <span class="va">i</span> <span class="op">&lt;-</span> <span class="va">i</span>
+    <span class="fu"><a href="https://rdrr.io/r/stats/median.html">median</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/unlist.html">unlist</a></span><span class="op">(</span><span class="va">df</span><span class="op">[</span><span class="va">i</span><span class="op">]</span><span class="op">)</span>, na.rm<span class="op">=</span><span class="cn">TRUE</span><span class="op">)</span>
+  <span class="op">}</span><span class="op">)</span>
+<span class="op">}</span>
+<span class="va">missing_col</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/pkg/raster/man/rowSums.html">colSums</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/NA.html">is.na</a></span><span class="op">(</span><span class="va">df</span><span class="op">[</span>,<span class="va">num_fea</span><span class="op">]</span><span class="op">)</span><span class="op">)</span><span class="op">/</span><span class="fu"><a href="https://rdrr.io/pkg/raster/man/dimensions.html">dim</a></span><span class="op">(</span><span class="va">df</span><span class="op">)</span><span class="op">[</span><span class="fl">1</span><span class="op">]</span> 
+<span class="va">missing_col</span><span class="op">[</span><span class="va">missing_col</span> <span class="op">&gt;</span> <span class="fl">0</span><span class="op">]</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> <span class="fu"><a href="https://rdrr.io/r/base/sort.html">sort</a></span><span class="op">(</span>decreasing <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span></code></pre></div>
+<pre><code>## named numeric(0)</code></pre>
+<p>Use multiple scatter plots to explore the relationships between some important features and the label. Here I choose features based on their correlation coefficients with the label. The reason we want to visualize these relationships are as follows:</p>
+<ol style="list-style-type: decimal">
+<li>Are there any outliers or unexpected patterns?</li>
+<li>Are there any features we assume to be highly correlated with the label but not displayed here (because of low correlation coefficients (&lt;0.4))?</li>
+<li>After we train our models, we should come back and check whether the feature importance returned by models are aligned with our observation here. If there are any interesting differences, we should explore the reasons behind.</li>
+</ol>
+<div class="sourceCode" id="cb624"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="va">corr</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/stats/cor.html">cor</a></span><span class="op">(</span><span class="va">df</span><span class="op">[</span>,<span class="fu"><a href="https://rdrr.io/r/base/append.html">append</a></span><span class="op">(</span><span class="va">num_fea</span>, <span class="va">label</span><span class="op">)</span><span class="op">]</span><span class="op">)</span><span class="op">[</span>,<span class="va">label</span><span class="op">]</span>
+<span class="va">corr</span> <span class="op">&lt;-</span> <span class="va">corr</span><span class="op">[</span><span class="fu"><a href="https://rdrr.io/r/base/order.html">order</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/MathFun.html">abs</a></span><span class="op">(</span><span class="va">corr</span><span class="op">)</span>, decreasing <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span><span class="op">]</span>
+<span class="va">imp_num_fea</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/pkg/raster/man/names.html">names</a></span><span class="op">(</span><span class="va">corr</span><span class="op">[</span><span class="fu"><a href="https://rdrr.io/r/base/MathFun.html">abs</a></span><span class="op">(</span><span class="va">corr</span><span class="op">)</span><span class="op">&gt;</span><span class="fl">0.4</span><span class="op">]</span><span class="op">)</span> <span class="co"># only take the features with absolute value of coeff &gt; 0.4</span>
+<span class="va">imp_num_fea</span> <span class="op">&lt;-</span> <span class="va">imp_num_fea</span><span class="op">[</span><span class="va">imp_num_fea</span> <span class="op">!=</span> <span class="va">label</span><span class="op">]</span>
+
+<span class="va">p</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/list.html">list</a></span><span class="op">(</span><span class="op">)</span>
+<span class="kw">for</span> <span class="op">(</span><span class="va">i</span> <span class="kw">in</span> <span class="fl">1</span><span class="op">:</span><span class="fu"><a href="https://rdrr.io/r/base/length.html">length</a></span><span class="op">(</span><span class="va">imp_num_fea</span><span class="op">)</span><span class="op">)</span> <span class="op">{</span>
+  <span class="va">p</span><span class="op">[[</span><span class="va">i</span><span class="op">]</span><span class="op">]</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/eval.html">local</a></span><span class="op">(</span><span class="op">{</span> 
+    <span class="va">i</span> <span class="op">&lt;-</span> <span class="va">i</span>
+    <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span><span class="op">(</span><span class="op">)</span> <span class="op">+</span> 
+    <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_point.html">geom_point</a></span><span class="op">(</span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span>x<span class="op">=</span><span class="fu"><a href="https://rdrr.io/r/base/unlist.html">unlist</a></span><span class="op">(</span><span class="va">df</span><span class="op">[</span>,<span class="va">imp_num_fea</span><span class="op">[</span><span class="va">i</span><span class="op">]</span><span class="op">]</span><span class="op">)</span>, y<span class="op">=</span><span class="fu"><a href="https://rdrr.io/r/base/unlist.html">unlist</a></span><span class="op">(</span><span class="va">df</span><span class="op">[</span><span class="va">label</span><span class="op">]</span><span class="op">)</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span>
+    <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/labs.html">xlab</a></span><span class="op">(</span><span class="va">imp_num_fea</span><span class="op">[</span><span class="va">i</span><span class="op">]</span><span class="op">)</span> <span class="op">+</span>
+    <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/labs.html">ylab</a></span><span class="op">(</span><span class="st">"House Prices"</span><span class="op">)</span> 
+  <span class="op">}</span><span class="op">)</span>
+<span class="op">}</span>
+<span class="fu"><a href="https://rdrr.io/pkg/gridExtra/man/arrangeGrob.html">grid.arrange</a></span><span class="op">(</span>grobs <span class="op">=</span> <span class="va">p</span>, ncol <span class="op">=</span> <span class="fl">3</span><span class="op">)</span></code></pre></div>
+<div class="inline-figure"><img src="r_for_data_challenges_files/figure-html/plots-1.png" width="672" style="display: block; margin: auto;"></div>
+</div>
+<div id="explore-handle-categorical-columns" class="section level3">
+<h3>
+<span class="header-section-number">43.2.2</span> Explore &amp; Handle Categorical Columns<a class="anchor" aria-label="anchor" href="#explore-handle-categorical-columns"><i class="fas fa-link"></i></a>
+</h3>
+<p>Compute and show the proportions of missing values for each feature.</p>
+<div class="sourceCode" id="cb625"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="co"># show proportions of missing values</span>
+<span class="va">missing_col</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/pkg/raster/man/rowSums.html">colSums</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/NA.html">is.na</a></span><span class="op">(</span><span class="va">df</span><span class="op">[</span>,<span class="va">cat_fea</span><span class="op">]</span><span class="op">)</span><span class="op">)</span><span class="op">/</span><span class="fu"><a href="https://rdrr.io/pkg/raster/man/dimensions.html">dim</a></span><span class="op">(</span><span class="va">df</span><span class="op">)</span><span class="op">[</span><span class="fl">1</span><span class="op">]</span> 
+<span class="va">missing_col</span> <span class="op">&lt;-</span> <span class="va">missing_col</span><span class="op">[</span><span class="va">missing_col</span> <span class="op">&gt;</span> <span class="fl">0</span><span class="op">]</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> <span class="fu"><a href="https://rdrr.io/r/base/sort.html">sort</a></span><span class="op">(</span>decreasing <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span>
+<span class="va">missing_col</span></code></pre></div>
+<pre><code>##       PoolQC  MiscFeature        Alley        Fence  FireplaceQu   GarageType 
+## 0.9952054795 0.9630136986 0.9376712329 0.8075342466 0.4726027397 0.0554794521 
+## GarageFinish   GarageQual   GarageCond BsmtExposure BsmtFinType2     BsmtQual 
+## 0.0554794521 0.0554794521 0.0554794521 0.0260273973 0.0260273973 0.0253424658 
+##     BsmtCond BsmtFinType1   MasVnrType   Electrical 
+## 0.0253424658 0.0253424658 0.0054794521 0.0006849315</code></pre>
+<p>Categorical features are usually more tricky because NA might not mean “unknown”. According to the data description, only “MasVnrType” and “Electrical” truly have “NA” as missing values, the NAs in other features just mean “None”. Another thing to note is, even though some categorical features have large portions of missing values, we cannot just delete the columns like how we handle numeric data. Sometimes, missing values could be super informative (for example, the mean house prices corresponding to the missing values of a feature is significantly higher than the rest of classes of that feature). Therefore, we should visualize missing values as an explicit class, and then decide on whether to drop the column or make missing values an indicator column. For features with few missing values, we can just fill NAs with mode.</p>
+<div class="sourceCode" id="cb627"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="co"># Find the mode for each feature</span>
+<span class="va">df</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> <span class="fu"><a href="https://dplyr.tidyverse.org/reference/group_by_all.html">group_by_at</a></span><span class="op">(</span><span class="st">'MasVnrType'</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> <span class="fu"><a href="https://dplyr.tidyverse.org/reference/count.html">count</a></span><span class="op">(</span><span class="op">)</span></code></pre></div>
+<pre><code>## # A tibble: 5 × 2
+## # Groups:   MasVnrType [5]
+##   MasVnrType     n
+##   &lt;chr&gt;      &lt;int&gt;
+## 1 BrkCmn        15
+## 2 BrkFace      445
+## 3 None         864
+## 4 Stone        128
+## 5 &lt;NA&gt;           8</code></pre>
+<div class="sourceCode" id="cb629"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="va">df</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> <span class="fu"><a href="https://dplyr.tidyverse.org/reference/group_by_all.html">group_by_at</a></span><span class="op">(</span><span class="st">'Electrical'</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> <span class="fu"><a href="https://dplyr.tidyverse.org/reference/count.html">count</a></span><span class="op">(</span><span class="op">)</span></code></pre></div>
+<pre><code>## # A tibble: 6 × 2
+## # Groups:   Electrical [6]
+##   Electrical     n
+##   &lt;chr&gt;      &lt;int&gt;
+## 1 FuseA         94
+## 2 FuseF         27
+## 3 FuseP          3
+## 4 Mix            1
+## 5 SBrkr       1334
+## 6 &lt;NA&gt;           1</code></pre>
+<div class="sourceCode" id="cb631"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="va">df</span><span class="op">[</span><span class="fu"><a href="https://rdrr.io/r/base/NA.html">is.na</a></span><span class="op">(</span><span class="va">df</span><span class="op">[</span><span class="st">'MasVnrType'</span><span class="op">]</span><span class="op">)</span>, <span class="st">'MasVnrType'</span><span class="op">]</span> <span class="op">&lt;-</span> <span class="st">'None'</span>
+<span class="va">df</span><span class="op">[</span><span class="fu"><a href="https://rdrr.io/r/base/NA.html">is.na</a></span><span class="op">(</span><span class="va">df</span><span class="op">[</span><span class="st">'Electrical'</span><span class="op">]</span><span class="op">)</span>, <span class="st">'Electrical'</span><span class="op">]</span> <span class="op">&lt;-</span> <span class="st">'SBrkr'</span>
+<span class="va">df</span><span class="op">[</span><span class="fu"><a href="https://rdrr.io/r/base/NA.html">is.na</a></span><span class="op">(</span><span class="va">df</span><span class="op">)</span><span class="op">]</span> <span class="op">&lt;-</span> <span class="st">'None'</span>
+<span class="va">missing_col</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/pkg/raster/man/rowSums.html">colSums</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/NA.html">is.na</a></span><span class="op">(</span><span class="va">df</span><span class="op">[</span>,<span class="va">cat_fea</span><span class="op">]</span><span class="op">)</span><span class="op">)</span><span class="op">/</span><span class="fu"><a href="https://rdrr.io/pkg/raster/man/dimensions.html">dim</a></span><span class="op">(</span><span class="va">df</span><span class="op">)</span><span class="op">[</span><span class="fl">1</span><span class="op">]</span> 
+<span class="va">missing_col</span><span class="op">[</span><span class="va">missing_col</span> <span class="op">&gt;</span> <span class="fl">0</span><span class="op">]</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> <span class="fu"><a href="https://rdrr.io/r/base/sort.html">sort</a></span><span class="op">(</span>decreasing <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span> <span class="co"># always check whether all NAs have been filled</span></code></pre></div>
+<pre><code>## named numeric(0)</code></pre>
+<p>Most models do not handle categorical features as is, and therefore we need to transform our categorical data into numeric data in a meaningful manner. There are three frequently used strategies:</p>
+<ol style="list-style-type: decimal">
+<li>
+<strong>One-hot Encoding</strong>: transform each class of the categorical feature into a binary feature. This method works well for nominal features with low cardinality. One-hot might not work well for linear models because it causes multi-collinearity which breaks the assumption of independent features.</li>
+<li>
+<strong>Ordinal Encoding</strong>: transform each class of the ordinal categorical feature into an integer. The order of assigning integers should follow the internal order. For example, assign 1 to poor, 2 to average, 3 to good. When there are a lot of ordinal features with different sets of levels, this method could be tedious because we need to specify the internal order for each feature.</li>
+<li>
+<strong>Target Encoding</strong>: replace each class of the categorical feature with the mean of labels corresponding to that class. This method applies to all types of categorical features, especially good for categorical features with high cardinality.</li>
+</ol>
+<p>House price dataset is a typical dataset with various categorical features. If we use one-hot, it will dramatically increase the dimension of our dataset. Since we have too many ordinal features with different set of levels, ordinal encoding is also not a good idea. Therefore, we can use target encoding here, which gives meaningful orders without causing multi-colinearity or increasing dimension. Moreover, since we have too many categorical features, it is hard to choose which features to visualize. If we use target encoding to transform features, we could choose and visualize categorical features just like how we handle numeric data.</p>
+<div class="sourceCode" id="cb633"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="va">target_encoder</span> <span class="op">&lt;-</span> <span class="kw">function</span><span class="op">(</span><span class="va">df</span>, <span class="va">feature</span><span class="op">)</span> <span class="op">{</span> <span class="co"># feature input in string format</span>
+  <span class="va">fea</span> <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/paste.html">paste</a></span><span class="op">(</span><span class="va">feature</span>, <span class="st">'target'</span>, sep <span class="op">=</span> <span class="st">'_'</span><span class="op">)</span>
+  <span class="va">df1</span> <span class="op">&lt;-</span> <span class="va">df</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> <span class="fu"><a href="https://dplyr.tidyverse.org/reference/group_by_all.html">group_by_at</a></span><span class="op">(</span><span class="va">feature</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> 
+    <span class="fu"><a href="https://dplyr.tidyverse.org/reference/summarise.html">summarise</a></span><span class="op">(</span>n <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/mean.html">mean</a></span><span class="op">(</span><span class="va">SalePrice</span><span class="op">)</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span>
+    <span class="fu"><a href="https://dplyr.tidyverse.org/reference/rename.html">rename_with</a></span><span class="op">(</span>.fn <span class="op">=</span> <span class="kw">function</span><span class="op">(</span><span class="va">x</span><span class="op">)</span> <span class="va">fea</span>, .cols <span class="op">=</span> <span class="va">n</span><span class="op">)</span> <span class="co"># rename encoded features</span>
+  <span class="va">df2</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://dplyr.tidyverse.org/reference/mutate-joins.html">left_join</a></span><span class="op">(</span><span class="va">df</span>, <span class="va">df1</span><span class="op">)</span>
+  <span class="va">df2</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://dplyr.tidyverse.org/reference/select_all.html">select_if</a></span><span class="op">(</span><span class="va">df2</span>, <span class="fu"><a href="https://rdrr.io/pkg/raster/man/names.html">names</a></span><span class="op">(</span><span class="va">df2</span><span class="op">)</span> <span class="op">!=</span> <span class="va">feature</span><span class="op">)</span> <span class="co"># drop original features</span>
+  <span class="kw"><a href="https://rdrr.io/r/base/function.html">return</a></span><span class="op">(</span><span class="va">df2</span><span class="op">)</span>
+<span class="op">}</span>
+
+<span class="kw">for</span> <span class="op">(</span><span class="va">i</span> <span class="kw">in</span> <span class="va">cat_fea</span><span class="op">)</span> <span class="op">{</span>
+  <span class="fu"><a href="https://rdrr.io/r/base/message.html">suppressMessages</a></span><span class="op">(</span><span class="va">df</span> <span class="op">&lt;-</span> <span class="fu">target_encoder</span><span class="op">(</span><span class="va">df</span>, <span class="va">i</span><span class="op">)</span><span class="op">)</span> <span class="co"># to avoid message of "joining by.."</span>
+<span class="op">}</span>
+
+<span class="fu"><a href="https://rdrr.io/r/utils/str.html">str</a></span><span class="op">(</span><span class="va">df</span><span class="op">)</span></code></pre></div>
+<pre><code>## tibble [1,460 × 79] (S3: tbl_df/tbl/data.frame)
+##  $ MSSubClass          : num [1:1460] 60 20 60 70 60 50 20 60 50 190 ...
+##  $ LotArea             : num [1:1460] 8450 9600 11250 9550 14260 ...
+##  $ OverallQual         : num [1:1460] 7 6 7 7 8 5 8 7 7 5 ...
+##  $ OverallCond         : num [1:1460] 5 8 5 5 5 5 5 6 5 6 ...
+##  $ YearBuilt           : num [1:1460] 2003 1976 2001 1915 2000 ...
+##  $ YearRemodAdd        : num [1:1460] 2003 1976 2002 1970 2000 ...
+##  $ MasVnrArea          : num [1:1460] 196 0 162 0 350 0 186 240 0 0 ...
+##  $ BsmtFinSF1          : num [1:1460] 706 978 486 216 655 ...
+##  $ BsmtFinSF2          : num [1:1460] 0 0 0 0 0 0 0 32 0 0 ...
+##  $ BsmtUnfSF           : num [1:1460] 150 284 434 540 490 64 317 216 952 140 ...
+##  $ TotalBsmtSF         : num [1:1460] 856 1262 920 756 1145 ...
+##  $ 1stFlrSF            : num [1:1460] 856 1262 920 961 1145 ...
+##  $ 2ndFlrSF            : num [1:1460] 854 0 866 756 1053 ...
+##  $ LowQualFinSF        : num [1:1460] 0 0 0 0 0 0 0 0 0 0 ...
+##  $ GrLivArea           : num [1:1460] 1710 1262 1786 1717 2198 ...
+##  $ BsmtFullBath        : num [1:1460] 1 0 1 1 1 1 1 1 0 1 ...
+##  $ BsmtHalfBath        : num [1:1460] 0 1 0 0 0 0 0 0 0 0 ...
+##  $ FullBath            : num [1:1460] 2 2 2 1 2 1 2 2 2 1 ...
+##  $ HalfBath            : num [1:1460] 1 0 1 0 1 1 0 1 0 0 ...
+##  $ BedroomAbvGr        : num [1:1460] 3 3 3 3 4 1 3 3 2 2 ...
+##  $ KitchenAbvGr        : num [1:1460] 1 1 1 1 1 1 1 1 2 2 ...
+##  $ TotRmsAbvGrd        : num [1:1460] 8 6 6 7 9 5 7 7 8 5 ...
+##  $ Fireplaces          : num [1:1460] 0 1 1 1 1 0 1 2 2 2 ...
+##  $ GarageYrBlt         : num [1:1460] 2003 1976 2001 1998 2000 ...
+##  $ GarageCars          : num [1:1460] 2 2 2 3 3 2 2 2 2 1 ...
+##  $ GarageArea          : num [1:1460] 548 460 608 642 836 480 636 484 468 205 ...
+##  $ WoodDeckSF          : num [1:1460] 0 298 0 0 192 40 255 235 90 0 ...
+##  $ OpenPorchSF         : num [1:1460] 61 0 42 35 84 30 57 204 0 4 ...
+##  $ EnclosedPorch       : num [1:1460] 0 0 0 272 0 0 0 228 205 0 ...
+##  $ 3SsnPorch           : num [1:1460] 0 0 0 0 0 320 0 0 0 0 ...
+##  $ ScreenPorch         : num [1:1460] 0 0 0 0 0 0 0 0 0 0 ...
+##  $ PoolArea            : num [1:1460] 0 0 0 0 0 0 0 0 0 0 ...
+##  $ MiscVal             : num [1:1460] 0 0 0 0 0 700 0 350 0 0 ...
+##  $ MoSold              : num [1:1460] 2 5 9 2 12 10 8 11 4 1 ...
+##  $ YrSold              : num [1:1460] 2008 2007 2008 2006 2008 ...
+##  $ SalePrice           : num [1:1460] 208500 181500 223500 140000 250000 ...
+##  $ MSZoning_target     : num [1:1460] 191005 191005 191005 191005 191005 ...
+##  $ Street_target       : num [1:1460] 181131 181131 181131 181131 181131 ...
+##  $ Alley_target        : num [1:1460] 183452 183452 183452 183452 183452 ...
+##  $ LotShape_target     : num [1:1460] 164755 164755 206102 206102 206102 ...
+##  $ LandContour_target  : num [1:1460] 180184 180184 180184 180184 180184 ...
+##  $ Utilities_target    : num [1:1460] 180951 180951 180951 180951 180951 ...
+##  $ LotConfig_target    : num [1:1460] 176938 177935 176938 181623 177935 ...
+##  $ LandSlope_target    : num [1:1460] 179957 179957 179957 179957 179957 ...
+##  $ Neighborhood_target : num [1:1460] 197966 238773 197966 210625 335295 ...
+##  $ Condition1_target   : num [1:1460] 184495 142475 184495 184495 184495 ...
+##  $ Condition2_target   : num [1:1460] 181169 181169 181169 181169 181169 ...
+##  $ BldgType_target     : num [1:1460] 185764 185764 185764 185764 185764 ...
+##  $ HouseStyle_target   : num [1:1460] 210052 175985 210052 210052 210052 ...
+##  $ RoofStyle_target    : num [1:1460] 171484 171484 171484 171484 171484 ...
+##  $ RoofMatl_target     : num [1:1460] 179804 179804 179804 179804 179804 ...
+##  $ Exterior1st_target  : num [1:1460] 213733 149422 213733 149842 213733 ...
+##  $ Exterior2nd_target  : num [1:1460] 214432 149803 214432 161329 214432 ...
+##  $ MasVnrType_target   : num [1:1460] 204692 156958 204692 156958 204692 ...
+##  $ ExterQual_target    : num [1:1460] 231634 144341 231634 144341 231634 ...
+##  $ ExterCond_target    : num [1:1460] 184035 184035 184035 184035 184035 ...
+##  $ Foundation_target   : num [1:1460] 225230 149806 225230 132291 225230 ...
+##  $ BsmtQual_target     : num [1:1460] 202688 202688 202688 140760 202688 ...
+##  $ BsmtCond_target     : num [1:1460] 183633 183633 183633 213600 183633 ...
+##  $ BsmtExposure_target : num [1:1460] 165652 257690 192790 165652 206643 ...
+##  $ BsmtFinType1_target : num [1:1460] 235414 161573 235414 161573 235414 ...
+##  $ BsmtFinType2_target : num [1:1460] 184695 184695 184695 184695 184695 ...
+##  $ Heating_target      : num [1:1460] 182021 182021 182021 182021 182021 ...
+##  $ HeatingQC_target    : num [1:1460] 214914 214914 214914 156859 214914 ...
+##  $ CentralAir_target   : num [1:1460] 186187 186187 186187 186187 186187 ...
+##  $ Electrical_target   : num [1:1460] 186811 186811 186811 186811 186811 ...
+##  $ KitchenQual_target  : num [1:1460] 212116 139963 212116 212116 212116 ...
+##  $ Functional_target   : num [1:1460] 183429 183429 183429 183429 183429 ...
+##  $ FireplaceQu_target  : num [1:1460] 141331 205723 205723 226351 205723 ...
+##  $ GarageType_target   : num [1:1460] 202893 202893 202893 134091 202893 ...
+##  $ GarageFinish_target : num [1:1460] 202069 202069 202069 142156 202069 ...
+##  $ GarageQual_target   : num [1:1460] 187490 187490 187490 187490 187490 ...
+##  $ GarageCond_target   : num [1:1460] 187886 187886 187886 187886 187886 ...
+##  $ PavedDrive_target   : num [1:1460] 186434 186434 186434 186434 186434 ...
+##  $ PoolQC_target       : num [1:1460] 180405 180405 180405 180405 180405 ...
+##  $ Fence_target        : num [1:1460] 187597 187597 187597 187597 187597 ...
+##  $ MiscFeature_target  : num [1:1460] 182046 182046 182046 182046 182046 ...
+##  $ SaleType_target     : num [1:1460] 173402 173402 173402 173402 173402 ...
+##  $ SaleCondition_target: num [1:1460] 175202 175202 175202 146527 175202 ...</code></pre>
+<p>Since all categorical features have been transformed into numeric features, we could visualize them in the same way as plotting numeric features.</p>
+<div class="sourceCode" id="cb635"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="kw">for</span> <span class="op">(</span><span class="va">i</span> <span class="kw">in</span> <span class="fl">1</span><span class="op">:</span><span class="fu"><a href="https://rdrr.io/r/base/length.html">length</a></span><span class="op">(</span><span class="va">cat_fea</span><span class="op">)</span><span class="op">)</span> <span class="op">{</span>
+  <span class="va">cat_fea</span><span class="op">[</span><span class="va">i</span><span class="op">]</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/eval.html">local</a></span><span class="op">(</span><span class="op">{</span>
+    <span class="va">i</span> <span class="op">&lt;-</span> <span class="va">i</span>
+    <span class="fu"><a href="https://rdrr.io/r/base/paste.html">paste</a></span><span class="op">(</span><span class="va">cat_fea</span><span class="op">[</span><span class="va">i</span><span class="op">]</span>,<span class="st">'target'</span>,sep<span class="op">=</span><span class="st">'_'</span><span class="op">)</span> <span class="co"># update categorical feature list</span>
+  <span class="op">}</span><span class="op">)</span>
+<span class="op">}</span>
+
+<span class="va">corr</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/stats/cor.html">cor</a></span><span class="op">(</span><span class="va">df</span><span class="op">[</span>,<span class="fu"><a href="https://rdrr.io/r/base/append.html">append</a></span><span class="op">(</span><span class="va">cat_fea</span>, <span class="va">label</span><span class="op">)</span><span class="op">]</span><span class="op">)</span><span class="op">[</span>,<span class="va">label</span><span class="op">]</span>
+<span class="va">corr</span> <span class="op">&lt;-</span> <span class="va">corr</span><span class="op">[</span><span class="fu"><a href="https://rdrr.io/r/base/order.html">order</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/MathFun.html">abs</a></span><span class="op">(</span><span class="va">corr</span><span class="op">)</span>, decreasing <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span><span class="op">]</span>
+<span class="va">imp_num_fea</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/pkg/raster/man/names.html">names</a></span><span class="op">(</span><span class="va">corr</span><span class="op">[</span><span class="fu"><a href="https://rdrr.io/r/base/MathFun.html">abs</a></span><span class="op">(</span><span class="va">corr</span><span class="op">)</span><span class="op">&gt;</span><span class="fl">0.4</span><span class="op">]</span><span class="op">)</span>
+<span class="va">imp_num_fea</span> <span class="op">&lt;-</span> <span class="va">imp_num_fea</span><span class="op">[</span><span class="va">imp_num_fea</span> <span class="op">!=</span> <span class="va">label</span><span class="op">]</span>
+
+<span class="va">p</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/list.html">list</a></span><span class="op">(</span><span class="op">)</span>
+<span class="kw">for</span> <span class="op">(</span><span class="va">i</span> <span class="kw">in</span> <span class="fl">1</span><span class="op">:</span><span class="fu"><a href="https://rdrr.io/r/base/length.html">length</a></span><span class="op">(</span><span class="va">imp_num_fea</span><span class="op">)</span><span class="op">)</span> <span class="op">{</span>
+  <span class="va">p</span><span class="op">[[</span><span class="va">i</span><span class="op">]</span><span class="op">]</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/eval.html">local</a></span><span class="op">(</span><span class="op">{</span> 
+    <span class="va">i</span> <span class="op">&lt;-</span> <span class="va">i</span>
+    <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span><span class="op">(</span><span class="op">)</span> <span class="op">+</span> 
+    <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_point.html">geom_point</a></span><span class="op">(</span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span>x<span class="op">=</span><span class="fu"><a href="https://rdrr.io/r/base/unlist.html">unlist</a></span><span class="op">(</span><span class="va">df</span><span class="op">[</span>,<span class="va">imp_num_fea</span><span class="op">[</span><span class="va">i</span><span class="op">]</span><span class="op">]</span><span class="op">)</span>, y<span class="op">=</span><span class="fu"><a href="https://rdrr.io/r/base/unlist.html">unlist</a></span><span class="op">(</span><span class="va">df</span><span class="op">[</span><span class="va">label</span><span class="op">]</span><span class="op">)</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span>
+    <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/labs.html">xlab</a></span><span class="op">(</span><span class="va">imp_num_fea</span><span class="op">[</span><span class="va">i</span><span class="op">]</span><span class="op">)</span> <span class="op">+</span>
+    <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/labs.html">ylab</a></span><span class="op">(</span><span class="st">"House Prices"</span><span class="op">)</span> 
+  <span class="op">}</span><span class="op">)</span>
+<span class="op">}</span>
+<span class="fu"><a href="https://rdrr.io/pkg/gridExtra/man/arrangeGrob.html">grid.arrange</a></span><span class="op">(</span>grobs <span class="op">=</span> <span class="va">p</span>, ncol <span class="op">=</span> <span class="fl">3</span><span class="op">)</span></code></pre></div>
+<div class="inline-figure"><img src="r_for_data_challenges_files/figure-html/plots2-1.png" width="672" style="display: block; margin: auto;"></div>
+<p><strong>Finally</strong> All missing values have been filled, and all categorical features have been transformed. Now we are ready for modeling!</p>
+<p><strong>Note:</strong></p>
+<ol style="list-style-type: decimal">
+<li><p>I did not remove any outliers here because it is not very reasonable to do that for such a small dataset. Moreover, even though we remove a few “outliers”, it would usually have little impact on model performance. The right way is just to keep all the data and run a model first. If there are certain predictions with dramatically higher errors, then we go into the data again and try to see if there are any outliers we should remove.</p></li>
+<li><p>I did not scale the data here. Firstly, scaling is not needed for every model. For tree models, scaling just does not matter at all. However, for distance-based models, scaling might reduce training time, boost interpretability of feature importance, and improve accuracy/reduce error.</p></li>
+</ol>
+</div>
+</div>
+</div>
+
+
+
+  <div class="chapter-nav">
+<div class="prev"><a href="icons-and-symbols-in-r.html"><span class="header-section-number">42</span> Icons and symbols in R</a></div>
+<div class="next"><a href="linear-association-r-studio-plugin.html"><span class="header-section-number">44</span> Linear Association R Studio Plugin</a></div>
+</div></main><div class="col-md-3 col-lg-2 d-none d-md-block sidebar sidebar-chapter">
+    <nav id="toc" data-toggle="toc" aria-label="On this page"><h2>On this page</h2>
+      <ul class="nav navbar-nav">
+<li><a class="nav-link" href="#exploratory-data-analysis-and-preprocessing-with-r-for-data-challenges"><span class="header-section-number">43</span> Exploratory data analysis and preprocessing with R for data challenges</a></li>
+<li><a class="nav-link" href="#introduction-7"><span class="header-section-number">43.1</span> Introduction</a></li>
+<li>
+<a class="nav-link" href="#exploratory-data-analysis-preprocessing"><span class="header-section-number">43.2</span> Exploratory Data Analysis &amp; Preprocessing</a><ul class="nav navbar-nav">
+<li><a class="nav-link" href="#explore-handle-numeric-features"><span class="header-section-number">43.2.1</span> Explore &amp; Handle Numeric Features</a></li>
+<li><a class="nav-link" href="#explore-handle-categorical-columns"><span class="header-section-number">43.2.2</span> Explore &amp; Handle Categorical Columns</a></li>
+</ul>
+</li>
+</ul>
+
+      <div class="book-extra">
+        <ul class="list-unstyled">
+<li><a id="book-source" href="https://github.com/jtr13/cc21fall1/blob/main/r_for_data_challenges.Rmd">View source <i class="fab fa-github"></i></a></li>
+          <li><a id="book-edit" href="https://github.com/jtr13/cc21fall1/edit/main/r_for_data_challenges.Rmd">Edit this page <i class="fab fa-github"></i></a></li>
+        </ul>
+</div>
+    </nav>
+</div>
+
+</div>
+</div> <!-- .container -->
+
+<footer class="bg-primary text-light mt-5"><div class="container"><div class="row">
+
+  <div class="col-12 col-md-6 mt-3">
+    <p>"<strong>EDAV Fall 2021 Mon/Wed Community Contributions</strong>" was written by the students of the class. It was last built on 2021-11-09.</p>
+  </div>
+
+  <div class="col-12 col-md-6 mt-3">
+    <p>This book was built by the <a class="text-light" href="https://bookdown.org">bookdown</a> R package.</p>
+  </div>
+
+</div></div>
+</footer><!-- dynamically load mathjax for compatibility with self-contained --><script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script><script type="text/x-mathjax-config">const popovers = document.querySelectorAll('a.footnote-ref[data-toggle="popover"]');
+for (let popover of popovers) {
+  const div = document.createElement('div');
+  div.setAttribute('style', 'position: absolute; top: 0, left:0; width:0, height:0, overflow: hidden; visibility: hidden;');
+  div.innerHTML = popover.getAttribute('data-content');
+
+  var has_math = div.querySelector("span.math");
+  if (has_math) {
+    document.body.appendChild(div);
+    MathJax.Hub.Queue(["Typeset", MathJax.Hub, div]);
+    MathJax.Hub.Queue(function() {
+      popover.setAttribute('data-content', div.innerHTML);
+      document.body.removeChild(div);
+    })
+  }
+}
+</script>
+</body>
+</html>
