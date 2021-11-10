@@ -63,6 +63,7 @@ rmd_files: [
   'icons_and_symbols_in_r.Rmd',
   'r_for_data_challenges.Rmd',
   'git_bash.Rmd',
+  'ggplot_graph.Rmd',
 
   # Part: Demonstrations
   'linear_association.Rmd', # contains PART header
