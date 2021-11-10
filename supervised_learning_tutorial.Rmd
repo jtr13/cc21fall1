@@ -1,0 +1,154 @@
+# Supervised Learning Tutorial
+
+Sung Jun Won
+
+```{r}
+library(ggplot2)
+library(lattice)
+library(caret)
+library(AppliedPredictiveModeling)
+library(mlbench)
+library(MLmetrics)
+```
+
+link to caret package guide:
+http://topepo.github.io/caret/index.html
+
+In this tutorial, I will be introducing caret, R package that supports various machine learning tools. I will mainly focus on introducing supervised learning.
+
+There are few important steps in supervised learning.
+1. Data preprocessing
+2. Data splitting
+3. Model selection
+4. Training
+5. Evaluation
+
+Let's walk through these steps one by one.
+
+
+1) Data preprocessing
+
+To go through the data preprocessing step, we will be using schedulingData data from AppliedPredictiveModeling library.
+
+```{r}
+data(schedulingData)
+str(schedulingData)
+```
+
+Some dataset may have features that have only one unique value, or some unique values that occur with very low frequency. Model trained on such dataset may crash or not fit well. 
+To resolve this issue, we can use nearZeroVar to identify such features and remove such features.
+
+```{r}
+nzv <- nearZeroVar(schedulingData)
+filteredDescr <- schedulingData[, -nzv]
+filteredDescr[1:10,]
+```
+
+For models that can't take categorical features (linear regression, logistic regression, etc), we need to convert them to dummy variables using so-called One-Hot Encoding.
+```{r}
+str(filteredDescr)
+```
+
+```{r}
+dummies <- dummyVars("~.", data = filteredDescr[,-7])
+encodedData <- data.frame(predict(dummies, newdata = filteredDescr))
+head(encodedData)
+```
+We can see that for each categorical values, a column is made with values of 0 and 1.
+
+To preprocess all the features as needed, caret supports an amazing function called preProcess, which decides whatever preprocessings it needs to perform on any dataset and apply them accordingly. 
+For numerical features, we can apply centering and scaling to normalize the dataset.
+
+```{r}
+pp_hpc <- preProcess(encodedData, 
+                     method = c("center", "scale", "YeoJohnson"))
+transformed <- predict(pp_hpc, newdata = encodedData)
+head(transformed)
+```
+
+2) Data Splitting
+
+We can split the data into train & test.
+We can use createDataPartition function to create balanced split between train and test.
+We will use Sonar data from mlbench package as an example.
+```{r}
+data(Sonar)
+str(Sonar)
+```
+
+By setting p = 0.8, we can split the data in 8:2 ratio, 8 for train and 2 for test.
+We want matrix output so list = FALSE, and since we are only splitting into two, partition times = 1.
+```{r}
+inTraining <- createDataPartition(Sonar$Class, p = .8, list = FALSE, times = 1)
+training <- Sonar[ inTraining,]
+testing  <- Sonar[-inTraining,]
+```
+
+3) Model Selection
+
+caret provides trainControl function, with which we can change the cross validation methods, parameters for tuning, number of folds for k-fold CV, number of resampling, etc. Depending on what classification or regression model we decide to use, we can set these parameters as fit and tune the model to be optimal.
+
+For instance, if we want to use k-fold cross validation, with the number of folds = 10 and number of resampling = 10, we can set the parameters as such:
+```{r}
+fitControl <- trainControl(## 10-fold CV
+                           method = "repeatedcv",
+                           number = 10,
+                           ## repeated ten times
+                           repeats = 10)
+```
+
+In python, we have to do hyperparameter tuning to find the best performing model. But in R, the function train by default uses best, which basically means that it chooses the parameters that shows the best accuracy. (or lowest RMSE) 
+
+==> best(testing, "RMSE", maximize = FALSE)
+
+But there are two other choices besides best, which are oneSE and tolerance.
+
+oneSE aims to find the simplest model within one standard error of ideally most optimal model. 
+
+==> oneSE(testing, "RMSE", maximize = FALSE, num = 10)
+
+tolerance attempts to find less complex model that falls within a percent tolerance from ideally most optimal model. 
+
+==> tolerance(testing, "RMSE", tol = 3, maximize = FALSE)
+
+The idea behind using oneSE and tolerance is that they are ordering of models from simple to complex, but in many cases, models are too complicated to order one next to another. It is important to use the these two methods if the ordering of model complexity is deemed right.
+
+4) Training
+
+We can use the cross validation parameters chosen to train the model.
+There are numerous classification or regression models that we can use to fit the data. 
+
+To list a few, there are 
+"treebag" or "logicbag" for Bagged Trees, 
+"rf" for Random Forest, 
+"adaboost" or "gbm" for Boosted Trees, 
+"lm" for Linear Regression,
+"logreg" for Logistic Regression,
+and of course, numerous variations to these models too with regularization and so on.
+
+To show an example, we can see Random Forest model fitting to the training data, with the 10-fold cross validation choosing the model with best performance.
+```{r}
+rfFit <- train(Class ~ ., data = training,
+                 method = "rf", 
+                 trControl = fitControl)
+```
+
+5) Evaluation
+
+Using postResample function, we can get the performance of the model on the test data. With Random Forest, we can get prediction accuracy and Kappa, which compares observed accuracy from expected accuracy.
+```{r}
+pred <- predict(rfFit, testing)
+
+postResample(pred = pred, obs = testing$Class)
+```
+
+We can also get confusion matrix for the test data using confusionMatrix function. It shows the accuracy scores as well as p-value and other evaluation metrics. To get precision, recall, and F1 score, we can set mode to "prec_recall".
+```{r}
+confusionMatrix(data = pred, reference = testing$Class, mode = "prec_recall")
+```
+
+So far, we have seen the basics of supervised learning.
+In the link provided above, there are more details of each step as well as other steps to consider such as feature selection, calibration, etc.
+
+I hope you guys liked this tutorial!
+
