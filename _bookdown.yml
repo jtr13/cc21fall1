@@ -65,7 +65,7 @@ rmd_files: [
   'git_bash.Rmd',
   'ggplot_graph.Rmd',
   'web_scraping.Rmd',
-  '3d_visualization .Rmd',
+  '3d_visualization-.Rmd',
 
   # Part: Demonstrations
   'linear_association.Rmd', # contains PART header
