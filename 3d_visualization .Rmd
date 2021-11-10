@@ -99,7 +99,6 @@ if (interactive()) {
             `data-binding__colorlabels` = "target: guide-legend.labels",
             `data-binding__colortitle` = "target: guide-legend.title"
           ),
-          # animate the plot rotation
           atags$other('animation', attribute = "rotation",
                       from = "0 45 0", to = "0 405 0",
                       dur = "10000", `repeat` = "indefinite")
