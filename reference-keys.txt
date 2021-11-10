@@ -317,6 +317,13 @@ exploratory-data-analysis-preprocessing
 explore-handle-numeric-features
 explore-handle-categorical-columns
 introduction-to-git-bash
+tutorial-for-six-basic-graphs-by-using-ggplot
+scatter-plot
+histogram
+bar-chart
+box-plot
+area-chart
+heat-map
 linear-association-r-studio-plugin
 introduction-8
 installation-1
