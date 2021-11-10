@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<title>Chapter 49 3D visualization: shinyaframe introduction and tutorial | EDAV Fall 2021 Mon/Wed Community Contributions</title>
+<meta name="author" content="the students of the class">
+<meta name="description" content="Zhaoyu Wu On Oct 28, 2021, the tech giant Facebook rebranded itself as ‘Meta’, marking the transformation of the once-dominant social networking software company into a metaverse company. Curious...">
+<meta name="generator" content="bookdown 0.24 with bs4_book()">
+<meta property="og:title" content="Chapter 49 3D visualization: shinyaframe introduction and tutorial | EDAV Fall 2021 Mon/Wed Community Contributions">
+<meta property="og:type" content="book">
+<meta property="og:description" content="Zhaoyu Wu On Oct 28, 2021, the tech giant Facebook rebranded itself as ‘Meta’, marking the transformation of the once-dominant social networking software company into a metaverse company. Curious...">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Chapter 49 3D visualization: shinyaframe introduction and tutorial | EDAV Fall 2021 Mon/Wed Community Contributions">
+<meta name="twitter:description" content="Zhaoyu Wu On Oct 28, 2021, the tech giant Facebook rebranded itself as ‘Meta’, marking the transformation of the once-dominant social networking software company into a metaverse company. Curious...">
+<!-- JS --><script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.6/clipboard.min.js" integrity="sha256-inc5kl9MA1hkeYUt+EC3BhlIgyp/2jDIyBLS6k3UxPI=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/fuse.js/6.4.6/fuse.js" integrity="sha512-zv6Ywkjyktsohkbp9bb45V6tEMoWhzFzXis+LrMehmJZZSys19Yxf1dopHx7WzIKxr5tK2dVcYmaCk2uqdjF4A==" crossorigin="anonymous"></script><script src="https://kit.fontawesome.com/6ecbd6c532.js" crossorigin="anonymous"></script><script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<link href="libs/bootstrap-4.6.0/bootstrap.min.css" rel="stylesheet">
+<script src="libs/bootstrap-4.6.0/bootstrap.bundle.min.js"></script><script src="libs/bs3compat-0.3.1/transition.js"></script><script src="libs/bs3compat-0.3.1/tabs.js"></script><script src="libs/bs3compat-0.3.1/bs3compat.js"></script><link href="libs/bs4_book-1.0.0/bs4_book.css" rel="stylesheet">
+<script src="libs/bs4_book-1.0.0/bs4_book.js"></script><script src="libs/accessible-code-block-0.0.1/empty-anchor.js"></script><script src="libs/htmlwidgets-1.5.4/htmlwidgets.js"></script><script src="libs/plotly-binding-4.10.0/plotly.js"></script><script src="libs/typedarray-0.1/typedarray.min.js"></script><link href="libs/crosstalk-1.2.0/css/crosstalk.min.css" rel="stylesheet">
+<script src="libs/crosstalk-1.2.0/js/crosstalk.min.js"></script><link href="libs/plotly-htmlwidgets-css-2.5.1/plotly-htmlwidgets.css" rel="stylesheet">
+<script src="libs/plotly-main-2.5.1/plotly-latest.min.js"></script><link href="libs/dygraphs-1.1.1/dygraph.css" rel="stylesheet">
+<script src="libs/dygraphs-1.1.1/dygraph-combined.js"></script><script src="libs/dygraphs-1.1.1/shapes.js"></script><script src="libs/moment-2.8.4/moment.js"></script><script src="libs/moment-timezone-0.2.5/moment-timezone-with-data.js"></script><script src="libs/moment-fquarter-1.0.0/moment-fquarter.min.js"></script><script src="libs/dygraphs-binding-1.1.1.6/dygraphs.js"></script><script src="libs/d3-5.16.0/d3.min.js"></script><script src="libs/forceNetwork-binding-0.4/forceNetwork.js"></script><link href="libs/parallel-coordinates-2.1.8/parcoords.css" rel="stylesheet">
+<script src="libs/parcoords-binding-1.0.0/parcoords.js"></script><script src="libs/detect-resize-0.5.3/jquery.resize.js"></script><link href="libs/jquery-ui-1.11.4/jquery-ui.min.css" rel="stylesheet">
+<script src="libs/jquery-ui-1.11.4/jquery-ui.min.js"></script><script src="libs/vega-1.4.3/vega.min.js"></script><script src="libs/lodash-2.2.1/lodash.min.js"></script><script>var lodash = _.noConflict();</script><link href="libs/ggvis-0.4.7/css/ggvis.css" rel="stylesheet">
+<script src="libs/ggvis-0.4.7/js/ggvis.js"></script><script src="libs/dendroNetwork-binding-0.4/dendroNetwork.js"></script><link href="libs/str_view-0.1.0/str_view.css" rel="stylesheet">
+<script src="libs/str_view-binding-1.4.0/str_view.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/autocomplete.js/0.38.0/autocomplete.jquery.min.js" integrity="sha512-GU9ayf+66Xx2TmpxqJpliWbT5PiGYxpaG8rfnBEk1LL8l1KGkRShhngwdXK1UgqhAzWpZHSiYPc09/NwDQIGyg==" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/mark.min.js" integrity="sha512-5CYOlHXGh6QpOFA/TeTylKLWfB3ftPsde7AnmhuitiTX4K5SqCLBeKro6sPS8ilsz1Q4NRx3v8Ko2IBiszzdww==" crossorigin="anonymous"></script><!-- CSS -->
+</head>
+<body data-spy="scroll" data-target="#toc">
+
+<div class="container-fluid">
+<div class="row">
+  <header class="col-sm-12 col-lg-3 sidebar sidebar-book"><a class="sr-only sr-only-focusable" href="#content">Skip to main content</a>
+
+    <div class="d-flex align-items-start justify-content-between">
+      <h1>
+        <a href="index.html" title="">EDAV Fall 2021 Mon/Wed Community Contributions</a>
+      </h1>
+      <button class="btn btn-outline-primary d-lg-none ml-2 mt-1" type="button" data-toggle="collapse" data-target="#main-nav" aria-expanded="true" aria-controls="main-nav"><i class="fas fa-bars"></i><span class="sr-only">Show table of contents</span></button>
+    </div>
+
+    <div id="main-nav" class="collapse-lg">
+      <form role="search">
+        <input id="search" class="form-control" type="search" placeholder="Search" aria-label="Search">
+</form>
+
+      <nav aria-label="Table of contents"><h2>Table of contents</h2>
+        <ul class="book-toc list-unstyled">
+<li><a class="" href="index.html"><span class="header-section-number">1</span> Welcome!</a></li>
+<li><a class="" href="community-contribution.html"><span class="header-section-number">2</span> Community Contribution</a></li>
+<li><a class="" href="github-submission-instructions.html"><span class="header-section-number">3</span> GitHub submission instructions</a></li>
+<li><a class="" href="sample-project.html"><span class="header-section-number">4</span> Sample project</a></li>
+<li class="book-part">Data Visualizations</li>
+<li><a class="" href="introduction-to-the-lattice-package.html"><span class="header-section-number">5</span> Introduction to the lattice package</a></li>
+<li><a class="" href="graph-animation-with-gganimate-and-after-effects.html"><span class="header-section-number">6</span> Graph animation with gganimate and After Effects</a></li>
+<li><a class="" href="interactive-plots.html"><span class="header-section-number">7</span> Interactive Plots</a></li>
+<li><a class="" href="create-regression-assumption-plots-in-word.html"><span class="header-section-number">8</span> Create regression assumption plots in Word</a></li>
+<li><a class="" href="from-neo4j-to-rstudio.html"><span class="header-section-number">9</span> From Neo4j to RStudio</a></li>
+<li><a class="" href="stacked-bar-plot-for-relative-proportions-in-python.html"><span class="header-section-number">10</span> Stacked Bar Plot For Relative Proportions In Python</a></li>
+<li class="book-part">Cheatsheets</li>
+<li><a class="" href="r-vs.-python-visualization-cheatsheet.html"><span class="header-section-number">11</span> R vs. Python Visualization Cheatsheet</a></li>
+<li><a class="" href="rpackage-waffle-cheatsheet.html"><span class="header-section-number">12</span> Rpackage waffle cheatsheet</a></li>
+<li><a class="" href="r-cheatsheet-on-data-transforamtion-and-exploration.html"><span class="header-section-number">13</span> R cheatsheet on data transforamtion and exploration</a></li>
+<li><a class="" href="r-vs-python-basic-data-wrangling.html"><span class="header-section-number">14</span> R vs Python Basic Data Wrangling</a></li>
+<li><a class="" href="tidyverse_cheatsheet.html"><span class="header-section-number">15</span> tidyverse_cheatsheet</a></li>
+<li><a class="" href="cheatsheet-tidyverse.html"><span class="header-section-number">16</span> Cheatsheet Tidyverse</a></li>
+<li><a class="" href="use-of-ggprism-and-ggsci-packages.html"><span class="header-section-number">17</span> Use of ggprism and ggsci packages</a></li>
+<li><a class="" href="interactive-plot-introduction.html"><span class="header-section-number">18</span> Interactive plot introduction</a></li>
+<li><a class="" href="common-r-markdown-syntax-cheatsheet.html"><span class="header-section-number">19</span> Common R markdown syntax cheatsheet</a></li>
+<li><a class="" href="header.html"><span class="header-section-number">20</span> Header</a></li>
+<li><a class="" href="parallel-coordinates-plot-cheatsheet.html"><span class="header-section-number">21</span> Parallel coordinates plot cheatsheet</a></li>
+<li><a class="" href="r-data-science-workflow-cheatsheet.html"><span class="header-section-number">22</span> R Data Science Workflow CheatSheet</a></li>
+<li><a class="" href="a-linear-regression-bestiary.html"><span class="header-section-number">23</span> A linear regression Bestiary</a></li>
+<li><a class="" href="graphql-cheat-sheet.html"><span class="header-section-number">24</span> GraphQL Cheat Sheet</a></li>
+<li><a class="" href="questions-answers-for-r-technical-interview.html"><span class="header-section-number">25</span> 30 questions &amp; answers for r technical interview</a></li>
+<li class="book-part">Tutorials</li>
+<li><a class="" href="multithreading-crawler-frame.html"><span class="header-section-number">26</span> Multithreading Crawler Frame</a></li>
+<li><a class="" href="regression-and-classification-in-r.html"><span class="header-section-number">27</span> Regression and Classification in R</a></li>
+<li><a class="" href="tibble-vs.-dataframe.html"><span class="header-section-number">28</span> Tibble vs. DataFrame</a></li>
+<li><a class="" href="introduction-to-time-series.html"><span class="header-section-number">29</span> Introduction to Time Series</a></li>
+<li><a class="" href="vipul-edav-community-contribution-kickstart-r.html"><span class="header-section-number">30</span> Vipul EDAV Community Contribution Kickstart R</a></li>
+<li><a class="" href="caret---a-machine-learning-package-turotial.html"><span class="header-section-number">31</span> caret - a machine learning package turotial</a></li>
+<li><a class="" href="streamlit-for-financial-analysis.html"><span class="header-section-number">32</span> Streamlit for Financial Analysis</a></li>
+<li><a class="" href="interactive-graphs-tutorial.html"><span class="header-section-number">33</span> Interactive graphs tutorial</a></li>
+<li><a class="" href="guideline-on-using-package-rcurl-and-xml-for-web-scraping.html"><span class="header-section-number">34</span> Guideline on Using Package Rcurl and XML for Web Scraping</a></li>
+<li><a class="" href="twitter-r-package-scraping-via-api-tutorial.html"><span class="header-section-number">35</span> TwitteR R Package Scraping via API Tutorial</a></li>
+<li><a class="" href="introduction-to-data-manipulation.html"><span class="header-section-number">36</span> Introduction to Data Manipulation</a></li>
+<li><a class="" href="animating-the-plots-in-r.html"><span class="header-section-number">37</span> Animating the plots in R</a></li>
+<li><a class="" href="quick-guide-to-eda.html"><span class="header-section-number">38</span> Quick guide to eda</a></li>
+<li><a class="" href="natural-langauge-processing-common-eda-practices-in-python.html"><span class="header-section-number">39</span> Natural Langauge Processing Common EDA Practices in Python</a></li>
+<li><a class="" href="beginners-walk-through-of-deep-learning-in-r.html"><span class="header-section-number">40</span> Beginner’s Walk-through of Deep Learning in R</a></li>
+<li><a class="" href="supervised-learning-tutorial.html"><span class="header-section-number">41</span> Supervised Learning Tutorial</a></li>
+<li><a class="" href="parallel-coordinate-plots-in-ggplot2.html"><span class="header-section-number">42</span> Parallel Coordinate Plots in ggplot2</a></li>
+<li><a class="" href="using-ggplot-in-python.html"><span class="header-section-number">43</span> Using ggplot in python</a></li>
+<li><a class="" href="icons-and-symbols-in-r.html"><span class="header-section-number">44</span> Icons and symbols in R</a></li>
+<li><a class="" href="exploratory-data-analysis-and-preprocessing-with-r-for-data-challenges.html"><span class="header-section-number">45</span> Exploratory data analysis and preprocessing with R for data challenges</a></li>
+<li><a class="" href="introduction-to-git-bash.html"><span class="header-section-number">46</span> Introduction to Git Bash</a></li>
+<li><a class="" href="tutorial-for-six-basic-graphs-by-using-ggplot.html"><span class="header-section-number">47</span> Tutorial for six basic graphs by using ggplot</a></li>
+<li><a class="" href="web-scrapping-using-beautifulsoup-and-its-equivalent-in-rvest.html"><span class="header-section-number">48</span> Web Scrapping using BeautifulSoup and its Equivalent in rvest</a></li>
+<li><a class="active" href="d-visualization-shinyaframe-introduction-and-tutorial.html"><span class="header-section-number">49</span> 3D visualization: shinyaframe introduction and tutorial</a></li>
+<li class="book-part">Demonstrations</li>
+<li><a class="" href="linear-association-r-studio-plugin.html"><span class="header-section-number">50</span> Linear Association R Studio Plugin</a></li>
+<li><a class="" href="customized-sorting-in-r.html"><span class="header-section-number">51</span> Customized Sorting in R</a></li>
+<li class="book-part">Workshops</li>
+<li><a class="" href="data-science-product-cycles-in-enterprises.html"><span class="header-section-number">52</span> Data Science Product Cycles in Enterprises</a></li>
+<li class="book-part">Appendices</li>
+<li><a class="" href="github-initial-setup.html"><span class="header-section-number">53</span> Github initial setup</a></li>
+<li><a class="" href="tutorial-for-pull-request-mergers.html"><span class="header-section-number">54</span> Tutorial for pull request mergers</a></li>
+</ul>
+
+        <div class="book-extra">
+          <p><a id="book-repo" href="https://github.com/jtr13/cc21fall1">View book source <i class="fab fa-github"></i></a></p>
+        </div>
+      </nav>
+</div>
+  </header><main class="col-sm-12 col-md-9 col-lg-7" id="content"><div id="d-visualization-shinyaframe-introduction-and-tutorial" class="section level1">
+<h1>
+<span class="header-section-number">49</span> 3D visualization: shinyaframe introduction and tutorial<a class="anchor" aria-label="anchor" href="#d-visualization-shinyaframe-introduction-and-tutorial"><i class="fas fa-link"></i></a>
+</h1>
+<p>Zhaoyu Wu</p>
+<p>On Oct 28, 2021, the tech giant Facebook rebranded itself as ‘Meta’, marking the transformation of the once-dominant social networking software company into a metaverse company. Curious people around the world are now asking, what exactly is metaverse?</p>
+<p><a href="https://www.youtube.com/watch?v=gElfIo6uw4g" target="_blank"><img src="http://img.youtube.com/vi/gElfIo6uw4g/0.jpg" alt="IMAGE ALT TEXT HERE" width="240" height="180" border="10"></a>
+(Click on the image to view the video for metaverse)</p>
+<p>Imagine a world where reality and virtuality blend together, where we can gain ultra experiences that are unimaginable in the real life. Virtual reality and augmented reality allow the digital worlds to become ‘real’. People have the option to live an alternative virtual life in the same way they live their real life. The users can choose the virtual characters to represent themselves and join various activities in virtual environments VR technologies would also provide new features for Internet of Things(IoTs) and greatly enriches the metaverse experience. 3D data visualization would become an essential tool to enhance users’ virtual experience.</p>
+<p><a href="https://www.youtube.com/watch?v=wxmqG_jxJiw" target="_blank"><img src="http://img.youtube.com/vi/wxmqG_jxJiw/0.jpg" alt="IMAGE ALT TEXT HERE" width="240" height="180" border="10"></a>
+(Click on the image to view the video for 3D data visualization)</p>
+<p>In R language, we can also make 3D data visualization using shinyaframe package. Package Shinyaframe makes R data available in Web-based virtual reality experiences for immersive, cross-platform data visualizations. Includes the ‘gg-aframe’ JavaScript package for a Grammar of Graphics declarative HTML syntax to create 3-dimensional visualizations. (<a href="https://www.rdocumentation.org/packages/shinyaframe/versions/1.0.1/topics/shinyaframe" class="uri">https://www.rdocumentation.org/packages/shinyaframe/versions/1.0.1/topics/shinyaframe</a>)</p>
+<div class="sourceCode" id="cb647"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://shiny.rstudio.com/">shiny</a></span><span class="op">)</span>
+<span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://dplyr.tidyverse.org">dplyr</a></span><span class="op">)</span>
+<span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://scales.r-lib.org">scales</a></span><span class="op">)</span>
+<span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va">shinyaframe</span><span class="op">)</span>
+<span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://github.com/ramnathv/htmlwidgets">htmlwidgets</a></span><span class="op">)</span>
+<span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://github.com/timelyportfolio/d3r">d3r</a></span><span class="op">)</span></code></pre></div>
+<p>The following is an example of the application of package shinyaframe provided by DataCamp (<a href="https://www.rdocumentation.org/packages/shinyaframe/versions/1.0.1/topics/shinyaframe" class="uri">https://www.rdocumentation.org/packages/shinyaframe/versions/1.0.1/topics/shinyaframe</a>)
+The 3D animation can be viewed in .rmd file by running the block below:</p>
+<div class="sourceCode" id="cb648"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="kw">if</span> <span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/interactive.html">interactive</a></span><span class="op">(</span><span class="op">)</span><span class="op">)</span> <span class="op">{</span>
+
+
+  <span class="fu"><a href="https://rdrr.io/pkg/shiny/man/shinyApp.html">shinyApp</a></span><span class="op">(</span>
+    ui <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/pkg/shiny/man/fluidPage.html">fluidPage</a></span><span class="op">(</span>
+      <span class="fu"><a href="https://rdrr.io/pkg/shinyaframe/man/aDataScene-shiny.html">aDataSceneOutput</a></span><span class="op">(</span>
+
+        outputId <span class="op">=</span> <span class="st">"mydatascene"</span>,
+
+        environment <span class="op">=</span> <span class="st">""</span>,
+
+        <span class="va">atags</span><span class="op">$</span><span class="fu">entity</span><span class="op">(</span>
+
+          plot <span class="op">=</span> <span class="st">""</span>,
+
+          `scale-shape` <span class="op">=</span> <span class="st">"sizable"</span>,
+          position <span class="op">=</span> <span class="st">"0 1.6 -1.38"</span>,
+          <span class="va">atags</span><span class="op">$</span><span class="fu">entity</span><span class="op">(</span>
+            `layer-point` <span class="op">=</span> <span class="st">""</span>,
+            `data-binding__sepal.length`<span class="op">=</span><span class="st">"target: layer-point.x"</span>,
+            `data-binding__sepal.width`<span class="op">=</span><span class="st">"target: layer-point.y"</span>,
+            `data-binding__petal.length`<span class="op">=</span><span class="st">"target: layer-point.z"</span>,
+            `data-binding__species`<span class="op">=</span><span class="st">"target: layer-point.shape"</span>,
+            `data-binding__petal.width.size`<span class="op">=</span><span class="st">"target: layer-point.size"</span>,
+            `data-binding__species.color`<span class="op">=</span><span class="st">"target: layer-point.color"</span>
+          <span class="op">)</span>,
+          <span class="va">atags</span><span class="op">$</span><span class="fu">entity</span><span class="op">(</span>
+            `guide-axis` <span class="op">=</span> <span class="st">"axis: x"</span>,
+            `data-binding__xbreaks` <span class="op">=</span> <span class="st">"target: guide-axis.breaks"</span>,
+            `data-binding__xlabels` <span class="op">=</span> <span class="st">"target: guide-axis.labels"</span>,
+            `data-binding__xtitle` <span class="op">=</span> <span class="st">"target: guide-axis.title"</span>
+          <span class="op">)</span>,
+          <span class="va">atags</span><span class="op">$</span><span class="fu">entity</span><span class="op">(</span>
+            `guide-axis` <span class="op">=</span> <span class="st">"axis: y"</span>,
+            `data-binding__ybreaks` <span class="op">=</span> <span class="st">"target: guide-axis.breaks"</span>,
+            `data-binding__ylabels` <span class="op">=</span> <span class="st">"target: guide-axis.labels"</span>,
+            `data-binding__ytitle` <span class="op">=</span> <span class="st">"target: guide-axis.title"</span>
+          <span class="op">)</span>,
+          <span class="va">atags</span><span class="op">$</span><span class="fu">entity</span><span class="op">(</span>
+            `guide-axis` <span class="op">=</span> <span class="st">"axis: z"</span>,
+            `data-binding__zbreaks` <span class="op">=</span> <span class="st">"target: guide-axis.breaks"</span>,
+            `data-binding__zlabels` <span class="op">=</span> <span class="st">"target: guide-axis.labels"</span>,
+            `data-binding__ztitle` <span class="op">=</span> <span class="st">"target: guide-axis.title"</span>
+          <span class="op">)</span>,
+          <span class="va">atags</span><span class="op">$</span><span class="fu">entity</span><span class="op">(</span>
+            `guide-legend` <span class="op">=</span> <span class="st">"aesthetic: shape"</span>,
+            `data-binding__shapetitle` <span class="op">=</span> <span class="st">"target: guide-legend.title"</span>
+          <span class="op">)</span>,
+          <span class="va">atags</span><span class="op">$</span><span class="fu">entity</span><span class="op">(</span>
+            `guide-legend` <span class="op">=</span> <span class="st">"aesthetic: size"</span>,
+            `data-binding__sizebreaks` <span class="op">=</span> <span class="st">"target: guide-legend.breaks"</span>,
+            `data-binding__sizelabels` <span class="op">=</span> <span class="st">"target: guide-legend.labels"</span>,
+            `data-binding__sizetitle` <span class="op">=</span> <span class="st">"target: guide-legend.title"</span>
+          <span class="op">)</span>,
+          <span class="va">atags</span><span class="op">$</span><span class="fu">entity</span><span class="op">(</span>
+            `guide-legend` <span class="op">=</span> <span class="st">"aesthetic: color"</span>,
+            `data-binding__colorbreaks` <span class="op">=</span> <span class="st">"target: guide-legend.breaks"</span>,
+            `data-binding__colorlabels` <span class="op">=</span> <span class="st">"target: guide-legend.labels"</span>,
+            `data-binding__colortitle` <span class="op">=</span> <span class="st">"target: guide-legend.title"</span>
+          <span class="op">)</span>,
+          <span class="va">atags</span><span class="op">$</span><span class="fu">other</span><span class="op">(</span><span class="st">'animation'</span>, attribute <span class="op">=</span> <span class="st">"rotation"</span>,
+                      from <span class="op">=</span> <span class="st">"0 45 0"</span>, to <span class="op">=</span> <span class="st">"0 405 0"</span>,
+                      dur <span class="op">=</span> <span class="st">"10000"</span>, `repeat` <span class="op">=</span> <span class="st">"indefinite"</span><span class="op">)</span>
+        <span class="op">)</span>
+      <span class="op">)</span>
+    <span class="op">)</span>,
+    server <span class="op">=</span> <span class="kw">function</span><span class="op">(</span><span class="va">input</span>, <span class="va">output</span>, <span class="va">session</span><span class="op">)</span> <span class="op">{</span>
+      <span class="va">output</span><span class="op">$</span><span class="va">mydatascene</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/pkg/shinyaframe/man/aDataScene-shiny.html">renderADataScene</a></span><span class="op">(</span><span class="op">{</span>
+        <span class="fu"><a href="https://rdrr.io/pkg/raster/man/names.html">names</a></span><span class="op">(</span><span class="va">iris</span><span class="op">)</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/chartr.html">tolower</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/pkg/raster/man/names.html">names</a></span><span class="op">(</span><span class="va">iris</span><span class="op">)</span><span class="op">)</span>
+
+        <span class="va">positional_to</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">0.01</span>, <span class="fl">0.99</span><span class="op">)</span>
+
+        <span class="va">color_scale</span> <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/stats/setNames.html">setNames</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/grDevices/palettes.html">rainbow</a></span><span class="op">(</span><span class="fl">3</span>, <span class="fl">0.75</span>, <span class="fl">0.5</span>, alpha <span class="op">=</span> <span class="cn">NULL</span><span class="op">)</span>,
+                               <span class="fu"><a href="https://rdrr.io/pkg/raster/man/unique.html">unique</a></span><span class="op">(</span><span class="va">iris</span><span class="op">$</span><span class="va">species</span><span class="op">)</span><span class="op">)</span>
+        <span class="va">iris</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span>
+
+          <span class="fu"><a href="https://dplyr.tidyverse.org/reference/mutate_all.html">mutate_if</a></span><span class="op">(</span><span class="va">is.numeric</span>, <span class="va">rescale</span>, to <span class="op">=</span> <span class="va">positional_to</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span>
+
+          <span class="fu"><a href="https://dplyr.tidyverse.org/reference/mutate.html">mutate</a></span><span class="op">(</span>petal.width.size <span class="op">=</span> <span class="fu"><a href="https://scales.r-lib.org/reference/rescale.html">rescale</a></span><span class="op">(</span><span class="va">petal.width</span><span class="op">^</span><span class="op">(</span><span class="fl">1</span><span class="op">/</span><span class="fl">3</span><span class="op">)</span>, to <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">0.5</span>, <span class="fl">2</span><span class="op">)</span><span class="op">)</span>,
+                 species.color <span class="op">=</span> <span class="va">color_scale</span><span class="op">[</span><span class="va">species</span><span class="op">]</span><span class="op">)</span> <span class="op">-&gt;</span>
+          <span class="va">iris_scaled</span>
+
+        <span class="va">make_guide</span> <span class="op">&lt;-</span> <span class="kw">function</span> <span class="op">(</span><span class="va">var</span>, <span class="va">aes</span>, <span class="va">breaks</span> <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">0.01</span>, <span class="fl">0.5</span>, <span class="fl">0.99</span><span class="op">)</span><span class="op">)</span> <span class="op">{</span>
+          <span class="va">guide</span> <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/list.html">list</a></span><span class="op">(</span><span class="op">)</span>
+          <span class="va">domain</span> <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/range.html">range</a></span><span class="op">(</span><span class="va">iris</span><span class="op">[[</span><span class="va">var</span><span class="op">]</span><span class="op">]</span><span class="op">)</span>
+          <span class="va">guide</span><span class="op">[[</span><span class="fu"><a href="https://rdrr.io/r/base/paste.html">paste0</a></span><span class="op">(</span><span class="va">aes</span>, <span class="st">"breaks"</span><span class="op">)</span><span class="op">]</span><span class="op">]</span> <span class="op">&lt;-</span> <span class="va">breaks</span>
+          <span class="va">guide</span><span class="op">[[</span><span class="fu"><a href="https://rdrr.io/r/base/paste.html">paste0</a></span><span class="op">(</span><span class="va">aes</span>, <span class="st">"labels"</span><span class="op">)</span><span class="op">]</span><span class="op">]</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="va">domain</span><span class="op">[</span><span class="fl">1</span><span class="op">]</span>,
+                                              <span class="fu"><a href="https://rdrr.io/r/base/Round.html">round</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/mean.html">mean</a></span><span class="op">(</span><span class="va">domain</span><span class="op">)</span>, <span class="fl">2</span><span class="op">)</span>,
+                                              <span class="va">domain</span><span class="op">[</span><span class="fl">2</span><span class="op">]</span><span class="op">)</span>
+          <span class="va">guide</span><span class="op">[[</span><span class="fu"><a href="https://rdrr.io/r/base/paste.html">paste0</a></span><span class="op">(</span><span class="va">aes</span>, <span class="st">"title"</span><span class="op">)</span><span class="op">]</span><span class="op">]</span> <span class="op">&lt;-</span> <span class="va">var</span>
+          <span class="va">guide</span>
+        <span class="op">}</span>
+        <span class="fu"><a href="https://rdrr.io/r/base/funprog.html">Map</a></span><span class="op">(</span><span class="va">make_guide</span>,
+            var <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"sepal.length"</span>, <span class="st">"sepal.width"</span>, <span class="st">"petal.length"</span><span class="op">)</span>,
+            aes <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"x"</span>, <span class="st">"y"</span>, <span class="st">"z"</span><span class="op">)</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span>
+
+          <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/list.html">list</a></span><span class="op">(</span><span class="fu">make_guide</span><span class="op">(</span><span class="st">"petal.width"</span>, <span class="st">"size"</span>, <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">0.5</span>, <span class="fl">1.25</span>, <span class="fl">2</span><span class="op">)</span><span class="op">^</span><span class="op">(</span><span class="fl">1</span><span class="op">/</span><span class="fl">3</span><span class="op">)</span><span class="op">)</span><span class="op">)</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span>
+          <span class="fu"><a href="https://rdrr.io/r/base/funprog.html">Reduce</a></span><span class="op">(</span>f <span class="op">=</span> <span class="va">c</span><span class="op">)</span> <span class="op">-&gt;</span>
+          <span class="va">guides</span>
+        <span class="va">guides</span><span class="op">$</span><span class="va">shapetitle</span> <span class="op">=</span> <span class="st">"species"</span>
+        <span class="va">guides</span><span class="op">$</span><span class="va">colortitle</span> <span class="op">=</span> <span class="st">"species"</span>
+        <span class="va">guides</span><span class="op">$</span><span class="va">colorbreaks</span> <span class="op">=</span> <span class="va">color_scale</span>
+        <span class="va">guides</span><span class="op">$</span><span class="va">colorlabels</span> <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/pkg/raster/man/names.html">names</a></span><span class="op">(</span><span class="va">color_scale</span><span class="op">)</span>
+
+        <span class="fu"><a href="https://rdrr.io/pkg/shinyaframe/man/aDataScene.html">aDataScene</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="va">iris_scaled</span>, <span class="va">guides</span><span class="op">)</span><span class="op">)</span>
+      <span class="op">}</span><span class="op">)</span>
+    <span class="op">}</span>
+  <span class="op">)</span>
+<span class="op">}</span></code></pre></div>
+<p><a href="https://youtu.be/kCrSkp7x2ms" target="_blank"><img src="http://img.youtube.com/vi/kCrSkp7x2ms/0.jpg" alt="IMAGE ALT TEXT HERE" width="240" height="180" border="10"></a>
+(Click on the image to view the video for 3D data visualization on Iris)</p>
+<p>Here is another exmaple provided by the shinyaframe documentation:
+(<a href="https://cran.r-project.org/web/packages/shinyaframe/shinyaframe.pdf" class="uri">https://cran.r-project.org/web/packages/shinyaframe/shinyaframe.pdf</a>)
+The 3D animation can be viewed in .rmd file by running the block below:</p>
+<div class="sourceCode" id="cb649"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="kw">if</span> <span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/interactive.html">interactive</a></span><span class="op">(</span><span class="op">)</span><span class="op">)</span> <span class="op">{</span>
+
+  <span class="fu"><a href="https://rdrr.io/pkg/shiny/man/shinyApp.html">shinyApp</a></span><span class="op">(</span>
+    ui <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/pkg/shiny/man/fluidPage.html">fluidPage</a></span><span class="op">(</span>
+      <span class="fu"><a href="https://rdrr.io/pkg/shinyaframe/man/aDataScene-shiny.html">aDataSceneOutput</a></span><span class="op">(</span>
+        outputId <span class="op">=</span> <span class="st">"mydatascene"</span>,
+        <span class="va">atags</span><span class="op">$</span><span class="fu">entity</span><span class="op">(</span>
+          plot <span class="op">=</span> <span class="st">""</span>, position <span class="op">=</span> <span class="st">"0 1.6 -1.38"</span>, rotation <span class="op">=</span> <span class="st">"0 45 0"</span>,
+          <span class="va">atags</span><span class="op">$</span><span class="fu">entity</span><span class="op">(</span>
+            `layer-point` <span class="op">=</span> <span class="st">""</span>, `mod-oscillate` <span class="op">=</span> <span class="st">""</span>,
+            `data-binding__sepal.length`<span class="op">=</span><span class="st">"target: layer-point.x"</span>,
+            `data-binding__sepal.width`<span class="op">=</span><span class="st">"target: layer-point.y"</span>,
+            `data-binding__petal.length`<span class="op">=</span><span class="st">"target: layer-point.z"</span>,
+
+            `data-binding__petal.width`<span class="op">=</span><span class="st">"target: mod-oscillate.y"</span>,
+            `data-binding__species`<span class="op">=</span><span class="st">"target: layer-point.shape"</span>
+        <span class="op">)</span>
+      <span class="op">)</span>
+    <span class="op">)</span>
+  <span class="op">)</span>,
+  server <span class="op">=</span> <span class="kw">function</span><span class="op">(</span><span class="va">input</span>, <span class="va">output</span>, <span class="va">session</span><span class="op">)</span> <span class="op">{</span>
+    <span class="va">output</span><span class="op">$</span><span class="va">mydatascene</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/pkg/shinyaframe/man/aDataScene-shiny.html">renderADataScene</a></span><span class="op">(</span><span class="op">{</span>
+      <span class="fu"><a href="https://rdrr.io/pkg/raster/man/names.html">names</a></span><span class="op">(</span><span class="va">iris</span><span class="op">)</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/chartr.html">tolower</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/pkg/raster/man/names.html">names</a></span><span class="op">(</span><span class="va">iris</span><span class="op">)</span><span class="op">)</span>
+        <span class="va">iris</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span>
+
+          <span class="fu"><a href="https://dplyr.tidyverse.org/reference/mutate_all.html">mutate_if</a></span><span class="op">(</span><span class="va">is.numeric</span>, <span class="va">rescale</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span>
+          <span class="fu"><a href="https://rdrr.io/pkg/shinyaframe/man/aDataScene.html">aDataScene</a></span><span class="op">(</span><span class="op">)</span>
+<span class="op">}</span><span class="op">)</span>
+<span class="op">}</span>
+<span class="op">)</span>
+<span class="op">}</span></code></pre></div>
+<p><a href="https://youtu.be/Uv9w1_6H_80" target="_blank"><img src="http://img.youtube.com/vi/Uv9w1_6H_80/0.jpg" alt="IMAGE ALT TEXT HERE" width="240" height="180" border="10"></a>
+(Click on the image to view the video for 3D data scatter visualization)</p>
+<p>There are several important features in this packages, including ‘aDataScene’, ‘aframetags’,‘shinyaframe’.
+The first one, aDataScene, creates a html widget to sync data with a scene via the data-binding A-frame component. It is used in the form aDataScene(data, elementId = NULL), where data is a data frame and elementId is an optional output html element ID. ‘aDataScene’ can only be viewed normally using a modern Web browser and
+internet connection. Unfortunately WebVR data visualizations can not be rendered in Rmd documents, R Notebooks,
+or the RStudio Viewer at this time. (<a href="https://cran.r-project.org/web/packages/shinyaframe/shinyaframe.pdf" class="uri">https://cran.r-project.org/web/packages/shinyaframe/shinyaframe.pdf</a>)</p>
+<p>‘aframetags’ represent frame-cutomized elements. This function can output HTML elements which are customized by the users. There are several subfunction falling under the ‘aframetags’ umberalla. They are aframeAssets(…), aframeMixin(…), aframeEntity(…), aframeSphere(…), aframeBox(…), aframePrimitive(primitive = “entity”, …) and atags. They are wrappers for ‘tag’ to output elements.</p>
+<p>With the package ‘shinyaframe’, we can offer Web-based virtual reality experiences for immersive, cross-platform data visualizations. As metaverse concept continue to develop, 3D visualization techniques will play a much more prominent role in enhancing the virtual experiences.</p>
+<p>Outside Sources:</p>
+<ol style="list-style-type: decimal">
+<li><a href="https://www.youtube.com/watch?v=gElfIo6uw4g" class="uri">https://www.youtube.com/watch?v=gElfIo6uw4g</a></li>
+<li><a href="https://www.youtube.com/watch?v=wxmqG_jxJiw" class="uri">https://www.youtube.com/watch?v=wxmqG_jxJiw</a></li>
+<li><a href="https://www.rdocumentation.org/packages/shinyaframe/versions/1.0.1/topics/shinyaframe" class="uri">https://www.rdocumentation.org/packages/shinyaframe/versions/1.0.1/topics/shinyaframe</a></li>
+<li><a href="https://cran.r-project.org/web/packages/shinyaframe/shinyaframe.pdf" class="uri">https://cran.r-project.org/web/packages/shinyaframe/shinyaframe.pdf</a></li>
+</ol>
+</div>
+
+
+
+  <div class="chapter-nav">
+<div class="prev"><a href="web-scrapping-using-beautifulsoup-and-its-equivalent-in-rvest.html"><span class="header-section-number">48</span> Web Scrapping using BeautifulSoup and its Equivalent in rvest</a></div>
+<div class="next"><a href="linear-association-r-studio-plugin.html"><span class="header-section-number">50</span> Linear Association R Studio Plugin</a></div>
+</div></main><div class="col-md-3 col-lg-2 d-none d-md-block sidebar sidebar-chapter">
+    <nav id="toc" data-toggle="toc" aria-label="On this page"><h2>On this page</h2>
+      <ul class="nav navbar-nav"><li><a class="nav-link" href="#d-visualization-shinyaframe-introduction-and-tutorial"><span class="header-section-number">49</span> 3D visualization: shinyaframe introduction and tutorial</a></li></ul>
+
+      <div class="book-extra">
+        <ul class="list-unstyled">
+<li><a id="book-source" href="https://github.com/jtr13/cc21fall1/blob/main/3d_visualization-.Rmd">View source <i class="fab fa-github"></i></a></li>
+          <li><a id="book-edit" href="https://github.com/jtr13/cc21fall1/edit/main/3d_visualization-.Rmd">Edit this page <i class="fab fa-github"></i></a></li>
+        </ul>
+</div>
+    </nav>
+</div>
+
+</div>
+</div> <!-- .container -->
+
+<footer class="bg-primary text-light mt-5"><div class="container"><div class="row">
+
+  <div class="col-12 col-md-6 mt-3">
+    <p>"<strong>EDAV Fall 2021 Mon/Wed Community Contributions</strong>" was written by the students of the class. It was last built on 2021-11-10.</p>
+  </div>
+
+  <div class="col-12 col-md-6 mt-3">
+    <p>This book was built by the <a class="text-light" href="https://bookdown.org">bookdown</a> R package.</p>
+  </div>
+
+</div></div>
+</footer><!-- dynamically load mathjax for compatibility with self-contained --><script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script><script type="text/x-mathjax-config">const popovers = document.querySelectorAll('a.footnote-ref[data-toggle="popover"]');
+for (let popover of popovers) {
+  const div = document.createElement('div');
+  div.setAttribute('style', 'position: absolute; top: 0, left:0; width:0, height:0, overflow: hidden; visibility: hidden;');
+  div.innerHTML = popover.getAttribute('data-content');
+
+  var has_math = div.querySelector("span.math");
+  if (has_math) {
+    document.body.appendChild(div);
+    MathJax.Hub.Queue(["Typeset", MathJax.Hub, div]);
+    MathJax.Hub.Queue(function() {
+      popover.setAttribute('data-content', div.innerHTML);
+      document.body.removeChild(div);
+    })
+  }
+}
+</script>
+</body>
+</html>

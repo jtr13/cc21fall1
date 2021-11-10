@@ -327,6 +327,7 @@ heat-map
 web-scrapping-using-beautifulsoup-and-its-equivalent-in-rvest
 motivation-2
 link-to-project
+d-visualization-shinyaframe-introduction-and-tutorial
 linear-association-r-studio-plugin
 introduction-8
 installation-1
