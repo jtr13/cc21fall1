@@ -71,6 +71,7 @@ rmd_files: [
   # Part: Demonstrations
   'linear_association.Rmd', # contains PART header
   'r_customized_sort.Rmd',
+  'ml_packages_in_R.rmd',
   
   # Part: Workshops
   'ds_product_cycles_in_enterprises.Rmd', # contains PART header
