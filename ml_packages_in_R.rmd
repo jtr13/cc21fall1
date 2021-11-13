@@ -1,12 +1,12 @@
 #Low-key ML packages in R
-#Author - Vedant Kumar and Siddhant Kumar
+
+#Vedant Kumar and Siddhant Kumar
 
 #Part 1 - Nuralnet Package in R
 
 ```{r}
-# install package
-install.packages("neuralnet")
 library("neuralnet")
+library(quantmod) 
 ```
 
 ```{r}
@@ -51,12 +51,6 @@ print(pred)
 ```
 
 #Part 1 - quantmod Package in R
-
-```{r}
-#install packages
-install.packages("quantmod")
-library(quantmod) 
-```
 
 ```{r}
 #download the price data for Apple Inc.
