@@ -1,8 +1,8 @@
-#Low-key ML packages in R
+# Low-key ML packages in R
 
-#Vedant Kumar and Siddhant Kumar
+## Vedant Kumar and Siddhant Kumar
 
-#Part 1 - Nuralnet Package in R
+### Nuralnet Package in R
 
 ```{r}
 library("neuralnet")
