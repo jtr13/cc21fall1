@@ -352,6 +352,9 @@ example
 troubleshooting
 evaluation-and-improvement
 customized-sorting-in-r
+low-key-ml-packages-in-r
+vedant-kumar-and-siddhant-kumar
+nuralnet-package-in-r
 data-science-product-cycles-in-enterprises
 github-initial-setup
 create-new-repo
