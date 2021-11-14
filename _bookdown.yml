@@ -23,21 +23,24 @@ rmd_files: [
   'make_lm_assumptions_plots.Rmd',
   'neo4j_to_r.Rmd',
   'stacked_bar_plot_for_relative_proportions_in_python.Rmd',
+  'interactive_plot_plotly_cheatsheet.Rmd',
 
-
+  # Part: R Package Tutorial 
+  'tidyverse_cheatsheet.Rmd', # contains PART header
+  'ggprism_and_ggsci_cheatsheets.Rmd',
+  'parallel_coordinate_plots_cheatsheet.Rmd',
+  'cheatsheet_tidyverse.Rmd', 
+  
+  # Part: Topics in Data Science
+  'linear_regression_bestiary.Rmd', # contains PART header
+  'data_transformation_and_exploration_cheatsheet.Rmd',
+  
   # Part: Cheatsheets
   'r_vs_python_visualization.Rmd', # contains PART header
   'waffle_cheatsheet.Rmd',
-  'data_transformation_and_exploration_cheatsheet.Rmd',
   'r_vs_python_basic_data_wrangling.Rmd',
-  'tidyverse_cheatsheet.Rmd',
-  'cheatsheet_tidyverse.Rmd',
-  'ggprism_and_ggsci_cheatsheets.Rmd',
-  'interactive_plot_plotly_cheatsheet.Rmd',
-  'rmd_syntax_cheatsheet.Rmd',
-  'parallel_coordinate_plots_cheatsheet.Rmd',
+  'rmd_syntax_cheatsheet.Rmd', 
   'r_datasci_workflow_cheatsheet.Rmd',
-  'linear_regression_bestiary.Rmd',
   'graphql_cheatsheet.Rmd',
   '30_questions_answers_for_r_interview.Rmd',
   
