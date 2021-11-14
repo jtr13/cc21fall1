@@ -43,7 +43,7 @@ rmd_files: [
   '30_questions_answers_for_r_interview.Rmd',
   'graphql_cheatsheet.Rmd', 
   'r_vs_python_basic_data_wrangling.Rmd',
-  'r_vs_python_visualization.Rmd'
+  'r_vs_python_visualization.Rmd',
  
  
   # Part: Tutorials
