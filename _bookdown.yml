@@ -81,6 +81,7 @@ rmd_files: [
   
   # Part: Workshops
   'ds_product_cycles_in_enterprises.Rmd', # contains PART header
+  'mapreduce_concept_and_comparision_with_r.Rmd',
   
   # Part: Appendices
   'appendix_initial_setup.Rmd', # contains PART header
