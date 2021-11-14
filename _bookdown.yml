@@ -27,7 +27,6 @@ rmd_files: [
   'interactive_plot_plotly_cheatsheet.Rmd',
   'introduction_to_longitudinal_data_and_mlgm.Rmd',
 
-
   # Part: R Package Tutorial 
   'tidyverse_cheatsheet.Rmd', # contains PART header
   'ggprism_and_ggsci_cheatsheets.Rmd',
