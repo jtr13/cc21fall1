@@ -25,7 +25,7 @@ rmd_files: [
   'neo4j_to_r.Rmd',
   'stacked_bar_plot_for_relative_proportions_in_python.Rmd',
   'interactive_plot_plotly_cheatsheet.Rmd',
-
+  'introduction_to_longitudinal_data_and_mlgm.Rmd',
 
   # Part: R Package Tutorial 
   'tidyverse_cheatsheet.Rmd', # contains PART header
