@@ -71,7 +71,7 @@ $$E = mc^{2}$$
 
 (e.g., `# Header` renders
 
-# Header
+## Header
 
 
 (e.g., `#### Header` renders
