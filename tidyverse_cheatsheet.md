@@ -1,6 +1,6 @@
 # (PART) R Package Tutorial {-}
 
-# tidyverse_cheatsheet
+# Tidyverse_cheatsheet
 
 Ziyu Song
 
