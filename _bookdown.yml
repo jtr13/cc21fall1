@@ -72,6 +72,7 @@ rmd_files: [
   'web_scraping.Rmd',
   '3d_visualization-.Rmd',
   'umap_viz.Rmd',
+  'function_programming_purrr.Rmd',
 
   # Part: Demonstrations
   'linear_association.Rmd', # contains PART header
