@@ -11,11 +11,11 @@ library(tidyverse)
 library(purrr)
 ```
 
-### 1. Introduction
+### Introduction
 Functional programming is a programming pattern where programs are constructed by composing and applying functions. Specifically, programs are created by applying sequential pure functions rather than statements. A pure function takes in an input and outputs a consistent value irrespective of anything else. Also, they do not modify any arguments or local/global variables or input/output streams. These functions only finish a single operation and can be combined in sequence to complete complex operations. Because of the popularity of data analysis and machine learning tasks nowadays, functional programming is particularly important to master due to its efficiency and scalability to solve these problems. <br> 
 In R, functional programming can be achieved with **purrr** package.
   
-### 2. map_() functions
+### map_() functions
 In **purrr**, we can use the map_() family functions to achieve functional programming and get the same results of **for** and **while** loops. For the map_() functions, the the name part after **_** tells us what this function is going to return. For instance, if we want dataframes as output, we would want to use map_df().  Let's start with the most fundamental function, map(). It takes a vector and a function, calls the function once for each element of the vector, and returns the results in a list.<br>
 Specifically, <br> 
 map(.x, .f, ...) <br>
@@ -56,7 +56,7 @@ map(a, "x")
 #output (2, 5, 9)
 map(a, list("y", 1))
 ```
-#### 2.1 Other map_() family functions: <br>
+#### Other map_() family functions: <br>
 map_chr(.x, .f, ...) returns an atomic vector of strings.
 ```{r}
 map_chr(numbers, doubles)
@@ -84,7 +84,7 @@ map_if() takes the square root of only those numbers in vector a that are divisb
 
 For the above map_if() and map_lgl(), we utilize another important concept in functional programming: Anonymous functions. <br>
 
-#### 2.2 Anonymous functions
+#### Anonymous functions
 As the name suggests, anonymous functions are functions that we define as we input them in the function arguments. Speifically, they do not have names but they are useful inside functions that take functions as arguments, such as map() and reduce() in purrr. <br>
 For example,
 ```{r}
@@ -97,7 +97,7 @@ map(c(2,4,6,8), ~{1/.**2})
 ```
 Here, we use **~** instead of **function(x)** and **.** instead of **x**. 
 
-#### 2.3 map2()
+#### map2()
 What if we want to iterate over two inputs? map2() comes in play: it vectorises over two arguments.
 ```{r}
 x <- list(1, 10, 100)
@@ -130,7 +130,7 @@ y <- list(5, 50, 500)
 map2_chr(x, y, function(x, y){x / y})
 ```
 
-### 3. reduce() function
+### reduce() function
 Another aspect in functional programming is reducing. In purrr, **reduce(.x, .f, .dir, ...)** allows going from a list of values to a single value by somehow combining the values in the list into one.
 ```{r}
 reduce(seq(1:100), sum)
