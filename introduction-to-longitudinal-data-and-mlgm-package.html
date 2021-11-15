@@ -1,0 +1,433 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<title>Chapter 12 Introduction to Longitudinal Data and MLGM Package | EDAV Fall 2021 Mon/Wed Community Contributions</title>
+<meta name="author" content="the students of the class">
+<meta name="description" content='Haoyang Shen #install.packages("devtools") #devtools::install_github("priyakohli5/MLGM", force=TRUE) library(MLGM) # must be installed from source This file will introduce and explain in details...'>
+<meta name="generator" content="bookdown 0.24 with bs4_book()">
+<meta property="og:title" content="Chapter 12 Introduction to Longitudinal Data and MLGM Package | EDAV Fall 2021 Mon/Wed Community Contributions">
+<meta property="og:type" content="book">
+<meta property="og:description" content='Haoyang Shen #install.packages("devtools") #devtools::install_github("priyakohli5/MLGM", force=TRUE) library(MLGM) # must be installed from source This file will introduce and explain in details...'>
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Chapter 12 Introduction to Longitudinal Data and MLGM Package | EDAV Fall 2021 Mon/Wed Community Contributions">
+<meta name="twitter:description" content='Haoyang Shen #install.packages("devtools") #devtools::install_github("priyakohli5/MLGM", force=TRUE) library(MLGM) # must be installed from source This file will introduce and explain in details...'>
+<!-- JS --><script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.6/clipboard.min.js" integrity="sha256-inc5kl9MA1hkeYUt+EC3BhlIgyp/2jDIyBLS6k3UxPI=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/fuse.js/6.4.6/fuse.js" integrity="sha512-zv6Ywkjyktsohkbp9bb45V6tEMoWhzFzXis+LrMehmJZZSys19Yxf1dopHx7WzIKxr5tK2dVcYmaCk2uqdjF4A==" crossorigin="anonymous"></script><script src="https://kit.fontawesome.com/6ecbd6c532.js" crossorigin="anonymous"></script><script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<link href="libs/bootstrap-4.6.0/bootstrap.min.css" rel="stylesheet">
+<script src="libs/bootstrap-4.6.0/bootstrap.bundle.min.js"></script><script src="libs/bs3compat-0.3.1/transition.js"></script><script src="libs/bs3compat-0.3.1/tabs.js"></script><script src="libs/bs3compat-0.3.1/bs3compat.js"></script><link href="libs/bs4_book-1.0.0/bs4_book.css" rel="stylesheet">
+<script src="libs/bs4_book-1.0.0/bs4_book.js"></script><script src="libs/accessible-code-block-0.0.1/empty-anchor.js"></script><script src="libs/htmlwidgets-1.5.4/htmlwidgets.js"></script><script src="libs/plotly-binding-4.10.0/plotly.js"></script><script src="libs/typedarray-0.1/typedarray.min.js"></script><link href="libs/crosstalk-1.2.0/css/crosstalk.min.css" rel="stylesheet">
+<script src="libs/crosstalk-1.2.0/js/crosstalk.min.js"></script><link href="libs/plotly-htmlwidgets-css-2.5.1/plotly-htmlwidgets.css" rel="stylesheet">
+<script src="libs/plotly-main-2.5.1/plotly-latest.min.js"></script><link href="libs/dygraphs-1.1.1/dygraph.css" rel="stylesheet">
+<script src="libs/dygraphs-1.1.1/dygraph-combined.js"></script><script src="libs/dygraphs-1.1.1/shapes.js"></script><script src="libs/moment-2.8.4/moment.js"></script><script src="libs/moment-timezone-0.2.5/moment-timezone-with-data.js"></script><script src="libs/moment-fquarter-1.0.0/moment-fquarter.min.js"></script><script src="libs/dygraphs-binding-1.1.1.6/dygraphs.js"></script><script src="libs/d3-5.16.0/d3.min.js"></script><script src="libs/forceNetwork-binding-0.4/forceNetwork.js"></script><link href="libs/parallel-coordinates-2.1.8/parcoords.css" rel="stylesheet">
+<script src="libs/parcoords-binding-1.0.0/parcoords.js"></script><script src="libs/detect-resize-0.5.3/jquery.resize.js"></script><link href="libs/jquery-ui-1.11.4/jquery-ui.min.css" rel="stylesheet">
+<script src="libs/jquery-ui-1.11.4/jquery-ui.min.js"></script><script src="libs/vega-1.4.3/vega.min.js"></script><script src="libs/lodash-2.2.1/lodash.min.js"></script><script>var lodash = _.noConflict();</script><link href="libs/ggvis-0.4.7/css/ggvis.css" rel="stylesheet">
+<script src="libs/ggvis-0.4.7/js/ggvis.js"></script><script src="libs/dendroNetwork-binding-0.4/dendroNetwork.js"></script><link href="libs/str_view-0.1.0/str_view.css" rel="stylesheet">
+<script src="libs/str_view-binding-1.4.0/str_view.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/autocomplete.js/0.38.0/autocomplete.jquery.min.js" integrity="sha512-GU9ayf+66Xx2TmpxqJpliWbT5PiGYxpaG8rfnBEk1LL8l1KGkRShhngwdXK1UgqhAzWpZHSiYPc09/NwDQIGyg==" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/mark.min.js" integrity="sha512-5CYOlHXGh6QpOFA/TeTylKLWfB3ftPsde7AnmhuitiTX4K5SqCLBeKro6sPS8ilsz1Q4NRx3v8Ko2IBiszzdww==" crossorigin="anonymous"></script><!-- CSS -->
+</head>
+<body data-spy="scroll" data-target="#toc">
+
+<div class="container-fluid">
+<div class="row">
+  <header class="col-sm-12 col-lg-3 sidebar sidebar-book"><a class="sr-only sr-only-focusable" href="#content">Skip to main content</a>
+
+    <div class="d-flex align-items-start justify-content-between">
+      <h1>
+        <a href="index.html" title="">EDAV Fall 2021 Mon/Wed Community Contributions</a>
+      </h1>
+      <button class="btn btn-outline-primary d-lg-none ml-2 mt-1" type="button" data-toggle="collapse" data-target="#main-nav" aria-expanded="true" aria-controls="main-nav"><i class="fas fa-bars"></i><span class="sr-only">Show table of contents</span></button>
+    </div>
+
+    <div id="main-nav" class="collapse-lg">
+      <form role="search">
+        <input id="search" class="form-control" type="search" placeholder="Search" aria-label="Search">
+</form>
+
+      <nav aria-label="Table of contents"><h2>Table of contents</h2>
+        <ul class="book-toc list-unstyled">
+<li><a class="" href="index.html"><span class="header-section-number">1</span> Welcome!</a></li>
+<li><a class="" href="community-contribution.html"><span class="header-section-number">2</span> Community Contribution</a></li>
+<li><a class="" href="github-submission-instructions.html"><span class="header-section-number">3</span> GitHub submission instructions</a></li>
+<li><a class="" href="sample-project.html"><span class="header-section-number">4</span> Sample project</a></li>
+<li class="book-part">Data Visualizations</li>
+<li><a class="" href="introduction-to-the-lattice-package.html"><span class="header-section-number">5</span> Introduction to the lattice package</a></li>
+<li><a class="" href="graph-animation-with-gganimate-and-after-effects.html"><span class="header-section-number">6</span> Graph animation with gganimate and After Effects</a></li>
+<li><a class="" href="interactive-plots.html"><span class="header-section-number">7</span> Interactive Plots</a></li>
+<li><a class="" href="create-regression-assumption-plots-in-word.html"><span class="header-section-number">8</span> Create regression assumption plots in Word</a></li>
+<li><a class="" href="from-neo4j-to-rstudio.html"><span class="header-section-number">9</span> From Neo4j to RStudio</a></li>
+<li><a class="" href="stacked-bar-plot-for-relative-proportions-in-python.html"><span class="header-section-number">10</span> Stacked Bar Plot For Relative Proportions In Python</a></li>
+<li><a class="" href="interactive-plot-introduction.html"><span class="header-section-number">11</span> Interactive plot introduction</a></li>
+<li><a class="active" href="introduction-to-longitudinal-data-and-mlgm-package.html"><span class="header-section-number">12</span> Introduction to Longitudinal Data and MLGM Package</a></li>
+<li class="book-part">R Package Tutorial</li>
+<li><a class="" href="tidyverse_cheatsheet.html"><span class="header-section-number">13</span> tidyverse_cheatsheet</a></li>
+<li><a class="" href="use-of-ggprism-and-ggsci-packages.html"><span class="header-section-number">14</span> Use of ggprism and ggsci packages</a></li>
+<li><a class="" href="parallel-coordinates-plot-cheatsheet.html"><span class="header-section-number">15</span> Parallel coordinates plot cheatsheet</a></li>
+<li><a class="" href="cheatsheet-tidyverse.html"><span class="header-section-number">16</span> Cheatsheet Tidyverse</a></li>
+<li><a class="" href="common-r-markdown-syntax-cheatsheet.html"><span class="header-section-number">17</span> Common R markdown syntax cheatsheet</a></li>
+<li><a class="" href="rpackage-waffle-cheatsheet.html"><span class="header-section-number">18</span> Rpackage waffle cheatsheet</a></li>
+<li class="book-part">Topics in Data Science</li>
+<li><a class="" href="a-linear-regression-bestiary.html"><span class="header-section-number">19</span> A linear regression Bestiary</a></li>
+<li><a class="" href="r-cheatsheet-on-data-transforamtion-and-exploration.html"><span class="header-section-number">20</span> R cheatsheet on data transforamtion and exploration</a></li>
+<li><a class="" href="r-data-science-workflow-cheatsheet.html"><span class="header-section-number">21</span> R Data Science Workflow CheatSheet</a></li>
+<li><a class="" href="questions-answers-for-r-technical-interview.html"><span class="header-section-number">22</span> 30 questions &amp; answers for r technical interview</a></li>
+<li><a class="" href="graphql-cheat-sheet.html"><span class="header-section-number">23</span> GraphQL Cheat Sheet</a></li>
+<li><a class="" href="r-vs-python-basic-data-wrangling.html"><span class="header-section-number">24</span> R vs Python Basic Data Wrangling</a></li>
+<li><a class="" href="r-vs.-python-visualization-cheatsheet.html"><span class="header-section-number">25</span> R vs. Python Visualization Cheatsheet</a></li>
+<li class="book-part">Tutorials</li>
+<li><a class="" href="multithreading-crawler-frame.html"><span class="header-section-number">26</span> Multithreading Crawler Frame</a></li>
+<li><a class="" href="regression-and-classification-in-r.html"><span class="header-section-number">27</span> Regression and Classification in R</a></li>
+<li><a class="" href="tibble-vs.-dataframe.html"><span class="header-section-number">28</span> Tibble vs. DataFrame</a></li>
+<li><a class="" href="introduction-to-time-series.html"><span class="header-section-number">29</span> Introduction to Time Series</a></li>
+<li><a class="" href="vipul-edav-community-contribution-kickstart-r.html"><span class="header-section-number">30</span> Vipul EDAV Community Contribution Kickstart R</a></li>
+<li><a class="" href="caret---a-machine-learning-package-turotial.html"><span class="header-section-number">31</span> caret - a machine learning package turotial</a></li>
+<li><a class="" href="streamlit-for-financial-analysis.html"><span class="header-section-number">32</span> Streamlit for Financial Analysis</a></li>
+<li><a class="" href="interactive-graphs-tutorial.html"><span class="header-section-number">33</span> Interactive graphs tutorial</a></li>
+<li><a class="" href="guideline-on-using-package-rcurl-and-xml-for-web-scraping.html"><span class="header-section-number">34</span> Guideline on Using Package Rcurl and XML for Web Scraping</a></li>
+<li><a class="" href="twitter-r-package-scraping-via-api-tutorial.html"><span class="header-section-number">35</span> TwitteR R Package Scraping via API Tutorial</a></li>
+<li><a class="" href="introduction-to-data-manipulation.html"><span class="header-section-number">36</span> Introduction to Data Manipulation</a></li>
+<li><a class="" href="animating-the-plots-in-r.html"><span class="header-section-number">37</span> Animating the plots in R</a></li>
+<li><a class="" href="quick-guide-to-eda.html"><span class="header-section-number">38</span> Quick guide to eda</a></li>
+<li><a class="" href="natural-langauge-processing-common-eda-practices-in-python.html"><span class="header-section-number">39</span> Natural Langauge Processing Common EDA Practices in Python</a></li>
+<li><a class="" href="beginners-walk-through-of-deep-learning-in-r.html"><span class="header-section-number">40</span> Beginner’s Walk-through of Deep Learning in R</a></li>
+<li><a class="" href="supervised-learning-tutorial.html"><span class="header-section-number">41</span> Supervised Learning Tutorial</a></li>
+<li><a class="" href="parallel-coordinate-plots-in-ggplot2.html"><span class="header-section-number">42</span> Parallel Coordinate Plots in ggplot2</a></li>
+<li><a class="" href="using-ggplot-in-python.html"><span class="header-section-number">43</span> Using ggplot in python</a></li>
+<li><a class="" href="icons-and-symbols-in-r.html"><span class="header-section-number">44</span> Icons and symbols in R</a></li>
+<li><a class="" href="exploratory-data-analysis-and-preprocessing-with-r-for-data-challenges.html"><span class="header-section-number">45</span> Exploratory data analysis and preprocessing with R for data challenges</a></li>
+<li><a class="" href="introduction-to-git-bash.html"><span class="header-section-number">46</span> Introduction to Git Bash</a></li>
+<li><a class="" href="tutorial-for-six-basic-graphs-by-using-ggplot.html"><span class="header-section-number">47</span> Tutorial for six basic graphs by using ggplot</a></li>
+<li><a class="" href="web-scrapping-using-beautifulsoup-and-its-equivalent-in-rvest.html"><span class="header-section-number">48</span> Web Scrapping using BeautifulSoup and its Equivalent in rvest</a></li>
+<li><a class="" href="d-visualization-shinyaframe-introduction-and-tutorial.html"><span class="header-section-number">49</span> 3D visualization: shinyaframe introduction and tutorial</a></li>
+<li><a class="" href="efficient-dimension-reduction-with-umap.html"><span class="header-section-number">50</span> Efficient dimension reduction with UMAP</a></li>
+<li class="book-part">Demonstrations</li>
+<li><a class="" href="linear-association-r-studio-plugin.html"><span class="header-section-number">51</span> Linear Association R Studio Plugin</a></li>
+<li><a class="" href="customized-sorting-in-r.html"><span class="header-section-number">52</span> Customized Sorting in R</a></li>
+<li><a class="" href="low-key-ml-packages-in-r.html"><span class="header-section-number">53</span> Low-key ML packages in R</a></li>
+<li><a class="" href="parallel-coordinate-plots-cheatsheet.html"><span class="header-section-number">54</span> Parallel coordinate plots cheatsheet</a></li>
+<li class="book-part">Workshops</li>
+<li><a class="" href="data-science-product-cycles-in-enterprises.html"><span class="header-section-number">55</span> Data Science Product Cycles in Enterprises</a></li>
+<li class="book-part">Appendices</li>
+<li><a class="" href="github-initial-setup.html"><span class="header-section-number">56</span> Github initial setup</a></li>
+<li><a class="" href="tutorial-for-pull-request-mergers.html"><span class="header-section-number">57</span> Tutorial for pull request mergers</a></li>
+</ul>
+
+        <div class="book-extra">
+          <p><a id="book-repo" href="https://github.com/jtr13/cc21fall1">View book source <i class="fab fa-github"></i></a></p>
+        </div>
+      </nav>
+</div>
+  </header><main class="col-sm-12 col-md-9 col-lg-7" id="content"><div id="introduction-to-longitudinal-data-and-mlgm-package" class="section level1">
+<h1>
+<span class="header-section-number">12</span> Introduction to Longitudinal Data and MLGM Package<a class="anchor" aria-label="anchor" href="#introduction-to-longitudinal-data-and-mlgm-package"><i class="fas fa-link"></i></a>
+</h1>
+<p>Haoyang Shen</p>
+<div class="sourceCode" id="cb63"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="co">#install.packages("devtools")</span>
+<span class="co">#devtools::install_github("priyakohli5/MLGM", force=TRUE)</span>
+<span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va">MLGM</span><span class="op">)</span>  <span class="co"># must be installed from source</span></code></pre></div>
+<p>This file will introduce and explain in details for some functions in an R-package <strong>MLGM</strong>, stands for multivariate longitudinal data analysis using graphical models". This package can be used to visualize the trends and dependence patterns among repeatedly measured outcomes, specifically generating the profile plots and multivariate regressograms. In addition to visualizing the existing patterns, this package provides ways to model mean and covariance for variables measured at regular or irregular time points and it guarantees the positive definiteness of the estimated vocariance.</p>
+<p><strong>Reference: </strong> The <strong>MLGM</strong> package is built by Professor Priya Kohli from Connecticut College with Xinyu Du (Johns Hopkins University) and Haoyang Shen (Columbia University) as contributors. <strong>MLGM</strong> is available through GitHub (<a href="https://priyakohli5.github.io/MLGM/">Link to the Package</a>){target="_blank“}. The package comes along with the research paper <em>"Graphical Models for Mean and Covariance of Multicariate Longitudinal Data"</em>, published on <em>Statistics in Medicine</em> (<a href="https://onlinelibrary.wiley.com/doi/10.1002/sim.9106">Link to the Paper</a>){target=”_blank"}.</p>
+<hr>
+<div id="longitudinal-data-and-longitudinal-studies" class="section level2">
+<h2>
+<span class="header-section-number">12.1</span> Longitudinal Data and Longitudinal Studies<a class="anchor" aria-label="anchor" href="#longitudinal-data-and-longitudinal-studies"><i class="fas fa-link"></i></a>
+</h2>
+<p>Along with cross sectional data and time series data we have learned before, Longitudinal data, sometimes referred to as panel data, is a collection of repeated observations of the same subjects, taken from a larger population, over a period of time.</p>
+<p>Longitudinal data is a very important type of data. We can see its application on multiple different areas such as Medical Care (Clinical trials, Health data..), Epidemiology, Biology. A simple example for univariate longitudinal data would be a data set that keep tracks of the blood pressure of all student in STAT_5702 each week during 2021 to 2022. While a univariate longitudinal data contain only one response variable, which is the blood pressure in our example, a multivariate longitudinal data would contain more than one response variables. Taking the same example, a multivariate longitudinal data would contain information not only of our blood pressure as a variable, but also variables of our weight, heartbeats, BMI…</p>
+<p>Before going deep into the <strong>MLGM</strong> package, let’s take a look at the ideal shape for the longitudinal data in order to get a better understand on what exactly is longitudinal data:</p>
+<div class="inline-figure"><img src="resources/introduction_to_longitudinal_data_and_mlgm/univariate.png"></div>
+<p>The matrix above is showing a structure of univariate longitudinal data for one response variable of <span class="math inline">\(n\)</span> subjects measured at <span class="math inline">\(T\)</span> time points, where <span class="math inline">\(Y_{i,j}\)</span> is the value for the <span class="math inline">\(i\)</span>th subject measured at the <span class="math inline">\(j\)</span>th time point. Through looking at the shape above, one may have question that what’s the difference between longitudinal data and time series data. Indeed, time series data usually focus one subject or a few more while longitudinal data keep track on large group of individuals(subjects). Moreover, longitudinal data usually contain data from more than one variables. Through looking at the shape for multivariate longitudinal data shown below, one could get a more clear answer to the question.</p>
+<div class="inline-figure"><img src="resources/introduction_to_longitudinal_data_and_mlgm/multivariate.png"></div>
+<p>The matrix above is showing the a structure of multivariate longitudinal data fore <span class="math inline">\(J\)</span> response variables of <span class="math inline">\(N\)</span> subjects at <span class="math inline">\(T\)</span> different time points. One can think of it as a horizontal block matrices where each matrices is the same as the matrix we show for univariate date in the previous image. In this case, <span class="math inline">\(Y_{iw,j}\)</span> is show the value of the <span class="math inline">\(j\)</span>th variable of the <span class="math inline">\(i\)</span>th subject at the <span class="math inline">\(w\)</span>th time point.</p>
+<p>Analysis on longitudinal data is meaningful. The main goals of longitudinal study is to:<br>
+* (1) Find the relationship (magnitude and direction) between response at adjacent time points.<br>
+* (2) Study the change in response over time whether in behaviors, attitudes, or experience.</p>
+<hr>
+</div>
+<div id="the-mlgm-r-package" class="section level2">
+<h2>
+<span class="header-section-number">12.2</span> The “MLGM” R Package<a class="anchor" aria-label="anchor" href="#the-mlgm-r-package"><i class="fas fa-link"></i></a>
+</h2>
+<p>After looking at the shape of longitudinal data, we can see that it’s somewhat more complicate comparing to the cross-sectional data and time series data. Hence, in order to visualize this type of data, one would need the help from some tools. Here comes the <strong>MLGM</strong> R package which could help us with this job.</p>
+<div id="install" class="section level3">
+<h3>
+<span class="header-section-number">12.2.1</span> Install<a class="anchor" aria-label="anchor" href="#install"><i class="fas fa-link"></i></a>
+</h3>
+<p>First of all, we need to install and load the <strong>MLGM</strong> package from GitHub</p>
+<div class="sourceCode" id="cb64"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="co">#install.packages("devtools")</span>
+<span class="co">#devtools::install_github("priyakohli5/MLGM", force=TRUE)</span>
+<span class="co">#library(MLGM)</span></code></pre></div>
+<p>Inside the <strong>MLGM</strong> package, there are 11 functions in total, including two dataset from two real longitudinal studies, microarray data from the T-cell activation study and Mayo Clinic’s primary biliary cirrhosis of the liver study. In this file, detail usage of two main functions on visualizing will be shown, which are <code><a href="https://rdrr.io/pkg/MLGM/man/mvpf.html">mvpf()</a></code> and <code><a href="https://rdrr.io/pkg/MLGM/man/mvp.html">mvp()</a></code> for profile plot and <code><a href="https://rdrr.io/pkg/MLGM/man/mvr.html">mvr()</a></code> for regressograms.</p>
+</div>
+<div id="profile-plot-mvp-and-mvpf" class="section level3">
+<h3>
+<span class="header-section-number">12.2.2</span> Profile Plot (<code>mvp()</code> and <code>mvpf()</code>)<a class="anchor" aria-label="anchor" href="#profile-plot-mvp-and-mvpf"><i class="fas fa-link"></i></a>
+</h3>
+<p>Profile Plot is an important tool in multivariate longitudinal data analysis, it allows us to visualize the trends among repeatedly measured outcomes. First, let’s take a look at the profile plot for simple univariate longitudinal data tracking growth of orange trees, called <code>Orange</code> (type <code><a href="https://rdrr.io/r/datasets/Orange.html">?Orange</a></code> to see the data). The data set contain information about circumference of 5 Orange Trees measured in 7 unequally spaced time points.</p>
+<div class="sourceCode" id="cb65"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="fu"><a href="https://rdrr.io/r/utils/data.html">data</a></span><span class="op">(</span><span class="va">Orange</span><span class="op">)</span>
+<span class="va">Orange</span></code></pre></div>
+<pre><code>##    Tree  age circumference
+## 1     1  118            30
+## 2     1  484            58
+## 3     1  664            87
+## 4     1 1004           115
+## 5     1 1231           120
+## 6     1 1372           142
+## 7     1 1582           145
+## 8     2  118            33
+## 9     2  484            69
+## 10    2  664           111
+## 11    2 1004           156
+## 12    2 1231           172
+## 13    2 1372           203
+## 14    2 1582           203
+## 15    3  118            30
+## 16    3  484            51
+## 17    3  664            75
+## 18    3 1004           108
+## 19    3 1231           115
+## 20    3 1372           139
+## 21    3 1582           140
+## 22    4  118            32
+## 23    4  484            62
+## 24    4  664           112
+## 25    4 1004           167
+## 26    4 1231           179
+## 27    4 1372           209
+## 28    4 1582           214
+## 29    5  118            30
+## 30    5  484            49
+## 31    5  664            81
+## 32    5 1004           125
+## 33    5 1231           142
+## 34    5 1372           174
+## 35    5 1582           177</code></pre>
+<div class="sourceCode" id="cb67"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="va">Orange_data</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/matrix.html">matrix</a></span><span class="op">(</span><span class="va">Orange</span><span class="op">$</span><span class="va">circumference</span>, nrow <span class="op">=</span> <span class="fl">5</span>, ncol <span class="op">=</span> <span class="fl">7</span>, byrow <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span>
+<span class="va">time</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">118</span>, <span class="fl">484</span>, <span class="fl">664</span>, <span class="fl">1004</span>, <span class="fl">1231</span>, <span class="fl">1372</span>, <span class="fl">1582</span><span class="op">)</span>
+<span class="va">mean.circum</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/colSums.html">colMeans</a></span><span class="op">(</span><span class="va">Orange_data</span><span class="op">)</span>
+<span class="fu"><a href="https://rdrr.io/pkg/MLGM/man/mvpf.html">mvpf</a></span><span class="op">(</span><span class="va">Orange_data</span>, <span class="va">time</span>, <span class="va">mean.circum</span>, title <span class="op">=</span> <span class="st">"Circumference of Orange Trees"</span>, xlabel <span class="op">=</span> <span class="st">"Age(days since 1968/12/31)"</span>, ylabel<span class="op">=</span><span class="st">"Circumference of Orange Tree(mm)"</span>, scol<span class="op">=</span><span class="st">"gray"</span>, mcol<span class="op">=</span><span class="st">"black"</span>,fcol<span class="op">=</span><span class="st">"red"</span>,lwd.mean<span class="op">=</span><span class="fl">2</span>,lwd.fit <span class="op">=</span> <span class="fl">3</span>,lty.fit <span class="op">=</span><span class="fl">2</span><span class="op">)</span></code></pre></div>
+<div class="inline-figure"><img src="introduction_to_longitudinal_data_and_mlgm_files/figure-html/unnamed-chunk-4-1.png" width="672" style="display: block; margin: auto;"></div>
+<p>The plot shown above is the profile plot for the simple data set of orange trees. The lines colored in grey represent the circumference of 5 orange trees within the given time period. The black line is represent the average response of the 5 trees, while the red dotted line is the fitted mean or estimate average. In this case we just use the mean for simplicity, but one can include the fitted mean from models as an input. Profile plot is a great tool for us to observe the trend of longitudinal data. As shown above, one can clearly see the trend of how circumference of these orange tree growth within the given time period.</p>
+<p>After looked at the generated plot, let’s look into detail of using this function on your own dataset. There are a few points we have to notice:</p>
+<ul>
+<li><p>Before using the <code><a href="https://rdrr.io/pkg/MLGM/man/mvpf.html">mvpf()</a></code> function to generate plot, we need to first check at the structure of the data set. In order to use this function successfully, we have to make sure the data we put in the function as parameter is in the structure that mentioned in Section 1. Specifically, the data of input should be a data frame or matrix with <span class="math inline">\(n\)</span> rows for subjectes and <span class="math inline">\(T\)</span> columns for repeated measurements.</p></li>
+<li><p>One good thing about the <code><a href="https://rdrr.io/pkg/MLGM/man/mvpf.html">mvpf()</a></code> function is that it could handle the longitudinal data that are measured at unequally spaced time points. For the longitudinal data that are measured at equally or unequal spaced time points, one just need to provide the time points in vector as input, the function will take care the rest. The example we used above is a data that was measured at unequally spaced time points.</p></li>
+<li><p>data, time vector and the mean fitted vector is option for user to see how estimate average would fit on the plot. The rest of the parameter are just graphical parameter. If you want to detail information about other optional parameter, please check the description of the <code><a href="https://rdrr.io/pkg/MLGM/man/mvpf.html">mvpf()</a></code> function.</p></li>
+</ul>
+<p><strong>Note: </strong> If one do not want to include the estimated mean in the profile plot, there is a simple version of the <code><a href="https://rdrr.io/pkg/MLGM/man/mvpf.html">mvpf()</a></code> function in the package, called <code><a href="https://rdrr.io/pkg/MLGM/man/mvp.html">mvp()</a></code>. The <code><a href="https://rdrr.io/pkg/MLGM/man/mvp.html">mvp()</a></code> function can also generate the same profile plot as above, but one have the option to choose whether to plot the average response. If not, simply set the “mean” parameter" as “mean = False”. In addition, the <code><a href="https://rdrr.io/pkg/MLGM/man/mvp.html">mvp()</a></code> could be used only one compute the average response, if one only interested in computing the mean value at each time plot without generating the profile plot, one can set the “plot” parameter as “plot = FALSE”. Use the same example of oranges tree,</p>
+<div class="sourceCode" id="cb68"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="fu"><a href="https://rdrr.io/r/utils/data.html">data</a></span><span class="op">(</span><span class="va">Orange</span><span class="op">)</span>
+<span class="va">Orange_data</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/matrix.html">matrix</a></span><span class="op">(</span><span class="va">Orange</span><span class="op">$</span><span class="va">circumference</span>, nrow <span class="op">=</span> <span class="fl">5</span>, ncol <span class="op">=</span> <span class="fl">7</span>, byrow <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span>
+<span class="va">time</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">118</span>, <span class="fl">484</span>, <span class="fl">664</span>, <span class="fl">1004</span>, <span class="fl">1231</span>, <span class="fl">1372</span>, <span class="fl">1582</span><span class="op">)</span>
+<span class="fu"><a href="https://rdrr.io/pkg/MLGM/man/mvp.html">mvp</a></span><span class="op">(</span><span class="va">Orange_data</span>, <span class="va">time</span>, mean<span class="op">=</span><span class="cn">FALSE</span>, title <span class="op">=</span> <span class="st">"Circumference of Orange Trees"</span>, xlabel <span class="op">=</span> <span class="st">"Age(days since 1968/12/31)"</span>, ylabel<span class="op">=</span><span class="st">"Circumference of Orange Tree(mm)"</span>, scol<span class="op">=</span><span class="st">"gray"</span>, mcol<span class="op">=</span><span class="st">"black"</span>, lwd.mean<span class="op">=</span><span class="fl">2</span><span class="op">)</span></code></pre></div>
+<div class="inline-figure"><img src="introduction_to_longitudinal_data_and_mlgm_files/figure-html/unnamed-chunk-5-1.png" width="672" style="display: block; margin: auto;"></div>
+<pre><code>## [1]  31.0  57.8  93.2 134.2 145.6 173.4 175.8</code></pre>
+<p>Known all the points we need to notice of using this function, let’s see a more complicated how can we use <code><a href="https://rdrr.io/pkg/MLGM/man/mvpf.html">mvpf()</a></code> (<code><a href="https://rdrr.io/pkg/MLGM/man/mvp.html">mvp()</a></code>) for multivariate longitudinal data</p>
+<div class="sourceCode" id="cb70"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="fu"><a href="https://rdrr.io/r/utils/data.html">data</a></span><span class="op">(</span><span class="va">Tcells</span><span class="op">)</span>
+<span class="fu"><a href="https://rdrr.io/r/base/dim.html">dim</a></span><span class="op">(</span><span class="va">Tcells</span><span class="op">)</span></code></pre></div>
+<pre><code>## [1] 44 40</code></pre>
+<div class="sourceCode" id="cb72"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="fu"><a href="https://rdrr.io/r/base/summary.html">summary</a></span><span class="op">(</span><span class="va">Tcells</span><span class="op">)</span></code></pre></div>
+<pre><code>##       FYB1           CD691           IL2RG1          CDC21      
+##  Min.   :19.37   Min.   :15.74   Min.   :17.38   Min.   :18.98  
+##  1st Qu.:20.25   1st Qu.:15.89   1st Qu.:17.62   1st Qu.:19.10  
+##  Median :20.25   Median :16.02   Median :17.82   Median :19.22  
+##  Mean   :20.22   Mean   :16.02   Mean   :17.81   Mean   :19.28  
+##  3rd Qu.:20.53   3rd Qu.:16.10   3rd Qu.:17.97   3rd Qu.:19.26  
+##  Max.   :20.53   Max.   :16.68   Max.   :18.29   Max.   :20.25  
+##       FYB2           CD692           IL2RG2          CDC22      
+##  Min.   :19.28   Min.   :16.48   Min.   :17.67   Min.   :19.04  
+##  1st Qu.:19.97   1st Qu.:18.72   1st Qu.:17.88   1st Qu.:19.11  
+##  Median :20.10   Median :18.89   Median :18.07   Median :19.19  
+##  Mean   :19.98   Mean   :18.51   Mean   :18.06   Mean   :19.30  
+##  3rd Qu.:20.19   3rd Qu.:18.89   3rd Qu.:18.17   3rd Qu.:19.28  
+##  Max.   :20.19   Max.   :19.04   Max.   :18.89   Max.   :20.19  
+##       FYB3           CD693           IL2RG3          CDC23      
+##  Min.   :15.89   Min.   :17.01   Min.   :15.72   Min.   :18.09  
+##  1st Qu.:19.11   1st Qu.:19.17   1st Qu.:18.33   1st Qu.:19.03  
+##  Median :19.25   Median :19.35   Median :18.40   Median :19.11  
+##  Mean   :19.03   Mean   :19.13   Mean   :18.38   Mean   :19.19  
+##  3rd Qu.:19.30   3rd Qu.:19.69   3rd Qu.:18.50   3rd Qu.:19.25  
+##  Max.   :19.52   Max.   :19.69   Max.   :19.11   Max.   :20.51  
+##       FYB4           CD694           IL2RG4          CDC24      
+##  Min.   :17.99   Min.   :17.33   Min.   :17.93   Min.   :18.54  
+##  1st Qu.:18.30   1st Qu.:18.66   1st Qu.:18.35   1st Qu.:18.80  
+##  Median :18.35   Median :18.93   Median :18.41   Median :18.85  
+##  Mean   :18.32   Mean   :18.71   Mean   :18.38   Mean   :18.92  
+##  3rd Qu.:18.41   3rd Qu.:19.29   3rd Qu.:18.41   3rd Qu.:18.97  
+##  Max.   :18.54   Max.   :19.29   Max.   :18.66   Max.   :19.72  
+##       FYB5           CD695           IL2RG5          CDC25      
+##  Min.   :18.16   Min.   :17.79   Min.   :18.21   Min.   :18.98  
+##  1st Qu.:18.34   1st Qu.:19.10   1st Qu.:18.57   1st Qu.:18.98  
+##  Median :18.46   Median :19.21   Median :18.59   Median :19.04  
+##  Mean   :18.47   Mean   :19.07   Mean   :18.65   Mean   :19.27  
+##  3rd Qu.:18.59   3rd Qu.:19.53   3rd Qu.:18.68   3rd Qu.:19.15  
+##  Max.   :19.04   Max.   :19.85   Max.   :19.15   Max.   :20.49  
+##       FYB6           CD696           IL2RG6          CDC26      
+##  Min.   :19.44   Min.   :17.99   Min.   :19.05   Min.   :17.99  
+##  1st Qu.:19.58   1st Qu.:19.05   1st Qu.:19.14   1st Qu.:18.31  
+##  Median :19.58   Median :19.21   Median :19.21   Median :18.38  
+##  Mean   :19.72   Mean   :19.09   Mean   :19.22   Mean   :18.40  
+##  3rd Qu.:19.66   3rd Qu.:19.44   3rd Qu.:19.27   3rd Qu.:18.47  
+##  Max.   :20.24   Max.   :19.58   Max.   :19.44   Max.   :18.78  
+##       FYB7           CD697           IL2RG7          CDC27      
+##  Min.   :19.24   Min.   :18.00   Min.   :18.96   Min.   :17.90  
+##  1st Qu.:19.45   1st Qu.:19.45   1st Qu.:19.07   1st Qu.:18.12  
+##  Median :19.54   Median :19.54   Median :19.24   Median :18.17  
+##  Mean   :19.72   Mean   :19.37   Mean   :19.21   Mean   :18.21  
+##  3rd Qu.:19.66   3rd Qu.:19.86   3rd Qu.:19.24   3rd Qu.:18.26  
+##  Max.   :20.40   Max.   :19.86   Max.   :19.54   Max.   :18.87  
+##       FYB8           CD698           IL2RG8          CDC28      
+##  Min.   :19.80   Min.   :17.39   Min.   :18.46   Min.   :17.18  
+##  1st Qu.:19.80   1st Qu.:19.02   1st Qu.:18.77   1st Qu.:17.37  
+##  Median :19.80   Median :19.26   Median :19.02   Median :17.49  
+##  Mean   :19.94   Mean   :19.01   Mean   :18.96   Mean   :17.57  
+##  3rd Qu.:20.33   3rd Qu.:19.44   3rd Qu.:19.11   3rd Qu.:17.63  
+##  Max.   :20.33   Max.   :19.44   Max.   :19.26   Max.   :18.29  
+##       FYB9           CD699          IL2RG8.1         CDC29      
+##  Min.   :19.18   Min.   :16.93   Min.   :17.71   Min.   :16.17  
+##  1st Qu.:19.72   1st Qu.:18.83   1st Qu.:18.45   1st Qu.:16.45  
+##  Median :20.12   Median :19.18   Median :18.79   Median :16.58  
+##  Mean   :19.96   Mean   :18.67   Mean   :18.68   Mean   :16.84  
+##  3rd Qu.:20.12   3rd Qu.:19.18   3rd Qu.:18.87   3rd Qu.:16.76  
+##  Max.   :20.12   Max.   :19.18   Max.   :19.18   Max.   :18.61  
+##      FYB10           CD6910         IL2RG10          CDC210     
+##  Min.   :20.02   Min.   :17.03   Min.   :18.91   Min.   :16.27  
+##  1st Qu.:20.02   1st Qu.:18.69   1st Qu.:19.01   1st Qu.:16.64  
+##  Median :20.35   Median :18.91   Median :19.11   Median :16.67  
+##  Mean   :20.26   Mean   :18.71   Mean   :19.13   Mean   :17.08  
+##  3rd Qu.:20.35   3rd Qu.:19.42   3rd Qu.:19.23   3rd Qu.:17.01  
+##  Max.   :20.35   Max.   :19.42   Max.   :19.42   Max.   :18.71</code></pre>
+<div class="sourceCode" id="cb74"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="va">time</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">0</span>, <span class="fl">2</span>, <span class="fl">4</span>, <span class="fl">6</span>, <span class="fl">8</span>, <span class="fl">18</span>, <span class="fl">24</span>, <span class="fl">32</span>, <span class="fl">48</span>, <span class="fl">72</span><span class="op">)</span>
+<span class="va">j</span> <span class="op">&lt;-</span> <span class="fl">4</span>
+<span class="va">n</span> <span class="op">&lt;-</span> <span class="fl">44</span>
+<span class="va">gene.names</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"FYB"</span>, <span class="st">"CD69"</span>, <span class="st">"IL2RG"</span>, <span class="st">"CDC2"</span><span class="op">)</span>
+<span class="fu"><a href="https://rdrr.io/r/graphics/par.html">par</a></span><span class="op">(</span>mfrow<span class="op">=</span><span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">2</span>,<span class="fl">2</span><span class="op">)</span><span class="op">)</span>
+<span class="kw">for</span><span class="op">(</span><span class="va">i</span> <span class="kw">in</span> <span class="fl">1</span><span class="op">:</span><span class="va">j</span><span class="op">)</span><span class="op">{</span>
+<span class="va">data.gene</span> <span class="op">&lt;-</span> <span class="va">Tcells</span><span class="op">[</span>,<span class="fu"><a href="https://rdrr.io/r/base/seq.html">seq</a></span><span class="op">(</span><span class="va">i</span>, <span class="fu"><a href="https://rdrr.io/r/base/nrow.html">ncol</a></span><span class="op">(</span><span class="va">Tcells</span><span class="op">)</span>, <span class="va">j</span><span class="op">)</span><span class="op">]</span>
+<span class="va">mean.gene</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/apply.html">apply</a></span><span class="op">(</span><span class="va">data.gene</span>,<span class="fl">2</span>,<span class="va">mean</span><span class="op">)</span>
+<span class="fu"><a href="https://rdrr.io/pkg/MLGM/man/mvpf.html">mvpf</a></span><span class="op">(</span><span class="va">data.gene</span>, <span class="va">time</span>, <span class="va">mean.gene</span>, title<span class="op">=</span><span class="va">gene.names</span><span class="op">[</span><span class="va">i</span><span class="op">]</span>, xlabel<span class="op">=</span><span class="st">"Hours"</span>, ylabel<span class="op">=</span><span class="st">"Expression Response"</span>, scol<span class="op">=</span><span class="st">"gray"</span>, mcol<span class="op">=</span><span class="st">"black"</span>, fcol<span class="op">=</span><span class="st">"red"</span>, lwd.mean<span class="op">=</span><span class="fl">2</span>, lwd.fit <span class="op">=</span> <span class="fl">3</span>, lty.fit <span class="op">=</span><span class="fl">2</span><span class="op">)</span>
+<span class="op">}</span></code></pre></div>
+<div class="inline-figure"><img src="introduction_to_longitudinal_data_and_mlgm_files/figure-html/unnamed-chunk-6-1.png" width="672" style="display: block; margin: auto;"></div>
+<p>The <code>Tcells</code> data is included in the package, it is microarray data from the T-cell activation study (type <code><a href="https://rdrr.io/pkg/MLGM/man/Tcells.html">?Tcells</a></code> for more details). This data is coming from real study and it is a multivariate longitudinal data. The <code>Tcells</code> data is A data set with 44 replications of four genes involved in T-cells activation. For each gene there are ten repeated measurements recorded at 0, 2, 4, 6, 8, 18, 24, 32, 48, 72 hours after the treatment. The four plots above are four profile plots corresponding to four response variables in the data. Actually, for multivariate longitudinal data, we can just use the <code><a href="https://rdrr.io/pkg/MLGM/man/mvp.html">mvp()</a></code> or <code><a href="https://rdrr.io/pkg/MLGM/man/mvpf.html">mvpf()</a></code> multiple times for each variable that we are interested in. The setting for parameters will be the same as we seen in the case for univariate longitudinal data.</p>
+</div>
+<div id="multivariate-regressogram-mvr" class="section level3">
+<h3>
+<span class="header-section-number">12.2.3</span> Multivariate Regressogram (<code>mvr()</code>)<a class="anchor" aria-label="anchor" href="#multivariate-regressogram-mvr"><i class="fas fa-link"></i></a>
+</h3>
+<p>Regressograms is another powerful tool for multivariate longitudinal data analysis, it allows us to visualize the dependence patterns among repeatedly measured outcomes. The example we used below is again the multivariate longitudinal data from the T-cell activation study included in the package, <code>Tcells</code>.</p>
+<div class="sourceCode" id="cb75"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="fu"><a href="https://rdrr.io/r/utils/data.html">data</a></span><span class="op">(</span><span class="va">Tcells</span><span class="op">)</span>
+<span class="va">time</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">0</span>, <span class="fl">2</span>, <span class="fl">4</span>, <span class="fl">6</span>, <span class="fl">8</span>, <span class="fl">18</span>, <span class="fl">24</span>, <span class="fl">32</span>, <span class="fl">48</span>, <span class="fl">72</span><span class="op">)</span>
+<span class="va">j</span> <span class="op">&lt;-</span> <span class="fl">4</span>
+<span class="va">n</span> <span class="op">&lt;-</span> <span class="fl">44</span>
+<span class="va">MVR</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/pkg/MLGM/man/mvr.html">mvr</a></span><span class="op">(</span><span class="va">Tcells</span>,<span class="va">time</span>,<span class="va">j</span>,<span class="va">n</span>,inno<span class="op">=</span><span class="cn">FALSE</span>,inverse<span class="op">=</span><span class="cn">FALSE</span>,loginno<span class="op">=</span><span class="cn">TRUE</span>,plot<span class="op">=</span><span class="cn">TRUE</span>,pch.plot<span class="op">=</span><span class="fl">19</span>,par1.r <span class="op">=</span> <span class="fl">2</span>,par2.r <span class="op">=</span> <span class="fl">2</span>,par1.d<span class="op">=</span><span class="fl">2</span>,par2.d<span class="op">=</span><span class="fl">2</span><span class="op">)</span></code></pre></div>
+<p><img src="introduction_to_longitudinal_data_and_mlgm_files/figure-html/unnamed-chunk-7-1.png" width="672" style="display: block; margin: auto;"><img src="introduction_to_longitudinal_data_and_mlgm_files/figure-html/unnamed-chunk-7-2.png" width="672" style="display: block; margin: auto;"><img src="introduction_to_longitudinal_data_and_mlgm_files/figure-html/unnamed-chunk-7-3.png" width="672" style="display: block; margin: auto;"><img src="introduction_to_longitudinal_data_and_mlgm_files/figure-html/unnamed-chunk-7-4.png" width="672" style="display: block; margin: auto;"><img src="introduction_to_longitudinal_data_and_mlgm_files/figure-html/unnamed-chunk-7-5.png" width="672" style="display: block; margin: auto;"><img src="introduction_to_longitudinal_data_and_mlgm_files/figure-html/unnamed-chunk-7-6.png" width="672" style="display: block; margin: auto;"><img src="introduction_to_longitudinal_data_and_mlgm_files/figure-html/unnamed-chunk-7-7.png" width="672" style="display: block; margin: auto;"></p>
+<p>There are bunch of plot shown above, one may hard to accept all the information at once. However, even the plots contain lots of information, but they are not difficult to understand. Note that for all plots above, there are 16 regressograms. This make sense since there are four response variables, which would come up an <span class="math inline">\(4 \times 4 =16\)</span> plots to visualize the dependence patterns. Let take a look at one of the plot within all above, the rest will follow the same pattern. For the very first plot among all plots above, we can see the label <span class="math inline">\(\phi_{11}\)</span> on the y-axis, this is shown that this plot is the regressogram for first variable FYB to itself, the value on the y-axis is actually the regression coefficients. Now, take a look at the label “Time Lags” for the x-axis, so specifically, say at time lag equal to 1, then the dots on this vertical line is showing the regression coefficient for FYB at second time point and at the first time point, the regression coefficient for FYB at third time point and at the second time point, the regression coefficient for FYB at fourth time point and at the third time point, and etc. The time lag equal to 2, then it would be the coefficient for the corresponding variable for with two time point lags. Then with the same pattern, if we look at the second plot, plot “b” with label <span class="math inline">\(\phi_{12}\)</span> on the x-axis, it would be the regression coefficient for the first and second variables, specifically “FYB” and “CD69” along with the same time lags explanation as previous.</p>
+<p>It is somewhat difficult to clearly explain all the plots in words, so if you are confused on understand the regressograms above, please don’t hesitate to contact me through my email “<a href="mailto:hs3312@columbia.edu" class="email">hs3312@columbia.edu</a>”.</p>
+<p>Same as the <code><a href="https://rdrr.io/pkg/MLGM/man/mvp.html">mvp()</a></code> and <code><a href="https://rdrr.io/pkg/MLGM/man/mvpf.html">mvpf()</a></code> function we mentioned before, there are a few things we need to notice for the <code><a href="https://rdrr.io/pkg/MLGM/man/mvr.html">mvr()</a></code> function:</p>
+<ul>
+<li><p>For the <code><a href="https://rdrr.io/pkg/MLGM/man/mvr.html">mvr()</a></code> function, the input data become multivariate, so before directly put your dataset set as parameter, we should first check the structure. It should be in the same structure as we discussed in the first section for multivariate longitudinal data. If it is not, we should process the data first.</p></li>
+<li><p>In this function, we can see in the parameter, one would also need to specify the number of variables <span class="math inline">\(j\)</span> and the number of subject <span class="math inline">\(n\)</span> as input of the function in addition to the data mentioned in the first point and the time vector with the same setting as discussed in the previous section for mvp() and mvpf(). Other than the four parameters discussed in point(1) and point(2), there are a few parameters allows user to arrange the plots.</p></li>
+<li><p>If you notice, there is a function called <code><a href="https://rdrr.io/pkg/MLGM/man/mvchol.html">mvchol()</a></code> in package, stands for multivariate Cholesky Block Decomposition. It is indeed the methodology that was used in the <code><a href="https://rdrr.io/pkg/MLGM/man/mvr.html">mvr()</a></code> function to generate the multivariate regressograms from the covariance matrix of multivariate longitudinal data. For more details of the function, you can check the description file and if you are interested specifically in the methodology, please take a look at the second section of the research paper (<a href="https://onlinelibrary.wiley.com/doi/10.1002/sim.9106">Link to the Paper</a>).</p></li>
+<li><p>In addition to generate the multivariate regressograms, the <code><a href="https://rdrr.io/pkg/MLGM/man/mvr.html">mvr()</a></code> function can compute and return elements of modified Cholesky block decomposition in matrix form, including innovation variance matrices, inverse innovation variance matrices and log innovation variance matrices. To obtain these matrices, just set the corresponding parameter to “TRUE”. If one just want to obtain these element without generating the regressograms, the “plot” parameter can be set to “plot = FALSE”.</p></li>
+</ul>
+</div>
+<div id="additional-information" class="section level3">
+<h3>
+<span class="header-section-number">12.2.4</span> Additional Information<a class="anchor" aria-label="anchor" href="#additional-information"><i class="fas fa-link"></i></a>
+</h3>
+<p>As we can see in the package, there are a few more function included in this <strong>MLGM</strong> package. It is hard to include all the information at once. However, the two functions mentioned here are great tools for us to visualize the trends and dependence patterns in the multivariate longitudinal data. Indeed, the other functions in the package are very powerful tool using to analyze multivariate longitudinal data further, such as mean and covariance modeling. Fortunately, I am one of the contributor of this package and the co-author of the research paper. Therefore, if you are interested in this package. Please feel free to contact me any time.</p>
+<hr>
+</div>
+</div>
+<div id="reference-2" class="section level2">
+<h2>
+<span class="header-section-number">12.3</span> Reference<a class="anchor" aria-label="anchor" href="#reference-2"><i class="fas fa-link"></i></a>
+</h2>
+<p>Kohli, P., Du, X., &amp; Shen, H. (2021). Graphical models for mean and covariance of multivariate longitudinal data. Statistics in medicine, 40(23), 4977–4995. <a href="https://doi.org/10.1002/sim.9106" class="uri">https://doi.org/10.1002/sim.9106</a></p>
+
+</div>
+</div>
+
+
+
+  <div class="chapter-nav">
+<div class="prev"><a href="interactive-plot-introduction.html"><span class="header-section-number">11</span> Interactive plot introduction</a></div>
+<div class="next"><a href="tidyverse_cheatsheet.html"><span class="header-section-number">13</span> tidyverse_cheatsheet</a></div>
+</div></main><div class="col-md-3 col-lg-2 d-none d-md-block sidebar sidebar-chapter">
+    <nav id="toc" data-toggle="toc" aria-label="On this page"><h2>On this page</h2>
+      <ul class="nav navbar-nav">
+<li><a class="nav-link" href="#introduction-to-longitudinal-data-and-mlgm-package"><span class="header-section-number">12</span> Introduction to Longitudinal Data and MLGM Package</a></li>
+<li><a class="nav-link" href="#longitudinal-data-and-longitudinal-studies"><span class="header-section-number">12.1</span> Longitudinal Data and Longitudinal Studies</a></li>
+<li>
+<a class="nav-link" href="#the-mlgm-r-package"><span class="header-section-number">12.2</span> The “MLGM” R Package</a><ul class="nav navbar-nav">
+<li><a class="nav-link" href="#install"><span class="header-section-number">12.2.1</span> Install</a></li>
+<li><a class="nav-link" href="#profile-plot-mvp-and-mvpf"><span class="header-section-number">12.2.2</span> Profile Plot (mvp() and mvpf())</a></li>
+<li><a class="nav-link" href="#multivariate-regressogram-mvr"><span class="header-section-number">12.2.3</span> Multivariate Regressogram (mvr())</a></li>
+<li><a class="nav-link" href="#additional-information"><span class="header-section-number">12.2.4</span> Additional Information</a></li>
+</ul>
+</li>
+<li><a class="nav-link" href="#reference-2"><span class="header-section-number">12.3</span> Reference</a></li>
+</ul>
+
+      <div class="book-extra">
+        <ul class="list-unstyled">
+<li><a id="book-source" href="https://github.com/jtr13/cc21fall1/blob/main/introduction_to_longitudinal_data_and_mlgm.Rmd">View source <i class="fab fa-github"></i></a></li>
+          <li><a id="book-edit" href="https://github.com/jtr13/cc21fall1/edit/main/introduction_to_longitudinal_data_and_mlgm.Rmd">Edit this page <i class="fab fa-github"></i></a></li>
+        </ul>
+</div>
+    </nav>
+</div>
+
+</div>
+</div> <!-- .container -->
+
+<footer class="bg-primary text-light mt-5"><div class="container"><div class="row">
+
+  <div class="col-12 col-md-6 mt-3">
+    <p>"<strong>EDAV Fall 2021 Mon/Wed Community Contributions</strong>" was written by the students of the class. It was last built on 2021-11-15.</p>
+  </div>
+
+  <div class="col-12 col-md-6 mt-3">
+    <p>This book was built by the <a class="text-light" href="https://bookdown.org">bookdown</a> R package.</p>
+  </div>
+
+</div></div>
+</footer><!-- dynamically load mathjax for compatibility with self-contained --><script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script><script type="text/x-mathjax-config">const popovers = document.querySelectorAll('a.footnote-ref[data-toggle="popover"]');
+for (let popover of popovers) {
+  const div = document.createElement('div');
+  div.setAttribute('style', 'position: absolute; top: 0, left:0; width:0, height:0, overflow: hidden; visibility: hidden;');
+  div.innerHTML = popover.getAttribute('data-content');
+
+  var has_math = div.querySelector("span.math");
+  if (has_math) {
+    document.body.appendChild(div);
+    MathJax.Hub.Queue(["Typeset", MathJax.Hub, div]);
+    MathJax.Hub.Queue(function() {
+      popover.setAttribute('data-content', div.innerHTML);
+      document.body.removeChild(div);
+    })
+  }
+}
+</script>
+</body>
+</html>

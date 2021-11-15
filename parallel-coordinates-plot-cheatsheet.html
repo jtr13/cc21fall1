@@ -4,16 +4,16 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<title>Chapter 14 Parallel coordinates plot cheatsheet | EDAV Fall 2021 Mon/Wed Community Contributions</title>
+<title>Chapter 15 Parallel coordinates plot cheatsheet | EDAV Fall 2021 Mon/Wed Community Contributions</title>
 <meta name="author" content="the students of the class">
-<meta name="description" content="Andrew Schaefer This cheatsheet goes over different options and coding techniques for displaying parallel coordinate plots.  14.1 Libraries: GGally, ggparallel, and parcoords In general, GGally is...">
+<meta name="description" content="Andrew Schaefer This cheatsheet goes over different options and coding techniques for displaying parallel coordinate plots.  15.1 Libraries: GGally, ggparallel, and parcoords In general, GGally is...">
 <meta name="generator" content="bookdown 0.24 with bs4_book()">
-<meta property="og:title" content="Chapter 14 Parallel coordinates plot cheatsheet | EDAV Fall 2021 Mon/Wed Community Contributions">
+<meta property="og:title" content="Chapter 15 Parallel coordinates plot cheatsheet | EDAV Fall 2021 Mon/Wed Community Contributions">
 <meta property="og:type" content="book">
-<meta property="og:description" content="Andrew Schaefer This cheatsheet goes over different options and coding techniques for displaying parallel coordinate plots.  14.1 Libraries: GGally, ggparallel, and parcoords In general, GGally is...">
+<meta property="og:description" content="Andrew Schaefer This cheatsheet goes over different options and coding techniques for displaying parallel coordinate plots.  15.1 Libraries: GGally, ggparallel, and parcoords In general, GGally is...">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Chapter 14 Parallel coordinates plot cheatsheet | EDAV Fall 2021 Mon/Wed Community Contributions">
-<meta name="twitter:description" content="Andrew Schaefer This cheatsheet goes over different options and coding techniques for displaying parallel coordinate plots.  14.1 Libraries: GGally, ggparallel, and parcoords In general, GGally is...">
+<meta name="twitter:title" content="Chapter 15 Parallel coordinates plot cheatsheet | EDAV Fall 2021 Mon/Wed Community Contributions">
+<meta name="twitter:description" content="Andrew Schaefer This cheatsheet goes over different options and coding techniques for displaying parallel coordinate plots.  15.1 Libraries: GGally, ggparallel, and parcoords In general, GGally is...">
 <!-- JS --><script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.6/clipboard.min.js" integrity="sha256-inc5kl9MA1hkeYUt+EC3BhlIgyp/2jDIyBLS6k3UxPI=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/fuse.js/6.4.6/fuse.js" integrity="sha512-zv6Ywkjyktsohkbp9bb45V6tEMoWhzFzXis+LrMehmJZZSys19Yxf1dopHx7WzIKxr5tK2dVcYmaCk2uqdjF4A==" crossorigin="anonymous"></script><script src="https://kit.fontawesome.com/6ecbd6c532.js" crossorigin="anonymous"></script><script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <link href="libs/bootstrap-4.6.0/bootstrap.min.css" rel="stylesheet">
 <script src="libs/bootstrap-4.6.0/bootstrap.bundle.min.js"></script><script src="libs/bs3compat-0.3.1/transition.js"></script><script src="libs/bs3compat-0.3.1/tabs.js"></script><script src="libs/bs3compat-0.3.1/bs3compat.js"></script><link href="libs/bs4_book-1.0.0/bs4_book.css" rel="stylesheet">
@@ -58,56 +58,58 @@
 <li><a class="" href="from-neo4j-to-rstudio.html"><span class="header-section-number">9</span> From Neo4j to RStudio</a></li>
 <li><a class="" href="stacked-bar-plot-for-relative-proportions-in-python.html"><span class="header-section-number">10</span> Stacked Bar Plot For Relative Proportions In Python</a></li>
 <li><a class="" href="interactive-plot-introduction.html"><span class="header-section-number">11</span> Interactive plot introduction</a></li>
+<li><a class="" href="introduction-to-longitudinal-data-and-mlgm-package.html"><span class="header-section-number">12</span> Introduction to Longitudinal Data and MLGM Package</a></li>
 <li class="book-part">R Package Tutorial</li>
-<li><a class="" href="tidyverse_cheatsheet.html"><span class="header-section-number">12</span> tidyverse_cheatsheet</a></li>
-<li><a class="" href="use-of-ggprism-and-ggsci-packages.html"><span class="header-section-number">13</span> Use of ggprism and ggsci packages</a></li>
-<li><a class="active" href="parallel-coordinates-plot-cheatsheet.html"><span class="header-section-number">14</span> Parallel coordinates plot cheatsheet</a></li>
-<li><a class="" href="cheatsheet-tidyverse.html"><span class="header-section-number">15</span> Cheatsheet Tidyverse</a></li>
-<li><a class="" href="common-r-markdown-syntax-cheatsheet.html"><span class="header-section-number">16</span> Common R markdown syntax cheatsheet</a></li>
-<li><a class="" href="rpackage-waffle-cheatsheet.html"><span class="header-section-number">17</span> Rpackage waffle cheatsheet</a></li>
+<li><a class="" href="tidyverse_cheatsheet.html"><span class="header-section-number">13</span> tidyverse_cheatsheet</a></li>
+<li><a class="" href="use-of-ggprism-and-ggsci-packages.html"><span class="header-section-number">14</span> Use of ggprism and ggsci packages</a></li>
+<li><a class="active" href="parallel-coordinates-plot-cheatsheet.html"><span class="header-section-number">15</span> Parallel coordinates plot cheatsheet</a></li>
+<li><a class="" href="cheatsheet-tidyverse.html"><span class="header-section-number">16</span> Cheatsheet Tidyverse</a></li>
+<li><a class="" href="common-r-markdown-syntax-cheatsheet.html"><span class="header-section-number">17</span> Common R markdown syntax cheatsheet</a></li>
+<li><a class="" href="rpackage-waffle-cheatsheet.html"><span class="header-section-number">18</span> Rpackage waffle cheatsheet</a></li>
 <li class="book-part">Topics in Data Science</li>
-<li><a class="" href="a-linear-regression-bestiary.html"><span class="header-section-number">18</span> A linear regression Bestiary</a></li>
-<li><a class="" href="r-cheatsheet-on-data-transforamtion-and-exploration.html"><span class="header-section-number">19</span> R cheatsheet on data transforamtion and exploration</a></li>
-<li><a class="" href="r-data-science-workflow-cheatsheet.html"><span class="header-section-number">20</span> R Data Science Workflow CheatSheet</a></li>
-<li><a class="" href="questions-answers-for-r-technical-interview.html"><span class="header-section-number">21</span> 30 questions &amp; answers for r technical interview</a></li>
-<li><a class="" href="graphql-cheat-sheet.html"><span class="header-section-number">22</span> GraphQL Cheat Sheet</a></li>
-<li><a class="" href="r-vs-python-basic-data-wrangling.html"><span class="header-section-number">23</span> R vs Python Basic Data Wrangling</a></li>
-<li><a class="" href="r-vs.-python-visualization-cheatsheet.html"><span class="header-section-number">24</span> R vs. Python Visualization Cheatsheet</a></li>
+<li><a class="" href="a-linear-regression-bestiary.html"><span class="header-section-number">19</span> A linear regression Bestiary</a></li>
+<li><a class="" href="r-cheatsheet-on-data-transforamtion-and-exploration.html"><span class="header-section-number">20</span> R cheatsheet on data transforamtion and exploration</a></li>
+<li><a class="" href="r-data-science-workflow-cheatsheet.html"><span class="header-section-number">21</span> R Data Science Workflow CheatSheet</a></li>
+<li><a class="" href="questions-answers-for-r-technical-interview.html"><span class="header-section-number">22</span> 30 questions &amp; answers for r technical interview</a></li>
+<li><a class="" href="graphql-cheat-sheet.html"><span class="header-section-number">23</span> GraphQL Cheat Sheet</a></li>
+<li><a class="" href="r-vs-python-basic-data-wrangling.html"><span class="header-section-number">24</span> R vs Python Basic Data Wrangling</a></li>
+<li><a class="" href="r-vs.-python-visualization-cheatsheet.html"><span class="header-section-number">25</span> R vs. Python Visualization Cheatsheet</a></li>
 <li class="book-part">Tutorials</li>
-<li><a class="" href="multithreading-crawler-frame.html"><span class="header-section-number">25</span> Multithreading Crawler Frame</a></li>
-<li><a class="" href="regression-and-classification-in-r.html"><span class="header-section-number">26</span> Regression and Classification in R</a></li>
-<li><a class="" href="tibble-vs.-dataframe.html"><span class="header-section-number">27</span> Tibble vs. DataFrame</a></li>
-<li><a class="" href="introduction-to-time-series.html"><span class="header-section-number">28</span> Introduction to Time Series</a></li>
-<li><a class="" href="vipul-edav-community-contribution-kickstart-r.html"><span class="header-section-number">29</span> Vipul EDAV Community Contribution Kickstart R</a></li>
-<li><a class="" href="caret---a-machine-learning-package-turotial.html"><span class="header-section-number">30</span> caret - a machine learning package turotial</a></li>
-<li><a class="" href="streamlit-for-financial-analysis.html"><span class="header-section-number">31</span> Streamlit for Financial Analysis</a></li>
-<li><a class="" href="interactive-graphs-tutorial.html"><span class="header-section-number">32</span> Interactive graphs tutorial</a></li>
-<li><a class="" href="guideline-on-using-package-rcurl-and-xml-for-web-scraping.html"><span class="header-section-number">33</span> Guideline on Using Package Rcurl and XML for Web Scraping</a></li>
-<li><a class="" href="twitter-r-package-scraping-via-api-tutorial.html"><span class="header-section-number">34</span> TwitteR R Package Scraping via API Tutorial</a></li>
-<li><a class="" href="introduction-to-data-manipulation.html"><span class="header-section-number">35</span> Introduction to Data Manipulation</a></li>
-<li><a class="" href="animating-the-plots-in-r.html"><span class="header-section-number">36</span> Animating the plots in R</a></li>
-<li><a class="" href="quick-guide-to-eda.html"><span class="header-section-number">37</span> Quick guide to eda</a></li>
-<li><a class="" href="natural-langauge-processing-common-eda-practices-in-python.html"><span class="header-section-number">38</span> Natural Langauge Processing Common EDA Practices in Python</a></li>
-<li><a class="" href="beginners-walk-through-of-deep-learning-in-r.html"><span class="header-section-number">39</span> Beginner’s Walk-through of Deep Learning in R</a></li>
-<li><a class="" href="supervised-learning-tutorial.html"><span class="header-section-number">40</span> Supervised Learning Tutorial</a></li>
-<li><a class="" href="parallel-coordinate-plots-in-ggplot2.html"><span class="header-section-number">41</span> Parallel Coordinate Plots in ggplot2</a></li>
-<li><a class="" href="using-ggplot-in-python.html"><span class="header-section-number">42</span> Using ggplot in python</a></li>
-<li><a class="" href="icons-and-symbols-in-r.html"><span class="header-section-number">43</span> Icons and symbols in R</a></li>
-<li><a class="" href="exploratory-data-analysis-and-preprocessing-with-r-for-data-challenges.html"><span class="header-section-number">44</span> Exploratory data analysis and preprocessing with R for data challenges</a></li>
-<li><a class="" href="introduction-to-git-bash.html"><span class="header-section-number">45</span> Introduction to Git Bash</a></li>
-<li><a class="" href="tutorial-for-six-basic-graphs-by-using-ggplot.html"><span class="header-section-number">46</span> Tutorial for six basic graphs by using ggplot</a></li>
-<li><a class="" href="web-scrapping-using-beautifulsoup-and-its-equivalent-in-rvest.html"><span class="header-section-number">47</span> Web Scrapping using BeautifulSoup and its Equivalent in rvest</a></li>
-<li><a class="" href="d-visualization-shinyaframe-introduction-and-tutorial.html"><span class="header-section-number">48</span> 3D visualization: shinyaframe introduction and tutorial</a></li>
-<li><a class="" href="efficient-dimension-reduction-with-umap.html"><span class="header-section-number">49</span> Efficient dimension reduction with UMAP</a></li>
+<li><a class="" href="multithreading-crawler-frame.html"><span class="header-section-number">26</span> Multithreading Crawler Frame</a></li>
+<li><a class="" href="regression-and-classification-in-r.html"><span class="header-section-number">27</span> Regression and Classification in R</a></li>
+<li><a class="" href="tibble-vs.-dataframe.html"><span class="header-section-number">28</span> Tibble vs. DataFrame</a></li>
+<li><a class="" href="introduction-to-time-series.html"><span class="header-section-number">29</span> Introduction to Time Series</a></li>
+<li><a class="" href="vipul-edav-community-contribution-kickstart-r.html"><span class="header-section-number">30</span> Vipul EDAV Community Contribution Kickstart R</a></li>
+<li><a class="" href="caret---a-machine-learning-package-turotial.html"><span class="header-section-number">31</span> caret - a machine learning package turotial</a></li>
+<li><a class="" href="streamlit-for-financial-analysis.html"><span class="header-section-number">32</span> Streamlit for Financial Analysis</a></li>
+<li><a class="" href="interactive-graphs-tutorial.html"><span class="header-section-number">33</span> Interactive graphs tutorial</a></li>
+<li><a class="" href="guideline-on-using-package-rcurl-and-xml-for-web-scraping.html"><span class="header-section-number">34</span> Guideline on Using Package Rcurl and XML for Web Scraping</a></li>
+<li><a class="" href="twitter-r-package-scraping-via-api-tutorial.html"><span class="header-section-number">35</span> TwitteR R Package Scraping via API Tutorial</a></li>
+<li><a class="" href="introduction-to-data-manipulation.html"><span class="header-section-number">36</span> Introduction to Data Manipulation</a></li>
+<li><a class="" href="animating-the-plots-in-r.html"><span class="header-section-number">37</span> Animating the plots in R</a></li>
+<li><a class="" href="quick-guide-to-eda.html"><span class="header-section-number">38</span> Quick guide to eda</a></li>
+<li><a class="" href="natural-langauge-processing-common-eda-practices-in-python.html"><span class="header-section-number">39</span> Natural Langauge Processing Common EDA Practices in Python</a></li>
+<li><a class="" href="beginners-walk-through-of-deep-learning-in-r.html"><span class="header-section-number">40</span> Beginner’s Walk-through of Deep Learning in R</a></li>
+<li><a class="" href="supervised-learning-tutorial.html"><span class="header-section-number">41</span> Supervised Learning Tutorial</a></li>
+<li><a class="" href="parallel-coordinate-plots-in-ggplot2.html"><span class="header-section-number">42</span> Parallel Coordinate Plots in ggplot2</a></li>
+<li><a class="" href="using-ggplot-in-python.html"><span class="header-section-number">43</span> Using ggplot in python</a></li>
+<li><a class="" href="icons-and-symbols-in-r.html"><span class="header-section-number">44</span> Icons and symbols in R</a></li>
+<li><a class="" href="exploratory-data-analysis-and-preprocessing-with-r-for-data-challenges.html"><span class="header-section-number">45</span> Exploratory data analysis and preprocessing with R for data challenges</a></li>
+<li><a class="" href="introduction-to-git-bash.html"><span class="header-section-number">46</span> Introduction to Git Bash</a></li>
+<li><a class="" href="tutorial-for-six-basic-graphs-by-using-ggplot.html"><span class="header-section-number">47</span> Tutorial for six basic graphs by using ggplot</a></li>
+<li><a class="" href="web-scrapping-using-beautifulsoup-and-its-equivalent-in-rvest.html"><span class="header-section-number">48</span> Web Scrapping using BeautifulSoup and its Equivalent in rvest</a></li>
+<li><a class="" href="d-visualization-shinyaframe-introduction-and-tutorial.html"><span class="header-section-number">49</span> 3D visualization: shinyaframe introduction and tutorial</a></li>
+<li><a class="" href="efficient-dimension-reduction-with-umap.html"><span class="header-section-number">50</span> Efficient dimension reduction with UMAP</a></li>
 <li class="book-part">Demonstrations</li>
-<li><a class="" href="linear-association-r-studio-plugin.html"><span class="header-section-number">50</span> Linear Association R Studio Plugin</a></li>
-<li><a class="" href="customized-sorting-in-r.html"><span class="header-section-number">51</span> Customized Sorting in R</a></li>
-<li><a class="" href="low-key-ml-packages-in-r.html"><span class="header-section-number">52</span> Low-key ML packages in R</a></li>
+<li><a class="" href="linear-association-r-studio-plugin.html"><span class="header-section-number">51</span> Linear Association R Studio Plugin</a></li>
+<li><a class="" href="customized-sorting-in-r.html"><span class="header-section-number">52</span> Customized Sorting in R</a></li>
+<li><a class="" href="low-key-ml-packages-in-r.html"><span class="header-section-number">53</span> Low-key ML packages in R</a></li>
+<li><a class="" href="parallel-coordinate-plots-cheatsheet.html"><span class="header-section-number">54</span> Parallel coordinate plots cheatsheet</a></li>
 <li class="book-part">Workshops</li>
-<li><a class="" href="data-science-product-cycles-in-enterprises.html"><span class="header-section-number">53</span> Data Science Product Cycles in Enterprises</a></li>
+<li><a class="" href="data-science-product-cycles-in-enterprises.html"><span class="header-section-number">55</span> Data Science Product Cycles in Enterprises</a></li>
 <li class="book-part">Appendices</li>
-<li><a class="" href="github-initial-setup.html"><span class="header-section-number">54</span> Github initial setup</a></li>
-<li><a class="" href="tutorial-for-pull-request-mergers.html"><span class="header-section-number">55</span> Tutorial for pull request mergers</a></li>
+<li><a class="" href="github-initial-setup.html"><span class="header-section-number">56</span> Github initial setup</a></li>
+<li><a class="" href="tutorial-for-pull-request-mergers.html"><span class="header-section-number">57</span> Tutorial for pull request mergers</a></li>
 </ul>
 
         <div class="book-extra">
@@ -117,16 +119,16 @@
 </div>
   </header><main class="col-sm-12 col-md-9 col-lg-7" id="content"><div id="parallel-coordinates-plot-cheatsheet" class="section level1">
 <h1>
-<span class="header-section-number">14</span> Parallel coordinates plot cheatsheet<a class="anchor" aria-label="anchor" href="#parallel-coordinates-plot-cheatsheet"><i class="fas fa-link"></i></a>
+<span class="header-section-number">15</span> Parallel coordinates plot cheatsheet<a class="anchor" aria-label="anchor" href="#parallel-coordinates-plot-cheatsheet"><i class="fas fa-link"></i></a>
 </h1>
 <p>Andrew Schaefer</p>
 <p>This cheatsheet goes over different options and coding techniques for displaying parallel coordinate plots.</p>
 <div id="libraries-ggally-ggparallel-and-parcoords" class="section level2">
 <h2>
-<span class="header-section-number">14.1</span> Libraries: GGally, ggparallel, and parcoords<a class="anchor" aria-label="anchor" href="#libraries-ggally-ggparallel-and-parcoords"><i class="fas fa-link"></i></a>
+<span class="header-section-number">15.1</span> Libraries: GGally, ggparallel, and parcoords<a class="anchor" aria-label="anchor" href="#libraries-ggally-ggparallel-and-parcoords"><i class="fas fa-link"></i></a>
 </h2>
 <p>In general, GGally is used for continuous data while ggparallel is useful for discrete data. We’ll start with some beginning examples below. parcoords introduces interactive parallel coordinate plots, which will be explained further below. First, import the libraries</p>
-<div class="sourceCode" id="cb63"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb76"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://ggobi.github.io/ggally/">GGally</a></span><span class="op">)</span>
 <span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="http://github.com/heike/ggparallel">ggparallel</a></span><span class="op">)</span>
 <span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://github.com/timelyportfolio/parcoords">parcoords</a></span><span class="op">)</span>
@@ -134,15 +136,15 @@
 </div>
 <div id="package-ggally" class="section level2">
 <h2>
-<span class="header-section-number">14.2</span> Package: GGally<a class="anchor" aria-label="anchor" href="#package-ggally"><i class="fas fa-link"></i></a>
+<span class="header-section-number">15.2</span> Package: GGally<a class="anchor" aria-label="anchor" href="#package-ggally"><i class="fas fa-link"></i></a>
 </h2>
 </div>
 <div id="method-ggparcoord" class="section level2">
 <h2>
-<span class="header-section-number">14.3</span> Method: ggparcoord<a class="anchor" aria-label="anchor" href="#method-ggparcoord"><i class="fas fa-link"></i></a>
+<span class="header-section-number">15.3</span> Method: ggparcoord<a class="anchor" aria-label="anchor" href="#method-ggparcoord"><i class="fas fa-link"></i></a>
 </h2>
 <p>As discussed in class, ggparcoord is usually your go-to for parallel coordinate plots. Once the dataset is loaded, you can pass it directly into the method and indicate which columns to show.</p>
-<div class="sourceCode" id="cb64"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb77"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="fu"><a href="https://rdrr.io/r/utils/data.html">data</a></span><span class="op">(</span><span class="va">mtcars</span><span class="op">)</span>
 <span class="fu"><a href="https://rdrr.io/r/utils/head.html">head</a></span><span class="op">(</span><span class="va">mtcars</span><span class="op">)</span></code></pre></div>
 <pre><code>##                    mpg cyl disp  hp drat    wt  qsec vs am gear carb
@@ -152,44 +154,44 @@
 ## Hornet 4 Drive    21.4   6  258 110 3.08 3.215 19.44  1  0    3    1
 ## Hornet Sportabout 18.7   8  360 175 3.15 3.440 17.02  0  0    3    2
 ## Valiant           18.1   6  225 105 2.76 3.460 20.22  1  0    3    1</code></pre>
-<div class="sourceCode" id="cb66"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb79"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="fu"><a href="https://ggobi.github.io/ggally/reference/ggparcoord.html">ggparcoord</a></span><span class="op">(</span><span class="va">mtcars</span><span class="op">)</span></code></pre></div>
 <div class="inline-figure"><img src="parallel_coordinate_plots_cheatsheet_files/figure-html/unnamed-chunk-2-1.png" width="672" style="display: block; margin: auto;"></div>
 <div id="parameters" class="section level3">
 <h3>
-<span class="header-section-number">14.3.1</span> Parameters<a class="anchor" aria-label="anchor" href="#parameters"><i class="fas fa-link"></i></a>
+<span class="header-section-number">15.3.1</span> Parameters<a class="anchor" aria-label="anchor" href="#parameters"><i class="fas fa-link"></i></a>
 </h3>
 <p>Not a very interesting graph right? Let’s slowly add on some useful parameters. Columns can either be a range of column numbers (2:4) or a vector as shown below. groupColumn is for coloring data from a single column (the input will take a column value as a numerical, or the name of the column as a string). If the data is continuous, a gradient will be used.</p>
-<div class="sourceCode" id="cb67"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb80"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="fu"><a href="https://ggobi.github.io/ggally/reference/ggparcoord.html">ggparcoord</a></span><span class="op">(</span><span class="va">mtcars</span>, columns <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">1</span><span class="op">:</span><span class="fl">6</span>,<span class="fl">9</span>,<span class="fl">10</span><span class="op">)</span>, groupColumn <span class="op">=</span> <span class="fl">2</span><span class="op">)</span></code></pre></div>
 <p><img src="parallel_coordinate_plots_cheatsheet_files/figure-html/unnamed-chunk-3-1.png" width="672" style="display: block; margin: auto;"><br><br>
 splineFactors curves the lines, which may make trends more visible depending on the data. alphaLines will make the lines transparent, which is prticularly useful for large datasets. It also prevents the colors of different lines from overlapping each other. These parameters will help with visualizing the data.</p>
-<div class="sourceCode" id="cb68"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb81"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="fu"><a href="https://ggobi.github.io/ggally/reference/ggparcoord.html">ggparcoord</a></span><span class="op">(</span><span class="va">mtcars</span>, columns <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">1</span><span class="op">:</span><span class="fl">6</span>,<span class="fl">9</span>,<span class="fl">10</span><span class="op">)</span>, groupColumn <span class="op">=</span> <span class="fl">2</span>, splineFactor <span class="op">=</span> <span class="fl">10</span>, alphaLines<span class="op">=</span><span class="fl">0.6</span><span class="op">)</span></code></pre></div>
 <div class="inline-figure"><img src="parallel_coordinate_plots_cheatsheet_files/figure-html/unnamed-chunk-4-1.png" width="672" style="display: block; margin: auto;"></div>
 </div>
 <div id="grouping-by-features" class="section level3">
 <h3>
-<span class="header-section-number">14.3.2</span> Grouping by features<a class="anchor" aria-label="anchor" href="#grouping-by-features"><i class="fas fa-link"></i></a>
+<span class="header-section-number">15.3.2</span> Grouping by features<a class="anchor" aria-label="anchor" href="#grouping-by-features"><i class="fas fa-link"></i></a>
 </h3>
 <p>Discrete data will have their own categorical colors, much like a legend. However discrete data does not fit very well with the rest of the data (see that the scaling is off below). It will be difficult to discern trends between variables.</p>
-<div class="sourceCode" id="cb69"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb82"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="va">mtcars</span><span class="op">$</span><span class="va">cyl</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/character.html">as.character</a></span><span class="op">(</span><span class="va">mtcars</span><span class="op">$</span><span class="va">cyl</span><span class="op">)</span>
 <span class="fu"><a href="https://ggobi.github.io/ggally/reference/ggparcoord.html">ggparcoord</a></span><span class="op">(</span><span class="va">mtcars</span>, columns <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">1</span><span class="op">:</span><span class="fl">6</span>,<span class="fl">9</span>,<span class="fl">10</span><span class="op">)</span>, groupColumn <span class="op">=</span> <span class="fl">2</span>, splineFactor <span class="op">=</span> <span class="fl">10</span>, alphaLines<span class="op">=</span><span class="fl">0.6</span><span class="op">)</span></code></pre></div>
 <div class="inline-figure"><img src="parallel_coordinate_plots_cheatsheet_files/figure-html/unnamed-chunk-5-1.png" width="672" style="display: block; margin: auto;"></div>
 <p><br><br>
 Luckily we have the option to exclude the discrete data in the column vector (while still using it to group the data).</p>
-<div class="sourceCode" id="cb70"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb83"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="fu"><a href="https://ggobi.github.io/ggally/reference/ggparcoord.html">ggparcoord</a></span><span class="op">(</span><span class="va">mtcars</span>, columns <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">1</span>,<span class="fl">3</span><span class="op">:</span><span class="fl">6</span>,<span class="fl">9</span>,<span class="fl">10</span><span class="op">)</span>, groupColumn <span class="op">=</span> <span class="fl">2</span>, splineFactor <span class="op">=</span> <span class="fl">10</span>, alphaLines<span class="op">=</span><span class="fl">0.6</span><span class="op">)</span></code></pre></div>
 <div class="inline-figure"><img src="parallel_coordinate_plots_cheatsheet_files/figure-html/unnamed-chunk-6-1.png" width="672" style="display: block; margin: auto;"></div>
 </div>
 <div id="distributions" class="section level3">
 <h3>
-<span class="header-section-number">14.3.3</span> Distributions<a class="anchor" aria-label="anchor" href="#distributions"><i class="fas fa-link"></i></a>
+<span class="header-section-number">15.3.3</span> Distributions<a class="anchor" aria-label="anchor" href="#distributions"><i class="fas fa-link"></i></a>
 </h3>
 <p>Boxplots may be used to observe the distribution of the data and identify outliers. shadeBox may be used to color a box between the min and max value behind every column, but a boxplot will achieve the same goal (with more detail and visual appeal too).</p>
 <p>Note: the splineFactor parameter may not be used with boxplot or shadeBox</p>
-<div class="sourceCode" id="cb71"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb84"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="fu"><a href="https://ggobi.github.io/ggally/reference/ggparcoord.html">ggparcoord</a></span><span class="op">(</span><span class="va">mtcars</span>, 
            columns <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">1</span>,<span class="fl">3</span><span class="op">:</span><span class="fl">6</span>,<span class="fl">9</span>,<span class="fl">10</span><span class="op">)</span>, 
            groupColumn <span class="op">=</span> <span class="fl">2</span>, 
@@ -199,10 +201,10 @@ Luckily we have the option to exclude the discrete data in the column vector (wh
 </div>
 <div id="ggplot2-commands" class="section level3">
 <h3>
-<span class="header-section-number">14.3.4</span> ggplot2 commands<a class="anchor" aria-label="anchor" href="#ggplot2-commands"><i class="fas fa-link"></i></a>
+<span class="header-section-number">15.3.4</span> ggplot2 commands<a class="anchor" aria-label="anchor" href="#ggplot2-commands"><i class="fas fa-link"></i></a>
 </h3>
 <p>The title parameter may be used alongside with themes to make the graph visually appealing. This includes powerful methods such as facet_wrap. This way can observe the distribution or trend of each category. If the x-axis labels of the plots are “squished” together (especially for datasets with many features), the angle of the text may be adjusted to avoid overlap.</p>
-<div class="sourceCode" id="cb72"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb85"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="fu"><a href="https://ggobi.github.io/ggally/reference/ggparcoord.html">ggparcoord</a></span><span class="op">(</span><span class="va">mtcars</span>, 
            columns <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">1</span>,<span class="fl">3</span><span class="op">:</span><span class="fl">6</span>,<span class="fl">9</span>,<span class="fl">10</span><span class="op">)</span>, 
            groupColumn <span class="op">=</span> <span class="fl">2</span>, 
@@ -218,19 +220,19 @@ Luckily we have the option to exclude the discrete data in the column vector (wh
 </div>
 <div id="packagemethod-ggparallel" class="section level2">
 <h2>
-<span class="header-section-number">14.4</span> Package/Method: ggparallel<a class="anchor" aria-label="anchor" href="#packagemethod-ggparallel"><i class="fas fa-link"></i></a>
+<span class="header-section-number">15.4</span> Package/Method: ggparallel<a class="anchor" aria-label="anchor" href="#packagemethod-ggparallel"><i class="fas fa-link"></i></a>
 </h2>
 <p>There are ways to introduce discrete data into ggparcoords. But there is a different library with much more flexibility with discrete values. Let’s try out ggparallel</p>
-<div class="sourceCode" id="cb73"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb86"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="fu"><a href="https://rdrr.io/pkg/ggparallel/man/ggparallel.html">ggparallel</a></span><span class="op">(</span>vars <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/list.html">list</a></span><span class="op">(</span><span class="st">"cyl"</span>, <span class="st">"gear"</span>, <span class="st">"carb"</span><span class="op">)</span>, data <span class="op">=</span> <span class="va">mtcars</span><span class="op">)</span></code></pre></div>
 <p><img src="parallel_coordinate_plots_cheatsheet_files/figure-html/unnamed-chunk-9-1.png" width="672" style="display: block; margin: auto;"><br><br>
 Compared to ggparallel, ggparcoord does not tell us much information regarding the discrete variables. This is the main difference. Let’s shift our attention back to ggparallel</p>
-<div class="sourceCode" id="cb74"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb87"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="fu"><a href="https://ggobi.github.io/ggally/reference/ggparcoord.html">ggparcoord</a></span><span class="op">(</span><span class="va">mtcars</span>, columns <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">2</span>,<span class="fl">8</span>,<span class="fl">9</span><span class="op">)</span><span class="op">)</span></code></pre></div>
 <div class="inline-figure"><img src="parallel_coordinate_plots_cheatsheet_files/figure-html/unnamed-chunk-10-1.png" width="672" style="display: block; margin: auto;"></div>
 <div id="methods" class="section level3">
 <h3>
-<span class="header-section-number">14.4.1</span> Methods<a class="anchor" aria-label="anchor" href="#methods"><i class="fas fa-link"></i></a>
+<span class="header-section-number">15.4.1</span> Methods<a class="anchor" aria-label="anchor" href="#methods"><i class="fas fa-link"></i></a>
 </h3>
 <p>As more columns are added, the columns may get “squished” together and it starts looking very busy. We can adjust the width parameter and change the method to get a better view;
 - angle is the default method
@@ -240,28 +242,28 @@ Compared to ggparallel, ggparcoord does not tell us much information regarding t
 </div>
 <div id="parameters-1" class="section level3">
 <h3>
-<span class="header-section-number">14.4.2</span> Parameters<a class="anchor" aria-label="anchor" href="#parameters-1"><i class="fas fa-link"></i></a>
+<span class="header-section-number">15.4.2</span> Parameters<a class="anchor" aria-label="anchor" href="#parameters-1"><i class="fas fa-link"></i></a>
 </h3>
 <p>-method: changes view of data (angle, adj.angle, parset, hammock)
 -alpha: transparency of wedges
 -width: visual width of each column
 -ratio: changes the height of the wedges (in conjunction with hammock and adj.angle)
 -order: changes the order of the categories in each column (based on size of proportion)</p>
-<div class="sourceCode" id="cb75"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb88"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="fu"><a href="https://rdrr.io/pkg/ggparallel/man/ggparallel.html">ggparallel</a></span><span class="op">(</span>vars <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/list.html">list</a></span><span class="op">(</span><span class="st">"cyl"</span>, <span class="st">"gear"</span>, <span class="st">"carb"</span>, <span class="st">"vs"</span>, <span class="st">"am"</span><span class="op">)</span>, data <span class="op">=</span> <span class="va">mtcars</span><span class="op">)</span> <span class="op">+</span> 
   <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/labs.html">ggtitle</a></span><span class="op">(</span><span class="st">"angle"</span><span class="op">)</span></code></pre></div>
 <div class="inline-figure"><img src="parallel_coordinate_plots_cheatsheet_files/figure-html/unnamed-chunk-11-1.png" width="672" style="display: block; margin: auto;"></div>
-<div class="sourceCode" id="cb76"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb89"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="fu"><a href="https://rdrr.io/pkg/ggparallel/man/ggparallel.html">ggparallel</a></span><span class="op">(</span>vars <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/list.html">list</a></span><span class="op">(</span><span class="st">"cyl"</span>, <span class="st">"gear"</span>, <span class="st">"carb"</span>, <span class="st">"vs"</span>, <span class="st">"am"</span><span class="op">)</span>, data <span class="op">=</span> <span class="va">mtcars</span>, width <span class="op">=</span> <span class="fl">0.15</span>,
            method <span class="op">=</span> <span class="st">"adj.angle"</span><span class="op">)</span> <span class="op">+</span>
   <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/labs.html">ggtitle</a></span><span class="op">(</span><span class="st">"adj.angle"</span><span class="op">)</span></code></pre></div>
 <div class="inline-figure"><img src="parallel_coordinate_plots_cheatsheet_files/figure-html/unnamed-chunk-11-2.png" width="672" style="display: block; margin: auto;"></div>
-<div class="sourceCode" id="cb77"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb90"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="fu"><a href="https://rdrr.io/pkg/ggparallel/man/ggparallel.html">ggparallel</a></span><span class="op">(</span>vars <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/list.html">list</a></span><span class="op">(</span><span class="st">"cyl"</span>, <span class="st">"gear"</span>, <span class="st">"carb"</span>, <span class="st">"vs"</span>, <span class="st">"am"</span><span class="op">)</span>, data <span class="op">=</span> <span class="va">mtcars</span>, width <span class="op">=</span> <span class="fl">0.15</span>,
            method <span class="op">=</span> <span class="st">"hammock"</span>, ratio <span class="op">=</span> <span class="fl">0.3</span>, alpha <span class="op">=</span> <span class="fl">0.3</span><span class="op">)</span> <span class="op">+</span>
   <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/labs.html">ggtitle</a></span><span class="op">(</span><span class="st">"hammock"</span><span class="op">)</span></code></pre></div>
 <div class="inline-figure"><img src="parallel_coordinate_plots_cheatsheet_files/figure-html/unnamed-chunk-11-3.png" width="672" style="display: block; margin: auto;"></div>
-<div class="sourceCode" id="cb78"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb91"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="fu"><a href="https://rdrr.io/pkg/ggparallel/man/ggparallel.html">ggparallel</a></span><span class="op">(</span>vars <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/list.html">list</a></span><span class="op">(</span><span class="st">"cyl"</span>, <span class="st">"gear"</span>, <span class="st">"carb"</span>, <span class="st">"vs"</span>, <span class="st">"am"</span><span class="op">)</span>, data <span class="op">=</span> <span class="va">mtcars</span>,
            method <span class="op">=</span> <span class="st">"parset"</span><span class="op">)</span> <span class="op">+</span>
   <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/labs.html">ggtitle</a></span><span class="op">(</span><span class="st">"parset"</span><span class="op">)</span></code></pre></div>
@@ -270,13 +272,13 @@ More parameters:
 -order: changes the order of the categories in each column based on size of proportion (decreasing, increasing, and unchanged order)
 -label.size: changes the size of the text in each column
 -text.angle: adjusts angle of text within columns</p>
-<div class="sourceCode" id="cb79"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb92"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="fu"><a href="https://rdrr.io/pkg/ggparallel/man/ggparallel.html">ggparallel</a></span><span class="op">(</span>vars <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/names.html">names</a></span><span class="op">(</span><span class="va">mtcars</span><span class="op">)</span><span class="op">[</span><span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">2</span>,<span class="fl">10</span>,<span class="fl">11</span>,<span class="fl">8</span>,<span class="fl">9</span><span class="op">)</span><span class="op">]</span>, data <span class="op">=</span> <span class="va">mtcars</span>, width <span class="op">=</span> <span class="fl">0.15</span>, order<span class="op">=</span><span class="fl">0</span>,
            method <span class="op">=</span> <span class="st">"adj.angle"</span>, label.size<span class="op">=</span><span class="fl">3.5</span>, text.angle<span class="op">=</span><span class="fl">0</span><span class="op">)</span></code></pre></div>
 <div class="inline-figure">
 <img src="parallel_coordinate_plots_cheatsheet_files/figure-html/unnamed-chunk-12-1.png" width="672" style="display: block; margin: auto;">
 ### With ggplot2 commands</div>
-<div class="sourceCode" id="cb80"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb93"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="fu"><a href="https://rdrr.io/pkg/ggparallel/man/ggparallel.html">ggparallel</a></span><span class="op">(</span>vars <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/names.html">names</a></span><span class="op">(</span><span class="va">mtcars</span><span class="op">)</span><span class="op">[</span><span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">2</span>,<span class="fl">10</span>,<span class="fl">11</span>,<span class="fl">8</span>,<span class="fl">9</span><span class="op">)</span><span class="op">]</span>, data <span class="op">=</span> <span class="va">mtcars</span>, width <span class="op">=</span> <span class="fl">0.15</span>,
            method <span class="op">=</span> <span class="st">"adj.angle"</span>, label.size<span class="op">=</span><span class="fl">3.5</span>, text.angle<span class="op">=</span><span class="fl">0</span><span class="op">)</span> <span class="op">+</span>
   <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/labs.html">ggtitle</a></span><span class="op">(</span><span class="st">"Car Parts"</span><span class="op">)</span> <span class="op">+</span>
@@ -289,21 +291,21 @@ More parameters:
 </div>
 <div id="package-and-method-parcoords" class="section level2">
 <h2>
-<span class="header-section-number">14.5</span> Package and Method: parcoords<a class="anchor" aria-label="anchor" href="#package-and-method-parcoords"><i class="fas fa-link"></i></a>
+<span class="header-section-number">15.5</span> Package and Method: parcoords<a class="anchor" aria-label="anchor" href="#package-and-method-parcoords"><i class="fas fa-link"></i></a>
 </h2>
 <p>Unlike the previous two packages, parcoords allows for interactive parallel coordinate plots. Default graph is below.</p>
-<div class="sourceCode" id="cb81"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb94"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="fu"><a href="https://rdrr.io/pkg/parcoords/man/parcoords.html">parcoords</a></span><span class="op">(</span><span class="va">mtcars</span><span class="op">)</span></code></pre></div>
 <div class="parcoords html-widget" height="480" id="htmlwidget-763b2499223494d111d4" style="width:672px;height:480px; position:relative; overflow-x:auto; overflow-y:hidden; max-width:100%;" width="672"></div>
 <script type="application/json" data-for="htmlwidget-763b2499223494d111d4">{"x":{"data":{"names":["Mazda RX4","Mazda RX4 Wag","Datsun 710","Hornet 4 Drive","Hornet Sportabout","Valiant","Duster 360","Merc 240D","Merc 230","Merc 280","Merc 280C","Merc 450SE","Merc 450SL","Merc 450SLC","Cadillac Fleetwood","Lincoln Continental","Chrysler Imperial","Fiat 128","Honda Civic","Toyota Corolla","Toyota Corona","Dodge Challenger","AMC Javelin","Camaro Z28","Pontiac Firebird","Fiat X1-9","Porsche 914-2","Lotus Europa","Ford Pantera L","Ferrari Dino","Maserati Bora","Volvo 142E"],"mpg":[21,21,22.8,21.4,18.7,18.1,14.3,24.4,22.8,19.2,17.8,16.4,17.3,15.2,10.4,10.4,14.7,32.4,30.4,33.9,21.5,15.5,15.2,13.3,19.2,27.3,26,30.4,15.8,19.7,15,21.4],"cyl":["6","6","4","6","8","6","8","4","4","6","6","8","8","8","8","8","8","4","4","4","4","8","8","8","8","4","4","4","8","6","8","4"],"disp":[160,160,108,258,360,225,360,146.7,140.8,167.6,167.6,275.8,275.8,275.8,472,460,440,78.7,75.7,71.1,120.1,318,304,350,400,79,120.3,95.1,351,145,301,121],"hp":[110,110,93,110,175,105,245,62,95,123,123,180,180,180,205,215,230,66,52,65,97,150,150,245,175,66,91,113,264,175,335,109],"drat":[3.9,3.9,3.85,3.08,3.15,2.76,3.21,3.69,3.92,3.92,3.92,3.07,3.07,3.07,2.93,3,3.23,4.08,4.93,4.22,3.7,2.76,3.15,3.73,3.08,4.08,4.43,3.77,4.22,3.62,3.54,4.11],"wt":[2.62,2.875,2.32,3.215,3.44,3.46,3.57,3.19,3.15,3.44,3.44,4.07,3.73,3.78,5.25,5.424,5.345,2.2,1.615,1.835,2.465,3.52,3.435,3.84,3.845,1.935,2.14,1.513,3.17,2.77,3.57,2.78],"qsec":[16.46,17.02,18.61,19.44,17.02,20.22,15.84,20,22.9,18.3,18.9,17.4,17.6,18,17.98,17.82,17.42,19.47,18.52,19.9,20.01,16.87,17.3,15.41,17.05,18.9,16.7,16.9,14.5,15.5,14.6,18.6],"vs":[0,0,1,1,0,1,0,1,1,1,1,0,0,0,0,0,0,1,1,1,1,0,0,0,0,1,0,1,0,0,0,1],"am":[1,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,1,0,0,0,0,0,1,1,1,1,1,1,1],"gear":[4,4,4,3,3,3,3,4,4,4,4,3,3,3,3,3,3,4,4,4,3,3,3,3,3,4,5,5,5,5,5,4],"carb":[4,4,1,1,2,1,4,2,2,4,4,3,3,3,4,4,4,1,2,1,1,2,2,4,2,1,2,2,4,6,8,2]},"options":{"rownames":true,"brushPredicate":"AND","reorderable":false,"margin":{"top":50,"bottom":50,"left":100,"right":50},"mode":false,"bundlingStrength":0.5,"smoothness":0},"autoresize":false,"tasks":null},"evals":[],"jsHooks":[]}</script><div id="interactive-parameters" class="section level3">
 <h3>
-<span class="header-section-number">14.5.1</span> Interactive parameters<a class="anchor" aria-label="anchor" href="#interactive-parameters"><i class="fas fa-link"></i></a>
+<span class="header-section-number">15.5.1</span> Interactive parameters<a class="anchor" aria-label="anchor" href="#interactive-parameters"><i class="fas fa-link"></i></a>
 </h3>
 <p>-reorderable (T or F): allows the columns to be moved around
 -brushMode: allows for filtering in each column of the dataset (options include 1D-axes, 1D-axes-multi, or 2D-strums). The main difference between these is 1D axes filters on columns, and 2D strums filters between columns
 -alphaOnBrushed: when brushing, makes filtered-out lines visible (useful when looking for lines while brushing)
 -brushPredicate: logical “and” or “or” on multiple brush filters (default is “and”)</p>
-<div class="sourceCode" id="cb82"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb95"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://github.com/timelyportfolio/d3r">d3r</a></span><span class="op">)</span>
 <span class="fu"><a href="https://rdrr.io/pkg/parcoords/man/parcoords.html">parcoords</a></span><span class="op">(</span><span class="va">mtcars</span>,
           brushMode <span class="op">=</span> <span class="st">"1D-axes"</span>,
@@ -317,7 +319,7 @@ More parameters:
             <span class="op">)</span>
           <span class="op">)</span></code></pre></div>
 <div class="parcoords html-widget" height="480" id="htmlwidget-b0ed804d919248acc480" style="width:672px;height:480px; position:relative; overflow-x:auto; overflow-y:hidden; max-width:100%;" width="672"></div>
-<script type="application/json" data-for="htmlwidget-b0ed804d919248acc480">{"x":{"data":{"names":["Mazda RX4","Mazda RX4 Wag","Datsun 710","Hornet 4 Drive","Hornet Sportabout","Valiant","Duster 360","Merc 240D","Merc 230","Merc 280","Merc 280C","Merc 450SE","Merc 450SL","Merc 450SLC","Cadillac Fleetwood","Lincoln Continental","Chrysler Imperial","Fiat 128","Honda Civic","Toyota Corolla","Toyota Corona","Dodge Challenger","AMC Javelin","Camaro Z28","Pontiac Firebird","Fiat X1-9","Porsche 914-2","Lotus Europa","Ford Pantera L","Ferrari Dino","Maserati Bora","Volvo 142E"],"mpg":[21,21,22.8,21.4,18.7,18.1,14.3,24.4,22.8,19.2,17.8,16.4,17.3,15.2,10.4,10.4,14.7,32.4,30.4,33.9,21.5,15.5,15.2,13.3,19.2,27.3,26,30.4,15.8,19.7,15,21.4],"cyl":["6","6","4","6","8","6","8","4","4","6","6","8","8","8","8","8","8","4","4","4","4","8","8","8","8","4","4","4","8","6","8","4"],"disp":[160,160,108,258,360,225,360,146.7,140.8,167.6,167.6,275.8,275.8,275.8,472,460,440,78.7,75.7,71.1,120.1,318,304,350,400,79,120.3,95.1,351,145,301,121],"hp":[110,110,93,110,175,105,245,62,95,123,123,180,180,180,205,215,230,66,52,65,97,150,150,245,175,66,91,113,264,175,335,109],"drat":[3.9,3.9,3.85,3.08,3.15,2.76,3.21,3.69,3.92,3.92,3.92,3.07,3.07,3.07,2.93,3,3.23,4.08,4.93,4.22,3.7,2.76,3.15,3.73,3.08,4.08,4.43,3.77,4.22,3.62,3.54,4.11],"wt":[2.62,2.875,2.32,3.215,3.44,3.46,3.57,3.19,3.15,3.44,3.44,4.07,3.73,3.78,5.25,5.424,5.345,2.2,1.615,1.835,2.465,3.52,3.435,3.84,3.845,1.935,2.14,1.513,3.17,2.77,3.57,2.78],"qsec":[16.46,17.02,18.61,19.44,17.02,20.22,15.84,20,22.9,18.3,18.9,17.4,17.6,18,17.98,17.82,17.42,19.47,18.52,19.9,20.01,16.87,17.3,15.41,17.05,18.9,16.7,16.9,14.5,15.5,14.6,18.6],"vs":[0,0,1,1,0,1,0,1,1,1,1,0,0,0,0,0,0,1,1,1,1,0,0,0,0,1,0,1,0,0,0,1],"am":[1,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,1,0,0,0,0,0,1,1,1,1,1,1,1],"gear":[4,4,4,3,3,3,3,4,4,4,4,3,3,3,3,3,3,4,4,4,3,3,3,3,3,4,5,5,5,5,5,4],"carb":[4,4,1,1,2,1,4,2,2,4,4,3,3,3,4,4,4,1,2,1,1,2,2,4,2,1,2,2,4,6,8,2]},"options":{"rownames":true,"color":{"colorScale":"scaleOrdinal","colorBy":"cyl","colorScheme":["blue","green"]},"brushMode":"1D-axes","brushPredicate":"AND","reorderable":true,"margin":{"top":50,"bottom":50,"left":100,"right":50},"alpha":0.5,"mode":false,"bundlingStrength":0.5,"smoothness":0},"autoresize":false,"tasks":null},"evals":[],"jsHooks":[]}</script><div class="sourceCode" id="cb83"><pre class="downlit sourceCode r">
+<script type="application/json" data-for="htmlwidget-b0ed804d919248acc480">{"x":{"data":{"names":["Mazda RX4","Mazda RX4 Wag","Datsun 710","Hornet 4 Drive","Hornet Sportabout","Valiant","Duster 360","Merc 240D","Merc 230","Merc 280","Merc 280C","Merc 450SE","Merc 450SL","Merc 450SLC","Cadillac Fleetwood","Lincoln Continental","Chrysler Imperial","Fiat 128","Honda Civic","Toyota Corolla","Toyota Corona","Dodge Challenger","AMC Javelin","Camaro Z28","Pontiac Firebird","Fiat X1-9","Porsche 914-2","Lotus Europa","Ford Pantera L","Ferrari Dino","Maserati Bora","Volvo 142E"],"mpg":[21,21,22.8,21.4,18.7,18.1,14.3,24.4,22.8,19.2,17.8,16.4,17.3,15.2,10.4,10.4,14.7,32.4,30.4,33.9,21.5,15.5,15.2,13.3,19.2,27.3,26,30.4,15.8,19.7,15,21.4],"cyl":["6","6","4","6","8","6","8","4","4","6","6","8","8","8","8","8","8","4","4","4","4","8","8","8","8","4","4","4","8","6","8","4"],"disp":[160,160,108,258,360,225,360,146.7,140.8,167.6,167.6,275.8,275.8,275.8,472,460,440,78.7,75.7,71.1,120.1,318,304,350,400,79,120.3,95.1,351,145,301,121],"hp":[110,110,93,110,175,105,245,62,95,123,123,180,180,180,205,215,230,66,52,65,97,150,150,245,175,66,91,113,264,175,335,109],"drat":[3.9,3.9,3.85,3.08,3.15,2.76,3.21,3.69,3.92,3.92,3.92,3.07,3.07,3.07,2.93,3,3.23,4.08,4.93,4.22,3.7,2.76,3.15,3.73,3.08,4.08,4.43,3.77,4.22,3.62,3.54,4.11],"wt":[2.62,2.875,2.32,3.215,3.44,3.46,3.57,3.19,3.15,3.44,3.44,4.07,3.73,3.78,5.25,5.424,5.345,2.2,1.615,1.835,2.465,3.52,3.435,3.84,3.845,1.935,2.14,1.513,3.17,2.77,3.57,2.78],"qsec":[16.46,17.02,18.61,19.44,17.02,20.22,15.84,20,22.9,18.3,18.9,17.4,17.6,18,17.98,17.82,17.42,19.47,18.52,19.9,20.01,16.87,17.3,15.41,17.05,18.9,16.7,16.9,14.5,15.5,14.6,18.6],"vs":[0,0,1,1,0,1,0,1,1,1,1,0,0,0,0,0,0,1,1,1,1,0,0,0,0,1,0,1,0,0,0,1],"am":[1,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,1,0,0,0,0,0,1,1,1,1,1,1,1],"gear":[4,4,4,3,3,3,3,4,4,4,4,3,3,3,3,3,3,4,4,4,3,3,3,3,3,4,5,5,5,5,5,4],"carb":[4,4,1,1,2,1,4,2,2,4,4,3,3,3,4,4,4,1,2,1,1,2,2,4,2,1,2,2,4,6,8,2]},"options":{"rownames":true,"color":{"colorScale":"scaleOrdinal","colorBy":"cyl","colorScheme":["blue","green"]},"brushMode":"1D-axes","brushPredicate":"AND","reorderable":true,"margin":{"top":50,"bottom":50,"left":100,"right":50},"alpha":0.5,"mode":false,"bundlingStrength":0.5,"smoothness":0},"autoresize":false,"tasks":null},"evals":[],"jsHooks":[]}</script><div class="sourceCode" id="cb96"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="fu"><a href="https://rdrr.io/pkg/parcoords/man/parcoords.html">parcoords</a></span><span class="op">(</span><span class="va">mtcars</span>,
           reorderable <span class="op">=</span> <span class="cn">T</span>,
           brushMode <span class="op">=</span> <span class="st">"2D-strums"</span>,
@@ -329,7 +331,7 @@ More parameters:
 </div>
 <div id="color-parameter" class="section level3">
 <h3>
-<span class="header-section-number">14.5.2</span> Color parameter<a class="anchor" aria-label="anchor" href="#color-parameter"><i class="fas fa-link"></i></a>
+<span class="header-section-number">15.5.2</span> Color parameter<a class="anchor" aria-label="anchor" href="#color-parameter"><i class="fas fa-link"></i></a>
 </h3>
 <p>This parameter takes in a list (which can contain colorScale, colorBy, colorScheme, etc). Since most of the data will include continuous variables, ensure you install and import the library “d3r”, or the graph will get an error<br>
 - set withD3 = TRUE when using the color parameter<br><br></p>
@@ -337,11 +339,11 @@ More parameters:
 </div>
 <div id="ending-notes-and-analysis" class="section level2">
 <h2>
-<span class="header-section-number">14.6</span> Ending Notes and Analysis:<a class="anchor" aria-label="anchor" href="#ending-notes-and-analysis"><i class="fas fa-link"></i></a>
+<span class="header-section-number">15.6</span> Ending Notes and Analysis:<a class="anchor" aria-label="anchor" href="#ending-notes-and-analysis"><i class="fas fa-link"></i></a>
 </h2>
 <div id="ggparcoord-ggally" class="section level3">
 <h3>
-<span class="header-section-number">14.6.1</span> ggparcoord (GGally)<a class="anchor" aria-label="anchor" href="#ggparcoord-ggally"><i class="fas fa-link"></i></a>
+<span class="header-section-number">15.6.1</span> ggparcoord (GGally)<a class="anchor" aria-label="anchor" href="#ggparcoord-ggally"><i class="fas fa-link"></i></a>
 </h3>
 <ul>
 <li>can display continuous and discrete data, though best with continuous<br>
@@ -356,7 +358,7 @@ More parameters:
 </div>
 <div id="ggparallel" class="section level3">
 <h3>
-<span class="header-section-number">14.6.2</span> ggparallel<a class="anchor" aria-label="anchor" href="#ggparallel"><i class="fas fa-link"></i></a>
+<span class="header-section-number">15.6.2</span> ggparallel<a class="anchor" aria-label="anchor" href="#ggparallel"><i class="fas fa-link"></i></a>
 </h3>
 <ul>
 <li>visualizes proportions between discrete data<br>
@@ -371,7 +373,7 @@ More parameters:
 </div>
 <div id="parcoords" class="section level3">
 <h3>
-<span class="header-section-number">14.6.3</span> parcoords<a class="anchor" aria-label="anchor" href="#parcoords"><i class="fas fa-link"></i></a>
+<span class="header-section-number">15.6.3</span> parcoords<a class="anchor" aria-label="anchor" href="#parcoords"><i class="fas fa-link"></i></a>
 </h3>
 <ul>
 <li>contains interactive functionality<br>
@@ -385,39 +387,39 @@ More parameters:
 </div>
 </div>
   <div class="chapter-nav">
-<div class="prev"><a href="use-of-ggprism-and-ggsci-packages.html"><span class="header-section-number">13</span> Use of ggprism and ggsci packages</a></div>
-<div class="next"><a href="cheatsheet-tidyverse.html"><span class="header-section-number">15</span> Cheatsheet Tidyverse</a></div>
+<div class="prev"><a href="use-of-ggprism-and-ggsci-packages.html"><span class="header-section-number">14</span> Use of ggprism and ggsci packages</a></div>
+<div class="next"><a href="cheatsheet-tidyverse.html"><span class="header-section-number">16</span> Cheatsheet Tidyverse</a></div>
 </div></main><div class="col-md-3 col-lg-2 d-none d-md-block sidebar sidebar-chapter">
     <nav id="toc" data-toggle="toc" aria-label="On this page"><h2>On this page</h2>
       <ul class="nav navbar-nav">
-<li><a class="nav-link" href="#parallel-coordinates-plot-cheatsheet"><span class="header-section-number">14</span> Parallel coordinates plot cheatsheet</a></li>
-<li><a class="nav-link" href="#libraries-ggally-ggparallel-and-parcoords"><span class="header-section-number">14.1</span> Libraries: GGally, ggparallel, and parcoords</a></li>
-<li><a class="nav-link" href="#package-ggally"><span class="header-section-number">14.2</span> Package: GGally</a></li>
+<li><a class="nav-link" href="#parallel-coordinates-plot-cheatsheet"><span class="header-section-number">15</span> Parallel coordinates plot cheatsheet</a></li>
+<li><a class="nav-link" href="#libraries-ggally-ggparallel-and-parcoords"><span class="header-section-number">15.1</span> Libraries: GGally, ggparallel, and parcoords</a></li>
+<li><a class="nav-link" href="#package-ggally"><span class="header-section-number">15.2</span> Package: GGally</a></li>
 <li>
-<a class="nav-link" href="#method-ggparcoord"><span class="header-section-number">14.3</span> Method: ggparcoord</a><ul class="nav navbar-nav">
-<li><a class="nav-link" href="#parameters"><span class="header-section-number">14.3.1</span> Parameters</a></li>
-<li><a class="nav-link" href="#grouping-by-features"><span class="header-section-number">14.3.2</span> Grouping by features</a></li>
-<li><a class="nav-link" href="#distributions"><span class="header-section-number">14.3.3</span> Distributions</a></li>
-<li><a class="nav-link" href="#ggplot2-commands"><span class="header-section-number">14.3.4</span> ggplot2 commands</a></li>
+<a class="nav-link" href="#method-ggparcoord"><span class="header-section-number">15.3</span> Method: ggparcoord</a><ul class="nav navbar-nav">
+<li><a class="nav-link" href="#parameters"><span class="header-section-number">15.3.1</span> Parameters</a></li>
+<li><a class="nav-link" href="#grouping-by-features"><span class="header-section-number">15.3.2</span> Grouping by features</a></li>
+<li><a class="nav-link" href="#distributions"><span class="header-section-number">15.3.3</span> Distributions</a></li>
+<li><a class="nav-link" href="#ggplot2-commands"><span class="header-section-number">15.3.4</span> ggplot2 commands</a></li>
 </ul>
 </li>
 <li>
-<a class="nav-link" href="#packagemethod-ggparallel"><span class="header-section-number">14.4</span> Package/Method: ggparallel</a><ul class="nav navbar-nav">
-<li><a class="nav-link" href="#methods"><span class="header-section-number">14.4.1</span> Methods</a></li>
-<li><a class="nav-link" href="#parameters-1"><span class="header-section-number">14.4.2</span> Parameters</a></li>
+<a class="nav-link" href="#packagemethod-ggparallel"><span class="header-section-number">15.4</span> Package/Method: ggparallel</a><ul class="nav navbar-nav">
+<li><a class="nav-link" href="#methods"><span class="header-section-number">15.4.1</span> Methods</a></li>
+<li><a class="nav-link" href="#parameters-1"><span class="header-section-number">15.4.2</span> Parameters</a></li>
 </ul>
 </li>
 <li>
-<a class="nav-link" href="#package-and-method-parcoords"><span class="header-section-number">14.5</span> Package and Method: parcoords</a><ul class="nav navbar-nav">
-<li><a class="nav-link" href="#interactive-parameters"><span class="header-section-number">14.5.1</span> Interactive parameters</a></li>
-<li><a class="nav-link" href="#color-parameter"><span class="header-section-number">14.5.2</span> Color parameter</a></li>
+<a class="nav-link" href="#package-and-method-parcoords"><span class="header-section-number">15.5</span> Package and Method: parcoords</a><ul class="nav navbar-nav">
+<li><a class="nav-link" href="#interactive-parameters"><span class="header-section-number">15.5.1</span> Interactive parameters</a></li>
+<li><a class="nav-link" href="#color-parameter"><span class="header-section-number">15.5.2</span> Color parameter</a></li>
 </ul>
 </li>
 <li>
-<a class="nav-link" href="#ending-notes-and-analysis"><span class="header-section-number">14.6</span> Ending Notes and Analysis:</a><ul class="nav navbar-nav">
-<li><a class="nav-link" href="#ggparcoord-ggally"><span class="header-section-number">14.6.1</span> ggparcoord (GGally)</a></li>
-<li><a class="nav-link" href="#ggparallel"><span class="header-section-number">14.6.2</span> ggparallel</a></li>
-<li><a class="nav-link" href="#parcoords"><span class="header-section-number">14.6.3</span> parcoords</a></li>
+<a class="nav-link" href="#ending-notes-and-analysis"><span class="header-section-number">15.6</span> Ending Notes and Analysis:</a><ul class="nav navbar-nav">
+<li><a class="nav-link" href="#ggparcoord-ggally"><span class="header-section-number">15.6.1</span> ggparcoord (GGally)</a></li>
+<li><a class="nav-link" href="#ggparallel"><span class="header-section-number">15.6.2</span> ggparallel</a></li>
+<li><a class="nav-link" href="#parcoords"><span class="header-section-number">15.6.3</span> parcoords</a></li>
 </ul>
 </li>
 </ul>
@@ -437,7 +439,7 @@ More parameters:
 <footer class="bg-primary text-light mt-5"><div class="container"><div class="row">
 
   <div class="col-12 col-md-6 mt-3">
-    <p>"<strong>EDAV Fall 2021 Mon/Wed Community Contributions</strong>" was written by the students of the class. It was last built on 2021-11-14.</p>
+    <p>"<strong>EDAV Fall 2021 Mon/Wed Community Contributions</strong>" was written by the students of the class. It was last built on 2021-11-15.</p>
   </div>
 
   <div class="col-12 col-md-6 mt-3">
