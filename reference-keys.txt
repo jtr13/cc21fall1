@@ -351,8 +351,16 @@ high-min_dist-and-low-n_neighbors
 low-min_dist-and-high-n_neighbors
 d-visualisation-using-umap
 references-2
-linear-association-r-studio-plugin
+functional-programming-with-purrr
 introduction-8
+map_-functions
+other-map_-family-functions
+anonymous-functions
+map2
+reduce-function
+appendix
+linear-association-r-studio-plugin
+introduction-9
 installation-1
 usage
 note-this-addin-runs-on-library-tidyverse.-please-run-the-following-command-first-before-running-into-next-step

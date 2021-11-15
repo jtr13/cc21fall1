@@ -1,0 +1,474 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<title>Chapter 51 Functional Programming with Purrr | EDAV Fall 2021 Mon/Wed Community Contributions</title>
+<meta name="author" content="the students of the class">
+<meta name="description" content="Ran Pan library(tidyverse) library(purrr)  51.0.1 Introduction Functional programming is a programming pattern where programs are constructed by composing and applying functions. Specifically,...">
+<meta name="generator" content="bookdown 0.24 with bs4_book()">
+<meta property="og:title" content="Chapter 51 Functional Programming with Purrr | EDAV Fall 2021 Mon/Wed Community Contributions">
+<meta property="og:type" content="book">
+<meta property="og:description" content="Ran Pan library(tidyverse) library(purrr)  51.0.1 Introduction Functional programming is a programming pattern where programs are constructed by composing and applying functions. Specifically,...">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Chapter 51 Functional Programming with Purrr | EDAV Fall 2021 Mon/Wed Community Contributions">
+<meta name="twitter:description" content="Ran Pan library(tidyverse) library(purrr)  51.0.1 Introduction Functional programming is a programming pattern where programs are constructed by composing and applying functions. Specifically,...">
+<!-- JS --><script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.6/clipboard.min.js" integrity="sha256-inc5kl9MA1hkeYUt+EC3BhlIgyp/2jDIyBLS6k3UxPI=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/fuse.js/6.4.6/fuse.js" integrity="sha512-zv6Ywkjyktsohkbp9bb45V6tEMoWhzFzXis+LrMehmJZZSys19Yxf1dopHx7WzIKxr5tK2dVcYmaCk2uqdjF4A==" crossorigin="anonymous"></script><script src="https://kit.fontawesome.com/6ecbd6c532.js" crossorigin="anonymous"></script><script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<link href="libs/bootstrap-4.6.0/bootstrap.min.css" rel="stylesheet">
+<script src="libs/bootstrap-4.6.0/bootstrap.bundle.min.js"></script><script src="libs/bs3compat-0.3.1/transition.js"></script><script src="libs/bs3compat-0.3.1/tabs.js"></script><script src="libs/bs3compat-0.3.1/bs3compat.js"></script><link href="libs/bs4_book-1.0.0/bs4_book.css" rel="stylesheet">
+<script src="libs/bs4_book-1.0.0/bs4_book.js"></script><script src="libs/accessible-code-block-0.0.1/empty-anchor.js"></script><script src="libs/htmlwidgets-1.5.4/htmlwidgets.js"></script><script src="libs/plotly-binding-4.10.0/plotly.js"></script><script src="libs/typedarray-0.1/typedarray.min.js"></script><link href="libs/crosstalk-1.2.0/css/crosstalk.min.css" rel="stylesheet">
+<script src="libs/crosstalk-1.2.0/js/crosstalk.min.js"></script><link href="libs/plotly-htmlwidgets-css-2.5.1/plotly-htmlwidgets.css" rel="stylesheet">
+<script src="libs/plotly-main-2.5.1/plotly-latest.min.js"></script><link href="libs/dygraphs-1.1.1/dygraph.css" rel="stylesheet">
+<script src="libs/dygraphs-1.1.1/dygraph-combined.js"></script><script src="libs/dygraphs-1.1.1/shapes.js"></script><script src="libs/moment-2.8.4/moment.js"></script><script src="libs/moment-timezone-0.2.5/moment-timezone-with-data.js"></script><script src="libs/moment-fquarter-1.0.0/moment-fquarter.min.js"></script><script src="libs/dygraphs-binding-1.1.1.6/dygraphs.js"></script><script src="libs/d3-5.16.0/d3.min.js"></script><script src="libs/forceNetwork-binding-0.4/forceNetwork.js"></script><link href="libs/parallel-coordinates-2.1.8/parcoords.css" rel="stylesheet">
+<script src="libs/parcoords-binding-1.0.0/parcoords.js"></script><script src="libs/detect-resize-0.5.3/jquery.resize.js"></script><link href="libs/jquery-ui-1.11.4/jquery-ui.min.css" rel="stylesheet">
+<script src="libs/jquery-ui-1.11.4/jquery-ui.min.js"></script><script src="libs/vega-1.4.3/vega.min.js"></script><script src="libs/lodash-2.2.1/lodash.min.js"></script><script>var lodash = _.noConflict();</script><link href="libs/ggvis-0.4.7/css/ggvis.css" rel="stylesheet">
+<script src="libs/ggvis-0.4.7/js/ggvis.js"></script><script src="libs/dendroNetwork-binding-0.4/dendroNetwork.js"></script><link href="libs/str_view-0.1.0/str_view.css" rel="stylesheet">
+<script src="libs/str_view-binding-1.4.0/str_view.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/autocomplete.js/0.38.0/autocomplete.jquery.min.js" integrity="sha512-GU9ayf+66Xx2TmpxqJpliWbT5PiGYxpaG8rfnBEk1LL8l1KGkRShhngwdXK1UgqhAzWpZHSiYPc09/NwDQIGyg==" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/mark.min.js" integrity="sha512-5CYOlHXGh6QpOFA/TeTylKLWfB3ftPsde7AnmhuitiTX4K5SqCLBeKro6sPS8ilsz1Q4NRx3v8Ko2IBiszzdww==" crossorigin="anonymous"></script><!-- CSS -->
+</head>
+<body data-spy="scroll" data-target="#toc">
+
+<div class="container-fluid">
+<div class="row">
+  <header class="col-sm-12 col-lg-3 sidebar sidebar-book"><a class="sr-only sr-only-focusable" href="#content">Skip to main content</a>
+
+    <div class="d-flex align-items-start justify-content-between">
+      <h1>
+        <a href="index.html" title="">EDAV Fall 2021 Mon/Wed Community Contributions</a>
+      </h1>
+      <button class="btn btn-outline-primary d-lg-none ml-2 mt-1" type="button" data-toggle="collapse" data-target="#main-nav" aria-expanded="true" aria-controls="main-nav"><i class="fas fa-bars"></i><span class="sr-only">Show table of contents</span></button>
+    </div>
+
+    <div id="main-nav" class="collapse-lg">
+      <form role="search">
+        <input id="search" class="form-control" type="search" placeholder="Search" aria-label="Search">
+</form>
+
+      <nav aria-label="Table of contents"><h2>Table of contents</h2>
+        <ul class="book-toc list-unstyled">
+<li><a class="" href="index.html"><span class="header-section-number">1</span> Welcome!</a></li>
+<li><a class="" href="community-contribution.html"><span class="header-section-number">2</span> Community Contribution</a></li>
+<li><a class="" href="github-submission-instructions.html"><span class="header-section-number">3</span> GitHub submission instructions</a></li>
+<li><a class="" href="sample-project.html"><span class="header-section-number">4</span> Sample project</a></li>
+<li class="book-part">Data Visualizations</li>
+<li><a class="" href="introduction-to-the-lattice-package.html"><span class="header-section-number">5</span> Introduction to the lattice package</a></li>
+<li><a class="" href="graph-animation-with-gganimate-and-after-effects.html"><span class="header-section-number">6</span> Graph animation with gganimate and After Effects</a></li>
+<li><a class="" href="interactive-plots.html"><span class="header-section-number">7</span> Interactive Plots</a></li>
+<li><a class="" href="create-regression-assumption-plots-in-word.html"><span class="header-section-number">8</span> Create regression assumption plots in Word</a></li>
+<li><a class="" href="from-neo4j-to-rstudio.html"><span class="header-section-number">9</span> From Neo4j to RStudio</a></li>
+<li><a class="" href="stacked-bar-plot-for-relative-proportions-in-python.html"><span class="header-section-number">10</span> Stacked Bar Plot For Relative Proportions In Python</a></li>
+<li><a class="" href="interactive-plot-introduction.html"><span class="header-section-number">11</span> Interactive plot introduction</a></li>
+<li><a class="" href="introduction-to-longitudinal-data-and-mlgm-package.html"><span class="header-section-number">12</span> Introduction to Longitudinal Data and MLGM Package</a></li>
+<li class="book-part">R Package Tutorial</li>
+<li><a class="" href="tidyverse_cheatsheet.html"><span class="header-section-number">13</span> tidyverse_cheatsheet</a></li>
+<li><a class="" href="use-of-ggprism-and-ggsci-packages.html"><span class="header-section-number">14</span> Use of ggprism and ggsci packages</a></li>
+<li><a class="" href="parallel-coordinates-plot-cheatsheet.html"><span class="header-section-number">15</span> Parallel coordinates plot cheatsheet</a></li>
+<li><a class="" href="cheatsheet-tidyverse.html"><span class="header-section-number">16</span> Cheatsheet Tidyverse</a></li>
+<li><a class="" href="common-r-markdown-syntax-cheatsheet.html"><span class="header-section-number">17</span> Common R markdown syntax cheatsheet</a></li>
+<li><a class="" href="rpackage-waffle-cheatsheet.html"><span class="header-section-number">18</span> Rpackage waffle cheatsheet</a></li>
+<li class="book-part">Topics in Data Science</li>
+<li><a class="" href="a-linear-regression-bestiary.html"><span class="header-section-number">19</span> A linear regression Bestiary</a></li>
+<li><a class="" href="r-cheatsheet-on-data-transforamtion-and-exploration.html"><span class="header-section-number">20</span> R cheatsheet on data transforamtion and exploration</a></li>
+<li><a class="" href="r-data-science-workflow-cheatsheet.html"><span class="header-section-number">21</span> R Data Science Workflow CheatSheet</a></li>
+<li><a class="" href="questions-answers-for-r-technical-interview.html"><span class="header-section-number">22</span> 30 questions &amp; answers for r technical interview</a></li>
+<li><a class="" href="graphql-cheat-sheet.html"><span class="header-section-number">23</span> GraphQL Cheat Sheet</a></li>
+<li><a class="" href="r-vs-python-basic-data-wrangling.html"><span class="header-section-number">24</span> R vs Python Basic Data Wrangling</a></li>
+<li><a class="" href="r-vs.-python-visualization-cheatsheet.html"><span class="header-section-number">25</span> R vs. Python Visualization Cheatsheet</a></li>
+<li class="book-part">Tutorials</li>
+<li><a class="" href="multithreading-crawler-frame.html"><span class="header-section-number">26</span> Multithreading Crawler Frame</a></li>
+<li><a class="" href="regression-and-classification-in-r.html"><span class="header-section-number">27</span> Regression and Classification in R</a></li>
+<li><a class="" href="tibble-vs.-dataframe.html"><span class="header-section-number">28</span> Tibble vs. DataFrame</a></li>
+<li><a class="" href="introduction-to-time-series.html"><span class="header-section-number">29</span> Introduction to Time Series</a></li>
+<li><a class="" href="vipul-edav-community-contribution-kickstart-r.html"><span class="header-section-number">30</span> Vipul EDAV Community Contribution Kickstart R</a></li>
+<li><a class="" href="caret---a-machine-learning-package-turotial.html"><span class="header-section-number">31</span> caret - a machine learning package turotial</a></li>
+<li><a class="" href="streamlit-for-financial-analysis.html"><span class="header-section-number">32</span> Streamlit for Financial Analysis</a></li>
+<li><a class="" href="interactive-graphs-tutorial.html"><span class="header-section-number">33</span> Interactive graphs tutorial</a></li>
+<li><a class="" href="guideline-on-using-package-rcurl-and-xml-for-web-scraping.html"><span class="header-section-number">34</span> Guideline on Using Package Rcurl and XML for Web Scraping</a></li>
+<li><a class="" href="twitter-r-package-scraping-via-api-tutorial.html"><span class="header-section-number">35</span> TwitteR R Package Scraping via API Tutorial</a></li>
+<li><a class="" href="introduction-to-data-manipulation.html"><span class="header-section-number">36</span> Introduction to Data Manipulation</a></li>
+<li><a class="" href="animating-the-plots-in-r.html"><span class="header-section-number">37</span> Animating the plots in R</a></li>
+<li><a class="" href="quick-guide-to-eda.html"><span class="header-section-number">38</span> Quick guide to eda</a></li>
+<li><a class="" href="natural-langauge-processing-common-eda-practices-in-python.html"><span class="header-section-number">39</span> Natural Langauge Processing Common EDA Practices in Python</a></li>
+<li><a class="" href="beginners-walk-through-of-deep-learning-in-r.html"><span class="header-section-number">40</span> Beginner’s Walk-through of Deep Learning in R</a></li>
+<li><a class="" href="supervised-learning-tutorial.html"><span class="header-section-number">41</span> Supervised Learning Tutorial</a></li>
+<li><a class="" href="parallel-coordinate-plots-in-ggplot2.html"><span class="header-section-number">42</span> Parallel Coordinate Plots in ggplot2</a></li>
+<li><a class="" href="using-ggplot-in-python.html"><span class="header-section-number">43</span> Using ggplot in python</a></li>
+<li><a class="" href="icons-and-symbols-in-r.html"><span class="header-section-number">44</span> Icons and symbols in R</a></li>
+<li><a class="" href="exploratory-data-analysis-and-preprocessing-with-r-for-data-challenges.html"><span class="header-section-number">45</span> Exploratory data analysis and preprocessing with R for data challenges</a></li>
+<li><a class="" href="introduction-to-git-bash.html"><span class="header-section-number">46</span> Introduction to Git Bash</a></li>
+<li><a class="" href="tutorial-for-six-basic-graphs-by-using-ggplot.html"><span class="header-section-number">47</span> Tutorial for six basic graphs by using ggplot</a></li>
+<li><a class="" href="web-scrapping-using-beautifulsoup-and-its-equivalent-in-rvest.html"><span class="header-section-number">48</span> Web Scrapping using BeautifulSoup and its Equivalent in rvest</a></li>
+<li><a class="" href="d-visualization-shinyaframe-introduction-and-tutorial.html"><span class="header-section-number">49</span> 3D visualization: shinyaframe introduction and tutorial</a></li>
+<li><a class="" href="efficient-dimension-reduction-with-umap.html"><span class="header-section-number">50</span> Efficient dimension reduction with UMAP</a></li>
+<li><a class="active" href="functional-programming-with-purrr.html"><span class="header-section-number">51</span> Functional Programming with Purrr</a></li>
+<li class="book-part">Demonstrations</li>
+<li><a class="" href="linear-association-r-studio-plugin.html"><span class="header-section-number">52</span> Linear Association R Studio Plugin</a></li>
+<li><a class="" href="customized-sorting-in-r.html"><span class="header-section-number">53</span> Customized Sorting in R</a></li>
+<li><a class="" href="low-key-ml-packages-in-r.html"><span class="header-section-number">54</span> Low-key ML packages in R</a></li>
+<li><a class="" href="parallel-coordinate-plots-cheatsheet.html"><span class="header-section-number">55</span> Parallel coordinate plots cheatsheet</a></li>
+<li class="book-part">Workshops</li>
+<li><a class="" href="data-science-product-cycles-in-enterprises.html"><span class="header-section-number">56</span> Data Science Product Cycles in Enterprises</a></li>
+<li class="book-part">Appendices</li>
+<li><a class="" href="github-initial-setup.html"><span class="header-section-number">57</span> Github initial setup</a></li>
+<li><a class="" href="tutorial-for-pull-request-mergers.html"><span class="header-section-number">58</span> Tutorial for pull request mergers</a></li>
+</ul>
+
+        <div class="book-extra">
+          <p><a id="book-repo" href="https://github.com/jtr13/cc21fall1">View book source <i class="fab fa-github"></i></a></p>
+        </div>
+      </nav>
+</div>
+  </header><main class="col-sm-12 col-md-9 col-lg-7" id="content"><div id="functional-programming-with-purrr" class="section level1">
+<h1>
+<span class="header-section-number">51</span> Functional Programming with Purrr<a class="anchor" aria-label="anchor" href="#functional-programming-with-purrr"><i class="fas fa-link"></i></a>
+</h1>
+<p>Ran Pan</p>
+<div class="sourceCode" id="cb691"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://tidyverse.tidyverse.org">tidyverse</a></span><span class="op">)</span>
+<span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="http://purrr.tidyverse.org">purrr</a></span><span class="op">)</span></code></pre></div>
+<div id="introduction-8" class="section level3">
+<h3>
+<span class="header-section-number">51.0.1</span> Introduction<a class="anchor" aria-label="anchor" href="#introduction-8"><i class="fas fa-link"></i></a>
+</h3>
+<p>Functional programming is a programming pattern where programs are constructed by composing and applying functions. Specifically, programs are created by applying sequential pure functions rather than statements. A pure function takes in an input and outputs a consistent value irrespective of anything else. Also, they do not modify any arguments or local/global variables or input/output streams. These functions only finish a single operation and can be combined in sequence to complete complex operations. Because of the popularity of data analysis and machine learning tasks nowadays, functional programming is particularly important to master due to its efficiency and scalability to solve these problems. <br>
+In R, functional programming can be achieved with <strong>purrr</strong> package.</p>
+</div>
+<div id="map_-functions" class="section level3">
+<h3>
+<span class="header-section-number">51.0.2</span> map_() functions<a class="anchor" aria-label="anchor" href="#map_-functions"><i class="fas fa-link"></i></a>
+</h3>
+<p>In <strong>purrr</strong>, we can use the map_() family functions to achieve functional programming and get the same results of <strong>for</strong> and <strong>while</strong> loops. For the map_() functions, the the name part after **_** tells us what this function is going to return. For instance, if we want dataframes as output, we would want to use map_df(). Let’s start with the most fundamental function, map(). It takes a vector and a function, calls the function once for each element of the vector, and returns the results in a list.<br>
+Specifically, <br>
+map(.x, .f, …) <br><strong>Arguments</strong>
+.x: A list or atomic vector, .f: A function, formula, or vector (not necessarily atomic).
+<br>
+Here is an example to illustrate the usage of map()
+The vector numbers composed of the following scalars: (0, 4, 8, 6, 7, 2, 3, 1). The function we want to map to each element of numbers is <em>f(x)</em> = <em>x</em> * 2.</p>
+<div class="sourceCode" id="cb692"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="co"># dummy array</span>
+<span class="va">numbers</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">0</span>, <span class="fl">4</span>, <span class="fl">8</span>, <span class="fl">6</span>, <span class="fl">7</span>, <span class="fl">2</span>, <span class="fl">3</span>, <span class="fl">1</span><span class="op">)</span>
+<span class="co"># define a function</span>
+<span class="va">doubles</span> <span class="op">&lt;-</span> <span class="kw">function</span><span class="op">(</span><span class="va">x</span><span class="op">)</span> <span class="va">x</span> <span class="op">*</span> <span class="fl">2</span>
+<span class="fu"><a href="https://rdrr.io/r/base/print.html">print</a></span><span class="op">(</span><span class="fu"><a href="https://purrr.tidyverse.org/reference/map.html">map</a></span><span class="op">(</span><span class="va">numbers</span>, <span class="va">doubles</span><span class="op">)</span><span class="op">)</span></code></pre></div>
+<pre><code>## [[1]]
+## [1] 0
+## 
+## [[2]]
+## [1] 8
+## 
+## [[3]]
+## [1] 16
+## 
+## [[4]]
+## [1] 12
+## 
+## [[5]]
+## [1] 14
+## 
+## [[6]]
+## [1] 4
+## 
+## [[7]]
+## [1] 6
+## 
+## [[8]]
+## [1] 2</code></pre>
+<p>Similarly, you can achieve the same result using loops, but with more code.</p>
+<div class="sourceCode" id="cb694"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="va">res</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/vector.html">vector</a></span><span class="op">(</span><span class="st">"list"</span>, <span class="fl">8</span><span class="op">)</span>
+<span class="kw">for</span><span class="op">(</span><span class="va">num</span> <span class="kw">in</span> <span class="fu"><a href="https://rdrr.io/r/base/seq.html">seq_along</a></span><span class="op">(</span><span class="va">numbers</span><span class="op">)</span><span class="op">)</span><span class="op">{</span>
+  <span class="va">res</span><span class="op">[[</span><span class="va">num</span><span class="op">]</span><span class="op">]</span> <span class="op">&lt;-</span> <span class="fu">doubles</span><span class="op">(</span><span class="va">numbers</span><span class="op">[</span><span class="va">num</span><span class="op">]</span><span class="op">)</span>
+<span class="op">}</span>
+<span class="va">res</span></code></pre></div>
+<pre><code>## [[1]]
+## [1] 0
+## 
+## [[2]]
+## [1] 8
+## 
+## [[3]]
+## [1] 16
+## 
+## [[4]]
+## [1] 12
+## 
+## [[5]]
+## [1] 14
+## 
+## [[6]]
+## [1] 4
+## 
+## [[7]]
+## [1] 6
+## 
+## [[8]]
+## [1] 2</code></pre>
+<p>Therefore, using the map() fucntion can reduce code redundancy and it does not require us to create an empty list to hold the results. <br>
+Interestingly, map() also provides a shortcuts for extracting elements from a vector. We can use a character vector to extract elements by name, an integer vector to select by position, or a list to select by both name and position.</p>
+<div class="sourceCode" id="cb696"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="va">a</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/list.html">list</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/list.html">list</a></span><span class="op">(</span>k <span class="op">=</span> <span class="op">-</span><span class="fl">1</span>, x <span class="op">=</span> <span class="fl">1</span>, y <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">2</span>, <span class="fl">8</span><span class="op">)</span>, z <span class="op">=</span> <span class="st">"a"</span><span class="op">)</span>, <span class="fu"><a href="https://rdrr.io/r/base/list.html">list</a></span><span class="op">(</span>k <span class="op">=</span> <span class="op">-</span><span class="fl">2</span>, x <span class="op">=</span> <span class="fl">4</span>, y <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">5</span>, <span class="fl">6</span><span class="op">)</span>, z <span class="op">=</span> <span class="st">"b"</span><span class="op">)</span>, <span class="fu"><a href="https://rdrr.io/r/base/list.html">list</a></span><span class="op">(</span>k <span class="op">=</span> <span class="op">-</span><span class="fl">3</span>, x <span class="op">=</span> <span class="fl">8</span>, y <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">9</span>, <span class="fl">10</span>, <span class="fl">11</span><span class="op">)</span><span class="op">)</span>
+<span class="op">)</span>
+<span class="co">#select by position</span>
+<span class="co">#output (-1, -2, -3)</span>
+<span class="fu"><a href="https://purrr.tidyverse.org/reference/map.html">map</a></span><span class="op">(</span><span class="va">a</span>, <span class="fl">1</span><span class="op">)</span></code></pre></div>
+<pre><code>## [[1]]
+## [1] -1
+## 
+## [[2]]
+## [1] -2
+## 
+## [[3]]
+## [1] -3</code></pre>
+<div class="sourceCode" id="cb698"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="co">#select by names</span>
+<span class="co">#output (1, 4, 8)</span>
+<span class="fu"><a href="https://purrr.tidyverse.org/reference/map.html">map</a></span><span class="op">(</span><span class="va">a</span>, <span class="st">"x"</span><span class="op">)</span></code></pre></div>
+<pre><code>## [[1]]
+## [1] 1
+## 
+## [[2]]
+## [1] 4
+## 
+## [[3]]
+## [1] 8</code></pre>
+<div class="sourceCode" id="cb700"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="co">#select by both name and location</span>
+<span class="co">#output (2, 5, 9)</span>
+<span class="fu"><a href="https://purrr.tidyverse.org/reference/map.html">map</a></span><span class="op">(</span><span class="va">a</span>, <span class="fu"><a href="https://rdrr.io/r/base/list.html">list</a></span><span class="op">(</span><span class="st">"y"</span>, <span class="fl">1</span><span class="op">)</span><span class="op">)</span></code></pre></div>
+<pre><code>## [[1]]
+## [1] 2
+## 
+## [[2]]
+## [1] 5
+## 
+## [[3]]
+## [1] 9</code></pre>
+<div id="other-map_-family-functions" class="section level4">
+<h4>
+<span class="header-section-number">51.0.2.1</span> Other map_() family functions: <br><a class="anchor" aria-label="anchor" href="#other-map_-family-functions"><i class="fas fa-link"></i></a>
+</h4>
+<p>map_chr(.x, .f, …) returns an atomic vector of strings.</p>
+<div class="sourceCode" id="cb702"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="fu"><a href="https://purrr.tidyverse.org/reference/map.html">map_chr</a></span><span class="op">(</span><span class="va">numbers</span>, <span class="va">doubles</span><span class="op">)</span></code></pre></div>
+<pre><code>## [1] "0.000000"  "8.000000"  "16.000000" "12.000000" "14.000000" "4.000000" 
+## [7] "6.000000"  "2.000000"</code></pre>
+<p>map_dbl(.x, .f, …) returns an atomic vector of doubles.</p>
+<div class="sourceCode" id="cb704"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="fu"><a href="https://purrr.tidyverse.org/reference/map.html">map_dbl</a></span><span class="op">(</span><span class="va">numbers</span>, <span class="va">doubles</span><span class="op">)</span></code></pre></div>
+<pre><code>## [1]  0  8 16 12 14  4  6  2</code></pre>
+<p>map_lgl(.x, .f, …) returns an atomic vector of logical values (TRUE or FALSE).</p>
+<div class="sourceCode" id="cb706"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="va">divisible</span> <span class="op">&lt;-</span> <span class="kw">function</span><span class="op">(</span><span class="va">x</span>, <span class="va">y</span><span class="op">)</span><span class="op">{</span>
+  <span class="fu"><a href="https://rdrr.io/r/base/ifelse.html">ifelse</a></span><span class="op">(</span><span class="va">x</span> <span class="op"><a href="https://rdrr.io/r/base/Arithmetic.html">%%</a></span> <span class="va">y</span> <span class="op">==</span> <span class="fl">0</span>, <span class="cn">TRUE</span>, <span class="cn">FALSE</span><span class="op">)</span>
+<span class="op">}</span>
+<span class="fu"><a href="https://purrr.tidyverse.org/reference/map.html">map_lgl</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/seq.html">seq</a></span><span class="op">(</span><span class="fl">1</span><span class="op">:</span><span class="fl">100</span><span class="op">)</span>, <span class="op">(</span><span class="kw">function</span><span class="op">(</span><span class="va">x</span><span class="op">)</span> <span class="fu">divisible</span><span class="op">(</span><span class="va">x</span>, <span class="fl">4</span><span class="op">)</span><span class="op">)</span><span class="op">)</span></code></pre></div>
+<pre><code>##   [1] FALSE FALSE FALSE  TRUE FALSE FALSE FALSE  TRUE FALSE FALSE FALSE  TRUE
+##  [13] FALSE FALSE FALSE  TRUE FALSE FALSE FALSE  TRUE FALSE FALSE FALSE  TRUE
+##  [25] FALSE FALSE FALSE  TRUE FALSE FALSE FALSE  TRUE FALSE FALSE FALSE  TRUE
+##  [37] FALSE FALSE FALSE  TRUE FALSE FALSE FALSE  TRUE FALSE FALSE FALSE  TRUE
+##  [49] FALSE FALSE FALSE  TRUE FALSE FALSE FALSE  TRUE FALSE FALSE FALSE  TRUE
+##  [61] FALSE FALSE FALSE  TRUE FALSE FALSE FALSE  TRUE FALSE FALSE FALSE  TRUE
+##  [73] FALSE FALSE FALSE  TRUE FALSE FALSE FALSE  TRUE FALSE FALSE FALSE  TRUE
+##  [85] FALSE FALSE FALSE  TRUE FALSE FALSE FALSE  TRUE FALSE FALSE FALSE  TRUE
+##  [97] FALSE FALSE FALSE  TRUE</code></pre>
+<p>map_if(.x, .p, .f, …, .else = NULL) take .x as input, apply the function .f to some of the elements of .x (the elements that fulfiil the conditions in .p), and return a list of the same length as the input.</p>
+<div class="sourceCode" id="cb708"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="va">a</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/seq.html">seq</a></span><span class="op">(</span><span class="fl">1</span>,<span class="fl">20</span>, <span class="fl">3</span><span class="op">)</span>
+<span class="fu"><a href="https://purrr.tidyverse.org/reference/map_if.html">map_if</a></span><span class="op">(</span><span class="va">a</span>, <span class="op">(</span><span class="kw">function</span><span class="op">(</span><span class="va">x</span><span class="op">)</span> <span class="op">{</span><span class="fu">divisible</span><span class="op">(</span><span class="va">x</span>, <span class="fl">2</span><span class="op">)</span><span class="op">}</span><span class="op">)</span>, <span class="va">sqrt</span><span class="op">)</span></code></pre></div>
+<pre><code>## [[1]]
+## [1] 1
+## 
+## [[2]]
+## [1] 2
+## 
+## [[3]]
+## [1] 7
+## 
+## [[4]]
+## [1] 3.162278
+## 
+## [[5]]
+## [1] 13
+## 
+## [[6]]
+## [1] 4
+## 
+## [[7]]
+## [1] 19</code></pre>
+<p>map_if() takes the square root of only those numbers in vector a that are divisble by 2, by using an anonymous function that checks if a number is divisible by 2.</p>
+<p>For the above map_if() and map_lgl(), we utilize another important concept in functional programming: Anonymous functions. <br></p>
+</div>
+<div id="anonymous-functions" class="section level4">
+<h4>
+<span class="header-section-number">51.0.2.2</span> Anonymous functions<a class="anchor" aria-label="anchor" href="#anonymous-functions"><i class="fas fa-link"></i></a>
+</h4>
+<p>As the name suggests, anonymous functions are functions that we define as we input them in the function arguments. Speifically, they do not have names but they are useful inside functions that take functions as arguments, such as map() and reduce() in purrr. <br>
+For example,</p>
+<div class="sourceCode" id="cb710"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="fu"><a href="https://purrr.tidyverse.org/reference/map.html">map</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">2</span>,<span class="fl">4</span>,<span class="fl">6</span>,<span class="fl">8</span><span class="op">)</span>, <span class="kw">function</span><span class="op">(</span><span class="va">x</span><span class="op">)</span> <span class="op">{</span><span class="fl">1</span> <span class="op">/</span> <span class="op">(</span><span class="va">x</span><span class="op">**</span><span class="fl">2</span><span class="op">)</span><span class="op">}</span><span class="op">)</span></code></pre></div>
+<pre><code>## [[1]]
+## [1] 0.25
+## 
+## [[2]]
+## [1] 0.0625
+## 
+## [[3]]
+## [1] 0.02777778
+## 
+## [[4]]
+## [1] 0.015625</code></pre>
+<p>These anonymous functions are defined similarly to regular functions. The only difference is that we do not need a name for the function. Therefore, it’s easier to use anonymous functions the functions are easier to define. <br>
+Additionally, we can also use formula to represent anonymous functions.</p>
+<div class="sourceCode" id="cb712"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="fu"><a href="https://purrr.tidyverse.org/reference/map.html">map</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">2</span>,<span class="fl">4</span>,<span class="fl">6</span>,<span class="fl">8</span><span class="op">)</span>, <span class="op">~</span><span class="op">{</span><span class="fl">1</span><span class="op">/</span><span class="va">.</span><span class="op">**</span><span class="fl">2</span><span class="op">}</span><span class="op">)</span></code></pre></div>
+<pre><code>## [[1]]
+## [1] 0.25
+## 
+## [[2]]
+## [1] 0.0625
+## 
+## [[3]]
+## [1] 0.02777778
+## 
+## [[4]]
+## [1] 0.015625</code></pre>
+<p>Here, we use <strong>~</strong> instead of <strong>function(x)</strong> and <strong>.</strong> instead of <strong>x</strong>.</p>
+</div>
+<div id="map2" class="section level4">
+<h4>
+<span class="header-section-number">51.0.2.3</span> map2()<a class="anchor" aria-label="anchor" href="#map2"><i class="fas fa-link"></i></a>
+</h4>
+<p>What if we want to iterate over two inputs? map2() comes in play: it vectorises over two arguments.</p>
+<div class="sourceCode" id="cb714"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="va">x</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/list.html">list</a></span><span class="op">(</span><span class="fl">1</span>, <span class="fl">10</span>, <span class="fl">100</span><span class="op">)</span>
+<span class="va">y</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/list.html">list</a></span><span class="op">(</span><span class="fl">5</span>, <span class="fl">50</span>, <span class="fl">500</span><span class="op">)</span>
+<span class="fu"><a href="https://purrr.tidyverse.org/reference/map2.html">map2</a></span><span class="op">(</span><span class="va">x</span>, <span class="va">y</span>, <span class="kw">function</span><span class="op">(</span><span class="va">x</span>, <span class="va">y</span><span class="op">)</span><span class="op">{</span><span class="va">x</span> <span class="op">+</span> <span class="va">y</span><span class="op">}</span><span class="op">)</span></code></pre></div>
+<pre><code>## [[1]]
+## [1] 6
+## 
+## [[2]]
+## [1] 60
+## 
+## [[3]]
+## [1] 600</code></pre>
+<p>Here, each element of x gets added to the element of y that is in the same position. <br>
+Conveniently, map2() has family functions. <br>
+map2_lgl(.x, .y, .f, …): returns an atomic vector of logical values (TRUE or FALSE) between two input vectors.</p>
+<div class="sourceCode" id="cb716"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="va">x</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/list.html">list</a></span><span class="op">(</span><span class="fl">1</span>, <span class="fl">10</span>, <span class="fl">100</span><span class="op">)</span>
+<span class="va">y</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/list.html">list</a></span><span class="op">(</span><span class="fl">5</span>, <span class="fl">50</span>, <span class="fl">250</span><span class="op">)</span>
+<span class="va">divisible</span> <span class="op">&lt;-</span> <span class="kw">function</span><span class="op">(</span><span class="va">x</span>, <span class="va">y</span><span class="op">)</span><span class="op">{</span>
+  <span class="fu"><a href="https://rdrr.io/r/base/ifelse.html">ifelse</a></span><span class="op">(</span><span class="va">x</span> <span class="op"><a href="https://rdrr.io/r/base/Arithmetic.html">%%</a></span> <span class="va">y</span> <span class="op">==</span> <span class="fl">0</span>, <span class="cn">TRUE</span>, <span class="cn">FALSE</span><span class="op">)</span>
+<span class="op">}</span>
+<span class="fu"><a href="https://purrr.tidyverse.org/reference/map2.html">map2_lgl</a></span><span class="op">(</span><span class="va">y</span>, <span class="va">x</span>, <span class="va">divisible</span><span class="op">)</span></code></pre></div>
+<pre><code>## [1]  TRUE  TRUE FALSE</code></pre>
+<p>map2_dbl(.x, .y, .f, …): returns an atomic vector of doubles bewteen two input vectors.</p>
+<div class="sourceCode" id="cb718"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="va">ls</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://purrr.tidyverse.org/reference/map.html">map</a></span><span class="op">(</span><span class="fl">1</span><span class="op">:</span><span class="fl">8</span>, <span class="op">~</span> <span class="fu"><a href="https://rdrr.io/r/stats/Uniform.html">runif</a></span><span class="op">(</span><span class="fl">10</span><span class="op">)</span><span class="op">)</span>
+<span class="va">ws</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://purrr.tidyverse.org/reference/map.html">map</a></span><span class="op">(</span><span class="fl">1</span><span class="op">:</span><span class="fl">8</span>, <span class="op">~</span> <span class="fu"><a href="https://rdrr.io/r/stats/Poisson.html">rpois</a></span><span class="op">(</span><span class="fl">10</span>, <span class="fl">5</span><span class="op">)</span> <span class="op">+</span> <span class="fl">1</span><span class="op">)</span>
+<span class="fu"><a href="https://purrr.tidyverse.org/reference/map2.html">map2_dbl</a></span><span class="op">(</span><span class="va">ls</span>, <span class="va">ws</span>, <span class="va">weighted.mean</span><span class="op">)</span></code></pre></div>
+<pre><code>## [1] 0.4787564 0.4996425 0.5581697 0.5798720 0.5504890 0.4206161 0.3811854
+## [8] 0.5331686</code></pre>
+<p>Here, we would like to compute the weighted mean with inputs of a list of observations and a list of weights. <br></p>
+<p>map2_chr(.x, .y, .f, …): returns an atomic vector of strings.</p>
+<div class="sourceCode" id="cb720"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="va">x</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/list.html">list</a></span><span class="op">(</span><span class="fl">1</span>, <span class="fl">10</span>, <span class="fl">100</span><span class="op">)</span>
+<span class="va">y</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/list.html">list</a></span><span class="op">(</span><span class="fl">5</span>, <span class="fl">50</span>, <span class="fl">500</span><span class="op">)</span>
+<span class="fu"><a href="https://purrr.tidyverse.org/reference/map2.html">map2_chr</a></span><span class="op">(</span><span class="va">x</span>, <span class="va">y</span>, <span class="kw">function</span><span class="op">(</span><span class="va">x</span>, <span class="va">y</span><span class="op">)</span><span class="op">{</span><span class="va">x</span> <span class="op">/</span> <span class="va">y</span><span class="op">}</span><span class="op">)</span></code></pre></div>
+<pre><code>## [1] "0.200000" "0.200000" "0.200000"</code></pre>
+</div>
+</div>
+<div id="reduce-function" class="section level3">
+<h3>
+<span class="header-section-number">51.0.3</span> reduce() function<a class="anchor" aria-label="anchor" href="#reduce-function"><i class="fas fa-link"></i></a>
+</h3>
+<p>Another aspect in functional programming is reducing. In purrr, <strong>reduce(.x, .f, .dir, …)</strong> allows going from a list of values to a single value by somehow combining the values in the list into one.</p>
+<div class="sourceCode" id="cb722"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="fu"><a href="https://purrr.tidyverse.org/reference/reduce.html">reduce</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/seq.html">seq</a></span><span class="op">(</span><span class="fl">1</span><span class="op">:</span><span class="fl">100</span><span class="op">)</span>, <span class="va">sum</span><span class="op">)</span></code></pre></div>
+<pre><code>## [1] 5050</code></pre>
+<p>Note that we can set the direction from which we start to reduce. Sometimes, we would want to “start from the end” of the list by using the .dir argument:</p>
+<div class="sourceCode" id="cb724"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="fu"><a href="https://purrr.tidyverse.org/reference/reduce.html">reduce</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/seq.html">seq</a></span><span class="op">(</span><span class="fl">1</span><span class="op">:</span><span class="fl">100</span><span class="op">)</span>, <span class="va">`-`</span><span class="op">)</span></code></pre></div>
+<pre><code>## [1] -5048</code></pre>
+<div class="sourceCode" id="cb726"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="fu"><a href="https://purrr.tidyverse.org/reference/reduce.html">reduce</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/seq.html">seq</a></span><span class="op">(</span><span class="fl">1</span><span class="op">:</span><span class="fl">100</span><span class="op">)</span>, <span class="va">`-`</span>, .dir <span class="op">=</span> <span class="st">"backward"</span><span class="op">)</span></code></pre></div>
+<pre><code>## [1] -50</code></pre>
+<div id="appendix" class="section level4">
+<h4>
+<span class="header-section-number">51.0.3.1</span> Appendix<a class="anchor" aria-label="anchor" href="#appendix"><i class="fas fa-link"></i></a>
+</h4>
+<p>Sources: <a href="https://purrr.tidyverse.org/index.html" class="uri">https://purrr.tidyverse.org/index.html</a> <br><a href="https://adv-r.hadley.nz/functionals.html" class="uri">https://adv-r.hadley.nz/functionals.html</a></p>
+
+</div>
+</div>
+</div>
+
+
+
+  <div class="chapter-nav">
+<div class="prev"><a href="efficient-dimension-reduction-with-umap.html"><span class="header-section-number">50</span> Efficient dimension reduction with UMAP</a></div>
+<div class="next"><a href="linear-association-r-studio-plugin.html"><span class="header-section-number">52</span> Linear Association R Studio Plugin</a></div>
+</div></main><div class="col-md-3 col-lg-2 d-none d-md-block sidebar sidebar-chapter">
+    <nav id="toc" data-toggle="toc" aria-label="On this page"><h2>On this page</h2>
+      <ul class="nav navbar-nav"><li>
+<a class="nav-link" href="#functional-programming-with-purrr"><span class="header-section-number">51</span> Functional Programming with Purrr</a><ul class="nav navbar-nav">
+<li><a class="nav-link" href="#introduction-8"><span class="header-section-number">51.0.1</span> Introduction</a></li>
+<li><a class="nav-link" href="#map_-functions"><span class="header-section-number">51.0.2</span> map_() functions</a></li>
+<li><a class="nav-link" href="#reduce-function"><span class="header-section-number">51.0.3</span> reduce() function</a></li>
+</ul>
+</li></ul>
+
+      <div class="book-extra">
+        <ul class="list-unstyled">
+<li><a id="book-source" href="https://github.com/jtr13/cc21fall1/blob/main/function_programming_purrr.Rmd">View source <i class="fab fa-github"></i></a></li>
+          <li><a id="book-edit" href="https://github.com/jtr13/cc21fall1/edit/main/function_programming_purrr.Rmd">Edit this page <i class="fab fa-github"></i></a></li>
+        </ul>
+</div>
+    </nav>
+</div>
+
+</div>
+</div> <!-- .container -->
+
+<footer class="bg-primary text-light mt-5"><div class="container"><div class="row">
+
+  <div class="col-12 col-md-6 mt-3">
+    <p>"<strong>EDAV Fall 2021 Mon/Wed Community Contributions</strong>" was written by the students of the class. It was last built on 2021-11-15.</p>
+  </div>
+
+  <div class="col-12 col-md-6 mt-3">
+    <p>This book was built by the <a class="text-light" href="https://bookdown.org">bookdown</a> R package.</p>
+  </div>
+
+</div></div>
+</footer><!-- dynamically load mathjax for compatibility with self-contained --><script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script><script type="text/x-mathjax-config">const popovers = document.querySelectorAll('a.footnote-ref[data-toggle="popover"]');
+for (let popover of popovers) {
+  const div = document.createElement('div');
+  div.setAttribute('style', 'position: absolute; top: 0, left:0; width:0, height:0, overflow: hidden; visibility: hidden;');
+  div.innerHTML = popover.getAttribute('data-content');
+
+  var has_math = div.querySelector("span.math");
+  if (has_math) {
+    document.body.appendChild(div);
+    MathJax.Hub.Queue(["Typeset", MathJax.Hub, div]);
+    MathJax.Hub.Queue(function() {
+      popover.setAttribute('data-content', div.innerHTML);
+      document.body.removeChild(div);
+    })
+  }
+}
+</script>
+</body>
+</html>
