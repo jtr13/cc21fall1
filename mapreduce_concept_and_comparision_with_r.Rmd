@@ -19,12 +19,12 @@ Angad Nandwani  AN3077
 ## install.packages("httpuv")
 
 
-```{r include=FALSE, warning=FALSE}
-knitr::opts_chunk$set(echo = TRUE)
+```{r include=FALSE, warning=FALSE, eval = FALSE}
+knitr::opts_chunk$set(echo = TRUE, eval = FALSE)
 ```
 
 
-```{r}
+```{r, eval = FALSE}
 library("parallel")
 library("future")
 library("tidyverse")
@@ -37,7 +37,7 @@ library("httpuv")
 
 
 **Function to Split the lines into words**
-```{r}
+```{r, eval = FALSE}
 
 textSplit<-function (line) {
   splitline <- line %>%
@@ -50,7 +50,7 @@ textSplit<-function (line) {
 
 
 **Serial Execution**
-```{r}
+```{r, eval = FALSE}
 serialSplitting <-function(df,label,text,vectorLength){
 
   categories <- unique(label)
@@ -70,13 +70,13 @@ serialSplitting <-function(df,label,text,vectorLength){
 
 
 **Detecting Parallel Instances available for Execution**
-```{r}
+```{r, eval = FALSE}
 print(detectCores())
 ```
 
 **Spam Detection Dataset**
 
-```{r}
+```{r, eval = FALSE}
 drive_download("https://docs.google.com/spreadsheets/d/1-8rtr9NMhlOfPQks7_FBXulmg09-Ojr3vo3H5kvJR54/edit#gid=325834561", type = "csv", overwrite = TRUE)
 df_spam <- read_csv("spam.csv")
 ```
@@ -84,7 +84,7 @@ df_spam <- read_csv("spam.csv")
 
 
 **Timing the Serial Execution of Spam Dataset and Printing Results**
-```{r}
+```{r, eval = FALSE}
 startTimeSerial_spam = Sys.time()
   vectorLength = c(0,0)
   result=serialSplitting(df_spam,df_spam$label,df_spam$text,vectorLength)
@@ -94,7 +94,7 @@ endTimeSerial_spam= Sys.time()
 
 **Timing the Parallel Execution of Spam Dataset and Printing Results**
 
-```{r}
+```{r, eval = FALSE}
 startTimeParallel_spam = Sys.time()
   pkg <- list("parallel", "future")
   mapply(function(x) require(x, character.only = T), pkg)
@@ -105,7 +105,7 @@ endTimeParallel_spam = Sys.time()
 ```
 
 **Printing Time Results for both approaches**
-```{r}
+```{r, eval = FALSE}
 serialTime_spam = endTimeSerial_spam-startTimeSerial_spam
 parallelTime_spam =endTimeParallel_spam-startTimeParallel_spam
 cat("SerialExecution with Spam Dataset in seconds - ",serialTime_spam)
@@ -115,13 +115,13 @@ cat("Parallel Executoon with Spam Dataset in seconds -",parallelTime_spam)
 
 
 **Duplicating rows in spam Dataset 100 times**
-```{r}
+```{r, eval = FALSE}
 df_duplicateSpam <- df_spam %>% slice(rep(1:n(), each = 100))
 df_duplicateSpam
 ```
 
 **Timing the Serial Execution of Spam Dataset with duplicate rows and Printing Results**
-```{r}
+```{r, eval = FALSE}
 startTimeSerial_DuplicateSpam = Sys.time()
   vectorLength = c(0,0)
   result=serialSplitting(df_duplicateSpam,df_duplicateSpam$label,df_duplicateSpam$text,vectorLength)
@@ -130,7 +130,7 @@ endTimeSerial_DuplicateSpam= Sys.time()
 ```
 
 **Timing the Parallel Execution of Spam Dataset with duplicate rows and Printing Results**
-```{r}
+```{r, eval = FALSE}
 startTimeParallel_DuplicateSpam = Sys.time()
   pkg <- list("parallel", "future")
   mapply(function(x) require(x, character.only = T), pkg)
@@ -141,7 +141,7 @@ endTimeParallel_DuplicateSpam= Sys.time()
 ```
 
 **Printing Time Results for both approaches**
-```{r}
+```{r, eval = FALSE}
 serialTime_spamDuplicate = endTimeSerial_DuplicateSpam-startTimeSerial_DuplicateSpam
 parallelTime_spamDuplicate = endTimeParallel_DuplicateSpam - startTimeParallel_DuplicateSpam
 cat("SerialExecution with Spam Dataset with Duplicate Rows in seconds - ", serialTime_spamDuplicate  )
@@ -151,14 +151,14 @@ cat("ParallelExecution with Spam Dataset with Duplicate Rows in seconds - ", par
 
 
 **Reading another dataset**
-```{r}
+```{r, eval = FALSE}
 drive_download("https://drive.google.com/file/d/1izYW3zRmFAra2Auyxmxkuz7319Wb_ntd/view?usp=sharing", type = "csv", overwrite = TRUE)
 df_Yelp <- read_csv("yelp_ratings.csv")
 ```
 
 
 **Timing the Serial Execution of Yelp Dataset and Printing Results**
-```{r}
+```{r, eval = FALSE}
 startTimeSerial_Yelp = Sys.time()
   vectorLength = c(0,0,0,0)
   result=serialSplitting(df_Yelp,df_Yelp$stars,df_Yelp$text,vectorLength)
@@ -169,7 +169,7 @@ endTimeSerial_Yelp= Sys.time()
 
 
 **Timing the Parallel Execution of Yelp Dataset and Printing Results**
-```{r}
+```{r, eval = FALSE}
 startTimeParallel_Yelp = Sys.time()
 
 pkg <- list("parallel", "future")
@@ -182,7 +182,7 @@ endTimeParallel_Yelp = Sys.time()
 ```
 
 **Printing Time Results for both approaches**
-```{r}
+```{r, eval = FALSE}
 
 serialTime_Yelp = endTimeSerial_Yelp-startTimeSerial_Yelp
 parallelTime_Yelp = endTimeParallel_Yelp - startTimeParallel_Yelp
@@ -193,14 +193,14 @@ cat("ParallelExecution with Spam Dataset in seconds - ", parallelTime_Yelp)
 ```
 
 **Duplicating rows in Yelp Dataset 20 times**
-```{r}
+```{r, eval = FALSE}
 df_YelpDuplicate <- df_Yelp %>% slice(rep(1:n(), each = 20))
 df_YelpDuplicate
 ```
 
 **Timing the Serial Execution of Yelp Dataset with Duplicate Rows and Printing Results**
 
-```{r}
+```{r, eval = FALSE}
 startTimeSerial_YelpDuplicate = Sys.time()
   vectorLength = c(0,0,0,0)
   result=serialSplitting(df_YelpDuplicate,df_YelpDuplicate$stars,df_YelpDuplicate$text,vectorLength)
@@ -210,7 +210,7 @@ endTimeSerial_YelpDuplicate= Sys.time()
 ```
 
 **Timing the Parallel Execution of Yelp Dataset with duplicate rows and Printing Results**
-```{r}
+```{r, eval = FALSE}
 startTimeParallel_YelpDuplicate = Sys.time()
 
 pkg <- list("parallel", "future")
@@ -223,7 +223,7 @@ endTimeParallel_YelpDuplicate = Sys.time()
 ```
 
 **Printing Time Results for both approaches**
-```{r}
+```{r, eval = FALSE}
 
 serialTime_YelpDuplicate = endTimeSerial_YelpDuplicate-startTimeSerial_YelpDuplicate
 parallelTime_YelpDuplicate = endTimeParallel_YelpDuplicate - startTimeParallel_YelpDuplicate
@@ -234,7 +234,7 @@ cat("ParallelExecution with Spam Dataset in seconds with Duplicate Rows- ", para
 
 
 
-```{r   options(scipen=999)}
+```{r   options(scipen=999), eval = FALSE}
 
 Rows <- c(5572, 44530,557200,890600)
 time <- c(serialTime_spam,serialTime_Yelp,serialTime_spamDuplicate,serialTime_YelpDuplicate,parallelTime_spam,parallelTime_Yelp,parallelTime_spamDuplicate,parallelTime_YelpDuplicate)
