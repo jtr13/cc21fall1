@@ -1,0 +1,197 @@
+# Customized Sorting in R
+
+Xuchen Wang
+
+
+
+The idea of this package comes from the lack of sorting function in R, which uses the order function to sort and really caused some confusion for me. In addition, user defined functions are not applicable, so I would like to implement the sort function by myself. 
+
+I am using the idea of merge sort for these sorting functions which runs in O(nlogn).
+
+This file contains two functions, aiming to solve the following question
+
+(1) sort a list with user-defined comparison function
+
+eg: 
+
+lst=[[2,2,8],[3,6,7],[9,5,2]], 
+
+compare<-function(x,y) {
+  x[[2]]<y[[2]]
+}
+
+lst<-sort(lst,compare)
+
+lst would be [[2,2,8],[9,5,2],[3,6,7]] now
+
+
+```{r}
+
+lstmerge<-function(l1,l2,comp) {
+  m<-length(l1)
+  n<-length(l2)
+  i<-1
+  j<-1
+  output<-vector("list",m+n)
+  while(i<=m&&j<=n) {
+    if(comp(l1[[i]],l2[[j]])) {
+      output[[i+j-1]]<-l1[[i]]
+      i<-i+1
+    } else {
+      output[[i+j-1]]<-l2[[j]]
+      j<-j+1
+    }
+  }
+  while(i<=m) {
+     output[[i+j-1]]<-l1[[i]]
+    i<-i+1
+  }
+   while(j<=n) {
+     output[[i+j-1]]<-l2[[j]]
+    j<-j+1
+   }
+  output
+}
+
+lstsort<-function(lst,comp) {
+  n<-length(lst)
+  if(n<=1) {
+    return(lst)
+  }
+  mid<-ceiling(n/2)
+  lft<-lstsort(lst[(1:mid)],comp)
+  rt<-lstsort(lst[((mid+1):n)],comp)
+  return(lstmerge(lft,rt,comp))
+  
+}
+
+```
+
+
+
+
+example:
+
+
+
+
+
+```{r}
+lst= lapply(1:100, function(x) as.list(sample(1:100,size=2)))
+sapply(lst,function(x) x[[2]])
+```
+
+
+```{r}
+compare<-function(x,y) {
+  x[[2]]<y[[2]]
+}
+
+lst<-lstsort(lst,compare)
+sapply(lst,function(x) x[[2]])
+
+```
+
+
+to sort a list of vector just change the compare function:
+
+```{r}
+lst= lapply(1:100, function(x) sample(1:100,size=2))
+sapply(lst,function(x) x[2])
+```
+
+
+```{r}
+compare2<-function(x,y) {
+  x[2]<y[2]
+}
+lst<-lstsort(lst,compare2)
+sapply(lst,function(x) x[2])
+
+```
+
+
+
+
+
+
+
+
+
+(2) sort a dataframe with user-defined function
+
+
+The logic is the same as above, the only thing to notice is that the comparison function takes two rows and compare them
+
+
+
+
+```{r}
+
+dfmerge<-function(d1,d2,comp) {
+  m<-nrow(d1)
+  n<-nrow(d2)
+  i<-1
+  j<-1
+  output<-data.frame(matrix(NA,nrow=m+n,ncol=length(colnames(d1))))
+  colnames(output)<-colnames(d1)
+ while(i<=m&&j<=n) {
+    if(comp(d1[i,],d2[j,])) {
+      output[(i+j-1),]<-d1[i,]
+      i<-i+1
+    } else {
+      output[(i+j-1),]<-d2[j,]
+      j<-j+1
+    }
+  }
+  while(i<=m) {
+     output[(i+j-1),]<-d1[i,]
+      i<-i+1
+  }
+   while(j<=n) {
+    output[(i+j-1),]<-d2[j,]
+      j<-j+1
+   }
+  output
+  
+}
+
+dfsort<-function(df,comp) {
+  n<-nrow(df)
+  if(n<=1) {
+    return(df)
+  }
+  mid<-ceiling(n/2)
+  lft<-dfsort(df[1:mid,],comp)
+  rt<-dfsort(df[(mid+1):n,],comp)
+  return(dfmerge(lft,rt,comp))
+  
+}
+
+```
+
+
+
+
+```{r}
+M<-matrix(sample(1:100,300,replace=TRUE),ncol=3)
+df<-data.frame(M)
+colnames(df)<-c("a","b","c")
+df
+```
+
+
+
+
+
+```{r}
+dfcomp<-function(r1,r2) {
+  r1["b"][1]<r2["b"][1]
+}
+
+
+df<-dfsort(df,dfcomp)
+df
+```
+
+
