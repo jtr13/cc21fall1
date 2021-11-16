@@ -36,6 +36,7 @@ Imports:
     ggpubr,
     ggraph,
     ggridges,
+    ggradar,
     ggsci,
     ggvis,
     gifski,
@@ -100,8 +101,7 @@ Imports:
     vcd,
     viridis,
     XML,
-    xts,
-    ggradar
+    xts
 Suggests:
     bookdown,
     bslib,
