@@ -73,6 +73,7 @@ rmd_files: [
   '3d_visualization-.Rmd',
   'umap_viz.Rmd',
   'function_programming_purrr.Rmd',
+  'add_tutorial.Rmd',
 
   # Part: Demonstrations
   'linear_association.Rmd', # contains PART header
