@@ -100,7 +100,8 @@ Imports:
     vcd,
     viridis,
     XML,
-    xts
+    xts,
+    ggradar
 Suggests:
     bookdown,
     bslib,
