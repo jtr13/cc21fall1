@@ -80,6 +80,7 @@ rmd_files: [
   'r_customized_sort.Rmd',
   'ml_packages_in_R.rmd',
   'parallel_coordinate_plots.Rmd',
+  'crime_around_cu.Rmd',
   
   # Part: Workshops
   'ds_product_cycles_in_enterprises.Rmd', # contains PART header
