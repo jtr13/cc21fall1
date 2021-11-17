@@ -402,6 +402,9 @@ skewness
 make-plots-for-each-group-with-facets
 interactive-parallel-coordinate-plots
 references-3
+crime-analysis-around-columbia
+motivation-3
+link-to-project-1
 data-science-product-cycles-in-enterprises
 mapreduce-concept-comparision-with-r
 install.packagesfuture

@@ -4,16 +4,16 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<title>Chapter 38 Quick guide to eda | EDAV Fall 2021 Mon/Wed Community Contributions</title>
+<title>Chapter 57 Crime Analysis around Columbia | EDAV Fall 2021 Mon/Wed Community Contributions</title>
 <meta name="author" content="the students of the class">
-<meta name="description" content="Vikram Singh and Aniket Shahane Exploratory data analysis involves a variety of data and techniques about how the data is used to extract the underlying information and hidden nuances. Just by...">
+<meta name="description" content="Sarthak Bhargava and Arunit Maity  57.1 Motivation As part of community contribution we aim to analyze the crime frequency in the districts surrounding Columbia University. As international...">
 <meta name="generator" content="bookdown 0.24 with bs4_book()">
-<meta property="og:title" content="Chapter 38 Quick guide to eda | EDAV Fall 2021 Mon/Wed Community Contributions">
+<meta property="og:title" content="Chapter 57 Crime Analysis around Columbia | EDAV Fall 2021 Mon/Wed Community Contributions">
 <meta property="og:type" content="book">
-<meta property="og:description" content="Vikram Singh and Aniket Shahane Exploratory data analysis involves a variety of data and techniques about how the data is used to extract the underlying information and hidden nuances. Just by...">
+<meta property="og:description" content="Sarthak Bhargava and Arunit Maity  57.1 Motivation As part of community contribution we aim to analyze the crime frequency in the districts surrounding Columbia University. As international...">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Chapter 38 Quick guide to eda | EDAV Fall 2021 Mon/Wed Community Contributions">
-<meta name="twitter:description" content="Vikram Singh and Aniket Shahane Exploratory data analysis involves a variety of data and techniques about how the data is used to extract the underlying information and hidden nuances. Just by...">
+<meta name="twitter:title" content="Chapter 57 Crime Analysis around Columbia | EDAV Fall 2021 Mon/Wed Community Contributions">
+<meta name="twitter:description" content="Sarthak Bhargava and Arunit Maity  57.1 Motivation As part of community contribution we aim to analyze the crime frequency in the districts surrounding Columbia University. As international...">
 <!-- JS --><script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.6/clipboard.min.js" integrity="sha256-inc5kl9MA1hkeYUt+EC3BhlIgyp/2jDIyBLS6k3UxPI=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/fuse.js/6.4.6/fuse.js" integrity="sha512-zv6Ywkjyktsohkbp9bb45V6tEMoWhzFzXis+LrMehmJZZSys19Yxf1dopHx7WzIKxr5tK2dVcYmaCk2uqdjF4A==" crossorigin="anonymous"></script><script src="https://kit.fontawesome.com/6ecbd6c532.js" crossorigin="anonymous"></script><script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <link href="libs/bootstrap-4.6.0/bootstrap.min.css" rel="stylesheet">
 <script src="libs/bootstrap-4.6.0/bootstrap.bundle.min.js"></script><script src="libs/bs3compat-0.3.1/transition.js"></script><script src="libs/bs3compat-0.3.1/tabs.js"></script><script src="libs/bs3compat-0.3.1/bs3compat.js"></script><link href="libs/bs4_book-1.0.0/bs4_book.css" rel="stylesheet">
@@ -87,7 +87,7 @@
 <li><a class="" href="twitter-r-package-scraping-via-api-tutorial.html"><span class="header-section-number">35</span> TwitteR R Package Scraping via API Tutorial</a></li>
 <li><a class="" href="introduction-to-data-manipulation.html"><span class="header-section-number">36</span> Introduction to Data Manipulation</a></li>
 <li><a class="" href="animating-the-plots-in-r.html"><span class="header-section-number">37</span> Animating the plots in R</a></li>
-<li><a class="active" href="quick-guide-to-eda.html"><span class="header-section-number">38</span> Quick guide to eda</a></li>
+<li><a class="" href="quick-guide-to-eda.html"><span class="header-section-number">38</span> Quick guide to eda</a></li>
 <li><a class="" href="natural-langauge-processing-common-eda-practices-in-python.html"><span class="header-section-number">39</span> Natural Langauge Processing Common EDA Practices in Python</a></li>
 <li><a class="" href="beginners-walk-through-of-deep-learning-in-r.html"><span class="header-section-number">40</span> Beginner’s Walk-through of Deep Learning in R</a></li>
 <li><a class="" href="supervised-learning-tutorial.html"><span class="header-section-number">41</span> Supervised Learning Tutorial</a></li>
@@ -107,7 +107,7 @@
 <li><a class="" href="customized-sorting-in-r.html"><span class="header-section-number">54</span> Customized Sorting in R</a></li>
 <li><a class="" href="low-key-ml-packages-in-r.html"><span class="header-section-number">55</span> Low-key ML packages in R</a></li>
 <li><a class="" href="parallel-coordinate-plots-cheatsheet.html"><span class="header-section-number">56</span> Parallel coordinate plots cheatsheet</a></li>
-<li><a class="" href="crime-analysis-around-columbia.html"><span class="header-section-number">57</span> Crime Analysis around Columbia</a></li>
+<li><a class="active" href="crime-analysis-around-columbia.html"><span class="header-section-number">57</span> Crime Analysis around Columbia</a></li>
 <li class="book-part">Workshops</li>
 <li><a class="" href="data-science-product-cycles-in-enterprises.html"><span class="header-section-number">58</span> Data Science Product Cycles in Enterprises</a></li>
 <li><a class="" href="mapreduce-concept-comparision-with-r.html"><span class="header-section-number">59</span> MapReduce Concept &amp; Comparision With R</a></li>
@@ -121,26 +121,43 @@
         </div>
       </nav>
 </div>
-  </header><main class="col-sm-12 col-md-9 col-lg-7" id="content"><div id="quick-guide-to-eda" class="section level1">
+  </header><main class="col-sm-12 col-md-9 col-lg-7" id="content"><div id="crime-analysis-around-columbia" class="section level1">
 <h1>
-<span class="header-section-number">38</span> Quick guide to eda<a class="anchor" aria-label="anchor" href="#quick-guide-to-eda"><i class="fas fa-link"></i></a>
+<span class="header-section-number">57</span> Crime Analysis around Columbia<a class="anchor" aria-label="anchor" href="#crime-analysis-around-columbia"><i class="fas fa-link"></i></a>
 </h1>
-<p>Vikram Singh and Aniket Shahane</p>
-<p>Exploratory data analysis involves a variety of data and techniques about how the data is used to extract the underlying information and hidden nuances. Just by looking at the data tables a normal user cannot understand much, exploratory data analysis techniques enable him to look at the data from a different perspective. Here we will look at a few techniques and their categories.</p>
-<p><a href="https://clingy-camel-101.notion.site/A-Quick-Guide-to-Exploratory-Data-Analysis-9323470c7f394ba88cbe8dbc0e47148b">Link to the Notebook</a></p>
+<p>Sarthak Bhargava and Arunit Maity</p>
+<div id="motivation-3" class="section level2">
+<h2>
+<span class="header-section-number">57.1</span> Motivation<a class="anchor" aria-label="anchor" href="#motivation-3"><i class="fas fa-link"></i></a>
+</h2>
+<p>As part of community contribution we aim to analyze the crime frequency in the districts surrounding Columbia University. As international students, we were very concerned about the safety of the locality we wished to reside in. Our project helps in identifying areas of high crime and thereby help students with house hunting as well as getting around the area near Columbia University.</p>
+</div>
+<div id="link-to-project-1" class="section level2">
+<h2>
+<span class="header-section-number">57.2</span> Link to project<a class="anchor" aria-label="anchor" href="#link-to-project-1"><i class="fas fa-link"></i></a>
+</h2>
+<p><a href="https://github.com/Sarthak0211/CC" class="uri">https://github.com/Sarthak0211/CC</a></p>
 
 </div>
+</div>
+
+
+
   <div class="chapter-nav">
-<div class="prev"><a href="animating-the-plots-in-r.html"><span class="header-section-number">37</span> Animating the plots in R</a></div>
-<div class="next"><a href="natural-langauge-processing-common-eda-practices-in-python.html"><span class="header-section-number">39</span> Natural Langauge Processing Common EDA Practices in Python</a></div>
+<div class="prev"><a href="parallel-coordinate-plots-cheatsheet.html"><span class="header-section-number">56</span> Parallel coordinate plots cheatsheet</a></div>
+<div class="next"><a href="data-science-product-cycles-in-enterprises.html"><span class="header-section-number">58</span> Data Science Product Cycles in Enterprises</a></div>
 </div></main><div class="col-md-3 col-lg-2 d-none d-md-block sidebar sidebar-chapter">
     <nav id="toc" data-toggle="toc" aria-label="On this page"><h2>On this page</h2>
-      <ul class="nav navbar-nav"><li><a class="nav-link" href="#quick-guide-to-eda"><span class="header-section-number">38</span> Quick guide to eda</a></li></ul>
+      <ul class="nav navbar-nav">
+<li><a class="nav-link" href="#crime-analysis-around-columbia"><span class="header-section-number">57</span> Crime Analysis around Columbia</a></li>
+<li><a class="nav-link" href="#motivation-3"><span class="header-section-number">57.1</span> Motivation</a></li>
+<li><a class="nav-link" href="#link-to-project-1"><span class="header-section-number">57.2</span> Link to project</a></li>
+</ul>
 
       <div class="book-extra">
         <ul class="list-unstyled">
-<li><a id="book-source" href="https://github.com/jtr13/cc21fall1/blob/main/quick_guide_to_eda.Rmd">View source <i class="fab fa-github"></i></a></li>
-          <li><a id="book-edit" href="https://github.com/jtr13/cc21fall1/edit/main/quick_guide_to_eda.Rmd">Edit this page <i class="fab fa-github"></i></a></li>
+<li><a id="book-source" href="https://github.com/jtr13/cc21fall1/blob/main/crime_around_cu.Rmd">View source <i class="fab fa-github"></i></a></li>
+          <li><a id="book-edit" href="https://github.com/jtr13/cc21fall1/edit/main/crime_around_cu.Rmd">Edit this page <i class="fab fa-github"></i></a></li>
         </ul>
 </div>
     </nav>
