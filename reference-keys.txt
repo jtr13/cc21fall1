@@ -367,6 +367,7 @@ simple-example
 other-interesting-graphs
 waffle-chart
 redar-graph
+analyze-data-stored-in-aws-s3-using-r
 linear-association-r-studio-plugin
 introduction-9
 installation-1

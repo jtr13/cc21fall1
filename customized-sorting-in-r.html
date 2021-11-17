@@ -4,15 +4,15 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<title>Chapter 54 Customized Sorting in R | EDAV Fall 2021 Mon/Wed Community Contributions</title>
+<title>Chapter 55 Customized Sorting in R | EDAV Fall 2021 Mon/Wed Community Contributions</title>
 <meta name="author" content="the students of the class">
 <meta name="description" content="Xuchen Wang The idea of this package comes from the lack of sorting function in R, which uses the order function to sort and really caused some confusion for me. In addition, user defined...">
 <meta name="generator" content="bookdown 0.24 with bs4_book()">
-<meta property="og:title" content="Chapter 54 Customized Sorting in R | EDAV Fall 2021 Mon/Wed Community Contributions">
+<meta property="og:title" content="Chapter 55 Customized Sorting in R | EDAV Fall 2021 Mon/Wed Community Contributions">
 <meta property="og:type" content="book">
 <meta property="og:description" content="Xuchen Wang The idea of this package comes from the lack of sorting function in R, which uses the order function to sort and really caused some confusion for me. In addition, user defined...">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Chapter 54 Customized Sorting in R | EDAV Fall 2021 Mon/Wed Community Contributions">
+<meta name="twitter:title" content="Chapter 55 Customized Sorting in R | EDAV Fall 2021 Mon/Wed Community Contributions">
 <meta name="twitter:description" content="Xuchen Wang The idea of this package comes from the lack of sorting function in R, which uses the order function to sort and really caused some confusion for me. In addition, user defined...">
 <!-- JS --><script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.6/clipboard.min.js" integrity="sha256-inc5kl9MA1hkeYUt+EC3BhlIgyp/2jDIyBLS6k3UxPI=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/fuse.js/6.4.6/fuse.js" integrity="sha512-zv6Ywkjyktsohkbp9bb45V6tEMoWhzFzXis+LrMehmJZZSys19Yxf1dopHx7WzIKxr5tK2dVcYmaCk2uqdjF4A==" crossorigin="anonymous"></script><script src="https://kit.fontawesome.com/6ecbd6c532.js" crossorigin="anonymous"></script><script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <link href="libs/bootstrap-4.6.0/bootstrap.min.css" rel="stylesheet">
@@ -102,18 +102,19 @@
 <li><a class="" href="efficient-dimension-reduction-with-umap.html"><span class="header-section-number">50</span> Efficient dimension reduction with UMAP</a></li>
 <li><a class="" href="functional-programming-with-purrr.html"><span class="header-section-number">51</span> Functional Programming with Purrr</a></li>
 <li><a class="" href="radial-bar-chart-and-other-interesting-graphs.html"><span class="header-section-number">52</span> Radial bar chart and other interesting graphs</a></li>
+<li><a class="" href="analyze-data-stored-in-aws-s3-using-r.html"><span class="header-section-number">53</span> Analyze data stored in AWS S3 using R</a></li>
 <li class="book-part">Demonstrations</li>
-<li><a class="" href="linear-association-r-studio-plugin.html"><span class="header-section-number">53</span> Linear Association R Studio Plugin</a></li>
-<li><a class="active" href="customized-sorting-in-r.html"><span class="header-section-number">54</span> Customized Sorting in R</a></li>
-<li><a class="" href="low-key-ml-packages-in-r.html"><span class="header-section-number">55</span> Low-key ML packages in R</a></li>
-<li><a class="" href="parallel-coordinate-plots-cheatsheet.html"><span class="header-section-number">56</span> Parallel coordinate plots cheatsheet</a></li>
-<li><a class="" href="crime-analysis-around-columbia.html"><span class="header-section-number">57</span> Crime Analysis around Columbia</a></li>
+<li><a class="" href="linear-association-r-studio-plugin.html"><span class="header-section-number">54</span> Linear Association R Studio Plugin</a></li>
+<li><a class="active" href="customized-sorting-in-r.html"><span class="header-section-number">55</span> Customized Sorting in R</a></li>
+<li><a class="" href="low-key-ml-packages-in-r.html"><span class="header-section-number">56</span> Low-key ML packages in R</a></li>
+<li><a class="" href="parallel-coordinate-plots-cheatsheet.html"><span class="header-section-number">57</span> Parallel coordinate plots cheatsheet</a></li>
+<li><a class="" href="crime-analysis-around-columbia.html"><span class="header-section-number">58</span> Crime Analysis around Columbia</a></li>
 <li class="book-part">Workshops</li>
-<li><a class="" href="data-science-product-cycles-in-enterprises.html"><span class="header-section-number">58</span> Data Science Product Cycles in Enterprises</a></li>
-<li><a class="" href="mapreduce-concept-comparision-with-r.html"><span class="header-section-number">59</span> MapReduce Concept &amp; Comparision With R</a></li>
+<li><a class="" href="data-science-product-cycles-in-enterprises.html"><span class="header-section-number">59</span> Data Science Product Cycles in Enterprises</a></li>
+<li><a class="" href="mapreduce-concept-comparision-with-r.html"><span class="header-section-number">60</span> MapReduce Concept &amp; Comparision With R</a></li>
 <li class="book-part">Appendices</li>
-<li><a class="" href="github-initial-setup.html"><span class="header-section-number">60</span> Github initial setup</a></li>
-<li><a class="" href="tutorial-for-pull-request-mergers.html"><span class="header-section-number">61</span> Tutorial for pull request mergers</a></li>
+<li><a class="" href="github-initial-setup.html"><span class="header-section-number">61</span> Github initial setup</a></li>
+<li><a class="" href="tutorial-for-pull-request-mergers.html"><span class="header-section-number">62</span> Tutorial for pull request mergers</a></li>
 </ul>
 
         <div class="book-extra">
@@ -123,7 +124,7 @@
 </div>
   </header><main class="col-sm-12 col-md-9 col-lg-7" id="content"><div id="customized-sorting-in-r" class="section level1">
 <h1>
-<span class="header-section-number">54</span> Customized Sorting in R<a class="anchor" aria-label="anchor" href="#customized-sorting-in-r"><i class="fas fa-link"></i></a>
+<span class="header-section-number">55</span> Customized Sorting in R<a class="anchor" aria-label="anchor" href="#customized-sorting-in-r"><i class="fas fa-link"></i></a>
 </h1>
 <p>Xuchen Wang</p>
 <p>The idea of this package comes from the lack of sorting function in R, which uses the order function to sort and really caused some confusion for me. In addition, user defined functions are not applicable, so I would like to implement the sort function by myself.</p>
@@ -484,11 +485,11 @@ x[[2]]&lt;y[[2]]
 
 </div>
   <div class="chapter-nav">
-<div class="prev"><a href="linear-association-r-studio-plugin.html"><span class="header-section-number">53</span> Linear Association R Studio Plugin</a></div>
-<div class="next"><a href="low-key-ml-packages-in-r.html"><span class="header-section-number">55</span> Low-key ML packages in R</a></div>
+<div class="prev"><a href="linear-association-r-studio-plugin.html"><span class="header-section-number">54</span> Linear Association R Studio Plugin</a></div>
+<div class="next"><a href="low-key-ml-packages-in-r.html"><span class="header-section-number">56</span> Low-key ML packages in R</a></div>
 </div></main><div class="col-md-3 col-lg-2 d-none d-md-block sidebar sidebar-chapter">
     <nav id="toc" data-toggle="toc" aria-label="On this page"><h2>On this page</h2>
-      <ul class="nav navbar-nav"><li><a class="nav-link" href="#customized-sorting-in-r"><span class="header-section-number">54</span> Customized Sorting in R</a></li></ul>
+      <ul class="nav navbar-nav"><li><a class="nav-link" href="#customized-sorting-in-r"><span class="header-section-number">55</span> Customized Sorting in R</a></li></ul>
 
       <div class="book-extra">
         <ul class="list-unstyled">
