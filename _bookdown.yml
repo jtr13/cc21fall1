@@ -74,6 +74,7 @@ rmd_files: [
   'umap_viz.Rmd',
   'function_programming_purrr.Rmd',
   'add_tutorial.Rmd',
+  'Analyse_data_from_aws_s3_buckets_in_R2.Rmd',
 
   # Part: Demonstrations
   'linear_association.Rmd', # contains PART header
