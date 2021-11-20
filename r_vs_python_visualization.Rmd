@@ -1,4 +1,3 @@
-# (PART) Cheatsheets {-}
 
 # R vs. Python Visualization Cheatsheet
 
