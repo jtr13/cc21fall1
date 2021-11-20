@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<title>Chapter 54 Introduction to flexdashboard and shiny | EDAV Fall 2021 Mon/Wed Community Contributions</title>
+<meta name="author" content="the students of the class">
+<meta name="description" content="Yuezhu Xu and Zhengyi Fang  54.1 Motivation We can use various packages in R to do nicely arranged graphs. But when it comes to presenting graphs under certain limit or choice regarding to...">
+<meta name="generator" content="bookdown 0.24 with bs4_book()">
+<meta property="og:title" content="Chapter 54 Introduction to flexdashboard and shiny | EDAV Fall 2021 Mon/Wed Community Contributions">
+<meta property="og:type" content="book">
+<meta property="og:description" content="Yuezhu Xu and Zhengyi Fang  54.1 Motivation We can use various packages in R to do nicely arranged graphs. But when it comes to presenting graphs under certain limit or choice regarding to...">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Chapter 54 Introduction to flexdashboard and shiny | EDAV Fall 2021 Mon/Wed Community Contributions">
+<meta name="twitter:description" content="Yuezhu Xu and Zhengyi Fang  54.1 Motivation We can use various packages in R to do nicely arranged graphs. But when it comes to presenting graphs under certain limit or choice regarding to...">
+<!-- JS --><script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.6/clipboard.min.js" integrity="sha256-inc5kl9MA1hkeYUt+EC3BhlIgyp/2jDIyBLS6k3UxPI=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/fuse.js/6.4.6/fuse.js" integrity="sha512-zv6Ywkjyktsohkbp9bb45V6tEMoWhzFzXis+LrMehmJZZSys19Yxf1dopHx7WzIKxr5tK2dVcYmaCk2uqdjF4A==" crossorigin="anonymous"></script><script src="https://kit.fontawesome.com/6ecbd6c532.js" crossorigin="anonymous"></script><script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<link href="libs/bootstrap-4.6.0/bootstrap.min.css" rel="stylesheet">
+<script src="libs/bootstrap-4.6.0/bootstrap.bundle.min.js"></script><script src="libs/bs3compat-0.3.1/transition.js"></script><script src="libs/bs3compat-0.3.1/tabs.js"></script><script src="libs/bs3compat-0.3.1/bs3compat.js"></script><link href="libs/bs4_book-1.0.0/bs4_book.css" rel="stylesheet">
+<script src="libs/bs4_book-1.0.0/bs4_book.js"></script><script src="libs/accessible-code-block-0.0.1/empty-anchor.js"></script><script src="libs/htmlwidgets-1.5.4/htmlwidgets.js"></script><script src="libs/plotly-binding-4.10.0/plotly.js"></script><script src="libs/typedarray-0.1/typedarray.min.js"></script><link href="libs/crosstalk-1.2.0/css/crosstalk.min.css" rel="stylesheet">
+<script src="libs/crosstalk-1.2.0/js/crosstalk.min.js"></script><link href="libs/plotly-htmlwidgets-css-2.5.1/plotly-htmlwidgets.css" rel="stylesheet">
+<script src="libs/plotly-main-2.5.1/plotly-latest.min.js"></script><link href="libs/dygraphs-1.1.1/dygraph.css" rel="stylesheet">
+<script src="libs/dygraphs-1.1.1/dygraph-combined.js"></script><script src="libs/dygraphs-1.1.1/shapes.js"></script><script src="libs/moment-2.8.4/moment.js"></script><script src="libs/moment-timezone-0.2.5/moment-timezone-with-data.js"></script><script src="libs/moment-fquarter-1.0.0/moment-fquarter.min.js"></script><script src="libs/dygraphs-binding-1.1.1.6/dygraphs.js"></script><script src="libs/d3-5.16.0/d3.min.js"></script><script src="libs/forceNetwork-binding-0.4/forceNetwork.js"></script><link href="libs/parallel-coordinates-2.1.8/parcoords.css" rel="stylesheet">
+<script src="libs/parcoords-binding-1.0.0/parcoords.js"></script><script src="libs/detect-resize-0.5.3/jquery.resize.js"></script><link href="libs/jquery-ui-1.11.4/jquery-ui.min.css" rel="stylesheet">
+<script src="libs/jquery-ui-1.11.4/jquery-ui.min.js"></script><script src="libs/vega-1.4.3/vega.min.js"></script><script src="libs/lodash-2.2.1/lodash.min.js"></script><script>var lodash = _.noConflict();</script><link href="libs/ggvis-0.4.7/css/ggvis.css" rel="stylesheet">
+<script src="libs/ggvis-0.4.7/js/ggvis.js"></script><script src="libs/dendroNetwork-binding-0.4/dendroNetwork.js"></script><link href="libs/str_view-0.1.0/str_view.css" rel="stylesheet">
+<script src="libs/str_view-binding-1.4.0/str_view.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/autocomplete.js/0.38.0/autocomplete.jquery.min.js" integrity="sha512-GU9ayf+66Xx2TmpxqJpliWbT5PiGYxpaG8rfnBEk1LL8l1KGkRShhngwdXK1UgqhAzWpZHSiYPc09/NwDQIGyg==" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/mark.min.js" integrity="sha512-5CYOlHXGh6QpOFA/TeTylKLWfB3ftPsde7AnmhuitiTX4K5SqCLBeKro6sPS8ilsz1Q4NRx3v8Ko2IBiszzdww==" crossorigin="anonymous"></script><!-- CSS -->
+</head>
+<body data-spy="scroll" data-target="#toc">
+
+<div class="container-fluid">
+<div class="row">
+  <header class="col-sm-12 col-lg-3 sidebar sidebar-book"><a class="sr-only sr-only-focusable" href="#content">Skip to main content</a>
+
+    <div class="d-flex align-items-start justify-content-between">
+      <h1>
+        <a href="index.html" title="">EDAV Fall 2021 Mon/Wed Community Contributions</a>
+      </h1>
+      <button class="btn btn-outline-primary d-lg-none ml-2 mt-1" type="button" data-toggle="collapse" data-target="#main-nav" aria-expanded="true" aria-controls="main-nav"><i class="fas fa-bars"></i><span class="sr-only">Show table of contents</span></button>
+    </div>
+
+    <div id="main-nav" class="collapse-lg">
+      <form role="search">
+        <input id="search" class="form-control" type="search" placeholder="Search" aria-label="Search">
+</form>
+
+      <nav aria-label="Table of contents"><h2>Table of contents</h2>
+        <ul class="book-toc list-unstyled">
+<li><a class="" href="index.html"><span class="header-section-number">1</span> Welcome!</a></li>
+<li><a class="" href="community-contribution.html"><span class="header-section-number">2</span> Community Contribution</a></li>
+<li><a class="" href="github-submission-instructions.html"><span class="header-section-number">3</span> GitHub submission instructions</a></li>
+<li><a class="" href="sample-project.html"><span class="header-section-number">4</span> Sample project</a></li>
+<li class="book-part">Data Visualizations</li>
+<li><a class="" href="introduction-to-the-lattice-package.html"><span class="header-section-number">5</span> Introduction to the lattice package</a></li>
+<li><a class="" href="graph-animation-with-gganimate-and-after-effects.html"><span class="header-section-number">6</span> Graph animation with gganimate and After Effects</a></li>
+<li><a class="" href="interactive-plots.html"><span class="header-section-number">7</span> Interactive Plots</a></li>
+<li><a class="" href="create-regression-assumption-plots-in-word.html"><span class="header-section-number">8</span> Create regression assumption plots in Word</a></li>
+<li><a class="" href="from-neo4j-to-rstudio.html"><span class="header-section-number">9</span> From Neo4j to RStudio</a></li>
+<li><a class="" href="stacked-bar-plot-for-relative-proportions-in-python.html"><span class="header-section-number">10</span> Stacked Bar Plot For Relative Proportions In Python</a></li>
+<li><a class="" href="interactive-plot-introduction.html"><span class="header-section-number">11</span> Interactive plot introduction</a></li>
+<li><a class="" href="introduction-to-longitudinal-data-and-mlgm-package.html"><span class="header-section-number">12</span> Introduction to Longitudinal Data and MLGM Package</a></li>
+<li class="book-part">R Package Tutorial</li>
+<li><a class="" href="tidyverse_cheatsheet.html"><span class="header-section-number">13</span> Tidyverse_cheatsheet</a></li>
+<li><a class="" href="use-of-ggprism-and-ggsci-packages.html"><span class="header-section-number">14</span> Use of ggprism and ggsci packages</a></li>
+<li><a class="" href="parallel-coordinates-plot-cheatsheet.html"><span class="header-section-number">15</span> Parallel coordinates plot cheatsheet</a></li>
+<li><a class="" href="cheatsheet-tidyverse.html"><span class="header-section-number">16</span> Cheatsheet Tidyverse</a></li>
+<li><a class="" href="common-r-markdown-syntax-cheatsheet.html"><span class="header-section-number">17</span> Common R markdown syntax cheatsheet</a></li>
+<li><a class="" href="rpackage-waffle-cheatsheet.html"><span class="header-section-number">18</span> Rpackage waffle cheatsheet</a></li>
+<li class="book-part">Topics in Data Science</li>
+<li><a class="" href="a-linear-regression-bestiary.html"><span class="header-section-number">19</span> A linear regression Bestiary</a></li>
+<li><a class="" href="r-cheatsheet-on-data-transforamtion-and-exploration.html"><span class="header-section-number">20</span> R cheatsheet on data transforamtion and exploration</a></li>
+<li><a class="" href="r-data-science-workflow-cheatsheet.html"><span class="header-section-number">21</span> R Data Science Workflow CheatSheet</a></li>
+<li><a class="" href="questions-answers-for-r-technical-interview.html"><span class="header-section-number">22</span> 30 questions &amp; answers for r technical interview</a></li>
+<li><a class="" href="graphql-cheat-sheet.html"><span class="header-section-number">23</span> GraphQL Cheat Sheet</a></li>
+<li><a class="" href="r-vs-python-basic-data-wrangling.html"><span class="header-section-number">24</span> R vs Python Basic Data Wrangling</a></li>
+<li><a class="" href="r-vs.-python-visualization-cheatsheet.html"><span class="header-section-number">25</span> R vs. Python Visualization Cheatsheet</a></li>
+<li class="book-part">Tutorials</li>
+<li><a class="" href="multithreading-crawler-frame.html"><span class="header-section-number">26</span> Multithreading Crawler Frame</a></li>
+<li><a class="" href="regression-and-classification-in-r.html"><span class="header-section-number">27</span> Regression and Classification in R</a></li>
+<li><a class="" href="tibble-vs.-dataframe.html"><span class="header-section-number">28</span> Tibble vs. DataFrame</a></li>
+<li><a class="" href="introduction-to-time-series.html"><span class="header-section-number">29</span> Introduction to Time Series</a></li>
+<li><a class="" href="vipul-edav-community-contribution-kickstart-r.html"><span class="header-section-number">30</span> Vipul EDAV Community Contribution Kickstart R</a></li>
+<li><a class="" href="caret---a-machine-learning-package-turotial.html"><span class="header-section-number">31</span> caret - a machine learning package turotial</a></li>
+<li><a class="" href="streamlit-for-financial-analysis.html"><span class="header-section-number">32</span> Streamlit for Financial Analysis</a></li>
+<li><a class="" href="interactive-graphs-tutorial.html"><span class="header-section-number">33</span> Interactive graphs tutorial</a></li>
+<li><a class="" href="guideline-on-using-package-rcurl-and-xml-for-web-scraping.html"><span class="header-section-number">34</span> Guideline on Using Package Rcurl and XML for Web Scraping</a></li>
+<li><a class="" href="twitter-r-package-scraping-via-api-tutorial.html"><span class="header-section-number">35</span> TwitteR R Package Scraping via API Tutorial</a></li>
+<li><a class="" href="introduction-to-data-manipulation.html"><span class="header-section-number">36</span> Introduction to Data Manipulation</a></li>
+<li><a class="" href="animating-the-plots-in-r.html"><span class="header-section-number">37</span> Animating the plots in R</a></li>
+<li><a class="" href="quick-guide-to-eda.html"><span class="header-section-number">38</span> Quick guide to eda</a></li>
+<li><a class="" href="natural-langauge-processing-common-eda-practices-in-python.html"><span class="header-section-number">39</span> Natural Langauge Processing Common EDA Practices in Python</a></li>
+<li><a class="" href="beginners-walk-through-of-deep-learning-in-r.html"><span class="header-section-number">40</span> Beginner’s Walk-through of Deep Learning in R</a></li>
+<li><a class="" href="supervised-learning-tutorial.html"><span class="header-section-number">41</span> Supervised Learning Tutorial</a></li>
+<li><a class="" href="parallel-coordinate-plots-in-ggplot2.html"><span class="header-section-number">42</span> Parallel Coordinate Plots in ggplot2</a></li>
+<li><a class="" href="using-ggplot-in-python.html"><span class="header-section-number">43</span> Using ggplot in python</a></li>
+<li><a class="" href="icons-and-symbols-in-r.html"><span class="header-section-number">44</span> Icons and symbols in R</a></li>
+<li><a class="" href="exploratory-data-analysis-and-preprocessing-with-r-for-data-challenges.html"><span class="header-section-number">45</span> Exploratory data analysis and preprocessing with R for data challenges</a></li>
+<li><a class="" href="introduction-to-git-bash.html"><span class="header-section-number">46</span> Introduction to Git Bash</a></li>
+<li><a class="" href="tutorial-for-six-basic-graphs-by-using-ggplot.html"><span class="header-section-number">47</span> Tutorial for six basic graphs by using ggplot</a></li>
+<li><a class="" href="web-scrapping-using-beautifulsoup-and-its-equivalent-in-rvest.html"><span class="header-section-number">48</span> Web Scrapping using BeautifulSoup and its Equivalent in rvest</a></li>
+<li><a class="" href="d-visualization-shinyaframe-introduction-and-tutorial.html"><span class="header-section-number">49</span> 3D visualization: shinyaframe introduction and tutorial</a></li>
+<li><a class="" href="efficient-dimension-reduction-with-umap.html"><span class="header-section-number">50</span> Efficient dimension reduction with UMAP</a></li>
+<li><a class="" href="functional-programming-with-purrr.html"><span class="header-section-number">51</span> Functional Programming with Purrr</a></li>
+<li><a class="" href="radial-bar-chart-and-other-interesting-graphs.html"><span class="header-section-number">52</span> Radial bar chart and other interesting graphs</a></li>
+<li><a class="" href="analyze-data-stored-in-aws-s3-using-r.html"><span class="header-section-number">53</span> Analyze data stored in AWS S3 using R</a></li>
+<li><a class="active" href="introduction-to-flexdashboard-and-shiny.html"><span class="header-section-number">54</span> Introduction to flexdashboard and shiny</a></li>
+<li class="book-part">Demonstrations</li>
+<li><a class="" href="linear-association-r-studio-plugin.html"><span class="header-section-number">55</span> Linear Association R Studio Plugin</a></li>
+<li><a class="" href="customized-sorting-in-r.html"><span class="header-section-number">56</span> Customized Sorting in R</a></li>
+<li><a class="" href="low-key-ml-packages-in-r.html"><span class="header-section-number">57</span> Low-key ML packages in R</a></li>
+<li><a class="" href="parallel-coordinate-plots-cheatsheet.html"><span class="header-section-number">58</span> Parallel coordinate plots cheatsheet</a></li>
+<li><a class="" href="crime-analysis-around-columbia.html"><span class="header-section-number">59</span> Crime Analysis around Columbia</a></li>
+<li class="book-part">Workshops</li>
+<li><a class="" href="data-science-product-cycles-in-enterprises.html"><span class="header-section-number">60</span> Data Science Product Cycles in Enterprises</a></li>
+<li><a class="" href="mapreduce-concept-comparision-with-r.html"><span class="header-section-number">61</span> MapReduce Concept &amp; Comparision With R</a></li>
+<li class="book-part">Appendices</li>
+<li><a class="" href="github-initial-setup.html"><span class="header-section-number">62</span> Github initial setup</a></li>
+<li><a class="" href="tutorial-for-pull-request-mergers.html"><span class="header-section-number">63</span> Tutorial for pull request mergers</a></li>
+</ul>
+
+        <div class="book-extra">
+          <p><a id="book-repo" href="https://github.com/jtr13/cc21fall1">View book source <i class="fab fa-github"></i></a></p>
+        </div>
+      </nav>
+</div>
+  </header><main class="col-sm-12 col-md-9 col-lg-7" id="content"><div id="introduction-to-flexdashboard-and-shiny" class="section level1">
+<h1>
+<span class="header-section-number">54</span> Introduction to flexdashboard and shiny<a class="anchor" aria-label="anchor" href="#introduction-to-flexdashboard-and-shiny"><i class="fas fa-link"></i></a>
+</h1>
+<p>Yuezhu Xu and Zhengyi Fang</p>
+<div id="motivation-3" class="section level2">
+<h2>
+<span class="header-section-number">54.1</span> Motivation<a class="anchor" aria-label="anchor" href="#motivation-3"><i class="fas fa-link"></i></a>
+</h2>
+<p>We can use various packages in R to do nicely arranged graphs. But when it comes to presenting graphs under certain limit or choice regarding to different numerical or categorical variables, it is hard to realize it on a non-interactive board. In fact, such interaction is essential when clients want to explore data themselves. Here we would like to introduce a handy package <strong>flexdashboard</strong> combined with <strong>shiny</strong> to realize the function. The output will be a website on which people can do a series of operation, like filtering, sorting and changing aesthetics, according to their needs.</p>
+</div>
+<div id="introduction-9" class="section level2">
+<h2>
+<span class="header-section-number">54.2</span> Introduction<a class="anchor" aria-label="anchor" href="#introduction-9"><i class="fas fa-link"></i></a>
+</h2>
+<div id="environment-setting" class="section level3">
+<h3>
+<span class="header-section-number">54.2.1</span> Environment Setting<a class="anchor" aria-label="anchor" href="#environment-setting"><i class="fas fa-link"></i></a>
+</h3>
+<p>To get stared, we first set the environment as follows.</p>
+<div class="inline-figure"><img src="resources/intro_to_flexdashboard_shiny/library.png" style="width:50.0%"></div>
+<p>Note that we use <strong>data.table</strong> as the tool to deal with data. You can refer to
+<a href="https://cran.r-project.org/web/packages/data.table/vignettes/datatable-intro.html" class="uri">https://cran.r-project.org/web/packages/data.table/vignettes/datatable-intro.html</a> for further instruction.</p>
+</div>
+<div id="basic-layout" class="section level3">
+<h3>
+<span class="header-section-number">54.2.2</span> Basic Layout<a class="anchor" aria-label="anchor" href="#basic-layout"><i class="fas fa-link"></i></a>
+</h3>
+<p>We need to be familiar with the layout <strong>flexdashboard</strong> provide. For a website, we can design several pages on it by separating different part using long set of “=” and name the page before it. Also, on one page, we can separate the interface them into multiple sections by long set of “-”. If we add Column (Row) before it, it will divide a column (Row) space for us. In each section, we can assign difference parts using ### and name the part after ###. See the following example.</p>
+<p><img src="resources/intro_to_flexdashboard_shiny/arrange1.png" style="width:40.0%"><img src="resources/intro_to_flexdashboard_shiny/arrange2.png" style="width:40.0%"></p>
+<p><img src="resources/intro_to_flexdashboard_shiny/arrange_out1.png" style="width:40.0%"><img src="resources/intro_to_flexdashboard_shiny/arrange_out2.png" style="width:40.0%"></p>
+</div>
+<div id="common-components" class="section level3">
+<h3>
+<span class="header-section-number">54.2.3</span> Common Components<a class="anchor" aria-label="anchor" href="#common-components"><i class="fas fa-link"></i></a>
+</h3>
+<p>After we are familiar with the layout, let us see the common components making up the website.</p>
+<div id="valuebox" class="section level4">
+<h4>
+<span class="header-section-number">54.2.3.1</span> ValueBox<a class="anchor" aria-label="anchor" href="#valuebox"><i class="fas fa-link"></i></a>
+</h4>
+<p>A valuebox is a bar that contains descriptive information (name of the bar) and a number in it. We can create one by calling <strong>valueBox</strong>() and put the number in ().</p>
+<div class="inline-figure"><img src="resources/intro_to_flexdashboard_shiny/bar.png" style="width:60.0%"></div>
+</div>
+<div id="input-graph" class="section level4">
+<h4>
+<span class="header-section-number">54.2.3.2</span> Input &amp; Graph<a class="anchor" aria-label="anchor" href="#input-graph"><i class="fas fa-link"></i></a>
+</h4>
+<p>To create an interactive graph. We need two parts: the <strong>Input</strong> for users to filter and choose and the responding graph. We first introduce the <strong>Input</strong>. For categorical variables, the form can be a drop-down (only one of the choice can be chosen) or a filled blank (can choose multiple choices). In the example below, user can choose one of the choice in the upper drop-down by clicking (E.g. Awareness) and choose multiple choices by deleting unwanted ones (E.g. Deleting Male if you only want to observe the data of female and keeping both Male and Female if you want to observe all people).</p>
+<div class="inline-figure"><img src="resources/intro_to_flexdashboard_shiny/Categorical_Input.png" height="300"></div>
+<p>Also we can have check box as categorical input and users can click to choose them to show related feature. It looks like below.</p>
+<div class="inline-figure"><img src="resources/intro_to_flexdashboard_shiny/checkbox.png" height="80"></div>
+<p>For numerical data, the form is an slider with numbers on it. The min, max and step of the silder can be set according to the data. The numerical panel looks like below.</p>
+<div class="inline-figure"><img src="resources/intro_to_flexdashboard_shiny/Numerical_Input.png" height="150"></div>
+<p>In this tutorial, we take bar plot as the example. You can do other graphs such as scatter plot in the same way. Note that panel can not only set parameter and limitation to graphs but also can be used to control elements in other components like table. The realization will be mentioned in the <strong>Typical Function</strong> part.</p>
+</div>
+<div id="table" class="section level4">
+<h4>
+<span class="header-section-number">54.2.3.3</span> Table<a class="anchor" aria-label="anchor" href="#table"><i class="fas fa-link"></i></a>
+</h4>
+<p>Another commonly-used element is table. We can set connections between panel and the data set to do filtering and limitation on the data set. After the process, we obtain a new dataframe for table and we can create a table simply by calling <strong>datatable</strong>(new dataframe).</p>
+<div class="inline-figure"><img src="resources/intro_to_flexdashboard_shiny/table.png" style="width:70.0%"></div>
+</div>
+</div>
+<div id="typical-function" class="section level3">
+<h3>
+<span class="header-section-number">54.2.4</span> Typical Function<a class="anchor" aria-label="anchor" href="#typical-function"><i class="fas fa-link"></i></a>
+</h3>
+<p>We use snack.dat dataset in library(formulaic). It has 23000 rows and 23 columns containing information from the (fictionalized) marketing survey’s data. (<a href="https://rdrr.io/cran/formulaic/man/snack.dat.html" class="uri">https://rdrr.io/cran/formulaic/man/snack.dat.html</a>). After pre-processing, our dataframe looks like below.
+<img src="resources/intro_to_flexdashboard_shiny/dataframe1.png"><img src="resources/intro_to_flexdashboard_shiny/dataframe2.png"></p>
+<p>Basically we realize the following function by building connections between <strong>Input</strong> and its controlled component. We can put several Inputs in one panel. To realize this, we call inputPanel() and put Input in it. Common type of <strong>Input</strong> includes drop-down/filled blank, check box and slider as discussed and we call them by <strong>selectInput</strong>, <strong>checkboxInput</strong> and <strong>sliderInput</strong> separately and give them Id in the call. With the Id, we can connect them to their controlled components and adjust the output accordingly. We introduce these four typical function in combined examples as follows. The final dashboard can be seen at <a href="https://zhengyi-fang.shinyapps.io/Dashboard/#section-introduction" class="uri">https://zhengyi-fang.shinyapps.io/Dashboard/#section-introduction</a>.</p>
+<div id="choosing-on-categorical-variable-drop-down-and-numerical-variable" class="section level4">
+<h4>
+<span class="header-section-number">54.2.4.1</span> Choosing on Categorical Variable (drop-down) and Numerical Variable<a class="anchor" aria-label="anchor" href="#choosing-on-categorical-variable-drop-down-and-numerical-variable"><i class="fas fa-link"></i></a>
+</h4>
+<p>In this example, we have two choices for the drop-down: “Age” and “Income” to observe the distribution of data on either age or income. Also, we put two slider here. We can adjust bin width for age on the first slider and for income on the second slider. We can certainly use one slider to adjust the bin width for different data according to the choice in the drop-down. But here, as the range of age and income differ so much, we choose to realize it in different sliders. The Input and the code are as follows</p>
+<p><img src="resources/intro_to_flexdashboard_shiny/Ex1Input.png" height="200"><img src="resources/intro_to_flexdashboard_shiny/Ex1CodeInput.png" style="width:65.0%"></p>
+<p>Inside the inputPanel(), we add one <strong>selectInput</strong> and two <strong>sliderInput</strong>. Inside each input, we give the input an id by “InputId =”. We label them by “label =” with descriptive text. For selectInput, we set the choices by “choices =” filling in an array of character and assigning the default choice by “selected =”. Here we choose the first one. For sliderInput, we define the min, max, default choice and step by “min =”, “max =”, “value =” and “step =” separately.
+Here comes the graph part. We call <strong>renderPlot</strong> to do the plot and add connections by passing Id defined in the Input to parameters in renderPlot.</p>
+<div class="inline-figure"><img src="resources/intro_to_flexdashboard_shiny/Ex1CodeGraph.png" style="width:65.0%"></div>
+<p>Inside the renderPlot, we first integrate the dataframe dat by selecting data for desirable category: age or income. Concretely, we pass the parameter to “variable” within get function (see <a href="https://www.rdocumentation.org/packages/base/versions/3.6.2/topics/get" class="uri">https://www.rdocumentation.org/packages/base/versions/3.6.2/topics/get</a>) and the parameter is obtained by “input$respondent_con_variable”. The parameter can be either ‘Age’ or ‘Income’ depending on user’s selection. The “input” refers to the InputPanel and “respondent_con_variable” is the id of of the drop-down Input. Similarly, we can obtained the parameter binwidth in two geom_histogram by “input$age_bin_width” and “input$income_bin_width”. Then, we decide the output plot according to the choice in the drop-down with the corresponding binwidth assigned by the slider. Below are the two circumstances: 1. selecting “Age” and 20 for binwidth, 2. selecting “Income” and 3000 for binwidth. Note that users can adjust the parameter by themselves so that they will not miss important information because of improper choice of binwidth.</p>
+<p><img src="resources/intro_to_flexdashboard_shiny/Ex1Graph1.png" height="360"><img src="resources/intro_to_flexdashboard_shiny/Ex1Graph2.png" height="360"></p>
+</div>
+<div id="adding-numbers-to-bar-plot-and-sorting" class="section level4">
+<h4>
+<span class="header-section-number">54.2.4.2</span> Adding numbers to bar plot and Sorting<a class="anchor" aria-label="anchor" href="#adding-numbers-to-bar-plot-and-sorting"><i class="fas fa-link"></i></a>
+</h4>
+<p>In this example, we put a drop-down and two check boxes here. The drop-down decides the object we study and the check boxes decides whether to sort the bat plot and whether to show the actual counts or not. We create the Input as follows.</p>
+<p><img src="resources/intro_to_flexdashboard_shiny/Ex2Input1.png" height="150"><img src="resources/intro_to_flexdashboard_shiny/Ex2Input2.png" height="150"></p>
+<div class="inline-figure"><img src="resources/intro_to_flexdashboard_shiny/Ex2CodeInput.png" style="width:60.0%"></div>
+<p>The new component here is checkbox. We create one by calling <strong>checkboxInput</strong>. Similarly, we give it an id through “inputId =” and label it with descriptive text through “label =”
+Also, we set the default option by “value = FALSE” here indicating that initially it is not chosen. The sorting and showing numbers function are realized as below.</p>
+<div class="inline-figure"><img src="resources/intro_to_flexdashboard_shiny/Ex2CodeGraph.png" style="width:60.0%"></div>
+<p>We give two examples for different user’s selections: 1. choosing “Income Group”, sorting and not showing numbers, 2. choosing “Age Group”, not sorting and showing numbers</p>
+<p><img src="resources/intro_to_flexdashboard_shiny/Ex2Graph1.png" height="360"><img src="resources/intro_to_flexdashboard_shiny/Ex2Graph2.png" height="360"></p>
+</div>
+<div id="choosing-on-categorical-variable-filled-blank-and-changing-aesthetic" class="section level4">
+<h4>
+<span class="header-section-number">54.2.4.3</span> Choosing on Categorical Variable (filled blank) and changing Aesthetic<a class="anchor" aria-label="anchor" href="#choosing-on-categorical-variable-filled-blank-and-changing-aesthetic"><i class="fas fa-link"></i></a>
+</h4>
+<p>We combine drop-down, filled blank and slider in this case. User can choose one of the five types in “State of Engagement”, decide multiple desirable choices in “Age”, “Gender”, “Income”, “Region” and “Persona” and rotate the label on x-axis to avoid text from overlapping. We realize the Input as follows.</p>
+<p><img src="resources/intro_to_flexdashboard_shiny/Ex3CodeInput.png" height="480"><img src="resources/intro_to_flexdashboard_shiny/Ex3Input.jpg" height="480"></p>
+<p>For the Input, the only thing new here is the filled blank. In fact, drop-down and filled blank share the same call <strong>selectInput</strong>. The difference is the parameter “selected” in it. Recall that “selection” decides the default choice in drop-down. If we assign a single option to “selected”, like “states.of.engagement[1]” in the first selectInput here, it will automatically turn out to be a drop-down. On the other hand, if we assign an array of choices, like “unique.genders” in the second selectInput (which is the array of all choices), it will turn out to be a filled blank and the default is the array you assign.</p>
+<p>To realize the new function on aesthetic: rotating the label on x-axis, we pass the number on the slider for the angle of rotation to the parameter “angle” by calling “input$angle_of_label”, which is the id of the slider.
+Below is an example with users’ selection shown on the left and the correspondign graph shown on the right.</p>
+<p><img src="resources/intro_to_flexdashboard_shiny/Ex3InputSelected.jpg" height="400"><img src="resources/intro_to_flexdashboard_shiny/Ex3Graph.png" width="700" height="350"></p>
+</div>
+</div>
+</div>
+<div id="conclusion-3" class="section level2">
+<h2>
+<span class="header-section-number">54.3</span> Conclusion<a class="anchor" aria-label="anchor" href="#conclusion-3"><i class="fas fa-link"></i></a>
+</h2>
+<p>We introduce the layout, commonly-used components and several typical functions explaining how they works from scratch in this tutorial. Hopefully it is novice-friendly and can help you with using <strong>flexdashboard</strong> along with <strong>shiny</strong>.</p>
+</div>
+<div id="citation-1" class="section level2">
+<h2>
+<span class="header-section-number">54.4</span> Citation<a class="anchor" aria-label="anchor" href="#citation-1"><i class="fas fa-link"></i></a>
+</h2>
+<p>data.table : <a href="https://cran.r-project.org/web/packages/data.table/vignettes/datatable-intro.html" class="uri">https://cran.r-project.org/web/packages/data.table/vignettes/datatable-intro.html</a></p>
+<p>get function: <a href="https://www.rdocumentation.org/packages/base/versions/3.6.2/topics/get" class="uri">https://www.rdocumentation.org/packages/base/versions/3.6.2/topics/get</a></p>
+<p>flexdashboard: <a href="https://blog.rstudio.com/2016/05/17/flexdashboard-easy-interactive-dashboards-for-r/" class="uri">https://blog.rstudio.com/2016/05/17/flexdashboard-easy-interactive-dashboards-for-r/</a></p>
+<p>shiny: <a href="https://shiny.rstudio.com/images/shiny-cheatsheet.pdf" class="uri">https://shiny.rstudio.com/images/shiny-cheatsheet.pdf</a></p>
+
+</div>
+</div>
+
+
+
+  <div class="chapter-nav">
+<div class="prev"><a href="analyze-data-stored-in-aws-s3-using-r.html"><span class="header-section-number">53</span> Analyze data stored in AWS S3 using R</a></div>
+<div class="next"><a href="linear-association-r-studio-plugin.html"><span class="header-section-number">55</span> Linear Association R Studio Plugin</a></div>
+</div></main><div class="col-md-3 col-lg-2 d-none d-md-block sidebar sidebar-chapter">
+    <nav id="toc" data-toggle="toc" aria-label="On this page"><h2>On this page</h2>
+      <ul class="nav navbar-nav">
+<li><a class="nav-link" href="#introduction-to-flexdashboard-and-shiny"><span class="header-section-number">54</span> Introduction to flexdashboard and shiny</a></li>
+<li><a class="nav-link" href="#motivation-3"><span class="header-section-number">54.1</span> Motivation</a></li>
+<li>
+<a class="nav-link" href="#introduction-9"><span class="header-section-number">54.2</span> Introduction</a><ul class="nav navbar-nav">
+<li><a class="nav-link" href="#environment-setting"><span class="header-section-number">54.2.1</span> Environment Setting</a></li>
+<li><a class="nav-link" href="#basic-layout"><span class="header-section-number">54.2.2</span> Basic Layout</a></li>
+<li><a class="nav-link" href="#common-components"><span class="header-section-number">54.2.3</span> Common Components</a></li>
+<li><a class="nav-link" href="#typical-function"><span class="header-section-number">54.2.4</span> Typical Function</a></li>
+</ul>
+</li>
+<li><a class="nav-link" href="#conclusion-3"><span class="header-section-number">54.3</span> Conclusion</a></li>
+<li><a class="nav-link" href="#citation-1"><span class="header-section-number">54.4</span> Citation</a></li>
+</ul>
+
+      <div class="book-extra">
+        <ul class="list-unstyled">
+<li><a id="book-source" href="https://github.com/jtr13/cc21fall1/blob/main/introduction_to_flexdashboard_shiny.Rmd">View source <i class="fab fa-github"></i></a></li>
+          <li><a id="book-edit" href="https://github.com/jtr13/cc21fall1/edit/main/introduction_to_flexdashboard_shiny.Rmd">Edit this page <i class="fab fa-github"></i></a></li>
+        </ul>
+</div>
+    </nav>
+</div>
+
+</div>
+</div> <!-- .container -->
+
+<footer class="bg-primary text-light mt-5"><div class="container"><div class="row">
+
+  <div class="col-12 col-md-6 mt-3">
+    <p>"<strong>EDAV Fall 2021 Mon/Wed Community Contributions</strong>" was written by the students of the class. It was last built on 2021-11-20.</p>
+  </div>
+
+  <div class="col-12 col-md-6 mt-3">
+    <p>This book was built by the <a class="text-light" href="https://bookdown.org">bookdown</a> R package.</p>
+  </div>
+
+</div></div>
+</footer><!-- dynamically load mathjax for compatibility with self-contained --><script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script><script type="text/x-mathjax-config">const popovers = document.querySelectorAll('a.footnote-ref[data-toggle="popover"]');
+for (let popover of popovers) {
+  const div = document.createElement('div');
+  div.setAttribute('style', 'position: absolute; top: 0, left:0; width:0, height:0, overflow: hidden; visibility: hidden;');
+  div.innerHTML = popover.getAttribute('data-content');
+
+  var has_math = div.querySelector("span.math");
+  if (has_math) {
+    document.body.appendChild(div);
+    MathJax.Hub.Queue(["Typeset", MathJax.Hub, div]);
+    MathJax.Hub.Queue(function() {
+      popover.setAttribute('data-content', div.innerHTML);
+      document.body.removeChild(div);
+    })
+  }
+}
+</script>
+</body>
+</html>
