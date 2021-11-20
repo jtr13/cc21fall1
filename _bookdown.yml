@@ -17,29 +17,80 @@ rmd_files: [
   'instructions.Rmd',
   'sample_project.Rmd',
 
-  # Part: Data Visualizations
-  #'neo4j_to_r.Rmd',
-  #'icons_and_symbols_in_r.Rmd',
 
-  # Part: Cheatsheets
-  'r_vs_python_visualization.Rmd', # contains PART header
+  # Part: Data Visualizations
+  'intro_lattice_tutorial.Rmd', # contains PART header
+  'graph_animation.Rmd',
+  'interactive_plots.Rmd',
+  'make_lm_assumptions_plots.Rmd',
+  'neo4j_to_r.Rmd',
+  'stacked_bar_plot_for_relative_proportions_in_python.Rmd',
+  'interactive_plot_plotly_cheatsheet.Rmd',
+  'introduction_to_longitudinal_data_and_mlgm.Rmd',
+
+  # Part: R Package Tutorial 
+  'tidyverse_cheatsheet.Rmd', # contains PART header
+  'ggprism_and_ggsci_cheatsheets.Rmd',
+  'parallel_coordinate_plots_cheatsheet.Rmd',
+  'cheatsheet_tidyverse.Rmd', 
+  'rmd_syntax_cheatsheet.Rmd', 
   'waffle_cheatsheet.Rmd',
+  
+  
+  # Part: Topics in Data Science
+  'linear_regression_bestiary.Rmd', # contains PART header
   'data_transformation_and_exploration_cheatsheet.Rmd',
+  'r_datasci_workflow_cheatsheet.Rmd',
+  '30_questions_answers_for_r_interview.Rmd',
+  'graphql_cheatsheet.Rmd', 
   'r_vs_python_basic_data_wrangling.Rmd',
+  'r_vs_python_visualization.Rmd',
+ 
  
   # Part: Tutorials
   'multithreading_crawler_frame.Rmd', # contains PART header
   'r_regress_classify.Rmd',
   'tibble_vs_data_frame.Rmd',
   'introduction_to_time_series.Rmd',
+  'vipul_cc_edav_kickstart_r.Rmd',
+  'caret_machine_learning_tutorial.Rmd',
+  'streamlit_for_financial_analysis.Rmd',
+  'interactive_graphs_tutorial.Rmd',
+  'web_scraping_rcurl_xml_project.Rmd',
+  'twitter_api_scrape_tutorial.Rmd',
+  'intro_to_data_manipulation.Rmd',
+  'animating_in_r.Rmd',
+  'quick_guide_to_eda.Rmd',
+  'nlp_eda_python.Rmd',
+  'deep_learning_with_r.Rmd',
+  'supervised_learning_tutorial.Rmd',
+  'parallel_coordinate_plots_ggplot2.Rmd',
+  'using_ggplot_in_python.Rmd',
+  'icons_and_symbols_in_r.Rmd',
+  'r_for_data_challenges.Rmd',
+  'git_bash.Rmd',
+  'ggplot_graph.Rmd',
+  'web_scraping.Rmd',
+  '3d_visualization-.Rmd',
+  'umap_viz.Rmd',
+  'function_programming_purrr.Rmd',
+  'add_tutorial.Rmd',
+  'Analyse_data_from_aws_s3_buckets_in_R2.Rmd',
+  'introduction_to_flexdashboard_shiny.Rmd',
+
+  # Part: Demonstrations
+  'linear_association.Rmd', # contains PART header
+  'r_customized_sort.Rmd',
+  'ml_packages_in_R.rmd',
+  'parallel_coordinate_plots.Rmd',
+  'crime_around_cu.Rmd',
   
   # Part: Workshops
   'ds_product_cycles_in_enterprises.Rmd', # contains PART header
+  'mapreduce_concept_and_comparision_with_r.Rmd',
   
   # Part: Appendices
   'appendix_initial_setup.Rmd', # contains PART header
   'appendix_pull_request_tutorial.Rmd'
 
 ]
-
-
