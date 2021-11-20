@@ -1,0 +1,396 @@
+# Animating the plots in R
+
+SeokHyun Kim
+
+```{r, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+```{r, echo=FALSE, results = FALSE, message=FALSE, warning=FALSE, fig.show='hide'}
+
+library(tidyverse)
+library(gganimate)
+library(nord)
+library(gifski)
+library(viridis)
+library(colorspace)
+
+```
+
+
+## Introduction
+
+gganimate is an interesting extension of the ggplot2 package to create plots with vivid animation in R. In my community contribution project below, I'll show you how to animate each plots in ggplot2 using strong features in gganimate. You can also customize your graph how it should change with time using this extension.
+
+
+## Motivation
+
+You should check out the url below. There are amazing plots using gganimate!
+
+[Links to fancy fireworks](https://www.data-imaginist.com/2019/gganimate-has-transitioned-to-a-state-of-release/){target="_blank"}
+
+
+```{r, echo=FALSE}
+# Firework colours
+colours <- c(
+  'lawngreen',
+  'gold',
+  'white',
+  'orchid',
+  'royalblue',
+  'yellow',
+  'orange'
+)
+# Produce data for a single blast
+blast <- function(n, radius, x0, y0, time) {
+  u <- runif(n, -1, 1)
+  rho <- runif(n, 0, 2*pi)
+  x <- radius * sqrt(1 - u^2) * cos(rho) + x0
+  y <- radius * sqrt(1 - u^2) * sin(rho) + y0
+  id <- sample(.Machine$integer.max, n + 1)
+  data.frame(
+    x = c(x0, rep(x0, n), x0, x),
+    y = c(0, rep(y0, n), y0, y),
+    id = rep(id, 2),
+    time = c((time - y0) * runif(1), rep(time, n), time, time + radius + rnorm(n)),
+    colour = c('white', rep(sample(colours, 1), n), 'white', rep(sample(colours, 1), n)),
+    stringsAsFactors = FALSE
+  )
+}
+# Make 20 blasts
+n <- round(rnorm(20, 30, 4))
+radius <- round(n + sqrt(n))
+x0 <- runif(20, -30, 30)
+y0 <- runif(20, 40, 80)
+time <- runif(20, max = 100)
+fireworks <- Map(blast, n = n, radius = radius, x0 = x0, y0 = y0, time = time)
+fireworks <- dplyr::bind_rows(fireworks)
+
+ggplot(fireworks) + 
+  geom_point(aes(x, y, colour = colour, group = id), size = 0.5, shape = 20) + 
+  scale_colour_identity() + 
+  coord_fixed(xlim = c(-65, 65), expand = FALSE, clip = 'off') +
+  theme_void() + 
+  theme(plot.background = element_rect(fill = 'black', colour = NA), 
+        panel.border = element_blank()) + 
+  # Here comes the gganimate code
+  transition_components(time, exit_length = 20) + 
+  ease_aes(x = 'sine-out', y = 'sine-out') + 
+  shadow_wake(0.05, size = 3, alpha = TRUE, wrap = FALSE, 
+              falloff = 'sine-in', exclude_phase = 'enter') + 
+  exit_recolour(colour = 'black')
+```
+
+Can you imagine these cool fireworks are made using gganimate? Right after I saw that plot in the website, I was truly impressed by what gganimate package can do and decided to share this great visualization package with others!
+
+
+## Load required packages
+
+
+```{r, eval=FALSE}
+
+library(tidyverse)
+library(gganimate) # main package I'll cover
+library(nord) # color palettes
+library(gifski) # convert image frames to high quality GIF
+library(viridis) # generate color maps
+library(colorspace) # toolbox for selecting colors
+
+```
+
+
+## Dataset
+
+
+```{r, echo=FALSE, results = FALSE, message=FALSE, warning=FALSE, fig.show='hide'}
+
+win <- sample(x=1:30, size=27, replace=T)
+strength  <- sample(x=1:100, size=27, replace=T)
+speed <- sample(x=15:25, size=27, replace=T)
+year <- seq(1995, 2021)
+
+df_a <- data.frame(win, strength, speed, year)
+df_a$name <- "John"
+
+win <- sample(x=1:30, size=27, replace=T)
+strength  <- sample(x=1:100, size=27, replace=T)
+speed <- sample(x=20:25, size=27, replace=T)
+
+df_b <- data.frame(win, strength, speed, year)
+df_b$name <- "Thomas"
+
+win <- sample(x=1:30, size=27, replace=T)
+strength  <- sample(x=1:100, size=27, replace=T)
+speed <- sample(x=20:25, size=27, replace=T)
+
+df_c <- data.frame(win, strength, speed, year)
+df_c$name <- "Peter"
+
+df <- rbind(df_a, df_b, df_c)
+
+```
+
+
+```{r}
+
+# I've created dataframe named df which contains speed, strength, win information of each person through year
+head(df, 10)
+
+# Below code is used for creating each features
+# win <- sample(x=1:30, size=27, replace=T)
+# strength  <- sample(x=1:100, size=27, replace=T)
+# speed <- sample(x=15:25, size=27, replace=T)
+# year <- seq(1995, 2021)
+
+```
+
+
+## Understanding transition_states() in gganimate
+
+
+transition_states() function of gganimate package animates the plot based on a specific variable. (Transition between several distinct states of the data). By specifying variable, which will be the basis, you can obtain GIF image or video representing transition over time or by states.
+
+
+### transition_states() Usage
+
+
+```{r, eval=FALSE}
+
+ggplot(dataframe, aes(x=variable1, y=variable2, ...))+
+  geom_graph(...)+
+  transition_states(variable3,
+                    transition_length=...,
+                    state_length=...)
+
+```
+
+
+* transition_length : relative length of transition
+* state_length : relative length at each state
+
+
+### transition_states() Examples
+
+
+```{r}
+
+# Example 1 - barplot
+# Before adding transition_states()
+ggplot(df, aes(x=name, y=win, fill=name))+
+  geom_col(show.legend=FALSE)+
+  scale_fill_nord('afternoon_prarie')+
+  theme_minimal()+
+  facet_wrap(~year)
+```
+
+
+```{r}
+
+# Example 1 - barplot
+# After adding transition_states()
+ggplot(df, aes(x=name, y=win, fill=name))+
+  geom_col(show.legend=FALSE)+
+  scale_fill_nord('afternoon_prarie')+
+  theme_minimal()+
+  transition_states(year,
+                    transition_length=1.5,
+                    state_length=0.5)
+```
+
+
+```{r}
+
+# Example 2 - scatterplot
+# Before adding transition_states()
+ggplot(df, aes(x=win, y=strength, color=name))+
+  geom_point(size=5, alpha=0.5)+
+  scale_color_viridis(option='plasma', discrete=TRUE)+
+  theme_minimal()+
+  theme(legend.position='bottom')
+```
+
+
+```{r}
+
+# Example 2 - scatterplot
+# After adding transition_states()
+ggplot(df, aes(x=win, y=strength, color=name))+
+  geom_point(size=5, alpha=0.5)+
+  scale_color_viridis(option='plasma', discrete=TRUE)+
+  theme_minimal()+
+  theme(legend.position='bottom')+
+  transition_states(year,
+                    transition_length=1.2,
+                    state_length=0.2)
+```
+
+
+## Understanding transition_reveal() in gganimate
+
+
+transition_reveal() function of gganimate package can create animation so that data is continuously displayed over time when visualizing a given Time Series data into a plot.
+
+
+### transition_reveal() Usage
+
+
+```{r, eval=FALSE}
+
+ggplot(dataframe, aes(x=variable1, y=variable2, group=variable3, ...))+
+  geom_line()+
+  geom_point()+
+  ... +
+  transition_reveal(variable1)
+
+```
+
+
+### transition_reveal() Examples
+
+
+```{r}
+
+# Before adding transition_reveal()
+ggplot(df, aes(x=year, y=win, group=name, color=name))+
+  geom_line()+
+  geom_point()+
+  scale_color_discrete_sequential('Sunset')+
+  theme_minimal()+
+  theme(legend.position='bottom')
+```
+
+
+```{r}
+
+# After adding transition_reveal()
+ggplot(df, aes(x=year, y=win, group=name, color=name))+
+  geom_line()+
+  geom_point()+
+  scale_color_discrete_sequential('Sunset')+
+  theme_minimal()+
+  theme(legend.position='bottom')+
+  transition_reveal(year)
+```
+
+
+## Understanding transition_time() in gganimate
+
+
+transition_time() function of gganimate package a variant of transition_states(), a tool for visualizing a dataframe indicating the state at a specific point as an animation plot.
+
+
+### transition_time() Usage
+
+
+```{r, eval=FALSE}
+
+ggplot(dataframe, aes(variable1, variable2, ...), ...)+
+  geom_point(...)+
+  transition_time(variable3)
+
+```
+
+
+The length of time to be switched between states is set to be proportional to the interval of actual time between states. Therefore, it is one of the best way to visualize data changes over time.
+
+
+### transition_time() Examples
+
+
+```{r}
+
+# Before adding transition_time()
+ggplot(df, aes(x=strength, y=win, color=name, size=speed))+
+  geom_point(alpha=0.7)+
+  scale_color_discrete_sequential('Purple-Yellow', rev=FALSE)+
+  scale_y_log10()+
+  scale_size(range=c(3,10))+
+  theme_minimal()+
+  theme(legend.position='bottom')
+```
+
+
+```{r}
+
+# After adding transition_time()
+ggplot(df, aes(x=strength, y=win, color=name, size=speed))+
+  geom_point(alpha=0.7)+
+  scale_color_discrete_sequential('Purple-Yellow', rev=FALSE)+
+  scale_y_log10()+
+  scale_size(range=c(3,10))+
+  theme_minimal()+
+  theme(legend.position='bottom')+
+  labs(title='Year: {frame_time}')+
+  transition_time(year)
+```
+
+
+## Understanding shadow_wake() in gganimate
+
+
+shadow_wake() is a function used with transition_time() or transition_reveal() to shadow the place where changing data has passed. It can be set to gradually reduce the size, color, and transparency of the shadow.
+
+
+### shadow_wake() Usage
+
+
+```{r, eval=FALSE}
+
+ggplot(dataframe, aes(x=variable1, y=variable2, ...))+
+  geom_point()+
+  ...+
+  transition_함수(variable3)+
+  shadow_wake(wake_length=0.1, alpha=0)
+
+```
+
+
+The length of the shadow can be set at a relative ratio to the total length of the animation, not the frame.
+
+
+### shadow_wake() Examples
+
+
+```{r}
+
+# Before adding shadow_wake()
+ggplot(df)+
+  geom_point(aes(x=strength, y=win, size=speed, color=name))+
+  scale_color_viridis(option='viridis', discrete=TRUE)+
+  scale_x_log10()+
+  scale_size(range=c(1, 3))+
+  theme_minimal()+
+  theme(legend.position='bottom')
+
+```
+
+
+```{r}
+
+# After adding shadow_wake()
+ggplot(df)+
+  geom_point(aes(x=strength, y=win, size=speed, color=name))+
+  scale_color_viridis(option='viridis', discrete=TRUE)+
+  scale_x_log10()+
+  scale_size(range=c(1, 3))+
+  theme_minimal()+
+  theme(legend.position='bottom')+
+  transition_reveal(year)+
+  shadow_wake(wake_length=0.1,
+              alpha=0, 
+              size=2)
+```
+
+
+## Conclusion
+
+
+I covered making animated barplot, scatterplot, timeseries and also shadow using gganimate, but this is just the tip of the iceberg of what this awesome package can do. What I realized during the project is flexibility of the gganimate. Even with the same data, you can generate a lot of different types of plots and also get image or video file through gganimate. For the next time, if I have a chance to work on a project regarding gganimate again, instead of using standardized numeric data, I'll challenge a completely new way of visualization, as in the example above with fireworks. I encourage you to dive deep into gganimate more!
+
+
+## Citation
+
+
+* https://www.data-imaginist.com/2019/gganimate-has-transitioned-to-a-state-of-release/
+
+* https://gganimate.com/
