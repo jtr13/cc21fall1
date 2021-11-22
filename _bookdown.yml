@@ -87,7 +87,7 @@ rmd_files: [
   # Part: Demonstrations
   'linear_association.Rmd', # contains PART header
   'r_customized_sort.Rmd',
-  'crime_around_cu.Rmd
+  'crime_around_cu.Rmd',
   'umap_viz.Rmd',
   'r_for_data_challenges.Rmd',
   'streamlit_for_financial_analysis.Rmd',
