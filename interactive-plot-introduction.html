@@ -4,27 +4,27 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<title>Chapter 11 Interactive plot introduction | EDAV Fall 2021 Mon/Wed Community Contributions</title>
+<title>Chapter 30 Interactive plot introduction | EDAV Fall 2021 Mon/Wed Community Contributions</title>
 <meta name="author" content="the students of the class">
 <meta name="description" content='Yujie Zhou library(ggplot2) library(plotly) library(gapminder) library("tidyr") library("heatmaply") library(igraph) library(networkD3) Interactive plots are used widely in today’s data...'>
 <meta name="generator" content="bookdown 0.24 with bs4_book()">
-<meta property="og:title" content="Chapter 11 Interactive plot introduction | EDAV Fall 2021 Mon/Wed Community Contributions">
+<meta property="og:title" content="Chapter 30 Interactive plot introduction | EDAV Fall 2021 Mon/Wed Community Contributions">
 <meta property="og:type" content="book">
 <meta property="og:description" content='Yujie Zhou library(ggplot2) library(plotly) library(gapminder) library("tidyr") library("heatmaply") library(igraph) library(networkD3) Interactive plots are used widely in today’s data...'>
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Chapter 11 Interactive plot introduction | EDAV Fall 2021 Mon/Wed Community Contributions">
+<meta name="twitter:title" content="Chapter 30 Interactive plot introduction | EDAV Fall 2021 Mon/Wed Community Contributions">
 <meta name="twitter:description" content='Yujie Zhou library(ggplot2) library(plotly) library(gapminder) library("tidyr") library("heatmaply") library(igraph) library(networkD3) Interactive plots are used widely in today’s data...'>
 <!-- JS --><script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.6/clipboard.min.js" integrity="sha256-inc5kl9MA1hkeYUt+EC3BhlIgyp/2jDIyBLS6k3UxPI=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/fuse.js/6.4.6/fuse.js" integrity="sha512-zv6Ywkjyktsohkbp9bb45V6tEMoWhzFzXis+LrMehmJZZSys19Yxf1dopHx7WzIKxr5tK2dVcYmaCk2uqdjF4A==" crossorigin="anonymous"></script><script src="https://kit.fontawesome.com/6ecbd6c532.js" crossorigin="anonymous"></script><script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <link href="libs/bootstrap-4.6.0/bootstrap.min.css" rel="stylesheet">
 <script src="libs/bootstrap-4.6.0/bootstrap.bundle.min.js"></script><script src="libs/bs3compat-0.3.1/transition.js"></script><script src="libs/bs3compat-0.3.1/tabs.js"></script><script src="libs/bs3compat-0.3.1/bs3compat.js"></script><link href="libs/bs4_book-1.0.0/bs4_book.css" rel="stylesheet">
-<script src="libs/bs4_book-1.0.0/bs4_book.js"></script><script src="libs/accessible-code-block-0.0.1/empty-anchor.js"></script><script src="libs/htmlwidgets-1.5.4/htmlwidgets.js"></script><script src="libs/plotly-binding-4.10.0/plotly.js"></script><script src="libs/typedarray-0.1/typedarray.min.js"></script><link href="libs/crosstalk-1.2.0/css/crosstalk.min.css" rel="stylesheet">
+<script src="libs/bs4_book-1.0.0/bs4_book.js"></script><script src="libs/accessible-code-block-0.0.1/empty-anchor.js"></script><script src="libs/htmlwidgets-1.5.4/htmlwidgets.js"></script><link href="libs/str_view-0.1.0/str_view.css" rel="stylesheet">
+<script src="libs/str_view-binding-1.4.0/str_view.js"></script><script src="libs/detect-resize-0.5.3/jquery.resize.js"></script><link href="libs/jquery-ui-1.11.4/jquery-ui.min.css" rel="stylesheet">
+<script src="libs/jquery-ui-1.11.4/jquery-ui.min.js"></script><script src="libs/d3-5.16.0/d3.min.js"></script><script src="libs/vega-1.4.3/vega.min.js"></script><script src="libs/lodash-2.2.1/lodash.min.js"></script><script>var lodash = _.noConflict();</script><link href="libs/ggvis-0.4.7/css/ggvis.css" rel="stylesheet">
+<script src="libs/ggvis-0.4.7/js/ggvis.js"></script><script src="libs/plotly-binding-4.10.0/plotly.js"></script><script src="libs/typedarray-0.1/typedarray.min.js"></script><link href="libs/crosstalk-1.2.0/css/crosstalk.min.css" rel="stylesheet">
 <script src="libs/crosstalk-1.2.0/js/crosstalk.min.js"></script><link href="libs/plotly-htmlwidgets-css-2.5.1/plotly-htmlwidgets.css" rel="stylesheet">
-<script src="libs/plotly-main-2.5.1/plotly-latest.min.js"></script><link href="libs/dygraphs-1.1.1/dygraph.css" rel="stylesheet">
-<script src="libs/dygraphs-1.1.1/dygraph-combined.js"></script><script src="libs/dygraphs-1.1.1/shapes.js"></script><script src="libs/moment-2.8.4/moment.js"></script><script src="libs/moment-timezone-0.2.5/moment-timezone-with-data.js"></script><script src="libs/moment-fquarter-1.0.0/moment-fquarter.min.js"></script><script src="libs/dygraphs-binding-1.1.1.6/dygraphs.js"></script><script src="libs/d3-5.16.0/d3.min.js"></script><script src="libs/forceNetwork-binding-0.4/forceNetwork.js"></script><link href="libs/parallel-coordinates-2.1.8/parcoords.css" rel="stylesheet">
-<script src="libs/parcoords-binding-1.0.0/parcoords.js"></script><script src="libs/detect-resize-0.5.3/jquery.resize.js"></script><link href="libs/jquery-ui-1.11.4/jquery-ui.min.css" rel="stylesheet">
-<script src="libs/jquery-ui-1.11.4/jquery-ui.min.js"></script><script src="libs/vega-1.4.3/vega.min.js"></script><script src="libs/lodash-2.2.1/lodash.min.js"></script><script>var lodash = _.noConflict();</script><link href="libs/ggvis-0.4.7/css/ggvis.css" rel="stylesheet">
-<script src="libs/ggvis-0.4.7/js/ggvis.js"></script><script src="libs/dendroNetwork-binding-0.4/dendroNetwork.js"></script><link href="libs/str_view-0.1.0/str_view.css" rel="stylesheet">
-<script src="libs/str_view-binding-1.4.0/str_view.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/autocomplete.js/0.38.0/autocomplete.jquery.min.js" integrity="sha512-GU9ayf+66Xx2TmpxqJpliWbT5PiGYxpaG8rfnBEk1LL8l1KGkRShhngwdXK1UgqhAzWpZHSiYPc09/NwDQIGyg==" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/mark.min.js" integrity="sha512-5CYOlHXGh6QpOFA/TeTylKLWfB3ftPsde7AnmhuitiTX4K5SqCLBeKro6sPS8ilsz1Q4NRx3v8Ko2IBiszzdww==" crossorigin="anonymous"></script><!-- CSS -->
+<script src="libs/plotly-main-2.5.1/plotly-latest.min.js"></script><script src="libs/forceNetwork-binding-0.4/forceNetwork.js"></script><script src="libs/dendroNetwork-binding-0.4/dendroNetwork.js"></script><link href="libs/parallel-coordinates-2.1.8/parcoords.css" rel="stylesheet">
+<script src="libs/parcoords-binding-1.0.0/parcoords.js"></script><link href="libs/dygraphs-1.1.1/dygraph.css" rel="stylesheet">
+<script src="libs/dygraphs-1.1.1/dygraph-combined.js"></script><script src="libs/dygraphs-1.1.1/shapes.js"></script><script src="libs/moment-2.8.4/moment.js"></script><script src="libs/moment-timezone-0.2.5/moment-timezone-with-data.js"></script><script src="libs/moment-fquarter-1.0.0/moment-fquarter.min.js"></script><script src="libs/dygraphs-binding-1.1.1.6/dygraphs.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/autocomplete.js/0.38.0/autocomplete.jquery.min.js" integrity="sha512-GU9ayf+66Xx2TmpxqJpliWbT5PiGYxpaG8rfnBEk1LL8l1KGkRShhngwdXK1UgqhAzWpZHSiYPc09/NwDQIGyg==" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/mark.min.js" integrity="sha512-5CYOlHXGh6QpOFA/TeTylKLWfB3ftPsde7AnmhuitiTX4K5SqCLBeKro6sPS8ilsz1Q4NRx3v8Ko2IBiszzdww==" crossorigin="anonymous"></script><!-- CSS -->
 </head>
 <body data-spy="scroll" data-target="#toc">
 
@@ -50,66 +50,68 @@
 <li><a class="" href="community-contribution.html"><span class="header-section-number">2</span> Community Contribution</a></li>
 <li><a class="" href="github-submission-instructions.html"><span class="header-section-number">3</span> GitHub submission instructions</a></li>
 <li><a class="" href="sample-project.html"><span class="header-section-number">4</span> Sample project</a></li>
-<li class="book-part">Data Visualizations</li>
-<li><a class="" href="introduction-to-the-lattice-package.html"><span class="header-section-number">5</span> Introduction to the lattice package</a></li>
-<li><a class="" href="graph-animation-with-gganimate-and-after-effects.html"><span class="header-section-number">6</span> Graph animation with gganimate and After Effects</a></li>
-<li><a class="" href="interactive-plots.html"><span class="header-section-number">7</span> Interactive Plots</a></li>
-<li><a class="" href="create-regression-assumption-plots-in-word.html"><span class="header-section-number">8</span> Create regression assumption plots in Word</a></li>
-<li><a class="" href="from-neo4j-to-rstudio.html"><span class="header-section-number">9</span> From Neo4j to RStudio</a></li>
-<li><a class="" href="stacked-bar-plot-for-relative-proportions-in-python.html"><span class="header-section-number">10</span> Stacked Bar Plot For Relative Proportions In Python</a></li>
-<li><a class="active" href="interactive-plot-introduction.html"><span class="header-section-number">11</span> Interactive plot introduction</a></li>
-<li><a class="" href="introduction-to-longitudinal-data-and-mlgm-package.html"><span class="header-section-number">12</span> Introduction to Longitudinal Data and MLGM Package</a></li>
-<li class="book-part">R Package Tutorial</li>
-<li><a class="" href="tidyverse_cheatsheet.html"><span class="header-section-number">13</span> Tidyverse_cheatsheet</a></li>
-<li><a class="" href="use-of-ggprism-and-ggsci-packages.html"><span class="header-section-number">14</span> Use of ggprism and ggsci packages</a></li>
-<li><a class="" href="parallel-coordinates-plot-cheatsheet.html"><span class="header-section-number">15</span> Parallel coordinates plot cheatsheet</a></li>
-<li><a class="" href="cheatsheet-tidyverse.html"><span class="header-section-number">16</span> Cheatsheet Tidyverse</a></li>
-<li><a class="" href="common-r-markdown-syntax-cheatsheet.html"><span class="header-section-number">17</span> Common R markdown syntax cheatsheet</a></li>
-<li><a class="" href="rpackage-waffle-cheatsheet.html"><span class="header-section-number">18</span> Rpackage waffle cheatsheet</a></li>
-<li class="book-part">Topics in Data Science</li>
-<li><a class="" href="a-linear-regression-bestiary.html"><span class="header-section-number">19</span> A linear regression Bestiary</a></li>
-<li><a class="" href="r-cheatsheet-on-data-transforamtion-and-exploration.html"><span class="header-section-number">20</span> R cheatsheet on data transforamtion and exploration</a></li>
-<li><a class="" href="r-data-science-workflow-cheatsheet.html"><span class="header-section-number">21</span> R Data Science Workflow CheatSheet</a></li>
-<li><a class="" href="questions-answers-for-r-technical-interview.html"><span class="header-section-number">22</span> 30 questions &amp; answers for r technical interview</a></li>
-<li><a class="" href="graphql-cheat-sheet.html"><span class="header-section-number">23</span> GraphQL Cheat Sheet</a></li>
-<li><a class="" href="r-vs-python-basic-data-wrangling.html"><span class="header-section-number">24</span> R vs Python Basic Data Wrangling</a></li>
-<li><a class="" href="r-vs.-python-visualization-cheatsheet.html"><span class="header-section-number">25</span> R vs. Python Visualization Cheatsheet</a></li>
+<li class="book-part">Guide to EDAV</li>
+<li><a class="" href="vipul-edav-community-contribution-kickstart-r.html"><span class="header-section-number">5</span> Vipul EDAV Community Contribution Kickstart R</a></li>
+<li><a class="" href="quick-guide-to-eda.html"><span class="header-section-number">6</span> Quick guide to eda</a></li>
 <li class="book-part">Tutorials</li>
-<li><a class="" href="multithreading-crawler-frame.html"><span class="header-section-number">26</span> Multithreading Crawler Frame</a></li>
-<li><a class="" href="regression-and-classification-in-r.html"><span class="header-section-number">27</span> Regression and Classification in R</a></li>
-<li><a class="" href="tibble-vs.-dataframe.html"><span class="header-section-number">28</span> Tibble vs. DataFrame</a></li>
-<li><a class="" href="introduction-to-time-series.html"><span class="header-section-number">29</span> Introduction to Time Series</a></li>
-<li><a class="" href="vipul-edav-community-contribution-kickstart-r.html"><span class="header-section-number">30</span> Vipul EDAV Community Contribution Kickstart R</a></li>
-<li><a class="" href="caret---a-machine-learning-package-turotial.html"><span class="header-section-number">31</span> caret - a machine learning package turotial</a></li>
-<li><a class="" href="streamlit-for-financial-analysis.html"><span class="header-section-number">32</span> Streamlit for Financial Analysis</a></li>
-<li><a class="" href="interactive-graphs-tutorial.html"><span class="header-section-number">33</span> Interactive graphs tutorial</a></li>
-<li><a class="" href="guideline-on-using-package-rcurl-and-xml-for-web-scraping.html"><span class="header-section-number">34</span> Guideline on Using Package Rcurl and XML for Web Scraping</a></li>
-<li><a class="" href="twitter-r-package-scraping-via-api-tutorial.html"><span class="header-section-number">35</span> TwitteR R Package Scraping via API Tutorial</a></li>
-<li><a class="" href="introduction-to-data-manipulation.html"><span class="header-section-number">36</span> Introduction to Data Manipulation</a></li>
-<li><a class="" href="animating-the-plots-in-r.html"><span class="header-section-number">37</span> Animating the plots in R</a></li>
-<li><a class="" href="quick-guide-to-eda.html"><span class="header-section-number">38</span> Quick guide to eda</a></li>
-<li><a class="" href="natural-langauge-processing-common-eda-practices-in-python.html"><span class="header-section-number">39</span> Natural Langauge Processing Common EDA Practices in Python</a></li>
-<li><a class="" href="beginners-walk-through-of-deep-learning-in-r.html"><span class="header-section-number">40</span> Beginner’s Walk-through of Deep Learning in R</a></li>
-<li><a class="" href="supervised-learning-tutorial.html"><span class="header-section-number">41</span> Supervised Learning Tutorial</a></li>
-<li><a class="" href="parallel-coordinate-plots-in-ggplot2.html"><span class="header-section-number">42</span> Parallel Coordinate Plots in ggplot2</a></li>
-<li><a class="" href="using-ggplot-in-python.html"><span class="header-section-number">43</span> Using ggplot in python</a></li>
-<li><a class="" href="icons-and-symbols-in-r.html"><span class="header-section-number">44</span> Icons and symbols in R</a></li>
-<li><a class="" href="exploratory-data-analysis-and-preprocessing-with-r-for-data-challenges.html"><span class="header-section-number">45</span> Exploratory data analysis and preprocessing with R for data challenges</a></li>
-<li><a class="" href="introduction-to-git-bash.html"><span class="header-section-number">46</span> Introduction to Git Bash</a></li>
-<li><a class="" href="tutorial-for-six-basic-graphs-by-using-ggplot.html"><span class="header-section-number">47</span> Tutorial for six basic graphs by using ggplot</a></li>
-<li><a class="" href="web-scrapping-using-beautifulsoup-and-its-equivalent-in-rvest.html"><span class="header-section-number">48</span> Web Scrapping using BeautifulSoup and its Equivalent in rvest</a></li>
-<li><a class="" href="d-visualization-shinyaframe-introduction-and-tutorial.html"><span class="header-section-number">49</span> 3D visualization: shinyaframe introduction and tutorial</a></li>
-<li><a class="" href="efficient-dimension-reduction-with-umap.html"><span class="header-section-number">50</span> Efficient dimension reduction with UMAP</a></li>
-<li><a class="" href="functional-programming-with-purrr.html"><span class="header-section-number">51</span> Functional Programming with Purrr</a></li>
-<li><a class="" href="radial-bar-chart-and-other-interesting-graphs.html"><span class="header-section-number">52</span> Radial bar chart and other interesting graphs</a></li>
-<li><a class="" href="analyze-data-stored-in-aws-s3-using-r.html"><span class="header-section-number">53</span> Analyze data stored in AWS S3 using R</a></li>
-<li><a class="" href="introduction-to-flexdashboard-and-shiny.html"><span class="header-section-number">54</span> Introduction to flexdashboard and shiny</a></li>
+<li><a class="" href="tutorial-for-six-basic-graphs-by-using-ggplot.html"><span class="header-section-number">7</span> Tutorial for six basic graphs by using ggplot</a></li>
+<li><a class="" href="tibble-vs.-dataframe.html"><span class="header-section-number">8</span> Tibble vs. DataFrame</a></li>
+<li><a class="" href="introduction-to-data-manipulation.html"><span class="header-section-number">9</span> Introduction to Data Manipulation</a></li>
+<li><a class="" href="introduction-to-time-series.html"><span class="header-section-number">10</span> Introduction to Time Series</a></li>
+<li><a class="" href="interactive-graphs-tutorial.html"><span class="header-section-number">11</span> Interactive graphs tutorial</a></li>
+<li><a class="" href="introduction-to-git-bash.html"><span class="header-section-number">12</span> Introduction to Git Bash</a></li>
+<li><a class="" href="web-scrapping-using-beautifulsoup-and-its-equivalent-in-rvest.html"><span class="header-section-number">13</span> Web Scrapping using BeautifulSoup and its Equivalent in rvest</a></li>
+<li><a class="" href="analyze-data-stored-in-aws-s3-using-r.html"><span class="header-section-number">14</span> Analyze data stored in AWS S3 using R</a></li>
+<li class="book-part">R Package Tutorial</li>
+<li><a class="" href="tidyverse_cheatsheet.html"><span class="header-section-number">15</span> Tidyverse_cheatsheet</a></li>
+<li><a class="" href="use-of-ggprism-and-ggsci-packages.html"><span class="header-section-number">16</span> Use of ggprism and ggsci packages</a></li>
+<li><a class="" href="parallel-coordinates-plot-cheatsheet.html"><span class="header-section-number">17</span> Parallel coordinates plot cheatsheet</a></li>
+<li><a class="" href="cheatsheet-tidyverse.html"><span class="header-section-number">18</span> Cheatsheet Tidyverse</a></li>
+<li><a class="" href="common-r-markdown-syntax-cheatsheet.html"><span class="header-section-number">19</span> Common R markdown syntax cheatsheet</a></li>
+<li><a class="" href="rpackage-waffle-cheatsheet.html"><span class="header-section-number">20</span> Rpackage waffle cheatsheet</a></li>
+<li><a class="" href="introduction-to-flexdashboard-and-shiny.html"><span class="header-section-number">21</span> Introduction to flexdashboard and shiny</a></li>
+<li><a class="" href="functional-programming-with-purrr.html"><span class="header-section-number">22</span> Functional Programming with Purrr</a></li>
+<li class="book-part">Data Visualizations</li>
+<li><a class="" href="introduction-to-the-lattice-package.html"><span class="header-section-number">23</span> Introduction to the lattice package</a></li>
+<li><a class="" href="graph-animation-with-gganimate-and-after-effects.html"><span class="header-section-number">24</span> Graph animation with gganimate and After Effects</a></li>
+<li><a class="" href="animating-the-plots-in-r.html"><span class="header-section-number">25</span> Animating the plots in R</a></li>
+<li><a class="" href="interactive-plots.html"><span class="header-section-number">26</span> Interactive Plots</a></li>
+<li><a class="" href="create-regression-assumption-plots-in-word.html"><span class="header-section-number">27</span> Create regression assumption plots in Word</a></li>
+<li><a class="" href="from-neo4j-to-rstudio.html"><span class="header-section-number">28</span> From Neo4j to RStudio</a></li>
+<li><a class="" href="stacked-bar-plot-for-relative-proportions-in-python.html"><span class="header-section-number">29</span> Stacked Bar Plot For Relative Proportions In Python</a></li>
+<li><a class="active" href="interactive-plot-introduction.html"><span class="header-section-number">30</span> Interactive plot introduction</a></li>
+<li><a class="" href="introduction-to-longitudinal-data-and-mlgm-package.html"><span class="header-section-number">31</span> Introduction to Longitudinal Data and MLGM Package</a></li>
+<li><a class="" href="parallel-coordinate-plots-cheatsheet.html"><span class="header-section-number">32</span> Parallel coordinate plots cheatsheet</a></li>
+<li><a class="" href="parallel-coordinate-plots-in-ggplot2.html"><span class="header-section-number">33</span> Parallel Coordinate Plots in ggplot2</a></li>
+<li><a class="" href="radial-bar-chart-and-other-interesting-graphs.html"><span class="header-section-number">34</span> Radial bar chart and other interesting graphs</a></li>
+<li><a class="" href="d-visualization-shinyaframe-introduction-and-tutorial.html"><span class="header-section-number">35</span> 3D visualization: shinyaframe introduction and tutorial</a></li>
+<li><a class="" href="using-ggplot-in-python.html"><span class="header-section-number">36</span> Using ggplot in python</a></li>
+<li><a class="" href="icons-and-symbols-in-r.html"><span class="header-section-number">37</span> Icons and symbols in R</a></li>
+<li class="book-part">Topics in Data Science</li>
+<li><a class="" href="r-data-science-workflow-cheatsheet.html"><span class="header-section-number">38</span> R Data Science Workflow CheatSheet</a></li>
+<li><a class="" href="r-cheatsheet-on-data-transforamtion-and-exploration.html"><span class="header-section-number">39</span> R cheatsheet on data transforamtion and exploration</a></li>
+<li><a class="" href="questions-answers-for-r-technical-interview.html"><span class="header-section-number">40</span> 30 questions &amp; answers for r technical interview</a></li>
+<li><a class="" href="graphql-cheat-sheet.html"><span class="header-section-number">41</span> GraphQL Cheat Sheet</a></li>
+<li><a class="" href="r-vs-python-basic-data-wrangling.html"><span class="header-section-number">42</span> R vs Python Basic Data Wrangling</a></li>
+<li><a class="" href="r-vs.-python-visualization-cheatsheet.html"><span class="header-section-number">43</span> R vs. Python Visualization Cheatsheet</a></li>
+<li><a class="" href="guideline-on-using-package-rcurl-and-xml-for-web-scraping.html"><span class="header-section-number">44</span> Guideline on Using Package Rcurl and XML for Web Scraping</a></li>
+<li><a class="" href="multithreading-crawler-frame.html"><span class="header-section-number">45</span> Multithreading Crawler Frame</a></li>
+<li><a class="" href="twitter-r-package-scraping-via-api-tutorial.html"><span class="header-section-number">46</span> TwitteR R Package Scraping via API Tutorial</a></li>
+<li><a class="" href="natural-langauge-processing-common-eda-practices-in-python.html"><span class="header-section-number">47</span> Natural Langauge Processing Common EDA Practices in Python</a></li>
+<li class="book-part">Machine Learning and More</li>
+<li><a class="" href="low-key-ml-packages-in-r.html"><span class="header-section-number">48</span> Low-key ML packages in R</a></li>
+<li><a class="" href="a-linear-regression-bestiary.html"><span class="header-section-number">49</span> A linear regression Bestiary</a></li>
+<li><a class="" href="regression-and-classification-in-r.html"><span class="header-section-number">50</span> Regression and Classification in R</a></li>
+<li><a class="" href="caret---a-machine-learning-package-turotial.html"><span class="header-section-number">51</span> caret - a machine learning package turotial</a></li>
+<li><a class="" href="supervised-learning-tutorial.html"><span class="header-section-number">52</span> Supervised Learning Tutorial</a></li>
+<li><a class="" href="beginners-walk-through-of-deep-learning-in-r.html"><span class="header-section-number">53</span> Beginner’s Walk-through of Deep Learning in R</a></li>
 <li class="book-part">Demonstrations</li>
-<li><a class="" href="linear-association-r-studio-plugin.html"><span class="header-section-number">55</span> Linear Association R Studio Plugin</a></li>
-<li><a class="" href="customized-sorting-in-r.html"><span class="header-section-number">56</span> Customized Sorting in R</a></li>
-<li><a class="" href="low-key-ml-packages-in-r.html"><span class="header-section-number">57</span> Low-key ML packages in R</a></li>
-<li><a class="" href="parallel-coordinate-plots-cheatsheet.html"><span class="header-section-number">58</span> Parallel coordinate plots cheatsheet</a></li>
-<li><a class="" href="crime-analysis-around-columbia.html"><span class="header-section-number">59</span> Crime Analysis around Columbia</a></li>
+<li><a class="" href="linear-association-r-studio-plugin.html"><span class="header-section-number">54</span> Linear Association R Studio Plugin</a></li>
+<li><a class="" href="customized-sorting-in-r.html"><span class="header-section-number">55</span> Customized Sorting in R</a></li>
+<li><a class="" href="crime-analysis-around-columbia.html"><span class="header-section-number">56</span> Crime Analysis around Columbia</a></li>
+<li><a class="" href="efficient-dimension-reduction-with-umap.html"><span class="header-section-number">57</span> Efficient dimension reduction with UMAP</a></li>
+<li><a class="" href="exploratory-data-analysis-and-preprocessing-with-r-for-data-challenges.html"><span class="header-section-number">58</span> Exploratory data analysis and preprocessing with R for data challenges</a></li>
+<li><a class="" href="streamlit-for-financial-analysis.html"><span class="header-section-number">59</span> Streamlit for Financial Analysis</a></li>
 <li class="book-part">Workshops</li>
 <li><a class="" href="data-science-product-cycles-in-enterprises.html"><span class="header-section-number">60</span> Data Science Product Cycles in Enterprises</a></li>
 <li><a class="" href="mapreduce-concept-comparision-with-r.html"><span class="header-section-number">61</span> MapReduce Concept &amp; Comparision With R</a></li>
@@ -125,10 +127,10 @@
 </div>
   </header><main class="col-sm-12 col-md-9 col-lg-7" id="content"><div id="interactive-plot-introduction" class="section level1">
 <h1>
-<span class="header-section-number">11</span> Interactive plot introduction<a class="anchor" aria-label="anchor" href="#interactive-plot-introduction"><i class="fas fa-link"></i></a>
+<span class="header-section-number">30</span> Interactive plot introduction<a class="anchor" aria-label="anchor" href="#interactive-plot-introduction"><i class="fas fa-link"></i></a>
 </h1>
 <p>Yujie Zhou</p>
-<div class="sourceCode" id="cb52"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb327"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://ggplot2.tidyverse.org">ggplot2</a></span><span class="op">)</span>
 <span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://plotly-r.com">plotly</a></span><span class="op">)</span>
 <span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://github.com/jennybc/gapminder">gapminder</a></span><span class="op">)</span>
@@ -139,11 +141,11 @@
 <p>Interactive plots are used widely in today’s data analysis.This tutorial will introduce four commonly used interactive plots: interactive bubble plot, interactive area plot, interactive heatmap, and interactive network. Unlike static plot, interactive plot can enable users to zoom in and out and give user a better use experience and simplify analysis process.</p>
 <div id="interactive-bubble-plot" class="section level2">
 <h2>
-<span class="header-section-number">11.1</span> Interactive Bubble Plot:<a class="anchor" aria-label="anchor" href="#interactive-bubble-plot"><i class="fas fa-link"></i></a>
+<span class="header-section-number">30.1</span> Interactive Bubble Plot:<a class="anchor" aria-label="anchor" href="#interactive-bubble-plot"><i class="fas fa-link"></i></a>
 </h2>
 <p>A bubble plot is where a third dimension is added on a scatterplot. The size of each bubble represent the additional numeric variable.</p>
 <p>We can draw the plot directly using “plotly” just right after we draw a bubble plot using “ggplot”. The following is an example to see how the number and lifespan of people in different nations are associated.</p>
-<div class="sourceCode" id="cb53"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb328"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="fu">knitr</span><span class="fu">::</span><span class="va"><a href="https://rdrr.io/pkg/knitr/man/opts_chunk.html">opts_chunk</a></span><span class="op">$</span><span class="fu">set</span><span class="op">(</span>warning <span class="op">=</span> <span class="cn">F</span>, message <span class="op">=</span> <span class="cn">F</span><span class="op">)</span>
 
 <span class="fu"><a href="https://rdrr.io/r/utils/head.html">head</a></span><span class="op">(</span><span class="va">gapminder</span><span class="op">)</span></code></pre></div>
@@ -156,7 +158,7 @@
 ## 4 Afghanistan Asia       1967    34.0 11537966      836.
 ## 5 Afghanistan Asia       1972    36.1 13079460      740.
 ## 6 Afghanistan Asia       1977    38.4 14880372      786.</code></pre>
-<div class="sourceCode" id="cb55"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb330"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="va">p</span> <span class="op">&lt;-</span> <span class="va">gapminder</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span>
   <span class="fu"><a href="https://dplyr.tidyverse.org/reference/filter.html">filter</a></span><span class="op">(</span><span class="va">year</span><span class="op">==</span><span class="fl">1967</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span>
   <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span><span class="op">(</span> <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span>x<span class="op">=</span><span class="va">gdpPercap</span>, y<span class="op">=</span><span class="va">lifeExp</span>, size<span class="op">=</span><span class="va">pop</span>,color<span class="op">=</span><span class="va">continent</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span>
@@ -170,13 +172,13 @@
 </div>
 <div id="interactive-area-plot" class="section level2">
 <h2>
-<span class="header-section-number">11.2</span> Interactive Area Plot:<a class="anchor" aria-label="anchor" href="#interactive-area-plot"><i class="fas fa-link"></i></a>
+<span class="header-section-number">30.2</span> Interactive Area Plot:<a class="anchor" aria-label="anchor" href="#interactive-area-plot"><i class="fas fa-link"></i></a>
 </h2>
 <p>Area plot do not differ a lot from regular line graphs, but with two exceptions:
 1. The area between the x-axis and each individual line is filled with some color
 2. The x-axis must have zero value</p>
 <p>Area plots use different colors to give users a good sense on how quantities have changed over time a period of time. However, users should carefully use area plots, because the overlapping areas of plots will hide some information and the area under each line is hard to percisely calculated by user just by looking at the graph.</p>
-<div class="sourceCode" id="cb56"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb331"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="fu">knitr</span><span class="fu">::</span><span class="va"><a href="https://rdrr.io/pkg/knitr/man/opts_chunk.html">opts_chunk</a></span><span class="op">$</span><span class="fu">set</span><span class="op">(</span>warning <span class="op">=</span> <span class="cn">F</span>, message <span class="op">=</span> <span class="cn">F</span><span class="op">)</span>
 <span class="va">df</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/utils/read.table.html">read.csv</a></span><span class="op">(</span><span class="st">"resources/interactive_plot_plotly_cheatsheet/StudentsPerformancePart.csv"</span><span class="op">)</span>
 <span class="fu"><a href="https://rdrr.io/r/utils/head.html">head</a></span><span class="op">(</span><span class="va">df</span><span class="op">)</span></code></pre></div>
@@ -194,7 +196,7 @@
 ## 4                    none         47            57            44
 ## 5                    none         76            78            75
 ## 6                    none         71            83            78</code></pre>
-<div class="sourceCode" id="cb58"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb333"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="va">df</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span>
   <span class="fu"><a href="https://dplyr.tidyverse.org/reference/filter.html">filter</a></span><span class="op">(</span><span class="va">gender</span> <span class="op">==</span> <span class="st">"female"</span>,<span class="va">race.ethnicity</span><span class="op">==</span><span class="st">"group B"</span><span class="op">)</span><span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span>
   <span class="fu"><a href="https://tidyr.tidyverse.org/reference/pivot_longer.html">pivot_longer</a></span><span class="op">(</span>
@@ -214,17 +216,17 @@
 
 <span class="va">p2</span></code></pre></div>
 <div class="inline-figure"><img src="interactive_plot_plotly_cheatsheet_files/figure-html/unnamed-chunk-3-1.png" width="864" style="display: block; margin: auto;"></div>
-<div class="sourceCode" id="cb59"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb334"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="fu"><a href="https://rdrr.io/pkg/plotly/man/ggplotly.html">ggplotly</a></span><span class="op">(</span><span class="va">p2</span><span class="op">)</span></code></pre></div>
 <div id="htmlwidget-cfc3d5a98181185ee1bf" style="width:864px;height:480px;" class="plotly html-widget"></div>
 <script type="application/json" data-for="htmlwidget-cfc3d5a98181185ee1bf">{"x":{"data":[{"x":[1,2,3,4,5,6,6,5,4,3,2,1,1],"y":[132.25,156.5,148.333333333333,188,159,98,142,232.75,278,211.666666666667,230,188,132.25],"text":["parental.level.of.education: 1<br />score: 55.75000<br />Subject: math.score","parental.level.of.education: 2<br />score: 73.50000<br />Subject: math.score","parental.level.of.education: 3<br />score: 63.33333<br />Subject: math.score","parental.level.of.education: 4<br />score: 90.00000<br />Subject: math.score","parental.level.of.education: 5<br />score: 73.75000<br />Subject: math.score","parental.level.of.education: 6<br />score: 44.00000<br />Subject: math.score","parental.level.of.education: 6<br />score: 44.00000<br />Subject: math.score","parental.level.of.education: 5<br />score: 73.75000<br />Subject: math.score","parental.level.of.education: 4<br />score: 90.00000<br />Subject: math.score","parental.level.of.education: 3<br />score: 63.33333<br />Subject: math.score","parental.level.of.education: 2<br />score: 73.50000<br />Subject: math.score","parental.level.of.education: 1<br />score: 55.75000<br />Subject: math.score","parental.level.of.education: 1<br />score: 55.75000<br />Subject: math.score"],"type":"scatter","mode":"lines","line":{"width":1.88976377952756,"color":"transparent","dash":"solid"},"fill":"toself","fillcolor":"rgba(246,215,167,0.7)","hoveron":"points","name":"math.score","legendgroup":"math.score","showlegend":true,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null},{"x":[1,2,3,4,5,6,6,5,4,3,2,1,1],"y":[65.75,78,69.6666666666667,93,78.75,50,98,159,188,148.333333333333,156.5,132.25,65.75],"text":["parental.level.of.education: 1<br />score: 66.50000<br />Subject: reading.score","parental.level.of.education: 2<br />score: 78.50000<br />Subject: reading.score","parental.level.of.education: 3<br />score: 78.66667<br />Subject: reading.score","parental.level.of.education: 4<br />score: 95.00000<br />Subject: reading.score","parental.level.of.education: 5<br />score: 80.25000<br />Subject: reading.score","parental.level.of.education: 6<br />score: 48.00000<br />Subject: reading.score","parental.level.of.education: 6<br />score: 48.00000<br />Subject: reading.score","parental.level.of.education: 5<br />score: 80.25000<br />Subject: reading.score","parental.level.of.education: 4<br />score: 95.00000<br />Subject: reading.score","parental.level.of.education: 3<br />score: 78.66667<br />Subject: reading.score","parental.level.of.education: 2<br />score: 78.50000<br />Subject: reading.score","parental.level.of.education: 1<br />score: 66.50000<br />Subject: reading.score","parental.level.of.education: 1<br />score: 66.50000<br />Subject: reading.score"],"type":"scatter","mode":"lines","line":{"width":1.88976377952756,"color":"transparent","dash":"solid"},"fill":"toself","fillcolor":"rgba(200,227,212,0.7)","hoveron":"points","name":"reading.score","legendgroup":"reading.score","showlegend":true,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null},{"x":[1,2,3,4,5,6,6,6,5,4,3,2,1,1],"y":[0,0,0,0,0,0,0,50,78.75,93,69.6666666666667,78,65.75,0],"text":["parental.level.of.education: 1<br />score: 65.75000<br />Subject: writing.score","parental.level.of.education: 2<br />score: 78.00000<br />Subject: writing.score","parental.level.of.education: 3<br />score: 69.66667<br />Subject: writing.score","parental.level.of.education: 4<br />score: 93.00000<br />Subject: writing.score","parental.level.of.education: 5<br />score: 78.75000<br />Subject: writing.score","parental.level.of.education: 6<br />score: 50.00000<br />Subject: writing.score","parental.level.of.education: 6<br />score: 50.00000<br />Subject: writing.score","parental.level.of.education: 6<br />score: 50.00000<br />Subject: writing.score","parental.level.of.education: 5<br />score: 78.75000<br />Subject: writing.score","parental.level.of.education: 4<br />score: 93.00000<br />Subject: writing.score","parental.level.of.education: 3<br />score: 69.66667<br />Subject: writing.score","parental.level.of.education: 2<br />score: 78.00000<br />Subject: writing.score","parental.level.of.education: 1<br />score: 65.75000<br />Subject: writing.score","parental.level.of.education: 1<br />score: 65.75000<br />Subject: writing.score"],"type":"scatter","mode":"lines","line":{"width":1.88976377952756,"color":"transparent","dash":"solid"},"fill":"toself","fillcolor":"rgba(135,170,170,0.7)","hoveron":"points","name":"writing.score","legendgroup":"writing.score","showlegend":true,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null}],"layout":{"margin":{"t":29.1506849315068,"r":7.30593607305936,"b":43.1050228310502,"l":43.1050228310502},"font":{"color":"rgba(0,0,0,1)","family":"","size":14.6118721461187},"xaxis":{"domain":[0,1],"automargin":true,"type":"linear","autorange":false,"range":[0.75,6.25],"tickmode":"array","ticktext":["associate's degree","bachelor's degree","high school","master's degree","some college","some high school"],"tickvals":[1,2,3,4,5,6],"categoryorder":"array","categoryarray":["associate's degree","bachelor's degree","high school","master's degree","some college","some high school"],"nticks":null,"ticks":"","tickcolor":null,"ticklen":3.65296803652968,"tickwidth":0,"showticklabels":true,"tickfont":{"color":"rgba(77,77,77,1)","family":"","size":11.689497716895},"tickangle":-0,"showline":false,"linecolor":null,"linewidth":0,"showgrid":true,"gridcolor":"rgba(235,235,235,1)","gridwidth":0.66417600664176,"zeroline":false,"anchor":"y","title":{"text":"parental.level.of.education","font":{"color":"rgba(0,0,0,1)","family":"","size":14.6118721461187}},"hoverformat":".2f"},"yaxis":{"domain":[0,1],"automargin":true,"type":"linear","autorange":false,"range":[-13.9,291.9],"tickmode":"array","ticktext":["0","100","200"],"tickvals":[0,100,200],"categoryorder":"array","categoryarray":["0","100","200"],"nticks":null,"ticks":"","tickcolor":null,"ticklen":3.65296803652968,"tickwidth":0,"showticklabels":true,"tickfont":{"color":"rgba(77,77,77,1)","family":"","size":11.689497716895},"tickangle":-0,"showline":false,"linecolor":null,"linewidth":0,"showgrid":true,"gridcolor":"rgba(235,235,235,1)","gridwidth":0.66417600664176,"zeroline":false,"anchor":"x","title":{"text":"score","font":{"color":"rgba(0,0,0,1)","family":"","size":14.6118721461187}},"hoverformat":".2f"},"shapes":[{"type":"rect","fillcolor":null,"line":{"color":null,"width":0,"linetype":[]},"yref":"paper","xref":"paper","x0":0,"x1":1,"y0":0,"y1":1}],"showlegend":true,"legend":{"bgcolor":null,"bordercolor":null,"borderwidth":0,"font":{"color":"rgba(0,0,0,1)","family":"","size":11.689497716895},"title":{"text":"Subject","font":{"color":"rgba(0,0,0,1)","family":"","size":14.6118721461187}}},"hovermode":"closest","barmode":"relative"},"config":{"doubleClick":"reset","modeBarButtonsToAdd":["hoverclosest","hovercompare"],"showSendToCloud":false},"source":"A","attrs":{"37b928a0d39b":{"x":{},"y":{},"fill":{},"type":"scatter"}},"cur_data":"37b928a0d39b","visdat":{"37b928a0d39b":["function (y) ","x"]},"highlight":{"on":"plotly_click","persistent":false,"dynamic":false,"selectize":false,"opacityDim":0.2,"selected":{"opacity":1},"debounce":0},"shinyEvents":["plotly_hover","plotly_click","plotly_selected","plotly_relayout","plotly_brushed","plotly_brushing","plotly_clickannotation","plotly_doubleclick","plotly_deselect","plotly_afterplot","plotly_sunburstclick"],"base_url":"https://plot.ly"},"evals":[],"jsHooks":[]}</script><p>We can easily see how the student mean performance for each subject associated with their parents’ educational background just by glancing at the area under each separate line.</p>
 </div>
 <div id="interactive-heatmap" class="section level2">
 <h2>
-<span class="header-section-number">11.3</span> Interactive Heatmap:<a class="anchor" aria-label="anchor" href="#interactive-heatmap"><i class="fas fa-link"></i></a>
+<span class="header-section-number">30.3</span> Interactive Heatmap:<a class="anchor" aria-label="anchor" href="#interactive-heatmap"><i class="fas fa-link"></i></a>
 </h2>
 <p>Heatmap is a very useful visualization tool on two-dimensional data to reveal patterns and correlations between by rows and columns. To be more easy-to-use, we will introduce interactive heatmap. As we already familiar with heatmap R package to draw a heatmap, we will use an useful R package “heatmaply” to build interactive cluster heatmap.</p>
-<div class="sourceCode" id="cb60"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb335"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="fu">knitr</span><span class="fu">::</span><span class="va"><a href="https://rdrr.io/pkg/knitr/man/opts_chunk.html">opts_chunk</a></span><span class="op">$</span><span class="fu">set</span><span class="op">(</span>warning <span class="op">=</span> <span class="cn">F</span>, message <span class="op">=</span> <span class="cn">F</span><span class="op">)</span>
 <span class="fu"><a href="https://rdrr.io/r/utils/data.html">data</a></span><span class="op">(</span><span class="st">"mtcars"</span><span class="op">)</span>
 <span class="fu"><a href="https://talgalili.github.io/heatmaply/reference/heatmaply.html">heatmaply</a></span><span class="op">(</span><span class="va">mtcars</span>, scale<span class="op">=</span><span class="st">"column"</span>, Colv <span class="op">=</span> <span class="cn">NULL</span>,col <span class="op">=</span>  <span class="fu"><a href="https://rdrr.io/r/grDevices/palettes.html">topo.colors</a></span><span class="op">(</span><span class="fl">10</span><span class="op">)</span>,xlab<span class="op">=</span><span class="st">"design"</span>, ylab<span class="op">=</span><span class="st">"car type"</span>, main<span class="op">=</span><span class="st">" interactive heatmap"</span><span class="op">)</span></code></pre></div>
@@ -237,10 +239,10 @@
 </div>
 <div id="interactive-network" class="section level2">
 <h2>
-<span class="header-section-number">11.4</span> Interactive Network<a class="anchor" aria-label="anchor" href="#interactive-network"><i class="fas fa-link"></i></a>
+<span class="header-section-number">30.4</span> Interactive Network<a class="anchor" aria-label="anchor" href="#interactive-network"><i class="fas fa-link"></i></a>
 </h2>
 <p>Network is consist of mainly two parts: nodes and edge. This graph reflect interrelationships between each note (i.e. entity). The advantage of using network is too include all important entities and analyze as a whole instead of see each entity separately. Two addtional packages we need to import for interactive network are igraph and networkD3. Let’s first see how igraph is used to plot a static network for a square matrix we generated ramdonly.</p>
-<div class="sourceCode" id="cb61"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb336"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="fu">knitr</span><span class="fu">::</span><span class="va"><a href="https://rdrr.io/pkg/knitr/man/opts_chunk.html">opts_chunk</a></span><span class="op">$</span><span class="fu">set</span><span class="op">(</span>warning <span class="op">=</span> <span class="cn">F</span>, message <span class="op">=</span> <span class="cn">F</span><span class="op">)</span>
 
 <span class="fu"><a href="https://rdrr.io/r/base/Random.html">set.seed</a></span><span class="op">(</span><span class="fl">12345</span><span class="op">)</span>
@@ -251,7 +253,7 @@
 <div class="inline-figure"><img src="interactive_plot_plotly_cheatsheet_files/figure-html/unnamed-chunk-5-1.png" width="672" style="display: block; margin: auto;"></div>
 <p>The arrow indicates the direction of relationship between two notes. For example, there is one relationship from 4 to 2, but there is no relationship from 2 to 4.</p>
 <p>Now, let’s step to interactive networks. There is a very simple function: simpleNetwork which can generate interactive network in a handy way.</p>
-<div class="sourceCode" id="cb62"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb337"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="fu">knitr</span><span class="fu">::</span><span class="va"><a href="https://rdrr.io/pkg/knitr/man/opts_chunk.html">opts_chunk</a></span><span class="op">$</span><span class="fu">set</span><span class="op">(</span>warning <span class="op">=</span> <span class="cn">F</span>, message <span class="op">=</span> <span class="cn">F</span><span class="op">)</span>
 
 <span class="va">data</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/data.frame.html">data.frame</a></span><span class="op">(</span>
@@ -270,26 +272,26 @@
 <div id="htmlwidget-3085da724e0a768679c3" style="width:672px;height:480px;" class="forceNetwork html-widget"></div>
 <script type="application/json" data-for="htmlwidget-3085da724e0a768679c3">{"x":{"links":{"source":[0,0,1,3,2,3,4,1,2,3,6,0,7],"target":[1,4,5,0,2,0,1,8,0,2,0,1,6],"value":[1,1,1,1,1,1,1,1,1,1,1,1,1],"colour":["#123","#123","#123","#123","#123","#123","#123","#123","#123","#123","#123","#123","#123"]},"nodes":{"name":["A","B","C","D","E","F","K","M","Z"],"group":[1,1,1,1,1,1,1,1,1],"nodesize":[8,8,8,8,8,8,8,8,8]},"options":{"NodeID":"name","Group":"group","colourScale":"d3.scaleOrdinal(['#F47E5E'])","fontSize":25,"fontFamily":"serif","clickTextSize":62.5,"linkDistance":50,"linkWidth":"'1.5px'.toString()","charge":-30,"opacity":0.9,"zoom":true,"legend":false,"arrows":false,"nodesize":true,"radiusCalculation":"d.nodesize","bounded":false,"opacityNoHover":1,"clickAction":null}},"evals":[],"jsHooks":[]}</script><p>Interactive network above we can rotate, zoom in, and zoom out the network and see it as a 3D layout. Compared to a static network, interactive network has a much better looking because when data gets bigger, it will avoid overlapping of links.</p>
 </div>
-<div id="reference-1" class="section level2">
+<div id="reference-3" class="section level2">
 <h2>
-<span class="header-section-number">11.5</span> Reference:<a class="anchor" aria-label="anchor" href="#reference-1"><i class="fas fa-link"></i></a>
+<span class="header-section-number">30.5</span> Reference:<a class="anchor" aria-label="anchor" href="#reference-3"><i class="fas fa-link"></i></a>
 </h2>
 <p><a href="https://www.r-graph-gallery.com/network-interactive.html" class="uri">https://www.r-graph-gallery.com/network-interactive.html</a></p>
 
 </div>
 </div>
   <div class="chapter-nav">
-<div class="prev"><a href="stacked-bar-plot-for-relative-proportions-in-python.html"><span class="header-section-number">10</span> Stacked Bar Plot For Relative Proportions In Python</a></div>
-<div class="next"><a href="introduction-to-longitudinal-data-and-mlgm-package.html"><span class="header-section-number">12</span> Introduction to Longitudinal Data and MLGM Package</a></div>
+<div class="prev"><a href="stacked-bar-plot-for-relative-proportions-in-python.html"><span class="header-section-number">29</span> Stacked Bar Plot For Relative Proportions In Python</a></div>
+<div class="next"><a href="introduction-to-longitudinal-data-and-mlgm-package.html"><span class="header-section-number">31</span> Introduction to Longitudinal Data and MLGM Package</a></div>
 </div></main><div class="col-md-3 col-lg-2 d-none d-md-block sidebar sidebar-chapter">
     <nav id="toc" data-toggle="toc" aria-label="On this page"><h2>On this page</h2>
       <ul class="nav navbar-nav">
-<li><a class="nav-link" href="#interactive-plot-introduction"><span class="header-section-number">11</span> Interactive plot introduction</a></li>
-<li><a class="nav-link" href="#interactive-bubble-plot"><span class="header-section-number">11.1</span> Interactive Bubble Plot:</a></li>
-<li><a class="nav-link" href="#interactive-area-plot"><span class="header-section-number">11.2</span> Interactive Area Plot:</a></li>
-<li><a class="nav-link" href="#interactive-heatmap"><span class="header-section-number">11.3</span> Interactive Heatmap:</a></li>
-<li><a class="nav-link" href="#interactive-network"><span class="header-section-number">11.4</span> Interactive Network</a></li>
-<li><a class="nav-link" href="#reference-1"><span class="header-section-number">11.5</span> Reference:</a></li>
+<li><a class="nav-link" href="#interactive-plot-introduction"><span class="header-section-number">30</span> Interactive plot introduction</a></li>
+<li><a class="nav-link" href="#interactive-bubble-plot"><span class="header-section-number">30.1</span> Interactive Bubble Plot:</a></li>
+<li><a class="nav-link" href="#interactive-area-plot"><span class="header-section-number">30.2</span> Interactive Area Plot:</a></li>
+<li><a class="nav-link" href="#interactive-heatmap"><span class="header-section-number">30.3</span> Interactive Heatmap:</a></li>
+<li><a class="nav-link" href="#interactive-network"><span class="header-section-number">30.4</span> Interactive Network</a></li>
+<li><a class="nav-link" href="#reference-3"><span class="header-section-number">30.5</span> Reference:</a></li>
 </ul>
 
       <div class="book-extra">
@@ -307,7 +309,7 @@
 <footer class="bg-primary text-light mt-5"><div class="container"><div class="row">
 
   <div class="col-12 col-md-6 mt-3">
-    <p>"<strong>EDAV Fall 2021 Mon/Wed Community Contributions</strong>" was written by the students of the class. It was last built on 2021-11-20.</p>
+    <p>"<strong>EDAV Fall 2021 Mon/Wed Community Contributions</strong>" was written by the students of the class. It was last built on 2021-11-22.</p>
   </div>
 
   <div class="col-12 col-md-6 mt-3">

@@ -1,3 +1,5 @@
+# (PART) Tutorials {-}
+
 # Tutorial for six basic graphs by using ggplot
 
 Wenxin Zhang (wz2585)

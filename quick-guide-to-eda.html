@@ -4,27 +4,27 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<title>Chapter 38 Quick guide to eda | EDAV Fall 2021 Mon/Wed Community Contributions</title>
+<title>Chapter 6 Quick guide to eda | EDAV Fall 2021 Mon/Wed Community Contributions</title>
 <meta name="author" content="the students of the class">
 <meta name="description" content="Vikram Singh and Aniket Shahane Exploratory data analysis involves a variety of data and techniques about how the data is used to extract the underlying information and hidden nuances. Just by...">
 <meta name="generator" content="bookdown 0.24 with bs4_book()">
-<meta property="og:title" content="Chapter 38 Quick guide to eda | EDAV Fall 2021 Mon/Wed Community Contributions">
+<meta property="og:title" content="Chapter 6 Quick guide to eda | EDAV Fall 2021 Mon/Wed Community Contributions">
 <meta property="og:type" content="book">
 <meta property="og:description" content="Vikram Singh and Aniket Shahane Exploratory data analysis involves a variety of data and techniques about how the data is used to extract the underlying information and hidden nuances. Just by...">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Chapter 38 Quick guide to eda | EDAV Fall 2021 Mon/Wed Community Contributions">
+<meta name="twitter:title" content="Chapter 6 Quick guide to eda | EDAV Fall 2021 Mon/Wed Community Contributions">
 <meta name="twitter:description" content="Vikram Singh and Aniket Shahane Exploratory data analysis involves a variety of data and techniques about how the data is used to extract the underlying information and hidden nuances. Just by...">
 <!-- JS --><script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.6/clipboard.min.js" integrity="sha256-inc5kl9MA1hkeYUt+EC3BhlIgyp/2jDIyBLS6k3UxPI=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/fuse.js/6.4.6/fuse.js" integrity="sha512-zv6Ywkjyktsohkbp9bb45V6tEMoWhzFzXis+LrMehmJZZSys19Yxf1dopHx7WzIKxr5tK2dVcYmaCk2uqdjF4A==" crossorigin="anonymous"></script><script src="https://kit.fontawesome.com/6ecbd6c532.js" crossorigin="anonymous"></script><script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <link href="libs/bootstrap-4.6.0/bootstrap.min.css" rel="stylesheet">
 <script src="libs/bootstrap-4.6.0/bootstrap.bundle.min.js"></script><script src="libs/bs3compat-0.3.1/transition.js"></script><script src="libs/bs3compat-0.3.1/tabs.js"></script><script src="libs/bs3compat-0.3.1/bs3compat.js"></script><link href="libs/bs4_book-1.0.0/bs4_book.css" rel="stylesheet">
-<script src="libs/bs4_book-1.0.0/bs4_book.js"></script><script src="libs/accessible-code-block-0.0.1/empty-anchor.js"></script><script src="libs/htmlwidgets-1.5.4/htmlwidgets.js"></script><script src="libs/plotly-binding-4.10.0/plotly.js"></script><script src="libs/typedarray-0.1/typedarray.min.js"></script><link href="libs/crosstalk-1.2.0/css/crosstalk.min.css" rel="stylesheet">
+<script src="libs/bs4_book-1.0.0/bs4_book.js"></script><script src="libs/accessible-code-block-0.0.1/empty-anchor.js"></script><script src="libs/htmlwidgets-1.5.4/htmlwidgets.js"></script><link href="libs/str_view-0.1.0/str_view.css" rel="stylesheet">
+<script src="libs/str_view-binding-1.4.0/str_view.js"></script><script src="libs/detect-resize-0.5.3/jquery.resize.js"></script><link href="libs/jquery-ui-1.11.4/jquery-ui.min.css" rel="stylesheet">
+<script src="libs/jquery-ui-1.11.4/jquery-ui.min.js"></script><script src="libs/d3-5.16.0/d3.min.js"></script><script src="libs/vega-1.4.3/vega.min.js"></script><script src="libs/lodash-2.2.1/lodash.min.js"></script><script>var lodash = _.noConflict();</script><link href="libs/ggvis-0.4.7/css/ggvis.css" rel="stylesheet">
+<script src="libs/ggvis-0.4.7/js/ggvis.js"></script><script src="libs/plotly-binding-4.10.0/plotly.js"></script><script src="libs/typedarray-0.1/typedarray.min.js"></script><link href="libs/crosstalk-1.2.0/css/crosstalk.min.css" rel="stylesheet">
 <script src="libs/crosstalk-1.2.0/js/crosstalk.min.js"></script><link href="libs/plotly-htmlwidgets-css-2.5.1/plotly-htmlwidgets.css" rel="stylesheet">
-<script src="libs/plotly-main-2.5.1/plotly-latest.min.js"></script><link href="libs/dygraphs-1.1.1/dygraph.css" rel="stylesheet">
-<script src="libs/dygraphs-1.1.1/dygraph-combined.js"></script><script src="libs/dygraphs-1.1.1/shapes.js"></script><script src="libs/moment-2.8.4/moment.js"></script><script src="libs/moment-timezone-0.2.5/moment-timezone-with-data.js"></script><script src="libs/moment-fquarter-1.0.0/moment-fquarter.min.js"></script><script src="libs/dygraphs-binding-1.1.1.6/dygraphs.js"></script><script src="libs/d3-5.16.0/d3.min.js"></script><script src="libs/forceNetwork-binding-0.4/forceNetwork.js"></script><link href="libs/parallel-coordinates-2.1.8/parcoords.css" rel="stylesheet">
-<script src="libs/parcoords-binding-1.0.0/parcoords.js"></script><script src="libs/detect-resize-0.5.3/jquery.resize.js"></script><link href="libs/jquery-ui-1.11.4/jquery-ui.min.css" rel="stylesheet">
-<script src="libs/jquery-ui-1.11.4/jquery-ui.min.js"></script><script src="libs/vega-1.4.3/vega.min.js"></script><script src="libs/lodash-2.2.1/lodash.min.js"></script><script>var lodash = _.noConflict();</script><link href="libs/ggvis-0.4.7/css/ggvis.css" rel="stylesheet">
-<script src="libs/ggvis-0.4.7/js/ggvis.js"></script><script src="libs/dendroNetwork-binding-0.4/dendroNetwork.js"></script><link href="libs/str_view-0.1.0/str_view.css" rel="stylesheet">
-<script src="libs/str_view-binding-1.4.0/str_view.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/autocomplete.js/0.38.0/autocomplete.jquery.min.js" integrity="sha512-GU9ayf+66Xx2TmpxqJpliWbT5PiGYxpaG8rfnBEk1LL8l1KGkRShhngwdXK1UgqhAzWpZHSiYPc09/NwDQIGyg==" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/mark.min.js" integrity="sha512-5CYOlHXGh6QpOFA/TeTylKLWfB3ftPsde7AnmhuitiTX4K5SqCLBeKro6sPS8ilsz1Q4NRx3v8Ko2IBiszzdww==" crossorigin="anonymous"></script><!-- CSS -->
+<script src="libs/plotly-main-2.5.1/plotly-latest.min.js"></script><script src="libs/forceNetwork-binding-0.4/forceNetwork.js"></script><script src="libs/dendroNetwork-binding-0.4/dendroNetwork.js"></script><link href="libs/parallel-coordinates-2.1.8/parcoords.css" rel="stylesheet">
+<script src="libs/parcoords-binding-1.0.0/parcoords.js"></script><link href="libs/dygraphs-1.1.1/dygraph.css" rel="stylesheet">
+<script src="libs/dygraphs-1.1.1/dygraph-combined.js"></script><script src="libs/dygraphs-1.1.1/shapes.js"></script><script src="libs/moment-2.8.4/moment.js"></script><script src="libs/moment-timezone-0.2.5/moment-timezone-with-data.js"></script><script src="libs/moment-fquarter-1.0.0/moment-fquarter.min.js"></script><script src="libs/dygraphs-binding-1.1.1.6/dygraphs.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/autocomplete.js/0.38.0/autocomplete.jquery.min.js" integrity="sha512-GU9ayf+66Xx2TmpxqJpliWbT5PiGYxpaG8rfnBEk1LL8l1KGkRShhngwdXK1UgqhAzWpZHSiYPc09/NwDQIGyg==" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/mark.min.js" integrity="sha512-5CYOlHXGh6QpOFA/TeTylKLWfB3ftPsde7AnmhuitiTX4K5SqCLBeKro6sPS8ilsz1Q4NRx3v8Ko2IBiszzdww==" crossorigin="anonymous"></script><!-- CSS -->
 </head>
 <body data-spy="scroll" data-target="#toc">
 
@@ -50,66 +50,68 @@
 <li><a class="" href="community-contribution.html"><span class="header-section-number">2</span> Community Contribution</a></li>
 <li><a class="" href="github-submission-instructions.html"><span class="header-section-number">3</span> GitHub submission instructions</a></li>
 <li><a class="" href="sample-project.html"><span class="header-section-number">4</span> Sample project</a></li>
-<li class="book-part">Data Visualizations</li>
-<li><a class="" href="introduction-to-the-lattice-package.html"><span class="header-section-number">5</span> Introduction to the lattice package</a></li>
-<li><a class="" href="graph-animation-with-gganimate-and-after-effects.html"><span class="header-section-number">6</span> Graph animation with gganimate and After Effects</a></li>
-<li><a class="" href="interactive-plots.html"><span class="header-section-number">7</span> Interactive Plots</a></li>
-<li><a class="" href="create-regression-assumption-plots-in-word.html"><span class="header-section-number">8</span> Create regression assumption plots in Word</a></li>
-<li><a class="" href="from-neo4j-to-rstudio.html"><span class="header-section-number">9</span> From Neo4j to RStudio</a></li>
-<li><a class="" href="stacked-bar-plot-for-relative-proportions-in-python.html"><span class="header-section-number">10</span> Stacked Bar Plot For Relative Proportions In Python</a></li>
-<li><a class="" href="interactive-plot-introduction.html"><span class="header-section-number">11</span> Interactive plot introduction</a></li>
-<li><a class="" href="introduction-to-longitudinal-data-and-mlgm-package.html"><span class="header-section-number">12</span> Introduction to Longitudinal Data and MLGM Package</a></li>
-<li class="book-part">R Package Tutorial</li>
-<li><a class="" href="tidyverse_cheatsheet.html"><span class="header-section-number">13</span> Tidyverse_cheatsheet</a></li>
-<li><a class="" href="use-of-ggprism-and-ggsci-packages.html"><span class="header-section-number">14</span> Use of ggprism and ggsci packages</a></li>
-<li><a class="" href="parallel-coordinates-plot-cheatsheet.html"><span class="header-section-number">15</span> Parallel coordinates plot cheatsheet</a></li>
-<li><a class="" href="cheatsheet-tidyverse.html"><span class="header-section-number">16</span> Cheatsheet Tidyverse</a></li>
-<li><a class="" href="common-r-markdown-syntax-cheatsheet.html"><span class="header-section-number">17</span> Common R markdown syntax cheatsheet</a></li>
-<li><a class="" href="rpackage-waffle-cheatsheet.html"><span class="header-section-number">18</span> Rpackage waffle cheatsheet</a></li>
-<li class="book-part">Topics in Data Science</li>
-<li><a class="" href="a-linear-regression-bestiary.html"><span class="header-section-number">19</span> A linear regression Bestiary</a></li>
-<li><a class="" href="r-cheatsheet-on-data-transforamtion-and-exploration.html"><span class="header-section-number">20</span> R cheatsheet on data transforamtion and exploration</a></li>
-<li><a class="" href="r-data-science-workflow-cheatsheet.html"><span class="header-section-number">21</span> R Data Science Workflow CheatSheet</a></li>
-<li><a class="" href="questions-answers-for-r-technical-interview.html"><span class="header-section-number">22</span> 30 questions &amp; answers for r technical interview</a></li>
-<li><a class="" href="graphql-cheat-sheet.html"><span class="header-section-number">23</span> GraphQL Cheat Sheet</a></li>
-<li><a class="" href="r-vs-python-basic-data-wrangling.html"><span class="header-section-number">24</span> R vs Python Basic Data Wrangling</a></li>
-<li><a class="" href="r-vs.-python-visualization-cheatsheet.html"><span class="header-section-number">25</span> R vs. Python Visualization Cheatsheet</a></li>
+<li class="book-part">Guide to EDAV</li>
+<li><a class="" href="vipul-edav-community-contribution-kickstart-r.html"><span class="header-section-number">5</span> Vipul EDAV Community Contribution Kickstart R</a></li>
+<li><a class="active" href="quick-guide-to-eda.html"><span class="header-section-number">6</span> Quick guide to eda</a></li>
 <li class="book-part">Tutorials</li>
-<li><a class="" href="multithreading-crawler-frame.html"><span class="header-section-number">26</span> Multithreading Crawler Frame</a></li>
-<li><a class="" href="regression-and-classification-in-r.html"><span class="header-section-number">27</span> Regression and Classification in R</a></li>
-<li><a class="" href="tibble-vs.-dataframe.html"><span class="header-section-number">28</span> Tibble vs. DataFrame</a></li>
-<li><a class="" href="introduction-to-time-series.html"><span class="header-section-number">29</span> Introduction to Time Series</a></li>
-<li><a class="" href="vipul-edav-community-contribution-kickstart-r.html"><span class="header-section-number">30</span> Vipul EDAV Community Contribution Kickstart R</a></li>
-<li><a class="" href="caret---a-machine-learning-package-turotial.html"><span class="header-section-number">31</span> caret - a machine learning package turotial</a></li>
-<li><a class="" href="streamlit-for-financial-analysis.html"><span class="header-section-number">32</span> Streamlit for Financial Analysis</a></li>
-<li><a class="" href="interactive-graphs-tutorial.html"><span class="header-section-number">33</span> Interactive graphs tutorial</a></li>
-<li><a class="" href="guideline-on-using-package-rcurl-and-xml-for-web-scraping.html"><span class="header-section-number">34</span> Guideline on Using Package Rcurl and XML for Web Scraping</a></li>
-<li><a class="" href="twitter-r-package-scraping-via-api-tutorial.html"><span class="header-section-number">35</span> TwitteR R Package Scraping via API Tutorial</a></li>
-<li><a class="" href="introduction-to-data-manipulation.html"><span class="header-section-number">36</span> Introduction to Data Manipulation</a></li>
-<li><a class="" href="animating-the-plots-in-r.html"><span class="header-section-number">37</span> Animating the plots in R</a></li>
-<li><a class="active" href="quick-guide-to-eda.html"><span class="header-section-number">38</span> Quick guide to eda</a></li>
-<li><a class="" href="natural-langauge-processing-common-eda-practices-in-python.html"><span class="header-section-number">39</span> Natural Langauge Processing Common EDA Practices in Python</a></li>
-<li><a class="" href="beginners-walk-through-of-deep-learning-in-r.html"><span class="header-section-number">40</span> Beginner’s Walk-through of Deep Learning in R</a></li>
-<li><a class="" href="supervised-learning-tutorial.html"><span class="header-section-number">41</span> Supervised Learning Tutorial</a></li>
-<li><a class="" href="parallel-coordinate-plots-in-ggplot2.html"><span class="header-section-number">42</span> Parallel Coordinate Plots in ggplot2</a></li>
-<li><a class="" href="using-ggplot-in-python.html"><span class="header-section-number">43</span> Using ggplot in python</a></li>
-<li><a class="" href="icons-and-symbols-in-r.html"><span class="header-section-number">44</span> Icons and symbols in R</a></li>
-<li><a class="" href="exploratory-data-analysis-and-preprocessing-with-r-for-data-challenges.html"><span class="header-section-number">45</span> Exploratory data analysis and preprocessing with R for data challenges</a></li>
-<li><a class="" href="introduction-to-git-bash.html"><span class="header-section-number">46</span> Introduction to Git Bash</a></li>
-<li><a class="" href="tutorial-for-six-basic-graphs-by-using-ggplot.html"><span class="header-section-number">47</span> Tutorial for six basic graphs by using ggplot</a></li>
-<li><a class="" href="web-scrapping-using-beautifulsoup-and-its-equivalent-in-rvest.html"><span class="header-section-number">48</span> Web Scrapping using BeautifulSoup and its Equivalent in rvest</a></li>
-<li><a class="" href="d-visualization-shinyaframe-introduction-and-tutorial.html"><span class="header-section-number">49</span> 3D visualization: shinyaframe introduction and tutorial</a></li>
-<li><a class="" href="efficient-dimension-reduction-with-umap.html"><span class="header-section-number">50</span> Efficient dimension reduction with UMAP</a></li>
-<li><a class="" href="functional-programming-with-purrr.html"><span class="header-section-number">51</span> Functional Programming with Purrr</a></li>
-<li><a class="" href="radial-bar-chart-and-other-interesting-graphs.html"><span class="header-section-number">52</span> Radial bar chart and other interesting graphs</a></li>
-<li><a class="" href="analyze-data-stored-in-aws-s3-using-r.html"><span class="header-section-number">53</span> Analyze data stored in AWS S3 using R</a></li>
-<li><a class="" href="introduction-to-flexdashboard-and-shiny.html"><span class="header-section-number">54</span> Introduction to flexdashboard and shiny</a></li>
+<li><a class="" href="tutorial-for-six-basic-graphs-by-using-ggplot.html"><span class="header-section-number">7</span> Tutorial for six basic graphs by using ggplot</a></li>
+<li><a class="" href="tibble-vs.-dataframe.html"><span class="header-section-number">8</span> Tibble vs. DataFrame</a></li>
+<li><a class="" href="introduction-to-data-manipulation.html"><span class="header-section-number">9</span> Introduction to Data Manipulation</a></li>
+<li><a class="" href="introduction-to-time-series.html"><span class="header-section-number">10</span> Introduction to Time Series</a></li>
+<li><a class="" href="interactive-graphs-tutorial.html"><span class="header-section-number">11</span> Interactive graphs tutorial</a></li>
+<li><a class="" href="introduction-to-git-bash.html"><span class="header-section-number">12</span> Introduction to Git Bash</a></li>
+<li><a class="" href="web-scrapping-using-beautifulsoup-and-its-equivalent-in-rvest.html"><span class="header-section-number">13</span> Web Scrapping using BeautifulSoup and its Equivalent in rvest</a></li>
+<li><a class="" href="analyze-data-stored-in-aws-s3-using-r.html"><span class="header-section-number">14</span> Analyze data stored in AWS S3 using R</a></li>
+<li class="book-part">R Package Tutorial</li>
+<li><a class="" href="tidyverse_cheatsheet.html"><span class="header-section-number">15</span> Tidyverse_cheatsheet</a></li>
+<li><a class="" href="use-of-ggprism-and-ggsci-packages.html"><span class="header-section-number">16</span> Use of ggprism and ggsci packages</a></li>
+<li><a class="" href="parallel-coordinates-plot-cheatsheet.html"><span class="header-section-number">17</span> Parallel coordinates plot cheatsheet</a></li>
+<li><a class="" href="cheatsheet-tidyverse.html"><span class="header-section-number">18</span> Cheatsheet Tidyverse</a></li>
+<li><a class="" href="common-r-markdown-syntax-cheatsheet.html"><span class="header-section-number">19</span> Common R markdown syntax cheatsheet</a></li>
+<li><a class="" href="rpackage-waffle-cheatsheet.html"><span class="header-section-number">20</span> Rpackage waffle cheatsheet</a></li>
+<li><a class="" href="introduction-to-flexdashboard-and-shiny.html"><span class="header-section-number">21</span> Introduction to flexdashboard and shiny</a></li>
+<li><a class="" href="functional-programming-with-purrr.html"><span class="header-section-number">22</span> Functional Programming with Purrr</a></li>
+<li class="book-part">Data Visualizations</li>
+<li><a class="" href="introduction-to-the-lattice-package.html"><span class="header-section-number">23</span> Introduction to the lattice package</a></li>
+<li><a class="" href="graph-animation-with-gganimate-and-after-effects.html"><span class="header-section-number">24</span> Graph animation with gganimate and After Effects</a></li>
+<li><a class="" href="animating-the-plots-in-r.html"><span class="header-section-number">25</span> Animating the plots in R</a></li>
+<li><a class="" href="interactive-plots.html"><span class="header-section-number">26</span> Interactive Plots</a></li>
+<li><a class="" href="create-regression-assumption-plots-in-word.html"><span class="header-section-number">27</span> Create regression assumption plots in Word</a></li>
+<li><a class="" href="from-neo4j-to-rstudio.html"><span class="header-section-number">28</span> From Neo4j to RStudio</a></li>
+<li><a class="" href="stacked-bar-plot-for-relative-proportions-in-python.html"><span class="header-section-number">29</span> Stacked Bar Plot For Relative Proportions In Python</a></li>
+<li><a class="" href="interactive-plot-introduction.html"><span class="header-section-number">30</span> Interactive plot introduction</a></li>
+<li><a class="" href="introduction-to-longitudinal-data-and-mlgm-package.html"><span class="header-section-number">31</span> Introduction to Longitudinal Data and MLGM Package</a></li>
+<li><a class="" href="parallel-coordinate-plots-cheatsheet.html"><span class="header-section-number">32</span> Parallel coordinate plots cheatsheet</a></li>
+<li><a class="" href="parallel-coordinate-plots-in-ggplot2.html"><span class="header-section-number">33</span> Parallel Coordinate Plots in ggplot2</a></li>
+<li><a class="" href="radial-bar-chart-and-other-interesting-graphs.html"><span class="header-section-number">34</span> Radial bar chart and other interesting graphs</a></li>
+<li><a class="" href="d-visualization-shinyaframe-introduction-and-tutorial.html"><span class="header-section-number">35</span> 3D visualization: shinyaframe introduction and tutorial</a></li>
+<li><a class="" href="using-ggplot-in-python.html"><span class="header-section-number">36</span> Using ggplot in python</a></li>
+<li><a class="" href="icons-and-symbols-in-r.html"><span class="header-section-number">37</span> Icons and symbols in R</a></li>
+<li class="book-part">Topics in Data Science</li>
+<li><a class="" href="r-data-science-workflow-cheatsheet.html"><span class="header-section-number">38</span> R Data Science Workflow CheatSheet</a></li>
+<li><a class="" href="r-cheatsheet-on-data-transforamtion-and-exploration.html"><span class="header-section-number">39</span> R cheatsheet on data transforamtion and exploration</a></li>
+<li><a class="" href="questions-answers-for-r-technical-interview.html"><span class="header-section-number">40</span> 30 questions &amp; answers for r technical interview</a></li>
+<li><a class="" href="graphql-cheat-sheet.html"><span class="header-section-number">41</span> GraphQL Cheat Sheet</a></li>
+<li><a class="" href="r-vs-python-basic-data-wrangling.html"><span class="header-section-number">42</span> R vs Python Basic Data Wrangling</a></li>
+<li><a class="" href="r-vs.-python-visualization-cheatsheet.html"><span class="header-section-number">43</span> R vs. Python Visualization Cheatsheet</a></li>
+<li><a class="" href="guideline-on-using-package-rcurl-and-xml-for-web-scraping.html"><span class="header-section-number">44</span> Guideline on Using Package Rcurl and XML for Web Scraping</a></li>
+<li><a class="" href="multithreading-crawler-frame.html"><span class="header-section-number">45</span> Multithreading Crawler Frame</a></li>
+<li><a class="" href="twitter-r-package-scraping-via-api-tutorial.html"><span class="header-section-number">46</span> TwitteR R Package Scraping via API Tutorial</a></li>
+<li><a class="" href="natural-langauge-processing-common-eda-practices-in-python.html"><span class="header-section-number">47</span> Natural Langauge Processing Common EDA Practices in Python</a></li>
+<li class="book-part">Machine Learning and More</li>
+<li><a class="" href="low-key-ml-packages-in-r.html"><span class="header-section-number">48</span> Low-key ML packages in R</a></li>
+<li><a class="" href="a-linear-regression-bestiary.html"><span class="header-section-number">49</span> A linear regression Bestiary</a></li>
+<li><a class="" href="regression-and-classification-in-r.html"><span class="header-section-number">50</span> Regression and Classification in R</a></li>
+<li><a class="" href="caret---a-machine-learning-package-turotial.html"><span class="header-section-number">51</span> caret - a machine learning package turotial</a></li>
+<li><a class="" href="supervised-learning-tutorial.html"><span class="header-section-number">52</span> Supervised Learning Tutorial</a></li>
+<li><a class="" href="beginners-walk-through-of-deep-learning-in-r.html"><span class="header-section-number">53</span> Beginner’s Walk-through of Deep Learning in R</a></li>
 <li class="book-part">Demonstrations</li>
-<li><a class="" href="linear-association-r-studio-plugin.html"><span class="header-section-number">55</span> Linear Association R Studio Plugin</a></li>
-<li><a class="" href="customized-sorting-in-r.html"><span class="header-section-number">56</span> Customized Sorting in R</a></li>
-<li><a class="" href="low-key-ml-packages-in-r.html"><span class="header-section-number">57</span> Low-key ML packages in R</a></li>
-<li><a class="" href="parallel-coordinate-plots-cheatsheet.html"><span class="header-section-number">58</span> Parallel coordinate plots cheatsheet</a></li>
-<li><a class="" href="crime-analysis-around-columbia.html"><span class="header-section-number">59</span> Crime Analysis around Columbia</a></li>
+<li><a class="" href="linear-association-r-studio-plugin.html"><span class="header-section-number">54</span> Linear Association R Studio Plugin</a></li>
+<li><a class="" href="customized-sorting-in-r.html"><span class="header-section-number">55</span> Customized Sorting in R</a></li>
+<li><a class="" href="crime-analysis-around-columbia.html"><span class="header-section-number">56</span> Crime Analysis around Columbia</a></li>
+<li><a class="" href="efficient-dimension-reduction-with-umap.html"><span class="header-section-number">57</span> Efficient dimension reduction with UMAP</a></li>
+<li><a class="" href="exploratory-data-analysis-and-preprocessing-with-r-for-data-challenges.html"><span class="header-section-number">58</span> Exploratory data analysis and preprocessing with R for data challenges</a></li>
+<li><a class="" href="streamlit-for-financial-analysis.html"><span class="header-section-number">59</span> Streamlit for Financial Analysis</a></li>
 <li class="book-part">Workshops</li>
 <li><a class="" href="data-science-product-cycles-in-enterprises.html"><span class="header-section-number">60</span> Data Science Product Cycles in Enterprises</a></li>
 <li><a class="" href="mapreduce-concept-comparision-with-r.html"><span class="header-section-number">61</span> MapReduce Concept &amp; Comparision With R</a></li>
@@ -125,19 +127,22 @@
 </div>
   </header><main class="col-sm-12 col-md-9 col-lg-7" id="content"><div id="quick-guide-to-eda" class="section level1">
 <h1>
-<span class="header-section-number">38</span> Quick guide to eda<a class="anchor" aria-label="anchor" href="#quick-guide-to-eda"><i class="fas fa-link"></i></a>
+<span class="header-section-number">6</span> Quick guide to eda<a class="anchor" aria-label="anchor" href="#quick-guide-to-eda"><i class="fas fa-link"></i></a>
 </h1>
 <p>Vikram Singh and Aniket Shahane</p>
 <p>Exploratory data analysis involves a variety of data and techniques about how the data is used to extract the underlying information and hidden nuances. Just by looking at the data tables a normal user cannot understand much, exploratory data analysis techniques enable him to look at the data from a different perspective. Here we will look at a few techniques and their categories.</p>
 <p><a href="https://clingy-camel-101.notion.site/A-Quick-Guide-to-Exploratory-Data-Analysis-9323470c7f394ba88cbe8dbc0e47148b">Link to the Notebook</a></p>
 
 </div>
+
+
+
   <div class="chapter-nav">
-<div class="prev"><a href="animating-the-plots-in-r.html"><span class="header-section-number">37</span> Animating the plots in R</a></div>
-<div class="next"><a href="natural-langauge-processing-common-eda-practices-in-python.html"><span class="header-section-number">39</span> Natural Langauge Processing Common EDA Practices in Python</a></div>
+<div class="prev"><a href="vipul-edav-community-contribution-kickstart-r.html"><span class="header-section-number">5</span> Vipul EDAV Community Contribution Kickstart R</a></div>
+<div class="next"><a href="tutorial-for-six-basic-graphs-by-using-ggplot.html"><span class="header-section-number">7</span> Tutorial for six basic graphs by using ggplot</a></div>
 </div></main><div class="col-md-3 col-lg-2 d-none d-md-block sidebar sidebar-chapter">
     <nav id="toc" data-toggle="toc" aria-label="On this page"><h2>On this page</h2>
-      <ul class="nav navbar-nav"><li><a class="nav-link" href="#quick-guide-to-eda"><span class="header-section-number">38</span> Quick guide to eda</a></li></ul>
+      <ul class="nav navbar-nav"><li><a class="nav-link" href="#quick-guide-to-eda"><span class="header-section-number">6</span> Quick guide to eda</a></li></ul>
 
       <div class="book-extra">
         <ul class="list-unstyled">
@@ -154,7 +159,7 @@
 <footer class="bg-primary text-light mt-5"><div class="container"><div class="row">
 
   <div class="col-12 col-md-6 mt-3">
-    <p>"<strong>EDAV Fall 2021 Mon/Wed Community Contributions</strong>" was written by the students of the class. It was last built on 2021-11-20.</p>
+    <p>"<strong>EDAV Fall 2021 Mon/Wed Community Contributions</strong>" was written by the students of the class. It was last built on 2021-11-22.</p>
   </div>
 
   <div class="col-12 col-md-6 mt-3">

@@ -4,27 +4,27 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<title>Chapter 34 Guideline on Using Package Rcurl and XML for Web Scraping | EDAV Fall 2021 Mon/Wed Community Contributions</title>
+<title>Chapter 44 Guideline on Using Package Rcurl and XML for Web Scraping | EDAV Fall 2021 Mon/Wed Community Contributions</title>
 <meta name="author" content="the students of the class">
-<meta name="description" content="Sitong Qian library(RCurl) library(XML)  34.1 Introduction When comes to the world of EDAV, having a rich dataset is inevitably the cornerstone of success. While obtaining such a dataset is not...">
+<meta name="description" content="Sitong Qian library(RCurl) library(XML)  44.1 Introduction When comes to the world of EDAV, having a rich dataset is inevitably the cornerstone of success. While obtaining such a dataset is not...">
 <meta name="generator" content="bookdown 0.24 with bs4_book()">
-<meta property="og:title" content="Chapter 34 Guideline on Using Package Rcurl and XML for Web Scraping | EDAV Fall 2021 Mon/Wed Community Contributions">
+<meta property="og:title" content="Chapter 44 Guideline on Using Package Rcurl and XML for Web Scraping | EDAV Fall 2021 Mon/Wed Community Contributions">
 <meta property="og:type" content="book">
-<meta property="og:description" content="Sitong Qian library(RCurl) library(XML)  34.1 Introduction When comes to the world of EDAV, having a rich dataset is inevitably the cornerstone of success. While obtaining such a dataset is not...">
+<meta property="og:description" content="Sitong Qian library(RCurl) library(XML)  44.1 Introduction When comes to the world of EDAV, having a rich dataset is inevitably the cornerstone of success. While obtaining such a dataset is not...">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Chapter 34 Guideline on Using Package Rcurl and XML for Web Scraping | EDAV Fall 2021 Mon/Wed Community Contributions">
-<meta name="twitter:description" content="Sitong Qian library(RCurl) library(XML)  34.1 Introduction When comes to the world of EDAV, having a rich dataset is inevitably the cornerstone of success. While obtaining such a dataset is not...">
+<meta name="twitter:title" content="Chapter 44 Guideline on Using Package Rcurl and XML for Web Scraping | EDAV Fall 2021 Mon/Wed Community Contributions">
+<meta name="twitter:description" content="Sitong Qian library(RCurl) library(XML)  44.1 Introduction When comes to the world of EDAV, having a rich dataset is inevitably the cornerstone of success. While obtaining such a dataset is not...">
 <!-- JS --><script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.6/clipboard.min.js" integrity="sha256-inc5kl9MA1hkeYUt+EC3BhlIgyp/2jDIyBLS6k3UxPI=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/fuse.js/6.4.6/fuse.js" integrity="sha512-zv6Ywkjyktsohkbp9bb45V6tEMoWhzFzXis+LrMehmJZZSys19Yxf1dopHx7WzIKxr5tK2dVcYmaCk2uqdjF4A==" crossorigin="anonymous"></script><script src="https://kit.fontawesome.com/6ecbd6c532.js" crossorigin="anonymous"></script><script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <link href="libs/bootstrap-4.6.0/bootstrap.min.css" rel="stylesheet">
 <script src="libs/bootstrap-4.6.0/bootstrap.bundle.min.js"></script><script src="libs/bs3compat-0.3.1/transition.js"></script><script src="libs/bs3compat-0.3.1/tabs.js"></script><script src="libs/bs3compat-0.3.1/bs3compat.js"></script><link href="libs/bs4_book-1.0.0/bs4_book.css" rel="stylesheet">
-<script src="libs/bs4_book-1.0.0/bs4_book.js"></script><script src="libs/accessible-code-block-0.0.1/empty-anchor.js"></script><script src="libs/htmlwidgets-1.5.4/htmlwidgets.js"></script><script src="libs/plotly-binding-4.10.0/plotly.js"></script><script src="libs/typedarray-0.1/typedarray.min.js"></script><link href="libs/crosstalk-1.2.0/css/crosstalk.min.css" rel="stylesheet">
+<script src="libs/bs4_book-1.0.0/bs4_book.js"></script><script src="libs/accessible-code-block-0.0.1/empty-anchor.js"></script><script src="libs/htmlwidgets-1.5.4/htmlwidgets.js"></script><link href="libs/str_view-0.1.0/str_view.css" rel="stylesheet">
+<script src="libs/str_view-binding-1.4.0/str_view.js"></script><script src="libs/detect-resize-0.5.3/jquery.resize.js"></script><link href="libs/jquery-ui-1.11.4/jquery-ui.min.css" rel="stylesheet">
+<script src="libs/jquery-ui-1.11.4/jquery-ui.min.js"></script><script src="libs/d3-5.16.0/d3.min.js"></script><script src="libs/vega-1.4.3/vega.min.js"></script><script src="libs/lodash-2.2.1/lodash.min.js"></script><script>var lodash = _.noConflict();</script><link href="libs/ggvis-0.4.7/css/ggvis.css" rel="stylesheet">
+<script src="libs/ggvis-0.4.7/js/ggvis.js"></script><script src="libs/plotly-binding-4.10.0/plotly.js"></script><script src="libs/typedarray-0.1/typedarray.min.js"></script><link href="libs/crosstalk-1.2.0/css/crosstalk.min.css" rel="stylesheet">
 <script src="libs/crosstalk-1.2.0/js/crosstalk.min.js"></script><link href="libs/plotly-htmlwidgets-css-2.5.1/plotly-htmlwidgets.css" rel="stylesheet">
-<script src="libs/plotly-main-2.5.1/plotly-latest.min.js"></script><link href="libs/dygraphs-1.1.1/dygraph.css" rel="stylesheet">
-<script src="libs/dygraphs-1.1.1/dygraph-combined.js"></script><script src="libs/dygraphs-1.1.1/shapes.js"></script><script src="libs/moment-2.8.4/moment.js"></script><script src="libs/moment-timezone-0.2.5/moment-timezone-with-data.js"></script><script src="libs/moment-fquarter-1.0.0/moment-fquarter.min.js"></script><script src="libs/dygraphs-binding-1.1.1.6/dygraphs.js"></script><script src="libs/d3-5.16.0/d3.min.js"></script><script src="libs/forceNetwork-binding-0.4/forceNetwork.js"></script><link href="libs/parallel-coordinates-2.1.8/parcoords.css" rel="stylesheet">
-<script src="libs/parcoords-binding-1.0.0/parcoords.js"></script><script src="libs/detect-resize-0.5.3/jquery.resize.js"></script><link href="libs/jquery-ui-1.11.4/jquery-ui.min.css" rel="stylesheet">
-<script src="libs/jquery-ui-1.11.4/jquery-ui.min.js"></script><script src="libs/vega-1.4.3/vega.min.js"></script><script src="libs/lodash-2.2.1/lodash.min.js"></script><script>var lodash = _.noConflict();</script><link href="libs/ggvis-0.4.7/css/ggvis.css" rel="stylesheet">
-<script src="libs/ggvis-0.4.7/js/ggvis.js"></script><script src="libs/dendroNetwork-binding-0.4/dendroNetwork.js"></script><link href="libs/str_view-0.1.0/str_view.css" rel="stylesheet">
-<script src="libs/str_view-binding-1.4.0/str_view.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/autocomplete.js/0.38.0/autocomplete.jquery.min.js" integrity="sha512-GU9ayf+66Xx2TmpxqJpliWbT5PiGYxpaG8rfnBEk1LL8l1KGkRShhngwdXK1UgqhAzWpZHSiYPc09/NwDQIGyg==" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/mark.min.js" integrity="sha512-5CYOlHXGh6QpOFA/TeTylKLWfB3ftPsde7AnmhuitiTX4K5SqCLBeKro6sPS8ilsz1Q4NRx3v8Ko2IBiszzdww==" crossorigin="anonymous"></script><!-- CSS -->
+<script src="libs/plotly-main-2.5.1/plotly-latest.min.js"></script><script src="libs/forceNetwork-binding-0.4/forceNetwork.js"></script><script src="libs/dendroNetwork-binding-0.4/dendroNetwork.js"></script><link href="libs/parallel-coordinates-2.1.8/parcoords.css" rel="stylesheet">
+<script src="libs/parcoords-binding-1.0.0/parcoords.js"></script><link href="libs/dygraphs-1.1.1/dygraph.css" rel="stylesheet">
+<script src="libs/dygraphs-1.1.1/dygraph-combined.js"></script><script src="libs/dygraphs-1.1.1/shapes.js"></script><script src="libs/moment-2.8.4/moment.js"></script><script src="libs/moment-timezone-0.2.5/moment-timezone-with-data.js"></script><script src="libs/moment-fquarter-1.0.0/moment-fquarter.min.js"></script><script src="libs/dygraphs-binding-1.1.1.6/dygraphs.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/autocomplete.js/0.38.0/autocomplete.jquery.min.js" integrity="sha512-GU9ayf+66Xx2TmpxqJpliWbT5PiGYxpaG8rfnBEk1LL8l1KGkRShhngwdXK1UgqhAzWpZHSiYPc09/NwDQIGyg==" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/mark.min.js" integrity="sha512-5CYOlHXGh6QpOFA/TeTylKLWfB3ftPsde7AnmhuitiTX4K5SqCLBeKro6sPS8ilsz1Q4NRx3v8Ko2IBiszzdww==" crossorigin="anonymous"></script><!-- CSS -->
 </head>
 <body data-spy="scroll" data-target="#toc">
 
@@ -50,66 +50,68 @@
 <li><a class="" href="community-contribution.html"><span class="header-section-number">2</span> Community Contribution</a></li>
 <li><a class="" href="github-submission-instructions.html"><span class="header-section-number">3</span> GitHub submission instructions</a></li>
 <li><a class="" href="sample-project.html"><span class="header-section-number">4</span> Sample project</a></li>
-<li class="book-part">Data Visualizations</li>
-<li><a class="" href="introduction-to-the-lattice-package.html"><span class="header-section-number">5</span> Introduction to the lattice package</a></li>
-<li><a class="" href="graph-animation-with-gganimate-and-after-effects.html"><span class="header-section-number">6</span> Graph animation with gganimate and After Effects</a></li>
-<li><a class="" href="interactive-plots.html"><span class="header-section-number">7</span> Interactive Plots</a></li>
-<li><a class="" href="create-regression-assumption-plots-in-word.html"><span class="header-section-number">8</span> Create regression assumption plots in Word</a></li>
-<li><a class="" href="from-neo4j-to-rstudio.html"><span class="header-section-number">9</span> From Neo4j to RStudio</a></li>
-<li><a class="" href="stacked-bar-plot-for-relative-proportions-in-python.html"><span class="header-section-number">10</span> Stacked Bar Plot For Relative Proportions In Python</a></li>
-<li><a class="" href="interactive-plot-introduction.html"><span class="header-section-number">11</span> Interactive plot introduction</a></li>
-<li><a class="" href="introduction-to-longitudinal-data-and-mlgm-package.html"><span class="header-section-number">12</span> Introduction to Longitudinal Data and MLGM Package</a></li>
-<li class="book-part">R Package Tutorial</li>
-<li><a class="" href="tidyverse_cheatsheet.html"><span class="header-section-number">13</span> Tidyverse_cheatsheet</a></li>
-<li><a class="" href="use-of-ggprism-and-ggsci-packages.html"><span class="header-section-number">14</span> Use of ggprism and ggsci packages</a></li>
-<li><a class="" href="parallel-coordinates-plot-cheatsheet.html"><span class="header-section-number">15</span> Parallel coordinates plot cheatsheet</a></li>
-<li><a class="" href="cheatsheet-tidyverse.html"><span class="header-section-number">16</span> Cheatsheet Tidyverse</a></li>
-<li><a class="" href="common-r-markdown-syntax-cheatsheet.html"><span class="header-section-number">17</span> Common R markdown syntax cheatsheet</a></li>
-<li><a class="" href="rpackage-waffle-cheatsheet.html"><span class="header-section-number">18</span> Rpackage waffle cheatsheet</a></li>
-<li class="book-part">Topics in Data Science</li>
-<li><a class="" href="a-linear-regression-bestiary.html"><span class="header-section-number">19</span> A linear regression Bestiary</a></li>
-<li><a class="" href="r-cheatsheet-on-data-transforamtion-and-exploration.html"><span class="header-section-number">20</span> R cheatsheet on data transforamtion and exploration</a></li>
-<li><a class="" href="r-data-science-workflow-cheatsheet.html"><span class="header-section-number">21</span> R Data Science Workflow CheatSheet</a></li>
-<li><a class="" href="questions-answers-for-r-technical-interview.html"><span class="header-section-number">22</span> 30 questions &amp; answers for r technical interview</a></li>
-<li><a class="" href="graphql-cheat-sheet.html"><span class="header-section-number">23</span> GraphQL Cheat Sheet</a></li>
-<li><a class="" href="r-vs-python-basic-data-wrangling.html"><span class="header-section-number">24</span> R vs Python Basic Data Wrangling</a></li>
-<li><a class="" href="r-vs.-python-visualization-cheatsheet.html"><span class="header-section-number">25</span> R vs. Python Visualization Cheatsheet</a></li>
+<li class="book-part">Guide to EDAV</li>
+<li><a class="" href="vipul-edav-community-contribution-kickstart-r.html"><span class="header-section-number">5</span> Vipul EDAV Community Contribution Kickstart R</a></li>
+<li><a class="" href="quick-guide-to-eda.html"><span class="header-section-number">6</span> Quick guide to eda</a></li>
 <li class="book-part">Tutorials</li>
-<li><a class="" href="multithreading-crawler-frame.html"><span class="header-section-number">26</span> Multithreading Crawler Frame</a></li>
-<li><a class="" href="regression-and-classification-in-r.html"><span class="header-section-number">27</span> Regression and Classification in R</a></li>
-<li><a class="" href="tibble-vs.-dataframe.html"><span class="header-section-number">28</span> Tibble vs. DataFrame</a></li>
-<li><a class="" href="introduction-to-time-series.html"><span class="header-section-number">29</span> Introduction to Time Series</a></li>
-<li><a class="" href="vipul-edav-community-contribution-kickstart-r.html"><span class="header-section-number">30</span> Vipul EDAV Community Contribution Kickstart R</a></li>
-<li><a class="" href="caret---a-machine-learning-package-turotial.html"><span class="header-section-number">31</span> caret - a machine learning package turotial</a></li>
-<li><a class="" href="streamlit-for-financial-analysis.html"><span class="header-section-number">32</span> Streamlit for Financial Analysis</a></li>
-<li><a class="" href="interactive-graphs-tutorial.html"><span class="header-section-number">33</span> Interactive graphs tutorial</a></li>
-<li><a class="active" href="guideline-on-using-package-rcurl-and-xml-for-web-scraping.html"><span class="header-section-number">34</span> Guideline on Using Package Rcurl and XML for Web Scraping</a></li>
-<li><a class="" href="twitter-r-package-scraping-via-api-tutorial.html"><span class="header-section-number">35</span> TwitteR R Package Scraping via API Tutorial</a></li>
-<li><a class="" href="introduction-to-data-manipulation.html"><span class="header-section-number">36</span> Introduction to Data Manipulation</a></li>
-<li><a class="" href="animating-the-plots-in-r.html"><span class="header-section-number">37</span> Animating the plots in R</a></li>
-<li><a class="" href="quick-guide-to-eda.html"><span class="header-section-number">38</span> Quick guide to eda</a></li>
-<li><a class="" href="natural-langauge-processing-common-eda-practices-in-python.html"><span class="header-section-number">39</span> Natural Langauge Processing Common EDA Practices in Python</a></li>
-<li><a class="" href="beginners-walk-through-of-deep-learning-in-r.html"><span class="header-section-number">40</span> Beginner’s Walk-through of Deep Learning in R</a></li>
-<li><a class="" href="supervised-learning-tutorial.html"><span class="header-section-number">41</span> Supervised Learning Tutorial</a></li>
-<li><a class="" href="parallel-coordinate-plots-in-ggplot2.html"><span class="header-section-number">42</span> Parallel Coordinate Plots in ggplot2</a></li>
-<li><a class="" href="using-ggplot-in-python.html"><span class="header-section-number">43</span> Using ggplot in python</a></li>
-<li><a class="" href="icons-and-symbols-in-r.html"><span class="header-section-number">44</span> Icons and symbols in R</a></li>
-<li><a class="" href="exploratory-data-analysis-and-preprocessing-with-r-for-data-challenges.html"><span class="header-section-number">45</span> Exploratory data analysis and preprocessing with R for data challenges</a></li>
-<li><a class="" href="introduction-to-git-bash.html"><span class="header-section-number">46</span> Introduction to Git Bash</a></li>
-<li><a class="" href="tutorial-for-six-basic-graphs-by-using-ggplot.html"><span class="header-section-number">47</span> Tutorial for six basic graphs by using ggplot</a></li>
-<li><a class="" href="web-scrapping-using-beautifulsoup-and-its-equivalent-in-rvest.html"><span class="header-section-number">48</span> Web Scrapping using BeautifulSoup and its Equivalent in rvest</a></li>
-<li><a class="" href="d-visualization-shinyaframe-introduction-and-tutorial.html"><span class="header-section-number">49</span> 3D visualization: shinyaframe introduction and tutorial</a></li>
-<li><a class="" href="efficient-dimension-reduction-with-umap.html"><span class="header-section-number">50</span> Efficient dimension reduction with UMAP</a></li>
-<li><a class="" href="functional-programming-with-purrr.html"><span class="header-section-number">51</span> Functional Programming with Purrr</a></li>
-<li><a class="" href="radial-bar-chart-and-other-interesting-graphs.html"><span class="header-section-number">52</span> Radial bar chart and other interesting graphs</a></li>
-<li><a class="" href="analyze-data-stored-in-aws-s3-using-r.html"><span class="header-section-number">53</span> Analyze data stored in AWS S3 using R</a></li>
-<li><a class="" href="introduction-to-flexdashboard-and-shiny.html"><span class="header-section-number">54</span> Introduction to flexdashboard and shiny</a></li>
+<li><a class="" href="tutorial-for-six-basic-graphs-by-using-ggplot.html"><span class="header-section-number">7</span> Tutorial for six basic graphs by using ggplot</a></li>
+<li><a class="" href="tibble-vs.-dataframe.html"><span class="header-section-number">8</span> Tibble vs. DataFrame</a></li>
+<li><a class="" href="introduction-to-data-manipulation.html"><span class="header-section-number">9</span> Introduction to Data Manipulation</a></li>
+<li><a class="" href="introduction-to-time-series.html"><span class="header-section-number">10</span> Introduction to Time Series</a></li>
+<li><a class="" href="interactive-graphs-tutorial.html"><span class="header-section-number">11</span> Interactive graphs tutorial</a></li>
+<li><a class="" href="introduction-to-git-bash.html"><span class="header-section-number">12</span> Introduction to Git Bash</a></li>
+<li><a class="" href="web-scrapping-using-beautifulsoup-and-its-equivalent-in-rvest.html"><span class="header-section-number">13</span> Web Scrapping using BeautifulSoup and its Equivalent in rvest</a></li>
+<li><a class="" href="analyze-data-stored-in-aws-s3-using-r.html"><span class="header-section-number">14</span> Analyze data stored in AWS S3 using R</a></li>
+<li class="book-part">R Package Tutorial</li>
+<li><a class="" href="tidyverse_cheatsheet.html"><span class="header-section-number">15</span> Tidyverse_cheatsheet</a></li>
+<li><a class="" href="use-of-ggprism-and-ggsci-packages.html"><span class="header-section-number">16</span> Use of ggprism and ggsci packages</a></li>
+<li><a class="" href="parallel-coordinates-plot-cheatsheet.html"><span class="header-section-number">17</span> Parallel coordinates plot cheatsheet</a></li>
+<li><a class="" href="cheatsheet-tidyverse.html"><span class="header-section-number">18</span> Cheatsheet Tidyverse</a></li>
+<li><a class="" href="common-r-markdown-syntax-cheatsheet.html"><span class="header-section-number">19</span> Common R markdown syntax cheatsheet</a></li>
+<li><a class="" href="rpackage-waffle-cheatsheet.html"><span class="header-section-number">20</span> Rpackage waffle cheatsheet</a></li>
+<li><a class="" href="introduction-to-flexdashboard-and-shiny.html"><span class="header-section-number">21</span> Introduction to flexdashboard and shiny</a></li>
+<li><a class="" href="functional-programming-with-purrr.html"><span class="header-section-number">22</span> Functional Programming with Purrr</a></li>
+<li class="book-part">Data Visualizations</li>
+<li><a class="" href="introduction-to-the-lattice-package.html"><span class="header-section-number">23</span> Introduction to the lattice package</a></li>
+<li><a class="" href="graph-animation-with-gganimate-and-after-effects.html"><span class="header-section-number">24</span> Graph animation with gganimate and After Effects</a></li>
+<li><a class="" href="animating-the-plots-in-r.html"><span class="header-section-number">25</span> Animating the plots in R</a></li>
+<li><a class="" href="interactive-plots.html"><span class="header-section-number">26</span> Interactive Plots</a></li>
+<li><a class="" href="create-regression-assumption-plots-in-word.html"><span class="header-section-number">27</span> Create regression assumption plots in Word</a></li>
+<li><a class="" href="from-neo4j-to-rstudio.html"><span class="header-section-number">28</span> From Neo4j to RStudio</a></li>
+<li><a class="" href="stacked-bar-plot-for-relative-proportions-in-python.html"><span class="header-section-number">29</span> Stacked Bar Plot For Relative Proportions In Python</a></li>
+<li><a class="" href="interactive-plot-introduction.html"><span class="header-section-number">30</span> Interactive plot introduction</a></li>
+<li><a class="" href="introduction-to-longitudinal-data-and-mlgm-package.html"><span class="header-section-number">31</span> Introduction to Longitudinal Data and MLGM Package</a></li>
+<li><a class="" href="parallel-coordinate-plots-cheatsheet.html"><span class="header-section-number">32</span> Parallel coordinate plots cheatsheet</a></li>
+<li><a class="" href="parallel-coordinate-plots-in-ggplot2.html"><span class="header-section-number">33</span> Parallel Coordinate Plots in ggplot2</a></li>
+<li><a class="" href="radial-bar-chart-and-other-interesting-graphs.html"><span class="header-section-number">34</span> Radial bar chart and other interesting graphs</a></li>
+<li><a class="" href="d-visualization-shinyaframe-introduction-and-tutorial.html"><span class="header-section-number">35</span> 3D visualization: shinyaframe introduction and tutorial</a></li>
+<li><a class="" href="using-ggplot-in-python.html"><span class="header-section-number">36</span> Using ggplot in python</a></li>
+<li><a class="" href="icons-and-symbols-in-r.html"><span class="header-section-number">37</span> Icons and symbols in R</a></li>
+<li class="book-part">Topics in Data Science</li>
+<li><a class="" href="r-data-science-workflow-cheatsheet.html"><span class="header-section-number">38</span> R Data Science Workflow CheatSheet</a></li>
+<li><a class="" href="r-cheatsheet-on-data-transforamtion-and-exploration.html"><span class="header-section-number">39</span> R cheatsheet on data transforamtion and exploration</a></li>
+<li><a class="" href="questions-answers-for-r-technical-interview.html"><span class="header-section-number">40</span> 30 questions &amp; answers for r technical interview</a></li>
+<li><a class="" href="graphql-cheat-sheet.html"><span class="header-section-number">41</span> GraphQL Cheat Sheet</a></li>
+<li><a class="" href="r-vs-python-basic-data-wrangling.html"><span class="header-section-number">42</span> R vs Python Basic Data Wrangling</a></li>
+<li><a class="" href="r-vs.-python-visualization-cheatsheet.html"><span class="header-section-number">43</span> R vs. Python Visualization Cheatsheet</a></li>
+<li><a class="active" href="guideline-on-using-package-rcurl-and-xml-for-web-scraping.html"><span class="header-section-number">44</span> Guideline on Using Package Rcurl and XML for Web Scraping</a></li>
+<li><a class="" href="multithreading-crawler-frame.html"><span class="header-section-number">45</span> Multithreading Crawler Frame</a></li>
+<li><a class="" href="twitter-r-package-scraping-via-api-tutorial.html"><span class="header-section-number">46</span> TwitteR R Package Scraping via API Tutorial</a></li>
+<li><a class="" href="natural-langauge-processing-common-eda-practices-in-python.html"><span class="header-section-number">47</span> Natural Langauge Processing Common EDA Practices in Python</a></li>
+<li class="book-part">Machine Learning and More</li>
+<li><a class="" href="low-key-ml-packages-in-r.html"><span class="header-section-number">48</span> Low-key ML packages in R</a></li>
+<li><a class="" href="a-linear-regression-bestiary.html"><span class="header-section-number">49</span> A linear regression Bestiary</a></li>
+<li><a class="" href="regression-and-classification-in-r.html"><span class="header-section-number">50</span> Regression and Classification in R</a></li>
+<li><a class="" href="caret---a-machine-learning-package-turotial.html"><span class="header-section-number">51</span> caret - a machine learning package turotial</a></li>
+<li><a class="" href="supervised-learning-tutorial.html"><span class="header-section-number">52</span> Supervised Learning Tutorial</a></li>
+<li><a class="" href="beginners-walk-through-of-deep-learning-in-r.html"><span class="header-section-number">53</span> Beginner’s Walk-through of Deep Learning in R</a></li>
 <li class="book-part">Demonstrations</li>
-<li><a class="" href="linear-association-r-studio-plugin.html"><span class="header-section-number">55</span> Linear Association R Studio Plugin</a></li>
-<li><a class="" href="customized-sorting-in-r.html"><span class="header-section-number">56</span> Customized Sorting in R</a></li>
-<li><a class="" href="low-key-ml-packages-in-r.html"><span class="header-section-number">57</span> Low-key ML packages in R</a></li>
-<li><a class="" href="parallel-coordinate-plots-cheatsheet.html"><span class="header-section-number">58</span> Parallel coordinate plots cheatsheet</a></li>
-<li><a class="" href="crime-analysis-around-columbia.html"><span class="header-section-number">59</span> Crime Analysis around Columbia</a></li>
+<li><a class="" href="linear-association-r-studio-plugin.html"><span class="header-section-number">54</span> Linear Association R Studio Plugin</a></li>
+<li><a class="" href="customized-sorting-in-r.html"><span class="header-section-number">55</span> Customized Sorting in R</a></li>
+<li><a class="" href="crime-analysis-around-columbia.html"><span class="header-section-number">56</span> Crime Analysis around Columbia</a></li>
+<li><a class="" href="efficient-dimension-reduction-with-umap.html"><span class="header-section-number">57</span> Efficient dimension reduction with UMAP</a></li>
+<li><a class="" href="exploratory-data-analysis-and-preprocessing-with-r-for-data-challenges.html"><span class="header-section-number">58</span> Exploratory data analysis and preprocessing with R for data challenges</a></li>
+<li><a class="" href="streamlit-for-financial-analysis.html"><span class="header-section-number">59</span> Streamlit for Financial Analysis</a></li>
 <li class="book-part">Workshops</li>
 <li><a class="" href="data-science-product-cycles-in-enterprises.html"><span class="header-section-number">60</span> Data Science Product Cycles in Enterprises</a></li>
 <li><a class="" href="mapreduce-concept-comparision-with-r.html"><span class="header-section-number">61</span> MapReduce Concept &amp; Comparision With R</a></li>
@@ -125,34 +127,34 @@
 </div>
   </header><main class="col-sm-12 col-md-9 col-lg-7" id="content"><div id="guideline-on-using-package-rcurl-and-xml-for-web-scraping" class="section level1">
 <h1>
-<span class="header-section-number">34</span> Guideline on Using Package Rcurl and XML for Web Scraping<a class="anchor" aria-label="anchor" href="#guideline-on-using-package-rcurl-and-xml-for-web-scraping"><i class="fas fa-link"></i></a>
+<span class="header-section-number">44</span> Guideline on Using Package Rcurl and XML for Web Scraping<a class="anchor" aria-label="anchor" href="#guideline-on-using-package-rcurl-and-xml-for-web-scraping"><i class="fas fa-link"></i></a>
 </h1>
 <p>Sitong Qian</p>
-<div class="sourceCode" id="cb413"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb496"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va">RCurl</span><span class="op">)</span>
 <span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="http://www.omegahat.net/RSXML">XML</a></span><span class="op">)</span></code></pre></div>
-<div id="introduction-3" class="section level2">
+<div id="introduction-7" class="section level2">
 <h2>
-<span class="header-section-number">34.1</span> Introduction<a class="anchor" aria-label="anchor" href="#introduction-3"><i class="fas fa-link"></i></a>
+<span class="header-section-number">44.1</span> Introduction<a class="anchor" aria-label="anchor" href="#introduction-7"><i class="fas fa-link"></i></a>
 </h2>
 <p>When comes to the world of EDAV, having a rich dataset is inevitably the cornerstone of success. While obtaining such a dataset is not always an easy job, sometimes, the dataset is dirty, waiting for a throughout clean before using, or it might be the case that it’s still not born yet, what we have are some piece-wise information, and needed to be assembled in a data frame format. Thus, it’s bringing to us the question of how to construct a dataset from none.</p>
 <p>Here, I want to give an approach to how to extarct the basic information we need for dataset construction from the website, namely web scraping, using package <strong>Rcurl</strong> and <strong>XML</strong>. To ease the potential confusion, I will go through a concrete example step by step, introducing the functions while go through the steps, explaining all the details behind the functions in a simple way and showing exactly how to do extracting work.</p>
 </div>
 <div id="extracting-information-for-constructing-dataset-rcurl-and-xml" class="section level2">
 <h2>
-<span class="header-section-number">34.2</span> Extracting Information for Constructing Dataset – Rcurl and XML<a class="anchor" aria-label="anchor" href="#extracting-information-for-constructing-dataset-rcurl-and-xml"><i class="fas fa-link"></i></a>
+<span class="header-section-number">44.2</span> Extracting Information for Constructing Dataset – Rcurl and XML<a class="anchor" aria-label="anchor" href="#extracting-information-for-constructing-dataset-rcurl-and-xml"><i class="fas fa-link"></i></a>
 </h2>
 <div id="step-1-web-searching" class="section level3">
 <h3>
-<span class="header-section-number">34.2.1</span> Step 1: Web Searching<a class="anchor" aria-label="anchor" href="#step-1-web-searching"><i class="fas fa-link"></i></a>
+<span class="header-section-number">44.2.1</span> Step 1: Web Searching<a class="anchor" aria-label="anchor" href="#step-1-web-searching"><i class="fas fa-link"></i></a>
 </h3>
 <p>The first step is choosing a topic you are interested in, Since it’s a job hunting season, let’s say I wanna know the <strong>Data</strong> related job posted on the website <strong>CyberCoders</strong>. I simply copy the page from browser</p>
-<div class="sourceCode" id="cb414"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb497"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="va">link</span> <span class="op">=</span> <span class="st">'https://www.cybercoders.com/search'</span></code></pre></div>
 <p>By clicking this link, we expected to be directed to a page like this.</p>
 <div class="inline-figure"><img src="resources/web_scraping_rcurl_xml/CCP1.png" width="100%" style="display: block; margin: auto;"></div>
 <p>Now, let’s put in the keyword <strong>Data</strong></p>
-<div class="sourceCode" id="cb415"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb498"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="va">search</span> <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/pkg/RCurl/man/postForm.html">getForm</a></span><span class="op">(</span><span class="va">link</span>,searchterms <span class="op">=</span> <span class="st">'Data'</span> <span class="op">)</span></code></pre></div>
 <p>Here, we use this <strong>getForm()</strong> function in the <strong>Rcurl</strong> Package.</p>
 <p>According to the <strong>Rcurl</strong> package description in the cran, <strong>getForm()</strong> provide facilities for submitting an HTML form using the simple GET mechanism(appending the name-value pairs of parameters in the URL)</p>
@@ -168,14 +170,14 @@ Using Chrome browser, on the site of cybercoders, click the <strong>View -&gt; D
 </div>
 <div id="step-2-cleanupparsing-search-results" class="section level3">
 <h3>
-<span class="header-section-number">34.2.2</span> Step 2: Cleanup(Parsing) Search Results<a class="anchor" aria-label="anchor" href="#step-2-cleanupparsing-search-results"><i class="fas fa-link"></i></a>
+<span class="header-section-number">44.2.2</span> Step 2: Cleanup(Parsing) Search Results<a class="anchor" aria-label="anchor" href="#step-2-cleanupparsing-search-results"><i class="fas fa-link"></i></a>
 </h3>
 <p>In the previous step, we end up putting keywords <strong>Data</strong> in the searchterms. Here, what search returns is basically what we expected to see if enter <strong>Data</strong> in the search box directly on the website, and click on the <strong>View Source</strong>.</p>
 <p>If we input <strong>search</strong> in the console, we will find out that it returns the HTML page we are looking for but in a really messy form. That’s because <strong>getform()</strong> function converts the page to the character.</p>
 <p><strong>To cut the length, I just took a screenshot of my console, otherwise, the output will occupy several pages with no actual meaning.</strong></p>
 <div class="inline-figure"><img src="resources/web_scraping_rcurl_xml/CCP4.png" width="100%" style="display: block; margin: auto;"></div>
 <p>This is not what we want, since HTML is built on hierarchy, such forms can’t obtain any information. Thus we need to return it in a more readable form. Here we introduce another powerful function <strong>htmlParse</strong> from <strong>XML</strong> package</p>
-<div class="sourceCode" id="cb416"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb499"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="va">document</span> <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/pkg/XML/man/xmlTreeParse.html">htmlParse</a></span><span class="op">(</span><span class="va">search</span><span class="op">)</span></code></pre></div>
 <p>Here, what <strong>htmlParse</strong> do is very simple and can be directly referred from its function name, as parsing the output above in a HTML form.</p>
 <p><strong>To cut the length, I just took a screenshot of my console, otherwise, the output will occupy several pages with no actual meaning.</strong></p>
@@ -185,17 +187,17 @@ Using Chrome browser, on the site of cybercoders, click the <strong>View -&gt; D
 </div>
 <div id="step-3-detect-the-pattern" class="section level3">
 <h3>
-<span class="header-section-number">34.2.3</span> Step 3: Detect the Pattern<a class="anchor" aria-label="anchor" href="#step-3-detect-the-pattern"><i class="fas fa-link"></i></a>
+<span class="header-section-number">44.2.3</span> Step 3: Detect the Pattern<a class="anchor" aria-label="anchor" href="#step-3-detect-the-pattern"><i class="fas fa-link"></i></a>
 </h3>
 <p>In the previous section, we return the results in a nice and clean form, now we need to <strong>detect the pattern</strong>. It’s fairly easy to see that the variable <strong>document</strong> give us the first page of the searching result. If we directly look on the website, the page returned roughly 21 job positions, we want to divide these 21 jobs so that we can look into each of them.</p>
 <p>Here we introduce the function <strong>getNodeSet()</strong></p>
 <p>According to the <strong>XML</strong> instruction from cran, <strong>getNodeSet()</strong> find matching nodes in an internal XML tree. If we see the class(document) we will find out one of it is <strong>“XMLInternalDocument”</strong>.Exactly what we want!</p>
-<div class="sourceCode" id="cb417"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb500"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="fu"><a href="https://rdrr.io/r/base/class.html">class</a></span><span class="op">(</span><span class="va">document</span><span class="op">)</span></code></pre></div>
 <pre><code>## [1] "HTMLInternalDocument" "HTMLInternalDocument" "XMLInternalDocument" 
 ## [4] "XMLAbstractDocument"</code></pre>
 <p>As we discussed before, HTML is built on hierarchy. It’s not hard to find out that each of the jobs starts with <strong>div class=“job-listing-item”</strong> Thus, now we know the correct function we should use and we know the nodes, combine these two together, we get the function. There are exactly 21 items in this list, corresponding to the 21 jobs display on the websites, and I showed the first jobs for later illustration</p>
-<div class="sourceCode" id="cb419"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb502"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="va">list</span> <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/pkg/XML/man/getNodeSet.html">getNodeSet</a></span><span class="op">(</span><span class="va">document</span>,<span class="st">"//div[@class = 'job-listing-item']"</span><span class="op">)</span>
 <span class="va">list</span><span class="op">[</span><span class="fl">1</span><span class="op">]</span><span class="op">[[</span><span class="fl">1</span><span class="op">]</span><span class="op">]</span></code></pre></div>
 <pre><code>## &lt;div class="job-listing-item"&gt;&amp;#13;
@@ -259,14 +261,14 @@ Using Chrome browser, on the site of cybercoders, click the <strong>View -&gt; D
 </div>
 <div id="step-4-extract-information-on-each-job-post" class="section level3">
 <h3>
-<span class="header-section-number">34.2.4</span> Step 4: Extract Information on Each Job Post<a class="anchor" aria-label="anchor" href="#step-4-extract-information-on-each-job-post"><i class="fas fa-link"></i></a>
+<span class="header-section-number">44.2.4</span> Step 4: Extract Information on Each Job Post<a class="anchor" aria-label="anchor" href="#step-4-extract-information-on-each-job-post"><i class="fas fa-link"></i></a>
 </h3>
 <p>From the previous step, we get a list with 21 jobs, now we want to extract the actual information we are looking for to construct the dataset. Based on the result, we could look at variables like <strong>Job-Title</strong>,<strong>Wage</strong>,<strong>Location</strong>,<strong>Skill</strong>,<strong>Posted Date</strong>,<strong>Job Description</strong>, etc</p>
 <p>Then, how to extract the variable name under such categories? we look back on the first job as a reference. Let’s say we wanna do the <strong>Job-Title</strong></p>
 <p>We introduce the function <strong>xpathSApply</strong></p>
 <p>According to the <strong>XML</strong> in cran, we can think xpathSApply as two parts, xpath and SApply, while what xpath do is scan over the page and match the result of our input, and SApply is how we returned it.</p>
 <p>like we did before, we found out the job-title starts with node <strong>div class=‘job-title’</strong>, we combine the function and indicator</p>
-<div class="sourceCode" id="cb421"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb504"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="va">test</span> <span class="op">=</span> <span class="va">list</span><span class="op">[</span><span class="fl">1</span><span class="op">]</span><span class="op">[[</span><span class="fl">1</span><span class="op">]</span><span class="op">]</span>
 <span class="va">title1</span> <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/pkg/XML/man/getNodeSet.html">xpathSApply</a></span><span class="op">(</span><span class="va">test</span>, <span class="st">".//div[@class = 'job-title']"</span><span class="op">)</span>
 <span class="va">title1</span></code></pre></div>
@@ -276,18 +278,18 @@ Using Chrome browser, on the site of cybercoders, click the <strong>View -&gt; D
 ##         &lt;/div&gt;</code></pre>
 <p>While title 1 is located to the information we want, but slightly messy since it’s still contains some XML format.</p>
 <p>But we have a magic tool, <strong>xmlValue</strong>, by adding xmlValue in the function, we get rid off all the XML locators, just the value</p>
-<div class="sourceCode" id="cb423"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb506"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="va">title2</span> <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/pkg/XML/man/getNodeSet.html">xpathSApply</a></span><span class="op">(</span><span class="va">test</span>, <span class="st">".//div[@class = 'job-title']"</span>,<span class="va">xmlValue</span><span class="op">)</span>
 <span class="va">title2</span></code></pre></div>
 <pre><code>## [1] "\r\n            Data Engineer\r\n        "</code></pre>
 <p>Still, there are some irrevalant things, but we can use <strong>trimws</strong> to fix that, and we will get a nice and pretty form</p>
-<div class="sourceCode" id="cb425"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb508"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="va">title3</span> <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/trimws.html">trimws</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/pkg/XML/man/getNodeSet.html">xpathSApply</a></span><span class="op">(</span><span class="va">test</span>, <span class="st">".//div[@class = 'job-title']"</span>,<span class="va">xmlValue</span><span class="op">)</span><span class="op">)</span>
 <span class="va">title3</span></code></pre></div>
 <pre><code>## [1] "Data Engineer"</code></pre>
 <p>This <strong>xpathSApply</strong> function is a really powerful function of extracting the value we need, because it’s return to a character, we can use regular expression on it to do other clean-up jobs. I personally think it is the most important function of this <strong>XML</strong> package.</p>
 <p>Here are what we have for the <strong>1st</strong> job</p>
-<div class="sourceCode" id="cb427"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb510"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="va">job_title</span> <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/trimws.html">trimws</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/unique.html">unique</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/pkg/XML/man/getNodeSet.html">xpathSApply</a></span><span class="op">(</span><span class="va">test</span>, <span class="st">".//div[@class = 'job-title']"</span>,<span class="va">xmlValue</span><span class="op">)</span><span class="op">)</span><span class="op">)</span>
 <span class="va">salary_jobStatus</span> <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/trimws.html">trimws</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/unique.html">unique</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/pkg/XML/man/getNodeSet.html">xpathSApply</a></span><span class="op">(</span><span class="va">test</span>, <span class="st">".//div[@class = 'wage']"</span>,<span class="va">xmlValue</span><span class="op">)</span><span class="op">)</span><span class="op">)</span>
 <span class="va">location</span> <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/trimws.html">trimws</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/unique.html">unique</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/pkg/XML/man/getNodeSet.html">xpathSApply</a></span><span class="op">(</span><span class="va">test</span>, <span class="st">".//div[@class = 'location']"</span>,<span class="va">xmlValue</span><span class="op">)</span><span class="op">)</span><span class="op">)</span>
@@ -296,19 +298,19 @@ Using Chrome browser, on the site of cybercoders, click the <strong>View -&gt; D
 <span class="va">preferred_skills</span> <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/trimws.html">trimws</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/unique.html">unique</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/pkg/XML/man/getNodeSet.html">xpathSApply</a></span><span class="op">(</span><span class="va">test</span>, <span class="st">".//li[@class = 'skill-item']"</span>,<span class="va">xmlValue</span><span class="op">)</span><span class="op">)</span><span class="op">)</span>
 <span class="va">job_title</span></code></pre></div>
 <pre><code>## [1] "Data Engineer"</code></pre>
-<div class="sourceCode" id="cb429"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb512"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="va">salary_jobStatus</span></code></pre></div>
 <pre><code>## [1] "Full-time $80k - $130k"</code></pre>
-<div class="sourceCode" id="cb431"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb514"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="va">location</span></code></pre></div>
 <pre><code>## [1] "Mountain View, CA"</code></pre>
-<div class="sourceCode" id="cb433"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb516"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="va">date</span></code></pre></div>
 <pre><code>## [1] "Posted 10/19/2021"</code></pre>
-<div class="sourceCode" id="cb435"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb518"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="va">description</span></code></pre></div>
 <pre><code>## [1] "If you are a Data Engineer with experience, please read on! This is a great opportunity for a Data Engineer who is looking to make a shift to Data Science or wanting to develop more skills. This indiv..."</code></pre>
-<div class="sourceCode" id="cb437"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb520"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="va">preferred_skills</span></code></pre></div>
 <pre><code>## [1] "Data Engineering"              "Data Science"                 
 ## [3] "Gathering and Collecting Data" "Batch Processing"             
@@ -316,12 +318,12 @@ Using Chrome browser, on the site of cybercoders, click the <strong>View -&gt; D
 </div>
 <div id="step-5-combine-job-posts" class="section level3">
 <h3>
-<span class="header-section-number">34.2.5</span> Step 5: Combine Job Posts<a class="anchor" aria-label="anchor" href="#step-5-combine-job-posts"><i class="fas fa-link"></i></a>
+<span class="header-section-number">44.2.5</span> Step 5: Combine Job Posts<a class="anchor" aria-label="anchor" href="#step-5-combine-job-posts"><i class="fas fa-link"></i></a>
 </h3>
 <p>Here, we come to the next step, combining the results of each job, well it does not have lots to do with <strong>XML</strong> and <strong>Rcurl</strong> package. However, I thought it would be more intuitive to do this step for sake of completeness, and help to build an overall logical way of thinking about web scraping.</p>
 <p>Basically, what we did before is only apply to one post, now we want to do this for every post on the first page. The code is nothing fancy, just throw the individual code we did before and have it in a “function form”.</p>
 <p><strong>To cut the length, I just output first three, if I output all the posts it will occupy several pages with no actual meaning.</strong></p>
-<div class="sourceCode" id="cb439"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb522"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="va">job</span> <span class="op">=</span>
   <span class="kw">function</span><span class="op">(</span><span class="va">ind</span><span class="op">)</span>
   <span class="op">{</span>
@@ -344,7 +346,7 @@ Using Chrome browser, on the site of cybercoders, click the <strong>View -&gt; D
 <span class="va">all_job_lists</span> <span class="op">=</span> <span class="fu">pagecontentjoblist</span><span class="op">(</span><span class="va">link</span><span class="op">)</span>
 <span class="va">post_all</span> <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/lapply.html">lapply</a></span><span class="op">(</span><span class="va">all_job_lists</span>, <span class="va">job</span><span class="op">)</span></code></pre></div>
 <p><strong>To cut the length, I just output first three, if I output all the posts it will occupy several pages with no actual meaning.</strong></p>
-<div class="sourceCode" id="cb440"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb523"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="va">post_all</span><span class="op">[</span><span class="fl">1</span><span class="op">:</span><span class="fl">3</span><span class="op">]</span></code></pre></div>
 <pre><code>## [[1]]
 ## [[1]]$title
@@ -410,15 +412,15 @@ Using Chrome browser, on the site of cybercoders, click the <strong>View -&gt; D
 <p>As it’s shown, the results are pretty much cleaned to use but probably need some help from regular expression to make it become an actual dataset. But since this guideline is focusing on web scraping mainly. I will call this an end.</p>
 </div>
 </div>
-<div id="conclusion-1" class="section level2">
+<div id="conclusion-3" class="section level2">
 <h2>
-<span class="header-section-number">34.3</span> Conclusion<a class="anchor" aria-label="anchor" href="#conclusion-1"><i class="fas fa-link"></i></a>
+<span class="header-section-number">44.3</span> Conclusion<a class="anchor" aria-label="anchor" href="#conclusion-3"><i class="fas fa-link"></i></a>
 </h2>
 <p>Here I go through how I would like to do web scraping using packages of <strong>XML</strong> and <strong>Rcurl</strong>, what I covered is just a basic approach by using some most frequently used functions in these two packages. There are lots of useful functions in there and worth reading all of them if you have time. I hope people who read this tutorial will have a more clear understanding of the idea of Web Scraping, and how to do it.</p>
 </div>
 <div id="work-cited" class="section level2">
 <h2>
-<span class="header-section-number">34.4</span> Work Cited<a class="anchor" aria-label="anchor" href="#work-cited"><i class="fas fa-link"></i></a>
+<span class="header-section-number">44.4</span> Work Cited<a class="anchor" aria-label="anchor" href="#work-cited"><i class="fas fa-link"></i></a>
 </h2>
 <p><a href="https://cran.r-project.org/web/packages/XML/XML.pdf" class="uri">https://cran.r-project.org/web/packages/XML/XML.pdf</a>
 <br><a href="https://cran.r-project.org/web/packages/RCurl/RCurl.pdf" class="uri">https://cran.r-project.org/web/packages/RCurl/RCurl.pdf</a></p>
@@ -426,24 +428,24 @@ Using Chrome browser, on the site of cybercoders, click the <strong>View -&gt; D
 </div>
 </div>
   <div class="chapter-nav">
-<div class="prev"><a href="interactive-graphs-tutorial.html"><span class="header-section-number">33</span> Interactive graphs tutorial</a></div>
-<div class="next"><a href="twitter-r-package-scraping-via-api-tutorial.html"><span class="header-section-number">35</span> TwitteR R Package Scraping via API Tutorial</a></div>
+<div class="prev"><a href="r-vs.-python-visualization-cheatsheet.html"><span class="header-section-number">43</span> R vs. Python Visualization Cheatsheet</a></div>
+<div class="next"><a href="multithreading-crawler-frame.html"><span class="header-section-number">45</span> Multithreading Crawler Frame</a></div>
 </div></main><div class="col-md-3 col-lg-2 d-none d-md-block sidebar sidebar-chapter">
     <nav id="toc" data-toggle="toc" aria-label="On this page"><h2>On this page</h2>
       <ul class="nav navbar-nav">
-<li><a class="nav-link" href="#guideline-on-using-package-rcurl-and-xml-for-web-scraping"><span class="header-section-number">34</span> Guideline on Using Package Rcurl and XML for Web Scraping</a></li>
-<li><a class="nav-link" href="#introduction-3"><span class="header-section-number">34.1</span> Introduction</a></li>
+<li><a class="nav-link" href="#guideline-on-using-package-rcurl-and-xml-for-web-scraping"><span class="header-section-number">44</span> Guideline on Using Package Rcurl and XML for Web Scraping</a></li>
+<li><a class="nav-link" href="#introduction-7"><span class="header-section-number">44.1</span> Introduction</a></li>
 <li>
-<a class="nav-link" href="#extracting-information-for-constructing-dataset-rcurl-and-xml"><span class="header-section-number">34.2</span> Extracting Information for Constructing Dataset – Rcurl and XML</a><ul class="nav navbar-nav">
-<li><a class="nav-link" href="#step-1-web-searching"><span class="header-section-number">34.2.1</span> Step 1: Web Searching</a></li>
-<li><a class="nav-link" href="#step-2-cleanupparsing-search-results"><span class="header-section-number">34.2.2</span> Step 2: Cleanup(Parsing) Search Results</a></li>
-<li><a class="nav-link" href="#step-3-detect-the-pattern"><span class="header-section-number">34.2.3</span> Step 3: Detect the Pattern</a></li>
-<li><a class="nav-link" href="#step-4-extract-information-on-each-job-post"><span class="header-section-number">34.2.4</span> Step 4: Extract Information on Each Job Post</a></li>
-<li><a class="nav-link" href="#step-5-combine-job-posts"><span class="header-section-number">34.2.5</span> Step 5: Combine Job Posts</a></li>
+<a class="nav-link" href="#extracting-information-for-constructing-dataset-rcurl-and-xml"><span class="header-section-number">44.2</span> Extracting Information for Constructing Dataset – Rcurl and XML</a><ul class="nav navbar-nav">
+<li><a class="nav-link" href="#step-1-web-searching"><span class="header-section-number">44.2.1</span> Step 1: Web Searching</a></li>
+<li><a class="nav-link" href="#step-2-cleanupparsing-search-results"><span class="header-section-number">44.2.2</span> Step 2: Cleanup(Parsing) Search Results</a></li>
+<li><a class="nav-link" href="#step-3-detect-the-pattern"><span class="header-section-number">44.2.3</span> Step 3: Detect the Pattern</a></li>
+<li><a class="nav-link" href="#step-4-extract-information-on-each-job-post"><span class="header-section-number">44.2.4</span> Step 4: Extract Information on Each Job Post</a></li>
+<li><a class="nav-link" href="#step-5-combine-job-posts"><span class="header-section-number">44.2.5</span> Step 5: Combine Job Posts</a></li>
 </ul>
 </li>
-<li><a class="nav-link" href="#conclusion-1"><span class="header-section-number">34.3</span> Conclusion</a></li>
-<li><a class="nav-link" href="#work-cited"><span class="header-section-number">34.4</span> Work Cited</a></li>
+<li><a class="nav-link" href="#conclusion-3"><span class="header-section-number">44.3</span> Conclusion</a></li>
+<li><a class="nav-link" href="#work-cited"><span class="header-section-number">44.4</span> Work Cited</a></li>
 </ul>
 
       <div class="book-extra">
@@ -461,7 +463,7 @@ Using Chrome browser, on the site of cybercoders, click the <strong>View -&gt; D
 <footer class="bg-primary text-light mt-5"><div class="container"><div class="row">
 
   <div class="col-12 col-md-6 mt-3">
-    <p>"<strong>EDAV Fall 2021 Mon/Wed Community Contributions</strong>" was written by the students of the class. It was last built on 2021-11-20.</p>
+    <p>"<strong>EDAV Fall 2021 Mon/Wed Community Contributions</strong>" was written by the students of the class. It was last built on 2021-11-22.</p>
   </div>
 
   <div class="col-12 col-md-6 mt-3">

@@ -1,7 +1,7 @@
 
 ---
 title: "EDAV Fall 2021 Mon/Wed Community Contributions"
-date: "2021-11-20"
+date: "2021-11-22"
 author: "the students of the class"
 site: bookdown::bookdown_site
 github-repo: jtr13/cc21fall1

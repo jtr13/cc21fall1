@@ -1,5 +1,3 @@
-# (PART) Topics in Data Science {-}
-
 # A linear regression Bestiary
 
 Wael Boukhobza

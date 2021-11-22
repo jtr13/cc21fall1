@@ -4,27 +4,27 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<title>Chapter 50 Efficient dimension reduction with UMAP | EDAV Fall 2021 Mon/Wed Community Contributions</title>
+<title>Chapter 57 Efficient dimension reduction with UMAP | EDAV Fall 2021 Mon/Wed Community Contributions</title>
 <meta name="author" content="the students of the class">
-<meta name="description" content="Soham Joshi and Mehrab Singh Gill  50.1 Brief Introduction to UMAP The dimensionality techniques that exist right now do not tend to work very efficiently when there are a lot of dimensions...">
+<meta name="description" content="Soham Joshi and Mehrab Singh Gill  57.1 Brief Introduction to UMAP The dimensionality techniques that exist right now do not tend to work very efficiently when there are a lot of dimensions...">
 <meta name="generator" content="bookdown 0.24 with bs4_book()">
-<meta property="og:title" content="Chapter 50 Efficient dimension reduction with UMAP | EDAV Fall 2021 Mon/Wed Community Contributions">
+<meta property="og:title" content="Chapter 57 Efficient dimension reduction with UMAP | EDAV Fall 2021 Mon/Wed Community Contributions">
 <meta property="og:type" content="book">
-<meta property="og:description" content="Soham Joshi and Mehrab Singh Gill  50.1 Brief Introduction to UMAP The dimensionality techniques that exist right now do not tend to work very efficiently when there are a lot of dimensions...">
+<meta property="og:description" content="Soham Joshi and Mehrab Singh Gill  57.1 Brief Introduction to UMAP The dimensionality techniques that exist right now do not tend to work very efficiently when there are a lot of dimensions...">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Chapter 50 Efficient dimension reduction with UMAP | EDAV Fall 2021 Mon/Wed Community Contributions">
-<meta name="twitter:description" content="Soham Joshi and Mehrab Singh Gill  50.1 Brief Introduction to UMAP The dimensionality techniques that exist right now do not tend to work very efficiently when there are a lot of dimensions...">
+<meta name="twitter:title" content="Chapter 57 Efficient dimension reduction with UMAP | EDAV Fall 2021 Mon/Wed Community Contributions">
+<meta name="twitter:description" content="Soham Joshi and Mehrab Singh Gill  57.1 Brief Introduction to UMAP The dimensionality techniques that exist right now do not tend to work very efficiently when there are a lot of dimensions...">
 <!-- JS --><script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.6/clipboard.min.js" integrity="sha256-inc5kl9MA1hkeYUt+EC3BhlIgyp/2jDIyBLS6k3UxPI=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/fuse.js/6.4.6/fuse.js" integrity="sha512-zv6Ywkjyktsohkbp9bb45V6tEMoWhzFzXis+LrMehmJZZSys19Yxf1dopHx7WzIKxr5tK2dVcYmaCk2uqdjF4A==" crossorigin="anonymous"></script><script src="https://kit.fontawesome.com/6ecbd6c532.js" crossorigin="anonymous"></script><script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <link href="libs/bootstrap-4.6.0/bootstrap.min.css" rel="stylesheet">
 <script src="libs/bootstrap-4.6.0/bootstrap.bundle.min.js"></script><script src="libs/bs3compat-0.3.1/transition.js"></script><script src="libs/bs3compat-0.3.1/tabs.js"></script><script src="libs/bs3compat-0.3.1/bs3compat.js"></script><link href="libs/bs4_book-1.0.0/bs4_book.css" rel="stylesheet">
-<script src="libs/bs4_book-1.0.0/bs4_book.js"></script><script src="libs/accessible-code-block-0.0.1/empty-anchor.js"></script><script src="libs/htmlwidgets-1.5.4/htmlwidgets.js"></script><script src="libs/plotly-binding-4.10.0/plotly.js"></script><script src="libs/typedarray-0.1/typedarray.min.js"></script><link href="libs/crosstalk-1.2.0/css/crosstalk.min.css" rel="stylesheet">
+<script src="libs/bs4_book-1.0.0/bs4_book.js"></script><script src="libs/accessible-code-block-0.0.1/empty-anchor.js"></script><script src="libs/htmlwidgets-1.5.4/htmlwidgets.js"></script><link href="libs/str_view-0.1.0/str_view.css" rel="stylesheet">
+<script src="libs/str_view-binding-1.4.0/str_view.js"></script><script src="libs/detect-resize-0.5.3/jquery.resize.js"></script><link href="libs/jquery-ui-1.11.4/jquery-ui.min.css" rel="stylesheet">
+<script src="libs/jquery-ui-1.11.4/jquery-ui.min.js"></script><script src="libs/d3-5.16.0/d3.min.js"></script><script src="libs/vega-1.4.3/vega.min.js"></script><script src="libs/lodash-2.2.1/lodash.min.js"></script><script>var lodash = _.noConflict();</script><link href="libs/ggvis-0.4.7/css/ggvis.css" rel="stylesheet">
+<script src="libs/ggvis-0.4.7/js/ggvis.js"></script><script src="libs/plotly-binding-4.10.0/plotly.js"></script><script src="libs/typedarray-0.1/typedarray.min.js"></script><link href="libs/crosstalk-1.2.0/css/crosstalk.min.css" rel="stylesheet">
 <script src="libs/crosstalk-1.2.0/js/crosstalk.min.js"></script><link href="libs/plotly-htmlwidgets-css-2.5.1/plotly-htmlwidgets.css" rel="stylesheet">
-<script src="libs/plotly-main-2.5.1/plotly-latest.min.js"></script><link href="libs/dygraphs-1.1.1/dygraph.css" rel="stylesheet">
-<script src="libs/dygraphs-1.1.1/dygraph-combined.js"></script><script src="libs/dygraphs-1.1.1/shapes.js"></script><script src="libs/moment-2.8.4/moment.js"></script><script src="libs/moment-timezone-0.2.5/moment-timezone-with-data.js"></script><script src="libs/moment-fquarter-1.0.0/moment-fquarter.min.js"></script><script src="libs/dygraphs-binding-1.1.1.6/dygraphs.js"></script><script src="libs/d3-5.16.0/d3.min.js"></script><script src="libs/forceNetwork-binding-0.4/forceNetwork.js"></script><link href="libs/parallel-coordinates-2.1.8/parcoords.css" rel="stylesheet">
-<script src="libs/parcoords-binding-1.0.0/parcoords.js"></script><script src="libs/detect-resize-0.5.3/jquery.resize.js"></script><link href="libs/jquery-ui-1.11.4/jquery-ui.min.css" rel="stylesheet">
-<script src="libs/jquery-ui-1.11.4/jquery-ui.min.js"></script><script src="libs/vega-1.4.3/vega.min.js"></script><script src="libs/lodash-2.2.1/lodash.min.js"></script><script>var lodash = _.noConflict();</script><link href="libs/ggvis-0.4.7/css/ggvis.css" rel="stylesheet">
-<script src="libs/ggvis-0.4.7/js/ggvis.js"></script><script src="libs/dendroNetwork-binding-0.4/dendroNetwork.js"></script><link href="libs/str_view-0.1.0/str_view.css" rel="stylesheet">
-<script src="libs/str_view-binding-1.4.0/str_view.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/autocomplete.js/0.38.0/autocomplete.jquery.min.js" integrity="sha512-GU9ayf+66Xx2TmpxqJpliWbT5PiGYxpaG8rfnBEk1LL8l1KGkRShhngwdXK1UgqhAzWpZHSiYPc09/NwDQIGyg==" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/mark.min.js" integrity="sha512-5CYOlHXGh6QpOFA/TeTylKLWfB3ftPsde7AnmhuitiTX4K5SqCLBeKro6sPS8ilsz1Q4NRx3v8Ko2IBiszzdww==" crossorigin="anonymous"></script><!-- CSS -->
+<script src="libs/plotly-main-2.5.1/plotly-latest.min.js"></script><script src="libs/forceNetwork-binding-0.4/forceNetwork.js"></script><script src="libs/dendroNetwork-binding-0.4/dendroNetwork.js"></script><link href="libs/parallel-coordinates-2.1.8/parcoords.css" rel="stylesheet">
+<script src="libs/parcoords-binding-1.0.0/parcoords.js"></script><link href="libs/dygraphs-1.1.1/dygraph.css" rel="stylesheet">
+<script src="libs/dygraphs-1.1.1/dygraph-combined.js"></script><script src="libs/dygraphs-1.1.1/shapes.js"></script><script src="libs/moment-2.8.4/moment.js"></script><script src="libs/moment-timezone-0.2.5/moment-timezone-with-data.js"></script><script src="libs/moment-fquarter-1.0.0/moment-fquarter.min.js"></script><script src="libs/dygraphs-binding-1.1.1.6/dygraphs.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/autocomplete.js/0.38.0/autocomplete.jquery.min.js" integrity="sha512-GU9ayf+66Xx2TmpxqJpliWbT5PiGYxpaG8rfnBEk1LL8l1KGkRShhngwdXK1UgqhAzWpZHSiYPc09/NwDQIGyg==" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/mark.min.js" integrity="sha512-5CYOlHXGh6QpOFA/TeTylKLWfB3ftPsde7AnmhuitiTX4K5SqCLBeKro6sPS8ilsz1Q4NRx3v8Ko2IBiszzdww==" crossorigin="anonymous"></script><!-- CSS -->
 </head>
 <body data-spy="scroll" data-target="#toc">
 
@@ -50,66 +50,68 @@
 <li><a class="" href="community-contribution.html"><span class="header-section-number">2</span> Community Contribution</a></li>
 <li><a class="" href="github-submission-instructions.html"><span class="header-section-number">3</span> GitHub submission instructions</a></li>
 <li><a class="" href="sample-project.html"><span class="header-section-number">4</span> Sample project</a></li>
-<li class="book-part">Data Visualizations</li>
-<li><a class="" href="introduction-to-the-lattice-package.html"><span class="header-section-number">5</span> Introduction to the lattice package</a></li>
-<li><a class="" href="graph-animation-with-gganimate-and-after-effects.html"><span class="header-section-number">6</span> Graph animation with gganimate and After Effects</a></li>
-<li><a class="" href="interactive-plots.html"><span class="header-section-number">7</span> Interactive Plots</a></li>
-<li><a class="" href="create-regression-assumption-plots-in-word.html"><span class="header-section-number">8</span> Create regression assumption plots in Word</a></li>
-<li><a class="" href="from-neo4j-to-rstudio.html"><span class="header-section-number">9</span> From Neo4j to RStudio</a></li>
-<li><a class="" href="stacked-bar-plot-for-relative-proportions-in-python.html"><span class="header-section-number">10</span> Stacked Bar Plot For Relative Proportions In Python</a></li>
-<li><a class="" href="interactive-plot-introduction.html"><span class="header-section-number">11</span> Interactive plot introduction</a></li>
-<li><a class="" href="introduction-to-longitudinal-data-and-mlgm-package.html"><span class="header-section-number">12</span> Introduction to Longitudinal Data and MLGM Package</a></li>
-<li class="book-part">R Package Tutorial</li>
-<li><a class="" href="tidyverse_cheatsheet.html"><span class="header-section-number">13</span> Tidyverse_cheatsheet</a></li>
-<li><a class="" href="use-of-ggprism-and-ggsci-packages.html"><span class="header-section-number">14</span> Use of ggprism and ggsci packages</a></li>
-<li><a class="" href="parallel-coordinates-plot-cheatsheet.html"><span class="header-section-number">15</span> Parallel coordinates plot cheatsheet</a></li>
-<li><a class="" href="cheatsheet-tidyverse.html"><span class="header-section-number">16</span> Cheatsheet Tidyverse</a></li>
-<li><a class="" href="common-r-markdown-syntax-cheatsheet.html"><span class="header-section-number">17</span> Common R markdown syntax cheatsheet</a></li>
-<li><a class="" href="rpackage-waffle-cheatsheet.html"><span class="header-section-number">18</span> Rpackage waffle cheatsheet</a></li>
-<li class="book-part">Topics in Data Science</li>
-<li><a class="" href="a-linear-regression-bestiary.html"><span class="header-section-number">19</span> A linear regression Bestiary</a></li>
-<li><a class="" href="r-cheatsheet-on-data-transforamtion-and-exploration.html"><span class="header-section-number">20</span> R cheatsheet on data transforamtion and exploration</a></li>
-<li><a class="" href="r-data-science-workflow-cheatsheet.html"><span class="header-section-number">21</span> R Data Science Workflow CheatSheet</a></li>
-<li><a class="" href="questions-answers-for-r-technical-interview.html"><span class="header-section-number">22</span> 30 questions &amp; answers for r technical interview</a></li>
-<li><a class="" href="graphql-cheat-sheet.html"><span class="header-section-number">23</span> GraphQL Cheat Sheet</a></li>
-<li><a class="" href="r-vs-python-basic-data-wrangling.html"><span class="header-section-number">24</span> R vs Python Basic Data Wrangling</a></li>
-<li><a class="" href="r-vs.-python-visualization-cheatsheet.html"><span class="header-section-number">25</span> R vs. Python Visualization Cheatsheet</a></li>
+<li class="book-part">Guide to EDAV</li>
+<li><a class="" href="vipul-edav-community-contribution-kickstart-r.html"><span class="header-section-number">5</span> Vipul EDAV Community Contribution Kickstart R</a></li>
+<li><a class="" href="quick-guide-to-eda.html"><span class="header-section-number">6</span> Quick guide to eda</a></li>
 <li class="book-part">Tutorials</li>
-<li><a class="" href="multithreading-crawler-frame.html"><span class="header-section-number">26</span> Multithreading Crawler Frame</a></li>
-<li><a class="" href="regression-and-classification-in-r.html"><span class="header-section-number">27</span> Regression and Classification in R</a></li>
-<li><a class="" href="tibble-vs.-dataframe.html"><span class="header-section-number">28</span> Tibble vs. DataFrame</a></li>
-<li><a class="" href="introduction-to-time-series.html"><span class="header-section-number">29</span> Introduction to Time Series</a></li>
-<li><a class="" href="vipul-edav-community-contribution-kickstart-r.html"><span class="header-section-number">30</span> Vipul EDAV Community Contribution Kickstart R</a></li>
-<li><a class="" href="caret---a-machine-learning-package-turotial.html"><span class="header-section-number">31</span> caret - a machine learning package turotial</a></li>
-<li><a class="" href="streamlit-for-financial-analysis.html"><span class="header-section-number">32</span> Streamlit for Financial Analysis</a></li>
-<li><a class="" href="interactive-graphs-tutorial.html"><span class="header-section-number">33</span> Interactive graphs tutorial</a></li>
-<li><a class="" href="guideline-on-using-package-rcurl-and-xml-for-web-scraping.html"><span class="header-section-number">34</span> Guideline on Using Package Rcurl and XML for Web Scraping</a></li>
-<li><a class="" href="twitter-r-package-scraping-via-api-tutorial.html"><span class="header-section-number">35</span> TwitteR R Package Scraping via API Tutorial</a></li>
-<li><a class="" href="introduction-to-data-manipulation.html"><span class="header-section-number">36</span> Introduction to Data Manipulation</a></li>
-<li><a class="" href="animating-the-plots-in-r.html"><span class="header-section-number">37</span> Animating the plots in R</a></li>
-<li><a class="" href="quick-guide-to-eda.html"><span class="header-section-number">38</span> Quick guide to eda</a></li>
-<li><a class="" href="natural-langauge-processing-common-eda-practices-in-python.html"><span class="header-section-number">39</span> Natural Langauge Processing Common EDA Practices in Python</a></li>
-<li><a class="" href="beginners-walk-through-of-deep-learning-in-r.html"><span class="header-section-number">40</span> Beginner’s Walk-through of Deep Learning in R</a></li>
-<li><a class="" href="supervised-learning-tutorial.html"><span class="header-section-number">41</span> Supervised Learning Tutorial</a></li>
-<li><a class="" href="parallel-coordinate-plots-in-ggplot2.html"><span class="header-section-number">42</span> Parallel Coordinate Plots in ggplot2</a></li>
-<li><a class="" href="using-ggplot-in-python.html"><span class="header-section-number">43</span> Using ggplot in python</a></li>
-<li><a class="" href="icons-and-symbols-in-r.html"><span class="header-section-number">44</span> Icons and symbols in R</a></li>
-<li><a class="" href="exploratory-data-analysis-and-preprocessing-with-r-for-data-challenges.html"><span class="header-section-number">45</span> Exploratory data analysis and preprocessing with R for data challenges</a></li>
-<li><a class="" href="introduction-to-git-bash.html"><span class="header-section-number">46</span> Introduction to Git Bash</a></li>
-<li><a class="" href="tutorial-for-six-basic-graphs-by-using-ggplot.html"><span class="header-section-number">47</span> Tutorial for six basic graphs by using ggplot</a></li>
-<li><a class="" href="web-scrapping-using-beautifulsoup-and-its-equivalent-in-rvest.html"><span class="header-section-number">48</span> Web Scrapping using BeautifulSoup and its Equivalent in rvest</a></li>
-<li><a class="" href="d-visualization-shinyaframe-introduction-and-tutorial.html"><span class="header-section-number">49</span> 3D visualization: shinyaframe introduction and tutorial</a></li>
-<li><a class="active" href="efficient-dimension-reduction-with-umap.html"><span class="header-section-number">50</span> Efficient dimension reduction with UMAP</a></li>
-<li><a class="" href="functional-programming-with-purrr.html"><span class="header-section-number">51</span> Functional Programming with Purrr</a></li>
-<li><a class="" href="radial-bar-chart-and-other-interesting-graphs.html"><span class="header-section-number">52</span> Radial bar chart and other interesting graphs</a></li>
-<li><a class="" href="analyze-data-stored-in-aws-s3-using-r.html"><span class="header-section-number">53</span> Analyze data stored in AWS S3 using R</a></li>
-<li><a class="" href="introduction-to-flexdashboard-and-shiny.html"><span class="header-section-number">54</span> Introduction to flexdashboard and shiny</a></li>
+<li><a class="" href="tutorial-for-six-basic-graphs-by-using-ggplot.html"><span class="header-section-number">7</span> Tutorial for six basic graphs by using ggplot</a></li>
+<li><a class="" href="tibble-vs.-dataframe.html"><span class="header-section-number">8</span> Tibble vs. DataFrame</a></li>
+<li><a class="" href="introduction-to-data-manipulation.html"><span class="header-section-number">9</span> Introduction to Data Manipulation</a></li>
+<li><a class="" href="introduction-to-time-series.html"><span class="header-section-number">10</span> Introduction to Time Series</a></li>
+<li><a class="" href="interactive-graphs-tutorial.html"><span class="header-section-number">11</span> Interactive graphs tutorial</a></li>
+<li><a class="" href="introduction-to-git-bash.html"><span class="header-section-number">12</span> Introduction to Git Bash</a></li>
+<li><a class="" href="web-scrapping-using-beautifulsoup-and-its-equivalent-in-rvest.html"><span class="header-section-number">13</span> Web Scrapping using BeautifulSoup and its Equivalent in rvest</a></li>
+<li><a class="" href="analyze-data-stored-in-aws-s3-using-r.html"><span class="header-section-number">14</span> Analyze data stored in AWS S3 using R</a></li>
+<li class="book-part">R Package Tutorial</li>
+<li><a class="" href="tidyverse_cheatsheet.html"><span class="header-section-number">15</span> Tidyverse_cheatsheet</a></li>
+<li><a class="" href="use-of-ggprism-and-ggsci-packages.html"><span class="header-section-number">16</span> Use of ggprism and ggsci packages</a></li>
+<li><a class="" href="parallel-coordinates-plot-cheatsheet.html"><span class="header-section-number">17</span> Parallel coordinates plot cheatsheet</a></li>
+<li><a class="" href="cheatsheet-tidyverse.html"><span class="header-section-number">18</span> Cheatsheet Tidyverse</a></li>
+<li><a class="" href="common-r-markdown-syntax-cheatsheet.html"><span class="header-section-number">19</span> Common R markdown syntax cheatsheet</a></li>
+<li><a class="" href="rpackage-waffle-cheatsheet.html"><span class="header-section-number">20</span> Rpackage waffle cheatsheet</a></li>
+<li><a class="" href="introduction-to-flexdashboard-and-shiny.html"><span class="header-section-number">21</span> Introduction to flexdashboard and shiny</a></li>
+<li><a class="" href="functional-programming-with-purrr.html"><span class="header-section-number">22</span> Functional Programming with Purrr</a></li>
+<li class="book-part">Data Visualizations</li>
+<li><a class="" href="introduction-to-the-lattice-package.html"><span class="header-section-number">23</span> Introduction to the lattice package</a></li>
+<li><a class="" href="graph-animation-with-gganimate-and-after-effects.html"><span class="header-section-number">24</span> Graph animation with gganimate and After Effects</a></li>
+<li><a class="" href="animating-the-plots-in-r.html"><span class="header-section-number">25</span> Animating the plots in R</a></li>
+<li><a class="" href="interactive-plots.html"><span class="header-section-number">26</span> Interactive Plots</a></li>
+<li><a class="" href="create-regression-assumption-plots-in-word.html"><span class="header-section-number">27</span> Create regression assumption plots in Word</a></li>
+<li><a class="" href="from-neo4j-to-rstudio.html"><span class="header-section-number">28</span> From Neo4j to RStudio</a></li>
+<li><a class="" href="stacked-bar-plot-for-relative-proportions-in-python.html"><span class="header-section-number">29</span> Stacked Bar Plot For Relative Proportions In Python</a></li>
+<li><a class="" href="interactive-plot-introduction.html"><span class="header-section-number">30</span> Interactive plot introduction</a></li>
+<li><a class="" href="introduction-to-longitudinal-data-and-mlgm-package.html"><span class="header-section-number">31</span> Introduction to Longitudinal Data and MLGM Package</a></li>
+<li><a class="" href="parallel-coordinate-plots-cheatsheet.html"><span class="header-section-number">32</span> Parallel coordinate plots cheatsheet</a></li>
+<li><a class="" href="parallel-coordinate-plots-in-ggplot2.html"><span class="header-section-number">33</span> Parallel Coordinate Plots in ggplot2</a></li>
+<li><a class="" href="radial-bar-chart-and-other-interesting-graphs.html"><span class="header-section-number">34</span> Radial bar chart and other interesting graphs</a></li>
+<li><a class="" href="d-visualization-shinyaframe-introduction-and-tutorial.html"><span class="header-section-number">35</span> 3D visualization: shinyaframe introduction and tutorial</a></li>
+<li><a class="" href="using-ggplot-in-python.html"><span class="header-section-number">36</span> Using ggplot in python</a></li>
+<li><a class="" href="icons-and-symbols-in-r.html"><span class="header-section-number">37</span> Icons and symbols in R</a></li>
+<li class="book-part">Topics in Data Science</li>
+<li><a class="" href="r-data-science-workflow-cheatsheet.html"><span class="header-section-number">38</span> R Data Science Workflow CheatSheet</a></li>
+<li><a class="" href="r-cheatsheet-on-data-transforamtion-and-exploration.html"><span class="header-section-number">39</span> R cheatsheet on data transforamtion and exploration</a></li>
+<li><a class="" href="questions-answers-for-r-technical-interview.html"><span class="header-section-number">40</span> 30 questions &amp; answers for r technical interview</a></li>
+<li><a class="" href="graphql-cheat-sheet.html"><span class="header-section-number">41</span> GraphQL Cheat Sheet</a></li>
+<li><a class="" href="r-vs-python-basic-data-wrangling.html"><span class="header-section-number">42</span> R vs Python Basic Data Wrangling</a></li>
+<li><a class="" href="r-vs.-python-visualization-cheatsheet.html"><span class="header-section-number">43</span> R vs. Python Visualization Cheatsheet</a></li>
+<li><a class="" href="guideline-on-using-package-rcurl-and-xml-for-web-scraping.html"><span class="header-section-number">44</span> Guideline on Using Package Rcurl and XML for Web Scraping</a></li>
+<li><a class="" href="multithreading-crawler-frame.html"><span class="header-section-number">45</span> Multithreading Crawler Frame</a></li>
+<li><a class="" href="twitter-r-package-scraping-via-api-tutorial.html"><span class="header-section-number">46</span> TwitteR R Package Scraping via API Tutorial</a></li>
+<li><a class="" href="natural-langauge-processing-common-eda-practices-in-python.html"><span class="header-section-number">47</span> Natural Langauge Processing Common EDA Practices in Python</a></li>
+<li class="book-part">Machine Learning and More</li>
+<li><a class="" href="low-key-ml-packages-in-r.html"><span class="header-section-number">48</span> Low-key ML packages in R</a></li>
+<li><a class="" href="a-linear-regression-bestiary.html"><span class="header-section-number">49</span> A linear regression Bestiary</a></li>
+<li><a class="" href="regression-and-classification-in-r.html"><span class="header-section-number">50</span> Regression and Classification in R</a></li>
+<li><a class="" href="caret---a-machine-learning-package-turotial.html"><span class="header-section-number">51</span> caret - a machine learning package turotial</a></li>
+<li><a class="" href="supervised-learning-tutorial.html"><span class="header-section-number">52</span> Supervised Learning Tutorial</a></li>
+<li><a class="" href="beginners-walk-through-of-deep-learning-in-r.html"><span class="header-section-number">53</span> Beginner’s Walk-through of Deep Learning in R</a></li>
 <li class="book-part">Demonstrations</li>
-<li><a class="" href="linear-association-r-studio-plugin.html"><span class="header-section-number">55</span> Linear Association R Studio Plugin</a></li>
-<li><a class="" href="customized-sorting-in-r.html"><span class="header-section-number">56</span> Customized Sorting in R</a></li>
-<li><a class="" href="low-key-ml-packages-in-r.html"><span class="header-section-number">57</span> Low-key ML packages in R</a></li>
-<li><a class="" href="parallel-coordinate-plots-cheatsheet.html"><span class="header-section-number">58</span> Parallel coordinate plots cheatsheet</a></li>
-<li><a class="" href="crime-analysis-around-columbia.html"><span class="header-section-number">59</span> Crime Analysis around Columbia</a></li>
+<li><a class="" href="linear-association-r-studio-plugin.html"><span class="header-section-number">54</span> Linear Association R Studio Plugin</a></li>
+<li><a class="" href="customized-sorting-in-r.html"><span class="header-section-number">55</span> Customized Sorting in R</a></li>
+<li><a class="" href="crime-analysis-around-columbia.html"><span class="header-section-number">56</span> Crime Analysis around Columbia</a></li>
+<li><a class="active" href="efficient-dimension-reduction-with-umap.html"><span class="header-section-number">57</span> Efficient dimension reduction with UMAP</a></li>
+<li><a class="" href="exploratory-data-analysis-and-preprocessing-with-r-for-data-challenges.html"><span class="header-section-number">58</span> Exploratory data analysis and preprocessing with R for data challenges</a></li>
+<li><a class="" href="streamlit-for-financial-analysis.html"><span class="header-section-number">59</span> Streamlit for Financial Analysis</a></li>
 <li class="book-part">Workshops</li>
 <li><a class="" href="data-science-product-cycles-in-enterprises.html"><span class="header-section-number">60</span> Data Science Product Cycles in Enterprises</a></li>
 <li><a class="" href="mapreduce-concept-comparision-with-r.html"><span class="header-section-number">61</span> MapReduce Concept &amp; Comparision With R</a></li>
@@ -125,12 +127,12 @@
 </div>
   </header><main class="col-sm-12 col-md-9 col-lg-7" id="content"><div id="efficient-dimension-reduction-with-umap" class="section level1">
 <h1>
-<span class="header-section-number">50</span> Efficient dimension reduction with UMAP<a class="anchor" aria-label="anchor" href="#efficient-dimension-reduction-with-umap"><i class="fas fa-link"></i></a>
+<span class="header-section-number">57</span> Efficient dimension reduction with UMAP<a class="anchor" aria-label="anchor" href="#efficient-dimension-reduction-with-umap"><i class="fas fa-link"></i></a>
 </h1>
 <p>Soham Joshi and Mehrab Singh Gill</p>
 <div id="brief-introduction-to-umap" class="section level2">
 <h2>
-<span class="header-section-number">50.1</span> Brief Introduction to UMAP<a class="anchor" aria-label="anchor" href="#brief-introduction-to-umap"><i class="fas fa-link"></i></a>
+<span class="header-section-number">57.1</span> Brief Introduction to UMAP<a class="anchor" aria-label="anchor" href="#brief-introduction-to-umap"><i class="fas fa-link"></i></a>
 </h2>
 <p>The dimensionality techniques that exist right now do not tend to work very efficiently when there are a lot of dimensions involved. In such cases these techniques tend to be very slow and inefficient. This is where UMAP (Uniform Manifold Approximation and Projection) comes into the picture as it works very well in cases where there are a lot of dimensions involved.</p>
 <p>UMAP is a dimensionality reduction technique which uses Topological Data Analysis and Mapping to project higher dimensional data to lower dimensions. UMAP can be used for dimensionality reduction, unsupervised clustering and metric learning. UMAP tends to work much faster and efficiently compared to the other techniques. This can be very effective as it takes into consideration the local and global minima and maxima while projecting data into two dimensions. It does not find the principal components.</p>
@@ -140,19 +142,19 @@
 </div>
 <div id="experiments-on-the-mnist-dataset" class="section level2">
 <h2>
-<span class="header-section-number">50.2</span> Experiments on the MNIST dataset<a class="anchor" aria-label="anchor" href="#experiments-on-the-mnist-dataset"><i class="fas fa-link"></i></a>
+<span class="header-section-number">57.2</span> Experiments on the MNIST dataset<a class="anchor" aria-label="anchor" href="#experiments-on-the-mnist-dataset"><i class="fas fa-link"></i></a>
 </h2>
 <p>Let’s start with a high dimensionality dataset which can be projected to 2 dimensions and then discerned with clusters. The MNIST hand written digits dataset is a collection of images of handwritten numbers, flattened and stored as a 784 dimension vectors.</p>
-<div class="sourceCode" id="cb663"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb740"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="va">df2</span><span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/utils/read.table.html">read.csv</a></span><span class="op">(</span><span class="st">"https://datahub.io/machine-learning/mnist_784/r/mnist_784.csv"</span><span class="op">)</span></code></pre></div>
 <p>Since, the MNIST dataset has the digits from 0-9 with 70,000 rows, this processing is computationally very expensive for R. Hence, we will consider only the first 4 digits, i.e {0,1,2,3} and all entries corresponding to them. We thus get a 784 dimensions x 28,911 rows data.</p>
 <p>We also separate the labels and the actual input data to umap.</p>
-<div class="sourceCode" id="cb664"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb741"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="va">df2</span> <span class="op">&lt;-</span> <span class="va">df2</span><span class="op">[</span> <span class="op">!</span><span class="op">(</span><span class="va">df2</span><span class="op">$</span><span class="va">class</span> <span class="op">&gt;=</span> <span class="fl">4</span><span class="op">)</span>,<span class="op">]</span>
 <span class="va">mnist_labels</span> <span class="op">=</span> <span class="va">df2</span><span class="op">[</span>, <span class="st">"class"</span><span class="op">]</span>
 <span class="va">mnist_data</span> <span class="op">=</span> <span class="va">df2</span><span class="op">[</span><span class="fl">1</span><span class="op">:</span><span class="fl">784</span><span class="op">]</span></code></pre></div>
 <p>The function call to umap is very straightforward in the default case.</p>
-<div class="sourceCode" id="cb665"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb742"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="va">mnist.umap</span> <span class="op">=</span> <span class="fu">umap</span><span class="op">(</span><span class="va">mnist_data</span><span class="op">)</span>
 <span class="va">mnist.umap</span></code></pre></div>
 <p>Here we get an object of the following summary:</p>
@@ -164,13 +166,13 @@
 <li><p>config: These are the input parameters which are considered for UMAP. In this particular case we have not tweaked any, but we will be doing it shortly.</p></li>
 </ol>
 <p>If you now plot the embedding created by UMAP, we get the following result:</p>
-<div class="sourceCode" id="cb666"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb743"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="va">df</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/data.frame.html">data.frame</a></span><span class="op">(</span><span class="va">mnist.umap</span><span class="op">$</span><span class="va">layout</span><span class="op">[</span>,<span class="fl">1</span><span class="op">]</span>, <span class="va">mnist.umap</span><span class="op">$</span><span class="va">layout</span><span class="op">[</span>,<span class="fl">2</span><span class="op">]</span>, <span class="va">mnist_labels</span><span class="op">)</span>
 <span class="fu"><a href="https://rdrr.io/r/base/colnames.html">colnames</a></span><span class="op">(</span><span class="va">df</span><span class="op">)</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"X"</span>,<span class="st">"Y"</span>, <span class="st">"Label"</span><span class="op">)</span>
 <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span><span class="op">(</span><span class="va">df</span>, <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span>x <span class="op">=</span><span class="va">X</span>, y<span class="op">=</span> <span class="va">Y</span><span class="op">)</span><span class="op">)</span><span class="op">+</span> <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_point.html">geom_point</a></span><span class="op">(</span><span class="op">)</span></code></pre></div>
 <div class="inline-figure"><img src="umap_viz_files/figure-html/unnamed-chunk-6-1.png" width="672" style="display: block; margin: auto;"></div>
 <p>We can clearly see that there are 4 distinct clusters formed in the embedded data. We can visually assess the accuracy of this clustering by coloring the points according to their true labels:</p>
-<div class="sourceCode" id="cb667"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb744"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="va">df</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/data.frame.html">data.frame</a></span><span class="op">(</span><span class="va">mnist.umap</span><span class="op">$</span><span class="va">layout</span><span class="op">[</span>,<span class="fl">1</span><span class="op">]</span>, <span class="va">mnist.umap</span><span class="op">$</span><span class="va">layout</span><span class="op">[</span>,<span class="fl">2</span><span class="op">]</span>, <span class="va">mnist_labels</span><span class="op">)</span>
 <span class="fu"><a href="https://rdrr.io/r/base/colnames.html">colnames</a></span><span class="op">(</span><span class="va">df</span><span class="op">)</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"X"</span>,<span class="st">"Y"</span>, <span class="st">"Label"</span><span class="op">)</span>
 <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span><span class="op">(</span><span class="va">df</span>, <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span>x <span class="op">=</span><span class="va">X</span>, y<span class="op">=</span> <span class="va">Y</span>, color<span class="op">=</span> <span class="va">Label</span><span class="op">)</span><span class="op">)</span><span class="op">+</span> <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_point.html">geom_point</a></span><span class="op">(</span><span class="op">)</span></code></pre></div>
@@ -178,13 +180,13 @@
 <p>With the exception of a few outliers, we see that UMAP accurately separates the clusters corresponding to the digits {0,1,2,3}.</p>
 <p>For our base case, the default values of UMAP worked out well, but in some scenarios it may not be the case. Parameter tuning is thus very efficient for UMAP. We can change the input parameters to umap using the config object.</p>
 <p>We can check the default values of UMAP as follows:</p>
-<div class="sourceCode" id="cb668"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb745"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="va">custom.config</span> <span class="op">=</span> <span class="va">umap.defaults</span> 
 <span class="va">custom.config</span></code></pre></div>
 </div>
 <div id="parameters-and-additional-insights" class="section level2">
 <h2>
-<span class="header-section-number">50.3</span> Parameters and Additional Insights<a class="anchor" aria-label="anchor" href="#parameters-and-additional-insights"><i class="fas fa-link"></i></a>
+<span class="header-section-number">57.3</span> Parameters and Additional Insights<a class="anchor" aria-label="anchor" href="#parameters-and-additional-insights"><i class="fas fa-link"></i></a>
 </h2>
 <p>We will be focusing on the 3 most important parameters in UMAP:</p>
 <ol style="list-style-type: decimal">
@@ -195,16 +197,16 @@
 <p>To demonstrate the effect of the first two parameters let us consider arbitrary values:</p>
 <div id="min_dist-0.99-and-n_neighbors-4" class="section level3">
 <h3>
-<span class="header-section-number">50.3.1</span> min_dist = 0.99 and n_neighbors = 4<a class="anchor" aria-label="anchor" href="#min_dist-0.99-and-n_neighbors-4"><i class="fas fa-link"></i></a>
+<span class="header-section-number">57.3.1</span> min_dist = 0.99 and n_neighbors = 4<a class="anchor" aria-label="anchor" href="#min_dist-0.99-and-n_neighbors-4"><i class="fas fa-link"></i></a>
 </h3>
-<div class="sourceCode" id="cb669"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb746"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="va">custom.config</span> <span class="op">=</span> <span class="va">umap.defaults</span> <span class="co"># Set of configurations</span>
 <span class="va">custom.config</span><span class="op">$</span><span class="va">min_dist</span> <span class="op">=</span> <span class="fl">0.99</span> <span class="co"># change min_dist and n_neighbors</span>
 <span class="va">custom.config</span><span class="op">$</span><span class="va">n_neighbors</span> <span class="op">=</span> <span class="fl">4</span>
 
 <span class="va">mnist.umap.config</span> <span class="op">=</span> <span class="fu">umap</span><span class="op">(</span><span class="va">mnist_data</span>, config<span class="op">=</span><span class="va">custom.config</span><span class="op">)</span></code></pre></div>
 <p>The resultant projection is shown below:</p>
-<div class="sourceCode" id="cb670"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb747"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="va">dfc</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/data.frame.html">data.frame</a></span><span class="op">(</span><span class="va">mnist.umap.config</span><span class="op">$</span><span class="va">layout</span><span class="op">[</span>,<span class="fl">1</span><span class="op">]</span>, <span class="va">mnist.umap.config</span><span class="op">$</span><span class="va">layout</span><span class="op">[</span>,<span class="fl">2</span><span class="op">]</span>, <span class="va">mnist_labels</span><span class="op">)</span>
 <span class="fu"><a href="https://rdrr.io/r/base/colnames.html">colnames</a></span><span class="op">(</span><span class="va">dfc</span><span class="op">)</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"X"</span>,<span class="st">"Y"</span>, <span class="st">"Label"</span><span class="op">)</span>
 
@@ -215,9 +217,9 @@
 </div>
 <div id="min_dist-0.99-and-n_neighbors-10" class="section level3">
 <h3>
-<span class="header-section-number">50.3.2</span> min_dist = 0.99 and n_neighbors = 10<a class="anchor" aria-label="anchor" href="#min_dist-0.99-and-n_neighbors-10"><i class="fas fa-link"></i></a>
+<span class="header-section-number">57.3.2</span> min_dist = 0.99 and n_neighbors = 10<a class="anchor" aria-label="anchor" href="#min_dist-0.99-and-n_neighbors-10"><i class="fas fa-link"></i></a>
 </h3>
-<div class="sourceCode" id="cb671"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb748"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="va">custom.config</span> <span class="op">=</span> <span class="va">umap.defaults</span> <span class="co"># Set of configurations</span>
 <span class="va">custom.config</span><span class="op">$</span><span class="va">min_dist</span> <span class="op">=</span> <span class="fl">0.99</span> <span class="co"># change min_dist and n_neighbors</span>
 <span class="va">custom.config</span><span class="op">$</span><span class="va">n_neighbors</span> <span class="op">=</span> <span class="fl">10</span>
@@ -231,7 +233,7 @@
 <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span><span class="op">(</span><span class="va">dfc</span>, <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span>x <span class="op">=</span><span class="va">X</span>, y<span class="op">=</span> <span class="va">Y</span><span class="op">)</span><span class="op">)</span><span class="op">+</span> <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_point.html">geom_point</a></span><span class="op">(</span>alpha <span class="op">=</span><span class="fl">0.5</span><span class="op">)</span></code></pre></div>
 <div class="inline-figure"><img src="umap_viz_files/figure-html/unnamed-chunk-11-1.png" width="672" style="display: block; margin: auto;"></div>
 <p>This has a good effect, as we include more neighbors, more clusters are formed. However, the boundaries are very close to each other since our min_dist value is still high. UMAP still does a good job of separating the clusters:</p>
-<div class="sourceCode" id="cb672"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb749"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="va">dfc</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/data.frame.html">data.frame</a></span><span class="op">(</span><span class="va">mnist.umap.config2</span><span class="op">$</span><span class="va">layout</span><span class="op">[</span>,<span class="fl">1</span><span class="op">]</span>, <span class="va">mnist.umap.config2</span><span class="op">$</span><span class="va">layout</span><span class="op">[</span>,<span class="fl">2</span><span class="op">]</span>, <span class="va">mnist_labels</span><span class="op">)</span>
 <span class="fu"><a href="https://rdrr.io/r/base/colnames.html">colnames</a></span><span class="op">(</span><span class="va">dfc</span><span class="op">)</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"X"</span>,<span class="st">"Y"</span>, <span class="st">"Label"</span><span class="op">)</span>
 
@@ -242,15 +244,15 @@
 </div>
 <div id="min_dist-0.5-and-n_neighbors-4" class="section level3">
 <h3>
-<span class="header-section-number">50.3.3</span> min_dist = 0.5 and n_neighbors = 4<a class="anchor" aria-label="anchor" href="#min_dist-0.5-and-n_neighbors-4"><i class="fas fa-link"></i></a>
+<span class="header-section-number">57.3.3</span> min_dist = 0.5 and n_neighbors = 4<a class="anchor" aria-label="anchor" href="#min_dist-0.5-and-n_neighbors-4"><i class="fas fa-link"></i></a>
 </h3>
-<div class="sourceCode" id="cb673"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb750"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="va">custom.config</span> <span class="op">=</span> <span class="va">umap.defaults</span> <span class="co"># Set of configurations</span>
 <span class="va">custom.config</span><span class="op">$</span><span class="va">min_dist</span> <span class="op">=</span> <span class="fl">0.5</span> <span class="co"># change min_dist and n_neighbors</span>
 <span class="va">custom.config</span><span class="op">$</span><span class="va">n_neighbors</span> <span class="op">=</span> <span class="fl">4</span>
 
 <span class="va">mnist.umap.config3</span> <span class="op">=</span> <span class="fu">umap</span><span class="op">(</span><span class="va">mnist_data</span>, config<span class="op">=</span><span class="va">custom.config</span><span class="op">)</span></code></pre></div>
-<div class="sourceCode" id="cb674"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb751"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="va">dfc</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/data.frame.html">data.frame</a></span><span class="op">(</span><span class="va">mnist.umap.config3</span><span class="op">$</span><span class="va">layout</span><span class="op">[</span>,<span class="fl">1</span><span class="op">]</span>, <span class="va">mnist.umap.config3</span><span class="op">$</span><span class="va">layout</span><span class="op">[</span>,<span class="fl">2</span><span class="op">]</span>, <span class="va">mnist_labels</span><span class="op">)</span>
 <span class="fu"><a href="https://rdrr.io/r/base/colnames.html">colnames</a></span><span class="op">(</span><span class="va">dfc</span><span class="op">)</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"X"</span>,<span class="st">"Y"</span>, <span class="st">"Label"</span><span class="op">)</span>
 
@@ -258,7 +260,7 @@
 <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span><span class="op">(</span><span class="va">dfc</span>, <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span>x <span class="op">=</span><span class="va">X</span>, y<span class="op">=</span> <span class="va">Y</span><span class="op">)</span><span class="op">)</span><span class="op">+</span> <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_point.html">geom_point</a></span><span class="op">(</span>alpha <span class="op">=</span><span class="fl">0.5</span><span class="op">)</span></code></pre></div>
 <div class="inline-figure"><img src="umap_viz_files/figure-html/unnamed-chunk-14-1.png" width="672" style="display: block; margin: auto;"></div>
 <p>If we add color to Labels and check the output, we can notice that the groups are actually separate, but there is no clear boundary.</p>
-<div class="sourceCode" id="cb675"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb752"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="va">dfc</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/data.frame.html">data.frame</a></span><span class="op">(</span><span class="va">mnist.umap.config3</span><span class="op">$</span><span class="va">layout</span><span class="op">[</span>,<span class="fl">1</span><span class="op">]</span>, <span class="va">mnist.umap.config3</span><span class="op">$</span><span class="va">layout</span><span class="op">[</span>,<span class="fl">2</span><span class="op">]</span>, <span class="va">mnist_labels</span><span class="op">)</span>
 <span class="fu"><a href="https://rdrr.io/r/base/colnames.html">colnames</a></span><span class="op">(</span><span class="va">dfc</span><span class="op">)</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"X"</span>,<span class="st">"Y"</span>, <span class="st">"Label"</span><span class="op">)</span>
 
@@ -269,25 +271,25 @@
 </div>
 <div id="iris-dataset" class="section level2">
 <h2>
-<span class="header-section-number">50.4</span> Iris Dataset<a class="anchor" aria-label="anchor" href="#iris-dataset"><i class="fas fa-link"></i></a>
+<span class="header-section-number">57.4</span> Iris Dataset<a class="anchor" aria-label="anchor" href="#iris-dataset"><i class="fas fa-link"></i></a>
 </h2>
-<div class="sourceCode" id="cb676"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb753"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="va">iris.data</span> <span class="op">=</span> <span class="va">iris</span><span class="op">[</span>, <span class="fu"><a href="https://rdrr.io/r/base/grep.html">grep</a></span><span class="op">(</span><span class="st">"Sepal|Petal"</span>, <span class="fu"><a href="https://rdrr.io/r/base/colnames.html">colnames</a></span><span class="op">(</span><span class="va">iris</span><span class="op">)</span><span class="op">)</span><span class="op">]</span> 
 <span class="va">iris.labels</span> <span class="op">=</span> <span class="va">iris</span><span class="op">[</span>, <span class="st">"Species"</span><span class="op">]</span> </code></pre></div>
 <p>Function call to umap in the default case</p>
-<div class="sourceCode" id="cb677"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb754"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="va">iris.umap</span> <span class="op">=</span> <span class="fu">umap</span><span class="op">(</span><span class="va">iris.data</span><span class="op">)</span>
 <span class="va">iris.umap</span></code></pre></div>
 <p>It is an umap embedding of 150 items, which refer to our data points and 2 dimensions. Thus, the umap algorithm has reduced our data from 4 to 2 dimensional data.</p>
 <p>If you now plot the embedding created by UMAP, we get the following result:</p>
-<div class="sourceCode" id="cb678"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb755"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="va">df_iris</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/data.frame.html">data.frame</a></span><span class="op">(</span><span class="va">iris.umap</span><span class="op">$</span><span class="va">layout</span><span class="op">[</span>,<span class="fl">1</span><span class="op">]</span>, <span class="va">iris.umap</span><span class="op">$</span><span class="va">layout</span><span class="op">[</span>,<span class="fl">2</span><span class="op">]</span>, <span class="va">iris.labels</span><span class="op">)</span>
 <span class="fu"><a href="https://rdrr.io/r/base/colnames.html">colnames</a></span><span class="op">(</span><span class="va">df_iris</span><span class="op">)</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"X"</span>,<span class="st">"Y"</span>, <span class="st">"Label"</span><span class="op">)</span>
 
 <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span><span class="op">(</span><span class="va">df_iris</span>, <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span>x <span class="op">=</span><span class="va">X</span>, y<span class="op">=</span> <span class="va">Y</span><span class="op">)</span><span class="op">)</span><span class="op">+</span> <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_point.html">geom_point</a></span><span class="op">(</span><span class="op">)</span></code></pre></div>
 <div class="inline-figure"><img src="umap_viz_files/figure-html/unnamed-chunk-18-1.png" width="672" style="display: block; margin: auto;"></div>
 <p>We see that there are 2 distinct clusters formed in the embedded data. We will now visually assess the accuracy of this clustering by coloring the points according to their true labels:</p>
-<div class="sourceCode" id="cb679"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb756"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="va">df_iris_1</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/data.frame.html">data.frame</a></span><span class="op">(</span><span class="va">iris.umap</span><span class="op">$</span><span class="va">layout</span><span class="op">[</span>,<span class="fl">1</span><span class="op">]</span>, <span class="va">iris.umap</span><span class="op">$</span><span class="va">layout</span><span class="op">[</span>,<span class="fl">2</span><span class="op">]</span>, <span class="va">iris.labels</span><span class="op">)</span>
 <span class="fu"><a href="https://rdrr.io/r/base/colnames.html">colnames</a></span><span class="op">(</span><span class="va">df_iris_1</span><span class="op">)</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"X"</span>,<span class="st">"Y"</span>, <span class="st">"Label"</span><span class="op">)</span>
 
@@ -296,27 +298,27 @@
 <p>On clustering by coloring the points, we infact realize that there are 3 clusters and not 2.</p>
 <p>For our base case, the default values of UMAP didn’t work out well in this case. We thus go for parameter tuning.</p>
 <p>As discussed before, we can check the default values of UMAP as follows:</p>
-<div class="sourceCode" id="cb680"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb757"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="va">custom.config</span> <span class="op">=</span> <span class="va">umap.defaults</span> 
 <span class="va">custom.config</span></code></pre></div>
 </div>
 <div id="analysis-of-iris-using-umap" class="section level2">
 <h2>
-<span class="header-section-number">50.5</span> Analysis of Iris using UMAP<a class="anchor" aria-label="anchor" href="#analysis-of-iris-using-umap"><i class="fas fa-link"></i></a>
+<span class="header-section-number">57.5</span> Analysis of Iris using UMAP<a class="anchor" aria-label="anchor" href="#analysis-of-iris-using-umap"><i class="fas fa-link"></i></a>
 </h2>
 <p>To demonstrate the effect of n_neighbors and min_dist, let us consider arbitrary values:</p>
 <div id="min_dist-0.10-and-n_neighbors-20" class="section level3">
 <h3>
-<span class="header-section-number">50.5.1</span> min_dist = 0.10 and n_neighbors = 20<a class="anchor" aria-label="anchor" href="#min_dist-0.10-and-n_neighbors-20"><i class="fas fa-link"></i></a>
+<span class="header-section-number">57.5.1</span> min_dist = 0.10 and n_neighbors = 20<a class="anchor" aria-label="anchor" href="#min_dist-0.10-and-n_neighbors-20"><i class="fas fa-link"></i></a>
 </h3>
-<div class="sourceCode" id="cb681"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb758"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="va">custom.config</span> <span class="op">=</span> <span class="va">umap.defaults</span> <span class="co"># Set of configurations</span>
 <span class="va">custom.config</span><span class="op">$</span><span class="va">min_dist</span> <span class="op">=</span> <span class="fl">0.10</span> <span class="co"># change min_dist and n_neighbors</span>
 <span class="va">custom.config</span><span class="op">$</span><span class="va">n_neighbors</span> <span class="op">=</span> <span class="fl">20</span>
 
 <span class="va">iris.umap.config</span> <span class="op">=</span> <span class="fu">umap</span><span class="op">(</span><span class="va">iris.data</span>, config<span class="op">=</span><span class="va">custom.config</span><span class="op">)</span></code></pre></div>
 <p>The resultant projection is shown below:</p>
-<div class="sourceCode" id="cb682"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb759"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="va">dfc_iris</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/data.frame.html">data.frame</a></span><span class="op">(</span><span class="va">iris.umap.config</span><span class="op">$</span><span class="va">layout</span><span class="op">[</span>,<span class="fl">1</span><span class="op">]</span>, <span class="va">iris.umap.config</span><span class="op">$</span><span class="va">layout</span><span class="op">[</span>,<span class="fl">2</span><span class="op">]</span>, <span class="va">iris.labels</span><span class="op">)</span>
 <span class="fu"><a href="https://rdrr.io/r/base/colnames.html">colnames</a></span><span class="op">(</span><span class="va">dfc_iris</span><span class="op">)</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"X"</span>,<span class="st">"Y"</span>, <span class="st">"Label"</span><span class="op">)</span>
 
@@ -324,7 +326,7 @@
 <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span><span class="op">(</span><span class="va">dfc_iris</span>, <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span>x <span class="op">=</span><span class="va">X</span>, y<span class="op">=</span> <span class="va">Y</span><span class="op">)</span><span class="op">)</span><span class="op">+</span> <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_point.html">geom_point</a></span><span class="op">(</span>alpha <span class="op">=</span><span class="fl">0.5</span><span class="op">)</span></code></pre></div>
 <div class="inline-figure"><img src="umap_viz_files/figure-html/unnamed-chunk-22-1.png" width="672" style="display: block; margin: auto;"></div>
 <p>If we add color to the same,</p>
-<div class="sourceCode" id="cb683"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb760"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="va">dfc_iris</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/data.frame.html">data.frame</a></span><span class="op">(</span><span class="va">iris.umap.config</span><span class="op">$</span><span class="va">layout</span><span class="op">[</span>,<span class="fl">1</span><span class="op">]</span>, <span class="va">iris.umap.config</span><span class="op">$</span><span class="va">layout</span><span class="op">[</span>,<span class="fl">2</span><span class="op">]</span>, <span class="va">iris.labels</span><span class="op">)</span>
 <span class="fu"><a href="https://rdrr.io/r/base/colnames.html">colnames</a></span><span class="op">(</span><span class="va">dfc_iris</span><span class="op">)</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"X"</span>,<span class="st">"Y"</span>, <span class="st">"Label"</span><span class="op">)</span>
 
@@ -336,9 +338,9 @@
 </div>
 <div id="min_dist-0.5-and-n_neighbors-20" class="section level3">
 <h3>
-<span class="header-section-number">50.5.2</span> min_dist = 0.5 and n_neighbors = 20<a class="anchor" aria-label="anchor" href="#min_dist-0.5-and-n_neighbors-20"><i class="fas fa-link"></i></a>
+<span class="header-section-number">57.5.2</span> min_dist = 0.5 and n_neighbors = 20<a class="anchor" aria-label="anchor" href="#min_dist-0.5-and-n_neighbors-20"><i class="fas fa-link"></i></a>
 </h3>
-<div class="sourceCode" id="cb684"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb761"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="va">custom.config</span> <span class="op">=</span> <span class="va">umap.defaults</span> <span class="co"># Set of configurations</span>
 <span class="va">custom.config</span><span class="op">$</span><span class="va">min_dist</span> <span class="op">=</span> <span class="fl">0.5</span> <span class="co"># change min_dist </span>
 <span class="va">custom.config</span><span class="op">$</span><span class="va">n_neighbors</span> <span class="op">=</span> <span class="fl">20</span>
@@ -352,7 +354,7 @@
 <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span><span class="op">(</span><span class="va">dfc_iris</span>, <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span>x <span class="op">=</span><span class="va">X</span>, y<span class="op">=</span> <span class="va">Y</span><span class="op">)</span><span class="op">)</span><span class="op">+</span> <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_point.html">geom_point</a></span><span class="op">(</span>alpha <span class="op">=</span><span class="fl">0.5</span><span class="op">)</span></code></pre></div>
 <div class="inline-figure"><img src="umap_viz_files/figure-html/unnamed-chunk-24-1.png" width="672" style="display: block; margin: auto;"></div>
 <p>If we add color,</p>
-<div class="sourceCode" id="cb685"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb762"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="va">dfc_iris</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/data.frame.html">data.frame</a></span><span class="op">(</span><span class="va">iris.umap.config2</span><span class="op">$</span><span class="va">layout</span><span class="op">[</span>,<span class="fl">1</span><span class="op">]</span>, <span class="va">iris.umap.config2</span><span class="op">$</span><span class="va">layout</span><span class="op">[</span>,<span class="fl">2</span><span class="op">]</span>, <span class="va">iris.labels</span><span class="op">)</span>
 <span class="fu"><a href="https://rdrr.io/r/base/colnames.html">colnames</a></span><span class="op">(</span><span class="va">dfc_iris</span><span class="op">)</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"X"</span>,<span class="st">"Y"</span>, <span class="st">"Label"</span><span class="op">)</span>
 
@@ -363,9 +365,9 @@
 </div>
 <div id="high-min_dist-and-low-n_neighbors" class="section level3">
 <h3>
-<span class="header-section-number">50.5.3</span> High min_dist and low n_neighbors<a class="anchor" aria-label="anchor" href="#high-min_dist-and-low-n_neighbors"><i class="fas fa-link"></i></a>
+<span class="header-section-number">57.5.3</span> High min_dist and low n_neighbors<a class="anchor" aria-label="anchor" href="#high-min_dist-and-low-n_neighbors"><i class="fas fa-link"></i></a>
 </h3>
-<div class="sourceCode" id="cb686"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb763"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="va">custom.config</span> <span class="op">=</span> <span class="va">umap.defaults</span> <span class="co"># Set of configurations</span>
 <span class="va">custom.config</span><span class="op">$</span><span class="va">min_dist</span> <span class="op">=</span> <span class="fl">0.9</span> <span class="co"># change min_dist and n_neighbors</span>
 <span class="va">custom.config</span><span class="op">$</span><span class="va">n_neighbors</span> <span class="op">=</span> <span class="fl">3</span>
@@ -379,7 +381,7 @@
 <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span><span class="op">(</span><span class="va">dfc_iris</span>, <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span>x <span class="op">=</span><span class="va">X</span>, y<span class="op">=</span> <span class="va">Y</span><span class="op">)</span><span class="op">)</span><span class="op">+</span> <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_point.html">geom_point</a></span><span class="op">(</span>alpha <span class="op">=</span><span class="fl">0.5</span><span class="op">)</span></code></pre></div>
 <div class="inline-figure"><img src="umap_viz_files/figure-html/unnamed-chunk-26-1.png" width="672" style="display: block; margin: auto;"></div>
 <p>If we add color,</p>
-<div class="sourceCode" id="cb687"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb764"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="va">dfc_iris</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/data.frame.html">data.frame</a></span><span class="op">(</span><span class="va">iris.umap.config3</span><span class="op">$</span><span class="va">layout</span><span class="op">[</span>,<span class="fl">1</span><span class="op">]</span>, <span class="va">iris.umap.config3</span><span class="op">$</span><span class="va">layout</span><span class="op">[</span>,<span class="fl">2</span><span class="op">]</span>, <span class="va">iris.labels</span><span class="op">)</span>
 <span class="fu"><a href="https://rdrr.io/r/base/colnames.html">colnames</a></span><span class="op">(</span><span class="va">dfc_iris</span><span class="op">)</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"X"</span>,<span class="st">"Y"</span>, <span class="st">"Label"</span><span class="op">)</span>
 
@@ -390,9 +392,9 @@
 </div>
 <div id="low-min_dist-and-high-n_neighbors" class="section level3">
 <h3>
-<span class="header-section-number">50.5.4</span> Low min_dist and high n_neighbors<a class="anchor" aria-label="anchor" href="#low-min_dist-and-high-n_neighbors"><i class="fas fa-link"></i></a>
+<span class="header-section-number">57.5.4</span> Low min_dist and high n_neighbors<a class="anchor" aria-label="anchor" href="#low-min_dist-and-high-n_neighbors"><i class="fas fa-link"></i></a>
 </h3>
-<div class="sourceCode" id="cb688"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb765"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="va">custom.config</span> <span class="op">=</span> <span class="va">umap.defaults</span> <span class="co"># Set of configurations</span>
 <span class="va">custom.config</span><span class="op">$</span><span class="va">min_dist</span> <span class="op">=</span> <span class="fl">0.15</span> <span class="co"># change min_dist and n_neighbors</span>
 <span class="va">custom.config</span><span class="op">$</span><span class="va">n_neighbors</span> <span class="op">=</span> <span class="fl">35</span>
@@ -406,7 +408,7 @@
 <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span><span class="op">(</span><span class="va">dfc_iris</span>, <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span>x <span class="op">=</span><span class="va">X</span>, y<span class="op">=</span> <span class="va">Y</span><span class="op">)</span><span class="op">)</span><span class="op">+</span> <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_point.html">geom_point</a></span><span class="op">(</span>alpha <span class="op">=</span><span class="fl">0.5</span><span class="op">)</span></code></pre></div>
 <div class="inline-figure"><img src="umap_viz_files/figure-html/unnamed-chunk-28-1.png" width="672" style="display: block; margin: auto;"></div>
 <p>If we add color,</p>
-<div class="sourceCode" id="cb689"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb766"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="va">dfc_iris</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/data.frame.html">data.frame</a></span><span class="op">(</span><span class="va">iris.umap.config4</span><span class="op">$</span><span class="va">layout</span><span class="op">[</span>,<span class="fl">1</span><span class="op">]</span>, <span class="va">iris.umap.config4</span><span class="op">$</span><span class="va">layout</span><span class="op">[</span>,<span class="fl">2</span><span class="op">]</span>, <span class="va">iris.labels</span><span class="op">)</span>
 <span class="fu"><a href="https://rdrr.io/r/base/colnames.html">colnames</a></span><span class="op">(</span><span class="va">dfc_iris</span><span class="op">)</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"X"</span>,<span class="st">"Y"</span>, <span class="st">"Label"</span><span class="op">)</span>
 
@@ -417,10 +419,10 @@
 </div>
 <div id="d-visualisation-using-umap" class="section level3">
 <h3>
-<span class="header-section-number">50.5.5</span> 3D Visualisation using UMAP<a class="anchor" aria-label="anchor" href="#d-visualisation-using-umap"><i class="fas fa-link"></i></a>
+<span class="header-section-number">57.5.5</span> 3D Visualisation using UMAP<a class="anchor" aria-label="anchor" href="#d-visualisation-using-umap"><i class="fas fa-link"></i></a>
 </h3>
 <p>We can always choose the number of dimensions we need for the projection. While we usually plot data on 2 dimensions to visualize it better on a plot, we can always create 3 dimensional visualization by projecting it on 3 components. This can be done by changing the n_components parameter to 3 and proceeding to plot it using plotly (for 3-D plot).</p>
-<div class="sourceCode" id="cb690"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb767"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="va">custom.config</span> <span class="op">=</span> <span class="va">umap.defaults</span> <span class="co"># Set of configurations</span>
 <span class="va">custom.config</span><span class="op">$</span><span class="va">n_components</span> <span class="op">=</span> <span class="fl">3</span> <span class="co"># change min_dist and n_neighbors</span>
 
@@ -440,9 +442,9 @@
 <script type="application/json" data-for="htmlwidget-d6c7a765ed85b42c83c2">{"x":{"visdat":{"38fe11e276e4":["function () ","plotlyVisDat"]},"cur_data":"38fe11e276e4","attrs":{"38fe11e276e4":{"x":[13.8121578643682,12.5566185746569,12.4948344016622,12.3849592723223,13.723579529129,14.5758787954857,12.7561143911126,13.5933726026208,12.3902307719118,12.4131855753828,14.2591004057755,13.0136991102706,12.4552508209844,12.572596423469,14.4639741650979,14.6242425792845,14.3388598392924,13.6551598838426,14.2933725977433,14.6281776463333,13.8607509294728,14.5152807010776,13.1064433408276,13.5307940218486,12.9082049060809,12.3148261876195,13.5695930074017,13.9693417276317,13.6809067458826,12.5709429244156,12.3584141692026,13.7847693713654,14.8270292843955,14.7025755190871,12.4254765366015,13.3285450982454,13.9578767428722,13.6336711582968,12.3377962003,13.7971684156603,13.5586609214334,12.2771694269348,12.6385932846858,13.8146625927908,14.5411727491688,12.4677012601784,14.756221946324,12.5079599905215,14.2449179125671,13.352076063042,-7.36153664527532,-7.10623189029042,-7.35473410790472,-5.4750181268726,-7.04721150451443,-6.05445019740175,-7.36225014190672,-5.39171877150382,-7.08734832311141,-5.66650460391516,-5.29287404561178,-6.02227191649367,-5.17713756542136,-7.01540629709977,-5.30631332743886,-7.20006679487844,-6.12006718172142,-5.23450485027368,-6.81387277073767,-5.46013235117493,-7.68779316828611,-5.5346762732865,-7.19230502496095,-6.83274678190861,-6.83969662575974,-7.0236641606101,-7.26843402452166,-7.39293862622029,-6.79881647274359,-5.17894010529982,-5.13166884370656,-5.22224922003748,-5.2886376346191,-7.42158047839975,-6.03758376264499,-7.22476262495404,-7.25391662727767,-6.67971449713231,-5.79867372038863,-5.62364061341747,-6.03212681087835,-6.93680163111135,-5.29561365229052,-5.37905625734217,-5.63939761360822,-5.76671496013567,-5.65903274035383,-6.63023228231964,-5.29921655135279,-5.40225444796753,-7.18829713061538,-7.98904421263893,-6.93528070871611,-7.32782547321933,-7.24876815578294,-6.88235542331649,-6.03146111335257,-7.03222557905399,-7.39058212456879,-6.93162640411351,-6.97987250977684,-7.20828493852684,-6.99341495949017,-7.98568176216187,-8.11620308841414,-7.06992050851917,-7.18722674379634,-6.91303506278734,-6.89405662953303,-7.05709760213763,-7.01680002915099,-8.15904093870066,-6.77699861511054,-7.34802831057034,-6.84509486451152,-6.96117422533117,-7.39686429804188,-7.55228799324447,-7.46266294653305,-6.9520541207802,-6.9856000168214,-6.84071126545261,-7.16590014289819,-7.21653842399065,-7.32716317656963,-7.09513993265427,-7.32218029758142,-7.15745788322055,-7.66472750427485,-6.7962799305455,-7.23964147082257,-6.69728947770208,-7.92753928953192,-7.0055847549639,-7.07888552918911,-6.81640904278409,-7.24436079353062,-6.88491419975765,-7.27403834707078,-7.74874278773642],"y":[1.02397476567686,-0.567421286047145,-0.435043592918402,-0.612609978455118,1.05184705773421,1.68592975264312,-0.198040904484283,0.780139694922116,-0.762823885859453,-0.513740160641438,1.62581062928858,0.234325307519616,-0.628029082088913,-0.585998913464958,1.6488850170626,1.54688416309006,1.81758731327483,1.02757531265436,1.47504446498101,1.65969569212409,1.34030713132472,1.58553753373289,0.163529619574196,0.672459394957424,0.192875191062707,-0.463138974852975,0.721865024504781,1.21721844636453,1.15845053424816,-0.299572636120625,-0.236273506189499,1.30931806176057,1.7654101334544,1.6985429789211,-0.456944699812852,0.302827306477955,1.4853375602038,0.904686361267992,-0.779196637395603,0.916790898348356,0.960620596483703,-0.972889511196989,-0.485228917918434,0.746564255157637,1.51322113280271,-0.868997133288326,1.82531988720836,-0.308579317970664,1.86418875997619,0.612718421667121,1.37055086772055,1.22504320951378,1.37827606515138,2.23579905715718,1.06763521595521,1.58745428694735,0.917590427610034,2.55997960625234,1.32252778539473,2.14847286354544,2.68299955401552,1.48875731785903,2.32677590182945,0.802046902753949,2.42329953254726,1.43724473045237,1.54540649011749,2.02612204795871,0.417899258721111,2.36521248158771,0.185256465457153,1.89636867889233,-0.298719974894434,0.999493808280078,1.35999104792419,1.40508616590419,1.3877433281043,0.98633667991713,1.12928775780034,2.6953145883693,2.67926439391362,2.664892212159,2.13611635289907,-0.474149290414082,1.74460367934585,0.887651894977381,1.4123194643855,0.699156818407363,1.57875198837227,2.12740899313542,1.67881562181836,1.14288883283846,2.11182465728387,2.57893344323175,1.70622558797109,1.54481446986901,1.62260611750036,1.36996446223672,2.51987669483156,1.73855550163587,-2.97890810989539,-0.396492641672701,-3.67600970189454,-2.00800021276985,-2.83832236250486,-4.07661034710218,1.899362295724,-4.07559260731435,-2.35439981933008,-3.43573793996816,-1.92809902589161,-1.74147154527487,-2.63484020781644,-0.425449904364044,-0.437109450286394,-2.27178434167866,-2.10059344270228,-3.96040698104247,-4.25821690607506,-0.325031928738914,-3.14872867261326,-0.315368574057206,-4.39450026222652,-0.216942399552104,-3.0400194636249,-3.85190368386112,0.0560417516732384,0.00996716453396207,-2.43275851612874,-3.77216779119965,-4.12330289714002,-4.13530461688252,-2.53097308523715,-0.566051573968658,-1.23188770513488,-4.02550404667318,-2.66726558343547,-2.12384039857128,0.180321880167587,-2.67742817721464,-2.90552385292241,-2.39250516026124,-0.329772194769551,-3.23582846653718,-3.25082551002189,-2.30859807502625,-0.160766110469938,-1.97092337537869,-2.30786305459491,-0.0127956752813084],"z":[-1.58186238122201,-1.05581502493324,-1.39804421752362,-1.47679273139815,-1.67399754625466,-0.660227960579674,-1.54078072185444,-1.58691672284277,-1.5763279196228,-1.07206167955058,-0.656152235295735,-1.25083253436615,-1.15723672939609,-1.77051855504044,-0.211583080828016,-0.303172746844047,-0.386402185576532,-1.41369593883279,-0.520129812370682,-0.905055878316622,-1.11028621108706,-1.03426752505158,-1.71703308542378,-1.084962580336,-1.07033633443545,-0.828320039493734,-1.07143232994472,-1.38419192233119,-1.37479716422428,-1.18860782238828,-0.882184728942324,-1.15187558040464,-0.487987176172805,-0.282434057053523,-0.962360241591115,-1.47603042463016,-1.01121292243992,-1.74157633245089,-1.78389677643741,-1.32457827288079,-1.97683828453164,-1.56044864276005,-1.65500679227084,-1.12535779938992,-0.833442503274033,-1.05272042470981,-0.97531639349078,-1.60994152550503,-0.632903519404393,-1.5151047102158,1.19706235016903,0.390599391643291,1.18811182121706,-1.87100805228775,0.732280965648653,-1.30743291932943,0.298707420588048,-2.12901186846146,0.759419959370257,-1.84127139600017,-2.18524932269361,-0.897218563679385,-1.58184272898196,-0.163852798076601,-1.67347296588741,0.890627875440911,-1.19699078389626,-1.54646789403243,0.233553782178637,-1.7509295127727,0.168254723731345,-0.996222966347511,0.668296983055444,-0.0175867001088879,0.331690606748702,0.606860202488165,1.11546510532609,1.36385370024088,-0.241274836996124,-1.7614136213626,-1.70610619715391,-1.76415509080199,-1.3922333829657,0.554983364927597,-1.50010714474303,0.139797327849436,1.07497415183285,0.144755816680996,-1.23031633793076,-1.84377795919234,-1.438988459347,0.0225118622682494,-1.55254607363515,-2.28008957366688,-1.6137061680653,-1.15887770795881,-1.03385773559003,-0.00901855271594387,-2.22777616613844,-1.47946992049302,2.50964828260352,0.307834305541381,2.59276667525875,1.74727944967419,2.34893995150967,2.7908518829766,-1.69732281548764,2.88949506271754,1.93393896410061,2.59759149179427,2.16438017485428,1.59818129892204,2.26966846965878,0.311422692030019,0.247073051383599,2.44223543424972,1.83693014760633,2.6174509025804,2.91415476853211,0.507824409449865,2.73648748613992,0.159303803166467,3.0270286293176,0.500744537689771,2.63992785369198,2.48972914665995,0.290276334338415,0.286241446565085,1.96521828035576,2.81528047477903,2.78620104881609,2.7473220249821,2.09553401498654,0.901264496067575,1.17547580397138,2.7582336897678,2.63887272112536,1.9473619536257,0.156299836698321,2.42297259446788,2.62218028692131,2.38899475222072,0.396943399218767,2.62201367232769,2.56648362222077,2.37292021540734,0.419513016942264,1.98734605340521,2.53360740491994,0.233401515075177],"mode":"markers","color":{},"alpha_stroke":1,"sizes":[10,100],"spans":[1,20],"type":"scatter3d"}},"layout":{"margin":{"b":40,"l":60,"t":25,"r":10},"scene":{"xaxis":{"title":[]},"yaxis":{"title":[]},"zaxis":{"title":[]}},"hovermode":"closest","showlegend":true},"source":"A","config":{"modeBarButtonsToAdd":["hoverclosest","hovercompare"],"showSendToCloud":false},"data":[{"x":[13.8121578643682,12.5566185746569,12.4948344016622,12.3849592723223,13.723579529129,14.5758787954857,12.7561143911126,13.5933726026208,12.3902307719118,12.4131855753828,14.2591004057755,13.0136991102706,12.4552508209844,12.572596423469,14.4639741650979,14.6242425792845,14.3388598392924,13.6551598838426,14.2933725977433,14.6281776463333,13.8607509294728,14.5152807010776,13.1064433408276,13.5307940218486,12.9082049060809,12.3148261876195,13.5695930074017,13.9693417276317,13.6809067458826,12.5709429244156,12.3584141692026,13.7847693713654,14.8270292843955,14.7025755190871,12.4254765366015,13.3285450982454,13.9578767428722,13.6336711582968,12.3377962003,13.7971684156603,13.5586609214334,12.2771694269348,12.6385932846858,13.8146625927908,14.5411727491688,12.4677012601784,14.756221946324,12.5079599905215,14.2449179125671,13.352076063042],"y":[1.02397476567686,-0.567421286047145,-0.435043592918402,-0.612609978455118,1.05184705773421,1.68592975264312,-0.198040904484283,0.780139694922116,-0.762823885859453,-0.513740160641438,1.62581062928858,0.234325307519616,-0.628029082088913,-0.585998913464958,1.6488850170626,1.54688416309006,1.81758731327483,1.02757531265436,1.47504446498101,1.65969569212409,1.34030713132472,1.58553753373289,0.163529619574196,0.672459394957424,0.192875191062707,-0.463138974852975,0.721865024504781,1.21721844636453,1.15845053424816,-0.299572636120625,-0.236273506189499,1.30931806176057,1.7654101334544,1.6985429789211,-0.456944699812852,0.302827306477955,1.4853375602038,0.904686361267992,-0.779196637395603,0.916790898348356,0.960620596483703,-0.972889511196989,-0.485228917918434,0.746564255157637,1.51322113280271,-0.868997133288326,1.82531988720836,-0.308579317970664,1.86418875997619,0.612718421667121],"z":[-1.58186238122201,-1.05581502493324,-1.39804421752362,-1.47679273139815,-1.67399754625466,-0.660227960579674,-1.54078072185444,-1.58691672284277,-1.5763279196228,-1.07206167955058,-0.656152235295735,-1.25083253436615,-1.15723672939609,-1.77051855504044,-0.211583080828016,-0.303172746844047,-0.386402185576532,-1.41369593883279,-0.520129812370682,-0.905055878316622,-1.11028621108706,-1.03426752505158,-1.71703308542378,-1.084962580336,-1.07033633443545,-0.828320039493734,-1.07143232994472,-1.38419192233119,-1.37479716422428,-1.18860782238828,-0.882184728942324,-1.15187558040464,-0.487987176172805,-0.282434057053523,-0.962360241591115,-1.47603042463016,-1.01121292243992,-1.74157633245089,-1.78389677643741,-1.32457827288079,-1.97683828453164,-1.56044864276005,-1.65500679227084,-1.12535779938992,-0.833442503274033,-1.05272042470981,-0.97531639349078,-1.60994152550503,-0.632903519404393,-1.5151047102158],"mode":"markers","type":"scatter3d","name":"setosa","marker":{"color":"rgba(102,194,165,1)","line":{"color":"rgba(102,194,165,1)"}},"textfont":{"color":"rgba(102,194,165,1)"},"error_y":{"color":"rgba(102,194,165,1)"},"error_x":{"color":"rgba(102,194,165,1)"},"line":{"color":"rgba(102,194,165,1)"},"frame":null},{"x":[-7.36153664527532,-7.10623189029042,-7.35473410790472,-5.4750181268726,-7.04721150451443,-6.05445019740175,-7.36225014190672,-5.39171877150382,-7.08734832311141,-5.66650460391516,-5.29287404561178,-6.02227191649367,-5.17713756542136,-7.01540629709977,-5.30631332743886,-7.20006679487844,-6.12006718172142,-5.23450485027368,-6.81387277073767,-5.46013235117493,-7.68779316828611,-5.5346762732865,-7.19230502496095,-6.83274678190861,-6.83969662575974,-7.0236641606101,-7.26843402452166,-7.39293862622029,-6.79881647274359,-5.17894010529982,-5.13166884370656,-5.22224922003748,-5.2886376346191,-7.42158047839975,-6.03758376264499,-7.22476262495404,-7.25391662727767,-6.67971449713231,-5.79867372038863,-5.62364061341747,-6.03212681087835,-6.93680163111135,-5.29561365229052,-5.37905625734217,-5.63939761360822,-5.76671496013567,-5.65903274035383,-6.63023228231964,-5.29921655135279,-5.40225444796753],"y":[1.37055086772055,1.22504320951378,1.37827606515138,2.23579905715718,1.06763521595521,1.58745428694735,0.917590427610034,2.55997960625234,1.32252778539473,2.14847286354544,2.68299955401552,1.48875731785903,2.32677590182945,0.802046902753949,2.42329953254726,1.43724473045237,1.54540649011749,2.02612204795871,0.417899258721111,2.36521248158771,0.185256465457153,1.89636867889233,-0.298719974894434,0.999493808280078,1.35999104792419,1.40508616590419,1.3877433281043,0.98633667991713,1.12928775780034,2.6953145883693,2.67926439391362,2.664892212159,2.13611635289907,-0.474149290414082,1.74460367934585,0.887651894977381,1.4123194643855,0.699156818407363,1.57875198837227,2.12740899313542,1.67881562181836,1.14288883283846,2.11182465728387,2.57893344323175,1.70622558797109,1.54481446986901,1.62260611750036,1.36996446223672,2.51987669483156,1.73855550163587],"z":[1.19706235016903,0.390599391643291,1.18811182121706,-1.87100805228775,0.732280965648653,-1.30743291932943,0.298707420588048,-2.12901186846146,0.759419959370257,-1.84127139600017,-2.18524932269361,-0.897218563679385,-1.58184272898196,-0.163852798076601,-1.67347296588741,0.890627875440911,-1.19699078389626,-1.54646789403243,0.233553782178637,-1.7509295127727,0.168254723731345,-0.996222966347511,0.668296983055444,-0.0175867001088879,0.331690606748702,0.606860202488165,1.11546510532609,1.36385370024088,-0.241274836996124,-1.7614136213626,-1.70610619715391,-1.76415509080199,-1.3922333829657,0.554983364927597,-1.50010714474303,0.139797327849436,1.07497415183285,0.144755816680996,-1.23031633793076,-1.84377795919234,-1.438988459347,0.0225118622682494,-1.55254607363515,-2.28008957366688,-1.6137061680653,-1.15887770795881,-1.03385773559003,-0.00901855271594387,-2.22777616613844,-1.47946992049302],"mode":"markers","type":"scatter3d","name":"versicolor","marker":{"color":"rgba(252,141,98,1)","line":{"color":"rgba(252,141,98,1)"}},"textfont":{"color":"rgba(252,141,98,1)"},"error_y":{"color":"rgba(252,141,98,1)"},"error_x":{"color":"rgba(252,141,98,1)"},"line":{"color":"rgba(252,141,98,1)"},"frame":null},{"x":[-7.18829713061538,-7.98904421263893,-6.93528070871611,-7.32782547321933,-7.24876815578294,-6.88235542331649,-6.03146111335257,-7.03222557905399,-7.39058212456879,-6.93162640411351,-6.97987250977684,-7.20828493852684,-6.99341495949017,-7.98568176216187,-8.11620308841414,-7.06992050851917,-7.18722674379634,-6.91303506278734,-6.89405662953303,-7.05709760213763,-7.01680002915099,-8.15904093870066,-6.77699861511054,-7.34802831057034,-6.84509486451152,-6.96117422533117,-7.39686429804188,-7.55228799324447,-7.46266294653305,-6.9520541207802,-6.9856000168214,-6.84071126545261,-7.16590014289819,-7.21653842399065,-7.32716317656963,-7.09513993265427,-7.32218029758142,-7.15745788322055,-7.66472750427485,-6.7962799305455,-7.23964147082257,-6.69728947770208,-7.92753928953192,-7.0055847549639,-7.07888552918911,-6.81640904278409,-7.24436079353062,-6.88491419975765,-7.27403834707078,-7.74874278773642],"y":[-2.97890810989539,-0.396492641672701,-3.67600970189454,-2.00800021276985,-2.83832236250486,-4.07661034710218,1.899362295724,-4.07559260731435,-2.35439981933008,-3.43573793996816,-1.92809902589161,-1.74147154527487,-2.63484020781644,-0.425449904364044,-0.437109450286394,-2.27178434167866,-2.10059344270228,-3.96040698104247,-4.25821690607506,-0.325031928738914,-3.14872867261326,-0.315368574057206,-4.39450026222652,-0.216942399552104,-3.0400194636249,-3.85190368386112,0.0560417516732384,0.00996716453396207,-2.43275851612874,-3.77216779119965,-4.12330289714002,-4.13530461688252,-2.53097308523715,-0.566051573968658,-1.23188770513488,-4.02550404667318,-2.66726558343547,-2.12384039857128,0.180321880167587,-2.67742817721464,-2.90552385292241,-2.39250516026124,-0.329772194769551,-3.23582846653718,-3.25082551002189,-2.30859807502625,-0.160766110469938,-1.97092337537869,-2.30786305459491,-0.0127956752813084],"z":[2.50964828260352,0.307834305541381,2.59276667525875,1.74727944967419,2.34893995150967,2.7908518829766,-1.69732281548764,2.88949506271754,1.93393896410061,2.59759149179427,2.16438017485428,1.59818129892204,2.26966846965878,0.311422692030019,0.247073051383599,2.44223543424972,1.83693014760633,2.6174509025804,2.91415476853211,0.507824409449865,2.73648748613992,0.159303803166467,3.0270286293176,0.500744537689771,2.63992785369198,2.48972914665995,0.290276334338415,0.286241446565085,1.96521828035576,2.81528047477903,2.78620104881609,2.7473220249821,2.09553401498654,0.901264496067575,1.17547580397138,2.7582336897678,2.63887272112536,1.9473619536257,0.156299836698321,2.42297259446788,2.62218028692131,2.38899475222072,0.396943399218767,2.62201367232769,2.56648362222077,2.37292021540734,0.419513016942264,1.98734605340521,2.53360740491994,0.233401515075177],"mode":"markers","type":"scatter3d","name":"virginica","marker":{"color":"rgba(141,160,203,1)","line":{"color":"rgba(141,160,203,1)"}},"textfont":{"color":"rgba(141,160,203,1)"},"error_y":{"color":"rgba(141,160,203,1)"},"error_x":{"color":"rgba(141,160,203,1)"},"line":{"color":"rgba(141,160,203,1)"},"frame":null}],"highlight":{"on":"plotly_click","persistent":false,"dynamic":false,"selectize":false,"opacityDim":0.2,"selected":{"opacity":1},"debounce":0},"shinyEvents":["plotly_hover","plotly_click","plotly_selected","plotly_relayout","plotly_brushed","plotly_brushing","plotly_clickannotation","plotly_doubleclick","plotly_deselect","plotly_afterplot","plotly_sunburstclick"],"base_url":"https://plot.ly"},"evals":[],"jsHooks":[]}</script>
 </div>
 </div>
-<div id="references-2" class="section level2">
+<div id="references-3" class="section level2">
 <h2>
-<span class="header-section-number">50.6</span> References:<a class="anchor" aria-label="anchor" href="#references-2"><i class="fas fa-link"></i></a>
+<span class="header-section-number">57.6</span> References:<a class="anchor" aria-label="anchor" href="#references-3"><i class="fas fa-link"></i></a>
 </h2>
 <ol style="list-style-type: decimal">
 <li><p>Uniform Manifold Approximation and Projection in R: <a href="https://umap-learn.readthedocs.io/en/latest/" class="uri">https://umap-learn.readthedocs.io/en/latest/</a></p></li>
@@ -452,32 +454,32 @@
 </div>
 </div>
   <div class="chapter-nav">
-<div class="prev"><a href="d-visualization-shinyaframe-introduction-and-tutorial.html"><span class="header-section-number">49</span> 3D visualization: shinyaframe introduction and tutorial</a></div>
-<div class="next"><a href="functional-programming-with-purrr.html"><span class="header-section-number">51</span> Functional Programming with Purrr</a></div>
+<div class="prev"><a href="crime-analysis-around-columbia.html"><span class="header-section-number">56</span> Crime Analysis around Columbia</a></div>
+<div class="next"><a href="exploratory-data-analysis-and-preprocessing-with-r-for-data-challenges.html"><span class="header-section-number">58</span> Exploratory data analysis and preprocessing with R for data challenges</a></div>
 </div></main><div class="col-md-3 col-lg-2 d-none d-md-block sidebar sidebar-chapter">
     <nav id="toc" data-toggle="toc" aria-label="On this page"><h2>On this page</h2>
       <ul class="nav navbar-nav">
-<li><a class="nav-link" href="#efficient-dimension-reduction-with-umap"><span class="header-section-number">50</span> Efficient dimension reduction with UMAP</a></li>
-<li><a class="nav-link" href="#brief-introduction-to-umap"><span class="header-section-number">50.1</span> Brief Introduction to UMAP</a></li>
-<li><a class="nav-link" href="#experiments-on-the-mnist-dataset"><span class="header-section-number">50.2</span> Experiments on the MNIST dataset</a></li>
+<li><a class="nav-link" href="#efficient-dimension-reduction-with-umap"><span class="header-section-number">57</span> Efficient dimension reduction with UMAP</a></li>
+<li><a class="nav-link" href="#brief-introduction-to-umap"><span class="header-section-number">57.1</span> Brief Introduction to UMAP</a></li>
+<li><a class="nav-link" href="#experiments-on-the-mnist-dataset"><span class="header-section-number">57.2</span> Experiments on the MNIST dataset</a></li>
 <li>
-<a class="nav-link" href="#parameters-and-additional-insights"><span class="header-section-number">50.3</span> Parameters and Additional Insights</a><ul class="nav navbar-nav">
-<li><a class="nav-link" href="#min_dist-0.99-and-n_neighbors-4"><span class="header-section-number">50.3.1</span> min_dist = 0.99 and n_neighbors = 4</a></li>
-<li><a class="nav-link" href="#min_dist-0.99-and-n_neighbors-10"><span class="header-section-number">50.3.2</span> min_dist = 0.99 and n_neighbors = 10</a></li>
-<li><a class="nav-link" href="#min_dist-0.5-and-n_neighbors-4"><span class="header-section-number">50.3.3</span> min_dist = 0.5 and n_neighbors = 4</a></li>
+<a class="nav-link" href="#parameters-and-additional-insights"><span class="header-section-number">57.3</span> Parameters and Additional Insights</a><ul class="nav navbar-nav">
+<li><a class="nav-link" href="#min_dist-0.99-and-n_neighbors-4"><span class="header-section-number">57.3.1</span> min_dist = 0.99 and n_neighbors = 4</a></li>
+<li><a class="nav-link" href="#min_dist-0.99-and-n_neighbors-10"><span class="header-section-number">57.3.2</span> min_dist = 0.99 and n_neighbors = 10</a></li>
+<li><a class="nav-link" href="#min_dist-0.5-and-n_neighbors-4"><span class="header-section-number">57.3.3</span> min_dist = 0.5 and n_neighbors = 4</a></li>
 </ul>
 </li>
-<li><a class="nav-link" href="#iris-dataset"><span class="header-section-number">50.4</span> Iris Dataset</a></li>
+<li><a class="nav-link" href="#iris-dataset"><span class="header-section-number">57.4</span> Iris Dataset</a></li>
 <li>
-<a class="nav-link" href="#analysis-of-iris-using-umap"><span class="header-section-number">50.5</span> Analysis of Iris using UMAP</a><ul class="nav navbar-nav">
-<li><a class="nav-link" href="#min_dist-0.10-and-n_neighbors-20"><span class="header-section-number">50.5.1</span> min_dist = 0.10 and n_neighbors = 20</a></li>
-<li><a class="nav-link" href="#min_dist-0.5-and-n_neighbors-20"><span class="header-section-number">50.5.2</span> min_dist = 0.5 and n_neighbors = 20</a></li>
-<li><a class="nav-link" href="#high-min_dist-and-low-n_neighbors"><span class="header-section-number">50.5.3</span> High min_dist and low n_neighbors</a></li>
-<li><a class="nav-link" href="#low-min_dist-and-high-n_neighbors"><span class="header-section-number">50.5.4</span> Low min_dist and high n_neighbors</a></li>
-<li><a class="nav-link" href="#d-visualisation-using-umap"><span class="header-section-number">50.5.5</span> 3D Visualisation using UMAP</a></li>
+<a class="nav-link" href="#analysis-of-iris-using-umap"><span class="header-section-number">57.5</span> Analysis of Iris using UMAP</a><ul class="nav navbar-nav">
+<li><a class="nav-link" href="#min_dist-0.10-and-n_neighbors-20"><span class="header-section-number">57.5.1</span> min_dist = 0.10 and n_neighbors = 20</a></li>
+<li><a class="nav-link" href="#min_dist-0.5-and-n_neighbors-20"><span class="header-section-number">57.5.2</span> min_dist = 0.5 and n_neighbors = 20</a></li>
+<li><a class="nav-link" href="#high-min_dist-and-low-n_neighbors"><span class="header-section-number">57.5.3</span> High min_dist and low n_neighbors</a></li>
+<li><a class="nav-link" href="#low-min_dist-and-high-n_neighbors"><span class="header-section-number">57.5.4</span> Low min_dist and high n_neighbors</a></li>
+<li><a class="nav-link" href="#d-visualisation-using-umap"><span class="header-section-number">57.5.5</span> 3D Visualisation using UMAP</a></li>
 </ul>
 </li>
-<li><a class="nav-link" href="#references-2"><span class="header-section-number">50.6</span> References:</a></li>
+<li><a class="nav-link" href="#references-3"><span class="header-section-number">57.6</span> References:</a></li>
 </ul>
 
       <div class="book-extra">
@@ -495,7 +497,7 @@
 <footer class="bg-primary text-light mt-5"><div class="container"><div class="row">
 
   <div class="col-12 col-md-6 mt-3">
-    <p>"<strong>EDAV Fall 2021 Mon/Wed Community Contributions</strong>" was written by the students of the class. It was last built on 2021-11-20.</p>
+    <p>"<strong>EDAV Fall 2021 Mon/Wed Community Contributions</strong>" was written by the students of the class. It was last built on 2021-11-22.</p>
   </div>
 
   <div class="col-12 col-md-6 mt-3">
