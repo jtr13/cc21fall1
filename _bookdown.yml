@@ -76,7 +76,7 @@ rmd_files: [
  
  
   # Machine Learning and More
-  'ml_packages_in_R.rmd',
+  'ml_packages_in_R.rmd', # contains PART header
   'linear_regression_bestiary.Rmd',
   'r_regress_classify.Rmd',
   'caret_machine_learning_tutorial.Rmd',
