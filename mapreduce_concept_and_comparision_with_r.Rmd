@@ -32,7 +32,7 @@ library("tidyverse")
 library("vcd")
 library("GGally")
 library("ggplot2")
-library("googledrive") 
+#library("googledrive")
 library("httpuv")
 ```
 
@@ -78,8 +78,8 @@ print(detectCores())
 **Spam Detection Dataset**
 
 ```{r}
-drive_download("https://docs.google.com/spreadsheets/d/1-8rtr9NMhlOfPQks7_FBXulmg09-Ojr3vo3H5kvJR54/edit#gid=325834561", type = "csv", overwrite = TRUE)
-df_spam <- read_csv("spam.csv")
+#drive_download("https://docs.google.com/spreadsheets/d/1-8rtr9NMhlOfPQks7_FBXulmg09-Ojr3vo3H5kvJR54/edit#gid=325834561", type = "csv", overwrite = TRUE)
+df_spam <- read_csv("resources/mapreduce/spam.csv")
 ```
 
 
