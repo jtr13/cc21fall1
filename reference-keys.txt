@@ -423,14 +423,7 @@ explore-handle-categorical-columns
 streamlit-for-financial-analysis
 data-science-product-cycles-in-enterprises
 mapreduce-concept-comparision-with-r
-install.packagesfuture
-install.packagesparallel
-install.packagestidyverse
-install.packagesvcd
-install.packagesggally
-install.packagesggplot2
-install.packagesgoogledrive
-install.packageshttpuv
+below-are-the-links-for-the-pdf-html-and-recording
 github-initial-setup
 create-new-repo
 pages-in-repo-settings
