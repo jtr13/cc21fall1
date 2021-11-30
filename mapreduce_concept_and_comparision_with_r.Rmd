@@ -78,7 +78,7 @@ print(detectCores())
 **Spam Detection Dataset**
 
 ```{r}
-#drive_download("https://docs.google.com/spreadsheets/d/1-8rtr9NMhlOfPQks7_FBXulmg09-Ojr3vo3H5kvJR54/edit#gid=325834561", type = "csv", overwrite = TRUE)
+# drive_download("https://docs.google.com/spreadsheets/d/1-8rtr9NMhlOfPQks7_FBXulmg09-Ojr3vo3H5kvJR54/edit#gid=325834561", type = "csv", overwrite = TRUE)
 df_spam <- read_csv("resources/mapreduce/spam.csv")
 ```
 
@@ -153,8 +153,8 @@ cat("ParallelExecution with Spam Dataset with Duplicate Rows in seconds - ", par
 
 **Reading another dataset**
 ```{r}
-drive_download("https://drive.google.com/file/d/1izYW3zRmFAra2Auyxmxkuz7319Wb_ntd/view?usp=sharing", type = "csv", overwrite = TRUE)
-df_Yelp <- read_csv("yelp_ratings.csv")
+# drive_download("https://drive.google.com/file/d/1izYW3zRmFAra2Auyxmxkuz7319Wb_ntd/view?usp=sharing", type = "csv", overwrite = TRUE)
+df_Yelp <- read_csv("resources/mapreduce/yelp_ratings.csv")
 ```
 
 
