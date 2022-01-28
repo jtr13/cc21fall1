@@ -169,18 +169,18 @@
 <div class="sourceCode" id="cb78"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="va">vehicles</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> <span class="fu"><a href="https://dplyr.tidyverse.org/reference/filter.html">filter</a></span><span class="op">(</span><span class="va">year</span><span class="op">&gt;</span><span class="fl">1999</span><span class="op">)</span></code></pre></div>
 <pre><code>## # A tibble: 16,649 × 12
-##       id make  model  year class   trans   drive     cyl displ fuel    hwy   cty
-##    &lt;dbl&gt; &lt;chr&gt; &lt;chr&gt; &lt;dbl&gt; &lt;chr&gt;   &lt;chr&gt;   &lt;chr&gt;   &lt;dbl&gt; &lt;dbl&gt; &lt;chr&gt; &lt;dbl&gt; &lt;dbl&gt;
-##  1 16573 Acura 3.2CL  2001 Compac… Automa… Front-…     6   3.2 Prem…    27    17
-##  2 17489 Acura 3.2CL  2002 Compac… Automa… Front-…     6   3.2 Prem…    27    17
-##  3 18458 Acura 3.2CL  2003 Compac… Manual… Front-…     6   3.2 Prem…    26    17
-##  4 18459 Acura 3.2CL  2003 Compac… Automa… Front-…     6   3.2 Prem…    27    17
-##  5 15871 Acura 3.2TL  2000 Midsiz… Automa… Front-…     6   3.2 Prem…    27    17
-##  6 16734 Acura 3.2TL  2001 Midsiz… Automa… Front-…     6   3.2 Prem…    27    17
-##  7 17664 Acura 3.2TL  2002 Midsiz… Automa… Front-…     6   3.2 Prem…    27    17
-##  8 18629 Acura 3.2TL  2003 Midsiz… Automa… Front-…     6   3.2 Prem…    27    17
-##  9 15872 Acura 3.5RL  2000 Midsiz… Automa… Front-…     6   3.5 Prem…    22    16
-## 10 16735 Acura 3.5RL  2001 Midsiz… Automa… Front-…     6   3.5 Prem…    22    16
+##       id make  model  year class       trans drive   cyl displ fuel    hwy   cty
+##    &lt;dbl&gt; &lt;chr&gt; &lt;chr&gt; &lt;dbl&gt; &lt;chr&gt;       &lt;chr&gt; &lt;chr&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;chr&gt; &lt;dbl&gt; &lt;dbl&gt;
+##  1 16573 Acura 3.2CL  2001 Compact Ca… Auto… Fron…     6   3.2 Prem…    27    17
+##  2 17489 Acura 3.2CL  2002 Compact Ca… Auto… Fron…     6   3.2 Prem…    27    17
+##  3 18458 Acura 3.2CL  2003 Compact Ca… Manu… Fron…     6   3.2 Prem…    26    17
+##  4 18459 Acura 3.2CL  2003 Compact Ca… Auto… Fron…     6   3.2 Prem…    27    17
+##  5 15871 Acura 3.2TL  2000 Midsize Ca… Auto… Fron…     6   3.2 Prem…    27    17
+##  6 16734 Acura 3.2TL  2001 Midsize Ca… Auto… Fron…     6   3.2 Prem…    27    17
+##  7 17664 Acura 3.2TL  2002 Midsize Ca… Auto… Fron…     6   3.2 Prem…    27    17
+##  8 18629 Acura 3.2TL  2003 Midsize Ca… Auto… Fron…     6   3.2 Prem…    27    17
+##  9 15872 Acura 3.5RL  2000 Midsize Ca… Auto… Fron…     6   3.5 Prem…    22    16
+## 10 16735 Acura 3.5RL  2001 Midsize Ca… Auto… Fron…     6   3.5 Prem…    22    16
 ## # … with 16,639 more rows</code></pre>
 </div>
 <div id="reorder-rows-with-arrange" class="section level3">
@@ -190,18 +190,18 @@
 <div class="sourceCode" id="cb80"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="va">vehicles</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> <span class="fu"><a href="https://dplyr.tidyverse.org/reference/arrange.html">arrange</a></span><span class="op">(</span><span class="va">year</span>,<span class="va">class</span>,<span class="va">trans</span><span class="op">)</span></code></pre></div>
 <pre><code>## # A tibble: 33,442 × 12
-##       id make      model   year class  trans drive   cyl displ fuel    hwy   cty
-##    &lt;dbl&gt; &lt;chr&gt;     &lt;chr&gt;  &lt;dbl&gt; &lt;chr&gt;  &lt;chr&gt; &lt;chr&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;chr&gt; &lt;dbl&gt; &lt;dbl&gt;
-##  1 27049 Buick     Elect…  1984 Large… Auto… 2-Wh…     6   4.1 Regu…    19    14
-##  2 27050 Buick     Elect…  1984 Large… Auto… 2-Wh…     8   5   Regu…    20    14
-##  3 27051 Buick     Elect…  1984 Large… Auto… 2-Wh…     8   5.7 Dies…    26    18
-##  4 27057 Cadillac  Broug…  1984 Large… Auto… Rear…     8   4.1 Regu…    19    14
-##  5 27058 Cadillac  Broug…  1984 Large… Auto… Rear…     8   5.7 Dies…    26    18
-##  6 28105 Cadillac  Broug…  1984 Large… Auto… Rear…     8   4.1 Regu…    19    14
-##  7 28106 Cadillac  Fleet…  1984 Large… Auto… Rear…     6   4.3 Dies…    31    21
-##  8 28225 Chevrolet S10 P…  1984 Small… Auto… 2-Wh…     4   2   Regu…    24    18
-##  9 27219 Dodge     Ram 5…  1984 Small… Auto… 2-Wh…     4   2   Regu…    21    20
-## 10 27220 Dodge     Ram 5…  1984 Small… Auto… 2-Wh…     4   2   Regu…    20    18
+##       id make      model    year class trans drive   cyl displ fuel    hwy   cty
+##    &lt;dbl&gt; &lt;chr&gt;     &lt;chr&gt;   &lt;dbl&gt; &lt;chr&gt; &lt;chr&gt; &lt;chr&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;chr&gt; &lt;dbl&gt; &lt;dbl&gt;
+##  1 27049 Buick     Electr…  1984 Larg… Auto… 2-Wh…     6   4.1 Regu…    19    14
+##  2 27050 Buick     Electr…  1984 Larg… Auto… 2-Wh…     8   5   Regu…    20    14
+##  3 27051 Buick     Electr…  1984 Larg… Auto… 2-Wh…     8   5.7 Dies…    26    18
+##  4 27057 Cadillac  Brough…  1984 Larg… Auto… Rear…     8   4.1 Regu…    19    14
+##  5 27058 Cadillac  Brough…  1984 Larg… Auto… Rear…     8   5.7 Dies…    26    18
+##  6 28105 Cadillac  Brough…  1984 Larg… Auto… Rear…     8   4.1 Regu…    19    14
+##  7 28106 Cadillac  Fleetw…  1984 Larg… Auto… Rear…     6   4.3 Dies…    31    21
+##  8 28225 Chevrolet S10 Pi…  1984 Smal… Auto… 2-Wh…     4   2   Regu…    24    18
+##  9 27219 Dodge     Ram 50…  1984 Smal… Auto… 2-Wh…     4   2   Regu…    21    20
+## 10 27220 Dodge     Ram 50…  1984 Smal… Auto… 2-Wh…     4   2   Regu…    20    18
 ## # … with 33,432 more rows</code></pre>
 </div>
 <div id="create-new-variables-using-mutate" class="section level3">
@@ -456,7 +456,7 @@ Intervals: starting and ending point<br></p>
 <pre><code>## [1] 365.25</code></pre>
 <div class="sourceCode" id="cb138"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="fu"><a href="https://lubridate.tidyverse.org/reference/now.html">today</a></span><span class="op">(</span><span class="op">)</span> <span class="op">+</span> <span class="fu"><a href="https://lubridate.tidyverse.org/reference/period.html">years</a></span><span class="op">(</span><span class="fl">1</span><span class="op">)</span></code></pre></div>
-<pre><code>## [1] "2022-11-07"</code></pre>
+<pre><code>## [1] "2023-01-28"</code></pre>
 </div>
 </div>
 <div id="string-manipulations-with-stringr" class="section level2">
@@ -473,37 +473,37 @@ string_view() is a very useful function that showcase string patterns. The first
 <div class="sourceCode" id="cb140"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="va">a</span> <span class="op">&lt;-</span><span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">'root'</span>, <span class="st">'create'</span>,<span class="st">'time'</span>,<span class="st">'death'</span><span class="op">)</span>
 <span class="fu"><a href="https://stringr.tidyverse.org/reference/str_view.html">str_view</a></span><span class="op">(</span><span class="va">a</span>, <span class="st">"ea"</span><span class="op">)</span></code></pre></div>
-<div id="htmlwidget-4013ca56bf386b81a6aa" style="width:960px;height:100%;" class="str_view html-widget"></div>
-<script type="application/json" data-for="htmlwidget-4013ca56bf386b81a6aa">{"x":{"html":"<ul>\n  <li>root<\/li>\n  <li>cr<span class='match'>ea<\/span>te<\/li>\n  <li>time<\/li>\n  <li>d<span class='match'>ea<\/span>th<\/li>\n<\/ul>"},"evals":[],"jsHooks":[]}</script><p>We can use ‘.’ as a wildcard to match any character</p>
+<div id="htmlwidget-62bb33c7819d06cfc942" style="width:960px;height:100%;" class="str_view html-widget"></div>
+<script type="application/json" data-for="htmlwidget-62bb33c7819d06cfc942">{"x":{"html":"<ul>\n  <li>root<\/li>\n  <li>cr<span class='match'>ea<\/span>te<\/li>\n  <li>time<\/li>\n  <li>d<span class='match'>ea<\/span>th<\/li>\n<\/ul>"},"evals":[],"jsHooks":[]}</script><p>We can use ‘.’ as a wildcard to match any character</p>
 <div class="sourceCode" id="cb141"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="va">a</span> <span class="op">&lt;-</span><span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">'root'</span>, <span class="st">'create'</span>,<span class="st">'time'</span>,<span class="st">'death'</span><span class="op">)</span>
 <span class="fu"><a href="https://stringr.tidyverse.org/reference/str_view.html">str_view</a></span><span class="op">(</span><span class="va">a</span>, <span class="st">"im."</span><span class="op">)</span></code></pre></div>
-<div id="htmlwidget-c5e090836480ceb433a8" style="width:960px;height:100%;" class="str_view html-widget"></div>
-<script type="application/json" data-for="htmlwidget-c5e090836480ceb433a8">{"x":{"html":"<ul>\n  <li>root<\/li>\n  <li>create<\/li>\n  <li>t<span class='match'>ime<\/span><\/li>\n  <li>death<\/li>\n<\/ul>"},"evals":[],"jsHooks":[]}</script><p>We can use ‘^a’ to match any string starting with an “a”, and “a$” to find any string that ending with “a”. We can also use ‘^’ at the beginning and “$” in the end to make sure that it’s an exact match.</p>
+<div id="htmlwidget-dc561d590e4131297e1d" style="width:960px;height:100%;" class="str_view html-widget"></div>
+<script type="application/json" data-for="htmlwidget-dc561d590e4131297e1d">{"x":{"html":"<ul>\n  <li>root<\/li>\n  <li>create<\/li>\n  <li>t<span class='match'>ime<\/span><\/li>\n  <li>death<\/li>\n<\/ul>"},"evals":[],"jsHooks":[]}</script><p>We can use ‘^a’ to match any string starting with an “a”, and “a$” to find any string that ending with “a”. We can also use ‘^’ at the beginning and “$” in the end to make sure that it’s an exact match.</p>
 <div class="sourceCode" id="cb142"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="va">a</span> <span class="op">&lt;-</span><span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">'root'</span>, <span class="st">'create'</span>,<span class="st">'time'</span>,<span class="st">'death'</span>,<span class="st">'eath'</span><span class="op">)</span>
 <span class="fu"><a href="https://stringr.tidyverse.org/reference/str_view.html">str_view</a></span><span class="op">(</span><span class="va">a</span>, <span class="st">"^c"</span><span class="op">)</span></code></pre></div>
-<div id="htmlwidget-ab9d20f0bae654f9bf80" style="width:960px;height:100%;" class="str_view html-widget"></div>
-<script type="application/json" data-for="htmlwidget-ab9d20f0bae654f9bf80">{"x":{"html":"<ul>\n  <li>root<\/li>\n  <li><span class='match'>c<\/span>reate<\/li>\n  <li>time<\/li>\n  <li>death<\/li>\n  <li>eath<\/li>\n<\/ul>"},"evals":[],"jsHooks":[]}</script><div class="sourceCode" id="cb143"><pre class="downlit sourceCode r">
+<div id="htmlwidget-6d67ce7f51b83daef174" style="width:960px;height:100%;" class="str_view html-widget"></div>
+<script type="application/json" data-for="htmlwidget-6d67ce7f51b83daef174">{"x":{"html":"<ul>\n  <li>root<\/li>\n  <li><span class='match'>c<\/span>reate<\/li>\n  <li>time<\/li>\n  <li>death<\/li>\n  <li>eath<\/li>\n<\/ul>"},"evals":[],"jsHooks":[]}</script><div class="sourceCode" id="cb143"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="fu"><a href="https://stringr.tidyverse.org/reference/str_view.html">str_view</a></span><span class="op">(</span><span class="va">a</span>, <span class="st">"^death$"</span><span class="op">)</span></code></pre></div>
-<div id="htmlwidget-cae230b2c4338d20d9c0" style="width:960px;height:100%;" class="str_view html-widget"></div>
-<script type="application/json" data-for="htmlwidget-cae230b2c4338d20d9c0">{"x":{"html":"<ul>\n  <li>root<\/li>\n  <li>create<\/li>\n  <li>time<\/li>\n  <li><span class='match'>death<\/span><\/li>\n  <li>eath<\/li>\n<\/ul>"},"evals":[],"jsHooks":[]}</script><div class="sourceCode" id="cb144"><pre class="downlit sourceCode r">
+<div id="htmlwidget-69020130bb1c8c33e0a9" style="width:960px;height:100%;" class="str_view html-widget"></div>
+<script type="application/json" data-for="htmlwidget-69020130bb1c8c33e0a9">{"x":{"html":"<ul>\n  <li>root<\/li>\n  <li>create<\/li>\n  <li>time<\/li>\n  <li><span class='match'>death<\/span><\/li>\n  <li>eath<\/li>\n<\/ul>"},"evals":[],"jsHooks":[]}</script><div class="sourceCode" id="cb144"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="fu"><a href="https://stringr.tidyverse.org/reference/str_view.html">str_view</a></span><span class="op">(</span><span class="va">a</span>, <span class="st">"e$"</span><span class="op">)</span></code></pre></div>
-<div id="htmlwidget-8f0036194426fb8ed451" style="width:960px;height:100%;" class="str_view html-widget"></div>
-<script type="application/json" data-for="htmlwidget-8f0036194426fb8ed451">{"x":{"html":"<ul>\n  <li>root<\/li>\n  <li>creat<span class='match'>e<\/span><\/li>\n  <li>tim<span class='match'>e<\/span><\/li>\n  <li>death<\/li>\n  <li>eath<\/li>\n<\/ul>"},"evals":[],"jsHooks":[]}</script><p>We can also specify how many times a character repeats itself. {n} represents we have exactly n times of repetition,{n,}: n or more, {,n}: at most n, {n,m}: between n and m</p>
+<div id="htmlwidget-686dfb7be7b5ef8e578e" style="width:960px;height:100%;" class="str_view html-widget"></div>
+<script type="application/json" data-for="htmlwidget-686dfb7be7b5ef8e578e">{"x":{"html":"<ul>\n  <li>root<\/li>\n  <li>creat<span class='match'>e<\/span><\/li>\n  <li>tim<span class='match'>e<\/span><\/li>\n  <li>death<\/li>\n  <li>eath<\/li>\n<\/ul>"},"evals":[],"jsHooks":[]}</script><p>We can also specify how many times a character repeats itself. {n} represents we have exactly n times of repetition,{n,}: n or more, {,n}: at most n, {n,m}: between n and m</p>
 <div class="sourceCode" id="cb145"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="va">a</span> <span class="op">&lt;-</span><span class="st">'CCccoljenlq'</span>
 <span class="fu"><a href="https://stringr.tidyverse.org/reference/str_view.html">str_view</a></span><span class="op">(</span><span class="va">a</span>, <span class="st">'C{2}'</span><span class="op">)</span></code></pre></div>
-<div id="htmlwidget-324683d5875334108048" style="width:960px;height:100%;" class="str_view html-widget"></div>
-<script type="application/json" data-for="htmlwidget-324683d5875334108048">{"x":{"html":"<ul>\n  <li><span class='match'>CC<\/span>ccoljenlq<\/li>\n<\/ul>"},"evals":[],"jsHooks":[]}</script><p>There are also extra type of strings we can match other than characters we mentioned. ‘\d’ matches any digit,‘\s’ matches any white space, [xyz] matches x, y or z, [^xyz] matches anything other than x, y and z. Here noticing that because we want to match a substring starting with one backlash, we have to specify two backlashes in the string matching.</p>
+<div id="htmlwidget-16b3c96e89c1096a2a22" style="width:960px;height:100%;" class="str_view html-widget"></div>
+<script type="application/json" data-for="htmlwidget-16b3c96e89c1096a2a22">{"x":{"html":"<ul>\n  <li><span class='match'>CC<\/span>ccoljenlq<\/li>\n<\/ul>"},"evals":[],"jsHooks":[]}</script><p>There are also extra type of strings we can match other than characters we mentioned. ‘\d’ matches any digit,‘\s’ matches any white space, [xyz] matches x, y or z, [^xyz] matches anything other than x, y and z. Here noticing that because we want to match a substring starting with one backlash, we have to specify two backlashes in the string matching.</p>
 <div class="sourceCode" id="cb146"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="va">a</span> <span class="op">&lt;-</span> <span class="st">'xeqowhe22'</span>
 <span class="fu"><a href="https://stringr.tidyverse.org/reference/str_view.html">str_view</a></span><span class="op">(</span><span class="va">a</span>, <span class="st">'\\d{2}'</span><span class="op">)</span></code></pre></div>
-<div id="htmlwidget-78f888d6152822564792" style="width:960px;height:100%;" class="str_view html-widget"></div>
-<script type="application/json" data-for="htmlwidget-78f888d6152822564792">{"x":{"html":"<ul>\n  <li>xeqowhe<span class='match'>22<\/span><\/li>\n<\/ul>"},"evals":[],"jsHooks":[]}</script><div class="sourceCode" id="cb147"><pre class="downlit sourceCode r">
+<div id="htmlwidget-f9fee6f0db90aa7a3282" style="width:960px;height:100%;" class="str_view html-widget"></div>
+<script type="application/json" data-for="htmlwidget-f9fee6f0db90aa7a3282">{"x":{"html":"<ul>\n  <li>xeqowhe<span class='match'>22<\/span><\/li>\n<\/ul>"},"evals":[],"jsHooks":[]}</script><div class="sourceCode" id="cb147"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="fu"><a href="https://stringr.tidyverse.org/reference/str_view.html">str_view</a></span><span class="op">(</span><span class="va">a</span>, <span class="st">'[xyz]'</span><span class="op">)</span></code></pre></div>
-<div id="htmlwidget-3adf61c1b42f50e397e0" style="width:960px;height:100%;" class="str_view html-widget"></div>
-<script type="application/json" data-for="htmlwidget-3adf61c1b42f50e397e0">{"x":{"html":"<ul>\n  <li><span class='match'>x<\/span>eqowhe22<\/li>\n<\/ul>"},"evals":[],"jsHooks":[]}</script><p>Then we will introduce a couple of methods that are useful in conjunction to use with these regular expression.<br>
+<div id="htmlwidget-21dff4500fa3067232ba" style="width:960px;height:100%;" class="str_view html-widget"></div>
+<script type="application/json" data-for="htmlwidget-21dff4500fa3067232ba">{"x":{"html":"<ul>\n  <li><span class='match'>x<\/span>eqowhe22<\/li>\n<\/ul>"},"evals":[],"jsHooks":[]}</script><p>Then we will introduce a couple of methods that are useful in conjunction to use with these regular expression.<br>
 1.str_detect(): to see if we detect certain substring, return TRUE or FALSE<br>
 2.str_extract(): to extract the actual substring from the string<br>
 3.str_subset(): return a group of strings that matches certain pattern<br>
@@ -598,7 +598,7 @@ string_view() is a very useful function that showcase string patterns. The first
 <footer class="bg-primary text-light mt-5"><div class="container"><div class="row">
 
   <div class="col-12 col-md-6 mt-3">
-    <p>"<strong>EDAV Fall 2021 Mon/Wed Community Contributions</strong>" was written by the students of the class. It was last built on 2021-11-30.</p>
+    <p>"<strong>EDAV Fall 2021 Mon/Wed Community Contributions</strong>" was written by the students of the class. It was last built on 2022-01-28.</p>
   </div>
 
   <div class="col-12 col-md-6 mt-3">

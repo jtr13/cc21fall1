@@ -148,7 +148,7 @@ cat("SerialExecution with Spam Dataset in seconds - ",serialTime_spam)
 ```
 
 ```
-## SerialExecution with Spam Dataset in seconds -  0.6084821
+## SerialExecution with Spam Dataset in seconds -  0.9553623
 ```
 
 ```r
@@ -160,7 +160,7 @@ cat("Parallel Executoon with Spam Dataset in seconds -",parallelTime_spam)
 ```
 
 ```
-## Parallel Executoon with Spam Dataset in seconds - 0.1369903
+## Parallel Executoon with Spam Dataset in seconds - 0.1728241
 ```
 
 
@@ -244,7 +244,7 @@ cat("SerialExecution with Spam Dataset with Duplicate Rows in seconds - ", seria
 ```
 
 ```
-## SerialExecution with Spam Dataset with Duplicate Rows in seconds -  52.52486
+## SerialExecution with Spam Dataset with Duplicate Rows in seconds -  1.484302
 ```
 
 ```r
@@ -256,7 +256,7 @@ cat("ParallelExecution with Spam Dataset with Duplicate Rows in seconds - ", par
 ```
 
 ```
-## ParallelExecution with Spam Dataset with Duplicate Rows in seconds -  2.669295
+## ParallelExecution with Spam Dataset with Duplicate Rows in seconds -  3.074582
 ```
 
 
@@ -330,7 +330,7 @@ cat("SerialExecution with Yelp Dataset in seconds - ", serialTime_Yelp  )
 ```
 
 ```
-## SerialExecution with Yelp Dataset in seconds -  7.048135
+## SerialExecution with Yelp Dataset in seconds -  11.10713
 ```
 
 ```r
@@ -342,7 +342,7 @@ cat("ParallelExecution with Spam Dataset in seconds - ", parallelTime_Yelp)
 ```
 
 ```
-## ParallelExecution with Spam Dataset in seconds -  1.166646
+## ParallelExecution with Spam Dataset in seconds -  1.324284
 ```
 
 **Duplicating rows in Yelp Dataset 20 times**
@@ -431,7 +431,7 @@ cat("SerialExecution with Yelp Dataset in seconds with Duplicate Rows- ", serial
 ```
 
 ```
-## SerialExecution with Yelp Dataset in seconds with Duplicate Rows-  1.939188
+## SerialExecution with Yelp Dataset in seconds with Duplicate Rows-  3.214737
 ```
 
 ```r
@@ -443,7 +443,7 @@ cat("ParallelExecution with Spam Dataset in seconds with Duplicate Rows- ", para
 ```
 
 ```
-## ParallelExecution with Spam Dataset in seconds with Duplicate Rows-  15.43017
+## ParallelExecution with Spam Dataset in seconds with Duplicate Rows-  18.46452
 ```
 
 
@@ -461,14 +461,14 @@ print(graphData)
 
 ```
 ##     Rows             time groupCategory
-## 1   5572   0.6084821 secs        Serial
-## 2  44530   7.0481346 secs        Serial
-## 3 557200  52.5248573 secs        Serial
-## 4 890600 116.3512700 secs        Serial
-## 5   5572   0.1369903 secs      Parallel
-## 6  44530   1.1666458 secs      Parallel
-## 7 557200   2.6692946 secs      Parallel
-## 8 890600  15.4301698 secs      Parallel
+## 1   5572   0.9553623 secs        Serial
+## 2  44530  11.1071348 secs        Serial
+## 3 557200  89.0581319 secs        Serial
+## 4 890600 192.8841929 secs        Serial
+## 5   5572   0.1728241 secs      Parallel
+## 6  44530   1.3242838 secs      Parallel
+## 7 557200   3.0745816 secs      Parallel
+## 8 890600  18.4645162 secs      Parallel
 ```
 
 ```r

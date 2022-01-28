@@ -319,7 +319,7 @@ postResample(pred = pred, obs = testing$Class)
 
 ```
 ##  Accuracy     Kappa 
-## 0.8780488 0.7521161
+## 0.7804878 0.5538089
 ```
 
 We can also get confusion matrix for the test data using confusionMatrix function. It shows the accuracy scores as well as p-value and other evaluation metrics. To get precision, recall, and F1 score, we can set mode to "prec_recall".
@@ -333,27 +333,27 @@ confusionMatrix(data = pred, reference = testing$Class, mode = "prec_recall")
 ## 
 ##           Reference
 ## Prediction  M  R
-##          M 21  4
-##          R  1 15
-##                                          
-##                Accuracy : 0.878          
-##                  95% CI : (0.738, 0.9592)
-##     No Information Rate : 0.5366         
-##     P-Value [Acc > NIR] : 3.487e-06      
-##                                          
-##                   Kappa : 0.7521         
-##                                          
-##  Mcnemar's Test P-Value : 0.3711         
-##                                          
-##               Precision : 0.8400         
-##                  Recall : 0.9545         
-##                      F1 : 0.8936         
-##              Prevalence : 0.5366         
-##          Detection Rate : 0.5122         
-##    Detection Prevalence : 0.6098         
-##       Balanced Accuracy : 0.8720         
-##                                          
-##        'Positive' Class : M              
+##          M 19  6
+##          R  3 13
+##                                           
+##                Accuracy : 0.7805          
+##                  95% CI : (0.6239, 0.8944)
+##     No Information Rate : 0.5366          
+##     P-Value [Acc > NIR] : 0.001099        
+##                                           
+##                   Kappa : 0.5538          
+##                                           
+##  Mcnemar's Test P-Value : 0.504985        
+##                                           
+##               Precision : 0.7600          
+##                  Recall : 0.8636          
+##                      F1 : 0.8085          
+##              Prevalence : 0.5366          
+##          Detection Rate : 0.4634          
+##    Detection Prevalence : 0.6098          
+##       Balanced Accuracy : 0.7739          
+##                                           
+##        'Positive' Class : M               
 ## 
 ```
 

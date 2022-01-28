@@ -374,8 +374,8 @@ map2_lgl(.x, .y, .f, …): returns an atomic vector of logical values (TRUE or F
 <code class="sourceCode R"><span class="va">ls</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://purrr.tidyverse.org/reference/map.html">map</a></span><span class="op">(</span><span class="fl">1</span><span class="op">:</span><span class="fl">8</span>, <span class="op">~</span> <span class="fu"><a href="https://rdrr.io/r/stats/Uniform.html">runif</a></span><span class="op">(</span><span class="fl">10</span><span class="op">)</span><span class="op">)</span>
 <span class="va">ws</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://purrr.tidyverse.org/reference/map.html">map</a></span><span class="op">(</span><span class="fl">1</span><span class="op">:</span><span class="fl">8</span>, <span class="op">~</span> <span class="fu"><a href="https://rdrr.io/r/stats/Poisson.html">rpois</a></span><span class="op">(</span><span class="fl">10</span>, <span class="fl">5</span><span class="op">)</span> <span class="op">+</span> <span class="fl">1</span><span class="op">)</span>
 <span class="fu"><a href="https://purrr.tidyverse.org/reference/map2.html">map2_dbl</a></span><span class="op">(</span><span class="va">ls</span>, <span class="va">ws</span>, <span class="va">weighted.mean</span><span class="op">)</span></code></pre></div>
-<pre><code>## [1] 0.4787564 0.4996425 0.5581697 0.5798720 0.5504890 0.4206161 0.3811854
-## [8] 0.5331686</code></pre>
+<pre><code>## [1] 0.5482987 0.4638794 0.5644410 0.2560677 0.4868653 0.5857067 0.3990279
+## [8] 0.5490695</code></pre>
 <p>Here, we would like to compute the weighted mean with inputs of a list of observations and a list of weights. <br></p>
 <p>map2_chr(.x, .y, .f, …): returns an atomic vector of strings.</p>
 <div class="sourceCode" id="cb254"><pre class="downlit sourceCode r">
@@ -440,7 +440,7 @@ map2_lgl(.x, .y, .f, …): returns an atomic vector of logical values (TRUE or F
 <footer class="bg-primary text-light mt-5"><div class="container"><div class="row">
 
   <div class="col-12 col-md-6 mt-3">
-    <p>"<strong>EDAV Fall 2021 Mon/Wed Community Contributions</strong>" was written by the students of the class. It was last built on 2021-11-30.</p>
+    <p>"<strong>EDAV Fall 2021 Mon/Wed Community Contributions</strong>" was written by the students of the class. It was last built on 2022-01-28.</p>
   </div>
 
   <div class="col-12 col-md-6 mt-3">

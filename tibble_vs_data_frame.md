@@ -247,7 +247,8 @@ tib$newcol <- c(5,6)
 ```
 
 ```
-## Error: Assigned data `c(5, 6)` must be compatible with existing data.
+## Error:
+## ! Assigned data `c(5, 6)` must be compatible with existing data.
 ## ✖ Existing data has 4 rows.
 ## ✖ Assigned data has 2 rows.
 ## ℹ Only vectors of size 1 are recycled.

@@ -381,7 +381,7 @@ and of course, numerous variations to these models too with regularization and s
 
 <span class="fu"><a href="https://rdrr.io/pkg/caret/man/postResample.html">postResample</a></span><span class="op">(</span>pred <span class="op">=</span> <span class="va">pred</span>, obs <span class="op">=</span> <span class="va">testing</span><span class="op">$</span><span class="va">Class</span><span class="op">)</span></code></pre></div>
 <pre><code>##  Accuracy     Kappa 
-## 0.8780488 0.7521161</code></pre>
+## 0.7804878 0.5538089</code></pre>
 <p>We can also get confusion matrix for the test data using confusionMatrix function. It shows the accuracy scores as well as p-value and other evaluation metrics. To get precision, recall, and F1 score, we can set mode to “prec_recall”.</p>
 <div class="sourceCode" id="cb691"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="fu"><a href="https://rdrr.io/pkg/caret/man/confusionMatrix.html">confusionMatrix</a></span><span class="op">(</span>data <span class="op">=</span> <span class="va">pred</span>, reference <span class="op">=</span> <span class="va">testing</span><span class="op">$</span><span class="va">Class</span>, mode <span class="op">=</span> <span class="st">"prec_recall"</span><span class="op">)</span></code></pre></div>
@@ -389,27 +389,27 @@ and of course, numerous variations to these models too with regularization and s
 ## 
 ##           Reference
 ## Prediction  M  R
-##          M 21  4
-##          R  1 15
-##                                          
-##                Accuracy : 0.878          
-##                  95% CI : (0.738, 0.9592)
-##     No Information Rate : 0.5366         
-##     P-Value [Acc &gt; NIR] : 3.487e-06      
-##                                          
-##                   Kappa : 0.7521         
-##                                          
-##  Mcnemar's Test P-Value : 0.3711         
-##                                          
-##               Precision : 0.8400         
-##                  Recall : 0.9545         
-##                      F1 : 0.8936         
-##              Prevalence : 0.5366         
-##          Detection Rate : 0.5122         
-##    Detection Prevalence : 0.6098         
-##       Balanced Accuracy : 0.8720         
-##                                          
-##        'Positive' Class : M              
+##          M 19  6
+##          R  3 13
+##                                           
+##                Accuracy : 0.7805          
+##                  95% CI : (0.6239, 0.8944)
+##     No Information Rate : 0.5366          
+##     P-Value [Acc &gt; NIR] : 0.001099        
+##                                           
+##                   Kappa : 0.5538          
+##                                           
+##  Mcnemar's Test P-Value : 0.504985        
+##                                           
+##               Precision : 0.7600          
+##                  Recall : 0.8636          
+##                      F1 : 0.8085          
+##              Prevalence : 0.5366          
+##          Detection Rate : 0.4634          
+##    Detection Prevalence : 0.6098          
+##       Balanced Accuracy : 0.7739          
+##                                           
+##        'Positive' Class : M               
 ## </code></pre>
 <p>So far, we have seen the basics of supervised learning.
 In the link provided above, there are more details of each step as well as other steps to consider such as feature selection, calibration, etc.</p>
@@ -438,7 +438,7 @@ In the link provided above, there are more details of each step as well as other
 <footer class="bg-primary text-light mt-5"><div class="container"><div class="row">
 
   <div class="col-12 col-md-6 mt-3">
-    <p>"<strong>EDAV Fall 2021 Mon/Wed Community Contributions</strong>" was written by the students of the class. It was last built on 2021-11-30.</p>
+    <p>"<strong>EDAV Fall 2021 Mon/Wed Community Contributions</strong>" was written by the students of the class. It was last built on 2022-01-28.</p>
   </div>
 
   <div class="col-12 col-md-6 mt-3">

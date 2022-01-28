@@ -220,12 +220,12 @@ Recording - <a href="https://drive.google.com/file/d/1H5rBiMX_CTGcJbPGWRTXGkHX92
 <code class="sourceCode R"><span class="va">serialTime_spam</span> <span class="op">=</span> <span class="va">endTimeSerial_spam</span><span class="op">-</span><span class="va">startTimeSerial_spam</span>
 <span class="va">parallelTime_spam</span> <span class="op">=</span><span class="va">endTimeParallel_spam</span><span class="op">-</span><span class="va">startTimeParallel_spam</span>
 <span class="fu"><a href="https://rdrr.io/r/base/cat.html">cat</a></span><span class="op">(</span><span class="st">"SerialExecution with Spam Dataset in seconds - "</span>,<span class="va">serialTime_spam</span><span class="op">)</span></code></pre></div>
-<pre><code>## SerialExecution with Spam Dataset in seconds -  0.6084821</code></pre>
+<pre><code>## SerialExecution with Spam Dataset in seconds -  0.9553623</code></pre>
 <div class="sourceCode" id="cb807"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="fu"><a href="https://rdrr.io/r/base/cat.html">cat</a></span><span class="op">(</span><span class="st">"\n"</span><span class="op">)</span></code></pre></div>
 <div class="sourceCode" id="cb808"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="fu"><a href="https://rdrr.io/r/base/cat.html">cat</a></span><span class="op">(</span><span class="st">"Parallel Executoon with Spam Dataset in seconds -"</span>,<span class="va">parallelTime_spam</span><span class="op">)</span></code></pre></div>
-<pre><code>## Parallel Executoon with Spam Dataset in seconds - 0.1369903</code></pre>
+<pre><code>## Parallel Executoon with Spam Dataset in seconds - 0.1728241</code></pre>
 <p><strong>Duplicating rows in spam Dataset 100 times</strong></p>
 <div class="sourceCode" id="cb810"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="va">df_duplicateSpam</span> <span class="op">&lt;-</span> <span class="va">df_spam</span> <span class="op"><a href="https://ggobi.github.io/ggally/reference/pipe.html">%&gt;%</a></span> <span class="fu"><a href="https://dplyr.tidyverse.org/reference/slice.html">slice</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/rep.html">rep</a></span><span class="op">(</span><span class="fl">1</span><span class="op">:</span><span class="fu"><a href="https://dplyr.tidyverse.org/reference/context.html">n</a></span><span class="op">(</span><span class="op">)</span>, each <span class="op">=</span> <span class="fl">100</span><span class="op">)</span><span class="op">)</span>
@@ -275,12 +275,12 @@ Recording - <a href="https://drive.google.com/file/d/1H5rBiMX_CTGcJbPGWRTXGkHX92
 <code class="sourceCode R"><span class="va">serialTime_spamDuplicate</span> <span class="op">=</span> <span class="va">endTimeSerial_DuplicateSpam</span><span class="op">-</span><span class="va">startTimeSerial_DuplicateSpam</span>
 <span class="va">parallelTime_spamDuplicate</span> <span class="op">=</span> <span class="va">endTimeParallel_DuplicateSpam</span> <span class="op">-</span> <span class="va">startTimeParallel_DuplicateSpam</span>
 <span class="fu"><a href="https://rdrr.io/r/base/cat.html">cat</a></span><span class="op">(</span><span class="st">"SerialExecution with Spam Dataset with Duplicate Rows in seconds - "</span>, <span class="va">serialTime_spamDuplicate</span>  <span class="op">)</span></code></pre></div>
-<pre><code>## SerialExecution with Spam Dataset with Duplicate Rows in seconds -  52.52486</code></pre>
+<pre><code>## SerialExecution with Spam Dataset with Duplicate Rows in seconds -  1.484302</code></pre>
 <div class="sourceCode" id="cb822"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="fu"><a href="https://rdrr.io/r/base/cat.html">cat</a></span><span class="op">(</span><span class="st">"\n"</span><span class="op">)</span></code></pre></div>
 <div class="sourceCode" id="cb823"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="fu"><a href="https://rdrr.io/r/base/cat.html">cat</a></span><span class="op">(</span><span class="st">"ParallelExecution with Spam Dataset with Duplicate Rows in seconds - "</span>, <span class="va">parallelTime_spamDuplicate</span><span class="op">)</span></code></pre></div>
-<pre><code>## ParallelExecution with Spam Dataset with Duplicate Rows in seconds -  2.669295</code></pre>
+<pre><code>## ParallelExecution with Spam Dataset with Duplicate Rows in seconds -  3.074582</code></pre>
 <p><strong>Reading another dataset</strong></p>
 <div class="sourceCode" id="cb825"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="co"># drive_download("https://drive.google.com/file/d/1izYW3zRmFAra2Auyxmxkuz7319Wb_ntd/view?usp=sharing", type = "csv", overwrite = TRUE)</span>
@@ -321,12 +321,12 @@ Recording - <a href="https://drive.google.com/file/d/1H5rBiMX_CTGcJbPGWRTXGkHX92
 <code class="sourceCode R"><span class="va">serialTime_Yelp</span> <span class="op">=</span> <span class="va">endTimeSerial_Yelp</span><span class="op">-</span><span class="va">startTimeSerial_Yelp</span>
 <span class="va">parallelTime_Yelp</span> <span class="op">=</span> <span class="va">endTimeParallel_Yelp</span> <span class="op">-</span> <span class="va">startTimeParallel_Yelp</span>
 <span class="fu"><a href="https://rdrr.io/r/base/cat.html">cat</a></span><span class="op">(</span><span class="st">"SerialExecution with Yelp Dataset in seconds - "</span>, <span class="va">serialTime_Yelp</span>  <span class="op">)</span></code></pre></div>
-<pre><code>## SerialExecution with Yelp Dataset in seconds -  7.048135</code></pre>
+<pre><code>## SerialExecution with Yelp Dataset in seconds -  11.10713</code></pre>
 <div class="sourceCode" id="cb836"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="fu"><a href="https://rdrr.io/r/base/cat.html">cat</a></span><span class="op">(</span><span class="st">"\n"</span><span class="op">)</span></code></pre></div>
 <div class="sourceCode" id="cb837"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="fu"><a href="https://rdrr.io/r/base/cat.html">cat</a></span><span class="op">(</span><span class="st">"ParallelExecution with Spam Dataset in seconds - "</span>, <span class="va">parallelTime_Yelp</span><span class="op">)</span></code></pre></div>
-<pre><code>## ParallelExecution with Spam Dataset in seconds -  1.166646</code></pre>
+<pre><code>## ParallelExecution with Spam Dataset in seconds -  1.324284</code></pre>
 <p><strong>Duplicating rows in Yelp Dataset 20 times</strong></p>
 <div class="sourceCode" id="cb839"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="va">df_YelpDuplicate</span> <span class="op">&lt;-</span> <span class="va">df_Yelp</span> <span class="op"><a href="https://ggobi.github.io/ggally/reference/pipe.html">%&gt;%</a></span> <span class="fu"><a href="https://dplyr.tidyverse.org/reference/slice.html">slice</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/rep.html">rep</a></span><span class="op">(</span><span class="fl">1</span><span class="op">:</span><span class="fu"><a href="https://dplyr.tidyverse.org/reference/context.html">n</a></span><span class="op">(</span><span class="op">)</span>, each <span class="op">=</span> <span class="fl">20</span><span class="op">)</span><span class="op">)</span>
@@ -381,12 +381,12 @@ Recording - <a href="https://drive.google.com/file/d/1H5rBiMX_CTGcJbPGWRTXGkHX92
 <code class="sourceCode R"><span class="va">serialTime_YelpDuplicate</span> <span class="op">=</span> <span class="va">endTimeSerial_YelpDuplicate</span><span class="op">-</span><span class="va">startTimeSerial_YelpDuplicate</span>
 <span class="va">parallelTime_YelpDuplicate</span> <span class="op">=</span> <span class="va">endTimeParallel_YelpDuplicate</span> <span class="op">-</span> <span class="va">startTimeParallel_YelpDuplicate</span>
 <span class="fu"><a href="https://rdrr.io/r/base/cat.html">cat</a></span><span class="op">(</span><span class="st">"SerialExecution with Yelp Dataset in seconds with Duplicate Rows- "</span>, <span class="va">serialTime_YelpDuplicate</span>  <span class="op">)</span></code></pre></div>
-<pre><code>## SerialExecution with Yelp Dataset in seconds with Duplicate Rows-  1.939188</code></pre>
+<pre><code>## SerialExecution with Yelp Dataset in seconds with Duplicate Rows-  3.214737</code></pre>
 <div class="sourceCode" id="cb851"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="fu"><a href="https://rdrr.io/r/base/cat.html">cat</a></span><span class="op">(</span><span class="st">"\n"</span><span class="op">)</span></code></pre></div>
 <div class="sourceCode" id="cb852"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="fu"><a href="https://rdrr.io/r/base/cat.html">cat</a></span><span class="op">(</span><span class="st">"ParallelExecution with Spam Dataset in seconds with Duplicate Rows- "</span>, <span class="va">parallelTime_YelpDuplicate</span><span class="op">)</span></code></pre></div>
-<pre><code>## ParallelExecution with Spam Dataset in seconds with Duplicate Rows-  15.43017</code></pre>
+<pre><code>## ParallelExecution with Spam Dataset in seconds with Duplicate Rows-  18.46452</code></pre>
 <div class="sourceCode" id="cb854"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="fu"><a href="https://rdrr.io/r/base/options.html">options</a></span><span class="op">(</span>scipen<span class="op">=</span><span class="fl">999</span><span class="op">)</span>
 <span class="va">Rows</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">5572</span>, <span class="fl">44530</span>,<span class="fl">557200</span>,<span class="fl">890600</span><span class="op">)</span>
@@ -396,14 +396,14 @@ Recording - <a href="https://drive.google.com/file/d/1H5rBiMX_CTGcJbPGWRTXGkHX92
 <span class="va">graphData</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/data.frame.html">data.frame</a></span><span class="op">(</span><span class="va">Rows</span>, <span class="va">time</span>, <span class="va">groupCategory</span><span class="op">)</span>
 <span class="fu"><a href="https://rdrr.io/r/base/print.html">print</a></span><span class="op">(</span><span class="va">graphData</span><span class="op">)</span></code></pre></div>
 <pre><code>##     Rows             time groupCategory
-## 1   5572   0.6084821 secs        Serial
-## 2  44530   7.0481346 secs        Serial
-## 3 557200  52.5248573 secs        Serial
-## 4 890600 116.3512700 secs        Serial
-## 5   5572   0.1369903 secs      Parallel
-## 6  44530   1.1666458 secs      Parallel
-## 7 557200   2.6692946 secs      Parallel
-## 8 890600  15.4301698 secs      Parallel</code></pre>
+## 1   5572   0.9553623 secs        Serial
+## 2  44530  11.1071348 secs        Serial
+## 3 557200  89.0581319 secs        Serial
+## 4 890600 192.8841929 secs        Serial
+## 5   5572   0.1728241 secs      Parallel
+## 6  44530   1.3242838 secs      Parallel
+## 7 557200   3.0745816 secs      Parallel
+## 8 890600  18.4645162 secs      Parallel</code></pre>
 <div class="sourceCode" id="cb856"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span><span class="op">(</span>data<span class="op">=</span><span class="va">graphData</span>, <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span>x<span class="op">=</span><span class="va">Rows</span>, y<span class="op">=</span><span class="va">time</span>, group<span class="op">=</span><span class="va">groupCategory</span>, color<span class="op">=</span><span class="va">groupCategory</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span>
   <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_path.html">geom_line</a></span><span class="op">(</span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span>linetype<span class="op">=</span><span class="va">groupCategory</span><span class="op">)</span><span class="op">)</span><span class="op">+</span>
@@ -447,7 +447,7 @@ Recording - <a href="https://drive.google.com/file/d/1H5rBiMX_CTGcJbPGWRTXGkHX92
 <footer class="bg-primary text-light mt-5"><div class="container"><div class="row">
 
   <div class="col-12 col-md-6 mt-3">
-    <p>"<strong>EDAV Fall 2021 Mon/Wed Community Contributions</strong>" was written by the students of the class. It was last built on 2021-11-30.</p>
+    <p>"<strong>EDAV Fall 2021 Mon/Wed Community Contributions</strong>" was written by the students of the class. It was last built on 2022-01-28.</p>
   </div>
 
   <div class="col-12 col-md-6 mt-3">

@@ -165,16 +165,16 @@
 <code class="sourceCode R"><span class="co"># I've created dataframe named df which contains speed, strength, win information of each person through year</span>
 <span class="fu"><a href="https://rdrr.io/r/utils/head.html">head</a></span><span class="op">(</span><span class="va">df</span>, <span class="fl">10</span><span class="op">)</span></code></pre></div>
 <pre><code>##    win strength speed year name
-## 1   23       32    17 1995 John
-## 2    2       66    24 1996 John
-## 3    8       57    23 1997 John
-## 4    9       22    25 1998 John
-## 5    6       17    16 1999 John
-## 6   17       25    20 2000 John
-## 7   13       87    21 2001 John
-## 8   21       32    24 2002 John
-## 9    5       65    18 2003 John
-## 10   9       49    21 2004 John</code></pre>
+## 1   15       90    22 1995 John
+## 2    5       96    19 1996 John
+## 3   22       33    20 1997 John
+## 4   29       58    24 1998 John
+## 5    1       26    25 1999 John
+## 6   26       20    24 2000 John
+## 7    7       76    17 2001 John
+## 8    8       29    15 2002 John
+## 9   16       26    24 2003 John
+## 10  16       66    19 2004 John</code></pre>
 <div class="sourceCode" id="cb285"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="co"># Below code is used for creating each features</span>
 <span class="co"># win &lt;- sample(x=1:30, size=27, replace=T)</span>
@@ -194,7 +194,7 @@
 <div class="sourceCode" id="cb286"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span><span class="op">(</span><span class="va">dataframe</span>, <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span>x<span class="op">=</span><span class="va">variable1</span>, y<span class="op">=</span><span class="va">variable2</span>, <span class="va">...</span><span class="op">)</span><span class="op">)</span><span class="op">+</span>
   <span class="fu">geom_graph</span><span class="op">(</span><span class="va">...</span><span class="op">)</span><span class="op">+</span>
-  <span class="fu"><a href="https://rdrr.io/pkg/gganimate/man/transition_states.html">transition_states</a></span><span class="op">(</span><span class="va">variable3</span>,
+  <span class="fu"><a href="https://gganimate.com/reference/transition_states.html">transition_states</a></span><span class="op">(</span><span class="va">variable3</span>,
                     transition_length<span class="op">=</span><span class="va">...</span>,
                     state_length<span class="op">=</span><span class="va">...</span><span class="op">)</span></code></pre></div>
 <ul>
@@ -222,7 +222,7 @@
   <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_bar.html">geom_col</a></span><span class="op">(</span>show.legend<span class="op">=</span><span class="cn">FALSE</span><span class="op">)</span><span class="op">+</span>
   <span class="fu"><a href="https://rdrr.io/pkg/nord/man/scale_fill_nord.html">scale_fill_nord</a></span><span class="op">(</span><span class="st">'afternoon_prarie'</span><span class="op">)</span><span class="op">+</span>
   <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggtheme.html">theme_minimal</a></span><span class="op">(</span><span class="op">)</span><span class="op">+</span>
-  <span class="fu"><a href="https://rdrr.io/pkg/gganimate/man/transition_states.html">transition_states</a></span><span class="op">(</span><span class="va">year</span>,
+  <span class="fu"><a href="https://gganimate.com/reference/transition_states.html">transition_states</a></span><span class="op">(</span><span class="va">year</span>,
                     transition_length<span class="op">=</span><span class="fl">1.5</span>,
                     state_length<span class="op">=</span><span class="fl">0.5</span><span class="op">)</span></code></pre></div>
 <div class="inline-figure"><img src="animating_in_r_files/figure-html/unnamed-chunk-9-1.gif" style="display: block; margin: auto;"></div>
@@ -243,7 +243,7 @@
   <span class="fu"><a href="https://sjmgarnier.github.io/viridis/reference/scale_viridis.html">scale_color_viridis</a></span><span class="op">(</span>option<span class="op">=</span><span class="st">'plasma'</span>, discrete<span class="op">=</span><span class="cn">TRUE</span><span class="op">)</span><span class="op">+</span>
   <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggtheme.html">theme_minimal</a></span><span class="op">(</span><span class="op">)</span><span class="op">+</span>
   <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/theme.html">theme</a></span><span class="op">(</span>legend.position<span class="op">=</span><span class="st">'bottom'</span><span class="op">)</span><span class="op">+</span>
-  <span class="fu"><a href="https://rdrr.io/pkg/gganimate/man/transition_states.html">transition_states</a></span><span class="op">(</span><span class="va">year</span>,
+  <span class="fu"><a href="https://gganimate.com/reference/transition_states.html">transition_states</a></span><span class="op">(</span><span class="va">year</span>,
                     transition_length<span class="op">=</span><span class="fl">1.2</span>,
                     state_length<span class="op">=</span><span class="fl">0.2</span><span class="op">)</span></code></pre></div>
 <div class="inline-figure"><img src="animating_in_r_files/figure-html/unnamed-chunk-11-1.gif" style="display: block; margin: auto;"></div>
@@ -263,7 +263,7 @@
   <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_path.html">geom_line</a></span><span class="op">(</span><span class="op">)</span><span class="op">+</span>
   <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_point.html">geom_point</a></span><span class="op">(</span><span class="op">)</span><span class="op">+</span>
   <span class="va">...</span> <span class="op">+</span>
-  <span class="fu"><a href="https://rdrr.io/pkg/gganimate/man/transition_reveal.html">transition_reveal</a></span><span class="op">(</span><span class="va">variable1</span><span class="op">)</span></code></pre></div>
+  <span class="fu"><a href="https://gganimate.com/reference/transition_reveal.html">transition_reveal</a></span><span class="op">(</span><span class="va">variable1</span><span class="op">)</span></code></pre></div>
 </div>
 <div id="transition_reveal-examples" class="section level3">
 <h3>
@@ -286,7 +286,7 @@
   <span class="fu"><a href="https://colorspace.R-Forge.R-project.org//reference/scale_colour_discrete_sequential.html">scale_color_discrete_sequential</a></span><span class="op">(</span><span class="st">'Sunset'</span><span class="op">)</span><span class="op">+</span>
   <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggtheme.html">theme_minimal</a></span><span class="op">(</span><span class="op">)</span><span class="op">+</span>
   <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/theme.html">theme</a></span><span class="op">(</span>legend.position<span class="op">=</span><span class="st">'bottom'</span><span class="op">)</span><span class="op">+</span>
-  <span class="fu"><a href="https://rdrr.io/pkg/gganimate/man/transition_reveal.html">transition_reveal</a></span><span class="op">(</span><span class="va">year</span><span class="op">)</span></code></pre></div>
+  <span class="fu"><a href="https://gganimate.com/reference/transition_reveal.html">transition_reveal</a></span><span class="op">(</span><span class="va">year</span><span class="op">)</span></code></pre></div>
 <div class="inline-figure"><img src="animating_in_r_files/figure-html/unnamed-chunk-14-1.gif" style="display: block; margin: auto;"></div>
 </div>
 </div>
@@ -302,7 +302,7 @@
 <div class="sourceCode" id="cb294"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span><span class="op">(</span><span class="va">dataframe</span>, <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span><span class="va">variable1</span>, <span class="va">variable2</span>, <span class="va">...</span><span class="op">)</span>, <span class="va">...</span><span class="op">)</span><span class="op">+</span>
   <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_point.html">geom_point</a></span><span class="op">(</span><span class="va">...</span><span class="op">)</span><span class="op">+</span>
-  <span class="fu"><a href="https://rdrr.io/pkg/gganimate/man/transition_time.html">transition_time</a></span><span class="op">(</span><span class="va">variable3</span><span class="op">)</span></code></pre></div>
+  <span class="fu"><a href="https://gganimate.com/reference/transition_time.html">transition_time</a></span><span class="op">(</span><span class="va">variable3</span><span class="op">)</span></code></pre></div>
 <p>The length of time to be switched between states is set to be proportional to the interval of actual time between states. Therefore, it is one of the best way to visualize data changes over time.</p>
 </div>
 <div id="transition_time-examples" class="section level3">
@@ -329,7 +329,7 @@
   <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggtheme.html">theme_minimal</a></span><span class="op">(</span><span class="op">)</span><span class="op">+</span>
   <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/theme.html">theme</a></span><span class="op">(</span>legend.position<span class="op">=</span><span class="st">'bottom'</span><span class="op">)</span><span class="op">+</span>
   <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/labs.html">labs</a></span><span class="op">(</span>title<span class="op">=</span><span class="st">'Year: {frame_time}'</span><span class="op">)</span><span class="op">+</span>
-  <span class="fu"><a href="https://rdrr.io/pkg/gganimate/man/transition_time.html">transition_time</a></span><span class="op">(</span><span class="va">year</span><span class="op">)</span></code></pre></div>
+  <span class="fu"><a href="https://gganimate.com/reference/transition_time.html">transition_time</a></span><span class="op">(</span><span class="va">year</span><span class="op">)</span></code></pre></div>
 <div class="inline-figure"><img src="animating_in_r_files/figure-html/unnamed-chunk-17-1.gif" style="display: block; margin: auto;"></div>
 </div>
 </div>
@@ -347,7 +347,7 @@
   <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_point.html">geom_point</a></span><span class="op">(</span><span class="op">)</span><span class="op">+</span>
   <span class="va">...</span><span class="op">+</span>
   <span class="fu">transition_함수</span><span class="op">(</span><span class="va">variable3</span><span class="op">)</span><span class="op">+</span>
-  <span class="fu"><a href="https://rdrr.io/pkg/gganimate/man/shadow_wake.html">shadow_wake</a></span><span class="op">(</span>wake_length<span class="op">=</span><span class="fl">0.1</span>, alpha<span class="op">=</span><span class="fl">0</span><span class="op">)</span></code></pre></div>
+  <span class="fu"><a href="https://gganimate.com/reference/shadow_wake.html">shadow_wake</a></span><span class="op">(</span>wake_length<span class="op">=</span><span class="fl">0.1</span>, alpha<span class="op">=</span><span class="fl">0</span><span class="op">)</span></code></pre></div>
 <p>The length of the shadow can be set at a relative ratio to the total length of the animation, not the frame.</p>
 </div>
 <div id="shadow_wake-examples" class="section level3">
@@ -373,8 +373,8 @@
   <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/scale_size.html">scale_size</a></span><span class="op">(</span>range<span class="op">=</span><span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">1</span>, <span class="fl">3</span><span class="op">)</span><span class="op">)</span><span class="op">+</span>
   <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggtheme.html">theme_minimal</a></span><span class="op">(</span><span class="op">)</span><span class="op">+</span>
   <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/theme.html">theme</a></span><span class="op">(</span>legend.position<span class="op">=</span><span class="st">'bottom'</span><span class="op">)</span><span class="op">+</span>
-  <span class="fu"><a href="https://rdrr.io/pkg/gganimate/man/transition_reveal.html">transition_reveal</a></span><span class="op">(</span><span class="va">year</span><span class="op">)</span><span class="op">+</span>
-  <span class="fu"><a href="https://rdrr.io/pkg/gganimate/man/shadow_wake.html">shadow_wake</a></span><span class="op">(</span>wake_length<span class="op">=</span><span class="fl">0.1</span>,
+  <span class="fu"><a href="https://gganimate.com/reference/transition_reveal.html">transition_reveal</a></span><span class="op">(</span><span class="va">year</span><span class="op">)</span><span class="op">+</span>
+  <span class="fu"><a href="https://gganimate.com/reference/shadow_wake.html">shadow_wake</a></span><span class="op">(</span>wake_length<span class="op">=</span><span class="fl">0.1</span>,
               alpha<span class="op">=</span><span class="fl">0</span>, 
               size<span class="op">=</span><span class="fl">2</span><span class="op">)</span></code></pre></div>
 <div class="inline-figure"><img src="animating_in_r_files/figure-html/unnamed-chunk-20-1.gif" style="display: block; margin: auto;"></div>
@@ -450,7 +450,7 @@
 <footer class="bg-primary text-light mt-5"><div class="container"><div class="row">
 
   <div class="col-12 col-md-6 mt-3">
-    <p>"<strong>EDAV Fall 2021 Mon/Wed Community Contributions</strong>" was written by the students of the class. It was last built on 2021-11-30.</p>
+    <p>"<strong>EDAV Fall 2021 Mon/Wed Community Contributions</strong>" was written by the students of the class. It was last built on 2022-01-28.</p>
   </div>
 
   <div class="col-12 col-md-6 mt-3">

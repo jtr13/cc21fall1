@@ -43,18 +43,18 @@ vehicles %>% filter(year>1999)
 
 ```
 ## # A tibble: 16,649 × 12
-##       id make  model  year class   trans   drive     cyl displ fuel    hwy   cty
-##    <dbl> <chr> <chr> <dbl> <chr>   <chr>   <chr>   <dbl> <dbl> <chr> <dbl> <dbl>
-##  1 16573 Acura 3.2CL  2001 Compac… Automa… Front-…     6   3.2 Prem…    27    17
-##  2 17489 Acura 3.2CL  2002 Compac… Automa… Front-…     6   3.2 Prem…    27    17
-##  3 18458 Acura 3.2CL  2003 Compac… Manual… Front-…     6   3.2 Prem…    26    17
-##  4 18459 Acura 3.2CL  2003 Compac… Automa… Front-…     6   3.2 Prem…    27    17
-##  5 15871 Acura 3.2TL  2000 Midsiz… Automa… Front-…     6   3.2 Prem…    27    17
-##  6 16734 Acura 3.2TL  2001 Midsiz… Automa… Front-…     6   3.2 Prem…    27    17
-##  7 17664 Acura 3.2TL  2002 Midsiz… Automa… Front-…     6   3.2 Prem…    27    17
-##  8 18629 Acura 3.2TL  2003 Midsiz… Automa… Front-…     6   3.2 Prem…    27    17
-##  9 15872 Acura 3.5RL  2000 Midsiz… Automa… Front-…     6   3.5 Prem…    22    16
-## 10 16735 Acura 3.5RL  2001 Midsiz… Automa… Front-…     6   3.5 Prem…    22    16
+##       id make  model  year class       trans drive   cyl displ fuel    hwy   cty
+##    <dbl> <chr> <chr> <dbl> <chr>       <chr> <chr> <dbl> <dbl> <chr> <dbl> <dbl>
+##  1 16573 Acura 3.2CL  2001 Compact Ca… Auto… Fron…     6   3.2 Prem…    27    17
+##  2 17489 Acura 3.2CL  2002 Compact Ca… Auto… Fron…     6   3.2 Prem…    27    17
+##  3 18458 Acura 3.2CL  2003 Compact Ca… Manu… Fron…     6   3.2 Prem…    26    17
+##  4 18459 Acura 3.2CL  2003 Compact Ca… Auto… Fron…     6   3.2 Prem…    27    17
+##  5 15871 Acura 3.2TL  2000 Midsize Ca… Auto… Fron…     6   3.2 Prem…    27    17
+##  6 16734 Acura 3.2TL  2001 Midsize Ca… Auto… Fron…     6   3.2 Prem…    27    17
+##  7 17664 Acura 3.2TL  2002 Midsize Ca… Auto… Fron…     6   3.2 Prem…    27    17
+##  8 18629 Acura 3.2TL  2003 Midsize Ca… Auto… Fron…     6   3.2 Prem…    27    17
+##  9 15872 Acura 3.5RL  2000 Midsize Ca… Auto… Fron…     6   3.5 Prem…    22    16
+## 10 16735 Acura 3.5RL  2001 Midsize Ca… Auto… Fron…     6   3.5 Prem…    22    16
 ## # … with 16,639 more rows
 ```
 ### Reorder rows with arrange()
@@ -65,18 +65,18 @@ vehicles %>% arrange(year,class,trans)
 
 ```
 ## # A tibble: 33,442 × 12
-##       id make      model   year class  trans drive   cyl displ fuel    hwy   cty
-##    <dbl> <chr>     <chr>  <dbl> <chr>  <chr> <chr> <dbl> <dbl> <chr> <dbl> <dbl>
-##  1 27049 Buick     Elect…  1984 Large… Auto… 2-Wh…     6   4.1 Regu…    19    14
-##  2 27050 Buick     Elect…  1984 Large… Auto… 2-Wh…     8   5   Regu…    20    14
-##  3 27051 Buick     Elect…  1984 Large… Auto… 2-Wh…     8   5.7 Dies…    26    18
-##  4 27057 Cadillac  Broug…  1984 Large… Auto… Rear…     8   4.1 Regu…    19    14
-##  5 27058 Cadillac  Broug…  1984 Large… Auto… Rear…     8   5.7 Dies…    26    18
-##  6 28105 Cadillac  Broug…  1984 Large… Auto… Rear…     8   4.1 Regu…    19    14
-##  7 28106 Cadillac  Fleet…  1984 Large… Auto… Rear…     6   4.3 Dies…    31    21
-##  8 28225 Chevrolet S10 P…  1984 Small… Auto… 2-Wh…     4   2   Regu…    24    18
-##  9 27219 Dodge     Ram 5…  1984 Small… Auto… 2-Wh…     4   2   Regu…    21    20
-## 10 27220 Dodge     Ram 5…  1984 Small… Auto… 2-Wh…     4   2   Regu…    20    18
+##       id make      model    year class trans drive   cyl displ fuel    hwy   cty
+##    <dbl> <chr>     <chr>   <dbl> <chr> <chr> <chr> <dbl> <dbl> <chr> <dbl> <dbl>
+##  1 27049 Buick     Electr…  1984 Larg… Auto… 2-Wh…     6   4.1 Regu…    19    14
+##  2 27050 Buick     Electr…  1984 Larg… Auto… 2-Wh…     8   5   Regu…    20    14
+##  3 27051 Buick     Electr…  1984 Larg… Auto… 2-Wh…     8   5.7 Dies…    26    18
+##  4 27057 Cadillac  Brough…  1984 Larg… Auto… Rear…     8   4.1 Regu…    19    14
+##  5 27058 Cadillac  Brough…  1984 Larg… Auto… Rear…     8   5.7 Dies…    26    18
+##  6 28105 Cadillac  Brough…  1984 Larg… Auto… Rear…     8   4.1 Regu…    19    14
+##  7 28106 Cadillac  Fleetw…  1984 Larg… Auto… Rear…     6   4.3 Dies…    31    21
+##  8 28225 Chevrolet S10 Pi…  1984 Smal… Auto… 2-Wh…     4   2   Regu…    24    18
+##  9 27219 Dodge     Ram 50…  1984 Smal… Auto… 2-Wh…     4   2   Regu…    21    20
+## 10 27220 Dodge     Ram 50…  1984 Smal… Auto… 2-Wh…     4   2   Regu…    20    18
 ## # … with 33,432 more rows
 ```
 ### Create new variables using mutate()
@@ -446,7 +446,7 @@ today() + years(1)
 ```
 
 ```
-## [1] "2022-11-07"
+## [1] "2023-01-28"
 ```
 
 ## String manipulations with stringr
@@ -463,8 +463,8 @@ str_view(a, "ea")
 ```
 
 ```{=html}
-<div id="htmlwidget-4013ca56bf386b81a6aa" style="width:960px;height:100%;" class="str_view html-widget"></div>
-<script type="application/json" data-for="htmlwidget-4013ca56bf386b81a6aa">{"x":{"html":"<ul>\n  <li>root<\/li>\n  <li>cr<span class='match'>ea<\/span>te<\/li>\n  <li>time<\/li>\n  <li>d<span class='match'>ea<\/span>th<\/li>\n<\/ul>"},"evals":[],"jsHooks":[]}</script>
+<div id="htmlwidget-62bb33c7819d06cfc942" style="width:960px;height:100%;" class="str_view html-widget"></div>
+<script type="application/json" data-for="htmlwidget-62bb33c7819d06cfc942">{"x":{"html":"<ul>\n  <li>root<\/li>\n  <li>cr<span class='match'>ea<\/span>te<\/li>\n  <li>time<\/li>\n  <li>d<span class='match'>ea<\/span>th<\/li>\n<\/ul>"},"evals":[],"jsHooks":[]}</script>
 ```
 We can use '.' as a wildcard to match any character
 
@@ -474,8 +474,8 @@ str_view(a, "im.")
 ```
 
 ```{=html}
-<div id="htmlwidget-c5e090836480ceb433a8" style="width:960px;height:100%;" class="str_view html-widget"></div>
-<script type="application/json" data-for="htmlwidget-c5e090836480ceb433a8">{"x":{"html":"<ul>\n  <li>root<\/li>\n  <li>create<\/li>\n  <li>t<span class='match'>ime<\/span><\/li>\n  <li>death<\/li>\n<\/ul>"},"evals":[],"jsHooks":[]}</script>
+<div id="htmlwidget-dc561d590e4131297e1d" style="width:960px;height:100%;" class="str_view html-widget"></div>
+<script type="application/json" data-for="htmlwidget-dc561d590e4131297e1d">{"x":{"html":"<ul>\n  <li>root<\/li>\n  <li>create<\/li>\n  <li>t<span class='match'>ime<\/span><\/li>\n  <li>death<\/li>\n<\/ul>"},"evals":[],"jsHooks":[]}</script>
 ```
 We can use '^a' to match any string starting with an "a", and "a\$" to find any string that ending with "a". We can also use '^' at the beginning and "$" in the end to make sure that it's an exact match. 
 
@@ -485,8 +485,8 @@ str_view(a, "^c")
 ```
 
 ```{=html}
-<div id="htmlwidget-ab9d20f0bae654f9bf80" style="width:960px;height:100%;" class="str_view html-widget"></div>
-<script type="application/json" data-for="htmlwidget-ab9d20f0bae654f9bf80">{"x":{"html":"<ul>\n  <li>root<\/li>\n  <li><span class='match'>c<\/span>reate<\/li>\n  <li>time<\/li>\n  <li>death<\/li>\n  <li>eath<\/li>\n<\/ul>"},"evals":[],"jsHooks":[]}</script>
+<div id="htmlwidget-6d67ce7f51b83daef174" style="width:960px;height:100%;" class="str_view html-widget"></div>
+<script type="application/json" data-for="htmlwidget-6d67ce7f51b83daef174">{"x":{"html":"<ul>\n  <li>root<\/li>\n  <li><span class='match'>c<\/span>reate<\/li>\n  <li>time<\/li>\n  <li>death<\/li>\n  <li>eath<\/li>\n<\/ul>"},"evals":[],"jsHooks":[]}</script>
 ```
 
 ```r
@@ -494,8 +494,8 @@ str_view(a, "^death$")
 ```
 
 ```{=html}
-<div id="htmlwidget-cae230b2c4338d20d9c0" style="width:960px;height:100%;" class="str_view html-widget"></div>
-<script type="application/json" data-for="htmlwidget-cae230b2c4338d20d9c0">{"x":{"html":"<ul>\n  <li>root<\/li>\n  <li>create<\/li>\n  <li>time<\/li>\n  <li><span class='match'>death<\/span><\/li>\n  <li>eath<\/li>\n<\/ul>"},"evals":[],"jsHooks":[]}</script>
+<div id="htmlwidget-69020130bb1c8c33e0a9" style="width:960px;height:100%;" class="str_view html-widget"></div>
+<script type="application/json" data-for="htmlwidget-69020130bb1c8c33e0a9">{"x":{"html":"<ul>\n  <li>root<\/li>\n  <li>create<\/li>\n  <li>time<\/li>\n  <li><span class='match'>death<\/span><\/li>\n  <li>eath<\/li>\n<\/ul>"},"evals":[],"jsHooks":[]}</script>
 ```
 
 ```r
@@ -503,8 +503,8 @@ str_view(a, "e$")
 ```
 
 ```{=html}
-<div id="htmlwidget-8f0036194426fb8ed451" style="width:960px;height:100%;" class="str_view html-widget"></div>
-<script type="application/json" data-for="htmlwidget-8f0036194426fb8ed451">{"x":{"html":"<ul>\n  <li>root<\/li>\n  <li>creat<span class='match'>e<\/span><\/li>\n  <li>tim<span class='match'>e<\/span><\/li>\n  <li>death<\/li>\n  <li>eath<\/li>\n<\/ul>"},"evals":[],"jsHooks":[]}</script>
+<div id="htmlwidget-686dfb7be7b5ef8e578e" style="width:960px;height:100%;" class="str_view html-widget"></div>
+<script type="application/json" data-for="htmlwidget-686dfb7be7b5ef8e578e">{"x":{"html":"<ul>\n  <li>root<\/li>\n  <li>creat<span class='match'>e<\/span><\/li>\n  <li>tim<span class='match'>e<\/span><\/li>\n  <li>death<\/li>\n  <li>eath<\/li>\n<\/ul>"},"evals":[],"jsHooks":[]}</script>
 ```
 We can also specify how many times a character repeats itself. {n} represents we have exactly n times of repetition,{n,}: n or more, {,n}: at most n, {n,m}: between n and m
 
@@ -514,8 +514,8 @@ str_view(a, 'C{2}')
 ```
 
 ```{=html}
-<div id="htmlwidget-324683d5875334108048" style="width:960px;height:100%;" class="str_view html-widget"></div>
-<script type="application/json" data-for="htmlwidget-324683d5875334108048">{"x":{"html":"<ul>\n  <li><span class='match'>CC<\/span>ccoljenlq<\/li>\n<\/ul>"},"evals":[],"jsHooks":[]}</script>
+<div id="htmlwidget-16b3c96e89c1096a2a22" style="width:960px;height:100%;" class="str_view html-widget"></div>
+<script type="application/json" data-for="htmlwidget-16b3c96e89c1096a2a22">{"x":{"html":"<ul>\n  <li><span class='match'>CC<\/span>ccoljenlq<\/li>\n<\/ul>"},"evals":[],"jsHooks":[]}</script>
 ```
 
 There are also extra type of strings we can match other than characters we mentioned. '\\d' matches any digit,'\\s' matches any white space, [xyz] matches x, y or z, [^xyz] matches anything other than x, y and z. Here noticing that because we want to match a substring starting with one backlash, we have to specify two backlashes in the string matching.
@@ -526,8 +526,8 @@ str_view(a, '\\d{2}')
 ```
 
 ```{=html}
-<div id="htmlwidget-78f888d6152822564792" style="width:960px;height:100%;" class="str_view html-widget"></div>
-<script type="application/json" data-for="htmlwidget-78f888d6152822564792">{"x":{"html":"<ul>\n  <li>xeqowhe<span class='match'>22<\/span><\/li>\n<\/ul>"},"evals":[],"jsHooks":[]}</script>
+<div id="htmlwidget-f9fee6f0db90aa7a3282" style="width:960px;height:100%;" class="str_view html-widget"></div>
+<script type="application/json" data-for="htmlwidget-f9fee6f0db90aa7a3282">{"x":{"html":"<ul>\n  <li>xeqowhe<span class='match'>22<\/span><\/li>\n<\/ul>"},"evals":[],"jsHooks":[]}</script>
 ```
 
 ```r
@@ -535,8 +535,8 @@ str_view(a, '[xyz]')
 ```
 
 ```{=html}
-<div id="htmlwidget-3adf61c1b42f50e397e0" style="width:960px;height:100%;" class="str_view html-widget"></div>
-<script type="application/json" data-for="htmlwidget-3adf61c1b42f50e397e0">{"x":{"html":"<ul>\n  <li><span class='match'>x<\/span>eqowhe22<\/li>\n<\/ul>"},"evals":[],"jsHooks":[]}</script>
+<div id="htmlwidget-21dff4500fa3067232ba" style="width:960px;height:100%;" class="str_view html-widget"></div>
+<script type="application/json" data-for="htmlwidget-21dff4500fa3067232ba">{"x":{"html":"<ul>\n  <li><span class='match'>x<\/span>eqowhe22<\/li>\n<\/ul>"},"evals":[],"jsHooks":[]}</script>
 ```
 Then we will introduce a couple of methods that are useful in conjunction to use with these regular expression.\
 1.str_detect(): to see if we detect certain substring, return TRUE or FALSE\

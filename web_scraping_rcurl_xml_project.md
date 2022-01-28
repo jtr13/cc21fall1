@@ -116,62 +116,63 @@ list[1][[1]]
 
 ```
 ## <div class="job-listing-item">&#13;
-##     <div class="job-status">&#13;
-##         &#13;
+##     <div class="job-title">&#13;
+##         <a href="/data-scientist-job-624344">Data Scientist -  Python</a>&#13;
 ##     </div>&#13;
-##     <div class="job-details-container">&#13;
-##         <div class="job-title">&#13;
-##             <a href="/data-engineer-job-455427">Data Engineer</a>&#13;
-##         </div>&#13;
-##         <div class="details">&#13;
-##             <div class="location">Mountain View, CA </div>&#13;
+##     <div class="job-posted posted"><span>Posted</span> 12/14/2021</div>&#13;
+##     <div class="details">&#13;
+## &#13;
+##             <div class="location"><span class="ico-house"/> Remote Position</div>&#13;
 ## &#13;
 ## &#13;
 ## &#13;
-##                 <div class="wage"><span>Full-time</span> $80k - $130k</div>&#13;
-##             <div class="posted"><span>Posted</span> 10/19/2021</div>&#13;
-##         </div>&#13;
-##         <div class="description">&#13;
-##             If you are a Data Engineer with experience, please read on! This is a great opportunity for a Data Engineer who is looking to make a shift to Data Science or wanting to develop more skills. This indiv...&#13;
-##         </div>&#13;
-##             <div class="skills">&#13;
-##                 <ul class="skill-list"><li class="skill-item">&#13;
-##                             <a href="/search/data-engineering-skills/">&#13;
-##                                 <span class="left-off"/>&#13;
-##                                 <span class="skill-name">Data Engineering</span>&#13;
-##                                 <span class="right"/>&#13;
-##                             </a>&#13;
-##                         </li>&#13;
-##                         <li class="skill-item">&#13;
-##                             <a href="/search/data-science-skills/">&#13;
-##                                 <span class="left-off"/>&#13;
-##                                 <span class="skill-name">Data Science</span>&#13;
-##                                 <span class="right"/>&#13;
-##                             </a>&#13;
-##                         </li>&#13;
-##                         <li class="skill-item">&#13;
-##                             <a href="/search/gathering-and-collecting-data-skills/">&#13;
-##                                 <span class="left-off"/>&#13;
-##                                 <span class="skill-name">Gathering and Collecting Data</span>&#13;
-##                                 <span class="right"/>&#13;
-##                             </a>&#13;
-##                         </li>&#13;
-##                         <li class="skill-item">&#13;
-##                             <a href="/search/batch-processing-skills/">&#13;
-##                                 <span class="left-off"/>&#13;
-##                                 <span class="skill-name">Batch Processing</span>&#13;
-##                                 <span class="right"/>&#13;
-##                             </a>&#13;
-##                         </li>&#13;
-##                         <li class="skill-item">&#13;
-##                             <a href="/search/api-skills/">&#13;
-##                                 <span class="left-off"/>&#13;
-##                                 <span class="skill-name">API</span>&#13;
-##                                 <span class="right"/>&#13;
-##                             </a>&#13;
-##                         </li>&#13;
-##                 </ul></div>&#13;
+##         <div class="salary-type"><span class="ico-briefcase"/> Full-time</div>&#13;
+## &#13;
+##             <div class="salary"><span class="ico-money"/> $90k - $130k</div>&#13;
+## &#13;
 ##     </div>&#13;
+## &#13;
+##     <div class="description">If you are a Data Scientist with demonstrated experience in Python, please read on!  We are a leading natural gas and safety training entity. We are a nonprofit that provides leading safety and traini...</div>&#13;
+## &#13;
+##         <a href="/data-scientist-job-624344" class="apply-button">Apply Now <span class="apply"/></a>&#13;
+## &#13;
+##         <div class="skills">&#13;
+##             <ul class="skill-list"><li class="skill-item">&#13;
+##                         <a href="/search/data-science-skills/">&#13;
+##                             <span class="left-off"/>&#13;
+##                             <span class="skill-name">Data Science</span>&#13;
+##                             <span class="right"/>&#13;
+##                         </a>&#13;
+##                     </li>&#13;
+##                     <li class="skill-item">&#13;
+##                         <a href="/search/machine-learning-skills/">&#13;
+##                             <span class="left-off"/>&#13;
+##                             <span class="skill-name">Machine Learning</span>&#13;
+##                             <span class="right"/>&#13;
+##                         </a>&#13;
+##                     </li>&#13;
+##                     <li class="skill-item">&#13;
+##                         <a href="/search/python-skills/">&#13;
+##                             <span class="left-off"/>&#13;
+##                             <span class="skill-name">Python</span>&#13;
+##                             <span class="right"/>&#13;
+##                         </a>&#13;
+##                     </li>&#13;
+##                     <li class="skill-item">&#13;
+##                         <a href="/search/sql-skills/">&#13;
+##                             <span class="left-off"/>&#13;
+##                             <span class="skill-name">SQL</span>&#13;
+##                             <span class="right"/>&#13;
+##                         </a>&#13;
+##                     </li>&#13;
+##                     <li class="skill-item">&#13;
+##                         <a href="/search/tableau-skills/">&#13;
+##                             <span class="left-off"/>&#13;
+##                             <span class="skill-name">Tableau</span>&#13;
+##                             <span class="right"/>&#13;
+##                         </a>&#13;
+##                     </li>&#13;
+##             </ul></div>&#13;
 ## </div>
 ```
 
@@ -199,8 +200,8 @@ title1
 ```
 ## [[1]]
 ## <div class="job-title">&#13;
-##             <a href="/data-engineer-job-455427">Data Engineer</a>&#13;
-##         </div>
+##         <a href="/data-scientist-job-624344">Data Scientist -  Python</a>&#13;
+##     </div>
 ```
 
 While title 1 is located to the information we want, but slightly messy since it's still contains some XML format.
@@ -213,7 +214,7 @@ title2
 ```
 
 ```
-## [1] "\r\n            Data Engineer\r\n        "
+## [1] "\r\n        Data Scientist -  Python\r\n    "
 ```
 
 Still, there are some irrevalant things, but we can use **trimws** to fix that, and we will get a nice and pretty form
@@ -224,7 +225,7 @@ title3
 ```
 
 ```
-## [1] "Data Engineer"
+## [1] "Data Scientist -  Python"
 ```
 
 This **xpathSApply** function is a really powerful function of extracting the value we need, because it's return to a character, we can use regular expression on it to do other clean-up jobs. I personally think it is the most important function of this **XML** package.
@@ -243,7 +244,7 @@ job_title
 ```
 
 ```
-## [1] "Data Engineer"
+## [1] "Data Scientist -  Python"
 ```
 
 ```r
@@ -251,7 +252,7 @@ salary_jobStatus
 ```
 
 ```
-## [1] "Full-time $80k - $130k"
+## character(0)
 ```
 
 ```r
@@ -259,7 +260,7 @@ location
 ```
 
 ```
-## [1] "Mountain View, CA"
+## [1] "Remote Position"
 ```
 
 ```r
@@ -267,7 +268,7 @@ date
 ```
 
 ```
-## [1] "Posted 10/19/2021"
+## character(0)
 ```
 
 ```r
@@ -275,7 +276,7 @@ description
 ```
 
 ```
-## [1] "If you are a Data Engineer with experience, please read on! This is a great opportunity for a Data Engineer who is looking to make a shift to Data Science or wanting to develop more skills. This indiv..."
+## [1] "If you are a Data Scientist with demonstrated experience in Python, please read on!  We are a leading natural gas and safety training entity. We are a nonprofit that provides leading safety and traini..."
 ```
 
 ```r
@@ -283,9 +284,8 @@ preferred_skills
 ```
 
 ```
-## [1] "Data Engineering"              "Data Science"                 
-## [3] "Gathering and Collecting Data" "Batch Processing"             
-## [5] "API"
+## [1] "Data Science"     "Machine Learning" "Python"           "SQL"             
+## [5] "Tableau"
 ```
 
 ### Step 5: Combine Job Posts
@@ -331,65 +331,64 @@ post_all[1:3]
 ```
 ## [[1]]
 ## [[1]]$title
-## [1] "Data Engineer"
+## [1] "Data Scientist -  Python"
 ## 
 ## [[1]]$job_status
-## [1] "Full-time $80k - $130k"
+## character(0)
 ## 
 ## [[1]]$date
-## [1] "Posted 10/19/2021"
+## character(0)
 ## 
 ## [[1]]$location
-## [1] "Mountain View, CA"
+## [1] "Remote Position"
 ## 
 ## [[1]]$job_description
-## [1] "If you are a Data Engineer with experience, please read on! This is a great opportunity for a Data Engineer who is looking to make a shift to Data Science or wanting to develop more skills. This indiv..."
+## [1] "If you are a Data Scientist with demonstrated experience in Python, please read on!  We are a leading natural gas and safety training entity. We are a nonprofit that provides leading safety and traini..."
 ## 
 ## [[1]]$preferred_skills
-## [1] "Data Engineering"              "Data Science"                 
-## [3] "Gathering and Collecting Data" "Batch Processing"             
-## [5] "API"                          
+## [1] "Data Science"     "Machine Learning" "Python"           "SQL"             
+## [5] "Tableau"         
 ## 
 ## 
 ## [[2]]
 ## [[2]]$title
-## [1] "Data Analyst - Google Tag Manager, A/B Testing"
+## [1] "Data Analyst"
 ## 
 ## [[2]]$job_status
-## [1] "Full-time $90k - $130k"
+## character(0)
 ## 
 ## [[2]]$date
-## [1] "Posted 09/30/2021"
+## character(0)
 ## 
 ## [[2]]$location
-## [1] "Los Angeles, CA"
+## [1] "New York, NY"
 ## 
 ## [[2]]$job_description
-## [1] "If you are a Data Analyst with experience, please read on!    This is a full-time/permanent position, direct-hire with my client.    We are the world leading digital invitation platform that has been..."
+## [1] "Job Title: Data Analyst Job Location: 3x per week onsite in Financial District, NY   Salary: $80-90k   Requirements: 2+ years experience Data Analytics    Working for us means working with a close-kni..."
 ## 
 ## [[2]]$preferred_skills
-## [1] "GTM"                "Google Tag Manager" "Google Analytics"  
-## [4] "SQL"                "AB testing"        
+## [1] "Data insights"      "Data Analytics"     "Data Visualization"
 ## 
 ## 
 ## [[3]]
 ## [[3]]$title
-## [1] "Data Scientist"
+## [1] "Data Analyst - Google Tag Manager, A/B Testing"
 ## 
 ## [[3]]$job_status
-## [1] "Full-time $100k - $150k"
+## character(0)
 ## 
 ## [[3]]$date
-## [1] "Posted 10/06/2021"
+## character(0)
 ## 
 ## [[3]]$location
-## [1] "Morrisville, NC"
+## [1] "Los Angeles, CA"
 ## 
 ## [[3]]$job_description
-## [1] "If you are a Data Scientist or Data Enthusiast with experience in bioinformatics, please read on!  We are looking to simplify the complex nature of cancer genomics and bring cutting edge technology an..."
+## [1] "If you are a Data Analyst with experience, please read on!    This is a full-time/permanent position, direct-hire with my client.    We are the world leading digital invitation platform that has been..."
 ## 
 ## [[3]]$preferred_skills
-## [1] "Python" "Perl"   "SQL"    "R"      "SAS"
+## [1] "GTM"                "Google Tag Manager" "Google Analytics"  
+## [4] "SQL"                "AB testing"
 ```
 
 As it's shown, the results are pretty much cleaned to use but probably need some help from regular expression to make it become an actual dataset. But since this guideline is focusing on web scraping mainly. I will call this an end.

@@ -310,8 +310,8 @@ map2_dbl(ls, ws, weighted.mean)
 ```
 
 ```
-## [1] 0.4787564 0.4996425 0.5581697 0.5798720 0.5504890 0.4206161 0.3811854
-## [8] 0.5331686
+## [1] 0.5482987 0.4638794 0.5644410 0.2560677 0.4868653 0.5857067 0.3990279
+## [8] 0.5490695
 ```
 Here, we would like to compute the weighted mean with inputs of a list of observations and a list of weights. <br>
 
